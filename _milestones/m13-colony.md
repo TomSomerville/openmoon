@@ -41,14 +41,14 @@ technologies:
 sources:
   - {title: "NASA OIG IG-22-005: ISS operations cost (~$3B/yr)", url: "https://oig.nasa.gov/docs/IG-22-005.pdf", date: "Nov 2021"}
   - {title: "phys.org: Lunar lava tube cave (Carrer et al., Nature Astronomy)", url: "https://phys.org/news/2024-07-lunar-lava-tube-cave.html", date: "Jul 2024"}
-  - {title: "SpaceQ: PwC lunar economy projected up to $127B by 2050", url: "https://spaceq.ca/pwc-report-lunar-economy-projected-to-generate-up-to-us127-billion-by-2050/", date: "Mar 2026"}
+  - {title: "PwC: Lunar market assessment, 2nd edition (Building the lunar economy)", url: "https://images.content.pwc.com/Web/PwCGlobal/%7Bfe86e29b-7590-4a9e-acf9-d7fdb3c55ba6%7D_FR_FY26_Lunar_Market_Assessment_Edition2_Download.pdf", date: "Jan 2026"}
   - {title: "UNOOSA: Outer Space Treaty", url: "https://www.unoosa.org/pdf/publications/ST_SPACE_51E.pdf", date: ""}
   - {title: "NASA: Artemis Accords", url: "https://www.nasa.gov/artemis-accords/", date: ""}
   - {title: "US Public Law 114-90 (Commercial Space Launch Competitiveness Act)", url: "https://www.govinfo.gov/content/pkg/PLAW-114publ90/html/PLAW-114publ90.htm", date: "Nov 2015"}
   - {title: "LROC: Marius Hills pit – lava tube skylight?", url: "https://lroc.im-ldi.com/images/202", date: ""}
 risks:
   - {sev: Critical, title: "Long-term health at 1/6 g is unknown, including pregnancy and child development", fix: "Grow only on data; this plan does not assume families or births on the Moon"}
-  - {sev: High, title: "Revenue may not materialise (PwC projects $94–127B in total lunar revenue 2026–2050, across all players)", fix: "Plan on government funding as the base case; treat revenue as upside"}
+  - {sev: High, title: "Revenue may not materialise (PwC projects $94–127B in cumulative lunar surface revenue 2026–2050, across five market segments)", fix: "Plan on government funding as the base case; treat revenue as upside"}
   - {sev: High, title: "Total independence from Earth is not achievable with today's technology (chips, medicines)", fix: "Define self-sustaining by mass, not by value; keep a reliable supply chain for high-tech items"}
 ---
 
@@ -63,7 +63,7 @@ That's measurable, and it is what drives cost.
 
 ## The economy
 
-- **Market forecast.** PwC's 2026 update forecasts **$93.9–127.3B** of cumulative lunar revenue for 2026–2050, across all players<sup class="r">[3](#s3)</sup>.
+- **Market forecast.** PwC's 2026 update forecasts **$93.9–127.3B** of cumulative revenue from lunar surface activities for 2026–2050, summed across five market segments<sup class="r">[3](#s3)</sup>.
 - **Legal basis.** US law lets citizens keep and sell space resources they recover<sup class="r">[6](#s6)</sup>, within the Outer Space Treaty's ban on territorial claims<sup class="r">[4](#s4)</sup>.
 
 ## Beyond 2050

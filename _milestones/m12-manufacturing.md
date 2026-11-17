@@ -25,10 +25,10 @@ exit_criteria:
 workstreams:
   - name: Metals
     desc: Recover metals from oxygen-plant by-products.
-    items: ["Iron and silicon from MRE", "Metal powder from FFC process", "Aluminium extraction research"]
+    items: ["Iron and silicon from MRE", "Mixed metals from molten salt electrolysis", "Aluminium extraction research"]
   - name: Construction
     desc: Build with regolith.
-    items: ["Laser-sintered structures (ICON Olympus)", "Printed regolith shells (ESA / Foster+Partners concept)", "Sintered bricks"]
+    items: ["Regolith construction systems (ICON Olympus)", "Printed regolith dome (ESA / Foster+Partners concept)", "Sintered bricks"]
   - name: Parts manufacturing
     desc: Print what breaks.
     items: ["Metal 3D printing (ESA ISS printer heritage)", "Polymer printing and recycling (ISS AMF, Refabricator)", "Machining for finishing"]
@@ -36,12 +36,12 @@ workstreams:
     desc: Make power hardware locally.
     items: ["Silicon from regolith", "Cover glass from by-products", "Array assembly"]
 technologies:
-  - {name: "Blue Origin Blue Alchemist", use: "Silicon, solar cells, wire from regolith", status: "Company reports cells and wire from simulant; demo planned 2026", trl: 5, new: true, src: 1}
-  - {name: "ESA metal 3D printer on ISS", use: "Printing metal parts", status: "First metal part printed in space, 2024", trl: 7, src: 2}
-  - {name: "Redwire / Made In Space AMF on ISS", use: "Polymer parts", status: "Printing parts on ISS since 2016", trl: 9, src: 3}
-  - {name: "Redwire Regolith Print", use: "Printing with regolith simulant", status: "Printed in space 2021", trl: 5, src: 4}
+  - {name: "Blue Origin Blue Alchemist", use: "Silicon, solar cells, wire from regolith", status: "Company reports solar cells and wire from simulant; passed CDR 2025; autonomous ground demo planned 2026", trl: 5, new: true, src: 9}
+  - {name: "ESA metal 3D printer on ISS", use: "Printing metal parts", status: "First metal part printed in space, Aug 2024", trl: 7, src: 2}
+  - {name: "Redwire / Made In Space AMF on ISS", use: "Polymer parts", status: "Commercial polymer printer on ISS (ABS, ULTEM, HDPE); parts printed since at least Feb 2017", trl: 9, src: 3}
+  - {name: "Redwire Regolith Print", use: "Printing with regolith simulant", status: "Printed with regolith simulant on ISS (launched Aug 2021)", trl: 5, src: 4}
   - {name: "ICON Project Olympus", use: "Regolith construction", status: "$57.2M NASA SBIR Phase III contract", trl: 4, new: true, src: 5}
-  - {name: "FFC Cambridge (Metalysis/ESA)", use: "Metal powder + oxygen", status: "ESA prototype plant (2020); leaves mixed-metal powder", trl: 4, new: true, src: 6}
+  - {name: "Molten salt electrolysis (Metalysis/ESA)", use: "Metals + oxygen", status: "ESA prototype plant (2020); leaves a tangle of mixed metals", trl: 4, new: true, src: 6}
 sources:
   - {title: "Blue Origin: Blue Alchemist powers our lunar future", url: "https://www.blueorigin.com/news/blue-alchemist-powers-our-lunar-future/", date: "Feb 2023"}
   - {title: "ESA: ESA 3D prints first metal part on the ISS", url: "https://www.esa.int/Newsroom/Press_Releases/ESA_3D_prints_first_metal_part_on_the_International_Space_Station", date: "Sep 2024"}
@@ -51,6 +51,8 @@ sources:
   - {title: "ESA: ESA opens oxygen plant making air out of moondust", url: "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/ESA_opens_oxygen_plant_making_air_out_of_moondust", date: "Jan 2020"}
   - {title: "ESA: Building a lunar base with 3D printing", url: "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Building_a_lunar_base_with_3D_printing", date: "Jan 2013"}
   - {title: "Geology of the Moon (regolith composition), Wikipedia", url: "https://en.wikipedia.org/wiki/Geology_of_the_Moon", date: "accessed Nov 2026"}
+  - {title: "Blue Origin: Blue Alchemist hits major milestone toward permanent, sustainable lunar infrastructure", url: "https://www.blueorigin.com/news/blue-alchemist-hits-major-milestone-toward-permanent-sustainable-lunar-infrastructure", date: "Sep 2025"}
+  - {title: "NASA M2M-30044 Lunar Surface Data Book (south pole is highlands terrain)", url: "https://ntrs.nasa.gov/citations/20250002845", date: "Mar 2025"}
 risks:
   - {sev: High, title: "Many processes are only proven in labs (TRL 4)", fix: "Start with the most mature (printing, sintering); add metals as they mature"}
   - {sev: High, title: "Electronics and precision parts can't be made locally", fix: "Ship electronics; make structures, enclosures and bulk parts locally"}
@@ -59,20 +61,20 @@ risks:
 
 ## What regolith contains
 
-Average Apollo samples<sup class="r">[8](#s8)</sup>:
+Average lunar surface composition<sup class="r">[8](#s8)</sup>:
 
-| Oxide | Mare regolith | Highland regolith |
+| Oxide | Maria | Highlands |
 |---|---|---|
 | FeO | ~14.1% | ~5.9% |
 | Al₂O₃ | ~14.9% | ~24.0% |
 | TiO₂ | ~3.9% | ~0.6% |
 | SiO₂ | ~45% | ~45% |
 
-**What this means at the base:** the south pole is highland terrain, so the regolith is richer in aluminium and poorer in iron.
+**What this means at the base:** the south pole is highlands terrain<sup class="r">[10](#s10)</sup>, so the regolith is richer in aluminium and poorer in iron.
 
 ## Step-by-step
 
 1. **Polymer and metal printers** inside the habitat, building on ISS heritage<sup class="r">[2](#s2)</sup><sup class="r">[3](#s3)</sup>.
-2. **Sintered regolith construction** for berms, pads and shells<sup class="r">[5](#s5)</sup><sup class="r">[7](#s7)</sup>.
+2. **Regolith construction** for berms, pads and shells, building on ICON's NASA-funded work<sup class="r">[5](#s5)</sup> and ESA's regolith 3D printing tests<sup class="r">[7](#s7)</sup>.
 3. **Metal recovery** from oxygen-plant by-products<sup class="r">[1](#s1)</sup><sup class="r">[6](#s6)</sup>.
-4. **Solar cells from regolith.** Install the first lunar-made array.
+4. **Solar cells from regolith.** Blue Origin reports making solar cells from simulant<sup class="r">[1](#s1)</sup><sup class="r">[9](#s9)</sup>. Install the first lunar-made array.
