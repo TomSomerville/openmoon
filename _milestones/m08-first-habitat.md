@@ -5,12 +5,12 @@ title: First habitat and crewed sorties
 phase: 2
 window: "2031–2035"
 summary: Land the first surface habitat and fly crews for stays of two to four weeks, leaving more infrastructure behind on every visit.
-objective: "Land a habitat for four crew, fly four crewed sorties of 14–30 days, and use them to commission the power, ISRU and mobility systems with people on site."
+objective: "Land a habitat for two to four crew, fly four crewed sorties of 14–30 days, and use them to commission the power, ISRU and mobility systems with people on site."
 trl_min: 5
 depends_on: [M02, M03, M04, M05, M07]
 spec:
   - {k: Habitat, v: "1 rigid module, ~15 t class (e.g. Thales Alenia MPH: ~3 m × 6 m, 10-year life)"}
-  - {k: Crew, v: "4 per sortie"}
+  - {k: Crew, v: "2 per sortie at first (MPH is reported as a 2-crew module), 4 once a second module or the pressurised rover is docked"}
   - {k: Stays, v: "14–30 days"}
   - {k: Sorties, v: "4"}
   - {k: Suits, v: "Axiom AxEMU class"}
@@ -67,6 +67,7 @@ risks:
   - {sev: High, title: "Dust in the cabin (all Apollo seals were compromised)", fix: "Dust lock or suitports; strict cleaning; sintered surfaces at the hatch"}
   - {sev: High, title: "Spacesuit schedule risk (OIG warned demonstrations could slip to 2031)", fix: "Keep sortie dates flexible; early sorties with minimal EVA"}
   - {sev: High, title: "Medical emergency far from a hospital, with 5–12 s operational delays", fix: "Trained crew medic, telemedicine, and an evacuation plan with a lander on standby"}
+  - {sev: High, title: "The MPH is reported as sized for 2 crew on one 7–30-day mission a year, while crewed landers carry 4", fix: "Fly 2-crew surface teams first; add fold-down sleep stations; reach 4 crew by docking the pressurised rover or a second module (M09)"}
   - {sev: Medium, title: "Habitat sits on the surface unshielded during sorties", fix: "Short stays; storm shelter area with water walls; burial in M09"}
 ---
 
@@ -75,7 +76,7 @@ risks:
 - **Thales Alenia Space MPH.** Thales is designing it for the Italian Space Agency: about 3 m × 6 m, about 15 t, on wheels, with a minimum 10-year life. Launch is planned for 2033<sup class="r">[1](#s1)</sup>.
 - **Inflatable alternative.** Sierra Space's LIFE module held 77 psi before bursting in a full-scale test, 27% above NASA's recommended level<sup class="r">[2](#s2)</sup>.
 
-Open Moon designs its habitat zone for a **rigid ~15 t module first**, with room for inflatable modules later. NASA expects habitats to arrive on cargo landers no earlier than FY2033<sup class="r">[5](#s5)</sup>.
+Open Moon designs its habitat zone for a **rigid ~15 t module first**, with room for inflatable modules later. Press reports describe the MPH as sized for **two** astronauts on one 7–30-day mission a year, so early sorties put two people on the surface. Four-person stays wait for a second module or the docked pressurised rover (M07). NASA expects habitats to arrive on cargo landers no earlier than FY2033<sup class="r">[5](#s5)</sup>.
 
 ## Life support
 
