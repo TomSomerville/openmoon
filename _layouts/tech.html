@@ -13,6 +13,10 @@ section: tech
 .rel a{display:block;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel);text-decoration:none;color:var(--ink)}
 .rel a:hover{border-color:var(--hi)}
 .rel img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.linklist{list-style:none;padding:0;margin:0 0 10px;font-size:14px}
+.linklist li{padding:7px 0;border-bottom:1px solid var(--line)}
+.linklist .tag{min-width:64px;text-align:center;margin-right:6px}
+.tbody h2{margin-top:26px}
 .rel span{display:block;padding:6px 8px;font:600 13px var(--fh);text-transform:uppercase;letter-spacing:.02em}
 </style>
 <div class="body">
@@ -35,6 +39,25 @@ section: tech
 
     <div class="sec-h">Status today</div>
     <div class="prose"><p>{{ t.status }}</p></div>
+
+    {% if content != "" %}
+    <div class="prose tbody">{{ content }}</div>
+    {% endif %}
+
+    {% if page.alternatives %}
+    <div class="sec-h">Alternatives</div>
+    <div class="tablewrap"><table class="data">
+      <thead><tr><th>Alternative</th><th>How it compares</th><th>Status</th></tr></thead>
+      <tbody>{% for a in page.alternatives %}<tr><td><strong>{% if a.url %}<a href="{{ a.url }}">{{ a.name }}</a>{% else %}{{ a.name }}{% endif %}</strong></td><td>{{ a.compare }}</td><td>{{ a.status }}</td></tr>{% endfor %}</tbody>
+    </table></div>
+    {% endif %}
+
+    {% if page.links %}
+    <div class="sec-h">Further reading · {{ page.links | size }} links</div>
+    <ul class="linklist">
+      {% for l in page.links %}<li><span class="tag {% if l.kind == 'official' %}hi{% elsif l.kind == 'paper' %}ok{% endif %}">{{ l.kind }}</span> <a href="{{ l.url }}">{{ l.title }}</a>{% if l.date %} <span style="color:var(--dim)">({{ l.date }})</span>{% endif %}</li>{% endfor %}
+    </ul>
+    {% endif %}
 
     <div class="sec-h">Where the plan uses it</div>
     <div class="tl">
