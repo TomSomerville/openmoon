@@ -13,12 +13,12 @@ spec:
   - {k: "Surface network", v: "4G/LTE base station + mesh radios + fibre between fixed sites"}
   - {k: "Navigation", v: "Relay-based PNT, weak-signal GPS, surface beacons"}
   - {k: "Time", v: "Coordinated Lunar Time (in definition)"}
-cost: {low: 0.6, high: 1.7, note: "service fees for 5 years plus own surface network and backup relay"}
+cost: {low: 0.72, high: 1.94, note: "service fees for 5 years plus own surface network and backup relay"}
 cost_items:
   - {item: "Relay and ground-station service fees, 5 years", low: 0.15, high: 0.5, basis: "ESTIMATE. NASA's relay contract has a $4.82B ceiling shared across all NASA users [src 1]"}
   - {item: "Backup relay smallsat ×1 (build + launch to lunar orbit)", low: 0.15, high: 0.4, basis: "ESTIMATE; ~300 kg at $300k/kg to lunar orbit ≈ $90M delivery [src 8] plus spacecraft"}
   - {item: "Surface LTE base station, mesh radios, rim relay masts", low: 0.05, high: 0.15, basis: "ESTIMATE hardware"}
-  - {item: "Delivery of surface network kit (~200 kg)", low: 0.12, high: 0.24, basis: "200 kg × $0.6–1.2M/kg (ESTIMATE; $1.2M/kg published [src 8])"}
+  - {item: "Delivery of base comms node and rim relay masts (~400 kg)", low: 0.24, high: 0.48, basis: "~220 kg comms node (C03.1) + rim masts (C03.2), ESTIMATE × $0.6–1.2M/kg ($1.2M/kg published [src 8])"}
   - {item: "Optical terminal for the base (high-rate Earth link)", low: 0.08, high: 0.25, basis: "ESTIMATE; based on O2O/LCRD class terminals"}
   - {item: "Operations and network engineering, 5 years", low: 0.05, high: 0.16, basis: "ESTIMATE"}
 exit_criteria:
