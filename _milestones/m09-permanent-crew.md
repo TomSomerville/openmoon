@@ -11,7 +11,7 @@ depends_on: [M04, M06, M08]
 spec:
   - {k: Crew, v: "4 continuous, growing to 8"}
   - {k: Rotation, v: "6 months"}
-  - {k: Habitats, v: "3 modules, buried under ≥2 m of regolith"}
+  - {k: Habitats, v: "3 modules, buried under 2–3 m of regolith (4,300–6,800 t, C09.1)"}
   - {k: "Life support", v: "≥90% water recovery; local O₂"}
   - {k: Duration, v: "4 years of continuous presence"}
 cost: {low: 26.9, high: 88.6, note: "crew rotation and resupply over 4 years dominate"}
@@ -33,7 +33,7 @@ exit_criteria:
 workstreams:
   - name: Shielded habitats
     desc: Bury the modules under regolith.
-    items: ["2 more modules linked to the M08 habitat", "≥2 m regolith cover (bags or sintered shell)", "Storm shelter inside for solar particle events"]
+    items: ["2 more modules linked to the M08 habitat", "2 m minimum, 3 m target regolith cover (bags or sintered shell)", "Storm shelter inside for solar particle events"]
   - name: Life support closure
     desc: Recycle air and water like the ISS, then go further.
     items: ["Water recovery with brine processing", "Oxygen generation by electrolysis", "CO₂ removal (4-bed molecular sieve)", "Sabatier to recover water from CO₂"]
@@ -82,7 +82,11 @@ risks:
 - **Surface dose.** China's Chang'e-4 measured about **1,369 µSv per day** on the lunar surface<sup class="r">[5](#s5)</sup>. That's about **0.5 Sv per year** unshielded.
 - **The limit.** NASA's career limit is **600 mSv**<sup class="r">[7](#s7)</sup>. One year living on the surface unprotected would use almost an entire career's allowance.
 - **Shielding is mandatory.** There is **no single NASA design value** for how much regolith is enough. NASA lists dose behind thick shielding as an open data gap<sup class="r">[12](#s12)</sup>.
-- **The working number.** One model using NASA's OLTARIS tool found dose actually rises in the first metre of regolith because of secondary particles. It concluded that **at least 2 m** is needed<sup class="r">[6](#s6)</sup>. Open Moon uses ≥2 m as its working requirement and will verify it with OLTARIS on the actual habitat geometry.
+- **The working number.**
+  - One model using NASA's OLTARIS tool found dose actually rises in the first metre of regolith because of secondary particles<sup class="r">[6](#s6)</sup>.
+  - It gives about **150 mSv per 180 days at 2 m** and about **100 mSv at 3 m**, before any time spent outdoors.
+  - At 2 m, four six-month rotations would use up a 600 mSv career.
+  - Open Moon therefore sets **2 m as the minimum and 3 m as the target** (see C09.1), and will verify both with OLTARIS on the actual habitat geometry.
 
 ## What a person uses each day
 

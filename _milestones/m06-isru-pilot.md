@@ -45,7 +45,7 @@ technologies:
   - {name: "Molten regolith electrolysis (NASA + Lunar Resources)", use: "Oxygen from rock", status: "Dec 2024: 25 kg of simulant processed in vacuum, 0.07 kg O₂/h for 9 h (NASA's first molecular O₂ by MRE)", trl: 4, new: true, src: 1}
   - {name: "Carbothermal reduction (Sierra Space + NASA)", use: "Oxygen from rock (alternative)", status: "Flight-like reactor ran automated in JSC dirty thermal-vacuum chamber (2024)", trl: 5, src: 2}
   - {name: "Blue Origin Blue Alchemist", use: "Oxygen plus silicon, iron, aluminium", status: "Passed CDR Sep 2025; autonomous demo in simulated lunar environment planned 2026", trl: 5, new: true, src: 4}
-  - {name: "FFC Cambridge process (Metalysis / ESA)", use: "Oxygen with metal powder by-product", status: "Extracted 96% of oxygen from simulant in 50 h; ESA prototype plant 2020", trl: 4, new: true, src: 5}
+  - {name: "FFC Cambridge process (Metalysis / ESA)", use: "Oxygen with metal powder by-product", status: "ESA prototype plant opened 2020; extracts oxygen and leaves a mixed-metal powder", trl: 4, new: true, src: 5}
   - {name: "ISS Oxygen Generation Assembly", use: "Water electrolysis", status: "Flight-proven since 2007; nominal 5.4 kg O₂/day", trl: 9, src: 6}
   - {name: "Ice excavation (NASA Break the Ice)", use: "Mining icy regolith", status: "Challenge winners 2024; designs ground-tested", trl: 4, new: true, src: 7}
 sources:
@@ -81,7 +81,7 @@ risks:
 | Molten regolith electrolysis | 0.07 kg O₂/h for 9 h from 25 kg simulant, in vacuum, Dec 2024<sup class="r">[1](#s1)</sup> | TRL 4 |
 | Carbothermal reduction | Flight-like reactor, automated, in a dusty thermal-vacuum chamber, 2024<sup class="r">[2](#s2)</sup> | TRL 5 |
 | Blue Alchemist (MRE) | CDR passed Sep 2025; demo planned for 2026<sup class="r">[4](#s4)</sup> | TRL 5 (claimed) |
-| FFC Cambridge | 96% of oxygen extracted in 50 h, lab<sup class="r">[5](#s5)</sup> | TRL 4 |
+| FFC Cambridge | ESA prototype plant (2020); oxygen out, metal powder left<sup class="r">[5](#s5)</sup> | TRL 4 |
 | Water electrolysis | ISS OGA, flight-proven, 5.4 kg O₂/day<sup class="r">[6](#s6)</sup> | TRL 9 |
 
 None of the regolith processes has run on the Moon yet. That's why this is a **pilot**, and why two different oxygen processes are flown.

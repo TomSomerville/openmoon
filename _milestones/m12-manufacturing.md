@@ -41,7 +41,7 @@ technologies:
   - {name: "Redwire / Made In Space AMF on ISS", use: "Polymer parts", status: "Printing parts on ISS since 2016", trl: 9, src: 3}
   - {name: "Redwire Regolith Print", use: "Printing with regolith simulant", status: "Printed in space 2021", trl: 5, src: 4}
   - {name: "ICON Project Olympus", use: "Regolith construction", status: "$57.2M NASA SBIR Phase III contract", trl: 4, new: true, src: 5}
-  - {name: "FFC Cambridge (Metalysis/ESA)", use: "Metal powder + oxygen", status: "96% oxygen extraction in lab", trl: 4, new: true, src: 6}
+  - {name: "FFC Cambridge (Metalysis/ESA)", use: "Metal powder + oxygen", status: "ESA prototype plant (2020); leaves mixed-metal powder", trl: 4, new: true, src: 6}
 sources:
   - {title: "Blue Origin: Blue Alchemist powers our lunar future", url: "https://www.blueorigin.com/news/blue-alchemist-powers-our-lunar-future/", date: "Feb 2023"}
   - {title: "ESA: ESA 3D prints first metal part on the ISS", url: "https://www.esa.int/Newsroom/Press_Releases/ESA_3D_prints_first_metal_part_on_the_International_Space_Station", date: "Sep 2024"}

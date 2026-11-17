@@ -13,11 +13,12 @@ spec:
   - {k: Crops, v: "Leafy greens first; then potatoes, wheat, soy, peppers"}
   - {k: Target, v: "≥50% of calories for 8 crew"}
   - {k: Food need, v: "12.8 MJ and 0.8 kg food solids per person per day"}
-cost: {low: 3.2, high: 9.5, note: "greenhouse modules, lighting power, and research"}
+  - {k: "Canopy and power", v: "~261 m² growing area, ~61 kW (C10.1 ESTIMATE from BVAD and LED data)"}
+cost: {low: 6.35, high: 21.35, note: "greenhouse modules, lighting power, and research"}
 cost_items:
   - {item: "Greenhouse modules (build)", low: 0.5, high: 1.5, basis: "ESTIMATE"}
-  - {item: "Delivery of greenhouse modules (~10 t, heavy cargo)", low: 2.0, high: 6.0, basis: "10 t × $0.2–0.6M/kg (mass ESTIMATE)"}
-  - {item: "Extra power for lighting (added solar or fission capacity)", low: 0.5, high: 1.5, basis: "ESTIMATE; added to the M04/M11 grid"}
+  - {item: "Delivery of greenhouse modules (~17–21 t, heavy cargo)", low: 3.4, high: 12.6, basis: "17–21 t (C10.1 ESTIMATE) × $0.2–0.6M/kg"}
+  - {item: "Extra ~60 kW for lighting: one more fission unit (build + ~10 t delivery)", low: 2.25, high: 6.75, basis: "C10.1 sizing (~61 kW); build $0.25–0.75B ESTIMATE + 10 t × $0.2–0.6M/kg"}
   - {item: "Crop research and ground analog", low: 0.2, high: 0.5, basis: "ESTIMATE"}
 exit_criteria:
   - "Fresh vegetables available to every crew member every week."
