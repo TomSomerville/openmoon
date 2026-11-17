@@ -1,11 +1,12 @@
 ---
 title: The plan
 eyebrow: Master schedule
-summary: Every milestone in order. Each has exit criteria, workstreams, technology, costs, failure modes and sources.
+summary: Every milestone in order. Each has exit criteria, workstreams, technology, costs, failure modes and sources. See also the full product breakdown and design coverage.
 section: plan
 doc_id: OM-100
 ---
 {% assign ms = site.milestones | sort: "order" %}
+<p><a class="btn ghost" href="{{ '/plan/breakdown/' | relative_url }}">Product breakdown and coverage →</a></p>
 <div class="tablewrap"><table class="data">
 <thead><tr><th>ID</th><th>Milestone</th><th>Phase</th><th>Window</th><th>Cost (est.)</th><th>Lowest TRL</th><th>Depends on</th></tr></thead>
 <tbody>

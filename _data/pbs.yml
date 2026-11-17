@@ -1,0 +1,130 @@
+# Product breakdown structure. One entry per system; each item is a component.
+# comp: component page id if one exists. how: build | buy | partner. ms: milestone that delivers it.
+- id: TL
+  name: Transport and logistics
+  items:
+    - {id: TL.1, name: Small cargo delivery service (<1 t), ms: M02, how: buy}
+    - {id: TL.2, name: Medium cargo delivery service (~3 t), ms: M02, how: buy}
+    - {id: TL.3, name: Heavy cargo delivery service (~15 t), ms: M02, how: buy}
+    - {id: TL.4, name: Crew transport (launch, lander, return), ms: M02, how: partner}
+    - {id: TL.5, name: Common payload interface, ms: M02, comp: C02.1, how: build}
+    - {id: TL.6, name: Offloading crane, ms: M02, comp: C02.2, how: build}
+    - {id: TL.7, name: Cargo containers and inventory tracking, ms: M09, how: build}
+    - {id: TL.8, name: Spares strategy and on-site stores, ms: M09, how: build}
+    - {id: TL.9, name: Lander refuelling interface, ms: M11, comp: C11.1, how: build}
+- id: CN
+  name: Communications, navigation and data
+  items:
+    - {id: CN.1, name: Lunar relay services, ms: M03, how: buy}
+    - {id: CN.2, name: Base communications node, ms: M03, comp: C03.1, how: build}
+    - {id: CN.3, name: Crater-rim relay masts, ms: M03, comp: C03.2, how: build}
+    - {id: CN.4, name: Surface navigation beacons and PNT, ms: M03, how: build}
+    - {id: CN.5, name: Base timing reference, ms: M03, how: build}
+    - {id: CN.6, name: Ground stations and mission control centre, ms: M03, how: build}
+    - {id: CN.7, name: Base data network, servers and archive, ms: M03, how: build}
+    - {id: CN.8, name: Cybersecurity, ms: M03, how: build}
+    - {id: CN.9, name: Flight and surface software framework, ms: M03, how: build}
+- id: PW
+  name: Power
+  items:
+    - {id: PW.1, name: Fission surface power unit, ms: M04, comp: C04.1, how: partner}
+    - {id: PW.2, name: Vertical solar towers, ms: M04, comp: C04.2, how: buy}
+    - {id: PW.3, name: Energy storage (fuel cells, batteries), ms: M04, comp: C04.3, how: build}
+    - {id: PW.4, name: HVDC grid and cable-laying rover, ms: M04, comp: C04.4, how: build}
+    - {id: PW.5, name: Mobile power cart for PSR work, ms: M06, how: build}
+    - {id: PW.6, name: Habitat power distribution and emergency power, ms: M08, how: build}
+    - {id: PW.7, name: Lunar-made solar array line, ms: M12, how: build}
+- id: SC
+  name: Site and construction
+  items:
+    - {id: SC.1, name: Excavator, ms: M05, comp: C05.1, how: build}
+    - {id: SC.2, name: Hardened landing pad, ms: M05, comp: C05.2, how: build}
+    - {id: SC.3, name: Regolith sintering robot, ms: M05, comp: C05.3, how: build}
+    - {id: SC.4, name: Roads, berms and stockpiles, ms: M05, how: build}
+    - {id: SC.5, name: Site lighting and markers, ms: M05, how: build}
+    - {id: SC.6, name: Outdoor dust mitigation, ms: M05, how: build}
+    - {id: SC.7, name: Geotechnical survey kit, ms: M01, how: build}
+- id: IS
+  name: Resource production (ISRU)
+  items:
+    - {id: IS.1, name: Oxygen-from-regolith plant, ms: M06, comp: C06.1, how: build}
+    - {id: IS.2, name: Ice mining and water extraction, ms: M06, comp: C06.2, how: build}
+    - {id: IS.3, name: Cryogenic and water storage, ms: M06, comp: C06.3, how: build}
+    - {id: IS.4, name: Regolith beneficiation (sorting, sizing), ms: M06, how: build}
+    - {id: IS.5, name: Water electrolysis plant, ms: M06, how: build}
+    - {id: IS.6, name: Volatiles and nitrogen recovery, ms: M11, how: build}
+    - {id: IS.7, name: Surface propellant depot, ms: M11, comp: C11.1, how: build}
+- id: MR
+  name: Mobility and robotics
+  items:
+    - {id: MR.1, name: Prospector rover, ms: M01, comp: C01.1, how: build}
+    - {id: MR.2, name: Lunar Terrain Vehicle service, ms: M07, how: buy}
+    - {id: MR.3, name: Pressurised rover, ms: M07, how: partner}
+    - {id: MR.4, name: Utility carts and inspection robots, ms: M07, comp: C07.1, how: build}
+    - {id: MR.5, name: Robotic manipulators and tool changers, ms: M07, how: build}
+    - {id: MR.6, name: Teleoperation centre and autonomy software, ms: M07, how: build}
+    - {id: MR.7, name: Robot maintenance shelter, ms: M07, how: build}
+- id: HB
+  name: Habitation
+  items:
+    - {id: HB.1, name: Habitat module, ms: M08, comp: C08.1, how: partner}
+    - {id: HB.2, name: Dust lock and suitports, ms: M08, comp: C08.3, how: build}
+    - {id: HB.3, name: Inter-module nodes and connectors, ms: M09, how: build}
+    - {id: HB.4, name: Habitat thermal control, ms: M08, how: build}
+    - {id: HB.5, name: Interior outfitting (quarters, galley, stowage), ms: M08, how: build}
+    - {id: HB.6, name: Regolith radiation shielding, ms: M09, comp: C09.1, how: build}
+    - {id: HB.7, name: Storm shelter, ms: M09, comp: C09.2, how: build}
+- id: LS
+  name: Life support
+  items:
+    - {id: LS.1, name: Life support system (ECLSS), ms: M08, comp: C08.2, how: build}
+    - {id: LS.2, name: Atmosphere make-up (nitrogen, oxygen buffer), ms: M09, how: build}
+    - {id: LS.3, name: Fire detection and suppression, ms: M08, how: build}
+    - {id: LS.4, name: Solid waste and hygiene processing, ms: M09, how: build}
+    - {id: LS.5, name: Potable water storage and quality monitoring, ms: M08, how: build}
+- id: CH
+  name: Crew systems and health
+  items:
+    - {id: CH.1, name: EVA system (suits and tools), ms: M08, comp: C08.4, how: partner}
+    - {id: CH.2, name: Medical bay, ms: M09, comp: C09.3, how: build}
+    - {id: CH.3, name: Exercise and countermeasures, ms: M09, how: build}
+    - {id: CH.4, name: Radiation dosimetry and space weather warning, ms: M09, how: build}
+    - {id: CH.5, name: Stored food system, ms: M08, how: buy}
+    - {id: CH.6, name: Crew selection, training and psychological support, ms: M08, how: build}
+- id: FP
+  name: Food production
+  items:
+    - {id: FP.1, name: Greenhouse module, ms: M10, comp: C10.1, how: build}
+    - {id: FP.2, name: Nutrient recovery and composting, ms: M10, how: build}
+    - {id: FP.3, name: Food processing kitchen, ms: M10, how: build}
+    - {id: FP.4, name: Seed bank and crop research, ms: M10, how: build}
+- id: MF
+  name: Manufacturing
+  items:
+    - {id: MF.1, name: Fabrication shop, ms: M12, comp: C12.1, how: build}
+    - {id: MF.2, name: Metal extraction and refining, ms: M12, how: build}
+    - {id: MF.3, name: Glass and ceramics production, ms: M12, how: build}
+    - {id: MF.4, name: Electronics repair bench, ms: M12, how: build}
+- id: SR
+  name: Science and survey
+  items:
+    - {id: SR.1, name: Open site-selection GIS and data set, ms: M00, how: build}
+    - {id: SR.2, name: Illumination and thermal modelling toolkit, ms: M00, how: build}
+    - {id: SR.3, name: Environmental monitoring station, ms: M01, how: build}
+    - {id: SR.4, name: Seismic network, ms: M09, how: build}
+- id: PG
+  name: Programme, safety and ground
+  items:
+    - {id: PG.1, name: Programme management and systems engineering, ms: M00, how: build}
+    - {id: PG.2, name: Safety and mission assurance, ms: M00, how: build}
+    - {id: PG.3, name: Legal, licensing and international coordination, ms: M00, how: build}
+    - {id: PG.4, name: Ground test facilities and analogs, ms: M00, how: build}
+    - {id: PG.5, name: Open-source community and governance, ms: M00, how: build}
+    - {id: PG.6, name: Planetary protection and environmental stewardship, ms: M00, how: build}
+- id: CL
+  name: Colony
+  items:
+    - {id: CL.1, name: Locally built habitat expansion, ms: M13, how: build}
+    - {id: CL.2, name: Colony governance framework, ms: M13, how: build}
+    - {id: CL.3, name: Propellant and services market, ms: M13, how: build}
+    - {id: CL.4, name: Emergency evacuation and rescue, ms: M13, how: build}

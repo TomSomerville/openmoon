@@ -1,0 +1,45 @@
+---
+title: Product breakdown and coverage
+eyebrow: Everything the base needs
+summary: Every system and component the plan has identified, which milestone delivers it, whether Open Moon builds, buys or partners for it, and how far its design has got. This page is the honest to-do list.
+section: plan
+doc_id: OM-110
+permalink: /plan/breakdown/
+---
+{% assign total = 0 %}{% assign done = 0 %}
+{% for s in site.data.pbs %}{% for i in s.items %}{% assign total = total | plus: 1 %}{% if i.comp %}{% assign done = done | plus: 1 %}{% endif %}{% endfor %}{% endfor %}
+<p><strong>{{ done }} of {{ total }}</strong> components have a detailed design page. The rest are named in a milestone but not yet broken down into sub-components, parts and a bill of materials.</p>
+<div class="kpis" style="padding:0 0 10px">
+  <div class="kpi"><small>Components identified</small><b>{{ total }}</b><span>in {{ site.data.pbs | size }} systems</span></div>
+  <div class="kpi"><small>Design pages</small><b>{{ done }}</b><span>sub-components, risks, sources</span></div>
+  <div class="kpi"><small>Not yet designed</small><b>{{ total | minus: done }}</b><span>open for contributors</span></div>
+  <div class="kpi"><small>Bills of materials</small><b>0</b><span>next revision</span></div>
+</div>
+{% for s in site.data.pbs %}
+<h2>{{ s.id }} · {{ s.name }}</h2>
+<div class="tablewrap"><table class="data">
+<thead><tr><th>ID</th><th>Component</th><th>Milestone</th><th>Approach</th><th>Design status</th></tr></thead>
+<tbody>
+{% for i in s.items %}{% assign m = site.milestones | where: "id_code", i.ms | first %}{% assign c = nil %}{% if i.comp %}{% assign c = site.components | where: "id_code", i.comp | first %}{% endif %}
+<tr><td><span class="tag">{{ i.id }}</span></td>
+<td>{% if c %}<a href="{{ c.url | relative_url }}"><strong>{{ i.name }}</strong></a>{% else %}{{ i.name }}{% endif %}</td>
+<td><a href="{{ m.url | relative_url }}">{{ i.ms }}</a></td>
+<td>{% if i.how == 'buy' %}<span class="tag hi">buy</span>{% elsif i.how == 'partner' %}<span class="tag hi">partner</span>{% else %}<span class="tag">build</span>{% endif %}</td>
+<td>{% if c %}<span class="tag ok">{{ i.comp }} · TRL {{ c.trl }}</span>{% else %}<span class="tag warn">not yet designed</span>{% endif %}</td></tr>
+{% endfor %}
+</tbody></table></div>
+{% endfor %}
+<h2>What a complete plan still needs</h2>
+<p>Beyond the missing component pages, a full engineering plan at early-design level needs these system-level documents. None exist yet:</p>
+<ul>
+<li><strong>Requirements</strong>, each numbered and traced from the mission objective down to each component.</li>
+<li><strong>Concept of operations</strong>, describing a day, a lunar night and an emergency at the base.</li>
+<li><strong>Base-wide budgets</strong> for mass, power and heat.</li>
+<li><strong>Launch manifest</strong>, listing which hardware flies on which lander, and when.</li>
+<li><strong>Integrated schedule</strong> with the critical path.</li>
+<li><strong>Interface control documents</strong> between systems.</li>
+<li><strong>Bills of materials</strong> for every component.</li>
+<li><strong>Risk register</strong> scored by likelihood and consequence.</li>
+<li><strong>Trade studies</strong>, for example fission vs solar-only, or molten electrolysis vs carbothermal.</li>
+<li><strong>Verification matrix</strong>, showing how each requirement is proven.</li>
+</ul>
