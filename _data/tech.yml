@@ -1,0 +1,890 @@
+- name: Lunar Reconnaissance Orbiter (LRO)
+  category: Science and survey
+  milestones:
+  - M00
+  phases:
+  - 0
+  trl: 9
+  status: Operating; FY2026 budget request continues operations to support CLPS deliveries, landing-site characterisation and Artemis
+  use: Terrain, imagery, temperature and radar data for site selection
+  develop: false
+  source: https://www.nasa.gov/wp-content/uploads/2025/05/fy-2026-budget-technical-supplement-002.pdf
+  source_title: NASA FY2026 Budget Technical Supplement (Lunar Reconnaissance Orbiter, PS-28/29)
+  slug: lunar-reconnaissance-orbiter-lro
+  image: null
+- name: ShadowCam on KPLO/Danuri
+  category: Science and survey
+  milestones:
+  - M00
+  phases:
+  - 0
+  trl: 9
+  status: Operating in extended mission; expected to end in early 2028 when its battery runs out in a lunar eclipse
+  use: Images inside permanently shadowed craters
+  develop: false
+  source: https://www.soest.hawaii.edu/soestwp/announce/news/scarce-ice-in-moons-darkest-regions/
+  source_title: 'Univ. of Hawaii SOEST: Scarce ice in Moon''s darkest regions (ShadowCam)'
+  slug: shadowcam-on-kplo-danuri
+  image: null
+- name: Chandrayaan-2 orbiter DFSAR radar
+  category: Science and survey
+  milestones:
+  - M00
+  phases:
+  - 0
+  trl: 9
+  status: DFSAR data showed possible subsurface ice under four doubly shadowed craters (ISRO, May 2026)
+  use: Radar evidence of subsurface ice
+  develop: false
+  source: https://www.isro.gov.in/Chandrayaan2_Dual_Frequency_Synthetic_Aperture_Radar.html
+  source_title: 'ISRO: Chandrayaan-2 DFSAR observations reveal subsurface ice in lunar south polar regions'
+  slug: chandrayaan-2-orbiter-dfsar-radar
+  image: null
+- name: TRIDENT drill (Honeybee Robotics)
+  category: Science and survey
+  milestones:
+  - M01
+  phases:
+  - 0
+  trl: 7
+  status: Flew on IM-2 (2025). Powered up and extended to its full range; lander ended on its side and the mission ended early
+  use: Drilling up to 1 m to sample ice
+  develop: false
+  source: https://www.nasa.gov/missions/artemis/clps/nasas-lunar-drill-technology-passes-tests-on-the-moon/
+  source_title: 'NASA: Lunar drill technology passes tests on the Moon (PRIME-1)'
+  slug: trident-drill-honeybee-robotics
+  image: null
+- name: MSolo mass spectrometer
+  category: Science and survey
+  milestones:
+  - M01
+  phases:
+  - 0
+  trl: 7
+  status: Flew on IM-2; worked, but gases detected were from the lander or Earth
+  use: Identifying volatiles released from drilled soil
+  develop: false
+  source: https://ntrs.nasa.gov/api/citations/20260003150/downloads/MSolo%20PRIME-1%20overview%20and%20results%20-%20LSSW.pdf
+  source_title: 'NASA NTRS: MSolo PRIME-1 overview and results'
+  slug: msolo-mass-spectrometer
+  image: null
+- name: VIPER rover (NASA)
+  category: Mobility and robotics
+  milestones:
+  - M01
+  phases:
+  - 0
+  trl: 8
+  status: Revived Sep 2025 via CLPS task order up to $190M; delivery option tied to Blue Moon MK1's first flight
+  use: Partner ice-prospecting data
+  develop: false
+  source: https://www.nasa.gov/news-release/nasa-selects-blue-origin-to-deliver-viper-rover-to-moons-south-pole/
+  source_title: 'NASA: NASA selects Blue Origin to deliver VIPER rover to Moon''s south pole'
+  slug: viper-rover-nasa
+  image: null
+- name: Commercial lunar landers (CLPS)
+  category: Transport
+  milestones:
+  - M01
+  phases:
+  - 0
+  trl: 7
+  status: 'Mixed record: Peregrine never attempted a landing (2024); IM-1 and IM-2 tipped; Blue Ghost M1 fully successful (2025)'
+  use: Delivering the prospector
+  develop: false
+  source: https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services
+  source_title: Commercial Lunar Payload Services, Wikipedia
+  slug: commercial-lunar-landers-clps
+  image: null
+- name: Radioisotope heater units
+  category: Power
+  milestones:
+  - M01
+  phases:
+  - 0
+  trl: 9
+  status: Flight-proven (Cassini carried 82), about 1 W each
+  use: Keeping electronics warm in PSRs and at night
+  develop: false
+  source: https://science.nasa.gov/mission/cassini/radioisotope-thermoelectric-generator
+  source_title: 'NASA Science: Cassini''s radioisotope thermoelectric generators (82 RHUs, one watt each)'
+  slug: radioisotope-heater-units
+  image: null
+- name: Firefly Blue Ghost lander
+  category: Transport
+  milestones:
+  - M02
+  phases:
+  - 1
+  trl: 9
+  status: Fully successful landing Mar 2025; 14 days of operations
+  use: Small cargo
+  develop: false
+  source: https://fireflyspace.com/news/firefly-aerospace-successfully-completes-14-days-of-surface-operations-on-the-moon
+  source_title: 'Firefly: Blue Ghost completes 14 days of surface operations'
+  slug: firefly-blue-ghost-lander
+  image: null
+- name: Intuitive Machines Nova-C
+  category: Transport
+  milestones:
+  - M02
+  phases:
+  - 1
+  trl: 7
+  status: Landed twice (2024, 2025); both times ended on its side
+  use: Small cargo
+  develop: false
+  source: https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services
+  source_title: Commercial Lunar Payload Services, Wikipedia
+  slug: intuitive-machines-nova-c
+  image: null
+- name: Astrobotic Griffin
+  category: Transport
+  milestones:
+  - M02
+  phases:
+  - 1
+  trl: 6
+  status: First flight planned January 2027
+  use: Small cargo
+  develop: false
+  source: https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services
+  source_title: Commercial Lunar Payload Services, Wikipedia
+  slug: astrobotic-griffin
+  image: null
+- name: Blue Origin Blue Moon Mark 1
+  category: Transport
+  milestones:
+  - M02
+  phases:
+  - 1
+  trl: 6
+  status: Pathfinder to Shackleton connecting ridge NET Q1 2027
+  use: Medium cargo (up to 3 t)
+  develop: false
+  source: https://www.blueorigin.com/blue-moon/mark-1
+  source_title: 'Blue Origin: Blue Moon Mark 1'
+  slug: blue-origin-blue-moon-mark-1
+  image: null
+- name: SpaceX Starship HLS / cargo
+  category: Transport
+  milestones:
+  - M02
+  phases:
+  - 1
+  trl: 6
+  status: Starship reached orbit on flights 14 and 15 (2026); ship caught by the tower after flight 15
+  use: Heavy cargo and crew
+  develop: false
+  source: https://en.wikipedia.org/wiki/Starship_flight_15
+  source_title: Starship flight 15, Wikipedia
+  slug: spacex-starship-hls-cargo
+  image: null
+- name: Blue Origin Blue Moon Mk2
+  category: Transport
+  milestones:
+  - M02
+  phases:
+  - 1
+  trl: 5
+  status: ~$3.1B NASA contract; uncrewed demo expected Feb 2029
+  use: Crew; cargo variant
+  develop: false
+  source: https://oig.nasa.gov/wp-content/uploads/2026/03/final-report-ig-26-004-nasas-management-of-the-human-landing-system-contracts.pdf
+  source_title: 'NASA OIG IG-26-004: Management of the Human Landing System contracts'
+  slug: blue-origin-blue-moon-mk2
+  image: null
+- name: Lunar Surface Manipulation System (LSMS)
+  category: Mobility and robotics
+  milestones:
+  - M02
+  phases:
+  - 1
+  trl: 4
+  status: Ground prototypes tested; NASA proposed path to TRL 6
+  use: Offloading crane
+  develop: true
+  source: https://ntrs.nasa.gov/api/citations/20205006977/downloads/LSMS%20Technology%20Overview%20V5%20Blue%20Origin.pdf
+  source_title: 'NASA NTRS: LSMS technology overview'
+  slug: lunar-surface-manipulation-system-lsms
+  image: null
+- name: NASA commercial lunar relay (Intuitive Machines)
+  category: Communications and navigation
+  milestones:
+  - M03
+  phases:
+  - 1
+  trl: 7
+  status: Contract with a maximum potential value of $4.82B (Sep 2024)
+  use: Earth link and PNT
+  develop: false
+  source: https://www.nasa.gov/news-release/nasa-selects-lunar-relay-contractor-for-near-space-network-services
+  source_title: 'NASA: NASA selects lunar relay contractor for Near Space Network services'
+  slug: nasa-commercial-lunar-relay-intuitive-machines
+  image: null
+- name: ESA Moonlight
+  category: Communications and navigation
+  milestones:
+  - M03
+  phases:
+  - 1
+  trl: 6
+  status: 5 satellites; initial operations by end 2028, full operations by 2030
+  use: Earth link and navigation
+  develop: false
+  source: https://www.esa.int/articles/esa-s-moonlight-programme-pioneering-the-path-for-lunar-exploration
+  source_title: 'ESA: Moonlight programme'
+  slug: esa-moonlight
+  image: null
+- name: SSTL Lunar Pathfinder
+  category: Communications and navigation
+  milestones:
+  - M03
+  phases:
+  - 1
+  trl: 7
+  status: In final testing; launch NET 2027 on Blue Ghost M2
+  use: Relay
+  develop: false
+  source: https://en.wikipedia.org/wiki/Lunar_Pathfinder
+  source_title: Lunar Pathfinder, Wikipedia
+  slug: sstl-lunar-pathfinder
+  image: null
+- name: Nokia lunar 4G/LTE network
+  category: Communications and navigation
+  milestones:
+  - M03
+  phases:
+  - 1
+  trl: 7
+  status: Ran for its full ~25-minute power window on IM-2 (2025)
+  use: Surface network
+  develop: false
+  source: https://www.nokia.com/newsroom/nokia-and-intuitive-machines-deliver-first-cellular-network-to-the-moon-achieve-some-key-mission-objectives/
+  source_title: 'Nokia: Nokia and Intuitive Machines deliver first cellular network to the Moon'
+  slug: nokia-lunar-4g-lte-network
+  image: null
+- name: LuGRE GPS/Galileo receiver
+  category: Communications and navigation
+  milestones:
+  - M03
+  phases:
+  - 1
+  trl: 7
+  status: Got a position fix on the lunar surface, Mar 2025
+  use: Navigation
+  develop: false
+  source: https://www.nasa.gov/centers-and-facilities/goddard/nasa-successfully-acquires-gps-signals-on-moon/
+  source_title: 'NASA: NASA successfully acquires GPS signals on Moon'
+  slug: lugre-gps-galileo-receiver
+  image: null
+- name: Optical (laser) communications
+  category: Communications and navigation
+  milestones:
+  - M03
+  phases:
+  - 1
+  trl: 7
+  status: LCRD experimenting since 2022; O2O flew on Artemis II (2026) at up to 260 Mbps
+  use: High-rate Earth link
+  develop: false
+  source: https://www.nasa.gov/directorates/stmd/tech-demo-missions-program/laser-communications-relay-demonstration-lcrd-overview/
+  source_title: 'NASA: Laser Communications Relay Demonstration (LCRD) overview'
+  slug: optical-laser-communications
+  image: null
+- name: LunaNet Interoperability Specification v5
+  category: Communications and navigation
+  milestones:
+  - M03
+  phases:
+  - 1
+  trl: 9
+  status: Version 5 published Feb 2025; developed by NASA, ESA, JAXA
+  use: Standard so all networks work together
+  develop: false
+  source: https://www.nasa.gov/communicating-with-missions/scan/lcrns/lunanet-interoperability-specification/
+  source_title: 'NASA: LunaNet Interoperability Specification'
+  slug: lunanet-interoperability-specification-v5
+  image: null
+- name: Kilopower / KRUSTY fission test
+  category: Power
+  milestones:
+  - M04
+  phases:
+  - 1
+  trl: 5
+  status: 28-hour nuclear system test 2018 at various power levels; Stirling converters worked
+  use: Heritage for the reactor
+  develop: false
+  source: https://ntrs.nasa.gov/citations/20205009351
+  source_title: 'Poston et al.: Results of the KRUSTY nuclear system test'
+  slug: kilopower-krusty-fission-test
+  image: null
+- name: US Lunar Reactor-1 (SPARC)
+  category: Power
+  milestones:
+  - M04
+  phases:
+  - 1
+  trl: 5
+  status: 'Draft solicitation Aug 2026: ≥20 kWe, ≥5 yr, HALEU, closed Brayton, <15 t. No award yet'
+  use: Reactor procurement path
+  develop: false
+  source: https://newspaceeconomy.ca/2026/09/01/what-does-nasas-sparc-lunar-reactor-procurement-reveal-about-lunar-reactor-1/
+  source_title: 'NewSpace Economy: What NASA''s SPARC procurement reveals about Lunar Reactor-1 (secondary)'
+  slug: us-lunar-reactor-1-sparc
+  image: null
+- name: Vertical Solar Array Technology (VSAT)
+  category: Power
+  milestones:
+  - M04
+  phases:
+  - 1
+  trl: 6
+  status: Three NASA prototype contracts (2022); deploy to ~10 m
+  use: 10 kW-class solar towers
+  develop: false
+  source: https://www.nasa.gov/?p=142765
+  source_title: 'NASA RELEASE 22-090: Vertical Solar Array Technology awards'
+  slug: vertical-solar-array-technology-vsat
+  image: null
+- name: Astrobotic VSAT-XL
+  category: Power
+  milestones:
+  - M04
+  phases:
+  - 1
+  trl: 5
+  status: NASA SBIR study award 2024; 34 m tall; Redwire ROSA arrays. Phase II follow-on Jun 2025–Jun 2027
+  use: 50 kW towers
+  develop: true
+  source: https://www.astrobotic.com/astrobotic-awarded-lunar-power-study-with-vsat-xl/
+  source_title: 'Astrobotic: awarded lunar power study with VSAT-XL'
+  slug: astrobotic-vsat-xl
+  image: null
+- name: Astrobotic LunaGrid-Lite
+  category: Power
+  milestones:
+  - M04
+  phases:
+  - 1
+  trl: 6
+  status: 1 kW; ~500 m of cable in the 2025 design (1 km in earlier plans); passed CDR Aug 2025
+  use: Cable-laying rover and power transfer
+  develop: false
+  source: https://www.astrobotic.com/lunagrid-lite-completes-critical-design-review-flight-model-underway/
+  source_title: 'Astrobotic: LunaGrid-Lite completes critical design review'
+  slug: astrobotic-lunagrid-lite
+  image: null
+- name: Regenerative fuel cells
+  category: Power
+  milestones:
+  - M04
+  phases:
+  - 1
+  trl: 5
+  status: NASA Glenn breadboard ran 550+ hours of simulated lunar cycles (open-loop)
+  use: Night and gap storage
+  develop: true
+  source: https://ntrs.nasa.gov/citations/20260002730
+  source_title: 'NASA NTRS 20260002730: Regenerative fuel cell lunar cycle testing'
+  slug: regenerative-fuel-cells
+  image: null
+- name: High-voltage DC lunar cable
+  category: Power
+  milestones:
+  - M04
+  phases:
+  - 1
+  trl: 5
+  status: 'NASA Glenn analysis: ±4 kVDC Al cable best for 3 km at 95%'
+  use: Power transmission
+  develop: false
+  source: https://ntrs.nasa.gov/api/citations/20220002315/downloads/Lunar_power_transmission_concepts_FINAL.pdf
+  source_title: 'NASA NTRS 20220002315: Lunar power transmission for fission surface power'
+  slug: high-voltage-dc-lunar-cable
+  image: null
+- name: NASA ISRU Pilot Excavator (IPEx)
+  category: Construction
+  milestones:
+  - M05
+  phases:
+  - 1
+  trl: 5
+  status: TRL 5 design (2024); target 42 kg/h, 10 t over an 11-day mission; no flight date
+  use: Excavation and grading
+  develop: false
+  source: https://ntrs.nasa.gov/api/citations/20240008162/downloads/ASCEND24_IPEx%20TRL%205%20Design%20Overview.pdf
+  source_title: 'NASA NTRS: IPEx TRL 5 design overview (ASCEND 2024)'
+  slug: nasa-isru-pilot-excavator-ipex
+  image: null
+- name: RASSOR 2.0
+  category: Construction
+  milestones:
+  - M05
+  phases:
+  - 1
+  trl: 5
+  status: Under 100 kg; nominal mission concept of 35 loads of 20 kg per 24 h, about 700 kg/day
+  use: Light excavation
+  develop: false
+  source: https://ntrs.nasa.gov/api/citations/20150022134/downloads/20150022134.pdf
+  source_title: 'NASA NTRS 20150022134: RASSOR 2.0'
+  slug: rassor-2-0
+  image: null
+- name: ICON Project Olympus
+  category: Construction
+  milestones:
+  - M05
+  - M12
+  phases:
+  - 1
+  - 4
+  trl: 4
+  status: $57.2M NASA SBIR Phase III contract (2022) for landing pads, blast shields and roads
+  use: Pads, roads and structures from regolith
+  develop: true
+  source: https://www.iconbuild.com/newsroom/icon-to-develop-lunar-surface-construction-system-with-57-2-million-nasa-award
+  source_title: 'ICON: ICON to develop lunar surface construction system with $57.2M NASA award'
+  slug: icon-project-olympus
+  image: null
+- name: Sintered basalt pavers / regolith-polymer pads
+  category: Construction
+  milestones:
+  - M05
+  phases:
+  - 1
+  trl: 4
+  status: Hot-fire tested on the ground by NASA KSC
+  use: Landing pads
+  develop: true
+  source: https://www.nasa.gov/centers-and-facilities/kennedy/nasa-tests-landing-pad-materials-for-future-lunar-missions
+  source_title: 'NASA: NASA tests landing pad materials for future lunar missions'
+  slug: sintered-basalt-pavers-regolith-polymer-pads
+  image: null
+- name: Molten regolith electrolysis (NASA + Lunar Resources)
+  category: Resource production
+  milestones:
+  - M06
+  phases:
+  - 1
+  trl: 4
+  status: '2024: 25 kg of simulant processed in vacuum, 0.07 kg O₂/h for 9 h'
+  use: Oxygen from rock
+  develop: true
+  source: https://ntrs.nasa.gov/api/citations/20260006167/downloads/MRE%20GCD%20ICES26_v3.pdf
+  source_title: 'NASA NTRS: Molten regolith electrolysis ground demonstration (ICES 2026)'
+  slug: molten-regolith-electrolysis-nasa-lunar-resource
+  image: null
+- name: Carbothermal reduction (Sierra Space + NASA)
+  category: Resource production
+  milestones:
+  - M06
+  phases:
+  - 1
+  trl: 6
+  status: Flight-like reactor ran automated in JSC dirty thermal-vacuum chamber (2024); key hardware matured to TRL 6
+  use: Oxygen from rock (alternative)
+  develop: false
+  source: https://ntrs.nasa.gov/citations/20250004151
+  source_title: 'NASA NTRS 20250004151: Carbothermal oxygen production reactor testing'
+  slug: carbothermal-reduction-sierra-space-nasa
+  image: null
+- name: Blue Origin Blue Alchemist
+  category: Resource production
+  milestones:
+  - M06
+  - M12
+  phases:
+  - 1
+  - 4
+  trl: 5
+  status: Passed CDR Sep 2025; autonomous demo in simulated lunar environment planned 2026
+  use: Oxygen plus silicon, iron, aluminium
+  develop: true
+  source: https://www.blueorigin.com/news/blue-alchemist-hits-major-milestone-toward-permanent-sustainable-lunar-infrastructure
+  source_title: 'Blue Origin: Blue Alchemist hits major milestone'
+  slug: blue-origin-blue-alchemist
+  image: null
+- name: Molten salt electrolysis (Metalysis/ESA)
+  category: Resource production
+  milestones:
+  - M06
+  - M12
+  phases:
+  - 1
+  - 4
+  trl: 4
+  status: ESA prototype plant opened 2020; extracts oxygen and leaves a mix of metals
+  use: Oxygen with metal by-product
+  develop: true
+  source: https://www.esa.int/Enabling_Support/Space_Engineering_Technology/ESA_opens_oxygen_plant_making_air_out_of_moondust
+  source_title: 'ESA: ESA opens oxygen plant making air out of moondust'
+  slug: molten-salt-electrolysis-metalysis-esa
+  image: null
+- name: ISS Oxygen Generation Assembly
+  category: Habitation and life support
+  milestones:
+  - M06
+  - M09
+  phases:
+  - 1
+  - 3
+  trl: 9
+  status: Flight-proven since 2007; nominal 5.4 kg O₂/day
+  use: Water electrolysis
+  develop: false
+  source: https://ntrs.nasa.gov/api/citations/20190030425/downloads/20190030425.pdf
+  source_title: 'NASA NTRS 20190030425: ISS Oxygen Generation Assembly'
+  slug: iss-oxygen-generation-assembly
+  image: null
+- name: Ice excavation (NASA Break the Ice)
+  category: Resource production
+  milestones:
+  - M06
+  phases:
+  - 1
+  trl: 4
+  status: Challenge winners 2024; designs ground-tested
+  use: Mining icy regolith
+  develop: true
+  source: https://www.nasa.gov/centers-and-facilities/marshall/california-teams-win-1-5-million-in-nasas-break-the-ice-lunar-challenge
+  source_title: 'NASA: Break the Ice Lunar Challenge winners'
+  slug: ice-excavation-nasa-break-the-ice
+  image: null
+- name: Astrolab CLV-1 (LTV)
+  category: Mobility and robotics
+  milestones:
+  - M07
+  phases:
+  - 2
+  trl: 6
+  status: NASA task order $219M (May 2026); flight units to be qualified over the next 18 months; delivery 2028
+  use: Crew and cargo rover
+  develop: false
+  source: https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/
+  source_title: 'NASA RELEASE26-046: NASA provides update on Moon Base rovers, landers, missions'
+  slug: astrolab-clv-1-ltv
+  image: null
+- name: Lunar Outpost Pegasus (LTV)
+  category: Mobility and robotics
+  milestones:
+  - M07
+  phases:
+  - 2
+  trl: 6
+  status: NASA task order $220M (May 2026); delivery 2028
+  use: Crew and cargo rover
+  develop: false
+  source: https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/
+  source_title: 'NASA RELEASE26-046: NASA provides update on Moon Base rovers, landers, missions'
+  slug: lunar-outpost-pegasus-ltv
+  image: null
+- name: JAXA/Toyota pressurised rover (Lunar Cruiser)
+  category: Mobility and robotics
+  milestones:
+  - M07
+  phases:
+  - 2
+  trl: 5
+  status: '2024 agreement: 2 crew up to 30 days, ~10-year life; NASA lists 28 days; cargo delivery NET FY2032'
+  use: Long crewed trips
+  develop: false
+  source: https://www.nasa.gov/news-release/nasa-japan-advance-space-cooperation-sign-agreement-for-lunar-rover/
+  source_title: 'NASA: NASA, Japan advance space cooperation, sign agreement for lunar rover'
+  slug: jaxa-toyota-pressurised-rover-lunar-cruiser
+  image: null
+- name: Delay-tolerant teleoperation
+  category: Mobility and robotics
+  milestones:
+  - M07
+  phases:
+  - 2
+  trl: 6
+  status: 'NASA LTV studies: operators completed traverses at 4, 6 and 8 s delay (2023)'
+  use: Earth-driven rovers
+  develop: false
+  source: https://ntrs.nasa.gov/citations/20240001217
+  source_title: 'NASA NTRS 20240001217: LTV remote driving with time delay'
+  slug: delay-tolerant-teleoperation
+  image: null
+- name: NASA CADRE autonomous rovers
+  category: Mobility and robotics
+  milestones:
+  - M07
+  phases:
+  - 2
+  trl: 6
+  status: Flies on Intuitive Machines IM-3; NASA launch schedule lists IM-3 for early 2027
+  use: Multi-robot autonomy heritage
+  develop: false
+  source: https://www.nasa.gov/event-type/launch-schedule/
+  source_title: 'NASA launch schedule (Moon Base: Intuitive Machines IM-3, early 2027)'
+  slug: nasa-cadre-autonomous-rovers
+  image: null
+- name: Thales Alenia Space Multi-Purpose Habitation (MPH)
+  category: Habitation and life support
+  milestones:
+  - M08
+  phases:
+  - 2
+  trl: 5
+  status: Preliminary design contract with ASI (Jul 2025); ~15 t, ~3 m × 6 m, 10-yr life; launch planned 2033
+  use: Surface habitat
+  develop: false
+  source: https://europeanspaceflight.com/asi-awards-new-lunar-habitat-contract-to-thales-alenia-space/
+  source_title: 'European Spaceflight: ASI awards new lunar habitat contract to Thales Alenia Space (MPH: 3 m × 6 m, ~15 t, 2 crew, 7–30 days a year)'
+  slug: thales-alenia-space-multi-purpose-habitation-mph
+  image: null
+- name: Sierra Space LIFE inflatable
+  category: Habitation and life support
+  milestones:
+  - M08
+  phases:
+  - 2
+  trl: 5
+  status: Full-scale burst test reached 77 psi before bursting (reported Jan 2024), 27% above NASA's recommended 60.8 psi
+  use: Alternative expandable habitat
+  develop: false
+  source: https://techcrunch.com/2024/01/22/successful-failure-sierra-spaces-inflatable-habitat-blows-up-as-planned
+  source_title: 'TechCrunch: Sierra Space''s inflatable habitat blows up as planned'
+  slug: sierra-space-life-inflatable
+  image: null
+- name: ISS life support (ECLSS)
+  category: Habitation and life support
+  milestones:
+  - M08
+  phases:
+  - 2
+  trl: 9
+  status: Flight-proven; 98% water recovery demonstrated 2023
+  use: Air and water recycling
+  develop: false
+  source: https://www.space.com/astronaut-pee-iss-water-recycling-98-percent-milestone
+  source_title: 'Space.com: ISS hits 98% water recycling milestone'
+  slug: iss-life-support-eclss
+  image: null
+- name: Axiom AxEMU spacesuit
+  category: Crew and health
+  milestones:
+  - M08
+  phases:
+  - 2
+  trl: 6
+  status: Critical design review closed 13 Nov 2026; qualification next
+  use: Moonwalks
+  develop: false
+  source: https://www.axiomspace.com/release/axiom-space-completes-nasas-critical-design-review-for-next-generation-spacesuit
+  source_title: 'Axiom Space: completes NASA''s critical design review for next-generation spacesuit'
+  slug: axiom-axemu-spacesuit
+  image: null
+- name: ISS water recovery with Brine Processor
+  category: Habitation and life support
+  milestones:
+  - M09
+  phases:
+  - 3
+  trl: 9
+  status: 98% recovery demonstrated (2023)
+  use: Water recycling
+  develop: false
+  source: https://www.space.com/astronaut-pee-iss-water-recycling-98-percent-milestone
+  source_title: 'Space.com: ISS hits 98% water recycling milestone'
+  slug: iss-water-recovery-with-brine-processor
+  image: null
+- name: Four-bed CO₂ scrubber (4BCO2)
+  category: Habitation and life support
+  milestones:
+  - M09
+  phases:
+  - 3
+  trl: 7
+  status: ISS flight demonstration for 4 crew-equivalents
+  use: CO₂ removal
+  develop: false
+  source: https://ntrs.nasa.gov/api/citations/20205003542/downloads/ICES-2020-178.docx
+  source_title: 'NASA NTRS ICES-2020-178: Four-Bed CO₂ Scrubber'
+  slug: four-bed-co-scrubber-4bco2
+  image: null
+- name: Sabatier reactor
+  category: Habitation and life support
+  milestones:
+  - M09
+  phases:
+  - 3
+  trl: 8
+  status: Flown on ISS; limits O₂ recovery to ~50% because methane is vented
+  use: Water from CO₂
+  develop: false
+  source: https://ntrs.nasa.gov/api/citations/20190030371/downloads/20190030371.pdf
+  source_title: 'NASA NTRS 20190030371: Sabatier and oxygen recovery'
+  slug: sabatier-reactor
+  image: null
+- name: Regolith radiation shielding
+  category: Habitation and life support
+  milestones:
+  - M09
+  phases:
+  - 3
+  trl: 4
+  status: No single NASA design value; models suggest ≥2 m
+  use: Protect crew in habitats
+  develop: true
+  source: https://iafastro.directory/iac/paper/id/82864/abstract-pdf/IAC-24,D3,IP,1,x82864.brief.pdf
+  source_title: 'IAC-24 abstract: regolith shielding depth (OLTARIS)'
+  slug: regolith-radiation-shielding
+  image: null
+- name: NASA Veggie
+  category: Food
+  milestones:
+  - M10
+  phases:
+  - 4
+  trl: 9
+  status: ISS plant facilities (Veggie and APH) have grown lettuces, Chinese cabbage, mustard greens, kale
+  use: Leafy greens
+  develop: false
+  source: https://www.nasa.gov/missions/station/iss-research/science-in-space-week-of-july-10-2023-plant-science/
+  source_title: 'NASA: Science in space, plant science (Veggie)'
+  slug: nasa-veggie
+  image: null
+- name: NASA Advanced Plant Habitat
+  category: Food
+  milestones:
+  - M10
+  phases:
+  - 4
+  trl: 9
+  status: Chile peppers bore fruit on ISS; harvests planned late Oct and early Nov 2021
+  use: Controlled growth of fruiting crops
+  develop: false
+  source: https://www.nasa.gov/centers-and-facilities/kennedy/houston-we-have-a-pepper/
+  source_title: 'NASA: Houston, we have a pepper'
+  slug: nasa-advanced-plant-habitat
+  image: null
+- name: Yuegong-1 (Lunar Palace 1) bioregenerative system
+  category: Food
+  milestones:
+  - M10
+  phases:
+  - 4
+  trl: 6
+  status: 370 days, 8 crew in two groups of four (2017–18); 98.2% material closure on the ground
+  use: Closed-loop life support with crops
+  develop: false
+  source: https://www.biorxiv.org/content/10.1101/2021.01.12.426282v1
+  source_title: 'Fu et al.: Establishment of a closed artificial ecosystem to ensure human long-term survival on the Moon (bioRxiv preprint, Lunar Palace 365)'
+  slug: yuegong-1-lunar-palace-1-bioregenerative-system
+  image: null
+- name: ESA MELiSSA
+  category: Food
+  milestones:
+  - M10
+  phases:
+  - 4
+  trl: 4
+  status: Pilot plant at Universitat Autònoma de Barcelona since 2009
+  use: Closed-loop ecosystem research
+  develop: true
+  source: https://en.wikipedia.org/wiki/MELiSSA
+  source_title: MELiSSA, Wikipedia
+  slug: esa-melissa
+  image: null
+- name: Interstellar Lab NUCLEUS
+  category: Food
+  milestones:
+  - M10
+  phases:
+  - 4
+  trl: 5
+  status: Won NASA Deep Space Food Challenge grand prize 2024
+  use: Compact food production
+  develop: false
+  source: https://www.nasa.gov/news-release/nasa-awards-1-25-million-to-three-teams-at-deep-space-food-finale
+  source_title: 'NASA: NASA awards $1.25 million to three teams at Deep Space Food finale'
+  slug: interstellar-lab-nucleus
+  image: null
+- name: Cryogenic propellant transfer
+  category: Resource production
+  milestones:
+  - M11
+  phases:
+  - 4
+  trl: 5
+  status: Starship propellant transfer demo shown ~Q1 2027 on NASA HLS schedule
+  use: Refuelling landers
+  develop: true
+  source: https://ntrs.nasa.gov/api/citations/20260009199/downloads/HLS%20IAC%202026%20Presentation%20FINAL.pdf
+  source_title: NASA HLS IAC 2026 presentation (propellant transfer demo schedule)
+  slug: cryogenic-propellant-transfer
+  image: null
+- name: In-orbit LOX storage demo (LOXSAT)
+  category: Resource production
+  milestones:
+  - M11
+  phases:
+  - 4
+  trl: 6
+  status: Eta Space payload on Rocket Lab spacecraft; NASA (May 2026) gave launch no earlier than 17 July
+  use: Cryogenic storage heritage
+  develop: false
+  source: https://www.nasa.gov/directorates/stmd/tech-demo-missions-program/cryogenic-fluid-management-cfm/nasa-industry-prepare-cryogenic-fuel-technology-demo/
+  source_title: 'NASA: NASA, industry prepare cryogenic fuel technology demo (LOXSAT)'
+  slug: in-orbit-lox-storage-demo-loxsat
+  image: null
+- name: ESA metal 3D printer on ISS
+  category: Manufacturing
+  milestones:
+  - M12
+  phases:
+  - 4
+  trl: 7
+  status: First metal part printed in space, Aug 2024
+  use: Printing metal parts
+  develop: false
+  source: https://www.esa.int/Newsroom/Press_Releases/ESA_3D_prints_first_metal_part_on_the_International_Space_Station
+  source_title: 'ESA: ESA 3D prints first metal part on the ISS'
+  slug: esa-metal-3d-printer-on-iss
+  image: null
+- name: Redwire / Made In Space AMF on ISS
+  category: Manufacturing
+  milestones:
+  - M12
+  phases:
+  - 4
+  trl: 9
+  status: Commercial polymer printer on ISS (ABS, ULTEM, HDPE); parts printed since at least Feb 2017
+  use: Polymer parts
+  develop: false
+  source: https://ntrs.nasa.gov/api/citations/20190030402/downloads/20190030402.pdf
+  source_title: 'NASA NTRS 20190030402: In-space manufacturing on ISS'
+  slug: redwire-made-in-space-amf-on-iss
+  image: null
+- name: Redwire Regolith Print
+  category: Manufacturing
+  milestones:
+  - M12
+  phases:
+  - 4
+  trl: 5
+  status: Printed with regolith simulant on ISS (launched Aug 2021)
+  use: Printing with regolith simulant
+  develop: false
+  source: https://rdw.com/newsroom/redwire-regolith-manufacturing-technology-wins-popular-science-2021-best-of-whats-new-award/
+  source_title: 'Redwire: Regolith manufacturing technology'
+  slug: redwire-regolith-print
+  image: null
+- name: Lava tubes
+  category: Science and survey
+  milestones:
+  - M13
+  phases:
+  - 5
+  trl: 2
+  status: Radar evidence of a cave under the Mare Tranquillitatis pit (2024); Marius Hills pit ~40 m deep
+  use: Future shielded volume
+  develop: true
+  source: https://phys.org/news/2024-07-lunar-lava-tube-cave.html
+  source_title: 'phys.org: Lunar lava tube cave (Carrer et al., Nature Astronomy)'
+  slug: lava-tubes
+  image: null

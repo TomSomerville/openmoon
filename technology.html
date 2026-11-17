@@ -1,14 +1,106 @@
 ---
 title: Technology register
 eyebrow: Every piece of hardware the plan relies on
-summary: Each technology, which milestone uses it, how ready it is (TRL), and its source. Items marked "develop" need further work within the 3–5 year rule.
+summary: Each technology the plan uses, how ready it is, which milestones need it, and where the facts come from. Filter by phase, system and readiness. Photos are real where a reusable image exists; otherwise the card shows an Open Moon concept illustration.
 section: tech
 doc_id: OM-300
 permalink: /technology/
 ---
-{% assign ms = site.milestones | sort: "order" %}
-<div class="tablewrap"><table class="data"><thead><tr><th>Technology</th><th>Milestone</th><th>Used for</th><th>Status</th><th>TRL</th></tr></thead><tbody>
-{% for m in ms %}{% for t in m.technologies %}{% assign s = nil %}{% if t.src %}{% assign si = t.src | minus: 1 %}{% assign s = m.sources[si] %}{% endif %}
-<tr><td><strong>{% if s %}<a href="{{ s.url }}">{{ t.name }}</a>{% else %}{{ t.name }}{% endif %}</strong></td><td><a href="{{ m.url | relative_url }}">{{ m.id_code }}</a></td><td>{{ t.use }}</td><td>{{ t.status }}</td><td style="white-space:nowrap">{% if t.trl %}{% include trl.html n=t.trl %}{% endif %}{% if t.new %} <span class="tag warn">develop</span>{% endif %}</td></tr>
-{% endfor %}{% endfor %}
-</tbody></table></div>
+{% assign techs = site.data.tech %}
+{% assign cats = techs | map: "category" | uniq | sort %}
+<style>
+.tf{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:flex-start;margin:4px 0 16px;padding:12px 14px;background:var(--panel);border:1px solid var(--line);border-radius:8px}
+.tf .grp{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tf .lab{font:11px var(--fm);color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-right:4px;width:100%}
+.chip{font:12px var(--fm);color:var(--dim);background:transparent;border:1px solid var(--line);border-radius:14px;padding:4px 10px;cursor:pointer}
+.chip[aria-pressed="true"]{color:#06222a;background:var(--hi);border-color:var(--hi)}
+.tf input[type=search]{background:var(--bg);border:1px solid var(--line);color:var(--ink);padding:6px 10px;border-radius:6px;font:14px var(--fb);min-width:220px}
+.tcount{font:12px var(--fm);color:var(--dim);margin:0 0 10px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+.tc{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.tc .img{position:relative;aspect-ratio:16/10;background:#0a1015;border-bottom:1px solid var(--line)}
+.tc .img img{width:100%;height:100%;object-fit:cover;display:block}
+.tc .img .kind{position:absolute;left:8px;top:8px;font:10px var(--fm);letter-spacing:.08em;text-transform:uppercase;background:rgba(6,10,14,.8);color:var(--hi);border:1px solid #1d4d5a;border-radius:3px;padding:2px 6px}
+.tc .img .kind.concept{color:var(--warn);border-color:#5a4313}
+.tc .noimg{display:grid;place-items:center;height:100%;font:11px var(--fm);color:var(--dim)}
+.tc .b{padding:12px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tc .cat{font:11px var(--fm);color:var(--hi);text-transform:uppercase;letter-spacing:.08em}
+.tc h3{margin:0;font:700 17px/1.2 var(--fh);text-transform:uppercase;letter-spacing:.02em}
+.tc .use{font-size:13.5px;color:var(--ink)}
+.tc .st{font-size:13px;color:var(--dim)}
+.tc .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:auto;padding-top:6px}
+.tc .row a{font:11px var(--fm)}
+.tc .cr{font:10.5px var(--fm);color:var(--dim);border-top:1px solid var(--line);padding:6px 14px}
+.tc .cr a{color:var(--dim)}
+.tc[hidden]{display:none}
+</style>
+
+<div class="tf" role="group" aria-label="Filters">
+  <div class="grp"><span class="lab">Search</span><input type="search" id="tq" placeholder="Name, use, status…" aria-label="Search technologies"></div>
+  <div class="grp" data-f="phase"><span class="lab">Phase</span>{% for p in site.data.phases %}<button class="chip" data-v="{{ p.n }}" aria-pressed="false" title="{{ p.name }}">{{ p.n }} · {{ p.name }}</button>{% endfor %}</div>
+  <div class="grp" data-f="cat"><span class="lab">System</span>{% for c in cats %}<button class="chip" data-v="{{ c | slugify }}" aria-pressed="false">{{ c }}</button>{% endfor %}</div>
+  <div class="grp" data-f="trl"><span class="lab">Readiness</span><button class="chip" data-v="low" aria-pressed="false">TRL 1–4</button><button class="chip" data-v="mid" aria-pressed="false">TRL 5–6</button><button class="chip" data-v="high" aria-pressed="false">TRL 7–9</button></div>
+  <div class="grp" data-f="dev"><span class="lab">Status</span><button class="chip" data-v="develop" aria-pressed="false">Needs development</button><button class="chip" data-v="ready" aria-pressed="false">Ready to use</button></div>
+  <div class="grp" data-f="img"><span class="lab">Image</span><button class="chip" data-v="photo" aria-pressed="false">Real photo</button><button class="chip" data-v="concept" aria-pressed="false">Concept</button></div>
+</div>
+<p class="tcount" id="tcount" aria-live="polite">{{ techs | size }} technologies</p>
+
+<div class="cards" id="tcards">
+{% for t in techs %}
+{% if t.trl <= 4 %}{% assign band = "low" %}{% elsif t.trl <= 6 %}{% assign band = "mid" %}{% else %}{% assign band = "high" %}{% endif %}
+<article class="tc" data-phase="{{ t.phases | join: ' ' }}" data-cat="{{ t.category | slugify }}" data-trl="{{ band }}" data-dev="{% if t.develop %}develop{% else %}ready{% endif %}" data-img="{{ t.image.kind | default: 'none' }}" data-text="{{ t.name | append: ' ' | append: t.use | append: ' ' | append: t.status | downcase | escape }}">
+  <div class="img">
+    {% if t.image %}<img src="{{ t.image.file | relative_url }}" alt="{{ t.image.caption | escape }}" loading="lazy"><span class="kind{% if t.image.kind == 'concept' %} concept{% endif %}">{% if t.image.kind == 'concept' %}Concept illustration{% else %}Photo{% endif %}</span>{% else %}<div class="noimg">Image pending</div>{% endif %}
+  </div>
+  <div class="b">
+    <span class="cat">{{ t.category }}</span>
+    <h3>{{ t.name }}</h3>
+    <div class="use"><strong>Used for:</strong> {{ t.use }}</div>
+    <div class="st">{{ t.status }}</div>
+    <div class="row">
+      {% include trl.html n=t.trl %}
+      {% if t.develop %}<span class="tag warn">develop</span>{% endif %}
+      {% for m in t.milestones %}{% assign mm = site.milestones | where: "id_code", m | first %}<a class="tag hi" href="{{ mm.url | relative_url }}" title="{{ mm.title }}">{{ m }}</a>{% endfor %}
+      {% if t.source != "" %}<a href="{{ t.source }}" title="{{ t.source_title | escape }}">source ↗</a>{% endif %}
+    </div>
+  </div>
+  {% if t.image %}<div class="cr">{% if t.image.kind == 'concept' %}Concept illustration · {{ t.image.license }}{% else %}{{ t.image.caption }} · Credit: {{ t.image.credit }} · {{ t.image.license }}{% endif %}{% if t.image.source_page %} · <a href="{{ t.image.source_page }}">image source</a>{% endif %}</div>{% endif %}
+</article>
+{% endfor %}
+</div>
+
+<script>
+(function(){
+  var sel={phase:[],cat:[],trl:[],dev:[],img:[]}, q='';
+  var cards=[].slice.call(document.querySelectorAll('#tcards .tc')), out=document.getElementById('tcount');
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var ok=Object.keys(sel).every(function(k){
+        if(!sel[k].length) return true;
+        var have=(c.dataset[k]||'').split(' ');
+        return sel[k].some(function(v){return have.indexOf(v)>-1});
+      }) && (!q || c.dataset.text.indexOf(q)>-1);
+      c.hidden=!ok; if(ok) n++;
+    });
+    out.textContent=n+' of '+cards.length+' technologies';
+    try{localStorage.setItem('om-tech-filters',JSON.stringify(sel))}catch(e){}
+  }
+  document.querySelectorAll('.tf .grp[data-f]').forEach(function(g){
+    var k=g.dataset.f;
+    g.querySelectorAll('.chip').forEach(function(b){
+      b.addEventListener('click',function(){
+        var on=b.getAttribute('aria-pressed')!=='true'; b.setAttribute('aria-pressed',on);
+        var v=b.dataset.v, i=sel[k].indexOf(v);
+        if(on&&i<0) sel[k].push(v); if(!on&&i>-1) sel[k].splice(i,1);
+        apply();
+      });
+    });
+  });
+  document.getElementById('tq').addEventListener('input',function(e){q=e.target.value.toLowerCase().trim();apply();});
+  try{var s=JSON.parse(localStorage.getItem('om-tech-filters')||'null');
+    if(s){Object.keys(sel).forEach(function(k){(s[k]||[]).forEach(function(v){var b=document.querySelector('.tf .grp[data-f="'+k+'"] .chip[data-v="'+v+'"]');if(b){b.setAttribute('aria-pressed','true');sel[k].push(v);}})});}
+  }catch(e){}
+  apply();
+})();
+</script>
