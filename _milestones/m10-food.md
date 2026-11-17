@@ -31,7 +31,7 @@ workstreams:
     items: ["Pressurised modules under regolith", "LED lighting tuned per crop", "Separate atmosphere loop"]
   - name: Crops
     desc: Start easy, then scale to staples.
-    items: ["Lettuce, kale, mizuna (proven on ISS)", "Peppers (grown on ISS 2021)", "Potatoes, wheat, soy for calories"]
+    items: ["Lettuce, kale, mustard greens (proven on ISS)", "Peppers (grown on ISS 2021)", "Potatoes, wheat, soy for calories"]
   - name: Growing medium
     desc: Hydroponics first; treated regolith later.
     items: ["Hydroponic and aeroponic racks", "Regolith only after treatment (plants were stunted in raw Apollo soil)"]
@@ -42,10 +42,10 @@ workstreams:
     desc: Keep people fed and healthy.
     items: ["12-month stored-food reserve", "Microbial monitoring", "Menu variety for morale"]
 technologies:
-  - {name: "NASA Veggie", use: "Leafy greens", status: "Grown lettuces, cabbage, mizuna, kale on ISS", trl: 9, src: 1}
-  - {name: "NASA Advanced Plant Habitat", use: "Controlled growth of fruiting crops", status: "Grew chile peppers on ISS, first harvest Oct 2021", trl: 9, src: 2}
-  - {name: "Yuegong-1 (Lunar Palace 1) bioregenerative system", use: "Closed-loop life support with crops", status: "370 days with 8 crew in rotation (2017–18); 98.2% material closure on the ground", trl: 6, src: 3}
-  - {name: "ESA MELiSSA", use: "Closed-loop ecosystem research", status: "Pilot plant operating; compartments tested individually", trl: 4, new: true, src: 4}
+  - {name: "NASA Veggie", use: "Leafy greens", status: "ISS plant facilities (Veggie and APH) have grown lettuces, Chinese cabbage, mustard greens, kale", trl: 9, src: 1}
+  - {name: "NASA Advanced Plant Habitat", use: "Controlled growth of fruiting crops", status: "Chile peppers bore fruit on ISS; harvests planned late Oct and early Nov 2021", trl: 9, src: 2}
+  - {name: "Yuegong-1 (Lunar Palace 1) bioregenerative system", use: "Closed-loop life support with crops", status: "370 days, 8 crew in two groups of four (2017–18); 98.2% material closure on the ground", trl: 6, src: 8}
+  - {name: "ESA MELiSSA", use: "Closed-loop ecosystem research", status: "Pilot plant at Universitat Autònoma de Barcelona since 2009", trl: 4, new: true, src: 4}
   - {name: "Interstellar Lab NUCLEUS", use: "Compact food production", status: "Won NASA Deep Space Food Challenge grand prize 2024", trl: 5, src: 5}
 sources:
   - {title: "NASA: Science in space, plant science (Veggie)", url: "https://www.nasa.gov/missions/station/iss-research/science-in-space-week-of-july-10-2023-plant-science/", date: "Jul 2023"}
@@ -55,6 +55,7 @@ sources:
   - {title: "NASA: NASA awards $1.25 million to three teams at Deep Space Food finale", url: "https://www.nasa.gov/news-release/nasa-awards-1-25-million-to-three-teams-at-deep-space-food-finale", date: "Aug 2024"}
   - {title: "NASA: Scientists grow plants in lunar soil (Univ. of Florida, 2022)", url: "https://www.nasa.gov/?p=96327", date: "May 2022"}
   - {title: "NASA BVAD Rev2: food energy and mass per crew-day", url: "https://ntrs.nasa.gov/citations/20210024855", date: "Feb 2022"}
+  - {title: "Fu et al.: Establishment of a closed artificial ecosystem to ensure human long-term survival on the Moon (bioRxiv preprint, Lunar Palace 365)", url: "https://www.biorxiv.org/content/10.1101/2021.01.12.426282v1", date: "Jan 2021"}
 risks:
   - {sev: High, title: "Lighting needs a lot of power for staple crops", fix: "Phase crops by calories per kWh; expand power in step (M11); greens first"}
   - {sev: High, title: "Crop disease or system failure wipes out a harvest", fix: "Several isolated growing modules; 12-month food reserve; seed bank"}
@@ -64,8 +65,8 @@ risks:
 
 ## What's proven
 
-- **Vegetables in orbit.** The ISS has grown lettuces, Chinese cabbage, mizuna and kale in Veggie<sup class="r">[1](#s1)</sup>, and chile peppers in the Advanced Plant Habitat<sup class="r">[2](#s2)</sup>.
-- **Closed loops on the ground.** China's Lunar Palace 1 kept crews alive for **370 days** in a closed system with crops, reaching **98.2% material closure**<sup class="r">[3](#s3)</sup>.
+- **Vegetables in orbit.** The ISS has grown lettuces, Chinese cabbage, mustard greens and kale in its Veggie and Advanced Plant Habitat units<sup class="r">[1](#s1)</sup>, and chile peppers in the Advanced Plant Habitat<sup class="r">[2](#s2)</sup>.
+- **Closed loops on the ground.** China's Lunar Palace 1 kept crews alive for **370 days** in a closed system with crops, reaching **98.2% material closure**<sup class="r">[3](#s3)</sup><sup class="r">[8](#s8)</sup>.
 - **Lunar soil.** Plants germinated in real Apollo soil, but grew stunted and stressed<sup class="r">[6](#s6)</sup>.
 
 ## How much food?

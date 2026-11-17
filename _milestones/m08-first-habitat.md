@@ -17,7 +17,7 @@ spec:
 cost: {low: 10.6, high: 30.2, note: "crew transport dominates"}
 cost_items:
   - {item: "Habitat module (build, test)", low: 1.0, high: 3.0, basis: "ESTIMATE"}
-  - {item: "Habitat delivery (~15 t, heavy cargo lander)", low: 3.0, high: 9.0, basis: "15 t [src 1] × $0.2–0.6M/kg (ESTIMATE)"}
+  - {item: "Habitat delivery (~15 t, heavy cargo lander)", low: 3.0, high: 9.0, basis: "15 t [src 11] × $0.2–0.6M/kg (ESTIMATE)"}
   - {item: "4 crewed sorties (crew launch + landing)", low: 6.0, high: 16.4, basis: "High: $4.1B per SLS/Orion launch (OIG) [src 6]; low assumes commercial crew transport at ~$1.5B per mission (ESTIMATE)"}
   - {item: "Spacesuits, EVA tools, airlock/dust lock", low: 0.3, high: 0.8, basis: "ESTIMATE"}
   - {item: "Mission operations and crew training", low: 0.3, high: 1.0, basis: "ESTIMATE"}
@@ -46,8 +46,8 @@ workstreams:
     desc: Treat what can be treated, evacuate what can't.
     items: ["Medical kit and ultrasound", "Telemedicine with 5–12 s delay", "Evacuation plan"]
 technologies:
-  - {name: "Thales Alenia Space Multi-Purpose Habitation (MPH)", use: "Surface habitat", status: "Preliminary design contract with ASI (Jul 2025); ~15 t, ~3 m × 6 m, 10-yr life; launch planned 2033", trl: 5, src: 1}
-  - {name: "Sierra Space LIFE inflatable", use: "Alternative expandable habitat", status: "Full-scale burst test failed at 77 psi (Dec 2023), 27% above NASA's recommended level", trl: 5, src: 2}
+  - {name: "Thales Alenia Space Multi-Purpose Habitation (MPH)", use: "Surface habitat", status: "Preliminary design contract with ASI (Jul 2025); ~15 t, ~3 m × 6 m, 10-yr life; launch planned 2033", trl: 5, src: 11}
+  - {name: "Sierra Space LIFE inflatable", use: "Alternative expandable habitat", status: "Full-scale burst test reached 77 psi before bursting (reported Jan 2024), 27% above NASA's recommended 60.8 psi", trl: 5, src: 2}
   - {name: "ISS life support (ECLSS)", use: "Air and water recycling", status: "Flight-proven; 98% water recovery demonstrated 2023", trl: 9, src: 3}
   - {name: "Axiom AxEMU spacesuit", use: "Moonwalks", status: "Critical design review closed 13 Nov 2026; qualification next", trl: 6, src: 4}
   - {name: "Heavy cargo lander (Starship / Blue Moon Mk2 cargo)", use: "Habitat delivery", status: "~15 t class; habitat delivery NET FY2033 per NASA", trl: 6, src: 5}
@@ -62,9 +62,11 @@ sources:
   - {title: "Gaier, NASA/TM-2005-213610: Effects of lunar dust on EVA systems during Apollo", url: "https://ntrs.nasa.gov/citations/20050160460", date: "2005"}
   - {title: "NASA: Environmental Control and Life Support Systems reference", url: "https://www.nasa.gov/reference/environmental-control-and-life-support-systems-eclss", date: "Apr 2025"}
   - {title: "NASA Moon Base – Phases", url: "https://www.nasa.gov/moonbase-phases/", date: "2026"}
+  - {title: "European Spaceflight: ASI awards new lunar habitat contract to Thales Alenia Space (MPH: 3 m × 6 m, ~15 t, 2 crew, 7–30 days a year)", url: "https://europeanspaceflight.com/asi-awards-new-lunar-habitat-contract-to-thales-alenia-space/", date: "Jul 2025"}
+  - {title: "NASA OIG: Spacesuit development delays could impact Artemis timeline and ISS operations (demonstrations could slip to 2031)", url: "https://oig.nasa.gov/news/spacesuit-development-delays-could-impact-artemis-timeline-and-iss-operations/", date: "Apr 2026"}
 risks:
   - {sev: Critical, title: "Crew landing systems are not yet certified; first crewed landing is planned for 2028", fix: "Fly sorties only after the lander has a demonstrated crewed landing; partner with NASA Moon Base schedule"}
-  - {sev: High, title: "Dust in the cabin (all Apollo seals were compromised)", fix: "Dust lock or suitports; strict cleaning; sintered surfaces at the hatch"}
+  - {sev: High, title: "Dust in the cabin (on Apollo, dust degraded suit seals and every sample-container seal failed)", fix: "Dust lock or suitports; strict cleaning; sintered surfaces at the hatch"}
   - {sev: High, title: "Spacesuit schedule risk (OIG warned demonstrations could slip to 2031)", fix: "Keep sortie dates flexible; early sorties with minimal EVA"}
   - {sev: High, title: "Medical emergency far from a hospital, with 5–12 s operational delays", fix: "Trained crew medic, telemedicine, and an evacuation plan with a lander on standby"}
   - {sev: High, title: "The MPH is reported as sized for 2 crew on one 7–30-day mission a year, while crewed landers carry 4", fix: "Fly 2-crew surface teams first; add fold-down sleep stations; reach 4 crew by docking the pressurised rover or a second module (M09)"}
@@ -73,10 +75,10 @@ risks:
 
 ## The habitat
 
-- **Thales Alenia Space MPH.** Thales is designing it for the Italian Space Agency: about 3 m × 6 m, about 15 t, on wheels, with a minimum 10-year life. Launch is planned for 2033<sup class="r">[1](#s1)</sup>.
+- **Thales Alenia Space MPH.** Thales is designing it for the Italian Space Agency: about 3 m × 6 m, about 15 t, on wheels, with a minimum 10-year life. Launch is planned for 2033<sup class="r">[1](#s1)</sup><sup class="r">[11](#s11)</sup>.
 - **Inflatable alternative.** Sierra Space's LIFE module held 77 psi before bursting in a full-scale test, 27% above NASA's recommended level<sup class="r">[2](#s2)</sup>.
 
-Open Moon designs its habitat zone for a **rigid ~15 t module first**, with room for inflatable modules later. Press reports describe the MPH as sized for **two** astronauts on one 7–30-day mission a year, so early sorties put two people on the surface. Four-person stays wait for a second module or the docked pressurised rover (M07). NASA expects habitats to arrive on cargo landers no earlier than FY2033<sup class="r">[5](#s5)</sup>.
+Open Moon designs its habitat zone for a **rigid ~15 t module first**, with room for inflatable modules later. Press reports describe the MPH as sized for **two** astronauts on one 7–30-day mission a year<sup class="r">[11](#s11)</sup>, so early sorties put two people on the surface. Four-person stays wait for a second module or the docked pressurised rover (M07). NASA expects habitats to arrive on cargo landers no earlier than FY2033<sup class="r">[5](#s5)</sup>.
 
 ## Life support
 

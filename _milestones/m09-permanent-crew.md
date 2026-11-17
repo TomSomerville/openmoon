@@ -42,7 +42,7 @@ workstreams:
     items: ["Breathing oxygen from regolith", "Water from PSR ice", "Nitrogen still shipped (leak make-up)"]
   - name: Crew health
     desc: Keep people healthy for six months at 1/6 g.
-    items: ["Exercise equipment", "Bone and muscle monitoring (partial gravity effects unknown)", "Telemedicine at 5–12 s delay", "Psychological support"]
+    items: ["Exercise equipment", "Bone and muscle monitoring (no long-duration human data at 1/6 g)", "Telemedicine at 5–12 s delay", "Psychological support"]
   - name: Radiation
     desc: Measure, shield, warn.
     items: ["Personal dosimeters", "Solar flare warning from space weather services", "Dose budgeting for outdoor work"]
@@ -71,7 +71,7 @@ sources:
   - {title: "NASA NTRS: Holden et al. 2026, communication delay (5–12 s)", url: "https://ntrs.nasa.gov/api/citations/20260002621/downloads/Holden%20et%20al%202026%20-%20comm%20delay%20study%20methodsa.pdf", date: "2026"}
 risks:
   - {sev: Critical, title: "Radiation: unshielded surface dose is ~0.5 Sv/yr, against a 600 mSv career limit", fix: "Bury habitats under ≥2 m regolith; limit outdoor hours; storm shelter; run NASA OLTARIS on the real design before crewing"}
-  - {sev: Critical, title: "Unknown long-term effects of 1/6 g on bone and muscle", fix: "Six-month rotations; exercise; measure everyone; don't extend stays until data supports it"}
+  - {sev: Critical, title: "Long stays at 1/6 g have never been measured in people; NASA analysis suggests less deconditioning than in zero g, but bone and muscle effects are unquantified", fix: "Six-month rotations; exercise; measure everyone; don't extend stays until data supports it"}
   - {sev: High, title: "Life support failure far from Earth", fix: "Two independent oxygen sources (electrolysis + regolith O₂ stock); 60+ days of reserves; spares on site"}
   - {sev: High, title: "Resupply landing failure", fix: "Hold 6 months of food and spares on site; two cargo providers"}
   - {sev: Medium, title: "Psychological strain from isolation", fix: "Crew selection and training from analogs (CHAPEA, HERA); private quarters; regular contact with Earth"}
@@ -103,7 +103,7 @@ From NASA's Baseline Values and Assumptions Document<sup class="r">[8](#s8)</sup
 NASA's logistics analysis found that:
 
 - with open-loop life support, water and gases are about **half** of all logistics mass
-- closing the oxygen and water loops removes almost **40%** of needs
+- closing the oxygen and water loops could largely remove the oxygen and water needs, which make up almost **40%** of the total
 - packaging and carriers add another **75–150%** on top<sup class="r">[9](#s9)</sup>
 
 That's why this milestone pairs ISS-class recycling with oxygen and water made in M06.

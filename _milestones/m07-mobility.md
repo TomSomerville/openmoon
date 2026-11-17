@@ -37,11 +37,11 @@ workstreams:
     desc: Drive rovers from Earth between crew visits.
     items: ["Delay-tolerant driving at 6–8 s", "Autonomous hazard avoidance", "Driver training on simulators"]
 technologies:
-  - {name: "Astrolab CLV-1 (LTV)", use: "Crew and cargo rover", status: "NASA task order $219M (May 2026); flight hardware due end 2027; delivery 2028", trl: 6, src: 1}
+  - {name: "Astrolab CLV-1 (LTV)", use: "Crew and cargo rover", status: "NASA task order $219M (May 2026); flight units to be qualified over the next 18 months; delivery 2028", trl: 6, src: 1}
   - {name: "Lunar Outpost Pegasus (LTV)", use: "Crew and cargo rover", status: "NASA task order $220M (May 2026); delivery 2028", trl: 6, src: 1}
   - {name: "JAXA/Toyota pressurised rover (Lunar Cruiser)", use: "Long crewed trips", status: "2024 agreement: 2 crew up to 30 days, ~10-year life; NASA lists 28 days; cargo delivery NET FY2032", trl: 5, src: 3}
   - {name: "Delay-tolerant teleoperation", use: "Earth-driven rovers", status: "NASA LTV studies: operators completed traverses at 4, 6 and 8 s delay (2023)", trl: 6, src: 5}
-  - {name: "NASA CADRE autonomous rovers", use: "Multi-robot autonomy heritage", status: "Delivered for IM-3, NET Q1 2027", trl: 6, src: 6}
+  - {name: "NASA CADRE autonomous rovers", use: "Multi-robot autonomy heritage", status: "Flies on Intuitive Machines IM-3; NASA launch schedule lists IM-3 for early 2027", trl: 6, src: 9}
 sources:
   - {title: "NASA RELEASE26-046: NASA provides update on Moon Base rovers, landers, missions", url: "https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/", date: "May 2026"}
   - {title: "NASA: NASA selects companies to advance Moon mobility for Artemis missions (LTV $4.6B IDIQ)", url: "https://www.nasa.gov/news-release/nasa-selects-companies-to-advance-moon-mobility-for-artemis-missions/", date: "Apr 2024"}
@@ -51,6 +51,7 @@ sources:
   - {title: "JPL: CADRE", url: "https://jpl.nasa.gov/missions/cadre", date: ""}
   - {title: "NASA HLS IAC 2026 presentation (pressurised rover cargo delivery NET FY2032)", url: "https://ntrs.nasa.gov/api/citations/20260009199/downloads/HLS%20IAC%202026%20Presentation%20FINAL.pdf", date: "Oct 2026"}
   - {title: "Toyota: Lunar Cruiser", url: "https://global.toyota/en/mobility/technology/lunarcruiser/index.html", date: "2026"}
+  - {title: "NASA launch schedule (Moon Base: Intuitive Machines IM-3, early 2027)", url: "https://www.nasa.gov/event-type/launch-schedule/", date: "Nov 2026"}
 risks:
   - {sev: High, title: "Rovers are scheduled to arrive on a lander (Blue Moon Mk1) that hasn't flown yet", fix: "Keep a second delivery option; don't schedule crew sorties until at least one LTV is on the surface"}
   - {sev: High, title: "The pressurised rover's date is unclear (Artemis VII tie, NET FY2032 delivery)", fix: "Plan Phase 2 sorties to work without it, within walking/LTV range of the habitat"}
@@ -63,7 +64,7 @@ risks:
 - **LTVs.** In May 2026 NASA picked two lunar terrain vehicles:
   - Astrolab **CLV-1**, $219M
   - Lunar Outpost **Pegasus**, $220M
-  - Blue Origin is paid $188M to deliver both to the south pole in 2028<sup class="r">[1](#s1)</sup>.
+  - Blue Origin gets $188M, with a $280.4M option, to deliver them to the south pole region. NASA aims to have them there by 2028<sup class="r">[1](#s1)</sup>.
 - **Pressurised rover.** The JAXA/Toyota rover is planned to carry 2 crew for up to 30 days<sup class="r">[3](#s3)</sup>. NASA's 2026 page says 28 days, deployed in Phase 2 (2029–2032)<sup class="r">[4](#s4)</sup>, and the cargo delivery is listed as no earlier than FY2032<sup class="r">[7](#s7)</sup>.
 - **Remote driving.** NASA tests had operators drive LTVs with 4-, 6- and 8-second delays, and every operator completed the traverses<sup class="r">[5](#s5)</sup>.
 
