@@ -13,10 +13,10 @@ spec:
   - {k: Roads, v: "~5 km graded and compacted"}
   - {k: Berms, v: "Ejecta berms around pads; shielding berm for the reactor"}
   - {k: Fleet, v: "4 excavators + 2 sintering/construction robots"}
-cost: {low: 3.2, high: 8.1, note: "robot fleet plus delivery; pad material is mostly local regolith"}
+cost: {low: 2.88, high: 7.3, note: "robot fleet plus delivery; pad material is mostly local regolith"}
 cost_items:
   - {item: "Excavator robots ×4 (IPEx / RASSOR class)", low: 0.1, high: 0.3, basis: "ESTIMATE"}
-  - {item: "Delivery of excavators (~2 t, medium landers)", low: 0.8, high: 2.0, basis: "2 t × $0.4–1.0M/kg (mass ESTIMATE; RASSOR 2.0 is under 100 kg [src 3], IPEx larger)"}
+  - {item: "Delivery of excavators (~1.2 t, medium landers)", low: 0.48, high: 1.2, basis: "4 × ~300 kg scaled-up units (C05.1 ESTIMATE; RASSOR 2.0 is 65 kg dry, IPEx 30 kg-class [src 2]) × $0.4–1.0M/kg"}
   - {item: "Regolith sintering / construction robots ×2", low: 0.2, high: 0.5, basis: "ESTIMATE; ICON's NASA R&D contract alone is $57.2M [src 4]"}
   - {item: "Delivery of construction robots (~3 t)", low: 1.2, high: 3.0, basis: "3 t × $0.4–1.0M/kg (ESTIMATE)"}
   - {item: "Binder / additives shipped from Earth (~2 t)", low: 0.8, high: 2.0, basis: "2 t × $0.4–1.0M/kg (ESTIMATE); only if sintering alone is not enough"}
@@ -44,8 +44,8 @@ workstreams:
     items: ["Pads 1+ km from solar towers", "Sintered work areas", "Dust-tolerant seals and connectors"]
 technologies:
   - {name: "NASA ISRU Pilot Excavator (IPEx)", use: "Excavation and grading", status: "TRL 5 design (2024); target 42 kg/h, 10 t over an 11-day mission; no flight date", trl: 5, src: 1}
-  - {name: "RASSOR 2.0", use: "Light excavation", status: "Under 100 kg; designed for 35 loads of 20 kg per 24 h, about 700 kg/day (ground tests)", trl: 5, src: 3}
-  - {name: "ICON Project Olympus (laser vitreous transformation)", use: "Pads, roads and structures from regolith", status: "$57.2M NASA SBIR Phase III contract; flew Duneflow test on New Shepard 2025", trl: 4, new: true, src: 4}
+  - {name: "RASSOR 2.0", use: "Light excavation", status: "Under 100 kg; nominal mission concept of 35 loads of 20 kg per 24 h, about 700 kg/day", trl: 5, src: 3}
+  - {name: "ICON Project Olympus (laser vitreous transformation)", use: "Pads, roads and structures from regolith", status: "$57.2M NASA SBIR Phase III contract (2022) for landing pads, blast shields and roads", trl: 4, new: true, src: 4}
   - {name: "Sintered basalt pavers / regolith-polymer pads", use: "Landing pads", status: "Hot-fire tested on the ground by NASA KSC", trl: 4, new: true, src: 5}
 sources:
   - {title: "NASA NTRS: IPEx TRL 5 design overview (ASCEND 2024)", url: "https://ntrs.nasa.gov/api/citations/20240008162/downloads/ASCEND24_IPEx%20TRL%205%20Design%20Overview.pdf", date: "2024"}
@@ -59,21 +59,21 @@ sources:
   - {title: "Gaier, NASA/TM-2005-213610: The effects of lunar dust on EVA systems during Apollo", url: "https://ntrs.nasa.gov/citations/20050160460", date: "2005"}
   - {title: "NASA: Break the Ice Lunar Challenge winners", url: "https://www.nasa.gov/centers-and-facilities/marshall/california-teams-win-1-5-million-in-nasas-break-the-ice-lunar-challenge", date: "Jun 2024"}
 risks:
-  - {sev: Critical, title: "Rocket exhaust blasts dust and rock across the site; Apollo 12 sandblasted Surveyor III 155 m away", fix: "Hardened pads before heavy landers; berms; keep solar towers, reactor and habitat well away from pads"}
+  - {sev: Critical, title: "Rocket exhaust blasts dust and rock across the site; Apollo 12 landed 155 m from Surveyor III and its plume reached it", fix: "Hardened pads before heavy landers; berms; keep solar towers, reactor and habitat well away from pads"}
   - {sev: High, title: "Sintering a pad that survives a large methane/oxygen engine has not been demonstrated on the Moon", fix: "Test small pads with small landers first; regolith-polymer pad as fallback; scale up step by step"}
-  - {sev: High, title: "Dust damages seals and mechanisms; every Apollo sample seal leaked", fix: "Dust-tolerant designs, covers, and sintered surfaces around work sites"}
+  - {sev: High, title: "Dust damages seals and mechanisms; on Apollo 12 all the environmental and gas sample seals failed", fix: "Dust-tolerant designs, covers, and sintered surfaces around work sites"}
   - {sev: Medium, title: "Excavation rates on the Moon are unproven (IPEx targets are design goals, not measured)", fix: "Bring more excavators than needed; measure real rates in the first month and replan"}
   - {sev: Medium, title: "Regolith properties at the site differ from simulants", fix: "Use M01 geotechnical data; adjust sintering settings on site"}
 ---
 
 ## Why pads come before habitats
 
-When a lander touches down on bare regolith, its exhaust throws dust and rocks outward at high speed. In 1969 Apollo 12 landed 155 m from the Surveyor III probe and sandblasted it; NASA modelling of that event gives dust speeds of up to about 130 m/s at Surveyor's distance<sup class="r">[7](#s7)</sup>. Larger engines on heavier landers will throw more material further. A base that expects regular cargo and crew landings has to stop this, or every landing damages the solar arrays, radiators and habitats already there.
+When a lander touches down on bare regolith, its exhaust throws dust and rocks outward at high speed. In 1969 Apollo 12 landed 155 m from the Surveyor III probe, and its plume reached the probe. NASA modelling of that landing gives fine dust (under 13 µm) reaching Surveyor at up to 130 m/s<sup class="r">[7](#s7)</sup>. Larger engines on heavier landers will throw more material further. A base that expects regular cargo and crew landings has to stop this, or every landing damages the solar arrays, radiators and habitats already there.
 
 ## What exists today
 
-- **Excavation.** NASA's IPEx is at TRL 5. It's designed to dig 10 t of regolith at 42 kg/h over an 11-day mission<sup class="r">[1](#s1)</sup><sup class="r">[2](#s2)</sup>. Its smaller predecessor, RASSOR 2.0 (under 100 kg), is designed for 35 loads of 20 kg per 24 hours, about 700 kg a day<sup class="r">[3](#s3)</sup>. These are ground-tested design figures, not lunar measurements.
-- **Construction.** ICON's Project Olympus holds a $57.2M NASA SBIR Phase III contract to develop ways to build pads, roads and habitats by laser-melting regolith<sup class="r">[4](#s4)</sup>. Its Duneflow experiment flew on New Shepard in 2025<sup class="r">[8](#s8)</sup>.
+- **Excavation.** NASA has largely built a TRL-5 version of IPEx, a 30 kg-class excavator (90% fabricated by June 2024). It's designed to dig 10 t of regolith at 42 kg/h over an 11-day mission<sup class="r">[1](#s1)</sup><sup class="r">[2](#s2)</sup>. Its predecessor, RASSOR 2.0, is larger, at 65 kg dry<sup class="r">[2](#s2)</sup>. NASA's RASSOR concept has it making 35 trips with 20 kg loads every 24 hours, about 700 kg a day<sup class="r">[3](#s3)</sup>. These are design figures, not lunar measurements.
+- **Construction.** ICON holds a $57.2M NASA SBIR Phase III contract, building on its Project Olympus, to develop a system for building landing pads, blast shields and roads from lunar materials<sup class="r">[4](#s4)</sup>. NASA describes ICON's process as using high-powered lasers to melt regolith. Its Duneflow experiment flew on a Blue Origin suborbital rocket in February 2025<sup class="r">[8](#s8)</sup>.
 - **Pad tests.** NASA has hot-fire tested sintered basalt pavers and regolith-polymer pads against rocket engines on the ground<sup class="r">[5](#s5)</sup><sup class="r">[6](#s6)</sup>.
 
 ## Step-by-step
@@ -87,7 +87,7 @@ When a lander touches down on bare regolith, its exhaust throws dust and rocks o
 
 ## Dust is a design requirement, not an afterthought
 
-NASA's review of Apollo found that lunar dust abraded, clogged and fouled equipment, and that every Apollo sample container seal was compromised<sup class="r">[9](#s9)</sup>. Every Open Moon mechanism has to:
+NASA's review of Apollo found that lunar dust abraded, clogged and coated equipment and caused seal failures. On Apollo 12, all the environmental and gas sample seals failed because of dust<sup class="r">[9](#s9)</sup>. Every Open Moon mechanism has to:
 
 - tolerate dust
 - be covered when idle

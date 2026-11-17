@@ -15,7 +15,7 @@ spec:
   - {k: "Storage", v: "Liquid oxygen and water tanks"}
 cost: {low: 3.8, high: 9.8, note: "two pilot plants plus storage; delivery is the largest part"}
 cost_items:
-  - {item: "Pilot plant development (oxygen + water)", low: 0.5, high: 1.5, basis: "ESTIMATE; Blue Alchemist's NASA award was ~$34.7M for an earlier stage [src 4]"}
+  - {item: "Pilot plant development (oxygen + water)", low: 0.5, high: 1.5, basis: "ESTIMATE; Blue Alchemist's 2023 NASA Tipping Point award was $34.7M for an earlier stage [src 11]"}
   - {item: "Delivery of oxygen plant (~3 t, medium lander)", low: 1.2, high: 3.0, basis: "3 t × $0.4–1.0M/kg (mass ESTIMATE)"}
   - {item: "Delivery of water plant + PSR excavator (~3 t)", low: 1.2, high: 3.0, basis: "3 t × $0.4–1.0M/kg (mass ESTIMATE)"}
   - {item: "Delivery of tanks, liquefier, electrolyser (~2 t)", low: 0.8, high: 2.0, basis: "2 t × $0.4–1.0M/kg (mass ESTIMATE)"}
@@ -42,10 +42,10 @@ workstreams:
     desc: Measure everything needed to size the full plants.
     items: ["kWh per kg O₂ and H₂O", "Electrode and crucible wear", "Feedstock variability"]
 technologies:
-  - {name: "Molten regolith electrolysis (NASA + Lunar Resources)", use: "Oxygen from rock", status: "Dec 2024: 25 kg of simulant processed in vacuum, 0.07 kg O₂/h for 9 h (NASA's first molecular O₂ by MRE)", trl: 4, new: true, src: 1}
-  - {name: "Carbothermal reduction (Sierra Space + NASA)", use: "Oxygen from rock (alternative)", status: "Flight-like reactor ran automated in JSC dirty thermal-vacuum chamber (2024)", trl: 5, src: 2}
+  - {name: "Molten regolith electrolysis (NASA + Lunar Resources)", use: "Oxygen from rock", status: "2024: 25 kg of simulant processed in vacuum, 0.07 kg O₂/h for 9 h", trl: 4, new: true, src: 1}
+  - {name: "Carbothermal reduction (Sierra Space + NASA)", use: "Oxygen from rock (alternative)", status: "Flight-like reactor ran automated in JSC dirty thermal-vacuum chamber (2024); key hardware matured to TRL 6", trl: 6, src: 2}
   - {name: "Blue Origin Blue Alchemist", use: "Oxygen plus silicon, iron, aluminium", status: "Passed CDR Sep 2025; autonomous demo in simulated lunar environment planned 2026", trl: 5, new: true, src: 4}
-  - {name: "FFC Cambridge process (Metalysis / ESA)", use: "Oxygen with metal powder by-product", status: "ESA prototype plant opened 2020; extracts oxygen and leaves a mixed-metal powder", trl: 4, new: true, src: 5}
+  - {name: "Molten salt electrolysis (Metalysis process, ESA)", use: "Oxygen with metal by-product", status: "ESA prototype plant opened 2020; extracts oxygen and leaves a mix of metals", trl: 4, new: true, src: 5}
   - {name: "ISS Oxygen Generation Assembly", use: "Water electrolysis", status: "Flight-proven since 2007; nominal 5.4 kg O₂/day", trl: 9, src: 6}
   - {name: "Ice excavation (NASA Break the Ice)", use: "Mining icy regolith", status: "Challenge winners 2024; designs ground-tested", trl: 4, new: true, src: 7}
 sources:
@@ -59,6 +59,7 @@ sources:
   - {title: "Colozza, NASA/CR: ISRU plant power (1.63 kg/h O₂ at 25.83 kW)", url: "https://ntrs.nasa.gov/citations/20200001622", date: "Mar 2020"}
   - {title: "NASA Kennedy: NASA Kennedy breathes life into Moon soil testing", url: "https://www.nasa.gov/centers-and-facilities/kennedy/nasa-kennedy-breathes-life-into-moon-soil-testing", date: "2025"}
   - {title: "NASA M2M-30044 Lunar Surface Data Book", url: "https://ntrs.nasa.gov/api/citations/20250002845/downloads/M2M-30044%20Lunar%20Surface%20Data%20Book%20Baseline_Final.pdf", date: "2025"}
+  - {title: "NASA: 2023 NASA Tipping Point selections", url: "https://www.nasa.gov/general/2023-nasa-tipping-point-selections/", date: "Jul 2023"}
 risks:
   - {sev: Critical, title: "Oxygen-from-rock is only proven at small scale on the ground (0.07 kg/h, ~100 kWh/kg); a 10 t/yr plant needs ~1.1 kg/h and, at demo efficiency, ~120 kW", fix: "Modular cells; ground-test a full-size module and measure kWh/kg before flight; start at the output the grid can power and add cells as efficiency is proven; run two different processes"}
   - {sev: Critical, title: "Ice may be scarcer or deeper than hoped", fix: "Size the water plant from M01 drilling, not orbital estimates; oxygen-from-rock doesn't need ice and covers breathing oxygen"}
@@ -78,10 +79,10 @@ risks:
 
 | Process | Best demonstration so far | Readiness |
 |---|---|---|
-| Molten regolith electrolysis | 0.07 kg O₂/h for 9 h from 25 kg simulant, in vacuum, Dec 2024<sup class="r">[1](#s1)</sup> | TRL 4 |
-| Carbothermal reduction | Flight-like reactor, automated, in a dusty thermal-vacuum chamber, 2024<sup class="r">[2](#s2)</sup> | TRL 5 |
-| Blue Alchemist (MRE) | CDR passed Sep 2025; demo planned for 2026<sup class="r">[4](#s4)</sup> | TRL 5 (claimed) |
-| FFC Cambridge | ESA prototype plant (2020); oxygen out, metal powder left<sup class="r">[5](#s5)</sup> | TRL 4 |
+| Molten regolith electrolysis | 0.07 kg O₂/h for 9 h from 25 kg simulant, in vacuum, 2024<sup class="r">[1](#s1)</sup>; NASA's first molecular oxygen from this process<sup class="r">[9](#s9)</sup> | TRL 4 |
+| Carbothermal reduction | Flight-like reactor, automated, in NASA's "dirty" thermal-vacuum chamber, 2024<sup class="r">[2](#s2)</sup> | TRL 6 |
+| Blue Alchemist (MRE) | CDR passed Sep 2025; demo planned for 2026<sup class="r">[4](#s4)</sup> | TRL 5 (estimate) |
+| Molten salt electrolysis (Metalysis) | ESA prototype plant (2020); oxygen out, a mix of metals left<sup class="r">[5](#s5)</sup> | TRL 4 |
 | Water electrolysis | ISS OGA, flight-proven, 5.4 kg O₂/day<sup class="r">[6](#s6)</sup> | TRL 9 |
 
 None of the regolith processes has run on the Moon yet. That's why this is a **pilot**, and why two different oxygen processes are flown.
@@ -91,7 +92,7 @@ None of the regolith processes has run on the Moon yet. That's why this is a **p
 - **Production rate.** 10 t of O₂ a year works out to about 1.14 kg/h.
 - **Power: the big uncertainty.**
   - NASA's 2020 study puts a 1.63 kg/h plant at about 26 kW<sup class="r">[8](#s8)</sup>, roughly **16 kWh per kg** of oxygen. On that basis the pilot needs about 18 kW.
-  - NASA's real December 2024 electrolysis demo ran at about 9 kW peak for 0.07 kg/h<sup class="r">[1](#s1)</sup>. That is about **100 kWh per kg** (this plan's arithmetic from the published figures).
+  - NASA's 2024 electrolysis demo ran at about 9 kW peak for 0.07 kg/h<sup class="r">[1](#s1)</sup>. That is about **100 kWh per kg** (this plan's arithmetic from the published figures).
   - At demo efficiency, the 26 kW budgeted from M04 would make only about **2 t a year**. Reaching 10 t a year would need about **120 kW**.
   - Demonstration reactors are small and lose most of their heat, so efficiency should improve with size. How much it improves is exactly what this pilot has to measure.
 - **Who it supports.** At 0.895 kg of O₂ per person per day (NASA BVAD, see M09), 10 t a year is enough to breathe for about **30 people**. Most of the oxygen will eventually go to propellant instead (M11).

@@ -20,7 +20,7 @@ cost_items:
   - {item: "Delivery of 10 kW arrays (~2 t, small landers)", low: 1.2, high: 2.4, basis: "2 t × $0.6–1.2M/kg (mass ESTIMATE)"}
   - {item: "2 × 50 kW VSAT-XL towers (hardware)", low: 0.1, high: 0.3, basis: "ESTIMATE"}
   - {item: "Delivery of VSAT-XL (~6 t, medium landers)", low: 2.4, high: 6.0, basis: "6 t × $0.4–1.0M/kg (mass ESTIMATE)"}
-  - {item: "40 kWe fission unit (develop, build, qualify)", low: 1.0, high: 3.0, basis: "ESTIMATE; Congress gave $250M for the US reactor in FY2026 alone [src 3]"}
+  - {item: "40 kWe fission unit (develop, build, qualify)", low: 1.0, high: 3.0, basis: "ESTIMATE; Congress gave $250M for Fission Surface Power in FY2026 alone [src 16]"}
   - {item: "Delivery of fission unit (~10 t, heavy lander)", low: 2.0, high: 6.0, basis: "NASA reference design ~10 t for 40 kWe [src 1] × $0.2–0.6M/kg"}
   - {item: "Regenerative fuel cell storage, ~3 MWh (hardware)", low: 0.05, high: 0.15, basis: "ESTIMATE"}
   - {item: "Delivery of storage (~3 t, medium lander)", low: 1.2, high: 3.0, basis: "3 MWh ÷ ~500 Wh/kg ≈ 6 t at cell level; ~3 t assumes partial reuse of ISRU tanks (ESTIMATE) × $0.4–1.0M/kg"}
@@ -53,10 +53,10 @@ workstreams:
     desc: Automatic load management.
     items: ["Priority load shedding", "Remote operation from Earth", "Fault isolation"]
 technologies:
-  - {name: "Kilopower / KRUSTY fission test", use: "Heritage for the reactor", status: "28-hour full-power nuclear test 2018; Stirling converters worked", trl: 5, src: 5}
+  - {name: "Kilopower / KRUSTY fission test", use: "Heritage for the reactor", status: "28-hour nuclear system test 2018 at various power levels; Stirling converters worked", trl: 5, src: 5}
   - {name: "US Lunar Reactor-1 (SPARC)", use: "Reactor procurement path", status: "Draft solicitation Aug 2026: ≥20 kWe, ≥5 yr, HALEU, closed Brayton, <15 t. No award yet", trl: 5, src: 6}
   - {name: "Vertical Solar Array Technology (VSAT)", use: "10 kW-class solar towers", status: "Three NASA prototype contracts (2022); deploy to ~10 m", trl: 6, src: 4}
-  - {name: "Astrobotic VSAT-XL", use: "50 kW towers", status: "NASA SBIR Phase II, Jun 2025–Jun 2027; 34 m tall; Redwire ROSA arrays", trl: 5, new: true, src: 7}
+  - {name: "Astrobotic VSAT-XL", use: "50 kW towers", status: "NASA SBIR study award 2024; 34 m tall; Redwire ROSA arrays. Phase II follow-on Jun 2025–Jun 2027", trl: 5, new: true, src: 7}
   - {name: "Astrobotic LunaGrid-Lite", use: "Cable-laying rover and power transfer", status: "1 kW; ~500 m of cable in the 2025 design (1 km in earlier plans); passed CDR Aug 2025", trl: 6, src: 8}
   - {name: "Regenerative fuel cells", use: "Night and gap storage", status: "NASA Glenn breadboard ran 550+ hours of simulated lunar cycles (open-loop)", trl: 5, new: true, src: 9}
   - {name: "High-voltage DC lunar cable", use: "Power transmission", status: "NASA Glenn analysis: ±4 kVDC Al cable best for 3 km at 95%", trl: 5, src: 2}
@@ -76,6 +76,11 @@ sources:
   - {title: "Blue Origin: Blue Alchemist powers our lunar future", url: "https://www.blueorigin.com/news/blue-alchemist-powers-our-lunar-future/", date: "Feb 2023"}
   - {title: "Scientific American: White House plan for lunar nuclear power (NSTM-3)", url: "https://www.scientificamerican.com/article/nasa-needs-nuclear-power-for-its-moon-base-heres-the-white-house-plan-to-get-it/", date: "Apr 2026"}
   - {title: "Oleson et al., NETS 2022: deployable 40 kWe fission surface power concept (NTRS 20220004670)", url: "https://ntrs.nasa.gov/citations/20220004670", date: "2022"}
+  - {title: "SpacePolicyOnline: Great news for NASA in the House-Senate FY2026 appropriations report", url: "https://spacepolicyonline.com/news/great-news-for-nasa-in-the-house-senate-fy2026-appropriations-report/", date: "Jan 2026"}
+  - {title: "Astrobotic: Astrobotic developing XL solar array tech for lunar power infrastructure (SBIR Phase II)", url: "https://www.astrobotic.com/astrobotic-developing-xl-solar-array-tech-for-lunar-power-infrastructure/", date: "Jul 2025"}
+  - {title: "USAspending: NASA contract 80NSSC25C0032, Phase II SBIR VSAT-XL", url: "https://www.usaspending.gov/award/CONT_AWD_80NSSC25C0032_8000_-NONE-_-NONE-", date: "Jun 2025"}
+  - {title: "NASA: 2023 NASA Tipping Point selections", url: "https://www.nasa.gov/general/2023-nasa-tipping-point-selections/", date: "Jul 2023"}
+  - {title: "NASA GCD annual review: Vertical Solar Array Technology (VSAT) project", url: "https://ntrs.nasa.gov/citations/20230012849", date: "Sep 2023"}
 risks:
   - {sev: Critical, title: "Darkness: even the best ridges have shadow periods; NASA cites up to ~100 h at the pole, and 354 h is the design night for the US reactor", fix: "Fission base load + solar on multiple ridge points + storage; never rely on one source"}
   - {sev: Critical, title: "The US lunar reactor's requirements keep changing (40 → 100 → 20 kWe) and no contract has been awarded", fix: "Design the grid for any 20–100 kWe unit; buy from whichever programme flies first; solar-only fallback with more storage"}
@@ -101,7 +106,7 @@ This milestone targets about 140 kW of total capacity: 100 kW of solar peak plus
 
 ## Why not just solar, or just batteries?
 
-- **Sunlight.** The best point on the Shackleton connecting ridge is sunlit **92%** of the time at 2 m height and **96%** at 10 m<sup class="r">[11](#s11)</sup>. Shadow periods still happen, and NASA cites intermittent darkness of up to about 100 hours at the pole<sup class="r">[1](#s1)</sup>.
+- **Sunlight.** The best points on the ridge connecting Shackleton and de Gerlache craters are sunlit **92.27%** of the time at 2 m height and **95.65%** at 10 m<sup class="r">[11](#s11)</sup>. Shadow periods still happen, and NASA cites intermittent darkness of up to about 100 hours at the pole<sup class="r">[1](#s1)</sup>.
 - **Storage maths** (this plan's arithmetic):
   - Keeping 30 kW of essential load alive for 100 hours takes 3 MWh.
   - Li-ion stores about 160 Wh/kg, so that's about **19 t** of batteries<sup class="r">[1](#s1)</sup>.
@@ -111,22 +116,22 @@ This milestone targets about 140 kW of total capacity: 100 kW of solar peak plus
 
 ## The reactor: what's real today
 
-- **KRUSTY (2018).** NASA and DOE ran a real fission reactor with Stirling converters for 28 hours at full power<sup class="r">[5](#s5)</sup>.
+- **KRUSTY (2018).** NASA and DOE ran a real fission reactor with Stirling converters for 28 hours straight, at various power levels<sup class="r">[5](#s5)</sup>.
 - **NASA reference design.** 40 kWe, about 10 t, four pairs of Stirling engines, sodium heat pipes, 10-year life<sup class="r">[1](#s1)</sup>.
-- **Moving target.** The US programme has changed requirements several times: 40 kWe in 2022, then at least 100 kWe with closed Brayton conversion in 2025<sup class="r">[12](#s12)</sup>. In 2026 it settled on "Lunar Reactor-1": at least 20 kWe, at least 5 years, HALEU fuel, under 15 t<sup class="r">[6](#s6)</sup><sup class="r">[14](#s14)</sup>. No contract has been awarded yet. Open Moon's grid is designed to accept any unit from 20 to 100 kWe.
+- **Moving target.** The US programme has changed requirements several times: 40 kWe in 2022<sup class="r">[1](#s1)</sup>, then at least 100 kWe with closed Brayton conversion in 2025<sup class="r">[12](#s12)</sup>. In 2026 it settled on "Lunar Reactor-1": at least 20 kWe, at least 5 years, HALEU fuel, under 15 t<sup class="r">[6](#s6)</sup><sup class="r">[14](#s14)</sup>. No contract has been awarded yet. Open Moon's grid is designed to accept any unit from 20 to 100 kWe.
 
 ## Solar towers
 
-- **VSAT.** NASA funded three prototypes in 2022 for $19.4M in total; they deploy to about 10 m<sup class="r">[4](#s4)</sup>.
-- **VSAT-XL.** Astrobotic's design is 50 kW and 34 m tall, using Redwire roll-out arrays, under a NASA Phase II contract<sup class="r">[7](#s7)</sup>.
+- **VSAT.** NASA funded three prototypes in 2022 for $19.4M in total; they deploy to about 10 m<sup class="r">[4](#s4)</sup>. Each is a 10 kW-class array<sup class="r">[20](#s20)</sup>.
+- **VSAT-XL.** Astrobotic's design is 50 kW and 34 m tall, using Redwire roll-out arrays<sup class="r">[7](#s7)</sup>. NASA then gave it an SBIR Phase II contract running from June 2025 to June 2027<sup class="r">[17](#s17)</sup><sup class="r">[18](#s18)</sup>.
 - **Why height matters.** Taller masts see over the horizon and catch more hours of sun<sup class="r">[11](#s11)</sup>.
 
 ## Cables
 
 - **Voltage choice.** NASA Glenn found that about **±4 kVDC** aluminium cable gives the lightest 3 km link at 95% efficiency<sup class="r">[2](#s2)</sup>.
-- **Why not beam power wirelessly?** Power beaming was 13–27% efficient and would add 30–60 t<sup class="r">[2](#s2)</sup>.
-- **Cable mass.** NASA estimates the cable itself at only about 240 kg for 3 km at 2,800 V<sup class="r">[15](#s15)</sup>. The bigger penalty is the extra generating capacity needed to cover line losses<sup class="r">[2](#s2)</sup>.
-- **Laying the cable.** Astrobotic's LunaGrid-Lite rover carries 1 kW; its 2025 design lays about 500 m of cable<sup class="r">[8](#s8)</sup>.
+- **Why not beam power wirelessly?** Power beaming was 13–27% efficient and would need 30–60 t of extra generating capacity to make up the losses<sup class="r">[2](#s2)</sup>.
+- **Cable mass.** NASA estimates the cable itself at only about 240 kg for 3 km at 2,800 V<sup class="r">[15](#s15)</sup>. Because the reactor is heavy (about 0.25 kg per watt), the line must be efficient: any power lost in the cable has to be made up with extra generating capacity<sup class="r">[2](#s2)</sup>.
+- **Laying the cable.** Astrobotic's LunaGrid-Lite is designed to transmit 1 kW; its 2025 design lays about 500 m of cable<sup class="r">[8](#s8)</sup>. NASA's 2023 award described 1 km<sup class="r">[19](#s19)</sup>.
 
 ## Where the money goes
 
