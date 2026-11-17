@@ -4,7 +4,7 @@ title: "Lunar Surface Manipulation System (LSMS)"
 alternatives:
   - {name: "Davit or pulley-and-reel lowering", compare: "A fixed boom or a set of pulleys and reels lowers one payload from the lander. Simple and flight-proven on Apollo, but each unit is built for a single payload, cannot place cargo precisely and is usually left behind after one use.", status: "Flown: Apollo 15-17 lowered the 210 kg rover with pulleys and braked reels; telescoping davit cranes studied by NASA in 2020-22", url: "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"}
   - {name: "Deployable ramps with a winch", compare: "Inflatable or folding metal ramps give wheeled cargo a path from the deck to the ground. Light and mechanically simple, but only work for payloads that can drive or be skidded down, and a rock or slope at the ramp foot can block them.", status: "Concept studies by NASA (ICES 2022 trade); no lunar ramp offload flown yet", url: "https://ntrs.nasa.gov/citations/20220005086"}
-  - {name: "ATHLETE wheel-on-leg robot", compare: "A six-legged JPL rover whose limbs double as arms, so it can both carry and lift cargo. More mobile and dexterous than LSMS, but much heavier and more complex for the load it lifts.", status: "Ground prototypes tested by JPL; not funded for flight", url: "https://en.wikipedia.org/wiki/ATHLETE"}
+  - {name: "ATHLETE wheel-on-leg robot", compare: "A six-legged JPL rover whose 6-DOF limbs double as arms, so it can both carry and handle cargo with about 6 m reach. More mobile and dexterous than LSMS, but a whole vehicle rather than a light crane, with about 450 kg payload per unit in Earth gravity.", status: "Test-bed prototypes built at JPL; no flight mission", url: "https://en.wikipedia.org/wiki/ATHLETE"}
   - {name: "Serial robotic arm (InSight-style)", compare: "A conventional arm with a motor at every joint. Proven on the Moon and Mars and precise, but flown arms reach only 0.75-2.2 m and lift at most 45 kg, so they do not scale to tonne-class cargo.", status: "Flight-proven at small scale (InSight arm placed a 29 kg seismometer on Mars)", url: "https://ntrs.nasa.gov/citations/20210022100"}
 links:
   - {title: "NASA NTRS: LSMS Overview for Blue Origin (proposal slides)", url: "https://ntrs.nasa.gov/api/citations/20205006977/downloads/LSMS%20Technology%20Overview%20V5%20Blue%20Origin.pdf", kind: official, date: "Aug 2020"}
@@ -46,7 +46,7 @@ The LSMS is a truss. Rigid members (kingpost, arm, forearm) carry compression. C
 | 2008 test-bed | 1,000 kg | 7.5 m | [Doggett 2008](https://ntrs.nasa.gov/citations/20080040185) |
 | Protoflight target (L1000) | 1,000 kg | 8 m | [Jones 2021](https://ntrs.nasa.gov/citations/20210022100) |
 | LSMS-L35 | 35 kg | 2.25 m | [Wong and Cline 2022](https://ntrs.nasa.gov/citations/20220013968) |
-| 2020 HLS-class concept | 5,000 kg (10,000 kg near base) | three 4 m links | [NASA 2020](https://ntrs.nasa.gov/api/citations/20205006977/downloads/LSMS%20Technology%20Overview%20V5%20Blue%20Origin.pdf) |
+| 2020 HLS-class concept | 5,000 kg at tip | three 4 m links | [NASA 2020](https://ntrs.nasa.gov/api/citations/20205006977/downloads/LSMS%20Technology%20Overview%20V5%20Blue%20Origin.pdf) |
 | HLS-class mass goal | 500 kg system mass | | [NASA 2020](https://ntrs.nasa.gov/api/citations/20205006977/downloads/LSMS%20Technology%20Overview%20V5%20Blue%20Origin.pdf) |
 
 NASA says the design scales from about 2 m and 100 kg to about 15 m and 10,000 kg ([Jones 2021](https://ntrs.nasa.gov/citations/20210022100)).
@@ -57,6 +57,6 @@ NASA says the design scales from about 2 m and 100 kg to about 15 m and 10,000 k
 - **Limited environment testing.** Thermal vacuum testing was planned only at subsystem level, not on the whole unit ([Jones 2021](https://ntrs.nasa.gov/citations/20210022100)).
 - **Unclear status.** Public papers do not say whether the protoflight unit was completed, or whether a flight has been booked.
 - **Dust and long life.** The demo was sized for one lunar day, where dust impact was expected to be minimal ([Jones 2021](https://ntrs.nasa.gov/citations/20210022100)). A base crane must survive many lunar nights and years of dust. That is unproven.
-- **Cable dynamics.** In low gravity, a cable can lose tension during fast moves, so safe speed limits must be enforced ([Puig-Navarro et al. 2024](https://ntrs.nasa.gov/citations/20240008266)).
+- **Cable dynamics.** In low gravity, inertial forces can make a cable lose tension during some moves, so motion must stay inside a computed safe envelope ([Puig-Navarro et al. 2024](https://ntrs.nasa.gov/citations/20240008266)).
 - **Autonomy still in development.** Unloading from a tilted deck and judging whether a payload is safe to lift are still being developed ([NASA 2023](https://ntrs.nasa.gov/citations/20230004222)).
 - **Heavy cargo.** The largest built prototype is 1,000 kg class. Multi-tonne versions exist only as sizing studies ([Seubert et al. 2026](https://ntrs.nasa.gov/citations/20250011487)).

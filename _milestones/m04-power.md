@@ -87,6 +87,7 @@ risks:
   - {sev: High, title: "Delivery cost dominates: ~85% of this milestone is shipping mass", fix: "Push heavy-cargo pricing down; make cables and later solar cells from regolith (Blue Alchemist, M12)"}
   - {sev: High, title: "Dust on arrays and radiators", fix: "Vertical arrays shed dust; keep 1 km+ from landing pads; landing pads in M05"}
   - {sev: High, title: "Reactor radiation near crew", fix: "1–3 km separation, terrain or berm shielding; US draft sets ≤5 rem/yr at 1 km"}
+  - {sev: High, title: "Grid voltage choice is open: NASA's own baseline has moved from DC to 3 kV AC at 1 kHz, because radiation-hard switches limit DC to about 1.2–1.5 kV", fix: "Trade study before M04 design freeze: ±4 kVDC (lighter cable, needs new switches) vs 3 kVac (matches NASA reactor interface); see the HVDC cable technology page"}
   - {sev: Medium, title: "Cable damage from rovers, thermal cycling and micrometeoroids", fix: "Bury or cover cables; redundant routes; fault-locating electronics"}
 ---
 
@@ -116,7 +117,7 @@ This milestone targets about 140 kW of total capacity: 100 kW of solar peak plus
 
 ## The reactor: what's real today
 
-- **KRUSTY (2018).** NASA and DOE ran a real fission reactor with Stirling converters for 28 hours straight, at various power levels<sup class="r">[5](#s5)</sup>.
+- **KRUSTY (2018).** For under $20 million, NASA and DOE designed, built and ran a real fission reactor with Stirling converters for 28 hours straight, at various power levels<sup class="r">[5](#s5)</sup>.
 - **NASA reference design.** 40 kWe, about 10 t, four pairs of Stirling engines, sodium heat pipes, 10-year life<sup class="r">[1](#s1)</sup>.
 - **Moving target.** The US programme has changed requirements several times: 40 kWe in 2022<sup class="r">[1](#s1)</sup>, then at least 100 kWe with closed Brayton conversion in 2025<sup class="r">[12](#s12)</sup>. In 2026 it settled on "Lunar Reactor-1": at least 20 kWe, at least 5 years, HALEU fuel, under 15 t<sup class="r">[6](#s6)</sup><sup class="r">[14](#s14)</sup>. No contract has been awarded yet. Open Moon's grid is designed to accept any unit from 20 to 100 kWe.
 

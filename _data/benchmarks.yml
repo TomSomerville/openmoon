@@ -82,3 +82,7 @@
   value: "$97M (raised from $90M in Mar 2022)"
   src: Space.com (Mar 2022)
   url: https://www.space.com/spacex-raises-prices-launch-starlink-inflation
+- name: KRUSTY fission reactor ground test
+  value: "Designed, built and tested for under $20M (2018)"
+  src: Poston et al., Results of the KRUSTY Nuclear System Test (NTRS)
+  url: https://ntrs.nasa.gov/citations/20205009351

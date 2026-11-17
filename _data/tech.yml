@@ -604,7 +604,7 @@
   - M05
   phases:
   - 1
-  trl: 5
+  trl: 4
   status: Under 100 kg; nominal mission concept of 35 loads of 20 kg per 24 h, about 700 kg/day
   use: Light excavation
   develop: false
@@ -992,8 +992,8 @@
   - M09
   phases:
   - 3
-  trl: 7
-  status: ISS flight demonstration for 4 crew-equivalents
+  trl: 9
+  status: Flew as an ISS demonstration; became a permanent ISS system in July 2025; NASA's 2026 trade study rates it TRL 9
   use: CO₂ removal
   develop: false
   source: https://ntrs.nasa.gov/api/citations/20205003542/downloads/ICES-2020-178.docx
