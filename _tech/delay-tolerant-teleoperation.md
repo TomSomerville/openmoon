@@ -54,8 +54,8 @@ Source: [NASA NTRS 20240001217](https://ntrs.nasa.gov/citations/20240001217). Th
 
 ## Limitations and open issues
 
-- **Small, simulated tests.** The August 6 and 8 second study used [only two operators](https://ntrs.nasa.gov/citations/20240001217). All runs were in a simulator, with [a high-bandwidth, flawless communication link and faultless navigation](https://ntrs.nasa.gov/citations/20240001217). Dropouts and real lunar lighting have not been tested this way.
+- **Small, simulated tests.** The August 6 and 8 second study used [only two operators](https://ntrs.nasa.gov/citations/20240001217). All runs were in a simulator, with [a high-bandwidth, flawless communication link and faultless navigation](https://ntrs.nasa.gov/citations/20240001217). Real link dropouts were not part of these tests.
 - **Rock strikes.** In the April study the vehicle had [861 rock contacts at 0 s and 959 at 4 s](https://ntrs.nasa.gov/citations/20240001217) across all runs. Rock contacts were not analysed for the 6 and 8 second runs.
 - **Training.** Test operators had 15 minutes to 3 hours of practice. They estimated [20 to 100 hours to reach about 60% proficiency, and up to a year for full proficiency](https://ntrs.nasa.gov/citations/20240001217).
-- **Line of sight.** Driving from Earth needs a radio path to Earth. Near the south pole, terrain can block it. How often this would stop driving at Open Moon's sites is not published.
+- **Line of sight.** Driving from Earth needs a working radio path to Earth. How often Open Moon's south pole routes would lose that path is not published.
 - **Not yet flown for LTVs.** No LTV has reached the Moon. NASA aims to deploy them [by 2028](https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/), and how remote driving performs there is still to be proven.

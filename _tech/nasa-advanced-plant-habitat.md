@@ -16,8 +16,8 @@ links:
   - {title: "NASA Facts: Plant Habitat-04 (FS-2021-06-445-KSC)", url: "https://www.nasa.gov/sites/default/files/atoms/files/plant_habitat-04.pdf", kind: official, date: "Jun 2021"}
   - {title: "NASA Kennedy: Houston, We Have a Pepper", url: "https://www.nasa.gov/centers-and-facilities/kennedy/houston-we-have-a-pepper/", kind: official, date: "Oct 2021"}
   - {title: "NASA: Astronauts Have First Taste of Peppers Grown in Space", url: "https://www.nasa.gov/image-article/astronauts-have-first-taste-of-peppers-grown-space/", kind: official, date: "Nov 2021"}
-  - {title: "NASA Image and Video Library: chile peppers in the Advanced Plant Habitat (iss065e434051)", url: "https://images.nasa.gov/details/iss065e434051", kind: official, date: "Oct 2021"}
-  - {title: "Poulet et al.: Large-Scale Crop Production for the Moon and Mars: Current Gaps and Future Perspectives (Frontiers in Astronomy and Space Sciences)", url: "https://www.frontiersin.org/articles/10.3389/fspas.2021.733944/full", kind: paper, date: "Jan 2022"}
+  - {title: "NASA Image and Video Library: chile peppers in the Advanced Plant Habitat (iss065e434051)", url: "https://images.nasa.gov/details/iss065e434051", kind: official, date: "Sep 2021"}
+  - {title: "Poulet et al.: Large-Scale Crop Production for the Moon and Mars: Current Gaps and Future Perspectives (Frontiers in Astronomy and Space Sciences)", url: "https://www.frontiersin.org/articles/10.3389/fspas.2021.733944/full", kind: paper, date: "Feb 2022"}
   - {title: "Massa and Smith: Space Crop Production Research Informing Exploration (NTRS)", url: "https://ntrs.nasa.gov/citations/20260002161", kind: official, date: "Mar 2026"}
 ---
 
