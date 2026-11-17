@@ -18,3 +18,7 @@ Phase → System → Component → Sub-component. Every level records:
 
 Five candidate designs are in `templates/`, viewable at https://openmoon.beached.lol/templates/.
 The sample content in them shows the layout only and has not been checked against sources yet.
+
+Round 2 templates (`templates/blueprint-v2/` and `templates/moonpunk/`) are generated:
+edit `_templates_src/` (shared `body.html`, `base.css`, and per-theme CSS in `build.py`), then run
+`python3 _templates_src/build.py`.
