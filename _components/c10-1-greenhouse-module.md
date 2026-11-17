@@ -60,7 +60,7 @@ sources:
   - {title: "Kusuma, Pattison and Bugbee, Horticulture Research: From physics to fixtures to food, current and potential LED efficacy", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7105460/", date: "Mar 2020"}
   - {title: "NASA: Science in space, plant science (Veggie)", url: "https://www.nasa.gov/missions/station/iss-research/science-in-space-week-of-july-10-2023-plant-science/", date: "Jul 2023"}
   - {title: "NASA: Houston, we have a pepper", url: "https://www.nasa.gov/centers-and-facilities/kennedy/houston-we-have-a-pepper/", date: "2021"}
-  - {title: "Beihang University: Lunar Palace 365 results", url: "https://ev.buaa.edu.cn/info/1107/2651.htm", date: "2018"}
+  - {title: "Lunar Palace 1 (Lunar Palace 365 mission), Wikipedia", url: "https://en.wikipedia.org/wiki/Lunar_Palace_1", date: "accessed Nov 2026"}
   - {title: "NASA: Scientists grow plants in lunar soil (Univ. of Florida, 2022)", url: "https://www.nasa.gov/?p=96327", date: "May 2022"}
 ---
 

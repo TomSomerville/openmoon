@@ -40,16 +40,16 @@
   url: https://www.nasa.gov/news-release/nasa-selects-lunar-relay-contractor-for-near-space-network-services
 - name: ESA Moonlight phase 1 (Telespazio)
   value: "€123M"
-  src: ESA (Oct 2024)
-  url: https://www.esa.int/articles/esa-s-moonlight-programme-pioneering-the-path-for-lunar-exploration
+  src: European Spaceflight (Mar 2025), reporting the Oct 2024 ESA contract
+  url: https://europeanspaceflight.com/thales-alenia-space-to-build-esa-moonlight-satellites-for-telespazio/
 - name: ICON Project Olympus construction R&D
   value: "$57.2M SBIR Phase III"
   src: ICON (Nov 2022)
   url: https://www.iconbuild.com/newsroom/icon-to-develop-lunar-surface-construction-system-with-57-2-million-nasa-award
 - name: Blue Alchemist (oxygen and solar cells from regolith)
-  value: "About $34.7M NASA Tipping Point"
-  src: Blue Origin (Sep 2025)
-  url: https://www.blueorigin.com/news/blue-alchemist-hits-major-milestone-toward-permanent-sustainable-lunar-infrastructure
+  value: "$34.7M NASA Tipping Point"
+  src: NASA, 2023 Tipping Point selections (Jul 2023)
+  url: https://www.nasa.gov/general/2023-nasa-tipping-point-selections/
 - name: Published price to the lunar surface (Astrobotic)
   value: "$1.2M per kg to the surface; $300k per kg to lunar orbit"
   src: Astrobotic Payload User's Guide v5.0 (Aug 2021)
@@ -79,6 +79,6 @@
   src: NASA RELEASE 22-090 (Aug 2022)
   url: https://www.nasa.gov/?p=142765
 - name: Falcon Heavy list price
-  value: "$97M"
-  src: AIAA Vehicle Guide
-  url: https://aiaa.org/vehicle-guide/vehicles/falcon/nomenclature-cost-availability
+  value: "$97M (raised from $90M in Mar 2022)"
+  src: Space.com (Mar 2022)
+  url: https://www.space.com/spacex-raises-prices-launch-starlink-inflation

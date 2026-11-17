@@ -40,11 +40,11 @@ workstreams:
     desc: Measure what the crew will live with.
     items: ["Radiation dosimeter", "Dust levitation sensor", "Thermal and seismic logging"]
 technologies:
-  - {name: "TRIDENT drill (Honeybee Robotics)", use: "Drilling up to 1 m to sample ice", status: "Flew on IM-2 (2025). Powered up and showed full range of motion; lander tipped so no ice sampled", trl: 7, src: 1}
+  - {name: "TRIDENT drill (Honeybee Robotics)", use: "Drilling up to 1 m to sample ice", status: "Flew on IM-2 (2025). Powered up and extended to its full range; lander ended on its side and the mission ended early", trl: 7, src: 1}
   - {name: "MSolo mass spectrometer", use: "Identifying volatiles released from drilled soil", status: "Flew on IM-2; worked, but gases detected were from the lander or Earth", trl: 7, src: 2}
   - {name: "VIPER rover (NASA)", use: "Partner ice-prospecting data", status: "Revived Sep 2025 via CLPS task order up to $190M; delivery option tied to Blue Moon MK1's first flight", trl: 8, src: 3}
-  - {name: "Commercial lunar landers (CLPS)", use: "Delivering the prospector", status: "Mixed record: Blue Ghost M1 succeeded (2025); IM-1 and IM-2 landed tipped; ispace M2 crashed (2025)", trl: 7, src: 4}
-  - {name: "Radioisotope heater units", use: "Keeping electronics warm in PSRs and at night", status: "Flight-proven, about 1 W each", trl: 9, src: 5}
+  - {name: "Commercial lunar landers (CLPS)", use: "Delivering the prospector", status: "Mixed record: Peregrine never attempted a landing (2024); IM-1 and IM-2 tipped; Blue Ghost M1 fully successful (2025)", trl: 7, src: 16}
+  - {name: "Radioisotope heater units", use: "Keeping electronics warm in PSRs and at night", status: "Flight-proven (Cassini carried 82), about 1 W each", trl: 9, src: 15}
 sources:
   - {title: "NASA: Lunar drill technology passes tests on the Moon (PRIME-1)", url: "https://www.nasa.gov/missions/artemis/clps/nasas-lunar-drill-technology-passes-tests-on-the-moon/", date: "May 2025"}
   - {title: "NASA NTRS: MSolo PRIME-1 overview and results", url: "https://ntrs.nasa.gov/api/citations/20260003150/downloads/MSolo%20PRIME-1%20overview%20and%20results%20-%20LSSW.pdf", date: "2026"}
@@ -60,6 +60,8 @@ sources:
   - {title: "Space.com: ispace lander crashed due to laser errors", url: "https://www.space.com/space-exploration/launches-spacecraft/private-japanese-moon-lander-crashed-due-to-laser-errors-ispace-says", date: "Jun 2025"}
   - {title: "Zhang et al., Science Advances: radiation dose on the lunar surface (Chang'e-4 LND)", url: "https://doi.org/10.1126/sciadv.aaz1334", date: "Sep 2020"}
   - {title: "Chang'e 7, Wikipedia", url: "https://en.wikipedia.org/wiki/Chang'e_7", date: "accessed Nov 2026"}
+  - {title: "NASA Science: Cassini's radioisotope thermoelectric generators (82 RHUs, one watt each)", url: "https://science.nasa.gov/mission/cassini/radioisotope-thermoelectric-generator", date: ""}
+  - {title: "Commercial Lunar Payload Services, Wikipedia", url: "https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services", date: "accessed Nov 2026"}
 risks:
   - {sev: Critical, title: "Lander tips over or crashes (IM-1 and IM-2 landed on their sides; ispace M2 crashed)", fix: "Fly two prospectors on two different landers; pick services with a demonstrated upright landing; require terrain-relative navigation"}
   - {sev: High, title: "Ice is patchy: ShadowCam found no widespread surface ice above ~20–30%, only small patches", fix: "Drill many points across several PSRs rather than one deep hole; rank by measured, not modelled, ice"}
@@ -70,7 +72,7 @@ risks:
 
 ## What we already know about the ice
 
-- **LCROSS (2009)** hit the shadowed crater Cabeus. NASA's 2025 data book puts the water in the ejecta "on the order of five percent" by mass<sup class="r">[7](#s7)</sup>.
+- **LCROSS (2009)** hit the shadowed crater Cabeus<sup class="r">[6](#s6)</sup>. NASA's 2025 data book says later analyses put the water found "on the order of five percent" by mass<sup class="r">[7](#s7)</sup>.
 - **Chandrayaan-1's M3 instrument** confirmed surface water ice in polar cold traps in 2018<sup class="r">[8](#s8)</sup>.
 - **ShadowCam (2026)** found **little widespread surface ice**. It found only a few 20–50 m patches consistent with more than 10% ice, often near young craters<sup class="r">[9](#s9)</sup>.
 - Temperatures inside shadowed craters can fall to about 25 K<sup class="r">[10](#s10)</sup>.
@@ -79,13 +81,13 @@ So ice exists, but its amount and depth at any one spot are unknown. That is why
 
 ## Lessons already paid for
 
-- **PRIME-1 on IM-2 (2025).** The TRIDENT drill and MSolo spectrometer both worked on the Moon, but the lander tipped and no ice was sampled<sup class="r">[1](#s1)</sup><sup class="r">[2](#s2)</sup>. **Lesson:** don't depend on one lander.
+- **PRIME-1 on IM-2 (2025).** The TRIDENT drill and MSolo spectrometer both worked on the Moon, but the lander ended up on its side, the mission lasted about half a day, and the gases MSolo detected came from the lander or Earth<sup class="r">[1](#s1)</sup><sup class="r">[2](#s2)</sup>. **Lesson:** don't depend on one lander.
 - **Lunar Trailblazer** was lost the day after launch in February 2025<sup class="r">[11](#s11)</sup>. **Lesson:** orbital ice mapping can't be counted on either.
 - **Blue Ghost M1** operated for 14 days and into the lunar night<sup class="r">[4](#s4)</sup>. **Lesson:** reliable commercial landers now exist.
 
 ## Step-by-step
 
-1. **Collect partner results.** VIPER's delivery depends on Blue Moon MK1 flying first<sup class="r">[3](#s3)</sup>. Chang'e-7, which targets the Shackleton area, slipped to 2027<sup class="r">[14](#s14)</sup>. Use whatever arrives, but don't wait on it.
+1. **Collect partner results.** NASA will decide whether to deliver VIPER after Blue Moon MK1's first flight<sup class="r">[3](#s3)</sup>. Chang'e-7, which targets the Shackleton area, slipped to 2027<sup class="r">[14](#s14)</sup>. Use whatever arrives, but don't wait on it.
 2. **Build two small prospector rovers** with flight-proven instruments: TRIDENT-class drill, MSolo-class mass spectrometer, neutron spectrometer and stereo cameras.
 3. **Buy two deliveries on different landers.** Pricing reference: NASA's VIPER delivery task order is worth up to $190M<sup class="r">[3](#s3)</sup>.
 4. **Explore from a sunlit base point.** Each rover parks in sunlight to recharge, then makes short trips into the PSR. Radioisotope heaters (about 1 W each<sup class="r">[5](#s5)</sup>) keep electronics alive.
