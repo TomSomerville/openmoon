@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" font-family="Share Tech Mono, monospace">
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern></defs>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+
+<g fill="none" stroke="#38d4f0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="90" cy="80" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="210" cy="120" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="330" cy="70" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="470" cy="110" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="610" cy="60" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="720" cy="130" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="760" cy="90" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="150" cy="180" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="560" cy="170" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="400" cy="150" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/>
+<path d="M-50 545Q400 375 850 545" fill="rgba(56,212,240,.06)" stroke="#38d4f0" opacity=".7"/>
+<g transform="translate(400 230)">
+<rect x="-70" y="-50" width="140" height="100" fill="rgba(56,212,240,.08)"/>
+<path d="M-70 -20h-200v40h200M70 -20h200v40h-200" fill="rgba(56,212,240,.08)"/>
+<path d="M-230 -20v40M-190 -20v40M-150 -20v40M-110 -20v40M110 -20v40M150 -20v40M190 -20v40M230 -20v40" stroke-width="1" opacity=".6"/>
+<rect x="-50" y="-140" width="100" height="90" fill="rgba(56,212,240,.08)" stroke="#ffb020"/>
+<rect x="-34" y="-132" width="68" height="74" rx="30" fill="rgba(255,176,32,.08)" stroke="#ffb020"/>
+<path d="M-50 -120h-14M-50 -100h-14M-50 -80h-14" stroke="#ffb020" stroke-width="1"/>
+<rect x="50" y="-120" width="30" height="50" fill="rgba(56,212,240,.08)"/><path d="M80 -110h16M80 -95h16M80 -80h16" stroke-width="1"/>
+<path d="M-20 50l-10 16h60l-10-16"/></g>
+<path d="M400 135L520 80" stroke="#ffb020" stroke-width="1.2"/><circle cx="400" cy="135" r="3" fill="#ffb020" stroke="none"/><text x="526" y="84" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">LIQUID OXYGEN TANK</text><path d="M350 110L230 80" stroke="#ffb020" stroke-width="1.2"/><circle cx="350" cy="110" r="3" fill="#ffb020" stroke="none"/><text x="224" y="84" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="end">MULTILAYER INSULATION</text><path d="M470 135L600 140" stroke="#ffb020" stroke-width="1.2"/><circle cx="470" cy="135" r="3" fill="#ffb020" stroke="none"/><text x="606" y="144" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">CRYOCOOLER</text><path d="M400 260L480 320" stroke="#ffb020" stroke-width="1.2"/><circle cx="400" cy="260" r="3" fill="#ffb020" stroke="none"/><text x="486" y="324" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">SPACECRAFT BUS</text><path d="M190 230L150 300" stroke="#ffb020" stroke-width="1.2"/><circle cx="190" cy="230" r="3" fill="#ffb020" stroke="none"/><text x="144" y="304" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="end">SOLAR ARRAY</text>
+</g>
+<text x="24" y="38" fill="#d6e2ec" font-size="18" letter-spacing="1">IN-ORBIT LOX STORAGE DEMO · LOXSAT</text>
+<text x="20" y="488" fill="#d6e2ec" font-size="11" opacity=".7" letter-spacing="1">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

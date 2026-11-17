@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" font-family="Share Tech Mono, monospace">
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern>
+<style>.l{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.n{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linecap:round}.a{fill:none;stroke:#ffb020;stroke-width:1.5}.d{stroke-dasharray:5 5}.t{fill:#d6e2ec;font-size:14px}.s{fill:#d6e2ec;font-size:11px;opacity:.75}.o{fill:#ffb020}.r{fill:rgba(56,212,240,.05);stroke:#38d4f0;stroke-width:1.5}</style></defs>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<rect class="r" x="150" y="60" width="320" height="390" rx="4"/>
+<path class="n" d="M150 110H470M150 400H470" opacity=".5"/>
+<rect class="l" x="190" y="135" width="240" height="235" rx="4"/>
+<rect x="210" y="155" width="200" height="160" fill="rgba(56,212,240,.04)" stroke="#38d4f0" stroke-width="1"/>
+<line class="n" x1="215" y1="180" x2="405" y2="180"/>
+<rect class="l" x="285" y="182" width="40" height="34"/><path class="l" d="M298 216 L312 216 L305 232 Z"/>
+<rect class="l" x="225" y="285" width="170" height="10"/>
+<g fill="rgba(255,176,32,.35)" stroke="#ffb020" stroke-width="1.2"><rect x="245" y="272" width="30" height="13"/><rect x="290" y="276" width="30" height="9"/><rect x="335" y="272" width="30" height="13"/></g>
+<path d="M305 232 L305 272" stroke="#ffb020" stroke-width="1.5" class="d"/>
+<rect class="l" x="210" y="330" width="60" height="25"/><circle cx="380" cy="342" r="8" class="l"/>
+<rect class="l" x="560" y="250" width="110" height="80" rx="6"/><circle cx="615" cy="290" r="26" class="l"/><circle cx="615" cy="290" r="8" class="l"/>
+<g fill="#38d4f0" opacity=".45"><circle cx="602" cy="276" r="1.5"/><circle cx="628" cy="281" r="1.5"/><circle cx="610" cy="305" r="1.5"/><circle cx="626" cy="300" r="1.5"/></g>
+<path class="a d" d="M560 290 Q500 260 430 220"/>
+<line class="a" x1="325" y1="195" x2="560" y2="150"/><circle class="o" cx="325" cy="195" r="3"/><text x="565" y="146" class="t">PRINT HEAD</text>
+<line class="a" x1="365" y1="276" x2="560" y2="215"/><circle class="o" cx="365" cy="276" r="3"/><text x="565" y="205" class="t">PRINTED REGOLITH</text><text x="565" y="221" class="t">TEST SPECIMENS</text>
+<text x="545" y="355" class="t">FEEDSTOCK</text><text x="545" y="371" class="s">REGOLITH SIMULANT + POLYMER</text>
+<text x="160" y="90" class="t">ISS ADDITIVE MANUFACTURING FACILITY</text>
+<text x="40" y="40" class="s">MICROGRAVITY PRINT DEMONSTRATION</text>
+<text x="20" y="484" class="t" font-size="12" letter-spacing="1">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" font-family="Share Tech Mono, monospace">
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern>
+<style>.l{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.n{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linecap:round}.a{fill:none;stroke:#ffb020;stroke-width:1.5}.d{stroke-dasharray:5 5}.t{fill:#d6e2ec;font-size:14px}.s{fill:#d6e2ec;font-size:11px;opacity:.75}.o{fill:#ffb020}.r{fill:rgba(56,212,240,.05);stroke:#38d4f0;stroke-width:1.5}</style></defs>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<circle cx="700" cy="70" r="34" class="l"/><path class="n" d="M676 58 Q700 70 724 56M672 82 Q700 92 728 80" stroke-width="1"/><text x="650" y="125" class="t">EARTH</text>
+<circle cx="260" cy="330" r="120" fill="rgba(214,226,236,.06)" stroke="#38d4f0" stroke-width="2"/>
+<g fill="none" stroke="#38d4f0" stroke-width="1" opacity=".35"><circle cx="220" cy="300" r="18"/><circle cx="300" cy="370" r="12"/><circle cx="210" cy="390" r="8"/><circle cx="310" cy="285" r="7"/></g>
+<ellipse cx="350" cy="300" rx="290" ry="105" transform="rotate(-14 350 300)" fill="none" stroke="#38d4f0" stroke-width="1.5" class="d"/>
+<g transform="translate(600 205)"><rect class="l" x="-18" y="-16" width="36" height="32"/><rect class="l" x="-78" y="-8" width="52" height="16"/><rect class="l" x="26" y="-8" width="52" height="16"/><path class="n" d="M-26 0H-18M18 0H26M-52 -8V8M52 -8V8"/><path class="l" d="M-10 -16 Q0 -34 10 -16 Z"/></g>
+<line class="a" x1="604" y1="182" x2="690" y2="102"/><text x="660" y="160" class="s">X-BAND</text>
+<g class="n d" stroke-width="1.5"><line x1="586" y1="220" x2="280" y2="214"/><line x1="586" y1="222" x2="200" y2="236"/></g>
+<g class="l"><path d="M270 212 L290 212 L286 200 L274 200 Z"/><rect x="190" y="230" width="16" height="8"/></g>
+<text x="350" y="205" class="s">S-BAND / UHF RELAY</text>
+<text x="520" y="260" class="t">LUNAR PATHFINDER</text><text x="520" y="276" class="s">SMALL RELAY SATELLITE</text>
+<text x="40" y="60" class="t">ELLIPTICAL LUNAR ORBIT</text><text x="40" y="76" class="s">LONG PASSES OVER THE SOUTH POLE</text>
+<text x="180" y="190" class="s">SURFACE USERS</text>
+<text x="230" y="335" class="t">MOON</text>
+<text x="20" y="484" class="t" font-size="12" letter-spacing="1">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

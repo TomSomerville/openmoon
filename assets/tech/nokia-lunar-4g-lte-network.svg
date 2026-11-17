@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" font-family="Share Tech Mono, monospace">
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern></defs>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<path d="M0 420 Q120 412 240 418 T480 416 T800 420 V500 H0Z" fill="rgba(56,212,240,.05)" stroke="#38d4f0" stroke-width="2"/><g fill="#38d4f0" opacity=".35"><circle cx="60" cy="440" r="2"/><circle cx="150" cy="455" r="1.5"/><circle cx="300" cy="438" r="2.5"/><circle cx="420" cy="462" r="1.5"/><circle cx="560" cy="445" r="2"/><circle cx="690" cy="458" r="1.5"/><circle cx="740" cy="436" r="2"/></g><ellipse cx="640" cy="445" rx="40" ry="6" fill="none" stroke="#38d4f0" stroke-width="1" opacity=".4"/>
+<g fill="none" stroke="#38d4f0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="90" cy="80" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="210" cy="120" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="330" cy="70" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="470" cy="110" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="610" cy="60" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="720" cy="130" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="760" cy="90" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="150" cy="180" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="560" cy="170" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="400" cy="150" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/>
+<g transform="translate(210 418)">
+<path d="M-60 -60h120v-110h-120z" fill="rgba(56,212,240,.08)"/><path d="M-60 -60L-95 0M60 -60L95 0M-30 -60L-45 0M30 -60L45 0"/>
+<path d="M-105 0h20M85 0h20" stroke-width="3"/>
+<path d="M30 -170v-60" stroke-width="3"/><path d="M22 -230h16l-4 -20h-8z" fill="rgba(56,212,240,.08)" stroke="#ffb020"/>
+<rect x="-45" y="-150" width="50" height="30" fill="rgba(56,212,240,.08)" stroke="#ffb020"/></g>
+<g stroke="#ffb020" stroke-width="1.5" opacity=".9"><path d="M262 170a20 20 0 0 1 0 -28M276 178a38 38 0 0 1 0 -44M290 186a56 56 0 0 1 0 -60"/>
+<path d="M218 170a20 20 0 0 0 0 -28" transform="translate(4 0)"/></g>
+<path d="M240 150Q420 140 560 360" stroke="#ffb020" stroke-dasharray="6 6" stroke-width="1.3"/>
+<path d="M240 150Q470 90 660 240" stroke="#ffb020" stroke-dasharray="6 6" stroke-width="1.3"/>
+<g transform="translate(560 418)"><path d="M-40 -15h80v-30h-80z" fill="rgba(56,212,240,.08)"/><circle cx="-28" cy="-8" r="9"/><circle cx="0" cy="-8" r="9"/><circle cx="28" cy="-8" r="9"/>
+<path d="M20 -45v-20" /><rect x="14" y="-73" width="12" height="8" fill="rgba(56,212,240,.08)" stroke="#ffb020"/></g>
+<g transform="translate(670 250)"><path d="M-25 0h50l-8 -30h-34z" fill="rgba(56,212,240,.08)"/><path d="M-20 0l-12 18M20 0l12 18"/><path d="M-6 0l-4 12h20l-4-12" stroke="#ffb020"/>
+<path d="M0 -30v-14"/><rect x="-6" y="-52" width="12" height="8" fill="rgba(56,212,240,.08)" stroke="#ffb020"/></g>
+
+<path d="M238 178L60 95" stroke="#ffb020" stroke-width="1.2"/><circle cx="238" cy="178" r="3" fill="#ffb020" stroke="none"/><text x="66" y="99" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">BASE STATION ON LANDER</text><path d="M580 350L630 380" stroke="#ffb020" stroke-width="1.2"/><circle cx="580" cy="350" r="3" fill="#ffb020" stroke="none"/><text x="636" y="384" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">ROVER (USER DEVICE)</text><path d="M670 262L630 300" stroke="#ffb020" stroke-width="1.2"/><circle cx="670" cy="262" r="3" fill="#ffb020" stroke="none"/><text x="636" y="304" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">HOPPER (USER DEVICE)</text><path d="M420 148L420 100" stroke="#ffb020" stroke-width="1.2"/><circle cx="420" cy="148" r="3" fill="#ffb020" stroke="none"/><text x="426" y="104" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">LTE RADIO LINK</text>
+</g>
+<text x="24" y="38" fill="#d6e2ec" font-size="18" letter-spacing="1">LUNAR 4G/LTE SURFACE NETWORK</text>
+<text x="20" y="488" fill="#d6e2ec" font-size="11" opacity=".7" letter-spacing="1">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

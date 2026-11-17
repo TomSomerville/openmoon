@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" font-family="Share Tech Mono, monospace">
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern>
+<style>.l{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.n{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linecap:round}.a{fill:none;stroke:#ffb020;stroke-width:1.5}.d{stroke-dasharray:5 5}.t{fill:#d6e2ec;font-size:14px}.s{fill:#d6e2ec;font-size:11px;opacity:.75}.o{fill:#ffb020}.r{fill:rgba(56,212,240,.05);stroke:#38d4f0;stroke-width:1.5}</style></defs>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<path d="M330 520 Q620 400 850 450 L850 520 Z" fill="rgba(56,212,240,.06)" stroke="#38d4f0" stroke-width="2"/>
+<path class="l" d="M396 222 L130 222 Q70 222 40 250 Q70 278 130 278 L396 278 Z"/>
+<path class="l" d="M404 222 L670 222 Q730 222 760 250 Q730 278 670 278 L404 278 Z"/>
+<g class="l"><path d="M120 222 L105 205 L150 205 L160 222 Z"/><path d="M120 278 L105 295 L150 295 L160 278 Z"/><path d="M680 222 L695 205 L650 205 L640 222 Z"/><path d="M680 278 L695 295 L650 295 L640 278 Z"/><path d="M350 278 L330 300 L380 300 L388 278 Z"/><path d="M450 278 L470 300 L420 300 L412 278 Z"/></g>
+<path class="n" d="M230 222V278M300 222V278M500 222V278M570 222V278" opacity=".5"/>
+<text x="240" y="244" class="s">LOX</text><text x="320" y="244" class="s">LCH4</text><text x="510" y="244" class="s">LOX</text><text x="580" y="244" class="s">LCH4</text>
+<path class="a" d="M265 262 L380 262 L380 268 L420 268 L420 262 L535 262"/><path class="o" d="M535 257 L545 262 L535 267 Z"/>
+<path class="a" d="M335 254 L390 254 L390 258 L410 258 L410 254 L605 254"/><path class="o" d="M605 249 L615 254 L605 259 Z"/>
+<rect x="394" y="226" width="12" height="48" fill="rgba(255,176,32,.25)" stroke="#ffb020" stroke-width="1.5"/>
+<line class="a" x1="400" y1="226" x2="430" y2="150"/><circle class="o" cx="400" cy="226" r="3"/><text x="435" y="146" class="t">TAIL-TO-TAIL DOCKING</text><text x="435" y="162" class="s">QUICK-DISCONNECT PROPELLANT PORTS</text>
+<text x="80" y="200" class="t">TANKER</text><text x="600" y="200" class="t">RECEIVING LANDER</text>
+<path class="n d" d="M80 340 H260"/><path class="o" d="M260 335 L270 340 L260 345 Z"/><text x="80" y="362" class="s">SMALL SETTLING THRUST KEEPS LIQUID AT THE OUTLETS</text>
+<text x="40" y="50" class="t">SHIP-TO-SHIP CRYOGENIC TRANSFER</text><text x="40" y="66" class="s">LIQUID OXYGEN + LIQUID METHANE IN EARTH ORBIT</text>
+<text x="20" y="484" class="t" font-size="12" letter-spacing="1">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

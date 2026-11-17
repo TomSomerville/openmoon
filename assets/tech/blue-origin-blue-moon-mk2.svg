@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" font-family="Share Tech Mono, monospace">
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern>
+<style>.l{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.n{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linecap:round}.a{fill:none;stroke:#ffb020;stroke-width:1.5}.d{stroke-dasharray:5 5}.t{fill:#d6e2ec;font-size:14px}.s{fill:#d6e2ec;font-size:11px;opacity:.75}.o{fill:#ffb020}.r{fill:rgba(56,212,240,.05);stroke:#38d4f0;stroke-width:1.5}</style></defs>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<line class="n" x1="0" y1="430" x2="800" y2="430"/>
+<g fill="#38d4f0" opacity=".25"><circle cx="70" cy="445" r="2"/><circle cx="190" cy="455" r="1.5"/><circle cx="560" cy="447" r="2"/><circle cx="700" cy="452" r="2"/></g>
+<path class="l" d="M345 120 L345 75 Q345 50 400 48 Q455 50 455 75 L455 120 Z"/>
+<rect x="370" y="70" width="60" height="14" rx="4" fill="rgba(255,176,32,.2)" stroke="#ffb020" stroke-width="1.5"/>
+<path class="l" d="M330 128 Q330 120 400 120 Q470 120 470 128 L470 292 Q470 300 400 300 Q330 300 330 292 Z"/>
+<path class="n" d="M330 165H470M330 255H470" opacity=".5"/>
+<rect class="l" x="340" y="300" width="120" height="62"/>
+<circle class="l" cx="370" cy="331" r="22"/><circle class="l" cx="430" cy="331" r="22"/>
+<g class="l"><path d="M360 362 L352 392 L378 392 L370 362 Z"/><path d="M395 362 L387 392 L413 392 L405 362 Z"/><path d="M430 362 L422 392 L448 392 L440 362 Z"/></g>
+<g class="n"><path d="M342 340 L280 426 M458 340 L520 426 M352 362 L330 426 M448 362 L470 426"/></g>
+<g class="l"><ellipse cx="280" cy="427" rx="16" ry="4"/><ellipse cx="520" cy="427" rx="16" ry="4"/></g>
+<rect class="l" x="230" y="150" width="85" height="120"/><rect class="l" x="485" y="150" width="85" height="120"/>
+<path class="n" d="M315 210H330M470 210H485M258 150V270M287 150V270M513 150V270M542 150V270M230 190H315M230 230H315M485 190H570M485 230H570" stroke-width="1"/>
+<path class="a d" d="M610 48V430"/><path class="a" d="M602 48H618M602 430H618"/><text x="622" y="245" class="t">~16 M</text>
+<line class="a" x1="440" y1="90" x2="640" y2="80"/><circle class="o" cx="440" cy="90" r="3"/><text x="645" y="76" class="t">CREW CABIN</text>
+<line class="a" x1="345" y1="140" x2="250" y2="114"/><circle class="o" cx="345" cy="140" r="3"/><text x="40" y="96" class="t">LIQUID HYDROGEN TANK</text><text x="40" y="112" class="s">CRYOGENIC LH2 / LOX PROPELLANT</text>
+<line class="a" x1="360" y1="380" x2="170" y2="360"/><circle class="o" cx="360" cy="380" r="3"/><text x="40" y="350" class="t">BE-7 ENGINES</text>
+<line class="a" x1="560" y1="160" x2="650" y2="140"/><circle class="o" cx="560" cy="160" r="3"/><text x="655" y="136" class="t">SOLAR</text><text x="655" y="152" class="t">ARRAYS</text>
+<text x="40" y="40" class="t">BLUE MOON MK2 CREW LANDER</text>
+<text x="20" y="484" class="t" font-size="12" letter-spacing="1">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

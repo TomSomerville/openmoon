@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<title>Hvdc Lunar Cable (concept)</title>
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ffb020"/></marker></defs>
+<style>.l{fill:none;stroke:#38d4f0;stroke-width:2}.f{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2}.a{fill:none;stroke:#ffb020;stroke-width:2}.af{fill:#ffb020}.c{stroke:#ffb020;stroke-width:1.2;fill:none}text{fill:#d6e2ec;font-family:"Share Tech Mono",monospace;font-size:14px}.s{font-size:12px;fill:#8fa3b3}.h{font-size:20px;letter-spacing:2px}</style>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<g fill="#d6e2ec" opacity=".5"><circle cx="253" cy="363" r="1.3"/><circle cx="143" cy="249" r="1.3"/><circle cx="495" cy="380" r="1.3"/><circle cx="77" cy="370" r="0.8"/><circle cx="490" cy="192" r="1.3"/><circle cx="249" cy="158" r="1.3"/><circle cx="491" cy="336" r="1.3"/><circle cx="497" cy="263" r="1.3"/><circle cx="164" cy="178" r="1.3"/><circle cx="165" cy="327" r="1"/><circle cx="769" cy="67" r="1.3"/><circle cx="75" cy="141" r="1.3"/><circle cx="53" cy="214" r="0.8"/><circle cx="285" cy="302" r="1.3"/><circle cx="746" cy="258" r="1.3"/><circle cx="447" cy="262" r="1.3"/><circle cx="600" cy="287" r="0.8"/><circle cx="384" cy="109" r="0.8"/><circle cx="149" cy="313" r="0.8"/><circle cx="274" cy="283" r="1.3"/><circle cx="318" cy="275" r="1.3"/><circle cx="405" cy="353" r="1"/><circle cx="556" cy="359" r="1"/><circle cx="608" cy="178" r="1"/><circle cx="708" cy="74" r="1"/><circle cx="630" cy="143" r="1.3"/><circle cx="344" cy="337" r="1.3"/><circle cx="592" cy="113" r="1.3"/><circle cx="681" cy="168" r="1.3"/><circle cx="597" cy="196" r="1"/><circle cx="137" cy="92" r="1"/><circle cx="664" cy="307" r="0.8"/><circle cx="362" cy="94" r="1"/><circle cx="164" cy="70" r="1"/><circle cx="447" cy="272" r="0.8"/><circle cx="55" cy="369" r="1.3"/><circle cx="789" cy="83" r="1"/><circle cx="745" cy="360" r="1"/><circle cx="574" cy="202" r="1.3"/><circle cx="251" cy="78" r="1"/></g>
+<path class="l" d="M0 420 Q120 412 240 420 T480 418 T800 421"/><path d="M0 421 Q120 413 240 421 T480 419 T800 422 V500 H0z" fill="rgba(56,212,240,.05)"/><g fill="#38d4f0" opacity=".35"><circle cx="60" cy="440" r="2"/><circle cx="170" cy="455" r="1.5"/><circle cx="300" cy="438" r="2"/><circle cx="455" cy="462" r="1.5"/><circle cx="610" cy="444" r="2"/><circle cx="730" cy="470" r="1.5"/></g>
+
+<path class="l" d="M110 410 V200"/><rect class="f" x="70" y="150" width="35" height="110"/><rect class="f" x="115" y="150" width="35" height="110"/>
+<path class="l" d="M70 177h35M70 205h35M70 232h35M115 177h35M115 205h35M115 232h35" opacity=".5"/>
+<path class="l" d="M110 410 L92 418 M110 410 L128 418"/>
+<rect class="f" x="160" y="370" width="60" height="45"/><text class="s" x="190" y="397" text-anchor="middle">DC/DC</text>
+<path class="l" d="M110 395 H160"/>
+<path class="a" d="M220 405 C300 420 360 412 430 418 S560 414 600 410" stroke-width="3"/>
+<rect class="f" x="600" y="370" width="60" height="45"/><text class="s" x="630" y="397" text-anchor="middle">DC/DC</text>
+<path class="f" d="M670 410 V330 Q670 300 710 300 H740 Q770 300 770 330 V410Z"/><rect class="f" x="700" y="350" width="22" height="30"/>
+<path class="l" d="M660 395 H670"/>
+<circle class="f" cx="300" cy="290" r="40"/><circle class="a" cx="300" cy="290" r="14"/><path class="l" d="M300 250 V276 M300 304 V330 M260 290 H286 M314 290 H340" opacity=".5"/>
+<path class="c" d="M300 330 L310 414" stroke-dasharray="3 3"/>
+<path class="c" d="M220 450 H600"/><path class="c" d="M220 444 V456 M600 444 V456"/><text x="410" y="470" text-anchor="middle">~3 km</text>
+<path class="c" d="M150 150L180 100"/><circle class="af" cx="150" cy="150" r="3"/><text x="186" y="105" text-anchor="start">SOLAR ARRAY / POWER SOURCE</text>
+<text x="345" y="280">ALUMINIUM CONDUCTOR</text><text x="345" y="300">±4 kVDC</text><text class="s" x="345" y="318">CROSS-SECTION (CONCEPT)</text>
+<path class="c" d="M720 300L700 220"/><circle class="af" cx="720" cy="300" r="3"/><text x="694" y="225" text-anchor="end">HABITAT LOAD</text>
+<text class="s" x="776" y="40" text-anchor="end">~95% TRANSMISSION EFFICIENCY (NASA GLENN STUDY)</text>
+<text class="h" x="24" y="40">HVDC LUNAR CABLE</text>
+<text class="s" x="24" y="486">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

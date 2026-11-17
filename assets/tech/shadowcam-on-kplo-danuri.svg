@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" font-family="Share Tech Mono, monospace">
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern>
+<style>.l{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.n{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linecap:round}.a{fill:none;stroke:#ffb020;stroke-width:1.5}.d{stroke-dasharray:5 5}.t{fill:#d6e2ec;font-size:14px}.s{fill:#d6e2ec;font-size:11px;opacity:.75}.o{fill:#ffb020}.r{fill:rgba(56,212,240,.05);stroke:#38d4f0;stroke-width:1.5}</style></defs>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<path class="l" d="M0 380 L290 376 Q325 372 345 392 L395 452 Q475 472 555 452 L605 392 Q628 372 660 376 L800 380 L800 470 L0 470 Z"/>
+<path d="M352 400 L396 452 Q475 470 554 452 L585 415 Q480 395 352 400 Z" fill="#04070a" stroke="none"/>
+<g class="a"><line x1="0" y1="300" x2="598" y2="398"/><line x1="0" y1="320" x2="590" y2="408"/><line x1="0" y1="340" x2="282" y2="376"/></g>
+<g class="a d"><line x1="596" y1="404" x2="470" y2="455"/><line x1="596" y1="404" x2="420" y2="448"/><line x1="596" y1="404" x2="520" y2="456"/></g>
+<rect class="l" x="365" y="85" width="70" height="55"/>
+<rect class="l" x="225" y="102" width="125" height="22"/><rect class="l" x="450" y="102" width="125" height="22"/>
+<path class="n" d="M350 113H365M435 113H450M256 102V124M287 102V124M318 102V124M481 102V124M512 102V124M543 102V124"/>
+<path class="l" d="M380 85 L400 62 L420 85 Z"/><line class="n" x1="400" y1="62" x2="400" y2="50"/>
+<rect class="l" x="386" y="140" width="28" height="62"/><path class="n" d="M386 155H414M386 170H414M386 185H414"/>
+<g class="n d" stroke-width="1.2"><line x1="390" y1="202" x2="430" y2="455"/><line x1="410" y1="202" x2="510" y2="458"/></g>
+<line class="a" x1="414" y1="175" x2="520" y2="190"/><circle class="o" cx="414" cy="175" r="3"/>
+<text x="525" y="188" class="t">SHADOWCAM (NASA)</text><text x="525" y="204" class="s">HIGH-SENSITIVITY NARROW-ANGLE CAMERA</text>
+<line class="a" x1="365" y1="100" x2="230" y2="60"/><circle class="o" cx="365" cy="100" r="3"/>
+<text x="40" y="50" class="t">KPLO / DANURI ORBITER (KARI)</text><text x="40" y="66" class="s">LUNAR POLAR ORBIT</text>
+<line class="a" x1="440" y1="455" x2="250" y2="420"/><circle class="o" cx="440" cy="455" r="3"/><text x="40" y="416" class="t">PERMANENTLY SHADOWED</text><text x="40" y="432" class="s">POLAR CRATER FLOOR</text>
+<text x="610" y="345" class="t">SUNLIT RIM</text><text x="610" y="361" class="s">SCATTERED LIGHT FILLS FLOOR</text>
+<text x="20" y="290" class="s">LOW-ANGLE SUNLIGHT</text>
+<text x="20" y="484" class="t" font-size="12" letter-spacing="1">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

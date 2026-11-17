@@ -1,0 +1,112 @@
+- slug: shadowcam-on-kplo-danuri
+  file: /assets/tech/shadowcam-on-kplo-danuri.svg
+  kind: concept
+  caption: "ShadowCam on the KPLO/Danuri orbiter imaging a permanently shadowed polar crater floor by light scattered from sunlit rims"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://www.soest.hawaii.edu/soestwp/announce/news/scarce-ice-in-moons-darkest-regions/"
+- slug: viper-rover-nasa
+  file: /assets/tech/viper-rover-nasa.jpg
+  kind: photo
+  caption: "VIPER mobility platform testing at NASA Glenn Research Center, October 2019"
+  credit: "NASA/GRC/Bridget Caswell"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://images.nasa.gov/details/GRC-2019-C-09947"
+- slug: intuitive-machines-nova-c
+  file: /assets/tech/intuitive-machines-nova-c.svg
+  kind: concept
+  caption: "Nova-C class lander: hexagonal body, six landing legs and a liquid oxygen/methane main engine"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services"
+- slug: blue-origin-blue-moon-mk2
+  file: /assets/tech/blue-origin-blue-moon-mk2.svg
+  kind: concept
+  caption: "Blue Moon Mk2 crew lander: crew cabin above hydrogen and oxygen tanks, BE-7 engines and solar arrays"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://oig.nasa.gov/wp-content/uploads/2026/03/final-report-ig-26-004-nasas-management-of-the-human-landing-system-contracts.pdf"
+- slug: sstl-lunar-pathfinder
+  file: /assets/tech/sstl-lunar-pathfinder.svg
+  kind: concept
+  caption: "Lunar Pathfinder relay satellite in an elliptical lunar orbit, linking surface users to Earth"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://en.wikipedia.org/wiki/Lunar_Pathfinder"
+- slug: lunanet-interoperability-specification-v5
+  file: /assets/tech/lunanet-interoperability-specification-v5.svg
+  kind: concept
+  caption: "LunaNet: common link, network and navigation standards so any relay or ground station can serve any lunar user"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://www.nasa.gov/communicating-with-missions/scan/lcrns/lunanet-interoperability-specification/"
+- slug: astrobotic-vsat-xl
+  file: /assets/tech/astrobotic-vsat-xl.svg
+  kind: concept
+  caption: "VSAT-XL concept: roll-out solar array wings on a ~34 m mast that rotates to track the low polar Sun"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://www.astrobotic.com/astrobotic-awarded-lunar-power-study-with-vsat-xl/"
+- slug: nasa-isru-pilot-excavator-ipex
+  file: /assets/tech/nasa-isru-pilot-excavator-ipex.jpg
+  kind: photo
+  caption: "NASA's ISRU Pilot Excavator (IPEx) performing a simulated lunar mission in a testbed at Kennedy Space Center, 30 August 2024"
+  credit: "NASA/Frank Micheaux"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://images.nasa.gov/details/KSC-20240830-PH-FMX01_0147"
+- slug: molten-regolith-electrolysis-nasa-lunar-resource
+  file: /assets/tech/molten-regolith-electrolysis-nasa-lunar-resource.jpg
+  kind: photo
+  caption: "Molten Regolith Electrolysis testing on simulated lunar regolith at Kennedy Space Center, 13 September 2022"
+  credit: "NASA/Cory S. Huston"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://images.nasa.gov/details/KSC-20220913-PH-CSH01_0001"
+- slug: iss-oxygen-generation-assembly
+  file: /assets/tech/iss-oxygen-generation-assembly.jpg
+  kind: photo
+  caption: "NASA astronaut Dan Burbank servicing the Oxygen Generator System rack in the ISS Tranquility node, 18 April 2012"
+  credit: "NASA"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://images.nasa.gov/details/iss030e236919"
+- slug: jaxa-toyota-pressurised-rover-lunar-cruiser
+  file: /assets/tech/jaxa-toyota-pressurised-rover-lunar-cruiser.jpg
+  kind: photo
+  caption: "Model of Japan's pressurized lunar rover shown at a briefing at JAXA's Washington offices, 10 April 2024"
+  credit: "NASA/Bill Ingalls"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://images.nasa.gov/details/NHQ202404100002"
+- slug: sierra-space-life-inflatable
+  file: /assets/tech/sierra-space-life-inflatable.svg
+  kind: concept
+  caption: "Full-scale inflatable habitat burst test: the woven softgoods shell failed at 77 psi, above NASA's recommended 60.8 psi"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://techcrunch.com/2024/01/22/successful-failure-sierra-spaces-inflatable-habitat-blows-up-as-planned"
+- slug: four-bed-co-scrubber-4bco2
+  file: /assets/tech/four-bed-co-scrubber-4bco2.jpg
+  kind: photo
+  caption: "Flight demonstration unit of the 4-Bed CO2 Scrubber being checked out at NASA Marshall before shipment, 2021"
+  credit: "NASA/MSFC/Fred Deaton"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://images.nasa.gov/details/MSFC-202100245"
+- slug: nasa-advanced-plant-habitat
+  file: /assets/tech/nasa-advanced-plant-habitat.jpg
+  kind: photo
+  caption: "Chile pepper plants bearing fruit in the Advanced Plant Habitat aboard the International Space Station, 2021"
+  credit: "NASA/Megan McArthur"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://images.nasa.gov/details/iss065e434051"
+- slug: cryogenic-propellant-transfer
+  file: /assets/tech/cryogenic-propellant-transfer.svg
+  kind: concept
+  caption: "Ship-to-ship transfer of liquid oxygen and methane between tail-to-tail docked vehicles in Earth orbit"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://ntrs.nasa.gov/api/citations/20260009199/downloads/HLS%20IAC%202026%20Presentation%20FINAL.pdf"
+- slug: redwire-regolith-print
+  file: /assets/tech/redwire-regolith-print.svg
+  kind: concept
+  caption: "Regolith Print demonstration: printing test specimens from regolith-simulant feedstock in the ISS Additive Manufacturing Facility"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://rdw.com/newsroom/redwire-regolith-manufacturing-technology-wins-popular-science-2021-best-of-whats-new-award/"

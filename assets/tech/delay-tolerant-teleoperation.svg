@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" font-family="Share Tech Mono, monospace">
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern></defs>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+
+<g fill="none" stroke="#38d4f0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+
+<circle cx="110" cy="200" r="70" fill="rgba(56,212,240,.08)"/><path d="M60 170q30 10 40-10t40 10M55 220q40-10 60 10t50-10" opacity=".5"/>
+<rect x="60" y="300" width="170" height="100" fill="rgba(56,212,240,.08)"/><rect x="72" y="312" width="146" height="70" fill="none" stroke="#ffb020"/>
+<path d="M80 370l30-20 25 10 30-25 40 30" stroke-width="1.2"/><path d="M100 400l-10 18h110l-10-18"/>
+<path d="M190 175Q400 60 610 250" stroke="#ffb020" stroke-dasharray="8 7"/><path d="M600 240l10 10-14 2" stroke="#ffb020"/>
+<path d="M600 290Q400 140 200 220" stroke="#38d4f0" stroke-dasharray="3 6" opacity=".7"/><path d="M212 212l-12 8 14 3" opacity=".7"/>
+<rect x="315" y="122" width="170" height="38" fill="#0a1015" stroke="#ffb020"/>
+<text x="400" y="147" fill="#d6e2ec" stroke="none" font-size="14" text-anchor="middle">4 · 6 · 8 s DELAY</text>
+<path d="M560 418Q640 390 800 400" fill="none"/>
+<g transform="translate(640 400)"><path d="M-55 -20h110v-40h-110z" fill="rgba(56,212,240,.08)"/><circle cx="-38" cy="-8" r="13"/><circle cx="0" cy="-8" r="13"/><circle cx="38" cy="-8" r="13"/>
+<path d="M30 -60v-30"/><rect x="18" y="-102" width="26" height="12" fill="rgba(56,212,240,.08)" stroke="#ffb020"/><path d="M-30 -60v-16l-14-14"/></g>
+<path d="M540 418Q600 405 800 410V500H0V418Z" fill="rgba(56,212,240,.05)" stroke="none"/>
+<path d="M480 418H800" />
+<path d="M145 347L260 450" stroke="#ffb020" stroke-width="1.2"/><circle cx="145" cy="347" r="3" fill="#ffb020" stroke="none"/><text x="266" y="454" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">OPERATOR DISPLAY</text><text x="110" y="292" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="middle">EARTH</text><path d="M640 350L690 300" stroke="#ffb020" stroke-width="1.2"/><circle cx="640" cy="350" r="3" fill="#ffb020" stroke="none"/><text x="696" y="304" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">ROVER CAMERA</text><path d="M610 250L690 200" stroke="#ffb020" stroke-width="1.2"/><circle cx="610" cy="250" r="3" fill="#ffb020" stroke="none"/><text x="696" y="204" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">COMMANDS</text><path d="M300 197L330 250" stroke="#ffb020" stroke-width="1.2"/><circle cx="300" cy="197" r="3" fill="#ffb020" stroke="none"/><text x="336" y="254" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">TELEMETRY (DELAYED)</text>
+</g>
+<text x="24" y="38" fill="#d6e2ec" font-size="18" letter-spacing="1">DELAY-TOLERANT TELEOPERATION</text>
+<text x="20" y="488" fill="#d6e2ec" font-size="11" opacity=".7" letter-spacing="1">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

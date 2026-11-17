@@ -1,0 +1,112 @@
+- slug: lunar-reconnaissance-orbiter-lro
+  file: /assets/tech/lunar-reconnaissance-orbiter-lro.jpg
+  kind: photo
+  caption: "Technicians photograph the Lunar Reconnaissance Orbiter during closeout at Astrotech Space Operations, Titusville, Florida, May 2009"
+  credit: "NASA/Jack Pfaller"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://images.nasa.gov/details/KSC-2009-2989"
+- slug: msolo-mass-spectrometer
+  file: /assets/tech/msolo-mass-spectrometer.jpg
+  kind: photo
+  caption: "Final assembly of the MSOLO-2 flight instrument at NASA Kennedy's Space Station Processing Facility, June 2023"
+  credit: "NASA/Kim Shiflett"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://images.nasa.gov/details/KSC-20230621-PH-KLS01_0034"
+- slug: firefly-blue-ghost-lander
+  file: /assets/tech/firefly-blue-ghost-lander.svg
+  kind: concept
+  caption: "Concept illustration of a squat four-legged small cargo lander with side solar panels and a top payload deck"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://fireflyspace.com/news/firefly-aerospace-successfully-completes-14-days-of-surface-operations-on-the-moon"
+- slug: spacex-starship-hls-cargo
+  file: /assets/tech/spacex-starship-hls-cargo.svg
+  kind: concept
+  caption: "Concept illustration of a Starship-type lunar lander: 9 m diameter, crew cabin near the nose, elevator, mid-body landing thrusters and legs"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://en.wikipedia.org/wiki/Starship_flight_15"
+- slug: esa-moonlight
+  file: /assets/tech/esa-moonlight.svg
+  kind: concept
+  caption: "Concept illustration of a five-satellite lunar constellation relaying data to Earth and providing navigation signals near the south pole"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://www.esa.int/articles/esa-s-moonlight-programme-pioneering-the-path-for-lunar-exploration"
+- slug: optical-laser-communications
+  file: /assets/tech/optical-laser-communications.jpg
+  kind: photo
+  caption: "Part of the Orion Artemis II Optical Communications System (O2O) in the Neil Armstrong Operations and Checkout Building, NASA Kennedy, June 2023"
+  credit: "NASA/Glenn Benson"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://images.nasa.gov/details/KSC-20230602-PH-GEB01-0010"
+- slug: vertical-solar-array-technology-vsat
+  file: /assets/tech/vertical-solar-array-technology-vsat.jpg
+  kind: photo
+  caption: "NASA illustration of a deployable vertical solar array on the lunar surface"
+  credit: "NASA"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://www.nasa.gov/?p=142765"
+- slug: high-voltage-dc-lunar-cable
+  file: /assets/tech/high-voltage-dc-lunar-cable.svg
+  kind: concept
+  caption: "Concept illustration of a ±4 kVDC aluminium cable carrying power about 3 km from a solar array to a habitat via DC/DC converters"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://ntrs.nasa.gov/api/citations/20220002315/downloads/Lunar_power_transmission_concepts_FINAL.pdf"
+- slug: sintered-basalt-pavers-regolith-polymer-pads
+  file: /assets/tech/sintered-basalt-pavers-regolith-polymer-pads.jpg
+  kind: photo
+  caption: "Hot fire test of a candidate landing pad material sample, conducted by NASA Kennedy researchers with Masten Space Systems in the Mojave Desert, 2021"
+  credit: "NASA"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://www.nasa.gov/centers-and-facilities/kennedy/nasa-tests-landing-pad-materials-for-future-lunar-missions"
+- slug: molten-salt-electrolysis-metalysis-esa
+  file: /assets/tech/molten-salt-electrolysis-metalysis-esa.svg
+  kind: concept
+  caption: "Concept illustration of a molten-salt electrolysis cell: regolith in the cathode, molten calcium chloride bath, oxygen released at the anode"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/ESA_opens_oxygen_plant_making_air_out_of_moondust"
+- slug: lunar-outpost-pegasus-ltv
+  file: /assets/tech/lunar-outpost-pegasus-ltv.jpg
+  kind: photo
+  caption: "NASA astronauts Joe Acaba and Mark Vande Hei in Lunar Outpost's Pegasus lunar terrain vehicle prototype during human-in-the-loop testing at NASA Johnson, September 2026"
+  credit: "NASA/Bill Stafford"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://images.nasa.gov/details/jsc2026e417620"
+- slug: thales-alenia-space-multi-purpose-habitation-mph
+  file: /assets/tech/thales-alenia-space-multi-purpose-habitation-mph.svg
+  kind: concept
+  caption: "Concept illustration of a ~3 m × 6 m, ~15 t cylindrical surface habitat module on landing legs"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://europeanspaceflight.com/asi-awards-new-lunar-habitat-contract-to-thales-alenia-space/"
+- slug: iss-water-recovery-with-brine-processor
+  file: /assets/tech/iss-water-recovery-with-brine-processor.jpg
+  kind: photo
+  caption: "ESA astronaut Matthias Maurer changes out the bladder in the space station's Brine Processor Assembly"
+  credit: "NASA"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://www.nasa.gov/missions/station/iss-research/nasa-achieves-water-recovery-milestone-on-international-space-station/"
+- slug: nasa-veggie
+  file: /assets/tech/nasa-veggie.jpg
+  kind: photo
+  caption: "Mizuna mustard greens of the Veg-04A experiment growing in a Veggie plant growth chamber aboard the International Space Station, July 2019"
+  credit: "NASA"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://images.nasa.gov/details/iss060e006116"
+- slug: interstellar-lab-nucleus
+  file: /assets/tech/interstellar-lab-nucleus.svg
+  kind: concept
+  caption: "Concept illustration of a modular food system combining phytotrons and controlled greenhouses for vegetables, microgreens and insects"
+  credit: "Open Moon concept illustration"
+  license: "CC BY-SA 4.0"
+  source_page: "https://www.nasa.gov/news-release/nasa-awards-1-25-million-to-three-teams-at-deep-space-food-finale"
+- slug: redwire-made-in-space-amf-on-iss
+  file: /assets/tech/redwire-made-in-space-amf-on-iss.jpg
+  kind: photo
+  caption: "The Additive Manufacturing Facility (AMF) aboard the International Space Station, June 2016"
+  credit: "NASA"
+  license: "NASA media (public domain in the US)"
+  source_page: "https://images.nasa.gov/details/iss047e152500"

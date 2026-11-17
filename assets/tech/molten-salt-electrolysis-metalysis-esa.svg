@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<title>Molten Salt Electrolysis (concept)</title>
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ffb020"/></marker></defs>
+<style>.l{fill:none;stroke:#38d4f0;stroke-width:2}.f{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2}.a{fill:none;stroke:#ffb020;stroke-width:2}.af{fill:#ffb020}.c{stroke:#ffb020;stroke-width:1.2;fill:none}text{fill:#d6e2ec;font-family:"Share Tech Mono",monospace;font-size:14px}.s{font-size:12px;fill:#8fa3b3}.h{font-size:20px;letter-spacing:2px}</style>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+
+<path class="f" d="M230 160 V400 Q230 420 250 420 H550 Q570 420 570 400 V160"/>
+<path d="M232 220 H568 V398 Q568 418 550 418 H250 Q232 418 232 398Z" fill="rgba(255,176,32,.10)"/>
+<path class="a" d="M232 220 H568" stroke-dasharray="8 4"/>
+<rect class="f" x="200" y="140" width="400" height="22"/>
+<path class="l" d="M320 80 V320"/><rect class="f" x="290" y="260" width="60" height="120"/>
+<g fill="#38d4f0" opacity=".6"><circle cx="300" cy="280" r="3"/><circle cx="316" cy="300" r="3"/><circle cx="336" cy="285" r="3"/><circle cx="305" cy="330" r="3"/><circle cx="328" cy="350" r="3"/><circle cx="310" cy="365" r="3"/><circle cx="340" cy="320" r="3"/></g>
+<path class="l" d="M480 80 V360"/><rect class="f" x="465" y="230" width="30" height="140"/>
+<g class="a"><circle cx="455" cy="300" r="5"/><circle cx="508" cy="270" r="4"/><circle cx="460" cy="250" r="6"/><circle cx="505" cy="235" r="4"/></g>
+<path class="a" d="M520 150 V95 H600" marker-end="url(#ah)"/>
+<path class="l" d="M320 80 H360 M440 80 H480"/><text x="400" y="85" text-anchor="middle">DC</text><text x="335" y="70" class="s">−</text><text x="470" y="70" class="s">+</text>
+<path class="a" d="M245 455 h20 M260 445 q10 10 0 20 M280 455 h20" opacity=".7"/>
+<path class="c" d="M290 320L150 300"/><circle class="af" cx="290" cy="320" r="3"/><text x="144" y="305" text-anchor="end">REGOLITH CATHODE</text>
+<path class="c" d="M495 300L640 320"/><circle class="af" cx="495" cy="300" r="3"/><text x="646" y="325" text-anchor="start">ANODE</text>
+<text x="620" y="100">O₂ OUT</text>
+<path class="c" d="M545 395L610 420"/><circle class="af" cx="545" cy="395" r="3"/><text x="616" y="425" text-anchor="start">MOLTEN CaCl₂ SALT</text>
+<text x="320" y="460">HEATED ~950 °C</text>
+<text class="s" x="24" y="66">REGOLITH OXIDES → O₂ + METAL ALLOY POWDER LEFT IN CATHODE</text>
+<text class="h" x="24" y="40">MOLTEN SALT ELECTROLYSIS</text>
+<text class="s" x="24" y="486">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

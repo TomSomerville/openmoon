@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" font-family="Share Tech Mono, monospace">
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern></defs>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<path d="M0 420 Q120 412 240 418 T480 416 T800 420 V500 H0Z" fill="rgba(56,212,240,.05)" stroke="#38d4f0" stroke-width="2"/><g fill="#38d4f0" opacity=".35"><circle cx="60" cy="440" r="2"/><circle cx="150" cy="455" r="1.5"/><circle cx="300" cy="438" r="2.5"/><circle cx="420" cy="462" r="1.5"/><circle cx="560" cy="445" r="2"/><circle cx="690" cy="458" r="1.5"/><circle cx="740" cy="436" r="2"/></g><ellipse cx="640" cy="445" rx="40" ry="6" fill="none" stroke="#38d4f0" stroke-width="1" opacity=".4"/>
+<g fill="none" stroke="#38d4f0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="90" cy="80" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="210" cy="120" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="330" cy="70" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="470" cy="110" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="610" cy="60" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="720" cy="130" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="760" cy="90" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="150" cy="180" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="560" cy="170" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="400" cy="150" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/>
+<g transform="translate(400 418)">
+<path d="M-170 -60h340v-50h-340z" fill="rgba(56,212,240,.08)"/>
+<path d="M-150 -110v-90h300v90" fill="rgba(56,212,240,.08)"/><path d="M-150 -200l20-20h260l20 20"/>
+<rect x="-120" y="-190" width="240" height="60" fill="none" stroke="#ffb020" stroke-dasharray="5 4"/>
+<g stroke-width="1.5"><path d="M-170 -60L-230 0M-140 -60L-200 0M170 -60L230 0M140 -60L200 0"/></g>
+<path d="M-240 0h30M210 0h30" stroke-width="3"/>
+<path d="M-90 -60l-14 22h40l-14-22M50 -60l-14 22h40l-14-22"/>
+<path d="M120 -60L230 0" stroke="#ffb020"/><path d="M128 -55L238 0" stroke="#ffb020" opacity=".5"/>
+<g fill="rgba(56,212,240,.08)"><circle cx="-110" cy="-85" r="12"/><circle cx="-70" cy="-85" r="12"/><circle cx="70" cy="-85" r="12"/><circle cx="110" cy="-85" r="12"/></g>
+<path d="M-150 -170h-40v-50h40M150 -170h40v-50h-40" opacity=".7"/>
+</g><path d="M400 250L560 110" stroke="#ffb020" stroke-width="1.2"/><circle cx="400" cy="250" r="3" fill="#ffb020" stroke="none"/><text x="566" y="114" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">CARGO / ROVER BAY</text><path d="M210 220L140 150" stroke="#ffb020" stroke-width="1.2"/><circle cx="210" cy="220" r="3" fill="#ffb020" stroke="none"/><text x="134" y="154" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="end">SOLAR PANELS</text><path d="M330 330L150 300" stroke="#ffb020" stroke-width="1.2"/><circle cx="330" cy="330" r="3" fill="#ffb020" stroke="none"/><text x="144" y="304" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="end">PROPELLANT TANKS</text><path d="M590 385L640 330" stroke="#ffb020" stroke-width="1.2"/><circle cx="590" cy="385" r="3" fill="#ffb020" stroke="none"/><text x="646" y="334" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">EGRESS RAMP</text><path d="M190 410L150 385" stroke="#ffb020" stroke-width="1.2"/><circle cx="190" cy="410" r="3" fill="#ffb020" stroke="none"/><text x="144" y="389" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="end">LANDING LEGS</text>
+</g>
+<text x="24" y="38" fill="#d6e2ec" font-size="18" letter-spacing="1">GRIFFIN-CLASS LANDER · SMALL CARGO</text>
+<text x="20" y="488" fill="#d6e2ec" font-size="11" opacity=".7" letter-spacing="1">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

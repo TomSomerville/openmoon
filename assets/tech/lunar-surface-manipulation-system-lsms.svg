@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" font-family="Share Tech Mono, monospace">
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern></defs>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<path d="M0 420 Q120 412 240 418 T480 416 T800 420 V500 H0Z" fill="rgba(56,212,240,.05)" stroke="#38d4f0" stroke-width="2"/><g fill="#38d4f0" opacity=".35"><circle cx="60" cy="440" r="2"/><circle cx="150" cy="455" r="1.5"/><circle cx="300" cy="438" r="2.5"/><circle cx="420" cy="462" r="1.5"/><circle cx="560" cy="445" r="2"/><circle cx="690" cy="458" r="1.5"/><circle cx="740" cy="436" r="2"/></g><ellipse cx="640" cy="445" rx="40" ry="6" fill="none" stroke="#38d4f0" stroke-width="1" opacity=".4"/>
+<g fill="none" stroke="#38d4f0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="90" cy="80" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="210" cy="120" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="330" cy="70" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="470" cy="110" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="610" cy="60" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="720" cy="130" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="760" cy="90" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="150" cy="180" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="560" cy="170" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/><circle cx="400" cy="150" r="1.2" fill="#d6e2ec" stroke="none" opacity=".5"/>
+<g transform="translate(170 418)">
+<path d="M-90 -100h180v-60h-180z" fill="rgba(56,212,240,.08)"/><path d="M-90 -100L-130 0M90 -100L130 0M-60 -100L-80 0M60 -100L80 0"/>
+<path d="M-140 0h20M120 0h20" stroke-width="3"/>
+<rect x="20" y="-195" width="34" height="35" fill="rgba(56,212,240,.08)"/>
+</g>
+<path d="M207 223L207 120" stroke-width="5"/><circle cx="207" cy="120" r="9" fill="rgba(56,212,240,.08)"/>
+<path d="M207 120L430 90" stroke-width="5"/><circle cx="430" cy="90" r="9" fill="rgba(56,212,240,.08)"/>
+<path d="M430 90L560 175" stroke-width="5"/><circle cx="560" cy="175" r="6" fill="rgba(56,212,240,.08)"/>
+<path d="M207 75L207 120M207 75L320 105M207 75L430 90M430 55L430 90M430 55L560 175" stroke="#ffb020" stroke-width="1" opacity=".8"/>
+<path d="M207 75v0" stroke-width="6"/><path d="M430 55v0" stroke-width="6"/>
+<path d="M560 175V318" stroke-width="1.2" stroke-dasharray="3 3"/><path d="M548 318h24l-4 10h-16z"/>
+<rect x="510" y="330" width="100" height="72" fill="rgba(56,212,240,.08)" stroke="#ffb020"/><path d="M510 330l50-12 50 12" stroke-width="1"/>
+<path d="M560 402v16" stroke-dasharray="3 4" opacity=".6"/>
+<path d="M207 95L120 70" stroke="#ffb020" stroke-width="1.2"/><circle cx="207" cy="95" r="3" fill="#ffb020" stroke="none"/><text x="114" y="74" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="end">TENDON CABLES</text><path d="M430 90L470 60" stroke="#ffb020" stroke-width="1.2"/><circle cx="430" cy="90" r="3" fill="#ffb020" stroke="none"/><text x="476" y="64" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">ELBOW JOINT</text><path d="M560 250L640 240" stroke="#ffb020" stroke-width="1.2"/><circle cx="560" cy="250" r="3" fill="#ffb020" stroke="none"/><text x="646" y="244" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">HOIST LINE</text><path d="M610 365L650 365" stroke="#ffb020" stroke-width="1.2"/><circle cx="610" cy="365" r="3" fill="#ffb020" stroke="none"/><text x="656" y="369" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">PAYLOAD</text><path d="M120 290L130 215" stroke="#ffb020" stroke-width="1.2"/><circle cx="120" cy="290" r="3" fill="#ffb020" stroke="none"/><text x="136" y="219" fill="#d6e2ec" stroke="none" font-size="13" text-anchor="start">LANDER DECK</text>
+</g>
+<text x="24" y="38" fill="#d6e2ec" font-size="18" letter-spacing="1">LUNAR SURFACE MANIPULATION SYSTEM</text>
+<text x="20" y="488" fill="#d6e2ec" font-size="11" opacity=".7" letter-spacing="1">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" font-family="Share Tech Mono, monospace">
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern>
+<style>.l{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.n{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linecap:round}.a{fill:none;stroke:#ffb020;stroke-width:1.5}.d{stroke-dasharray:5 5}.t{fill:#d6e2ec;font-size:14px}.s{fill:#d6e2ec;font-size:11px;opacity:.75}.o{fill:#ffb020}.r{fill:rgba(56,212,240,.05);stroke:#38d4f0;stroke-width:1.5}</style></defs>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<line class="n" x1="0" y1="425" x2="800" y2="425"/>
+<g fill="#38d4f0" opacity=".25"><circle cx="60" cy="440" r="2"/><circle cx="150" cy="452" r="1.5"/><circle cx="260" cy="445" r="2"/><circle cx="520" cy="447" r="2"/><circle cx="640" cy="440" r="1.5"/><circle cx="730" cy="455" r="2"/></g>
+<path class="l" d="M300 160 L340 150 L460 150 L500 160 L500 320 L460 332 L340 332 L300 320 Z"/>
+<path class="n" d="M340 150V332M460 150V332"/>
+<g stroke="#38d4f0" stroke-width=".8" opacity=".5"><path d="M345 170H455M345 190H455M345 210H455M345 230H455M345 250H455M345 270H455M345 290H455M345 310H455M372 165V325M400 165V325M428 165V325"/></g>
+<path class="l" d="M380 332 L420 332 L432 372 L368 372 Z"/>
+<rect class="l" x="355" y="134" width="30" height="16"/><rect class="l" x="415" y="128" width="35" height="22"/><path class="n" d="M325 152 L318 118 M308 118 L328 118"/>
+<g class="n"><path d="M302 300 L235 420 M340 330 L315 420 M460 330 L485 420 M498 300 L565 420"/><path d="M300 250 L250 360 M500 250 L550 360"/></g>
+<g class="l"><ellipse cx="235" cy="421" rx="18" ry="5"/><ellipse cx="315" cy="421" rx="15" ry="4"/><ellipse cx="485" cy="421" rx="15" ry="4"/><ellipse cx="565" cy="421" rx="18" ry="5"/></g>
+<line class="a" x1="460" y1="220" x2="560" y2="190"/><circle class="o" cx="460" cy="220" r="3"/><text x="565" y="185" class="t">HEXAGONAL BODY</text><text x="565" y="201" class="s">~4 M TALL · TOP-DECK PAYLOADS</text>
+<line class="a" x1="420" y1="360" x2="560" y2="330"/><circle class="o" cx="420" cy="360" r="3"/><text x="565" y="325" class="t">MAIN ENGINE</text><text x="565" y="341" class="s">LOX / LIQUID METHANE</text>
+<line class="a" x1="270" y1="360" x2="120" y2="320"/><circle class="o" cx="270" cy="360" r="3"/><text x="40" y="312" class="t">SIX LANDING LEGS</text>
+<line class="a" x1="345" y1="250" x2="150" y2="170"/><circle class="o" cx="345" cy="250" r="3"/><text x="40" y="162" class="t">BODY-MOUNTED SOLAR CELLS</text>
+<text x="40" y="60" class="t">NOVA-C CLASS LUNAR LANDER</text><text x="40" y="78" class="s">CLPS SMALL-CARGO DELIVERY</text>
+<text x="20" y="484" class="t" font-size="12" letter-spacing="1">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

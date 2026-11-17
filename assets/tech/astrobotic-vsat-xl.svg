@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" font-family="Share Tech Mono, monospace">
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern>
+<style>.l{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.n{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linecap:round}.a{fill:none;stroke:#ffb020;stroke-width:1.5}.d{stroke-dasharray:5 5}.t{fill:#d6e2ec;font-size:14px}.s{fill:#d6e2ec;font-size:11px;opacity:.75}.o{fill:#ffb020}.r{fill:rgba(56,212,240,.05);stroke:#38d4f0;stroke-width:1.5}</style></defs>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<path class="l" d="M0 430 L120 418 L190 426 L300 414 L420 432 L560 420 L660 428 L800 416 L800 470 L0 470 Z"/>
+<path d="M0 418 L130 380 L210 420 Z" fill="#04070a" stroke="#38d4f0" stroke-width="1" opacity=".8"/>
+<path class="l" d="M372 432 L428 432 L418 405 L382 405 Z"/>
+<path class="n" d="M390 405 L390 70 M410 405 L410 70"/>
+<path stroke="#38d4f0" stroke-width="1" fill="none" opacity=".7" d="M390 405 L410 380 L390 355 L410 330 L390 305 L410 280 L390 255 L410 230 L390 205 L410 180 L390 155 L410 130 L390 105 L410 80"/>
+<rect class="l" x="300" y="70" width="86" height="150"/><rect class="l" x="414" y="70" width="86" height="150"/>
+<path stroke="#38d4f0" stroke-width=".8" opacity=".5" fill="none" d="M300 100H386M300 130H386M300 160H386M300 190H386M414 100H500M414 130H500M414 160H500M414 190H500M329 70V220M357 70V220M443 70V220M471 70V220"/>
+<g class="l"><rect x="292" y="66" width="10" height="158" rx="5"/><rect x="498" y="66" width="10" height="158" rx="5"/></g>
+<path class="n" d="M386 145H390M410 145H414"/>
+<g class="a"><line x1="0" y1="110" x2="290" y2="110"/><line x1="0" y1="150" x2="290" y2="150"/><line x1="0" y1="190" x2="290" y2="190"/></g><text x="20" y="100" class="s">SUN NEAR HORIZON (SOUTH POLE)</text>
+<path class="a d" d="M560 70V430"/><path class="a" d="M552 70H568M552 430H568"/><text x="572" y="250" class="t">~34 M</text>
+<path class="a" d="M440 52 A40 14 0 1 0 360 52"/><path class="o" d="M358 46 L360 58 L368 50 Z"/>
+<rect class="l" x="660" y="395" width="70" height="30" rx="12"/><path class="a d" d="M428 428 Q540 440 660 415"/><text x="640" y="385" class="s">BASE LOADS</text>
+<line class="a" x1="500" y1="100" x2="620" y2="110"/><circle class="o" cx="500" cy="100" r="3"/><text x="625" y="106" class="t">ROLL-OUT SOLAR</text><text x="625" y="122" class="t">ARRAY WINGS</text>
+<line class="a" x1="410" y1="320" x2="620" y2="320"/><circle class="o" cx="410" cy="320" r="3"/><text x="625" y="316" class="t">TALL MAST</text><text x="625" y="332" class="s">CLEARS TERRAIN SHADOW</text>
+<text x="322" y="24" class="t">ROTATES TO TRACK SUN</text>
+<text x="40" y="250" class="t">50 KW-CLASS</text><text x="40" y="266" class="t">SOLAR TOWER</text>
+<text x="20" y="484" class="t" font-size="12" letter-spacing="1">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<title>Nucleus Food System (concept)</title>
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ffb020"/></marker></defs>
+<style>.l{fill:none;stroke:#38d4f0;stroke-width:2}.f{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2}.a{fill:none;stroke:#ffb020;stroke-width:2}.af{fill:#ffb020}.c{stroke:#ffb020;stroke-width:1.2;fill:none}text{fill:#d6e2ec;font-family:"Share Tech Mono",monospace;font-size:14px}.s{font-size:12px;fill:#8fa3b3}.h{font-size:20px;letter-spacing:2px}</style>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+
+<path class="l" d="M60 420 H740"/>
+<g>
+<rect class="f" x="120" y="150" width="170" height="270" rx="10"/>
+<rect class="f" x="135" y="170" width="140" height="70"/><rect class="f" x="135" y="255" width="140" height="70"/><rect class="f" x="135" y="340" width="140" height="65"/>
+<path class="a" d="M140 180 H270 M140 265 H270 M140 350 H270" stroke-dasharray="2 4"/>
+<g class="l"><path d="M150 238 v-14 m0 0 l-5 -5 m5 5 l5 -5 M175 238 v-14 m0 0 l-5 -5 m5 5 l5 -5 M200 238 v-14 m0 0 l-5 -5 m5 5 l5 -5 M225 238 v-14 m0 0 l-5 -5 m5 5 l5 -5 M250 238 v-14 m0 0 l-5 -5 m5 5 l5 -5"/>
+<path d="M165 323 q-10 -20 0 -35 q10 15 0 35 M205 323 q-12 -25 0 -45 q12 20 0 45 M245 323 q-10 -20 0 -35 q10 15 0 35"/></g>
+<rect class="f" x="330" y="190" width="170" height="230" rx="10"/>
+<rect class="f" x="345" y="210" width="140" height="90"/><rect class="f" x="345" y="315" width="140" height="90"/>
+<path class="a" d="M350 220 H480 M350 325 H480" stroke-dasharray="2 4"/>
+<g class="l"><path d="M380 298 q-12 -30 0 -55 q12 25 0 55 M415 298 q-14 -35 0 -65 q14 30 0 65 M450 298 q-12 -30 0 -55 q12 25 0 55"/></g>
+<g class="f"><ellipse cx="380" cy="380" rx="10" ry="5"/><ellipse cx="410" cy="372" rx="10" ry="5"/><ellipse cx="440" cy="384" rx="10" ry="5"/><ellipse cx="460" cy="366" rx="10" ry="5"/></g>
+<rect class="f" x="540" y="240" width="150" height="180" rx="10"/>
+<rect class="f" x="555" y="260" width="120" height="70"/><rect class="f" x="555" y="345" width="120" height="60"/>
+<path class="a" d="M290 300 H330 M500 300 H540"/>
+<path class="l" d="M570 300 h20 M600 280 h40 M590 315 h50" opacity=".6"/><circle class="f" cx="615" cy="375" r="16"/><path class="a" d="M605 375 h20 M615 365 v20"/>
+</g>
+<path class="c" d="M205 205L120 110"/><circle class="af" cx="205" cy="205" r="3"/><text x="114" y="115" text-anchor="end">MICROGREENS</text>
+<path class="c" d="M205 295L108 262"/><circle class="af" cx="205" cy="295" r="3"/><text x="102" y="267" text-anchor="end">VEGETABLES</text>
+<path class="c" d="M410 260L400 120"/><circle class="af" cx="410" cy="260" r="3"/><text x="406" y="125" text-anchor="start">GREENHOUSE PHYTOTRON</text>
+<path class="c" d="M420 376L420 460"/><circle class="af" cx="420" cy="376" r="3"/><text x="426" y="465" text-anchor="start">INSECTS (MICRONUTRIENTS)</text>
+<path class="c" d="M615 375L700 180"/><circle class="af" cx="615" cy="375" r="3"/><text x="694" y="185" text-anchor="end">WATER / CLIMATE CONTROL</text>
+<text class="s" x="776" y="40" text-anchor="end">AUTONOMOUS GROWTH MODULES · LAYOUT ILLUSTRATIVE</text>
+<text class="h" x="24" y="40">NUCLEUS FOOD SYSTEM</text>
+<text class="s" x="24" y="486">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>
