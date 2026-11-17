@@ -38,7 +38,7 @@ The case is about logistics. NASA says the current approach of launching spares 
 
 ## How it works
 
-AMF uses fused filament fabrication. A heated nozzle melts a plastic filament and lays it down layer by layer on a moving bed ([NASA NTRS](https://ntrs.nasa.gov/api/citations/20190030402/downloads/20190030402.pdf)). It sits in an EXPRESS rack on the station. For hard materials like LDPE, Redwire fitted a custom extruder and print bed ([Redwire](https://rdw.com/newsroom/redwire-team-completes-successful-3d-print-for-radiation-shielding-on-orbit/)). The hardware is modular, so it can be upgraded in orbit ([Redwire](https://rdw.com/newsroom/made-in-space-celebrates-two-years-printing-in-space-with-amf/)). Part files are sent up from the ground and printed in hours, instead of waiting for a cargo flight.
+AMF uses fused filament fabrication. A heated nozzle melts a plastic filament and lays it down layer by layer on a moving bed ([NASA NTRS](https://ntrs.nasa.gov/api/citations/20190030402/downloads/20190030402.pdf)). It sits in an EXPRESS rack on the station. For hard materials like LDPE, Redwire fitted a custom extruder and print bed ([Redwire](https://rdw.com/newsroom/redwire-team-completes-successful-3d-print-for-radiation-shielding-on-orbit/)). The hardware is modular, so it can be upgraded in orbit ([Redwire](https://rdw.com/newsroom/made-in-space-celebrates-two-years-printing-in-space-with-amf/)). Part files are sent up from the ground and printed in hours, instead of waiting for a cargo flight ([Redwire](https://rdw.com/newsroom/made-in-space-celebrates-two-years-printing-in-space-with-amf/)).
 
 | Specification | Value |
 |---|---|

@@ -13,7 +13,7 @@ links:
   - {title: "NASA NTRS: Advancing the OGA Design to Increase Reliability and Reduce Costs (ICES-2015-115)", url: "https://ntrs.nasa.gov/citations/20150016494", kind: official, date: "Jul 2015"}
   - {title: "NASA NTRS: On-orbit ISS Oxygen Generation System operation status", url: "https://ntrs.nasa.gov/citations/20110023212", kind: official, date: "2011"}
   - {title: "NASA NTRS: ISS USOS Oxygen Generation System on-orbit operational experience", url: "https://ntrs.nasa.gov/citations/20080036243", kind: official, date: "Jun 2008"}
-  - {title: "NASA: Environmental Control and Life Support Systems (ECLSS)", url: "https://www.nasa.gov/reference/environmental-control-and-life-support-systems-eclss/", kind: official, date: "2023"}
+  - {title: "NASA: Environmental Control and Life Support Systems (ECLSS)", url: "https://www.nasa.gov/reference/environmental-control-and-life-support-systems-eclss/", kind: official, date: "Apr 2025"}
   - {title: "NASA Image Library: Dan Burbank servicing the Oxygen Generator System rack", url: "https://images.nasa.gov/details/iss030e236919", kind: official, date: "Apr 2012"}
   - {title: "Spaceflight Now: NASA oxygen generation system activated on the space station", url: "https://spaceflightnow.com/news/n0707/18issoxygen/", kind: press, date: "Jul 2007"}
   - {title: "Wikipedia: ISS ECLSS", url: "https://en.wikipedia.org/wiki/ISS_ECLSS", kind: wiki, date: "2026"}
