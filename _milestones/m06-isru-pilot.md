@@ -11,7 +11,7 @@ depends_on: [M01, M04, M05]
 spec:
   - {k: "Oxygen plant", v: "Molten regolith electrolysis or carbothermal, ≥10 t O₂/yr"}
   - {k: "Water plant", v: "Excavate icy regolith in a PSR, heat, capture, purify; ≥10 t H₂O/yr"}
-  - {k: "Power", v: "~26 kW for ~1.6 kg/h O₂ (NASA study)"}
+  - {k: "Power", v: "18 kW (NASA study efficiency) to ~120 kW (2024 demo efficiency) for 10 t/yr"}
   - {k: "Storage", v: "Liquid oxygen and water tanks"}
 cost: {low: 3.8, high: 9.8, note: "two pilot plants plus storage; delivery is the largest part"}
 cost_items:
@@ -60,7 +60,7 @@ sources:
   - {title: "NASA Kennedy: NASA Kennedy breathes life into Moon soil testing", url: "https://www.nasa.gov/centers-and-facilities/kennedy/nasa-kennedy-breathes-life-into-moon-soil-testing", date: "2025"}
   - {title: "NASA M2M-30044 Lunar Surface Data Book", url: "https://ntrs.nasa.gov/api/citations/20250002845/downloads/M2M-30044%20Lunar%20Surface%20Data%20Book%20Baseline_Final.pdf", date: "2025"}
 risks:
-  - {sev: Critical, title: "Oxygen-from-rock is only proven at small scale on the ground (0.07 kg/h); a 10 t/yr plant needs ~1.1 kg/h", fix: "Modular cells; ground-test a full-size module before flight; run two different processes so one failure isn't fatal"}
+  - {sev: Critical, title: "Oxygen-from-rock is only proven at small scale on the ground (0.07 kg/h, ~100 kWh/kg); a 10 t/yr plant needs ~1.1 kg/h and, at demo efficiency, ~120 kW", fix: "Modular cells; ground-test a full-size module and measure kWh/kg before flight; start at the output the grid can power and add cells as efficiency is proven; run two different processes"}
   - {sev: Critical, title: "Ice may be scarcer or deeper than hoped", fix: "Size the water plant from M01 drilling, not orbital estimates; oxygen-from-rock doesn't need ice and covers breathing oxygen"}
   - {sev: High, title: "Electrode and crucible wear at ~1,600 °C (MRE)", fix: "Carry spares; measure wear rates; choose inert anode materials qualified in ground tests"}
   - {sev: High, title: "Mining equipment must work at about 25–40 K inside PSRs", fix: "Short excursions from sunlit side; heated electronics; cable power from the grid"}
@@ -89,7 +89,11 @@ None of the regolith processes has run on the Moon yet. That's why this is a **p
 ## Sizing (this plan's arithmetic)
 
 - **Production rate.** 10 t of O₂ a year works out to about 1.14 kg/h.
-- **Power.** NASA's study puts a 1.63 kg/h plant at about 26 kW<sup class="r">[8](#s8)</sup>, so this pilot needs roughly 18–26 kW from the M04 grid.
+- **Power: the big uncertainty.**
+  - NASA's 2020 study puts a 1.63 kg/h plant at about 26 kW<sup class="r">[8](#s8)</sup>, roughly **16 kWh per kg** of oxygen. On that basis the pilot needs about 18 kW.
+  - NASA's real December 2024 electrolysis demo ran at about 9 kW peak for 0.07 kg/h<sup class="r">[1](#s1)</sup>. That is about **100 kWh per kg** (this plan's arithmetic from the published figures).
+  - At demo efficiency, the 26 kW budgeted from M04 would make only about **2 t a year**. Reaching 10 t a year would need about **120 kW**.
+  - Demonstration reactors are small and lose most of their heat, so efficiency should improve with size. How much it improves is exactly what this pilot has to measure.
 - **Who it supports.** At 0.895 kg of O₂ per person per day (NASA BVAD, see M09), 10 t a year is enough to breathe for about **30 people**. Most of the oxygen will eventually go to propellant instead (M11).
 
 ## Step-by-step
