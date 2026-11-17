@@ -74,10 +74,6 @@
   value: "10-year IDIQ, $10B combined ceiling, 8 companies"
   src: NASA (Nov 2026)
   url: https://www.nasa.gov/news-release/nasa-awards-moon-base-transportation-technology-science-projects/
-- name: KRUSTY fission reactor ground test
-  value: "Under $20M for the full nuclear test (2018)"
-  src: Poston et al., Nuclear Technology (2020), NTRS
-  url: https://ntrs.nasa.gov/citations/20205009351
 - name: Vertical Solar Array Technology prototypes
   value: "$19.4M total across three companies (2022)"
   src: NASA RELEASE 22-090 (Aug 2022)
