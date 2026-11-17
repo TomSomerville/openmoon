@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Moon · Open Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--soft:#f5f7f9;--line:#e1e5ea;--text:#1b1f24;--muted:#5d6670;--accent:#3b5bdb;--ok:#2b8a3e;--warn:#e67700;--bad:#c92a2a;--purple:#7048e8;--sans:"Atkinson Hyperlegible",system-ui,sans-serif;--mono:"Fira Code",monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--soft:#171a20;--line:#2a2f37;--text:#e4e7eb;--muted:#99a2ad;--accent:#7c95f5;--ok:#69c37b;--warn:#ffa94d;--bad:#ff6b6b;--purple:#a58cff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 var(--sans)}
+a{color:var(--accent)}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding:12px 20px;border-bottom:1px solid var(--line)}
+.logo{font-weight:700;font-size:19px;color:var(--text);text-decoration:none}
+.logo span{color:var(--accent)}
+header .gh{margin-left:auto;font:13px var(--mono);border:1px solid var(--line);border-radius:6px;padding:5px 10px;text-decoration:none;color:var(--text)}
+.layout{display:grid;grid-template-columns:320px 1fr;min-height:calc(100vh - 55px)}
+.side{border-right:1px solid var(--line);background:var(--soft);padding:16px}
+.side input{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--text);font:inherit;font-size:14px;margin-bottom:12px}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{padding-left:16px;border-left:1px dashed var(--line);margin-left:7px}
+.tree li{margin:1px 0}
+.tree details>summary{cursor:pointer;list-style:none;padding:3px 6px;border-radius:5px;font-size:14.5px}
+.tree details>summary::-webkit-details-marker{display:none}
+.tree details>summary::before{content:"▸";display:inline-block;width:14px;color:var(--muted);transition:transform .15s}
+.tree details[open]>summary::before{transform:rotate(90deg)}
+.tree a{display:block;padding:3px 6px 3px 20px;border-radius:5px;font-size:14px;color:var(--text);text-decoration:none}
+.tree a:hover,.tree summary:hover{background:var(--line)}
+.tree a.on{background:var(--accent);color:#fff}
+.tree .n{font:12px var(--mono);color:var(--muted);margin-right:4px}
+.tree a.on .n{color:#dfe5ff}
+.tree .hidden{display:none}
+main{padding:24px 32px 60px;max-width:960px;min-width:0}
+.contrib code{overflow-wrap:anywhere}
+.path{font:13px var(--mono);color:var(--muted)}
+h1{margin:4px 0 6px;font-size:30px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-size:13px}
+.pill{border:1px solid var(--line);border-radius:20px;padding:2px 10px;color:var(--muted)}
+.pill.trl{color:var(--ok);border-color:var(--ok)}
+.sample{border:1px solid var(--warn);background:color-mix(in srgb,var(--warn) 10%,transparent);border-radius:6px;padding:8px 12px;font-size:14px;margin-bottom:18px}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:18px;overflow-x:auto}
+.tabs button{background:none;border:0;border-bottom:2px solid transparent;padding:8px 12px;font:inherit;font-size:14.5px;color:var(--muted);cursor:pointer;white-space:nowrap}
+.tabs button.on{color:var(--text);border-bottom-color:var(--accent);font-weight:700}
+.tabs .c{font:12px var(--mono);background:var(--soft);border-radius:10px;padding:0 6px;margin-left:4px}
+.pane{display:none}.pane.on{display:block}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.card{border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.card h3{margin:0 0 4px;font-size:16px}
+.card .n{font:12px var(--mono);color:var(--muted)}
+.card p{margin:0;font-size:14px;color:var(--muted)}
+.issues{border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.iss{display:flex;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.iss:last-child{border:0}
+.iss .ic{flex:none;width:16px;height:16px;border-radius:50%;border:2px solid var(--ok);margin-top:4px}
+.iss.open .ic{border-color:var(--warn)}
+.iss.res .ic{border-color:var(--purple)}
+.iss h4{margin:0;font-size:15.5px}
+.iss p{margin:2px 0 6px;font-size:14px;color:var(--muted)}
+.lbl{font:12px var(--mono);border-radius:10px;padding:1px 8px;margin-right:4px;color:#fff}
+.l-crit{background:var(--bad)} .l-high{background:var(--warn)} .l-ok{background:var(--ok)} .l-open{background:var(--muted)} .l-res{background:var(--purple)}
+.contrib{margin-top:28px;padding:16px;border:1px dashed var(--line);border-radius:8px;font-size:14.5px;background:var(--soft)}
+.contrib code{font:13px var(--mono)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+td{padding:7px 10px;border-bottom:1px solid var(--line)}
+td:first-child{color:var(--muted);width:35%}
+.menu{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:4px 10px;color:var(--text)}
+@media (max-width:820px){.layout{grid-template-columns:1fr}.side{display:none;border-right:0;border-bottom:1px solid var(--line)}.side.open{display:block}.menu{display:block}main{padding:20px 16px 40px}}
+</style>
+</head>
+<body>
+<header>
+  <button class="menu" onclick="document.querySelector('.side').classList.toggle('open')">☰ Plan</button>
+  <a class="logo" href="#">Open<span>Moon</span> wiki</a>
+  <a class="gh" href="#">✎ Edit on GitHub</a>
+</header>
+<div class="layout">
+  <aside class="side">
+    <input type="search" id="q" placeholder="Filter components…" aria-label="Filter components">
+    <ul class="tree" id="tree">
+      <li><details><summary><span class="n">0</span>Precursors</summary><ul>
+        <li><a href="#"><span class="n">0.1</span>Site selection</a></li>
+        <li><a href="#"><span class="n">0.2</span>Orbital reconnaissance</a></li></ul></details></li>
+      <li><details open><summary><span class="n">1</span>Robotic outpost</summary><ul>
+        <li><details open><summary><span class="n">1.2</span>Power system</summary><ul>
+          <li><a href="#" class="on"><span class="n">1.2.1</span>Fission surface power unit</a></li>
+          <li><a href="#"><span class="n">1.2.2</span>Vertical solar arrays</a></li>
+          <li><a href="#"><span class="n">1.2.3</span>Energy storage</a></li></ul></details></li>
+        <li><details><summary><span class="n">1.3</span>Communications</summary><ul>
+          <li><a href="#"><span class="n">1.3.1</span>Relay satellite</a></li></ul></details></li>
+        <li><details><summary><span class="n">1.4</span>Oxygen from regolith</summary><ul>
+          <li><a href="#"><span class="n">1.4.1</span>Extraction plant</a></li></ul></details></li></ul></details></li>
+      <li><details><summary><span class="n">2</span>Crewed sortie base</summary><ul>
+        <li><a href="#"><span class="n">2.1</span>Surface habitat</a></li>
+        <li><a href="#"><span class="n">2.2</span>Life support</a></li></ul></details></li>
+      <li><details><summary><span class="n">3</span>Permanent base</summary><ul><li><a href="#"><span class="n">3.1</span>Shielded habitats</a></li></ul></details></li>
+      <li><details><summary><span class="n">4</span>Closing the loops</summary><ul><li><a href="#"><span class="n">4.1</span>Food production</a></li></ul></details></li>
+      <li><details><summary><span class="n">5</span>Self-sustaining colony</summary><ul><li><a href="#"><span class="n">5.1</span>Local manufacturing</a></li></ul></details></li>
+    </ul>
+  </aside>
+
+  <main>
+    <div class="path">1 Robotic outpost › 1.2 Power system › 1.2.1</div>
+    <h1>Fission surface power unit</h1>
+    <div class="meta"><span class="pill trl">TRL 5</span><span class="pill">Phase 1</span><span class="pill">5 sub-components</span><span class="pill">Last edited: [date]</span></div>
+    <div class="sample">Sample content: this page shows the layout. The figures are placeholders and have not been checked against sources yet.</div>
+
+    <div class="tabs" role="tablist">
+      <button class="on" data-p="ov">Overview</button>
+      <button data-p="sub">Sub-components <span class="c">5</span></button>
+      <button data-p="iss">Problems <span class="c">4</span></button>
+      <button data-p="src">Sources <span class="c">2</span></button>
+    </div>
+
+    <div class="pane on" id="ov">
+      <p>A small nuclear reactor that keeps the outpost powered through the lunar night, about 14 Earth days without sunlight.</p>
+      <table>
+        <tr><td>Based on</td><td>NASA Kilopower / KRUSTY ground test (2018)</td></tr>
+        <tr><td>Output</td><td>[placeholder] kWe</td></tr>
+        <tr><td>Design life</td><td>[placeholder] years</td></tr>
+        <tr><td>Depends on</td><td>1.3 Communications, landing pad (2.x)</td></tr>
+        <tr><td>Needed by</td><td>1.4 Oxygen from regolith</td></tr>
+      </table>
+    </div>
+
+    <div class="pane" id="sub">
+      <div class="cards">
+        <div class="card"><div class="n">1.2.1.1</div><h3>Reactor core</h3><p>Fuel, reflector, control drums.</p></div>
+        <div class="card"><div class="n">1.2.1.2</div><h3>Power conversion</h3><p>Stirling or Brayton engines.</p></div>
+        <div class="card"><div class="n">1.2.1.3</div><h3>Heat rejection</h3><p>Radiators and deployable mast.</p></div>
+        <div class="card"><div class="n">1.2.1.4</div><h3>Radiation shielding</h3><p>Shadow shield, berm, keep-out zone.</p></div>
+        <div class="card"><div class="n">1.2.1.5</div><h3>Power transmission</h3><p>HV cable and power management.</p></div>
+      </div>
+    </div>
+
+    <div class="pane" id="iss">
+      <div class="issues">
+        <div class="iss"><span class="ic"></span><div><h4>Lunar night lasts about 14 Earth days</h4><p>Solution: reactor base load; batteries cover only peaks.</p><span class="lbl l-crit">critical</span><span class="lbl l-ok">solved</span></div></div>
+        <div class="iss"><span class="ic"></span><div><h4>Dust on radiators</h4><p>Solution: vertical radiators, distance from landing pads.</p><span class="lbl l-high">high</span><span class="lbl l-ok">solved</span></div></div>
+        <div class="iss open"><span class="ic"></span><div><h4>Minimum safe distance from landing pads</h4><p>Needs plume ejecta data.</p><span class="lbl l-high">high</span><span class="lbl l-open">open</span></div></div>
+        <div class="iss res"><span class="ic"></span><div><h4>Stirling vs Brayton conversion</h4><p>Trade study needed on mass, efficiency and life.</p><span class="lbl l-res">needs research</span></div></div>
+      </div>
+    </div>
+
+    <div class="pane" id="src">
+      <ol>
+        <li><a href="https://en.wikipedia.org/wiki/Kilopower">Kilopower</a>, Wikipedia</li>
+        <li>[Source to be added: NASA Fission Surface Power project page]</li>
+      </ol>
+    </div>
+
+    <div class="contrib"><b>Help build the plan.</b> Every page is a Markdown file in the repository. Found a mistake or a better solution? Open an issue or send a pull request. File: <code>plan/1-robotic-outpost/1.2-power/1.2.1-fission-surface-power.md</code></div>
+  </main>
+</div>
+<script>
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('.pane').forEach(p=>p.classList.toggle('on',p.id===b.dataset.p));
+});
+document.getElementById('q').addEventListener('input',e=>{
+  const q=e.target.value.toLowerCase();
+  document.querySelectorAll('#tree li').forEach(li=>{
+    const hit=!q||li.textContent.toLowerCase().includes(q);
+    li.classList.toggle('hidden',!hit);
+    if(q&&hit){const d=li.querySelector(':scope>details');if(d)d.open=true}
+  });
+});
+</script>
+</body>
+</html>

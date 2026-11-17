@@ -1,0 +1,14 @@
+title: Open Moon
+tagline: "An open-source plan for a self-sustaining Moon colony, built on technology that exists or is in active testing today."
+description: "Open Moon is an open-source, phase-by-phase plan for a self-sustaining lunar colony. Every system is broken down to its components and sub-components, with the problems each one faces and how to solve them."
+url: https://openmoon.beached.lol
+baseurl: ""
+timezone: UTC
+lang: en
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md

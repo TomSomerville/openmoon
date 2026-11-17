@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Moon · Whitepaper</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f4ef;--paper:#fffdf8;--ink:#1d1c1a;--muted:#6d6a63;--rule:#dcd7cc;--accent:#8a3b12;--ok:#2f6b45;--serif:"Source Serif 4",Georgia,serif;--sans:Inter,system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#161512;--paper:#1d1c19;--ink:#ebe7de;--muted:#a19d93;--rule:#38352f;--accent:#e69a6b;--ok:#7fc79a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:19px/1.65 var(--serif)}
+a{color:var(--accent)}
+.mast{text-align:center;padding:48px 16px 28px;border-bottom:1px solid var(--rule)}
+.kicker{font:600 12px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.mast h1{font-size:clamp(40px,7vw,72px);line-height:1;margin:12px 0 10px;font-weight:700;letter-spacing:-.02em}
+.mast p{max-width:620px;margin:0 auto;color:var(--muted);font-style:italic}
+.nav{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 22px;padding:14px 16px;border-bottom:1px solid var(--rule);font:500 13px var(--sans)}
+.nav a{color:var(--ink);text-decoration:none}
+.nav a.on{color:var(--accent)}
+.page{max-width:1080px;margin:0 auto;padding:40px 16px 80px;display:grid;grid-template-columns:1fr minmax(0,660px) 1fr;column-gap:32px}
+.page > *{grid-column:2}
+.sec{font:600 13px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+h2{font-size:38px;line-height:1.15;margin:6px 0 18px;letter-spacing:-.01em}
+h3{font-size:24px;margin:40px 0 8px}
+h3 .n{color:var(--accent);font-weight:400;margin-right:8px}
+p{margin:0 0 18px}
+.dropcap::first-letter{float:left;font-size:72px;line-height:.85;padding:6px 10px 0 0;color:var(--accent);font-weight:700}
+.note{grid-column:3;font:13.5px/1.5 var(--sans);color:var(--muted);align-self:start;border-left:2px solid var(--rule);padding-left:12px;margin-top:4px}
+.note b{color:var(--accent)}
+sup a{text-decoration:none;font:600 12px var(--sans)}
+.facts{background:var(--paper);border:1px solid var(--rule);padding:20px 24px;margin:8px 0 28px;font:15px/1.5 var(--sans)}
+.facts h4{margin:0 0 10px;font:600 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.facts dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0}
+.sample{font:14px var(--sans);background:var(--paper);border:1px dashed var(--accent);padding:10px 14px;margin-bottom:28px;color:var(--muted)}
+ol.parts{counter-reset:p;list-style:none;padding:0;margin:0 0 20px}
+ol.parts li{counter-increment:p;padding:12px 0;border-top:1px solid var(--rule)}
+ol.parts li::before{content:"1.2.1." counter(p);font:600 13px var(--sans);color:var(--accent);display:block}
+ol.parts li b{font-size:20px}
+ol.parts li span{display:block;color:var(--muted);font-size:16px}
+blockquote{margin:28px 0;padding:0 0 0 22px;border-left:3px solid var(--accent);font-size:23px;font-style:italic;line-height:1.45}
+.prob{margin:0 0 22px}
+.prob h4{font:600 15px var(--sans);margin:0 0 4px}
+.prob h4 em{font-style:normal;color:var(--accent);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-right:6px}
+.prob p{margin:0;font-size:17px}
+.prob .s{color:var(--ok);font-weight:600}
+.refs{font:14px/1.5 var(--sans);color:var(--muted);border-top:1px solid var(--rule);padding-top:16px;margin-top:40px}
+.refs ol{padding-left:20px}
+@media (max-width:900px){.page{grid-template-columns:1fr}.page > *,.note{grid-column:1}.note{margin:-6px 0 20px}body{font-size:18px}}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="kicker">An open-source plan · Version 0.1 draft</div>
+  <h1>Open Moon</h1>
+  <p>How to build a self-sustaining colony on the Moon with technology that exists today, one phase, system and part at a time.</p>
+</header>
+<nav class="nav"><a href="#">Contents</a><a href="#">Phase 0</a><a href="#" class="on">Phase 1</a><a href="#">Phase 2</a><a href="#">Phase 3</a><a href="#">Phase 4</a><a href="#">Phase 5</a><a href="#">References</a></nav>
+
+<article class="page">
+  <div class="sec">Chapter 1.2 · Phase 1, the robotic outpost</div>
+  <h2>Power through the lunar night</h2>
+  <div class="sample">Sample content: this chapter shows the layout. The figures are placeholders and have not been checked against sources yet.</div>
+
+  <p class="dropcap">Every system in the outpost depends on electricity, and the Moon makes electricity hard. At most latitudes the Sun sets for about fourteen Earth days at a time, so solar arrays alone would need two weeks of stored energy. This chapter describes the outpost's answer: a small fission reactor for base load, supported by solar arrays and batteries.</p>
+  <aside class="note"><b>Why not solar only?</b> A few crater rims near the south pole see sunlight most of the time. The plan uses them, but they are small and few.</aside>
+
+  <div class="facts">
+    <h4>Component 1.2.1 at a glance</h4>
+    <dl>
+      <dt>Based on</dt><dd>NASA Kilopower / KRUSTY ground test, 2018<sup><a href="#r1">1</a></sup></dd>
+      <dt>Readiness</dt><dd>TRL 5, tested on the ground in a relevant environment</dd>
+      <dt>Output</dt><dd>[placeholder] kWe</dd>
+      <dt>Design life</dt><dd>[placeholder] years</dd>
+    </dl>
+  </div>
+
+  <h3><span class="n">1.2.1</span>The parts of the reactor</h3>
+  <p>The power unit breaks down into five sub-components. Each has its own section later in this chapter, with its parts and their problems.</p>
+  <ol class="parts">
+    <li><b>Reactor core</b><span>Fuel, neutron reflector and control drums.</span></li>
+    <li><b>Power conversion</b><span>Stirling or Brayton engines that turn heat into electricity.</span></li>
+    <li><b>Heat rejection</b><span>Radiators that send waste heat out to space.</span></li>
+    <li><b>Radiation shielding</b><span>A shadow shield, a regolith berm and a keep-out distance.</span></li>
+    <li><b>Power transmission</b><span>A high-voltage cable to the outpost and the electronics at each end.</span></li>
+  </ol>
+
+  <blockquote>The reactor is the one part of the outpost that has to work on the first night.</blockquote>
+
+  <h3><span class="n">1.2.2</span>What could go wrong, and the fix</h3>
+  <div class="prob"><h4><em>Critical</em>The night is about fourteen days long</h4><p>Batteries sized for two weeks would be very heavy. <span class="s">Solution:</span> the reactor carries base load, and batteries cover only short peaks.</p></div>
+  <div class="prob"><h4><em>High</em>Dust settles on the radiators</h4><p><span class="s">Solution:</span> stand the radiators vertically and place the unit well away from landing pads.</p></div>
+  <aside class="note"><b>Open question.</b> How far must landing pads be from the reactor? Contributions welcome.</aside>
+  <div class="prob"><h4><em>High</em>Radiation at the outpost</h4><p><span class="s">Solution:</span> a regolith berm and a keep-out distance, so the terrain adds shielding.</p></div>
+
+  <section class="refs" id="refs">
+    <strong>References</strong>
+    <ol>
+      <li id="r1"><a href="https://en.wikipedia.org/wiki/Kilopower">Kilopower</a>, Wikipedia</li>
+      <li>[Source to be added: NASA Fission Surface Power project page]</li>
+    </ol>
+  </section>
+</article>
+</body>
+</html>
