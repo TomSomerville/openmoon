@@ -1,0 +1,74 @@
+---
+layout: default
+section: tech
+---
+{% assign t = site.data.tech | where: "slug", page.slug | first %}
+<style>
+.tfig{margin:0 0 6px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#0a1015}
+.tfig img{display:block;width:100%;height:auto;max-height:560px;object-fit:contain;background:#0a1015}
+.tcap{font-size:13px;color:var(--dim);margin:6px 0 18px}
+.tcap .k{font:10px var(--fm);letter-spacing:.08em;text-transform:uppercase;border:1px solid #1d4d5a;color:var(--hi);border-radius:3px;padding:1px 6px;margin-right:6px}
+.tcap .k.concept{color:var(--warn);border-color:#5a4313}
+.rel{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
+.rel a{display:block;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel);text-decoration:none;color:var(--ink)}
+.rel a:hover{border-color:var(--hi)}
+.rel img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.rel span{display:block;padding:6px 8px;font:600 13px var(--fh);text-transform:uppercase;letter-spacing:.02em}
+</style>
+<div class="body">
+  <div class="draw">
+    <div class="crumbs"><a href="{{ '/technology/' | relative_url }}">Technology</a> / {{ t.category }}</div>
+    <div class="eyebrow">{{ t.category }} · Phase {{ t.phases | join: ", " }}</div>
+    <h1>{{ t.name }}</h1>
+    <div class="note">Used for: {{ t.use }}</div>
+
+    {% if t.image %}
+    <figure class="tfig"><img src="{{ t.image.file | relative_url }}" alt="{{ t.image.caption | escape }}"></figure>
+    <div class="tcap">
+      <span class="k{% if t.image.kind == 'concept' %} concept{% endif %}">{% if t.image.kind == 'concept' %}Concept illustration{% elsif t.image.kind == 'illustration' %}NASA illustration{% else %}Photo{% endif %}</span>
+      {{ t.image.caption }}.
+      {% if t.image.kind == 'concept' %}Open Moon concept illustration, drawn from published descriptions; schematic, not an exact likeness.{% else %}Credit: {{ t.image.credit }}.{% endif %}
+      Licence: {{ t.image.license }}.
+      {% if t.image.source_page %}<a href="{{ t.image.source_page }}">{% if t.image.kind == 'concept' %}Reference used{% else %}Image source{% endif %} ↗</a>{% endif %}
+    </div>
+    {% endif %}
+
+    <div class="sec-h">Status today</div>
+    <div class="prose"><p>{{ t.status }}</p></div>
+
+    <div class="sec-h">Where the plan uses it</div>
+    <div class="tl">
+      {% for m in t.milestones %}{% assign mm = site.milestones | where: "id_code", m | first %}<a href="{{ mm.url | relative_url }}"><span class="ph">PH {{ mm.phase }}</span><span class="id">{{ mm.id_code }}</span><h3>{{ mm.title }}</h3><span class="w">{{ mm.window }}</span></a>{% endfor %}
+    </div>
+
+    {% assign rel = site.data.tech | where: "category", t.category %}
+    {% if rel.size > 1 %}
+    <div class="sec-h">Other {{ t.category | downcase }} technology</div>
+    <div class="rel">
+      {% for r in rel %}{% if r.slug != t.slug %}<a href="{{ '/technology/' | append: r.slug | append: '/' | relative_url }}">{% if r.image %}<img src="{{ r.image.file | relative_url }}" alt="" loading="lazy">{% endif %}<span>{{ r.name }}</span></a>{% endif %}{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  <div class="side">
+    <section>
+      <h2>Summary</h2>
+      <table class="spec">
+        <tr><td>System</td><td>{{ t.category }}</td></tr>
+        <tr><td>Phase</td><td>{{ t.phases | join: ", " }}</td></tr>
+        <tr><td>Milestones</td><td>{% for m in t.milestones %}{% assign mm = site.milestones | where: "id_code", m | first %}<a href="{{ mm.url | relative_url }}">{{ m }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</td></tr>
+        <tr><td>Readiness</td><td>TRL {{ t.trl }} / 9</td></tr>
+        <tr><td>Plan status</td><td>{% if t.develop %}<span class="tag warn">needs development</span>{% else %}<span class="tag ok">ready to use</span>{% endif %}</td></tr>
+      </table>
+      <div class="trl-l">Technology readiness · TRL {{ t.trl }} / 9</div>
+      <div class="trl">{% for i in (1..9) %}<i{% if i <= t.trl %} class="f"{% endif %}></i>{% endfor %}</div>
+    </section>
+    <section>
+      <h2>Sources</h2>
+      <ol class="srcs" style="padding-left:20px;margin:0">
+        {% if t.source != "" %}<li style="margin-bottom:6px"><a href="{{ t.source }}">{{ t.source_title }}</a> <span style="color:var(--dim)">(status and facts)</span></li>{% endif %}
+        {% if t.image and t.image.source_page %}<li style="margin-bottom:6px"><a href="{{ t.image.source_page }}">{% if t.image.kind == 'concept' %}Reference for the illustration{% else %}Image: {{ t.image.credit }}{% endif %}</a></li>{% endif %}
+      </ol>
+      <p style="font-size:12.5px;color:var(--dim);margin:10px 0 0">More sources are on each milestone page that uses this technology.</p>
+    </section>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 ---
 title: Technology register
 eyebrow: Every piece of hardware the plan relies on
-summary: Each technology the plan uses, how ready it is, which milestones need it, and where the facts come from. Filter by phase, system and readiness. Photos are real where a reusable image exists; otherwise the card shows an Open Moon concept illustration.
+summary: Each technology the plan uses, how ready it is and which milestones need it. Filter by phase, system and readiness; open a card for its status, image credit and sources. Photos are real where a reusable image exists; otherwise the card shows an Open Moon concept illustration.
 section: tech
 doc_id: OM-300
 permalink: /technology/
@@ -23,12 +23,17 @@ permalink: /technology/
 .tc .img .kind{position:absolute;left:8px;top:8px;font:10px var(--fm);letter-spacing:.08em;text-transform:uppercase;background:rgba(6,10,14,.8);color:var(--hi);border:1px solid #1d4d5a;border-radius:3px;padding:2px 6px}
 .tc .img .kind.concept{color:var(--warn);border-color:#5a4313}
 .tc .noimg{display:grid;place-items:center;height:100%;font:11px var(--fm);color:var(--dim)}
-.tc .b{padding:12px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tc .b{padding:10px 12px 12px;display:flex;flex-direction:column;gap:5px;flex:1}
 .tc .cat{font:11px var(--fm);color:var(--hi);text-transform:uppercase;letter-spacing:.08em}
-.tc h3{margin:0;font:700 17px/1.2 var(--fh);text-transform:uppercase;letter-spacing:.02em}
-.tc .use{font-size:13.5px;color:var(--ink)}
+.tc h3{margin:0;font:700 16px/1.2 var(--fh);text-transform:uppercase;letter-spacing:.02em}
+.tc{position:relative}
+.tc .use{font-size:13px;color:var(--dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tc h3 a.tlink{color:var(--ink);text-decoration:none}
+.tc h3 a.tlink::after{content:"";position:absolute;inset:0;z-index:1}
+.tc:hover{border-color:var(--hi)}
+.tc .row a{position:relative;z-index:2}
 .tc .st{font-size:13px;color:var(--dim)}
-.tc .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:auto;padding-top:6px}
+.tc .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:auto;padding-top:4px}
 .tc .row a{font:11px var(--fm)}
 .tc .cr{font:10.5px var(--fm);color:var(--dim);border-top:1px solid var(--line);padding:6px 14px}
 .tc .cr a{color:var(--dim)}
@@ -54,17 +59,14 @@ permalink: /technology/
   </div>
   <div class="b">
     <span class="cat">{{ t.category }}</span>
-    <h3>{{ t.name }}</h3>
-    <div class="use"><strong>Used for:</strong> {{ t.use }}</div>
-    <div class="st">{{ t.status }}</div>
+    <h3><a class="tlink" href="{{ '/technology/' | append: t.slug | append: '/' | relative_url }}">{{ t.name }}</a></h3>
+    <div class="use">{{ t.use }}</div>
     <div class="row">
       {% include trl.html n=t.trl %}
       {% if t.develop %}<span class="tag warn">develop</span>{% endif %}
       {% for m in t.milestones %}{% assign mm = site.milestones | where: "id_code", m | first %}<a class="tag hi" href="{{ mm.url | relative_url }}" title="{{ mm.title }}">{{ m }}</a>{% endfor %}
-      {% if t.source != "" %}<a href="{{ t.source }}" title="{{ t.source_title | escape }}">source ↗</a>{% endif %}
     </div>
   </div>
-  {% if t.image %}<div class="cr">{% if t.image.kind == 'concept' %}Open Moon concept illustration · {{ t.image.license }}{% else %}{{ t.image.caption }} · Credit: {{ t.image.credit }} · {{ t.image.license }}{% endif %}{% if t.image.source_page %} · <a href="{{ t.image.source_page }}">image source</a>{% endif %}</div>{% endif %}
 </article>
 {% endfor %}
 </div>

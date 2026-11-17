@@ -23,12 +23,17 @@ collections:
   components:
     output: true
     permalink: /plan/components/:name/
+  tech:
+    output: true
+    permalink: /technology/:name/
 
 defaults:
   - scope: {path: "", type: milestones}
     values: {layout: milestone, section: plan}
   - scope: {path: "", type: components}
     values: {layout: component, section: plan}
+  - scope: {path: "", type: tech}
+    values: {layout: tech, section: tech}
   - scope: {path: ""}
     values: {layout: page}
 
