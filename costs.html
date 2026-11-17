@@ -8,8 +8,9 @@ permalink: /costs/
 ---
 {% assign ms = site.milestones | sort: "order" %}
 {% assign lo = 0 %}{% assign hi = 0 %}{% for m in ms %}{% assign lo = lo | plus: m.cost.low %}{% assign hi = hi | plus: m.cost.high %}{% endfor %}
-<p>Programme total: <strong>${{ lo }}B to ${{ hi }}B</strong> <span class="estimate">ESTIMATE</span>, in today's US dollars, spread across the milestone windows. {{ site.data.costnotes.intro }}</p>
+<p>Programme total: <strong>${{ lo | round: 0 }}B to ${{ hi | round: 0 }}B</strong> <span class="estimate">ESTIMATE</span>, in today's US dollars, spread across the milestone windows. {{ site.data.costnotes.intro }}</p>
 <blockquote>{{ site.data.costnotes.caveat }}</blockquote>
+<p>{{ site.data.costnotes.delivery }}</p>
 <h2>Benchmarks we price against</h2>
 <div class="tablewrap"><table class="data"><thead><tr><th>Benchmark</th><th>Figure</th><th>Source</th></tr></thead><tbody>
 {% for b in site.data.benchmarks %}<tr><td>{{ b.name }}</td><td>{{ b.value }}</td><td><a href="{{ b.url }}">{{ b.src }}</a></td></tr>{% endfor %}

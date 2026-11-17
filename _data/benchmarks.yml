@@ -1,0 +1,88 @@
+- name: ISS design, development and build
+  value: "More than $100B"
+  src: NASA, Ignition release (Mar 2026)
+  url: https://www.nasa.gov/news-release/nasa-unveils-initiatives-to-achieve-americas-national-space-policy/
+- name: ISS operating cost
+  value: "About $3B per year"
+  src: NASA OIG IG-22-005 (Nov 2021)
+  url: https://oig.nasa.gov/docs/IG-22-005.pdf
+- name: ISS commercial resupply, CRS-1
+  value: "$191.3M per flight, about $63,200 per kg of upmass"
+  src: NASA OIG IG-18-016 (Apr 2018)
+  url: https://oig.nasa.gov/docs/IG-18-016.pdf
+- name: ISS commercial resupply, CRS-2 (projected)
+  value: "$300.6M per flight, about $71,800 per kg"
+  src: NASA OIG IG-18-016 (Apr 2018)
+  url: https://oig.nasa.gov/docs/IG-18-016.pdf
+- name: Artemis spending FY2012–FY2025 (projection)
+  value: "$93B; $4.1B per SLS/Orion launch"
+  src: NASA OIG IG-22-003 (Nov 2021)
+  url: https://www.oversight.gov/sites/default/files/oig-reports/NASA/Final-Report-IG-22-003-NASAs-Management-Artemis-Missions.pdf
+- name: NASA total budget FY2026 (regular appropriation)
+  value: "$24.438B, of which Exploration $7.783B"
+  src: CRS R43419 (Jun 2026)
+  url: https://www.congress.gov/crs_external_products/R/PDF/R43419/R43419.127.pdf
+- name: Lunar Terrain Vehicle task orders (2026)
+  value: "Astrolab $219M, Lunar Outpost $220M"
+  src: NASA RELEASE26-046 (May 2026)
+  url: https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/
+- name: Rover delivery to the south pole (Blue Origin)
+  value: "$188M plus $280.4M option, for two rovers in 2028"
+  src: NASA RELEASE26-046 (May 2026)
+  url: https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/
+- name: VIPER delivery (CLPS CS-7, Blue Origin)
+  value: "Up to $190M"
+  src: NASA release (Sep 2025)
+  url: https://www.nasa.gov/news-release/nasa-selects-blue-origin-to-deliver-viper-rover-to-moons-south-pole/
+- name: Lunar relay services (Intuitive Machines)
+  value: "Up to $4.82B maximum contract value"
+  src: NASA release (Sep 2024)
+  url: https://www.nasa.gov/news-release/nasa-selects-lunar-relay-contractor-for-near-space-network-services
+- name: ESA Moonlight phase 1 (Telespazio)
+  value: "€123M"
+  src: ESA (Oct 2024)
+  url: https://www.esa.int/articles/esa-s-moonlight-programme-pioneering-the-path-for-lunar-exploration
+- name: ICON Project Olympus construction R&D
+  value: "$57.2M SBIR Phase III, through 2028"
+  src: ICON (Nov 2022)
+  url: https://www.iconbuild.com/newsroom/icon-to-develop-lunar-surface-construction-system-with-57-2-million-nasa-award
+- name: Blue Alchemist (oxygen and solar cells from regolith)
+  value: "About $34.7M NASA Tipping Point"
+  src: Blue Origin (Sep 2025)
+  url: https://www.blueorigin.com/news/blue-alchemist-hits-major-milestone-toward-permanent-sustainable-lunar-infrastructure
+- name: Published price to the lunar surface (Astrobotic)
+  value: "$1.2M per kg to the surface; $300k per kg to lunar orbit"
+  src: Astrobotic Payload User's Guide v5.0 (Aug 2021)
+  url: https://science.nasa.gov/wp-content/uploads/2023/11/astrobotic-lunar-landers-pug.pdf
+- name: CLPS delivery task orders, cost growth
+  value: "Eight orders grew from $781.4M to $984.3M (+26%); average delay 14 months"
+  src: NASA OIG IG-24-013 (Jun 2024)
+  url: https://oig.nasa.gov/wp-content/uploads/2024/06/final-report-ig-24-013-nasas-commercial-lunar-payload-services-initiative.pdf
+- name: Human Landing System programme
+  value: "$6.9B obligated since 2019; $18.3B estimated through FY2030"
+  src: NASA OIG IG-26-004 (Mar 2026)
+  url: https://oig.nasa.gov/wp-content/uploads/2026/03/final-report-ig-26-004-nasas-management-of-the-human-landing-system-contracts.pdf
+- name: Large cargo lander class
+  value: "About 15 t (33,000 lb) per cargo landing"
+  src: NASA HLS IAC 2026 presentation (Oct 2026)
+  url: https://ntrs.nasa.gov/api/citations/20260009199/downloads/HLS%20IAC%202026%20Presentation%20FINAL.pdf
+- name: NASA Moon Base (reported)
+  value: "About $20B over 7 years; $6B for expanded CLPS over a decade"
+  src: Planetary Society, citing NASA documents (2026)
+  url: https://www.planetary.org/articles/ignition-new-nasa-initiatives
+- name: CLPS 2 contract vehicle
+  value: "10-year IDIQ, $10B combined ceiling, 8 companies"
+  src: NASA (Nov 2026)
+  url: https://www.nasa.gov/news-release/nasa-awards-moon-base-transportation-technology-science-projects/
+- name: KRUSTY fission reactor ground test
+  value: "Under $20M for the full nuclear test (2018)"
+  src: Poston et al., Nuclear Technology (2020), NTRS
+  url: https://ntrs.nasa.gov/citations/20205009351
+- name: Vertical Solar Array Technology prototypes
+  value: "$19.4M total across three companies (2022)"
+  src: NASA RELEASE 22-090 (Aug 2022)
+  url: https://www.nasa.gov/?p=142765
+- name: Falcon Heavy list price
+  value: "$97M"
+  src: AIAA Vehicle Guide
+  url: https://aiaa.org/vehicle-guide/vehicles/falcon/nomenclature-cost-availability

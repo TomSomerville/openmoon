@@ -18,7 +18,7 @@ section: plan
     <div class="sec-h">Exit criteria · what "done" means</div>
     <div class="tablewrap"><table class="data">
       <thead><tr><th>#</th><th>Criterion</th></tr></thead>
-      <tbody>{% for c in page.exit_criteria %}<tr><td class="tag hi">EC-{{ forloop.index }}</td><td>{{ c }}</td></tr>{% endfor %}</tbody>
+      <tbody>{% for c in page.exit_criteria %}<tr><td style="width:56px"><span class="tag hi">EC-{{ forloop.index }}</span></td><td>{{ c }}</td></tr>{% endfor %}</tbody>
     </table></div>
     {% endif %}
 
