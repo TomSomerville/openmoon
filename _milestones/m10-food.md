@@ -49,8 +49,8 @@ technologies:
 sources:
   - {title: "NASA: Science in space, plant science (Veggie)", url: "https://www.nasa.gov/missions/station/iss-research/science-in-space-week-of-july-10-2023-plant-science/", date: "Jul 2023"}
   - {title: "NASA: Houston, we have a pepper", url: "https://www.nasa.gov/centers-and-facilities/kennedy/houston-we-have-a-pepper/", date: "2021"}
-  - {title: "Beihang University: Lunar Palace 365 results", url: "https://ev.buaa.edu.cn/info/1107/2651.htm", date: "2018"}
-  - {title: "MELiSSA Foundation", url: "https://melissafoundation.org/download/372", date: ""}
+  - {title: "Lunar Palace 1 (Lunar Palace 365 mission), Wikipedia", url: "https://en.wikipedia.org/wiki/Lunar_Palace_1", date: "accessed Nov 2026"}
+  - {title: "MELiSSA, Wikipedia", url: "https://en.wikipedia.org/wiki/MELiSSA", date: "accessed Nov 2026"}
   - {title: "NASA: NASA awards $1.25 million to three teams at Deep Space Food finale", url: "https://www.nasa.gov/news-release/nasa-awards-1-25-million-to-three-teams-at-deep-space-food-finale", date: "Aug 2024"}
   - {title: "NASA: Scientists grow plants in lunar soil (Univ. of Florida, 2022)", url: "https://www.nasa.gov/?p=96327", date: "May 2022"}
   - {title: "NASA BVAD Rev2: food energy and mass per crew-day", url: "https://ntrs.nasa.gov/citations/20210024855", date: "Feb 2022"}
