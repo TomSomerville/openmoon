@@ -14,11 +14,12 @@ Phase → System → Component → Sub-component. Every level records:
 - the problems it will face, and how each one is solved
 - sources for every claim
 
-## Design templates
+## Site structure
 
-Five candidate designs are in `templates/`, viewable at https://openmoon.beached.lol/templates/.
-The sample content in them shows the layout only and has not been checked against sources yet.
+- `_milestones/` — one Markdown file per milestone (front matter holds the structured data).
+- `_components/` — component breakdowns, linked to their milestone.
+- `_layouts/`, `assets/site.css` — the Glass Cockpit design.
+- `_data/` — phases, cost benchmarks and cost notes.
 
-Round 2 templates (`templates/blueprint-v2/` and `templates/moonpunk/`) are generated:
-edit `_templates_src/` (shared `body.html`, `base.css`, and per-theme CSS in `build.py`), then run
-`python3 _templates_src/build.py`.
+Content is licensed CC BY-SA 4.0 (see `LICENSE`).
+
