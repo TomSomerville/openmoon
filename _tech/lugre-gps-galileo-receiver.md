@@ -10,7 +10,6 @@ links:
   - {title: "NASA: NASA successfully acquires GPS signals on Moon", url: "https://www.nasa.gov/centers-and-facilities/goddard/nasa-successfully-acquires-gps-signals-on-moon/", kind: official, date: "Mar 2025"}
   - {title: "NASA: NASA and Italian Space Agency test future lunar navigation technology", url: "https://www.nasa.gov/missions/artemis/nasa-and-italian-space-agency-test-future-lunar-navigation-technology/", kind: official, date: "Jan 2025"}
   - {title: "NASA: NASA Moon mission set to break record in navigation signal test", url: "https://www.nasa.gov/centers-and-facilities/goddard/nasa-moon-mission-set-to-break-record-in-navigation-signal-test/", kind: official, date: "Jun 2022"}
-  - {title: "NASA Artemis blog: Blue Ghost prepares for landing, NASA instrument breaks record", url: "https://blogs.nasa.gov/artemis/2025/02/21/blue-ghost-prepares-for-landing-nasa-instrument-breaks-record/", kind: official, date: "Feb 2025"}
   - {title: "Parker, Dovis et al.: GNSS Reception at the Moon: First Results of the Lunar GNSS Receiver Experiment (LuGRE), NAVIGATION 73(1)", url: "https://navi.ion.org/content/73/1/navi.756", kind: paper, date: "Mar 2026"}
   - {title: "Politecnico di Torino open-access copy of the LuGRE first-results paper (PDF)", url: "https://iris.polito.it/retrieve/1383355f-0c92-43cd-b505-a11b56b5d792/navi.756.full.pdf", kind: paper, date: "2026"}
   - {title: "NASA NTRS: Flight experiences and results of the Lunar GNSS Receiver Experiment (LuGRE)", url: "https://ntrs.nasa.gov/citations/20260002034", kind: official, date: "Mar 2026"}
@@ -18,6 +17,7 @@ links:
   - {title: "LuGRE public mission data set (Zenodo)", url: "https://doi.org/10.5281/zenodo.16411686", kind: data, date: "2025"}
   - {title: "Wikipedia: Lunar GNSS Receiver Experiment", url: "https://en.wikipedia.org/wiki/Lunar_GNSS_Receiver_Experiment", kind: wiki, date: "2026"}
   - {title: "Wikipedia: Blue Ghost Mission 1", url: "https://en.wikipedia.org/wiki/Blue_Ghost_Mission_1", kind: wiki, date: "2026"}
+  - {title: "NASA: Deep Space Network", url: "https://www.nasa.gov/communicating-with-missions/dsn/", kind: official, date: "2026"}
   - {title: "NASA: The Lunar Relay (LCRNS project)", url: "https://www.nasa.gov/goddard/esc/lcrns", kind: official, date: "2026"}
   - {title: "NASA: NASA selects lunar relay contractor for Near Space Network services", url: "https://www.nasa.gov/news-release/nasa-selects-lunar-relay-contractor-for-near-space-network-services", kind: official, date: "Sep 2024"}
   - {title: "ESA: Moonlight programme, pioneering the path for lunar exploration", url: "https://www.esa.int/Applications/Connectivity_and_Secure_Communications/ESA_s_Moonlight_programme_Pioneering_the_path_for_lunar_exploration", kind: official, date: "Oct 2024"}

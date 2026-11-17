@@ -19,7 +19,7 @@ links:
   - {title: "PISCES: Masten Space Systems - preparing for a long-term presence on the Moon", url: "https://pacificspacecenter.com/2020/06/02/preparing-for-a-long-term-presence-on-the-moon/", kind: official, date: "Jun 2020"}
   - {title: "PISCES: New composite material could make manufacturing on the Moon and Mars more efficient", url: "https://pacificspacecenter.com/2021/12/13/basalt-binder-research/", kind: official, date: "Dec 2021"}
   - {title: "ESA: How to make roads on the Moon (PAVER project)", url: "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/How_to_make_roads_on_the_Moon", kind: official, date: "Oct 2023"}
-  - {title: "Gines-Palomares et al.: Laser melting manufacturing of large elements of lunar regolith simulant for paving on the Moon (Scientific Reports)", url: "https://www.nature.com/articles/s41598-023-42008-1", kind: paper, date: "Sep 2023"}
+  - {title: "Gines-Palomares et al.: Laser melting manufacturing of large elements of lunar regolith simulant for paving on the Moon (Scientific Reports)", url: "https://www.nature.com/articles/s41598-023-42008-1", kind: paper, date: "Oct 2023"}
   - {title: "NASA: NASA enables construction technology for Moon and Mars exploration", url: "https://www.nasa.gov/directorates/stmd/nasa-enables-construction-technology-for-moon-and-mars-exploration/", kind: official, date: "May 2025"}
   - {title: "Wikipedia: Sintering", url: "https://en.wikipedia.org/wiki/Sintering", kind: wiki, date: ""}
   - {title: "IEEE Spectrum: NASA funds project for spacecraft that make their own landing pads (Masten FAST)", url: "https://spectrum.ieee.org/nasa-landers-instant-landing-pads", kind: press, date: "Apr 2020"}
