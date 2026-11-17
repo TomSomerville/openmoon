@@ -35,7 +35,7 @@ In September 2025 Blue Alchemist passed its [Critical Design Review](https://www
 
 Blue Alchemist does two jobs in the plan:
 
-- **Oxygen from rock (M06).** Lunar soil is about 40% oxygen by mass, and this works anywhere on the Moon, with no ice needed. It is one of the two oxygen-from-rock processes in the ISRU pilot. Blue Origin's own pitch: "each kilogram of oxygen we make on the lunar surface is one less that we have to [launch from Earth](https://spectrum.ieee.org/blue-origin-molten-regolith-electrolysis)."
+- **Oxygen from rock (M06).** The feedstock is ordinary regolith, so it does not depend on finding ice. It is one of the two oxygen-from-rock processes in the ISRU pilot. Blue Origin's own pitch: "each kilogram of oxygen we make on the lunar surface is one less that we have to [launch from Earth](https://spectrum.ieee.org/blue-origin-molten-regolith-electrolysis)."
 - **Silicon, metals and solar cells (M12).** Making solar cells, cover glass and aluminium wire on the Moon is the main way Open Moon hopes to grow power beyond what can be shipped. Today the only option is to land every array, such as Astrobotic's planned [50 kW VSAT-XL](https://www.astrobotic.com/astrobotic-developing-xl-solar-array-tech-for-lunar-power-infrastructure/).
 
 Without it, oxygen from rock would rest on other processes (see alternatives). Power growth would depend on shipping arrays and reactors from Earth, the most expensive part of the power milestone (M04).

@@ -17,7 +17,7 @@ links:
   - {title: "IPEx TRL 5 design overview (ASCEND 2024)", url: "https://ntrs.nasa.gov/api/citations/20240008162/downloads/ASCEND24_IPEx%20TRL%205%20Design%20Overview.pdf", kind: paper, date: "2024"}
   - {title: "NASA: NASA Kennedy digs latest robot test (RASSOR berm test)", url: "https://www.nasa.gov/image-article/nasa-kennedy-digs-latest-robot-test", kind: official, date: "Jun 2025"}
   - {title: "NASA Image Library: RASSOR builds a berm during a site preparation test, KSC-20250603-PH-FMX01_0086", url: "https://images.nasa.gov/details/KSC-20250603-PH-FMX01_0086", kind: data, date: "Jun 2025"}
-  - {title: "NASA KSC video: RASSOR excavator (linked from the NASA fact sheet)", url: "https://www.youtube.com/watch?v=YWiRuyhjEZ8", kind: video, date: "2013"}
+  - {title: "NASA Kennedy Space Center video: NASA Developing Mining Robot for Moon, Mars", url: "https://www.youtube.com/watch?v=YWiRuyhjEZ8", kind: video, date: ""}
   - {title: "Wikipedia: Swamp Works", url: "https://en.wikipedia.org/wiki/Swamp_Works", kind: wiki, date: "2026"}
 ---
 
@@ -39,9 +39,9 @@ Without a low-mass excavator, the base would have to land heavy Earth-style mach
 
 ## How it works
 
-RASSOR 2.0 has a compact chassis with four wheels and two arms, one at each end. Each arm carries [two bucket drums](https://ntrs.nasa.gov/api/citations/20210011366/downloads/ASCE%202016%20RASSOR%202%20Final%20%206_8_2016.pdf), which are hollow cylinders with scoops around the outside. The front and rear drums spin in opposite directions, so their horizontal pushes cancel. Internal baffles keep soil inside the drum while it turns. When the drums are full, the robot drives back and dumps them into a hopper by spinning them the other way.
+RASSOR 2.0 has a compact wheeled chassis with two arms, one at each end. Each arm carries [two bucket drums](https://ntrs.nasa.gov/api/citations/20210011366/downloads/ASCE%202016%20RASSOR%202%20Final%20%206_8_2016.pdf), which are hollow cylinders with scoops around the outside. The front and rear drums spin in opposite directions, so their horizontal pushes cancel. Internal baffles keep soil inside the drum while it turns. When the drums are full, the robot drives back and dumps them into a hopper by spinning them the other way.
 
-The design paper's concept of operations has the robot working 100 m from a lander. It mines for 16 hours, then recharges for 8. It can trench deeper than 1.0 m. The team chose wheels over the tracks used on RASSOR 1.5, because the drums cancel digging forces and remove the need for strong traction. The arms can lift the body to free a stuck wheel or right the robot if it tips over.
+The design paper's concept of operations has the robot working 100 m from a lander. It mines for 16 hours, then recharges for 8. It can trench deeper than 1.0 m. The team chose wheels over the tracks used on RASSOR 1.5, because the drums cancel digging forces and remove the need for strong traction. If it gets stuck in loose soil, it can lower its arms so the drums share its weight, and it can use its arms and drums to right itself if it tips over.
 
 | Specification | Value |
 |---|---|
