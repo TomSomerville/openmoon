@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="LuGRE GPS and Galileo receiver on the lunar surface concept">
+<title>LuGRE GPS and Galileo receiver on the lunar surface concept</title>
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern></defs>
+<style>.l{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}.f{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.a{fill:none;stroke:#ffb020;stroke-width:2;stroke-linecap:round}.af{fill:#ffb020}.t{fill:#d6e2ec;font-family:"Share Tech Mono",monospace;font-size:14px}.s{font-size:12px}.c{fill:none;stroke:#d6e2ec;stroke-width:1;opacity:.6}.d{stroke-dasharray:6 5}</style>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<!-- LuGRE GPS and Galileo receiver on the lunar surface concept -->
+<!-- Earth with GNSS constellation -->
+<circle class="f" cx="660" cy="110" r="38"/>
+<ellipse class="l d" cx="660" cy="110" rx="90" ry="34" style="opacity:.5"/>
+<g class="af"><rect x="568" y="104" width="8" height="8"/><rect x="745" y="104" width="8" height="8"/><rect x="620" y="138" width="8" height="8"/><rect x="700" y="74" width="8" height="8"/></g>
+<!-- signals -->
+<path class="a d" d="M570 112 L318 238 M748 112 L320 240 M624 144 L320 242" style="opacity:.8"/>
+<!-- ground -->
+<path class="f" d="M0 380 Q200 372 400 378 T800 376 V470 H0Z"/>
+<!-- lander -->
+<rect class="f" x="220" y="300" width="150" height="50" rx="4"/>
+<rect class="f" x="240" y="270" width="110" height="30"/>
+<path class="l" d="M228 350 L190 378 M362 350 L400 378 M260 350 L250 378 M330 350 L340 378"/>
+<path class="l" d="M178 378h24 M388 378h24 M240 378h20 M330 378h20"/>
+<!-- LuGRE antenna on top -->
+<path class="l" d="M318 270 V248"/><rect x="302" y="236" width="32" height="12" rx="2" fill="rgba(255,176,32,.15)" stroke="#ffb020" stroke-width="2"/>
+<rect class="f" x="256" y="280" width="34" height="14"/>
+<!-- callouts -->
+<line class="c" x1="302" y1="242" x2="210" y2="200"/><text class="t" x="20" y="196">L1/L5 · E1/E5a ANTENNA</text>
+<line class="c" x1="256" y1="287" x2="150" y2="262"/><text class="t" x="20" y="258">LuGRE RECEIVER</text>
+<text class="t" x="520" y="270">GPS + GALILEO SIGNALS</text><text class="t s" x="520" y="288">FROM ≈384,000 km AWAY</text>
+<text class="t s" x="430" y="420">MARE CRISIUM · NEAR SIDE</text>
+<text class="t s" x="20" y="30">WEAK-SIGNAL GNSS NAVIGATION AT THE MOON</text>
+<text class="t s" x="20" y="485" fill-opacity=".8">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

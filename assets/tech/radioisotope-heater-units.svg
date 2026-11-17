@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Radioisotope heater unit cutaway concept">
+<title>Radioisotope heater unit cutaway concept</title>
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern></defs>
+<style>.l{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}.f{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.a{fill:none;stroke:#ffb020;stroke-width:2;stroke-linecap:round}.af{fill:#ffb020}.t{fill:#d6e2ec;font-family:"Share Tech Mono",monospace;font-size:14px}.s{font-size:12px}.c{fill:none;stroke:#d6e2ec;stroke-width:1;opacity:.6}.d{stroke-dasharray:6 5}</style>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<!-- Radioisotope heater unit cutaway concept -->
+<g transform="translate(0,-30)">
+<!-- outer aeroshell -->
+<rect class="f" x="130" y="120" width="260" height="300" rx="18"/>
+<!-- insulator sleeves -->
+<rect class="l" x="165" y="160" width="190" height="220" rx="10"/>
+<rect class="l" x="195" y="195" width="130" height="150" rx="8"/>
+<!-- clad + pellet -->
+<rect x="225" y="225" width="70" height="90" rx="6" fill="rgba(255,176,32,.12)" stroke="#ffb020" stroke-width="2"/>
+<rect x="238" y="240" width="44" height="60" rx="4" fill="#ffb020" fill-opacity=".55"/>
+<!-- end caps -->
+<path class="l" d="M150 120 V100 H370 V120 M150 420 V440 H370 V420"/>
+<!-- heat lines -->
+<path class="a" d="M70 200 q10 -12 0 -24 q-10 -12 0 -24 M70 330 q10 -12 0 -24 q-10 -12 0 -24  M90 270 q10 -12 0 -24 q-10 -12 0 -24"/>
+<!-- dimensions -->
+<path class="c" d="M130 462 H390 M130 456 v12 M390 456 v12"/><text class="t s" x="260" y="452" text-anchor="middle">≈26 mm DIA</text>
+<path class="c" d="M410 120 V420 M404 120 h12 M404 420 h12"/>
+</g>
+<g transform="translate(0,-30)">
+<!-- callouts -->
+<line class="c" x1="282" y1="270" x2="500" y2="270"/><text class="t" x="506" y="266">PuO₂ FUEL PELLET</text><text class="t s" x="506" y="284">≈1 W THERMAL</text>
+<line class="c" x1="295" y1="230" x2="500" y2="200"/><text class="t" x="506" y="204">PLATINUM-RHODIUM CLAD</text>
+<line class="c" x1="325" y1="340" x2="500" y2="340"/><text class="t" x="506" y="344">PYROLYTIC GRAPHITE</text><text class="t s" x="506" y="362">INSULATORS</text>
+<line class="c" x1="390" y1="140" x2="500" y2="130"/><text class="t" x="506" y="134">GRAPHITE AEROSHELL</text>
+<text class="t s" x="388" y="92">≈32 mm LONG</text>
+</g>
+<text class="t" x="506" y="420">KEEPS ELECTRONICS WARM</text><text class="t s" x="506" y="438">IN SHADOW AND LUNAR NIGHT</text>
+<text class="t s" x="130" y="40">LIGHT-WEIGHT RHU · CUTAWAY</text>
+<text class="t s" x="20" y="485" fill-opacity=".8">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

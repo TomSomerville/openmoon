@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Molten regolith electrolysis plant concept">
+<title>Molten regolith electrolysis plant concept</title>
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern></defs>
+<style>.l{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}.f{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.a{fill:none;stroke:#ffb020;stroke-width:2;stroke-linecap:round}.af{fill:#ffb020}.t{fill:#d6e2ec;font-family:"Share Tech Mono",monospace;font-size:14px}.s{font-size:12px}.c{fill:none;stroke:#d6e2ec;stroke-width:1;opacity:.6}.d{stroke-dasharray:6 5}</style>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<!-- Molten regolith electrolysis plant concept -->
+<path class="f" d="M0 420 Q200 412 400 418 T800 416 V470 H0Z"/>
+<!-- hopper -->
+<path class="f" d="M60 90 H180 L140 160 H100Z"/>
+<g class="c"><circle cx="90" cy="105" r="3"/><circle cx="120" cy="100" r="3"/><circle cx="150" cy="108" r="3"/><circle cx="110" cy="125" r="3"/><circle cx="130" cy="140" r="3"/></g>
+<path class="l" d="M120 160 V200 H250"/>
+<!-- reactor -->
+<rect class="f" x="250" y="170" width="200" height="200" rx="10"/>
+<path d="M262 260 H438 V358 H262Z" fill="rgba(255,176,32,.18)" stroke="#ffb020" stroke-width="2"/>
+<path class="l" d="M300 150 V300 M400 150 V300"/>
+<rect class="f" x="292" y="140" width="16" height="14"/><rect class="f" x="392" y="140" width="16" height="14"/>
+<path class="a" d="M290 300 l10 -10 l10 10 M390 300 l10 -10 l10 10"/>
+<g class="c"><circle cx="400" cy="245" r="4"/><circle cx="405" cy="225" r="3"/><circle cx="398" cy="205" r="3"/></g>
+<!-- O2 out -->
+<path class="l" d="M420 170 V120 H560"/>
+<rect class="f" x="560" y="95" width="70" height="50" rx="20"/>
+<!-- metal tap -->
+<path class="l" d="M450 345 H500 V392 H560"/>
+<rect class="f" x="560" y="375" width="90" height="34"/>
+<!-- solar cell -->
+<path class="f" d="M600 250 H740 L720 320 H580Z"/><path class="l" d="M635 250 L615 320 M670 250 L650 320 M705 250 L685 320 M592 285 H730"/>
+<path class="a d" d="M650 375 L660 325"/>
+<!-- callouts -->
+<text class="t" x="60" y="80">REGOLITH FEED</text>
+<text class="t" x="262" y="388" style="fill:#ffb020">MOLTEN REGOLITH ≈1600 °C</text>
+<text class="t s" x="252" y="132">ELECTRODES</text>
+<text class="t" x="640" y="114">O₂</text><text class="t s" x="640" y="130">OXYGEN OUT</text>
+<text class="t" x="660" y="398">Fe · Si · Al</text>
+<text class="t s" x="600" y="240">SILICON → SOLAR CELLS</text>
+<text class="t s" x="20" y="30">MOLTEN REGOLITH ELECTROLYSIS · NO WATER OR CHEMICALS</text>
+<text class="t s" x="20" y="485" fill-opacity=".8">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

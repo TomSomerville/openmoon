@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Lunar regolith construction by laser melting concept">
+<title>Lunar regolith construction by laser melting concept</title>
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern></defs>
+<style>.l{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}.f{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.a{fill:none;stroke:#ffb020;stroke-width:2;stroke-linecap:round}.af{fill:#ffb020}.t{fill:#d6e2ec;font-family:"Share Tech Mono",monospace;font-size:14px}.s{font-size:12px}.c{fill:none;stroke:#d6e2ec;stroke-width:1;opacity:.6}.d{stroke-dasharray:6 5}</style>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<!-- Lunar regolith construction by laser melting concept -->
+<path class="f" d="M0 380 Q200 372 400 378 T800 376 V470 H0Z"/>
+<!-- printed landing pad, perspective ellipses -->
+<ellipse class="f" cx="470" cy="400" rx="250" ry="42"/>
+<ellipse class="l" cx="470" cy="400" rx="200" ry="33"/>
+<ellipse class="l" cx="470" cy="400" rx="150" ry="25"/>
+<ellipse class="l" cx="470" cy="400" rx="100" ry="17" style="stroke:#ffb020"/>
+<!-- blast shield wall -->
+<path class="f" d="M700 300 L780 290 V380 L700 388Z"/>
+<path class="l" d="M700 320 L780 311 M700 340 L780 332 M700 360 L780 353"/>
+<!-- robot rover -->
+<rect class="f" x="70" y="300" width="130" height="50" rx="6"/>
+<circle class="l" cx="95" cy="362" r="16"/><circle class="l" cx="175" cy="362" r="16"/>
+<!-- arm -->
+<path class="l" d="M180 300 L240 210 L360 230"/>
+<circle class="l" cx="240" cy="210" r="7"/><circle class="l" cx="180" cy="300" r="7"/>
+<rect class="f" x="356" y="222" width="30" height="40" rx="3"/>
+<!-- laser -->
+<path d="M371 262 L382 385" stroke="#ffb020" stroke-width="3"/>
+<circle cx="382" cy="386" r="6" fill="#ffb020" fill-opacity=".7"/>
+<path class="a" d="M372 392 q10 -10 20 0" />
+<!-- callouts -->
+<line class="c" x1="386" y1="240" x2="460" y2="200"/><text class="t" x="466" y="196">LASER HEAD</text>
+<line class="c" x1="390" y1="380" x2="480" y2="300"/><text class="t" x="486" y="296">MELTS REGOLITH INTO</text><text class="t s" x="486" y="312">GLASSY LAYERS</text>
+<text class="t" x="400" y="464">PRINTED LANDING PAD</text>
+<line class="c" x1="740" y1="290" x2="700" y2="250"/><text class="t" x="620" y="244">BLAST SHIELD</text>
+<text class="t s" x="70" y="290">ROBOTIC PRINTER</text>
+<text class="t s" x="20" y="30">IN-SITU CONSTRUCTION FROM LUNAR REGOLITH</text>
+<text class="t s" x="20" y="485" fill-opacity=".8">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

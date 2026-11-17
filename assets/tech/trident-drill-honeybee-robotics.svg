@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="TRIDENT regolith and ice drill concept">
+<title>TRIDENT regolith and ice drill concept</title>
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern></defs>
+<style>.l{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}.f{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.a{fill:none;stroke:#ffb020;stroke-width:2;stroke-linecap:round}.af{fill:#ffb020}.t{fill:#d6e2ec;font-family:"Share Tech Mono",monospace;font-size:14px}.s{font-size:12px}.c{fill:none;stroke:#d6e2ec;stroke-width:1;opacity:.6}.d{stroke-dasharray:6 5}</style>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<!-- TRIDENT regolith and ice drill concept -->
+<path class="f" d="M0 330 Q120 322 240 328 T480 326 T800 330 V470 H0Z"/>
+<g class="c"><circle cx="60" cy="360" r="2"/><circle cx="150" cy="400" r="3"/><circle cx="560" cy="380" r="2"/><circle cx="700" cy="420" r="3"/><circle cx="640" cy="350" r="2"/></g>
+<line class="a d" x1="330" y1="450" x2="430" y2="450"/>
+<!-- lander body -->
+<rect class="f" x="60" y="110" width="200" height="130"/>
+<rect class="l" x="80" y="80" width="160" height="30"/>
+<path class="l" d="M70 240 L30 325 M250 240 L290 325 M110 240 L95 325 M210 240 L225 325"/>
+<path class="l" d="M18 325h24 M278 325h24 M83 325h24 M213 325h24"/>
+<!-- deployment arm -->
+<path class="l" d="M260 150 H340 M260 200 H340"/>
+<rect class="f" x="340" y="60" width="44" height="200"/>
+<path class="l" d="M362 70 V250"/>
+<!-- drill head -->
+<rect class="f" x="346" y="170" width="32" height="48" rx="3"/>
+<path class="a" d="M352 182h20 M352 194h20 M352 206h20"/>
+<!-- drill stem with auger -->
+<line class="l" x1="362" y1="218" x2="362" y2="450"/>
+<path class="l" d="M352 330 L372 342 L352 354 L372 366 L352 378 L372 390 L352 402 L372 414 L352 426 L372 438 L362 452"/>
+<path class="l" d="M352 270 L372 282 L352 294 L372 306 L352 318 L372 330"/>
+<!-- cuttings pile -->
+<path class="f" d="M318 330 Q340 312 352 328 M372 328 Q384 312 406 330" />
+<g class="af"><circle cx="330" cy="324" r="2"/><circle cx="342" cy="318" r="2"/><circle cx="392" cy="320" r="2"/><circle cx="398" cy="326" r="2"/></g>
+<!-- ice grains -->
+<g class="c"><circle cx="410" cy="410" r="3"/><circle cx="330" cy="425" r="3"/><circle cx="420" cy="380" r="2"/></g>
+<!-- MSolo box -->
+<rect class="f" x="120" y="45" width="80" height="35"/>
+<!-- callouts -->
+<line class="c" x1="378" y1="190" x2="470" y2="150"/><text class="t" x="476" y="146">ROTARY-PERCUSSIVE DRILL</text>
+<line class="c" x1="372" y1="300" x2="470" y2="250"/><text class="t" x="476" y="246">AUGER LIFTS CUTTINGS</text><text class="t s" x="476" y="264">TO THE SURFACE</text>
+<text class="t" x="440" y="455" fill="#ffb020" style="fill:#ffb020">1 m TARGET DEPTH</text>
+<line class="c" x1="160" y1="45" x2="160" y2="22"/><text class="t" x="168" y="26">MSOLO MASS SPECTROMETER</text>
+<text class="t s" x="90" y="180">LANDER</text>
+<text class="t s" x="560" y="40">REGOLITH + ICE SAMPLING</text>
+<text class="t s" x="20" y="485" fill-opacity=".8">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

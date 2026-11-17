@@ -18,8 +18,8 @@ permalink: /technology/
 .tcount{font:12px var(--fm);color:var(--dim);margin:0 0 10px}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
 .tc{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.tc .img{position:relative;aspect-ratio:16/10;background:#0a1015;border-bottom:1px solid var(--line)}
-.tc .img img{width:100%;height:100%;object-fit:cover;display:block}
+.tc .img{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0a1015;border-bottom:1px solid var(--line)}
+.tc .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .tc .img .kind{position:absolute;left:8px;top:8px;font:10px var(--fm);letter-spacing:.08em;text-transform:uppercase;background:rgba(6,10,14,.8);color:var(--hi);border:1px solid #1d4d5a;border-radius:3px;padding:2px 6px}
 .tc .img .kind.concept{color:var(--warn);border-color:#5a4313}
 .tc .noimg{display:grid;place-items:center;height:100%;font:11px var(--fm);color:var(--dim)}
@@ -41,7 +41,7 @@ permalink: /technology/
   <div class="grp" data-f="cat"><span class="lab">System</span>{% for c in cats %}<button class="chip" data-v="{{ c | slugify }}" aria-pressed="false">{{ c }}</button>{% endfor %}</div>
   <div class="grp" data-f="trl"><span class="lab">Readiness</span><button class="chip" data-v="low" aria-pressed="false">TRL 1–4</button><button class="chip" data-v="mid" aria-pressed="false">TRL 5–6</button><button class="chip" data-v="high" aria-pressed="false">TRL 7–9</button></div>
   <div class="grp" data-f="dev"><span class="lab">Status</span><button class="chip" data-v="develop" aria-pressed="false">Needs development</button><button class="chip" data-v="ready" aria-pressed="false">Ready to use</button></div>
-  <div class="grp" data-f="img"><span class="lab">Image</span><button class="chip" data-v="photo" aria-pressed="false">Real photo</button><button class="chip" data-v="concept" aria-pressed="false">Concept</button></div>
+  <div class="grp" data-f="img"><span class="lab">Image</span><button class="chip" data-v="photo" aria-pressed="false">Real photo</button><button class="chip" data-v="illustration" aria-pressed="false">NASA illustration</button><button class="chip" data-v="concept" aria-pressed="false">Concept</button></div>
 </div>
 <p class="tcount" id="tcount" aria-live="polite">{{ techs | size }} technologies</p>
 
@@ -50,7 +50,7 @@ permalink: /technology/
 {% if t.trl <= 4 %}{% assign band = "low" %}{% elsif t.trl <= 6 %}{% assign band = "mid" %}{% else %}{% assign band = "high" %}{% endif %}
 <article class="tc" data-phase="{{ t.phases | join: ' ' }}" data-cat="{{ t.category | slugify }}" data-trl="{{ band }}" data-dev="{% if t.develop %}develop{% else %}ready{% endif %}" data-img="{{ t.image.kind | default: 'none' }}" data-text="{{ t.name | append: ' ' | append: t.use | append: ' ' | append: t.status | downcase | escape }}">
   <div class="img">
-    {% if t.image %}<img src="{{ t.image.file | relative_url }}" alt="{{ t.image.caption | escape }}" loading="lazy"><span class="kind{% if t.image.kind == 'concept' %} concept{% endif %}">{% if t.image.kind == 'concept' %}Concept illustration{% else %}Photo{% endif %}</span>{% else %}<div class="noimg">Image pending</div>{% endif %}
+    {% if t.image %}<img src="{{ t.image.file | relative_url }}" alt="{{ t.image.caption | escape }}" loading="lazy"><span class="kind{% if t.image.kind == 'concept' %} concept{% endif %}">{% if t.image.kind == 'concept' %}Concept illustration{% elsif t.image.kind == 'illustration' %}NASA illustration{% else %}Photo{% endif %}</span>{% else %}<div class="noimg">Image pending</div>{% endif %}
   </div>
   <div class="b">
     <span class="cat">{{ t.category }}</span>
@@ -64,7 +64,7 @@ permalink: /technology/
       {% if t.source != "" %}<a href="{{ t.source }}" title="{{ t.source_title | escape }}">source ↗</a>{% endif %}
     </div>
   </div>
-  {% if t.image %}<div class="cr">{% if t.image.kind == 'concept' %}Concept illustration · {{ t.image.license }}{% else %}{{ t.image.caption }} · Credit: {{ t.image.credit }} · {{ t.image.license }}{% endif %}{% if t.image.source_page %} · <a href="{{ t.image.source_page }}">image source</a>{% endif %}</div>{% endif %}
+  {% if t.image %}<div class="cr">{% if t.image.kind == 'concept' %}Open Moon concept illustration · {{ t.image.license }}{% else %}{{ t.image.caption }} · Credit: {{ t.image.credit }} · {{ t.image.license }}{% endif %}{% if t.image.source_page %} · <a href="{{ t.image.source_page }}">image source</a>{% endif %}</div>{% endif %}
 </article>
 {% endfor %}
 </div>

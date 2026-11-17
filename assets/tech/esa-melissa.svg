@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="MELiSSA closed-loop life support compartments concept">
+<title>MELiSSA closed-loop life support compartments concept</title>
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern></defs>
+<style>.l{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}.f{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.a{fill:none;stroke:#ffb020;stroke-width:2;stroke-linecap:round}.af{fill:#ffb020}.t{fill:#d6e2ec;font-family:"Share Tech Mono",monospace;font-size:14px}.s{font-size:12px}.c{fill:none;stroke:#d6e2ec;stroke-width:1;opacity:.6}.d{stroke-dasharray:6 5}</style>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<!-- MELiSSA closed-loop life support compartments concept -->
+<!-- loop arrows -->
+<path class="a" d="M195 150 H305 M485 150 H595 M690 200 V290 M595 350 H495 M305 350 H205 M110 290 V200"/>
+<g class="af"><path d="M305 144 l10 6 l-10 6Z"/><path d="M595 144 l10 6 l-10 6Z"/><path d="M684 290 l6 10 l6 -10Z"/><path d="M495 344 l-10 6 l10 6Z"/><path d="M205 344 l-10 6 l10 6Z"/><path d="M104 200 l6 -10 l6 10Z"/></g>
+<!-- compartments as bioreactor vessels -->
+<g>
+<rect class="f" x="30" y="105" width="160" height="90" rx="14"/>
+<text class="t" x="46" y="132">C I</text><text class="t s" x="46" y="152">THERMOPHILIC</text><text class="t s" x="46" y="168">ANAEROBIC BACTERIA</text><text class="t s" x="46" y="184">(WASTE LIQUEFYING)</text>
+</g>
+<g>
+<rect class="f" x="320" y="105" width="160" height="90" rx="14"/>
+<text class="t" x="336" y="132">C II</text><text class="t s" x="336" y="152">PHOTOHETERO-</text><text class="t s" x="336" y="168">TROPHIC BACTERIA</text>
+</g>
+<g>
+<rect class="f" x="610" y="105" width="160" height="90" rx="14"/>
+<text class="t" x="626" y="132">C III</text><text class="t s" x="626" y="152">NITRIFYING</text><text class="t s" x="626" y="168">BACTERIA</text>
+</g>
+<g>
+<rect class="f" x="610" y="305" width="160" height="90" rx="14"/>
+<text class="t" x="626" y="332">C IVa / IVb</text><text class="t s" x="626" y="352">ALGAE (ARTHROSPIRA)</text><text class="t s" x="626" y="368">+ HIGHER PLANTS</text>
+</g>
+<g>
+<rect class="f" x="320" y="305" width="160" height="90" rx="14"/>
+<text class="t" x="336" y="332">C V</text><text class="t s" x="336" y="352">CREW</text><text class="t s" x="336" y="368">(O₂ · FOOD · WATER)</text>
+</g>
+<g>
+<rect class="f" x="30" y="305" width="160" height="90" rx="14"/>
+<text class="t s" x="46" y="332">WASTE · CO₂</text><text class="t s" x="46" y="352">INEDIBLE BIOMASS</text>
+</g>
+<text class="t" x="400" y="252" text-anchor="middle">CLOSED LOOP: WASTE → O₂, WATER, FOOD</text>
+<text class="t s" x="20" y="30">MICRO-ECOLOGICAL LIFE SUPPORT SYSTEM ALTERNATIVE</text>
+<text class="t s" x="20" y="485" fill-opacity=".8">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

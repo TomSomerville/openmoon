@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Lunar fission surface power reactor concept">
+<title>Lunar fission surface power reactor concept</title>
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern></defs>
+<style>.l{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}.f{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.a{fill:none;stroke:#ffb020;stroke-width:2;stroke-linecap:round}.af{fill:#ffb020}.t{fill:#d6e2ec;font-family:"Share Tech Mono",monospace;font-size:14px}.s{font-size:12px}.c{fill:none;stroke:#d6e2ec;stroke-width:1;opacity:.6}.d{stroke-dasharray:6 5}</style>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<!-- Lunar fission surface power reactor concept -->
+<path class="f" d="M0 400 Q200 392 400 398 T800 396 V470 H0Z"/>
+<!-- reactor in shield, partly buried -->
+<path class="f" d="M80 400 Q90 330 170 320 Q250 330 260 400Z"/>
+<rect x="140" y="300" width="60" height="80" rx="8" fill="rgba(255,176,32,.12)" stroke="#ffb020" stroke-width="2"/>
+<path class="a" d="M155 315v50 M170 315v50 M185 315v50"/>
+<rect class="l" x="130" y="285" width="80" height="16"/>
+<!-- boom to converter -->
+<path class="l" d="M210 292 H330 M210 300 H330"/>
+<!-- Brayton converter -->
+<rect class="f" x="330" y="260" width="110" height="70" rx="6"/>
+<circle class="l" cx="362" cy="295" r="18"/><path class="l" d="M350 283 L374 307 M374 283 L350 307"/>
+<path class="l" d="M386 280 L420 290 V300 L386 310Z"/>
+<path class="l" d="M440 290 H470"/>
+<!-- radiator mast and panels -->
+<path class="l" d="M470 330 V120"/>
+<g class="f"><path d="M480 130 H760 V170 H480Z"/><path d="M480 185 H760 V225 H480Z"/><path d="M480 240 H760 V280 H480Z"/></g>
+<path class="l" d="M470 150 H480 M470 205 H480 M470 260 H480"/>
+<path class="l" d="M440 300 H470"/><path class="l" d="M455 330 L470 300 L485 330" />
+<path class="l" d="M450 400 L470 330 L490 400"/>
+<!-- callouts -->
+<line class="c" x1="170" y1="320" x2="120" y2="220"/><text class="t" x="30" y="200">HALEU REACTOR</text><text class="t s" x="30" y="216">INSIDE RADIATION SHIELD</text>
+<line class="c" x1="385" y1="260" x2="360" y2="200"/><text class="t" x="280" y="180">CLOSED BRAYTON</text><text class="t s" x="280" y="196">GAS TURBINE CONVERTER</text>
+<text class="t" x="560" y="110">HEAT-REJECTION RADIATORS</text>
+<text class="t s" x="520" y="430">TARGET: ≥20 kWe · ≥5 yr · &lt;15 t</text>
+<text class="t s" x="20" y="30">LUNAR SURFACE FISSION POWER PLANT</text>
+<text class="t s" x="20" y="485" fill-opacity=".8">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Regolith radiation shielding over a habitat concept">
+<title>Regolith radiation shielding over a habitat concept</title>
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern></defs>
+<style>.l{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}.f{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.a{fill:none;stroke:#ffb020;stroke-width:2;stroke-linecap:round}.af{fill:#ffb020}.t{fill:#d6e2ec;font-family:"Share Tech Mono",monospace;font-size:14px}.s{font-size:12px}.c{fill:none;stroke:#d6e2ec;stroke-width:1;opacity:.6}.d{stroke-dasharray:6 5}</style>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<!-- Regolith radiation shielding over a habitat concept -->
+<path class="f" d="M0 400 Q200 394 400 398 T800 396 V470 H0Z"/>
+<!-- regolith berm -->
+<path d="M110 400 Q130 170 400 150 Q670 170 690 400Z" fill="rgba(56,212,240,.05)" stroke="#38d4f0" stroke-width="2"/>
+<g class="c"><circle cx="200" cy="300" r="3"/><circle cx="260" cy="210" r="2"/><circle cx="560" cy="220" r="3"/><circle cx="610" cy="320" r="2"/><circle cx="400" cy="175" r="2"/><circle cx="170" cy="360" r="2"/><circle cx="640" cy="370" r="3"/><circle cx="330" cy="190" r="3"/><circle cx="480" cy="185" r="2"/></g>
+<!-- habitat module -->
+<rect class="f" x="260" y="290" width="280" height="110" rx="50"/>
+<path class="l" d="M310 290 V400 M490 290 V400"/>
+<rect class="l" x="370" y="330" width="60" height="40" rx="6"/>
+<!-- crew -->
+<circle class="l" cx="345" cy="335" r="7"/><path class="l" d="M345 342 V370 M335 352 H355 M345 370 l-7 20 M345 370 l7 20"/>
+<!-- incoming radiation -->
+<g class="a"><path d="M150 40 L250 210"/><path d="M400 30 V140"/><path d="M640 40 L560 200"/><path d="M60 140 L170 250"/><path d="M740 150 L640 260"/></g>
+<g class="af"><circle cx="250" cy="210" r="4"/><circle cx="400" cy="140" r="4"/><circle cx="560" cy="200" r="4"/><circle cx="170" cy="250" r="4"/><circle cx="640" cy="260" r="4"/></g>
+<!-- thickness -->
+<path class="c" d="M400 158 V286 M394 158 h12 M394 286 h12"/>
+<text class="t" x="412" y="230">≥2 m REGOLITH</text><text class="t s" x="412" y="248">(MODEL ESTIMATES)</text>
+<!-- callouts -->
+<text class="t" x="430" y="60">GALACTIC COSMIC RAYS</text><text class="t s" x="430" y="78">+ SOLAR PARTICLE EVENTS</text>
+<line class="c" x1="540" y1="350" x2="640" y2="440"/><text class="t" x="560" y="456">PRESSURISED HABITAT</text>
+<text class="t s" x="20" y="30">BURIED / BERMED HABITAT · CROSS-SECTION</text>
+<text class="t s" x="20" y="485" fill-opacity=".8">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

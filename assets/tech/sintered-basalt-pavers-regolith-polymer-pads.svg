@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Concept: interlocking sintered regolith pavers forming a landing pad under a lander plume">
+<title>Sintered regolith pavers landing pad concept</title>
+<defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern></defs>
+<style>.l{fill:none;stroke:#38d4f0;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}.f{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2;stroke-linejoin:round}.a{fill:none;stroke:#ffb020;stroke-width:2;stroke-linecap:round}.t{fill:#d6e2ec;font-family:"Share Tech Mono",monospace;font-size:14px}.s{font-size:12px}.c{fill:none;stroke:#d6e2ec;stroke-width:1;opacity:.6}</style>
+<rect width="800" height="500" fill="#0a1015"/><rect width="800" height="500" fill="url(#g)"/>
+<path class="f" d="M0 360 Q200 352 400 358 T800 356 V470 H0Z"/>
+<!-- paver grid in perspective -->
+<path class="f" d="M180 420 L620 420 L560 340 L240 340 Z"/>
+<g class="l" style="stroke-width:1.5">
+<path d="M220 393 L580 393 M200 407 L600 407 M233 375 L567 375 M240 357 L560 357"/>
+<path d="M300 420 L320 340 M380 420 L387 340 M420 420 L413 340 M500 420 L480 340 M260 420 L285 340 M540 420 L520 340 M340 420 L353 340 M460 420 L447 340"/>
+</g>
+<!-- lander legs and engine -->
+<path class="l" d="M330 150 L470 150 L490 230 L310 230 Z"/>
+<path class="l" d="M310 230 L270 330 M490 230 L530 330 M255 330 H285 M515 330 H545"/>
+<path class="l" d="M385 230 L375 262 H425 L415 230"/>
+<!-- plume -->
+<path class="a" d="M378 266 L340 335 M400 266 L400 338 M422 266 L460 335"/>
+<path class="a" d="M330 345 Q280 352 230 344 M470 345 Q520 352 570 344" style="opacity:.7"/>
+<!-- berm -->
+<path class="f" d="M630 360 Q680 300 730 360 Z"/>
+<!-- callouts -->
+<path class="c" d="M560 395 L650 440"/><text class="t" x="655" y="446">sintered pavers</text>
+<path class="c" d="M462 300 L560 270"/><text class="t" x="565" y="268">engine plume</text>
+<path class="c" d="M690 330 L700 290"/><text class="t" x="640" y="282">ejecta berm</text>
+<text class="t s" x="20" y="485" style="fill:#ffb020">CONCEPT ILLUSTRATION · OPEN MOON</text>
+</svg>

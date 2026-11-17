@@ -11,7 +11,13 @@
   source: https://www.nasa.gov/wp-content/uploads/2025/05/fy-2026-budget-technical-supplement-002.pdf
   source_title: NASA FY2026 Budget Technical Supplement (Lunar Reconnaissance Orbiter, PS-28/29)
   slug: lunar-reconnaissance-orbiter-lro
-  image: null
+  image:
+    file: /assets/tech/lunar-reconnaissance-orbiter-lro.jpg
+    kind: photo
+    caption: Technicians photograph the Lunar Reconnaissance Orbiter during closeout at Astrotech Space Operations, Titusville, Florida, May 2009
+    credit: NASA/Jack Pfaller
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/KSC-2009-2989
 - name: ShadowCam on KPLO/Danuri
   category: Science and survey
   milestones:
@@ -25,7 +31,13 @@
   source: https://www.soest.hawaii.edu/soestwp/announce/news/scarce-ice-in-moons-darkest-regions/
   source_title: 'Univ. of Hawaii SOEST: Scarce ice in Moon''s darkest regions (ShadowCam)'
   slug: shadowcam-on-kplo-danuri
-  image: null
+  image:
+    file: /assets/tech/shadowcam-on-kplo-danuri.svg
+    kind: concept
+    caption: ShadowCam on the KPLO/Danuri orbiter imaging a permanently shadowed polar crater floor by light scattered from sunlit rims
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.soest.hawaii.edu/soestwp/announce/news/scarce-ice-in-moons-darkest-regions/
 - name: Chandrayaan-2 orbiter DFSAR radar
   category: Science and survey
   milestones:
@@ -39,7 +51,13 @@
   source: https://www.isro.gov.in/Chandrayaan2_Dual_Frequency_Synthetic_Aperture_Radar.html
   source_title: 'ISRO: Chandrayaan-2 DFSAR observations reveal subsurface ice in lunar south polar regions'
   slug: chandrayaan-2-orbiter-dfsar-radar
-  image: null
+  image:
+    file: /assets/tech/chandrayaan-2-orbiter-dfsar-radar.svg
+    kind: concept
+    caption: 'Concept: Chandrayaan-2 orbiter''s dual-frequency (L/S-band) synthetic aperture radar probing a permanently shadowed crater for subsurface ice'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.isro.gov.in/Chandrayaan2_Dual_Frequency_Synthetic_Aperture_Radar.html
 - name: TRIDENT drill (Honeybee Robotics)
   category: Science and survey
   milestones:
@@ -53,7 +71,13 @@
   source: https://www.nasa.gov/missions/artemis/clps/nasas-lunar-drill-technology-passes-tests-on-the-moon/
   source_title: 'NASA: Lunar drill technology passes tests on the Moon (PRIME-1)'
   slug: trident-drill-honeybee-robotics
-  image: null
+  image:
+    file: /assets/tech/trident-drill-honeybee-robotics.svg
+    kind: concept
+    caption: TRIDENT rotary-percussive drill deploying from a lander, augering cuttings up from 1 m depth beside the MSolo mass spectrometer (PRIME-1)
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.nasa.gov/missions/artemis/clps/nasas-lunar-drill-technology-passes-tests-on-the-moon/
 - name: MSolo mass spectrometer
   category: Science and survey
   milestones:
@@ -67,7 +91,13 @@
   source: https://ntrs.nasa.gov/api/citations/20260003150/downloads/MSolo%20PRIME-1%20overview%20and%20results%20-%20LSSW.pdf
   source_title: 'NASA NTRS: MSolo PRIME-1 overview and results'
   slug: msolo-mass-spectrometer
-  image: null
+  image:
+    file: /assets/tech/msolo-mass-spectrometer.jpg
+    kind: photo
+    caption: Final assembly of the MSOLO-2 flight instrument at NASA Kennedy's Space Station Processing Facility, June 2023
+    credit: NASA/Kim Shiflett
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/KSC-20230621-PH-KLS01_0034
 - name: VIPER rover (NASA)
   category: Mobility and robotics
   milestones:
@@ -81,7 +111,13 @@
   source: https://www.nasa.gov/news-release/nasa-selects-blue-origin-to-deliver-viper-rover-to-moons-south-pole/
   source_title: 'NASA: NASA selects Blue Origin to deliver VIPER rover to Moon''s south pole'
   slug: viper-rover-nasa
-  image: null
+  image:
+    file: /assets/tech/viper-rover-nasa.jpg
+    kind: photo
+    caption: VIPER mobility platform testing at NASA Glenn Research Center, October 2019
+    credit: NASA/GRC/Bridget Caswell
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/GRC-2019-C-09947
 - name: Commercial lunar landers (CLPS)
   category: Transport
   milestones:
@@ -95,7 +131,13 @@
   source: https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services
   source_title: Commercial Lunar Payload Services, Wikipedia
   slug: commercial-lunar-landers-clps
-  image: null
+  image:
+    file: /assets/tech/commercial-lunar-landers-clps.svg
+    kind: concept
+    caption: 'Concept: a generic small commercial lunar lander carrying NASA payloads under the CLPS initiative'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services
 - name: Radioisotope heater units
   category: Power
   milestones:
@@ -109,7 +151,13 @@
   source: https://science.nasa.gov/mission/cassini/radioisotope-thermoelectric-generator
   source_title: 'NASA Science: Cassini''s radioisotope thermoelectric generators (82 RHUs, one watt each)'
   slug: radioisotope-heater-units
-  image: null
+  image:
+    file: /assets/tech/radioisotope-heater-units.svg
+    kind: concept
+    caption: 'Cutaway of a light-weight radioisotope heater unit: PuO2 pellet, platinum-rhodium clad, graphite insulators and aeroshell, about 1 W of heat'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://rps.nasa.gov/power-and-thermal-systems/thermal-systems/light-weight-radioisotope-heater-unit/
 - name: Firefly Blue Ghost lander
   category: Transport
   milestones:
@@ -123,7 +171,13 @@
   source: https://fireflyspace.com/news/firefly-aerospace-successfully-completes-14-days-of-surface-operations-on-the-moon
   source_title: 'Firefly: Blue Ghost completes 14 days of surface operations'
   slug: firefly-blue-ghost-lander
-  image: null
+  image:
+    file: /assets/tech/firefly-blue-ghost-lander.svg
+    kind: concept
+    caption: Concept illustration of a squat four-legged small cargo lander with side solar panels and a top payload deck
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://fireflyspace.com/news/firefly-aerospace-successfully-completes-14-days-of-surface-operations-on-the-moon
 - name: Intuitive Machines Nova-C
   category: Transport
   milestones:
@@ -137,7 +191,13 @@
   source: https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services
   source_title: Commercial Lunar Payload Services, Wikipedia
   slug: intuitive-machines-nova-c
-  image: null
+  image:
+    file: /assets/tech/intuitive-machines-nova-c.svg
+    kind: concept
+    caption: 'Nova-C class lander: hexagonal body, six landing legs and a liquid oxygen/methane main engine'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services
 - name: Astrobotic Griffin
   category: Transport
   milestones:
@@ -151,7 +211,13 @@
   source: https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services
   source_title: Commercial Lunar Payload Services, Wikipedia
   slug: astrobotic-griffin
-  image: null
+  image:
+    file: /assets/tech/astrobotic-griffin.svg
+    kind: concept
+    caption: 'Concept: a Griffin-class four-legged cargo lander with a low payload bay and rover egress ramp'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services
 - name: Blue Origin Blue Moon Mark 1
   category: Transport
   milestones:
@@ -165,7 +231,13 @@
   source: https://www.blueorigin.com/blue-moon/mark-1
   source_title: 'Blue Origin: Blue Moon Mark 1'
   slug: blue-origin-blue-moon-mark-1
-  image: null
+  image:
+    file: /assets/tech/blue-origin-blue-moon-mark-1.svg
+    kind: concept
+    caption: Blue Moon Mark 1 single-stage cargo lander with hydrogen/oxygen tanks, one BE-7 engine and a top cargo deck
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.blueorigin.com/blue-moon/mark-1
 - name: SpaceX Starship HLS / cargo
   category: Transport
   milestones:
@@ -179,7 +251,13 @@
   source: https://en.wikipedia.org/wiki/Starship_flight_15
   source_title: Starship flight 15, Wikipedia
   slug: spacex-starship-hls-cargo
-  image: null
+  image:
+    file: /assets/tech/spacex-starship-hls-cargo.svg
+    kind: concept
+    caption: 'Concept illustration of a Starship-type lunar lander: 9 m diameter, crew cabin near the nose, elevator, mid-body landing thrusters and legs'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://en.wikipedia.org/wiki/Starship_flight_15
 - name: Blue Origin Blue Moon Mk2
   category: Transport
   milestones:
@@ -193,7 +271,13 @@
   source: https://oig.nasa.gov/wp-content/uploads/2026/03/final-report-ig-26-004-nasas-management-of-the-human-landing-system-contracts.pdf
   source_title: 'NASA OIG IG-26-004: Management of the Human Landing System contracts'
   slug: blue-origin-blue-moon-mk2
-  image: null
+  image:
+    file: /assets/tech/blue-origin-blue-moon-mk2.svg
+    kind: concept
+    caption: 'Blue Moon Mk2 crew lander: crew cabin above hydrogen and oxygen tanks, BE-7 engines and solar arrays'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://oig.nasa.gov/wp-content/uploads/2026/03/final-report-ig-26-004-nasas-management-of-the-human-landing-system-contracts.pdf
 - name: Lunar Surface Manipulation System (LSMS)
   category: Mobility and robotics
   milestones:
@@ -207,7 +291,13 @@
   source: https://ntrs.nasa.gov/api/citations/20205006977/downloads/LSMS%20Technology%20Overview%20V5%20Blue%20Origin.pdf
   source_title: 'NASA NTRS: LSMS technology overview'
   slug: lunar-surface-manipulation-system-lsms
-  image: null
+  image:
+    file: /assets/tech/lunar-surface-manipulation-system-lsms.svg
+    kind: concept
+    caption: 'Concept: a tendon-actuated LSMS crane on a lander deck lowering a payload to the surface'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://ntrs.nasa.gov/api/citations/20205006977/downloads/LSMS%20Technology%20Overview%20V5%20Blue%20Origin.pdf
 - name: NASA commercial lunar relay (Intuitive Machines)
   category: Communications and navigation
   milestones:
@@ -221,7 +311,13 @@
   source: https://www.nasa.gov/news-release/nasa-selects-lunar-relay-contractor-for-near-space-network-services
   source_title: 'NASA: NASA selects lunar relay contractor for Near Space Network services'
   slug: nasa-commercial-lunar-relay-intuitive-machines
-  image: null
+  image:
+    file: /assets/tech/nasa-commercial-lunar-relay-intuitive-machines.svg
+    kind: concept
+    caption: A relay satellite in lunar orbit linking surface landers and rovers to Earth and providing navigation and timing
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.nasa.gov/news-release/nasa-selects-lunar-relay-contractor-for-near-space-network-services
 - name: ESA Moonlight
   category: Communications and navigation
   milestones:
@@ -235,7 +331,13 @@
   source: https://www.esa.int/articles/esa-s-moonlight-programme-pioneering-the-path-for-lunar-exploration
   source_title: 'ESA: Moonlight programme'
   slug: esa-moonlight
-  image: null
+  image:
+    file: /assets/tech/esa-moonlight.svg
+    kind: concept
+    caption: Concept illustration of a five-satellite lunar constellation relaying data to Earth and providing navigation signals near the south pole
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.esa.int/articles/esa-s-moonlight-programme-pioneering-the-path-for-lunar-exploration
 - name: SSTL Lunar Pathfinder
   category: Communications and navigation
   milestones:
@@ -249,7 +351,13 @@
   source: https://en.wikipedia.org/wiki/Lunar_Pathfinder
   source_title: Lunar Pathfinder, Wikipedia
   slug: sstl-lunar-pathfinder
-  image: null
+  image:
+    file: /assets/tech/sstl-lunar-pathfinder.svg
+    kind: concept
+    caption: Lunar Pathfinder relay satellite in an elliptical lunar orbit, linking surface users to Earth
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://en.wikipedia.org/wiki/Lunar_Pathfinder
 - name: Nokia lunar 4G/LTE network
   category: Communications and navigation
   milestones:
@@ -263,7 +371,13 @@
   source: https://www.nokia.com/newsroom/nokia-and-intuitive-machines-deliver-first-cellular-network-to-the-moon-achieve-some-key-mission-objectives/
   source_title: 'Nokia: Nokia and Intuitive Machines deliver first cellular network to the Moon'
   slug: nokia-lunar-4g-lte-network
-  image: null
+  image:
+    file: /assets/tech/nokia-lunar-4g-lte-network.svg
+    kind: concept
+    caption: 'Concept: an LTE base station on a lander linking to a rover and a hopper as user devices, as on IM-2'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.nokia.com/newsroom/nokia-and-intuitive-machines-deliver-first-cellular-network-to-the-moon-achieve-some-key-mission-objectives/
 - name: LuGRE GPS/Galileo receiver
   category: Communications and navigation
   milestones:
@@ -277,7 +391,13 @@
   source: https://www.nasa.gov/centers-and-facilities/goddard/nasa-successfully-acquires-gps-signals-on-moon/
   source_title: 'NASA: NASA successfully acquires GPS signals on Moon'
   slug: lugre-gps-galileo-receiver
-  image: null
+  image:
+    file: /assets/tech/lugre-gps-galileo-receiver.svg
+    kind: concept
+    caption: LuGRE receiver and antenna on a lander in Mare Crisium picking up weak GPS and Galileo signals from Earth orbit
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.nasa.gov/centers-and-facilities/goddard/nasa-successfully-acquires-gps-signals-on-moon/
 - name: Optical (laser) communications
   category: Communications and navigation
   milestones:
@@ -291,7 +411,13 @@
   source: https://www.nasa.gov/directorates/stmd/tech-demo-missions-program/laser-communications-relay-demonstration-lcrd-overview/
   source_title: 'NASA: Laser Communications Relay Demonstration (LCRD) overview'
   slug: optical-laser-communications
-  image: null
+  image:
+    file: /assets/tech/optical-laser-communications.jpg
+    kind: photo
+    caption: Part of the Orion Artemis II Optical Communications System (O2O) in the Neil Armstrong Operations and Checkout Building, NASA Kennedy, June 2023
+    credit: NASA/Glenn Benson
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/KSC-20230602-PH-GEB01-0010
 - name: LunaNet Interoperability Specification v5
   category: Communications and navigation
   milestones:
@@ -305,7 +431,13 @@
   source: https://www.nasa.gov/communicating-with-missions/scan/lcrns/lunanet-interoperability-specification/
   source_title: 'NASA: LunaNet Interoperability Specification'
   slug: lunanet-interoperability-specification-v5
-  image: null
+  image:
+    file: /assets/tech/lunanet-interoperability-specification-v5.svg
+    kind: concept
+    caption: 'LunaNet: common link, network and navigation standards so any relay or ground station can serve any lunar user'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.nasa.gov/communicating-with-missions/scan/lcrns/lunanet-interoperability-specification/
 - name: Kilopower / KRUSTY fission test
   category: Power
   milestones:
@@ -319,7 +451,13 @@
   source: https://ntrs.nasa.gov/citations/20205009351
   source_title: 'Poston et al.: Results of the KRUSTY nuclear system test'
   slug: kilopower-krusty-fission-test
-  image: null
+  image:
+    file: /assets/tech/kilopower-krusty-fission-test.svg
+    kind: concept
+    caption: 'Concept: KRUSTY test layout, a uranium-235 core in a beryllium oxide reflector with sodium heat pipes feeding Stirling converters inside a vacuum chamber'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://ntrs.nasa.gov/citations/20205009351
 - name: US Lunar Reactor-1 (SPARC)
   category: Power
   milestones:
@@ -333,7 +471,13 @@
   source: https://newspaceeconomy.ca/2026/09/01/what-does-nasas-sparc-lunar-reactor-procurement-reveal-about-lunar-reactor-1/
   source_title: 'NewSpace Economy: What NASA''s SPARC procurement reveals about Lunar Reactor-1 (secondary)'
   slug: us-lunar-reactor-1-sparc
-  image: null
+  image:
+    file: /assets/tech/us-lunar-reactor-1-sparc.svg
+    kind: concept
+    caption: 'Generic lunar fission power plant: shielded HALEU reactor, closed Brayton converter and radiator panels (no design selected yet)'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://newspaceeconomy.ca/2026/09/01/what-does-nasas-sparc-lunar-reactor-procurement-reveal-about-lunar-reactor-1/
 - name: Vertical Solar Array Technology (VSAT)
   category: Power
   milestones:
@@ -347,7 +491,13 @@
   source: https://www.nasa.gov/?p=142765
   source_title: 'NASA RELEASE 22-090: Vertical Solar Array Technology awards'
   slug: vertical-solar-array-technology-vsat
-  image: null
+  image:
+    file: /assets/tech/vertical-solar-array-technology-vsat.jpg
+    kind: illustration
+    caption: NASA illustration of a deployable vertical solar array on the lunar surface
+    credit: NASA
+    license: NASA media (public domain in the US)
+    source_page: https://www.nasa.gov/?p=142765
 - name: Astrobotic VSAT-XL
   category: Power
   milestones:
@@ -361,7 +511,13 @@
   source: https://www.astrobotic.com/astrobotic-awarded-lunar-power-study-with-vsat-xl/
   source_title: 'Astrobotic: awarded lunar power study with VSAT-XL'
   slug: astrobotic-vsat-xl
-  image: null
+  image:
+    file: /assets/tech/astrobotic-vsat-xl.svg
+    kind: concept
+    caption: 'VSAT-XL concept: roll-out solar array wings on a ~34 m mast that rotates to track the low polar Sun'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.astrobotic.com/astrobotic-awarded-lunar-power-study-with-vsat-xl/
 - name: Astrobotic LunaGrid-Lite
   category: Power
   milestones:
@@ -375,7 +531,13 @@
   source: https://www.astrobotic.com/lunagrid-lite-completes-critical-design-review-flight-model-underway/
   source_title: 'Astrobotic: LunaGrid-Lite completes critical design review'
   slug: astrobotic-lunagrid-lite
-  image: null
+  image:
+    file: /assets/tech/astrobotic-lunagrid-lite.svg
+    kind: concept
+    caption: 'Concept: a small rover unreeling a power cable from a lander power source to a user load about 500 m away'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.astrobotic.com/lunagrid-lite-completes-critical-design-review-flight-model-underway/
 - name: Regenerative fuel cells
   category: Power
   milestones:
@@ -389,7 +551,13 @@
   source: https://ntrs.nasa.gov/citations/20260002730
   source_title: 'NASA NTRS 20260002730: Regenerative fuel cell lunar cycle testing'
   slug: regenerative-fuel-cells
-  image: null
+  image:
+    file: /assets/tech/regenerative-fuel-cells.jpg
+    kind: photo
+    caption: Closed-loop regenerative fuel cell rig at NASA Glenn Research Center
+    credit: NASA Glenn Research Center
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/GRC-2009-C-04808
 - name: High-voltage DC lunar cable
   category: Power
   milestones:
@@ -403,7 +571,13 @@
   source: https://ntrs.nasa.gov/api/citations/20220002315/downloads/Lunar_power_transmission_concepts_FINAL.pdf
   source_title: 'NASA NTRS 20220002315: Lunar power transmission for fission surface power'
   slug: high-voltage-dc-lunar-cable
-  image: null
+  image:
+    file: /assets/tech/high-voltage-dc-lunar-cable.svg
+    kind: concept
+    caption: Concept illustration of a ±4 kVDC aluminium cable carrying power about 3 km from a solar array to a habitat via DC/DC converters
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://ntrs.nasa.gov/api/citations/20220002315/downloads/Lunar_power_transmission_concepts_FINAL.pdf
 - name: NASA ISRU Pilot Excavator (IPEx)
   category: Construction
   milestones:
@@ -417,7 +591,13 @@
   source: https://ntrs.nasa.gov/api/citations/20240008162/downloads/ASCEND24_IPEx%20TRL%205%20Design%20Overview.pdf
   source_title: 'NASA NTRS: IPEx TRL 5 design overview (ASCEND 2024)'
   slug: nasa-isru-pilot-excavator-ipex
-  image: null
+  image:
+    file: /assets/tech/nasa-isru-pilot-excavator-ipex.jpg
+    kind: photo
+    caption: NASA's ISRU Pilot Excavator (IPEx) performing a simulated lunar mission in a testbed at Kennedy Space Center, 30 August 2024
+    credit: NASA/Frank Micheaux
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/KSC-20240830-PH-FMX01_0147
 - name: RASSOR 2.0
   category: Construction
   milestones:
@@ -431,7 +611,13 @@
   source: https://ntrs.nasa.gov/api/citations/20150022134/downloads/20150022134.pdf
   source_title: 'NASA NTRS 20150022134: RASSOR 2.0'
   slug: rassor-2-0
-  image: null
+  image:
+    file: /assets/tech/rassor-2-0.jpg
+    kind: photo
+    caption: RASSOR builds a berm of simulated regolith during a site preparation test in the Granular Mechanics and Regolith Operations Lab, Kennedy Space Center, June 2025
+    credit: NASA/Frank Michaux
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/KSC-20250603-PH-FMX01_0086
 - name: ICON Project Olympus
   category: Construction
   milestones:
@@ -447,7 +633,13 @@
   source: https://www.iconbuild.com/newsroom/icon-to-develop-lunar-surface-construction-system-with-57-2-million-nasa-award
   source_title: 'ICON: ICON to develop lunar surface construction system with $57.2M NASA award'
   slug: icon-project-olympus
-  image: null
+  image:
+    file: /assets/tech/icon-project-olympus.svg
+    kind: concept
+    caption: Robotic printer using a laser to melt regolith into layered landing pads and blast shields
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.iconbuild.com/newsroom/icon-to-develop-lunar-surface-construction-system-with-57-2-million-nasa-award
 - name: Sintered basalt pavers / regolith-polymer pads
   category: Construction
   milestones:
@@ -461,7 +653,13 @@
   source: https://www.nasa.gov/centers-and-facilities/kennedy/nasa-tests-landing-pad-materials-for-future-lunar-missions
   source_title: 'NASA: NASA tests landing pad materials for future lunar missions'
   slug: sintered-basalt-pavers-regolith-polymer-pads
-  image: null
+  image:
+    file: /assets/tech/sintered-basalt-pavers-regolith-polymer-pads.svg
+    kind: concept
+    caption: Interlocking sintered regolith pavers forming a landing pad, with an ejecta berm
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.nasa.gov/centers-and-facilities/kennedy/nasa-tests-landing-pad-materials-for-future-lunar-missions
 - name: Molten regolith electrolysis (NASA + Lunar Resources)
   category: Resource production
   milestones:
@@ -475,7 +673,13 @@
   source: https://ntrs.nasa.gov/api/citations/20260006167/downloads/MRE%20GCD%20ICES26_v3.pdf
   source_title: 'NASA NTRS: Molten regolith electrolysis ground demonstration (ICES 2026)'
   slug: molten-regolith-electrolysis-nasa-lunar-resource
-  image: null
+  image:
+    file: /assets/tech/molten-regolith-electrolysis-nasa-lunar-resource.jpg
+    kind: photo
+    caption: Molten Regolith Electrolysis testing on simulated lunar regolith at Kennedy Space Center, 13 September 2022
+    credit: NASA/Cory S. Huston
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/KSC-20220913-PH-CSH01_0001
 - name: Carbothermal reduction (Sierra Space + NASA)
   category: Resource production
   milestones:
@@ -489,7 +693,13 @@
   source: https://ntrs.nasa.gov/citations/20250004151
   source_title: 'NASA NTRS 20250004151: Carbothermal oxygen production reactor testing'
   slug: carbothermal-reduction-sierra-space-nasa
-  image: null
+  image:
+    file: /assets/tech/carbothermal-reduction-sierra-space-nasa.jpg
+    kind: photo
+    caption: 'Carbothermal Reduction Demonstration (CaRD) testing at Johnson Space Center: the integrated solar concentrator and mirrors confirmed production of carbon monoxide, 2025'
+    credit: NASA/Michael Rushing
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/jsc2025e075711
 - name: Blue Origin Blue Alchemist
   category: Resource production
   milestones:
@@ -505,7 +715,13 @@
   source: https://www.blueorigin.com/news/blue-alchemist-hits-major-milestone-toward-permanent-sustainable-lunar-infrastructure
   source_title: 'Blue Origin: Blue Alchemist hits major milestone'
   slug: blue-origin-blue-alchemist
-  image: null
+  image:
+    file: /assets/tech/blue-origin-blue-alchemist.svg
+    kind: concept
+    caption: 'Molten regolith electrolysis: regolith melted and split into oxygen and metals, with silicon used for solar cells'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.blueorigin.com/news/blue-alchemist-hits-major-milestone-toward-permanent-sustainable-lunar-infrastructure
 - name: Molten salt electrolysis (Metalysis/ESA)
   category: Resource production
   milestones:
@@ -521,7 +737,13 @@
   source: https://www.esa.int/Enabling_Support/Space_Engineering_Technology/ESA_opens_oxygen_plant_making_air_out_of_moondust
   source_title: 'ESA: ESA opens oxygen plant making air out of moondust'
   slug: molten-salt-electrolysis-metalysis-esa
-  image: null
+  image:
+    file: /assets/tech/molten-salt-electrolysis-metalysis-esa.svg
+    kind: concept
+    caption: 'Concept illustration of a molten-salt electrolysis cell: regolith in the cathode, molten calcium chloride bath, oxygen released at the anode'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.esa.int/Enabling_Support/Space_Engineering_Technology/ESA_opens_oxygen_plant_making_air_out_of_moondust
 - name: ISS Oxygen Generation Assembly
   category: Habitation and life support
   milestones:
@@ -537,7 +759,13 @@
   source: https://ntrs.nasa.gov/api/citations/20190030425/downloads/20190030425.pdf
   source_title: 'NASA NTRS 20190030425: ISS Oxygen Generation Assembly'
   slug: iss-oxygen-generation-assembly
-  image: null
+  image:
+    file: /assets/tech/iss-oxygen-generation-assembly.jpg
+    kind: photo
+    caption: NASA astronaut Dan Burbank servicing the Oxygen Generator System rack in the ISS Tranquility node, 18 April 2012
+    credit: NASA
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/iss030e236919
 - name: Ice excavation (NASA Break the Ice)
   category: Resource production
   milestones:
@@ -551,7 +779,13 @@
   source: https://www.nasa.gov/centers-and-facilities/marshall/california-teams-win-1-5-million-in-nasas-break-the-ice-lunar-challenge
   source_title: 'NASA: Break the Ice Lunar Challenge winners'
   slug: ice-excavation-nasa-break-the-ice
-  image: null
+  image:
+    file: /assets/tech/ice-excavation-nasa-break-the-ice.jpg
+    kind: photo
+    caption: Starpath's regolith excavation rover, second place overall in NASA's Break the Ice Lunar Challenge, set up for thermal vacuum testing at Marshall Space Flight Center, July 2025
+    credit: NASA/Joe Kuner
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/MSFC-STARPATH-07-30-2025-joek-30
 - name: Astrolab CLV-1 (LTV)
   category: Mobility and robotics
   milestones:
@@ -565,7 +799,13 @@
   source: https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/
   source_title: 'NASA RELEASE26-046: NASA provides update on Moon Base rovers, landers, missions'
   slug: astrolab-clv-1-ltv
-  image: null
+  image:
+    file: /assets/tech/astrolab-clv-1-ltv.jpg
+    kind: photo
+    caption: NASA astronaut Jessica Watkins takes a geology tool from a stowage drawer on Astrolab's FLEX lunar terrain vehicle during testing at NASA Johnson, 2024
+    credit: NASA/Robert Markowitz
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/jsc2024e065740
 - name: Lunar Outpost Pegasus (LTV)
   category: Mobility and robotics
   milestones:
@@ -579,7 +819,13 @@
   source: https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/
   source_title: 'NASA RELEASE26-046: NASA provides update on Moon Base rovers, landers, missions'
   slug: lunar-outpost-pegasus-ltv
-  image: null
+  image:
+    file: /assets/tech/lunar-outpost-pegasus-ltv.jpg
+    kind: photo
+    caption: NASA astronauts Joe Acaba and Mark Vande Hei in Lunar Outpost's Pegasus lunar terrain vehicle prototype during human-in-the-loop testing at NASA Johnson, September 2026
+    credit: NASA/Bill Stafford
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/jsc2026e417620
 - name: JAXA/Toyota pressurised rover (Lunar Cruiser)
   category: Mobility and robotics
   milestones:
@@ -593,7 +839,13 @@
   source: https://www.nasa.gov/news-release/nasa-japan-advance-space-cooperation-sign-agreement-for-lunar-rover/
   source_title: 'NASA: NASA, Japan advance space cooperation, sign agreement for lunar rover'
   slug: jaxa-toyota-pressurised-rover-lunar-cruiser
-  image: null
+  image:
+    file: /assets/tech/jaxa-toyota-pressurised-rover-lunar-cruiser.jpg
+    kind: photo
+    caption: Model of Japan's pressurized lunar rover shown at a briefing at JAXA's Washington offices, 10 April 2024
+    credit: NASA/Bill Ingalls
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/NHQ202404100002
 - name: Delay-tolerant teleoperation
   category: Mobility and robotics
   milestones:
@@ -607,7 +859,13 @@
   source: https://ntrs.nasa.gov/citations/20240001217
   source_title: 'NASA NTRS 20240001217: LTV remote driving with time delay'
   slug: delay-tolerant-teleoperation
-  image: null
+  image:
+    file: /assets/tech/delay-tolerant-teleoperation.svg
+    kind: concept
+    caption: 'Concept: an Earth operator driving a lunar rover with 4 to 8 second command and telemetry delays'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://ntrs.nasa.gov/citations/20240001217
 - name: NASA CADRE autonomous rovers
   category: Mobility and robotics
   milestones:
@@ -621,7 +879,13 @@
   source: https://www.nasa.gov/event-type/launch-schedule/
   source_title: 'NASA launch schedule (Moon Base: Intuitive Machines IM-3, early 2027)'
   slug: nasa-cadre-autonomous-rovers
-  image: null
+  image:
+    file: /assets/tech/nasa-cadre-autonomous-rovers.jpg
+    kind: photo
+    caption: One of the three suitcase-sized CADRE rovers, solar panels open, in a JPL clean room on 26 Jan 2024
+    credit: NASA/JPL-Caltech
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/PIA26169
 - name: Thales Alenia Space Multi-Purpose Habitation (MPH)
   category: Habitation and life support
   milestones:
@@ -635,7 +899,13 @@
   source: https://europeanspaceflight.com/asi-awards-new-lunar-habitat-contract-to-thales-alenia-space/
   source_title: 'European Spaceflight: ASI awards new lunar habitat contract to Thales Alenia Space (MPH: 3 m × 6 m, ~15 t, 2 crew, 7–30 days a year)'
   slug: thales-alenia-space-multi-purpose-habitation-mph
-  image: null
+  image:
+    file: /assets/tech/thales-alenia-space-multi-purpose-habitation-mph.svg
+    kind: concept
+    caption: Concept illustration of a ~3 m × 6 m, ~15 t cylindrical surface habitat module on landing legs
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://europeanspaceflight.com/asi-awards-new-lunar-habitat-contract-to-thales-alenia-space/
 - name: Sierra Space LIFE inflatable
   category: Habitation and life support
   milestones:
@@ -649,7 +919,13 @@
   source: https://techcrunch.com/2024/01/22/successful-failure-sierra-spaces-inflatable-habitat-blows-up-as-planned
   source_title: 'TechCrunch: Sierra Space''s inflatable habitat blows up as planned'
   slug: sierra-space-life-inflatable
-  image: null
+  image:
+    file: /assets/tech/sierra-space-life-inflatable.svg
+    kind: concept
+    caption: 'Full-scale inflatable habitat burst test: the woven softgoods shell failed at 77 psi, above NASA''s recommended 60.8 psi'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://techcrunch.com/2024/01/22/successful-failure-sierra-spaces-inflatable-habitat-blows-up-as-planned
 - name: ISS life support (ECLSS)
   category: Habitation and life support
   milestones:
@@ -663,7 +939,13 @@
   source: https://www.space.com/astronaut-pee-iss-water-recycling-98-percent-milestone
   source_title: 'Space.com: ISS hits 98% water recycling milestone'
   slug: iss-life-support-eclss
-  image: null
+  image:
+    file: /assets/tech/iss-life-support-eclss.jpg
+    kind: photo
+    caption: Water Recovery System rack 2 for the International Space Station, which processes urine and waste water, before flight on STS-126 in 2008
+    credit: NASA
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/KSC-08pd3209
 - name: Axiom AxEMU spacesuit
   category: Crew and health
   milestones:
@@ -677,7 +959,13 @@
   source: https://www.axiomspace.com/release/axiom-space-completes-nasas-critical-design-review-for-next-generation-spacesuit
   source_title: 'Axiom Space: completes NASA''s critical design review for next-generation spacesuit'
   slug: axiom-axemu-spacesuit
-  image: null
+  image:
+    file: /assets/tech/axiom-axemu-spacesuit.jpg
+    kind: photo
+    caption: NASA astronauts Loral O'Hara and Stan Love in Axiom AxEMU suits during the first dual-suit run at NASA's Neutral Buoyancy Laboratory, 24 Sep 2025
+    credit: NASA
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/jsc2025e077817
 - name: ISS water recovery with Brine Processor
   category: Habitation and life support
   milestones:
@@ -691,7 +979,13 @@
   source: https://www.space.com/astronaut-pee-iss-water-recycling-98-percent-milestone
   source_title: 'Space.com: ISS hits 98% water recycling milestone'
   slug: iss-water-recovery-with-brine-processor
-  image: null
+  image:
+    file: /assets/tech/iss-water-recovery-with-brine-processor.jpg
+    kind: photo
+    caption: ESA astronaut Matthias Maurer changes out the bladder in the space station's Brine Processor Assembly
+    credit: NASA
+    license: NASA media (public domain in the US)
+    source_page: https://www.nasa.gov/missions/station/iss-research/nasa-achieves-water-recovery-milestone-on-international-space-station/
 - name: Four-bed CO₂ scrubber (4BCO2)
   category: Habitation and life support
   milestones:
@@ -705,7 +999,13 @@
   source: https://ntrs.nasa.gov/api/citations/20205003542/downloads/ICES-2020-178.docx
   source_title: 'NASA NTRS ICES-2020-178: Four-Bed CO₂ Scrubber'
   slug: four-bed-co-scrubber-4bco2
-  image: null
+  image:
+    file: /assets/tech/four-bed-co-scrubber-4bco2.jpg
+    kind: photo
+    caption: Flight demonstration unit of the 4-Bed CO2 Scrubber being checked out at NASA Marshall before shipment, 2021
+    credit: NASA/MSFC/Fred Deaton
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/MSFC-202100245
 - name: Sabatier reactor
   category: Habitation and life support
   milestones:
@@ -719,7 +1019,13 @@
   source: https://ntrs.nasa.gov/api/citations/20190030371/downloads/20190030371.pdf
   source_title: 'NASA NTRS 20190030371: Sabatier and oxygen recovery'
   slug: sabatier-reactor
-  image: null
+  image:
+    file: /assets/tech/sabatier-reactor.jpg
+    kind: photo
+    caption: Astronaut Doug Wheelock installs the Sabatier system in the station's Tranquility node, October 2010
+    credit: NASA
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/iss025e007248
 - name: Regolith radiation shielding
   category: Habitation and life support
   milestones:
@@ -733,7 +1039,13 @@
   source: https://iafastro.directory/iac/paper/id/82864/abstract-pdf/IAC-24,D3,IP,1,x82864.brief.pdf
   source_title: 'IAC-24 abstract: regolith shielding depth (OLTARIS)'
   slug: regolith-radiation-shielding
-  image: null
+  image:
+    file: /assets/tech/regolith-radiation-shielding.svg
+    kind: concept
+    caption: Cross-section of a habitat buried under a regolith berm of 2 m or more to absorb cosmic rays and solar particles
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://iafastro.directory/iac/paper/id/82864/abstract-pdf/IAC-24,D3,IP,1,x82864.brief.pdf
 - name: NASA Veggie
   category: Food
   milestones:
@@ -747,7 +1059,13 @@
   source: https://www.nasa.gov/missions/station/iss-research/science-in-space-week-of-july-10-2023-plant-science/
   source_title: 'NASA: Science in space, plant science (Veggie)'
   slug: nasa-veggie
-  image: null
+  image:
+    file: /assets/tech/nasa-veggie.jpg
+    kind: photo
+    caption: Mizuna mustard greens of the Veg-04A experiment growing in a Veggie plant growth chamber aboard the International Space Station, July 2019
+    credit: NASA
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/iss060e006116
 - name: NASA Advanced Plant Habitat
   category: Food
   milestones:
@@ -761,7 +1079,13 @@
   source: https://www.nasa.gov/centers-and-facilities/kennedy/houston-we-have-a-pepper/
   source_title: 'NASA: Houston, we have a pepper'
   slug: nasa-advanced-plant-habitat
-  image: null
+  image:
+    file: /assets/tech/nasa-advanced-plant-habitat.jpg
+    kind: photo
+    caption: Chile pepper plants bearing fruit in the Advanced Plant Habitat aboard the International Space Station, 2021
+    credit: NASA/Megan McArthur
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/iss065e434051
 - name: Yuegong-1 (Lunar Palace 1) bioregenerative system
   category: Food
   milestones:
@@ -775,7 +1099,13 @@
   source: https://www.biorxiv.org/content/10.1101/2021.01.12.426282v1
   source_title: 'Fu et al.: Establishment of a closed artificial ecosystem to ensure human long-term survival on the Moon (bioRxiv preprint, Lunar Palace 365)'
   slug: yuegong-1-lunar-palace-1-bioregenerative-system
-  image: null
+  image:
+    file: /assets/tech/yuegong-1-lunar-palace-1-bioregenerative-system.svg
+    kind: concept
+    caption: 'Concept: Yuegong-1 layout, a crew cabin joined to two plant cabins that exchange oxygen, food and water for CO2 and waste'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.biorxiv.org/content/10.1101/2021.01.12.426282v1
 - name: ESA MELiSSA
   category: Food
   milestones:
@@ -789,7 +1119,13 @@
   source: https://en.wikipedia.org/wiki/MELiSSA
   source_title: MELiSSA, Wikipedia
   slug: esa-melissa
-  image: null
+  image:
+    file: /assets/tech/esa-melissa.svg
+    kind: concept
+    caption: 'The MELiSSA loop: bacterial, algal and plant compartments turn crew waste and CO2 back into oxygen, water and food'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://en.wikipedia.org/wiki/MELiSSA
 - name: Interstellar Lab NUCLEUS
   category: Food
   milestones:
@@ -803,7 +1139,13 @@
   source: https://www.nasa.gov/news-release/nasa-awards-1-25-million-to-three-teams-at-deep-space-food-finale
   source_title: 'NASA: NASA awards $1.25 million to three teams at Deep Space Food finale'
   slug: interstellar-lab-nucleus
-  image: null
+  image:
+    file: /assets/tech/interstellar-lab-nucleus.svg
+    kind: concept
+    caption: Concept illustration of a modular food system combining phytotrons and controlled greenhouses for vegetables, microgreens and insects
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.nasa.gov/news-release/nasa-awards-1-25-million-to-three-teams-at-deep-space-food-finale
 - name: Cryogenic propellant transfer
   category: Resource production
   milestones:
@@ -817,7 +1159,13 @@
   source: https://ntrs.nasa.gov/api/citations/20260009199/downloads/HLS%20IAC%202026%20Presentation%20FINAL.pdf
   source_title: NASA HLS IAC 2026 presentation (propellant transfer demo schedule)
   slug: cryogenic-propellant-transfer
-  image: null
+  image:
+    file: /assets/tech/cryogenic-propellant-transfer.svg
+    kind: concept
+    caption: Ship-to-ship transfer of liquid oxygen and methane between tail-to-tail docked vehicles in Earth orbit
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://ntrs.nasa.gov/api/citations/20260009199/downloads/HLS%20IAC%202026%20Presentation%20FINAL.pdf
 - name: In-orbit LOX storage demo (LOXSAT)
   category: Resource production
   milestones:
@@ -831,7 +1179,13 @@
   source: https://www.nasa.gov/directorates/stmd/tech-demo-missions-program/cryogenic-fluid-management-cfm/nasa-industry-prepare-cryogenic-fuel-technology-demo/
   source_title: 'NASA: NASA, industry prepare cryogenic fuel technology demo (LOXSAT)'
   slug: in-orbit-lox-storage-demo-loxsat
-  image: null
+  image:
+    file: /assets/tech/in-orbit-lox-storage-demo-loxsat.svg
+    kind: concept
+    caption: 'Concept: a small spacecraft carrying an insulated liquid oxygen tank and cryocooler for in-orbit storage tests'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://www.nasa.gov/directorates/stmd/tech-demo-missions-program/cryogenic-fluid-management-cfm/nasa-industry-prepare-cryogenic-fuel-technology-demo/
 - name: ESA metal 3D printer on ISS
   category: Manufacturing
   milestones:
@@ -845,7 +1199,13 @@
   source: https://www.esa.int/Newsroom/Press_Releases/ESA_3D_prints_first_metal_part_on_the_International_Space_Station
   source_title: 'ESA: ESA 3D prints first metal part on the ISS'
   slug: esa-metal-3d-printer-on-iss
-  image: null
+  image:
+    file: /assets/tech/esa-metal-3d-printer-on-iss.jpg
+    kind: photo
+    caption: The Metal 3D printer that prints stainless-steel samples in the ISS Columbus module, 21 Aug 2024
+    credit: NASA
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/iss071e522120
 - name: Redwire / Made In Space AMF on ISS
   category: Manufacturing
   milestones:
@@ -859,7 +1219,13 @@
   source: https://ntrs.nasa.gov/api/citations/20190030402/downloads/20190030402.pdf
   source_title: 'NASA NTRS 20190030402: In-space manufacturing on ISS'
   slug: redwire-made-in-space-amf-on-iss
-  image: null
+  image:
+    file: /assets/tech/redwire-made-in-space-amf-on-iss.jpg
+    kind: photo
+    caption: The Additive Manufacturing Facility (AMF) aboard the International Space Station, June 2016
+    credit: NASA
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/iss047e152500
 - name: Redwire Regolith Print
   category: Manufacturing
   milestones:
@@ -873,7 +1239,13 @@
   source: https://rdw.com/newsroom/redwire-regolith-manufacturing-technology-wins-popular-science-2021-best-of-whats-new-award/
   source_title: 'Redwire: Regolith manufacturing technology'
   slug: redwire-regolith-print
-  image: null
+  image:
+    file: /assets/tech/redwire-regolith-print.svg
+    kind: concept
+    caption: 'Regolith Print demonstration: printing test specimens from regolith-simulant feedstock in the ISS Additive Manufacturing Facility'
+    credit: Open Moon concept illustration
+    license: CC BY-SA 4.0
+    source_page: https://rdw.com/newsroom/redwire-regolith-manufacturing-technology-wins-popular-science-2021-best-of-whats-new-award/
 - name: Lava tubes
   category: Science and survey
   milestones:
@@ -887,4 +1259,10 @@
   source: https://phys.org/news/2024-07-lunar-lava-tube-cave.html
   source_title: 'phys.org: Lunar lava tube cave (Carrer et al., Nature Astronomy)'
   slug: lava-tubes
-  image: null
+  image:
+    file: /assets/tech/lava-tubes.jpg
+    kind: photo
+    caption: The Marius Hills pit, a possible skylight into a lava tube, imaged by NASA's Lunar Reconnaissance Orbiter (cropped)
+    credit: NASA/GSFC/Arizona State University
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/PIA12954
