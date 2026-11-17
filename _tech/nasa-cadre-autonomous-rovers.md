@@ -24,7 +24,7 @@ links:
 
 ## What it is
 
-CADRE (Cooperative Autonomous Distributed Robotic Exploration) is a NASA technology demonstration of three small rovers that work as a team. The goal is to show that a group of robots can [collaborate to gather data without direct commands from mission controllers on Earth](https://www.nasa.gov/technology/nasas-mini-rover-team-is-packed-for-lunar-journey). NASA describes the rovers as "suitcase-size". Each has an [onboard computer, a wireless radio and a stereo camera](https://www.nasa.gov/cooperative-autonomous-distributed-robotic-exploration-cadre). They grew out of JPL's earlier [A-PUFFER folding-robot work](https://www.nasa.gov/cooperative-autonomous-distributed-robotic-exploration-cadre). NASA has not published a mass or exact dimensions on the pages cited here.
+CADRE (Cooperative Autonomous Distributed Robotic Exploration) is a NASA technology demonstration of three small rovers that work as a team. The goal is to show that a group of robots can [collaborate to gather data without direct commands from mission controllers on Earth](https://www.nasa.gov/technology/nasas-mini-rover-team-is-packed-for-lunar-journey). NASA describes the rovers as "suitcase-size". Each has an [onboard computer, a wireless radio and a stereo camera](https://www.nasa.gov/cooperative-autonomous-distributed-robotic-exploration-cadre). NASA calls them [the latest version of its A-PUFFER technology](https://www.nasa.gov/cooperative-autonomous-distributed-robotic-exploration-cadre). NASA has not published a mass or exact dimensions on the pages cited here.
 
 JPL manages CADRE for NASA's Game Changing Development program. [Motiv Space Systems built key hardware, Clemson University contributed research, and NASA Glenn and Ames supported the project](https://www.nasa.gov/technology/nasas-mini-rover-team-is-packed-for-lunar-journey). The rovers completed their [first autonomous team drive in a JPL clean room in December 2023](https://science.nasa.gov/photojournal/nasas-cadre-rovers-take-first-autonomous-drive/). Hardware build and testing ended in February 2024. The rovers were [shipped to Intuitive Machines in Houston and arrived on 9 February 2025](https://www.nasa.gov/technology/nasas-mini-rover-team-is-packed-for-lunar-journey).
 
@@ -52,7 +52,7 @@ The software plans centrally and executes in a distributed way. A [leader electi
 | Robots | 3 rovers + 1 lander base station ([JPL](https://robotics.jpl.nasa.gov/what-we-do/flight-projects/cooperative-autonomous-distributed-robotic-exploration-cadre/cadre-mission-overview/)) |
 | Sensors | Stereo cameras, ground-penetrating radar ([JPL](https://robotics.jpl.nasa.gov/what-we-do/flight-projects/cooperative-autonomous-distributed-robotic-exploration-cadre/cadre-mission-overview/)) |
 | Power | Solar arrays and battery; minimum charge about 20% ([paper](https://arxiv.org/abs/2502.14803)) |
-| Duty cycle | Hardware timer shuts down at 25 and 55 min past the hour, restarts at 0 and 30 ([paper](https://arxiv.org/abs/2502.14803)) |
+| Duty cycle | 25-minute work cycles; an FPGA timer shuts all agents down at 25 and 55 min past the hour ([paper](https://arxiv.org/abs/2502.14803)) |
 | CPU limit | 65 °C; only a few minutes of driving near lunar noon ([paper](https://arxiv.org/abs/2502.14803)) |
 | Mission length | Daylight of one lunar day, about 14 Earth days ([NASA](https://www.nasa.gov/technology/nasas-mini-rover-team-is-packed-for-lunar-journey)) |
 | Wheels | Ultralight aluminium with grousers ([NASA](https://science.nasa.gov/photojournal/nasas-cadre-rovers-take-first-autonomous-drive/)) |
@@ -60,7 +60,7 @@ The software plans centrally and executes in a distributed way. A [leader electi
 
 ## Limitations and open issues
 
-- **Not flown yet.** CADRE has only been tested on Earth. The [IM-3 launch has slipped from 2024 targets to early 2027](https://en.wikipedia.org/wiki/IM-3).
+- **Not flown yet.** CADRE has only been tested on Earth. JPL once [targeted a late 2023 launch](https://robotics.jpl.nasa.gov/what-we-do/flight-projects/cooperative-autonomous-distributed-robotic-exploration-cadre/); IM-3 is now [listed for early 2027](https://www.nasa.gov/event-type/launch-schedule/).
 - **Lander risk.** [IM-1 and IM-2 both tipped over after hard landings](https://en.wikipedia.org/wiki/IM-3). CADRE depends on IM-3 landing upright and deploying it.
 - **Short mission.** The rovers only work through [one lunar day](https://www.nasa.gov/technology/nasas-mini-rover-team-is-packed-for-lunar-journey). They do not show night survival, which a base fleet would need.
 - **Heat limits.** Near lunar noon the [CPU overheats after a few minutes of driving](https://arxiv.org/abs/2502.14803). Larger, longer-lived robots will need better thermal design.

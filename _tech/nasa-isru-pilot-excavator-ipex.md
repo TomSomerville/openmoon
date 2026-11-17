@@ -26,7 +26,7 @@ links:
 
 ## What it is
 
-IPEx is a small robotic excavator that NASA's Kennedy Space Center is developing to dig large amounts of lunar regolith. NASA calls it both a bulldozer and a dump truck. It is funded by NASA's Space Technology Mission Directorate through the Game Changing Development program ([ASCEND 2024 paper](https://ntrs.nasa.gov/api/citations/20240008162/downloads/ASCEND24_IPEx%20TRL%205%20Design%20Overview.pdf)). On its current project page NASA now calls it the "Infrastructure Pilot Excavator" ([NASA](https://www.nasa.gov/isru-pilot-excavator/)).
+IPEx is a small robotic excavator that NASA's Kennedy Space Center is developing to dig large amounts of lunar regolith. NASA calls it both a bulldozer and a dump truck ([NASA](https://www.nasa.gov/isru-pilot-excavator/)). It is funded by NASA's Space Technology Mission Directorate through the Game Changing Development program ([ASCEND 2024 paper](https://ntrs.nasa.gov/api/citations/20240008162/downloads/ASCEND24_IPEx%20TRL%205%20Design%20Overview.pdf)). On its current project page NASA now calls it the "Infrastructure Pilot Excavator" ([NASA](https://www.nasa.gov/isru-pilot-excavator/)).
 
 IPEx grew out of RASSOR, an earlier Kennedy robot that proved the bucket-drum idea at TRL 4. RASSOR 2.0 weighs 65 kg dry. IPEx targets 30 kg dry, scaled to roughly 50–70% of RASSOR's size ([bucket drum scaling paper](https://ntrs.nasa.gov/citations/20210025846)). The goal is to dig 10,000 kg of regolith at 42 kg/h and drive a total of 70 km over an 11-day mission at the lunar south pole ([ASCEND 2024](https://ntrs.nasa.gov/citations/20240008162)). For comparison, NASA missions so far have excavated only tens of kilograms.
 
@@ -34,7 +34,7 @@ By June 2024 the TRL 5 version was about 95% designed and 90% built. It is being
 
 ## Why Open Moon uses it
 
-Open Moon uses IPEx-class excavators as the main diggers in [M05, site preparation](/milestones/m05-site-prep/). They grade roads, build berms around landing pads and the reactor, and stockpile regolith for oxygen extraction and sintered pads. M05 plans a fleet of four excavators.
+Open Moon uses IPEx-class excavators as the main diggers in [M05, site preparation](/plan/m05-site-prep/). They grade roads, build berms around landing pads and the reactor, and stockpile regolith for oxygen extraction and sintered pads. M05 plans a fleet of four excavators.
 
 The digging rate matters beyond M05. NASA designed IPEx to feed a follow-on "ISRU Pilot Plant": making 1,000 kg of oxygen needs 10,000 kg of regolith ([ASCEND 2024](https://ntrs.nasa.gov/citations/20240008162)). Without a light, reliable excavator, pads, berms and oxygen production would have to wait for heavier machines that cost much more to land.
 
