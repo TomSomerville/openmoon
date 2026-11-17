@@ -1,14 +1,36 @@
 title: Open Moon
-tagline: "An open-source plan for a self-sustaining Moon colony, built on technology that exists or is in active testing today."
-description: "Open Moon is an open-source, phase-by-phase plan for a self-sustaining lunar colony. Every system is broken down to its components and sub-components, with the problems each one faces and how to solve them."
+tagline: "An open-source engineering plan for a self-sustaining Moon colony, built on technology that exists or is in active testing today."
+description: "Open Moon is an open-source, milestone-by-milestone engineering plan for a self-sustaining lunar colony using technology that exists today or is in active testing, with costs, components, sub-components, failure modes and sources."
 url: https://openmoon.beached.lol
 baseurl: ""
+repo: https://github.com/TomSomerville/openmoon
+plan_rev: "0.1"
 timezone: UTC
 lang: en
 
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+
+markdown: kramdown
+kramdown:
+  parse_block_html: false
+
+collections:
+  milestones:
+    output: true
+    permalink: /plan/:name/
+  components:
+    output: true
+    permalink: /plan/components/:name/
+
+defaults:
+  - scope: {path: "", type: milestones}
+    values: {layout: milestone, section: plan}
+  - scope: {path: "", type: components}
+    values: {layout: component, section: plan}
+  - scope: {path: ""}
+    values: {layout: page}
 
 exclude:
   - README.md

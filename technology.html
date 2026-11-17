@@ -1,0 +1,14 @@
+---
+title: Technology register
+eyebrow: Every piece of hardware the plan relies on
+summary: Each technology, which milestone uses it, how ready it is (TRL), and its source. Items marked "develop" need further work within the 3–5 year rule.
+section: tech
+doc_id: OM-300
+permalink: /technology/
+---
+{% assign ms = site.milestones | sort: "order" %}
+<div class="tablewrap"><table class="data"><thead><tr><th>Technology</th><th>Milestone</th><th>Used for</th><th>Status</th><th>TRL</th></tr></thead><tbody>
+{% for m in ms %}{% for t in m.technologies %}{% assign s = nil %}{% if t.src %}{% assign si = t.src | minus: 1 %}{% assign s = m.sources[si] %}{% endif %}
+<tr><td><strong>{% if s %}<a href="{{ s.url }}">{{ t.name }}</a>{% else %}{{ t.name }}{% endif %}</strong></td><td><a href="{{ m.url | relative_url }}">{{ m.id_code }}</a></td><td>{{ t.use }}</td><td>{{ t.status }}</td><td style="white-space:nowrap">{% if t.trl %}{% include trl.html n=t.trl %}{% endif %}{% if t.new %} <span class="tag warn">develop</span>{% endif %}</td></tr>
+{% endfor %}{% endfor %}
+</tbody></table></div>

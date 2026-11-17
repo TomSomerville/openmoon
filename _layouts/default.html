@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1117">
+{% seo %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="strip"><span>PLAN REV <b>{{ site.plan_rev }}</b></span><span>MILESTONES <b>{{ site.milestones | size }}</b></span><span>COMPONENTS <b>{{ site.components | size }}</b></span><span>UPDATED <b>{{ site.time | date: "%Y-%m-%d" }}</b></span><span>LICENSE <b>CC BY-SA 4.0</b></span></div>
+<div class="sheet">
+  <header class="bar">
+    <a class="logo" href="{{ '/' | relative_url }}">OPEN<span>MOON</span></a>
+    <nav aria-label="Main">
+      {% assign sec = page.section | default: '' %}
+      <a href="{{ '/plan/' | relative_url }}"{% if sec == 'plan' %} class="on"{% endif %}>Plan</a>
+      <a href="{{ '/costs/' | relative_url }}"{% if sec == 'costs' %} class="on"{% endif %}>Costs</a>
+      <a href="{{ '/technology/' | relative_url }}"{% if sec == 'tech' %} class="on"{% endif %}>Technology</a>
+      <a href="{{ '/principles/' | relative_url }}"{% if sec == 'principles' %} class="on"{% endif %}>Principles</a>
+      <a href="{{ '/sources/' | relative_url }}"{% if sec == 'sources' %} class="on"{% endif %}>Sources</a>
+      <a href="{{ site.repo }}">GitHub</a>
+    </nav>
+  </header>
+  <main id="main">
+  {{ content }}
+  </main>
+  <div class="titleblock">
+    <div><small>Project</small>OPEN MOON · Self-sustaining lunar colony</div>
+    <div><small>Document</small>{{ page.doc_id | default: page.id_code | default: "OM" }}</div>
+    <div><small>Revision</small>{{ site.plan_rev }} · {{ page.status | default: "Draft" }}</div>
+    <div><small>Edit</small><a href="{{ site.repo }}/edit/main/{{ page.path }}">Edit on GitHub</a></div>
+  </div>
+</div>
+<footer class="foot"><span>Open Moon is an open-source plan. Figures marked ESTIMATE are this plan's own calculations; everything else links to its source.</span><a href="{{ site.repo }}">github.com/TomSomerville/openmoon</a></footer>
+</body>
+</html>

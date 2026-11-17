@@ -1,0 +1,18 @@
+- n: 0
+  name: Foundations
+  desc: Choose the site with data already in hand from lunar orbiters, ground-truth it with robotic prospectors, and lock the transport contracts. Nothing lands that the base depends on until the site is confirmed.
+- n: 1
+  name: Robotic outpost
+  desc: Before any crew arrives, robots and cargo landers put down power, communications, landing pads and the first oxygen and water pilot plants. The outpost has to survive several lunar nights unattended.
+- n: 2
+  name: Crewed sorties
+  desc: Crews visit for weeks at a time, living in the first surface habitat and using unpressurised and pressurised rovers. Each visit leaves more infrastructure behind.
+- n: 3
+  name: Permanent base
+  desc: Continuous crew presence. Habitats are buried under regolith for radiation protection, life support recycles most water and air, and resupply drops to a steady cadence.
+- n: 4
+  name: Industrial base
+  desc: The base starts making what it consumes, including oxygen and propellant, building materials, spare parts and food, so each crew member needs less from Earth every year.
+- n: 5
+  name: Self-sustaining colony
+  desc: The base grows into a colony that produces most of its own mass needs, measured as the share of consumables and construction mass made on the Moon, with Earth supplying only high-tech parts and people.

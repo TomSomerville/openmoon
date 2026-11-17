@@ -1,0 +1,16 @@
+---
+title: Sources
+eyebrow: Bibliography
+summary: Every source cited anywhere in the plan, grouped by milestone and component. Official sources are preferred, then encyclopaedias and repositories, then reputable press.
+section: sources
+doc_id: OM-900
+permalink: /sources/
+---
+{% assign ms = site.milestones | sort: "order" %}
+{% for m in ms %}
+<h3><a href="{{ m.url | relative_url }}">{{ m.id_code }} · {{ m.title }}</a></h3>
+<ol>{% for s in m.sources %}<li><a href="{{ s.url }}">{{ s.title }}</a>{% if s.date %} ({{ s.date }}){% endif %}</li>{% endfor %}</ol>
+{% assign comps = site.components | where: "milestone", m.id_code | sort: "order" %}
+{% for c in comps %}{% if c.sources %}<p><strong>{{ c.id_code }} · {{ c.title }}</strong></p>
+<ol>{% for s in c.sources %}<li><a href="{{ s.url }}">{{ s.title }}</a>{% if s.date %} ({{ s.date }}){% endif %}</li>{% endfor %}</ol>{% endif %}{% endfor %}
+{% endfor %}

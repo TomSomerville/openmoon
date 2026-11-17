@@ -1,0 +1,20 @@
+---
+title: The plan
+eyebrow: Master schedule
+summary: Every milestone in order. Each has exit criteria, workstreams, technology, costs, failure modes and sources.
+section: plan
+doc_id: OM-100
+---
+{% assign ms = site.milestones | sort: "order" %}
+<div class="tablewrap"><table class="data">
+<thead><tr><th>ID</th><th>Milestone</th><th>Phase</th><th>Window</th><th>Cost (est.)</th><th>Lowest TRL</th><th>Depends on</th></tr></thead>
+<tbody>
+{% for m in ms %}<tr><td><span class="tag hi">{{ m.id_code }}</span></td><td><a href="{{ m.url | relative_url }}"><strong>{{ m.title }}</strong></a><br><span style="color:var(--dim)">{{ m.summary }}</span></td><td>{{ m.phase }}</td><td style="white-space:nowrap">{{ m.window }}</td><td style="white-space:nowrap">${{ m.cost.low }}–{{ m.cost.high }}B</td><td style="white-space:nowrap">{% include trl.html n=m.trl_min %}</td><td>{{ m.depends_on | join: ", " }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+
+<h2>Phases</h2>
+{% for p in site.data.phases %}
+<h3>Phase {{ p.n }} · {{ p.name }}</h3>
+<p>{{ p.desc }}</p>
+{% endfor %}

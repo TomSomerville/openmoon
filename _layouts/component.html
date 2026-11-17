@@ -1,0 +1,55 @@
+---
+layout: default
+section: plan
+---
+{% assign m = site.milestones | where: "id_code", page.milestone | first %}
+<div class="body">
+  <div class="draw">
+    <div class="crumbs"><a href="{{ '/plan/' | relative_url }}">Plan</a> / <a href="{{ m.url | relative_url }}">{{ m.id_code }} {{ m.title }}</a> / {{ page.id_code }}</div>
+    <div class="eyebrow">{{ page.id_code }} · Component of {{ page.milestone }}</div>
+    <h1>{{ page.title }}</h1>
+    <div class="note">{{ page.summary }}</div>
+
+    {% if page.subcomponents %}
+    <div class="sec-h">Sub-components · {{ page.subcomponents | size }}</div>
+    <div class="callouts">
+      {% for s in page.subcomponents %}
+      <div class="co"><b>{{ forloop.index }}</b><h3>{{ s.name }}</h3>
+        {% if s.desc %}<p>{{ s.desc }}</p>{% endif %}
+        {% if s.parts %}<ul>{% for p in s.parts %}<li>{{ p }}</li>{% endfor %}</ul>{% endif %}
+        {% if s.tech %}<span class="k">BASIS: {{ s.tech }}{% if s.trl %} · TRL {{ s.trl }}{% endif %}</span>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="sec-h">Engineering notes</div>
+    <div class="prose">{{ content }}</div>
+
+    {% if page.risks %}
+    <div class="sec-h">Problems and solutions · {{ page.risks | size }}</div>
+    <div class="tablewrap"><table class="data">
+      <thead><tr><th>Severity</th><th>Problem</th><th>Solution</th></tr></thead>
+      <tbody>{% for r in page.risks %}<tr><td><span class="tag {% if r.sev == 'Critical' %}bad{% elsif r.sev == 'High' %}warn{% endif %}">{{ r.sev }}</span></td><td>{{ r.title }}</td><td>{{ r.fix }}</td></tr>{% endfor %}</tbody>
+    </table></div>
+    {% endif %}
+  </div>
+  <div class="side">
+    <section>
+      <h2>Specification</h2>
+      <table class="spec">{% for s in page.spec %}<tr><td>{{ s.k }}</td><td>{{ s.v }}</td></tr>{% endfor %}</table>
+      {% if page.trl %}
+      <div class="trl-l">Technology readiness · TRL {{ page.trl }} / 9</div>
+      <div class="trl">{% for i in (1..9) %}<i{% if i <= page.trl %} class="f"{% endif %}></i>{% endfor %}</div>
+      {% endif %}
+    </section>
+    {% if page.sources %}
+    <section>
+      <h2>Sources</h2>
+      <ol class="srcs" style="padding-left:20px;margin:0">
+        {% for s in page.sources %}<li id="s{{ forloop.index }}" style="margin-bottom:6px"><a href="{{ s.url }}">{{ s.title }}</a>{% if s.date %} <span style="color:var(--dim)">({{ s.date }})</span>{% endif %}</li>{% endfor %}
+      </ol>
+    </section>
+    {% endif %}
+  </div>
+</div>

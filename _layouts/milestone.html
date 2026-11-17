@@ -1,0 +1,111 @@
+---
+layout: default
+section: plan
+---
+{% assign ms = site.milestones | sort: "order" %}
+{% assign comps = site.components | where: "milestone", page.id_code | sort: "order" %}
+<div class="body">
+  <div class="draw">
+    <div class="crumbs"><a href="{{ '/plan/' | relative_url }}">Plan</a> / Phase {{ page.phase }} / {{ page.id_code }}</div>
+    <div class="eyebrow">{{ page.id_code }} · Phase {{ page.phase }} · {{ page.window }}</div>
+    <h1>{{ page.title }}</h1>
+    <div class="note">{{ page.summary }}</div>
+
+    <div class="sec-h">Objective</div>
+    <div class="prose"><p>{{ page.objective }}</p></div>
+
+    {% if page.exit_criteria %}
+    <div class="sec-h">Exit criteria · what "done" means</div>
+    <div class="tablewrap"><table class="data">
+      <thead><tr><th>#</th><th>Criterion</th></tr></thead>
+      <tbody>{% for c in page.exit_criteria %}<tr><td class="tag hi">EC-{{ forloop.index }}</td><td>{{ c }}</td></tr>{% endfor %}</tbody>
+    </table></div>
+    {% endif %}
+
+    {% if page.workstreams %}
+    <div class="sec-h">Workstreams · {{ page.workstreams | size }}</div>
+    <div class="callouts">
+      {% for w in page.workstreams %}
+      <div class="co"><b>{{ forloop.index }}</b><h3>{{ w.name }}</h3>
+        {% if w.desc %}<p>{{ w.desc }}</p>{% endif %}
+        {% if w.items %}<ul>{% for i in w.items %}<li>{{ i }}</li>{% endfor %}</ul>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if page.technologies %}
+    <div class="sec-h">Technology · what we use and how ready it is</div>
+    <div class="tablewrap"><table class="data">
+      <thead><tr><th>Technology</th><th>Used for</th><th>Status today</th><th>TRL</th></tr></thead>
+      <tbody>
+      {% for t in page.technologies %}
+      <tr><td><strong>{{ t.name }}</strong>{% if t.src %}<sup class="r"><a href="#s{{ t.src }}">{{ t.src }}</a></sup>{% endif %}</td><td>{{ t.use }}</td><td>{{ t.status }}</td><td style="white-space:nowrap">{% if t.trl %}{% include trl.html n=t.trl %}{% else %}<span class="tag">n/a</span>{% endif %}{% if t.new %} <span class="tag warn">develop</span>{% endif %}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table></div>
+    {% endif %}
+
+    {% if comps.size > 0 %}
+    <div class="sec-h">Components · detailed breakdowns</div>
+    <div class="tl">
+      {% for c in comps %}<a href="{{ c.url | relative_url }}"><span class="id">{{ c.id_code }}</span><h3>{{ c.title }}</h3><span class="w">{{ c.subcomponents | size }} sub-components · {{ c.risks | size }} issues</span></a>{% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="sec-h">Plan of action</div>
+    <div class="prose">{{ content }}</div>
+
+    {% if page.cost_items %}
+    <div class="sec-h">Cost build-up</div>
+    <div class="tablewrap"><table class="data">
+      <thead><tr><th>Item</th><th>Low</th><th>High</th><th>Basis</th></tr></thead>
+      <tbody>
+      {% for c in page.cost_items %}<tr><td>{{ c.item }}</td><td style="white-space:nowrap">${{ c.low }}B</td><td style="white-space:nowrap">${{ c.high }}B</td><td>{{ c.basis }}</td></tr>{% endfor %}
+      <tr><td><strong>Total</strong></td><td><strong>${{ page.cost.low }}B</strong></td><td><strong>${{ page.cost.high }}B</strong></td><td><span class="estimate">ESTIMATE</span> {{ page.cost.note }}</td></tr>
+      </tbody>
+    </table></div>
+    {% endif %}
+
+    <div class="pager">
+      {% for m in ms %}{% if m.id_code == page.id_code %}
+        {% assign pi = forloop.index0 | minus: 1 %}{% assign ni = forloop.index0 | plus: 1 %}
+        {% if pi >= 0 %}<a href="{{ ms[pi].url | relative_url }}">← {{ ms[pi].id_code }} {{ ms[pi].title }}</a>{% else %}<span></span>{% endif %}
+        {% if ni < ms.size %}<a href="{{ ms[ni].url | relative_url }}">{{ ms[ni].id_code }} {{ ms[ni].title }} →</a>{% endif %}
+      {% endif %}{% endfor %}
+    </div>
+  </div>
+
+  <div class="side">
+    <section>
+      <h2>Mission profile</h2>
+      <table class="spec">
+        <tr><td>Window</td><td>{{ page.window }}</td></tr>
+        <tr><td>Phase</td><td>{{ page.phase }}</td></tr>
+        {% if page.depends_on %}<tr><td>Depends on</td><td>{% for d in page.depends_on %}{% assign dm = site.milestones | where: "id_code", d | first %}<a href="{{ dm.url | relative_url }}">{{ d }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</td></tr>{% endif %}
+        {% for s in page.spec %}<tr><td>{{ s.k }}</td><td>{{ s.v }}</td></tr>{% endfor %}
+        {% if page.cost %}<tr><td>Cost</td><td>${{ page.cost.low }}–{{ page.cost.high }}B <span class="estimate">EST.</span></td></tr>{% endif %}
+      </table>
+      {% if page.trl_min %}
+      <div class="trl-l">Lowest critical TRL · {{ page.trl_min }} / 9</div>
+      <div class="trl">{% for i in (1..9) %}<i{% if i <= page.trl_min %} class="f"{% endif %}></i>{% endfor %}</div>
+      {% endif %}
+    </section>
+    {% if page.risks %}
+    <section>
+      <h2>Failure modes · {{ page.risks | size }}</h2>
+      {% for r in page.risks %}
+      <div class="risk {% if r.sev == 'Critical' %}crit{% elsif r.sev == 'Medium' %}low{% endif %}"><div class="t">FM-{{ forloop.index }} · {{ r.sev }}</div>{{ r.title }}<div class="s">Fix: {{ r.fix }}</div></div>
+      {% endfor %}
+    </section>
+    {% endif %}
+    {% if page.sources %}
+    <section>
+      <h2>Sources</h2>
+      <ol class="srcs" style="padding-left:20px;margin:0">
+        {% for s in page.sources %}<li id="s{{ forloop.index }}" style="margin-bottom:6px"><a href="{{ s.url }}">{{ s.title }}</a>{% if s.date %} <span style="color:var(--dim)">({{ s.date }})</span>{% endif %}</li>{% endfor %}
+      </ol>
+    </section>
+    {% endif %}
+  </div>
+</div>

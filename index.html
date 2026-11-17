@@ -1,25 +1,26 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Open Moon</title>
-<meta name="description" content="An open-source plan for a self-sustaining Moon colony, built on technology that exists or is in active testing today.">
-<style>
-:root{--bg:#0d0f12;--text:#e6e8eb;--muted:#8b93a1;--accent:#e8c26b}
-body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(800px 400px at 50% 0,#1d2230,transparent),var(--bg);color:var(--text);font:17px/1.6 system-ui,sans-serif;text-align:center;padding:16px}
-.m{width:90px;height:90px;border-radius:50%;margin:0 auto 22px;background:radial-gradient(circle at 35% 35%,#eef0f3,#8f97a3 65%,#596170)}
-h1{font-size:44px;margin:0 0 8px;letter-spacing:.02em}
-p{color:var(--muted);max-width:520px;margin:0 auto 22px}
-a{color:var(--accent)}
-</style>
-</head>
-<body>
-<main>
-<div class="m"></div>
-<h1>Open Moon</h1>
-<p>An open-source plan for a self-sustaining Moon colony, built on technology that exists or is in active testing today. Work in progress.</p>
-<a href="/templates/">View the design templates →</a>
-</main>
-</body>
-</html>
+---
+layout: default
+title: Open Moon
+doc_id: OM-000
+---
+{% assign ms = site.milestones | sort: "order" %}
+{% assign lo = 0 %}{% assign hi = 0 %}{% for m in ms %}{% assign lo = lo | plus: m.cost.low %}{% assign hi = hi | plus: m.cost.high %}{% endfor %}
+<section class="hero">
+  <div class="eyebrow">Open-source engineering plan · Rev {{ site.plan_rev }}</div>
+  <h1>A self-sustaining Moon colony, built with technology we have now.</h1>
+  <p>Open Moon is a public, step-by-step engineering plan for a permanent lunar base that grows into a colony. Every milestone is broken down into workstreams, components and sub-components. Each one names the real hardware it relies on, how ready that hardware is, what it costs, what can go wrong and how to fix it.</p>
+  <p>The rule: only technology that is flying, built or in active testing today, or credibly within 3–5 years. No warp drives, no space elevators, no fusion.</p>
+  <a class="btn" href="{{ '/plan/' | relative_url }}">Open the plan</a><a class="btn ghost" href="{{ '/principles/' | relative_url }}">Ground rules</a>
+</section>
+<div class="kpis">
+  <div class="kpi"><small>Milestones</small><b>{{ ms | size }}</b><span>from site selection to self-sufficiency</span></div>
+  <div class="kpi"><small>Components</small><b>{{ site.components | size }}</b><span>with sub-component breakdowns</span></div>
+  <div class="kpi"><small>Programme cost</small><b>${{ lo }}–{{ hi }}B</b><span>sum of milestone estimates</span></div>
+  <div class="kpi"><small>Timeline</small><b>{{ ms.first.window | split: "–" | first }}–{{ ms.last.window | split: "–" | last }}</b><span>planned windows</span></div>
+</div>
+<div class="draw" style="border-right:0">
+  <div class="sec-h">Milestones</div>
+  <div class="tl">
+  {% for m in ms %}<a href="{{ m.url | relative_url }}"><span class="ph">PH {{ m.phase }}</span><span class="id">{{ m.id_code }}</span><h3>{{ m.title }}</h3><span class="w">{{ m.window }} · ${{ m.cost.low }}–{{ m.cost.high }}B</span></a>{% endfor %}
+  </div>
+</div>

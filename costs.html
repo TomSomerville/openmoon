@@ -1,0 +1,23 @@
+---
+title: Costs
+eyebrow: Programme budget
+summary: How much each milestone costs and how those numbers were built. Every line shows its basis.
+section: costs
+doc_id: OM-200
+permalink: /costs/
+---
+{% assign ms = site.milestones | sort: "order" %}
+{% assign lo = 0 %}{% assign hi = 0 %}{% for m in ms %}{% assign lo = lo | plus: m.cost.low %}{% assign hi = hi | plus: m.cost.high %}{% endfor %}
+<p>Programme total: <strong>${{ lo }}B to ${{ hi }}B</strong> <span class="estimate">ESTIMATE</span>, in today's US dollars, spread across the milestone windows. {{ site.data.costnotes.intro }}</p>
+<blockquote>{{ site.data.costnotes.caveat }}</blockquote>
+<h2>Benchmarks we price against</h2>
+<div class="tablewrap"><table class="data"><thead><tr><th>Benchmark</th><th>Figure</th><th>Source</th></tr></thead><tbody>
+{% for b in site.data.benchmarks %}<tr><td>{{ b.name }}</td><td>{{ b.value }}</td><td><a href="{{ b.url }}">{{ b.src }}</a></td></tr>{% endfor %}
+</tbody></table></div>
+<h2>By milestone</h2>
+{% for m in ms %}
+<h3><a href="{{ m.url | relative_url }}">{{ m.id_code }} · {{ m.title }}</a> · ${{ m.cost.low }}–{{ m.cost.high }}B</h3>
+<div class="tablewrap"><table class="data"><thead><tr><th>Item</th><th>Low</th><th>High</th><th>Basis</th></tr></thead><tbody>
+{% for c in m.cost_items %}<tr><td>{{ c.item }}</td><td>${{ c.low }}B</td><td>${{ c.high }}B</td><td>{{ c.basis }}</td></tr>{% endfor %}
+</tbody></table></div>
+{% endfor %}
