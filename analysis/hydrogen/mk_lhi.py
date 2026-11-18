@@ -40,7 +40,8 @@ rgb = np.where(cand[..., None], rgb * 0.3 + np.array([20, 120, 255]) * 0.7, rgb)
 im = Image.fromarray(rgb.clip(0, 255).astype('uint8'))
 # thin outline for other PSRs (no published ice data)
 edge = other & ~(np.roll(other, 1, 0) & np.roll(other, -1, 0) & np.roll(other, 1, 1) & np.roll(other, -1, 1))
-a = np.array(im); a[edge] = (150, 210, 255); im = Image.fromarray(a)
+edge = edge | np.roll(edge, 1, 0) | np.roll(edge, 1, 1) | np.roll(edge, -1, 0) | np.roll(edge, -1, 1)
+a = np.array(im); a[edge] = (170, 225, 255); im = Image.fromarray(a)
 dr = ImageDraw.Draw(im); k = max(W, H) / 1400; F = font(24 * k); Fs = font(16 * k)
 for lat_, lon_, diam, lab, side in [(-(89 + 40 / 60), 129 + 47 / 60, 21.0, 'Shackleton', 'r'), (-88.5, -87.1, 32.4, 'de Gerlache', 'l'), (-89.51, -84.61, 13.0, 'Spudis', 't')]:
     x, y = m2p(*lonlat2m(lat_, lon_)); rr = diam * 500 / RES

@@ -51,7 +51,7 @@ sources:
   - {title: "NASA FY2026 Budget Technical Supplement (Lunar Reconnaissance Orbiter, PS-28/29)", url: "https://www.nasa.gov/wp-content/uploads/2025/05/fy-2026-budget-technical-supplement-002.pdf", date: "May 2025"}
   - {title: "Univ. of Hawaii SOEST: Scarce ice in Moon's darkest regions (ShadowCam)", url: "https://www.soest.hawaii.edu/soestwp/announce/news/scarce-ice-in-moons-darkest-regions/", date: "Mar 2026"}
   - {title: "ISRO: Chandrayaan-2 DFSAR observations reveal subsurface ice in lunar south polar regions", url: "https://www.isro.gov.in/Chandrayaan2_Dual_Frequency_Synthetic_Aperture_Radar.html", date: "May 2026"}
-  - {title: "NASA NTRS 20250011660: Artemis III Site Selection Update", url: "https://ntrs.nasa.gov/citations/20250011660", date: "2026"}
+  - {title: "NASA NTRS 20250011660: Artemis III Site Selection Update", url: "https://ntrs.nasa.gov/citations/20250011660", date: "Mar 2026"}
   - {title: "Peak of eternal light (Bussey et al. 2010; Speyerer & Robinson 2013 figures), Wikipedia", url: "https://en.wikipedia.org/wiki/Peak_of_eternal_light", date: "accessed Nov 2026"}
   - {title: "LROC: Islands in the Dark (Shackleton rim illumination)", url: "https://www.lroc.asu.edu/images/1105", date: ""}
   - {title: "NASA ACR22 white paper: Why the Lunar South Polar Region", url: "https://www.nasa.gov/wp-content/uploads/2023/10/acr22-wp-why-lunar-south-polar-region.pdf", date: "Oct 2023"}
@@ -59,7 +59,7 @@ sources:
   - {title: "NASA: Artemis Accords (Section 11, deconfliction and safety zones)", url: "https://www.nasa.gov/artemis-accords/", date: ""}
   - {title: "NASA: Uzbekistan becomes 77th Artemis Accords signatory", url: "https://nasa.gov/organizations/oiir/artemis-accords/nasa-welcomes-uzbekistan-as-newest-artemis-accords-signatory", date: "Oct 2026"}
   - {title: "UNOOSA: Outer Space Treaty (Article II)", url: "https://www.unoosa.org/pdf/publications/ST_SPACE_51E.pdf", date: ""}
-  - {title: "NASA Moon Base – Phases", url: "https://www.nasa.gov/moonbase-phases/", date: "2026"}
+  - {title: "NASA Moon Base – Phases", url: "https://www.nasa.gov/moonbase-phases/", date: "Mar 2026"}
   - {title: "JPL IPN Progress Report 42-176: Lunar pole illumination and communications maps (Bryant)", url: "https://ipnpr.jpl.nasa.gov/progress_report/42-176/176C.html", date: "Feb 2009"}
   - {title: "NASA: NASA Provides Update on Artemis III Moon Landing Regions (map of nine regions, credit NASA/GSFC/ASU/JSC/AGDT)", url: "https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/", date: "Oct 2024"}
   - {title: "Shackleton (crater), Wikipedia (IAU/WGPSN coordinates and diameter)", url: "https://en.wikipedia.org/wiki/Shackleton_(crater)", date: "accessed Nov 2026"}
@@ -70,6 +70,10 @@ sources:
   - {title: "NASA Science: Hydrogen at the Lunar Poles: How Much Water Is There? (summary of Sanin et al. 2017, Icarus 283)", url: "https://science.nasa.gov/wp-content/uploads/2023/05/NuggetHydrogenAtTheLunarPoles20170210.pdf", date: "Feb 2017"}
   - {title: "NASA PDS Geosciences Node: LRO LEND data (averaged south-polar products ALDS, 2009–2016)", url: "https://pds-geosciences.wustl.edu/missions/lro/lend.htm", date: "accessed Nov 2026"}
   - {title: "Feldman et al. 2000, Polar hydrogen deposits on the Moon (J. Geophys. Res.)", url: "https://earthref.org/ERR/61400/", date: "2000"}
+  - {title: "NASA Ames Astrogram, Aug 2018: Ice confirmed at the Moon's poles (M3 surface-ice map, Li et al. 2018)", url: "https://www.nasa.gov/centers-and-facilities/ames/nasa-ames-astrogram-august-2018/", date: "Aug 2018"}
+  - {title: "NASA Science: LRO Science and Data (map of possible water-ice deposits at the south pole)", url: "https://science.nasa.gov/mission/lro/science-and-data/", date: "accessed Nov 2026"}
+  - {title: "Li et al. 2018, Direct evidence of surface exposed water ice in the lunar polar regions (PNAS)", url: "https://europepmc.org/article/PMC/PMC6130389", date: "Aug 2018"}
+  - {title: "Li et al. 2026, Searching for surficial water ice in lunar permanently shaded regions (PSRs) with ShadowCam (Science Advances)", url: "https://europepmc.org/article/PMC/PMC12998505", date: "Mar 2026"}
 risks:
   - {sev: High, title: "ShadowCam's mission is expected to end in early 2028, cutting off new images inside shadowed craters", fix: "Request targeted ShadowCam imaging of candidate PSRs now; archive everything; plan our own prospecting in M01"}
   - {sev: High, title: "Other programmes want the same few sunlit ridges (NASA Moon Base, China's Chang'e-7 near Shackleton)", fix: "Choose a primary and backup site; publish plans early and coordinate under Artemis Accords deconfliction; design for shared infrastructure"}
@@ -120,7 +124,17 @@ Connecting Ridge and Connecting Ridge Extension were on NASA's original 2022 lis
 
 ## Terrain slope in the focus area
 
-Slope comes from NASA Goddard's LOLA slope map (LDSM) at 10 m per pixel<sup class="r">[18](#s18)</sup>, laid over NASA's LOLA hillshade. Open Moon colours it in four classes, set from what landers can actually handle (see [Lander candidates]({{ '/landers/' | relative_url }})):
+Slope comes from NASA Goddard's LOLA slope map (LDSM) at 10 m per pixel<sup class="r">[18](#s18)</sup>.
+
+### Raw slope data
+
+The LDSM values as published, in degrees, on a continuous scale with no classes (averaged to 40 m per pixel for the whole focus area). The data file is [LDSM_83S_10MPP_ADJ.TIF](https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDSM_83S_10MPP_ADJ.TIF) (7.5 GB) on NASA Goddard's [product page](https://pgda.gsfc.nasa.gov/products/90).
+
+![Raw LOLA slope in degrees across the Open Moon focus area, dark flat to yellow steep]({{ '/assets/sites/focus-slope-raw.jpg' | relative_url }})
+
+### Slope classes
+
+Laid over NASA's LOLA hillshade. Open Moon colours slope in four classes, set from what landers can actually handle (see [Lander candidates]({{ '/landers/' | relative_url }})):
 
 | Colour | Slope | Why this break |
 |---|---|---|
@@ -185,15 +199,38 @@ We downloaded NASA's LEND south-polar data (0.5° cells, 2009–2016)<sup class=
 
 ![Hydrogen from NASA LEND data around the south pole to 84°S, with the Open Moon focus area outlined]({{ '/assets/sites/south-pole-lend-hydrogen.jpg' | relative_url }})
 
-### Landable ground, hydrogen and ice candidates
+## Ice candidates
 
-Green marks ground with slope of 8° or less (landable for every published lander rule); steeper ground is left uncoloured. **Purple** marks high hydrogen from LEND. **Blue** marks ice candidates: the permanently shadowed floors of Shackleton (233 km²) and de Gerlache (242 km²), outlined from NASA Goddard's shadow map<sup class="r">[18](#s18)</sup>, where published ice detections are reported (see the [ice research]({{ site.repo }}/blob/main/research/ice/south-pole-water-ice.md)). The white dot is ShadowCam's unexplained bright spot at 88.5352°S, 97.4007°W, inside de Gerlache's shadowed floor. Thin pale outlines are other permanently shadowed areas with no published ice data, including Spudis and the small craters along the ridge.
+Ice candidates are places where instruments have reported signs of water ice at or near the surface. None in the focus area is confirmed; the evidence for and against is in the [ice research]({{ site.repo }}/blob/main/research/ice/south-pole-water-ice.md).
+
+### NASA's maps
+
+![NASA map of surface water ice detected by the Moon Mineralogy Mapper at the lunar south pole (left) and north pole (right)]({{ '/assets/sites/nasa-m3-polar-ice-2018.jpg' | relative_url }})
+
+*Surface ice detected by NASA's Moon Mineralogy Mapper (M3) on Chandrayaan-1: south pole left, north pole right. Ice locations are shown in cyan over surface temperature (darker is colder). At the south pole most of the ice is in craters<sup class="r">[23](#s23)</sup><sup class="r">[25](#s25)</sup>.*
+
+![NASA LRO map of areas of the Moon's south pole with possible deposits of water ice, shown in blue]({{ '/assets/sites/nasa-lro-south-pole-possible-ice.jpg' | relative_url }})
+
+*"Areas of the Moon's south pole with possible deposits of water ice, shown in blue. The map is based on data taken by NASA's Lunar Reconnaissance Orbiter."<sup class="r">[24](#s24)</sup>*
+
+### Ice candidates in the focus area
+
+Blue marks the permanently shadowed floors of Shackleton (233 km²) and de Gerlache (242 km²), outlined from NASA Goddard's shadow map<sup class="r">[18](#s18)</sup>, where published ice detections are reported<sup class="r">[25](#s25)</sup>. The white dot is ShadowCam's unexplained bright spot at 88.5352°S, 97.4007°W, inside de Gerlache's shadowed floor<sup class="r">[26](#s26)</sup>. Pale outlines are other permanently shadowed areas with no published ice data, including Spudis and the small craters along the ridge.
+
+![Ice candidates in the Open Moon focus area: shadowed floors of Shackleton and de Gerlache in blue, ShadowCam bright spot, other shadowed areas outlined]({{ '/assets/sites/focus-ice-candidates.jpg' | relative_url }})
+
+- **Shackleton:** a bright floor in LOLA data, radar results allowing some ice in its walls, and nearby M3 ice spectra; but Kaguya and ShadowCam found no exposed ice, and part of the floor gets above 110 K in summer.
+- **de Gerlache:** one M3 ice spectrum and the ShadowCam bright spot, which needs more viewing angles to test.
+
+## All layers combined
+
+Green: slope of 8° or less (landable for every published lander rule); steeper ground is left uncoloured. **Purple:** high hydrogen from LEND. **Blue:** ice candidates. White dot: ShadowCam bright spot.
 
 ![Open Moon focus area: landable ground of 8° or less in green, high hydrogen in purple, ice-candidate shadowed floors in blue]({{ '/assets/sites/focus-landing-hydrogen.jpg' | relative_url }})
 
 - **Landable:** 43 % of the focus area is 8° or less.
 - **Hydrogen:** 13 % is high hydrogen, mostly the upper right (toward 0–60°E, around 88°S); 4.6 % is both landable and high hydrogen. It does not cover Shackleton, Spudis, the ridge or de Gerlache Rim 2.
-- **Ice candidates:** Shackleton's floor has a bright floor in LOLA data, radar results allowing some ice in its walls, and nearby M3 ice spectra, but Kaguya and ShadowCam found no exposed ice. de Gerlache has one M3 ice spectrum and the ShadowCam bright spot. None is confirmed.
+- **Ice candidates:** 483 km² of shadowed crater floor in Shackleton and de Gerlache, with landable ground on the rims next to both.
 - **Why hydrogen and ice candidates differ:** LEND averages the top ~1 m over ~15 km cells, while M3 and LOLA see the top millimetres or microns at a few hundred metres. A thin frost or small patches can show in one and not the other. Only ground measurements (M01) can settle it.
 
 ## Step-by-step
