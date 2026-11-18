@@ -47,6 +47,8 @@ sources:
   - {title: "NASA/JPL NAIF: SPICE generic kernels (DE421 planetary ephemeris, lunar orientation)", url: "https://naif.jpl.nasa.gov/naif/data_generic.html", date: "accessed Nov 2026"}
   - {title: "Pitcairn Island, Wikipedia (area 4.5 km²)", url: "https://en.wikipedia.com/wiki/Pitcairn_Island", date: "accessed Nov 2026"}
   - {title: "European microstates, Wikipedia (Monaco about 2.02 km², Vatican City about 0.49 km²)", url: "https://www.wikipedia.com/wiki/European_microstate", date: "accessed Nov 2026"}
+  - {title: "NASA GSFC PGDA: LOLA high-resolution topography for lunar south pole sites (5 m/px, Site 11, de Gerlache rim)", url: "https://pgda.gsfc.nasa.gov/products/78", date: "accessed Nov 2026"}
+  - {title: "Khronos glTF Sample Assets: Cesium Man 3D figure (© 2017 Cesium, CC BY 4.0)", url: "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CesiumMan", date: "accessed Nov 2026"}
 risks:
   - {sev: High, title: "Ice at both sites is unconfirmed: Shackleton's evidence is mixed and de Gerlache has only two candidate detections", fix: "M01 prospectors measure ice at both crater floors before the base is committed; switch to the backup if the primary fails"}
   - {sev: High, title: "A young fault scarp is mapped in de Gerlache Rim 2, next to the primary site", fix: "Map scarps from LROC NAC images; keep pads, the reactor and habitats clear of young faults (M05)"}
@@ -297,6 +299,15 @@ LROC's maximum-pixel mosaic keeps each spot at its brightest across thousands of
 ![The same view with flat ground of 8 degrees or less in green and the 4.8 square km patch around the base outlined]({{ '/assets/sites/primary-base-allsun-flat.jpg' | relative_url }})
 
 *Left: all-sun view, 20 × 20 km. Right: ground of 8° or less in green (NASA LOLA slope, 10 m), with the 4.8 km² patch around the base outlined. Yellow lines: 100 m height contours (NASA LOLA). Star: base. Orange: base towers. Cyan: mine towers. Images credit NASA/GSFC/Arizona State University.*
+
+#### Standing at the base (rendered view)
+
+A 1.8 m human figure for scale, standing at the base point, in a Blender render of the terrain at true size. The terrain is NASA LOLA heights<sup class="r">[26](#s26)</sup><sup class="r">[10](#s10)</sup> at 20 m mesh spacing, coloured with the LROC all-sun mosaic<sup class="r">[20](#s20)</sup>. The Sun is set 2° above the horizon with a black sky. **Cast shadows are turned off**, so this is an illustration of the ground's shape, not a prediction of the real light. Black patches in the texture are ground that LROC never saw lit. Terrain files for Blender: [`blender/primary-base`](https://github.com/TomSomerville/openmoon/tree/main/blender/primary-base).
+
+![Rendered view from 15 m: a 1.8 m figure at the primary base, with the rising ground to the south-southwest behind]({{ '/assets/sites/primary-base-render-close_15m.jpg' | relative_url }})
+![Rendered view from 250 m: the figure as a speck at the base, with the ridge to the south-southwest behind]({{ '/assets/sites/primary-base-render-wide_250m.jpg' | relative_url }})
+
+*Left: from 15 m. Right: from 250 m, looking south-southwest; the ground behind rises about 500 m within 4 km (this plan's arithmetic, from the LOLA mesh). Render by Open Moon; terrain NASA GSFC LOLA, texture NASA/GSFC/Arizona State University. Figure: "Cesium Man", © 2017 Cesium, CC BY 4.0<sup class="r">[27](#s27)</sup>.*
 
 #### Sun and shadow at the base (ESTIMATE)
 
