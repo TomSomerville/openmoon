@@ -11,7 +11,7 @@ FB = '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf'; F = lambda 
 R = 1737400.
 def xy(lat, lon):
     rho = 2 * R * math.tan(math.radians(90 + lat) / 2); L = math.radians(lon); return rho * math.sin(L), rho * math.cos(L)
-BASE = xy(-88.445, -63.44); B3 = xy(-88.4411, -62.44)
+BASE = xy(-88.4262, -63.30); B3 = xy(-88.3693, -62.11)   # DD-020, DD-021
 def _read(prod, half, px):
     cx, cy = BASE
     for k in range(5):

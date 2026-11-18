@@ -12,10 +12,6 @@ spec:
   - {k: Team, v: "Engineering and science team"}
   - {k: Hardware, v: "None flown; uses existing orbital data"}
   - {k: Output, v: "Primary and backup sites (DD-015), open maps and analysis code"}
-cost: {low: 0.045, high: 0.13, note: "people and computing only; no flight hardware"}
-cost_items:
-  - {item: "Core engineering team, 2 years", low: 0.04, high: 0.11, basis: "ESTIMATE: 60–150 full-time staff at ~$350k loaded cost per year"}
-  - {item: "Computing, data processing, illumination modelling", low: 0.005, high: 0.02, basis: "ESTIMATE"}
 technologies:
   - {name: "LRO Lunar Orbiter Laser Altimeter (LOLA): slope, elevation and shadow maps (NASA GSFC)", use: "Slope classes, flat-ground areas, permanently shadowed (ice-candidate) floors, terrain for the sunlight model", status: "10 m/px south-pole products published 2023 (Barker et al.); LRO still operating, PDS data release 67 in Sep 2026", trl: 9, src: 10}
   - {name: "NASA GSFC average illumination maps", use: "Where solar towers can go (average sunlight over 18.6 years)", status: "Published product (Mazarico et al. 2011)", trl: 9, src: 19}
@@ -233,10 +229,10 @@ The ice floor is 12.7 km from the base, beyond the 10 km cable limit, so the bas
 
 | Grid | Lit | Longest dark |
 |---|---|---|
-| Base: B1, B2 (+B3) | 84.1% | 6.2 days |
+| Base: B1, B2 (+B3) | 84.1% (84.2% with B3) | 6.2 days |
 | Mine: M1, M2 | 77.4% | 14.2 days |
 
-- **B3**, 0.8 km from the base, adds redundancy and faster charging (DD-017).
+- **B3**, 2.0 km from the base and clear of the flat patch, adds redundancy and faster charging (DD-017, DD-021).
 - **The mine stops in the dark.** Its battery only keeps systems alive.
 - **Towers within 3 km were rejected.** They reach only 56.9%.
 
@@ -276,7 +272,7 @@ window.addEventListener('hashchange',open);open();})();
 **Pros**
 
 - Inside NASA's de Gerlache Rim 2, a region NASA screened for landing safety, light and Earth visibility<sup class="r">[3](#s3)</sup>.
-- Room to grow: the base is at the centre of 4.8 km² of connected ground at 8° or less, with a fully flat circle 540 m across. B3 stands 0.8 km away on the same patch.
+- Room to grow: the base is at the centre of 4.8 km² of connected ground at 8° or less, with a fully flat circle 540 m across. B3 stands 2.0 km away, off the patch, so the whole patch stays free (DD-021).
 - The most hydrogen of the two sites, and an ice target with two independent hints.
 
 **Cons**
@@ -287,6 +283,22 @@ window.addEventListener('hashchange',open);open();})();
 - A young fault scarp is mapped in Rim 2<sup class="r">[7](#s7)</sup>.
 
 {% include decision-note.html id="DD-020" %}
+
+#### Room to grow
+
+Flat ground (8° or less) around the base, measured by Open Moon from NASA's LOLA slope map at 10 m per pixel<sup class="r">[10](#s10)</sup>:
+
+| Area | Flat ground |
+|---|---|
+| Connected patch the base sits in | **4.8 km²** |
+| All flat ground within 2 km | 3.8 km² |
+| All flat ground within 3 km | 5.4 km² |
+| All flat ground within 5 km | 10.1 km² |
+| Within 5 km, in patches of at least 0.05 km² that can be reached over ground of 15° or less | 6.4 km² |
+
+The base can grow over its own 4.8 km² patch without crossing steeper ground. Beyond it, about 6–10 km² more lies within 5 km, in separate patches linked by drivable slopes. B3 stands off the patch, so none of it is lost to a pad keep-out (DD-021).
+
+![Flat ground around the primary base: the connected 4.8 km² patch and other ground at 8° or less within 2, 3 and 5 km]({{ '/assets/sites/primary-expansion.jpg' | relative_url }})
 
 <!--SUNLIT-->
 

@@ -25,6 +25,6 @@ doc_id: OM-000
 <div class="draw" style="border-right:0">
   <div class="sec-h">Milestones</div>
   <div class="tl">
-  {% for m in ms %}<a href="{{ m.url | relative_url }}"><span class="ph">PH {{ m.phase }}</span><span class="id">{{ m.id_code }}</span><h3>{{ m.title }}</h3><span class="w">{{ m.window }} · ${{ m.cost.low }}–{{ m.cost.high }}B</span></a>{% endfor %}
+  {% for m in ms %}<a href="{{ m.url | relative_url }}"><span class="ph">PH {{ m.phase }}</span><span class="id">{{ m.id_code }}</span><h3>{{ m.title }}</h3><span class="w">{{ m.window }}{% if m.cost %} · ${{ m.cost.low }}–{{ m.cost.high }}B{% else %} · done{% endif %}</span></a>{% endfor %}
   </div>
 </div>

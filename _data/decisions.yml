@@ -625,7 +625,7 @@
       title: "NASA Moon Base – Phases"
       url: "https://www.nasa.gov/moonbase-phases/"
   tradeoffs:
-    - "M00 cost falls from $0.05–0.15B to $0.045–0.13B (the legal and coordination item is removed)."
+    - "M00 cost fell from $0.05–0.15B to $0.045–0.13B when the legal and coordination item was removed. The M00 cost was later removed entirely, because site selection is finished (user decision, Nov 2026)."
     - "Notice under the Artemis Accords falls to whoever carries out the plan, not a separate Open Moon step."
     - "Relative years cannot track real launch dates; facts about real hardware keep their real dates and sources."
 
@@ -661,5 +661,26 @@
       url: "https://pgda.gsfc.nasa.gov/products/90"
   tradeoffs:
     - "Base VSAT cables grow by about 0.6 km: B1 8.2 km and B2 9.4 km, still within the 10 km extended-run limit (DD-014) but closer to it."
-    - "B3 stands inside the same flat patch, 0.84 km from the base; landing pads must stay at least 500 m from it (M05 pad requirement) or B3 moves within the patch."
+    - "B3 stood inside the same flat patch, 0.84 km from the base, where its 500 m pad keep-out (M05) would have taken 0.70 km² of the patch; it was moved off the patch (DD-021)."
     - "Boulders are not visible at 10 m/px; pads still need ~1 m hazard maps (M05)."
+
+- id: DD-021
+  date: "2026-11-18"
+  title: "Base VSAT B3 moved off the flat patch (88.3693°S, 62.11°W)"
+  status: "Adopted"
+  affects: [M00, M04, M05]
+  was: "B3 stood at 88.4411°S, 62.44°W (DD-017), inside the 4.8 km² flat patch that now holds the base (DD-020), 0.84 km from the base. A 500 m pad keep-out around it (M05) would take 0.70 km², about 15% of the patch."
+  now: "B3 stands at 88.3693°S, 62.11°W, 2.0 km from the base on a standard run (DD-013) and 1.2 km clear of the flat patch, so none of the patch is lost to its keep-out. It is 46.8% sunlit on NASA's illumination map (44.6% Open Moon estimate). It is lit during 52.9% of the time B1 or B2 is lit, adding about 3,900 hours a year of extra charging power (about 4,250 before), and about 10 hours a year when both are dark. The base grid is lit 84.2% with B3, longest dark still 6.2 days (ESTIMATE)."
+  why: "The user's decision: move B3 so the whole flat patch stays free for pads, buildings and growth. This is the best-lit spot within 3 km of the base whose 500 m keep-out does not touch the patch. No spot on 10° ground or less meets that rule; the best ≤10° spot would still take 0.14 km² of the patch."
+  timeline:
+    - date: "Sep 2023"
+      what: "NASA VSAT key performance parameters: terrain stability at 10° with a 5 m mast (threshold) and 15° with a 10 m mast (goal)."
+      title: "NASA NTRS: Vertical Solar Array Technology annual review"
+      url: "https://ntrs.nasa.gov/api/citations/20230012849/downloads/GCD%20Annual%20Review%20VSAT%20September%202023%20Final.pdf"
+    - date: "2023"
+      what: "NASA GSFC LOLA slope map used for the patch outline and the slope at the new spot."
+      title: "NASA GSFC PGDA: A New View of the Lunar South Pole from LOLA (Barker et al. 2023)"
+      url: "https://pgda.gsfc.nasa.gov/products/90"
+  tradeoffs:
+    - "Ground within 30 m of the new spot reaches 14.7°, inside NASA's 15° goal for a 10 m mast but above the 10° threshold; B3 needs the goal capability or local levelling (open)."
+    - "About 350 fewer hours a year of extra charging than the old spot, and 2.0 km of cable instead of 0.8 km."

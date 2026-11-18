@@ -82,7 +82,7 @@ if 0 <= x < W and 0 <= y < H:
     r = 9 * k; dr.ellipse((x - r, y - r, x + r, y + r), fill='white', outline=(20, 120, 255), width=3)
 # DD-016: mine grid (rim VSATs + mine PMC) and base grid (own VSATs)
 MV = [(-88.4657, -67.872, 75.1), (-88.3937, -68.686, 71.9)]
-BV = [(-88.6652, -68.42, 82.7), (-88.7108, -68.28, 53.8), (-88.4411, -62.44, 50.4)]
+BV = [(-88.6652, -68.42, 82.7), (-88.7108, -68.28, 53.8), (-88.3693, -62.11, 46.8)]
 bx, by = m2p(*base); mx, my = m2p(*mine)
 mp = m2p(*lonlat2m(-88.3937, -68.686)); mp = (mp[0] - 26 * k, mp[1] + 6 * k)   # mine PMC beside VSAT M2
 # base grid lines
@@ -118,7 +118,7 @@ dr.text((bx + 26 * k, by), 'PRIMARY BASE  88.426°S, 63.30°W', font=F, fill=(25
 # legend
 rows = [((0, 170, 0), 'Slope ≤8° (landable)'), ((255, 220, 0), 'Slope 8–15°'), ((255, 140, 0), 'Slope 15–20°'), ((220, 0, 0), 'Slope ≥20°'),
         ((40, 130, 255), 'Ice candidate: de Gerlache shadowed floor'), ((120, 200, 255), 'Outline: other shadowed areas (no ice data)'),
-        ((255, 140, 0), 'Base grid: VSATs B1–B2 (long runs), B3 backup/charging (DD-017)'), ((80, 230, 255), 'Ice-mine grid: VSATs M1–M2, mine PMC, feeder (DD-016)'),
+        ((255, 140, 0), 'Base grid: VSATs B1–B2 (long runs), B3 backup/charging (DD-017, DD-021)'), ((80, 230, 255), 'Ice-mine grid: VSATs M1–M2, mine PMC, feeder (DD-016)'),
         ((150, 40, 200), 'High hydrogen (LEND, top 10%), off-map: arrow'), ((175, 80, 230), 'Moderate hydrogen (top 25%), white edge'), ((200, 60, 255), 'Purple tint and lines: LEND dip 0.6–0.9% (darker = more H)')]
 lx, ly = int(20 * k), int(48 * k)
 dr.rectangle((lx - 10 * k, ly - 10 * k, lx + 520 * k, ly + (len(rows) * 30 + 40) * k), fill=(0, 0, 0))

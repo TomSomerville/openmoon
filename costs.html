@@ -16,9 +16,9 @@ permalink: /costs/
 {% for b in site.data.benchmarks %}<tr><td>{{ b.name }}</td><td>{{ b.value }}</td><td><a href="{{ b.url }}">{{ b.src }}</a></td></tr>{% endfor %}
 </tbody></table></div>
 <h2>By milestone</h2>
-{% for m in ms %}
+{% for m in ms %}{% if m.cost %}
 <h3><a href="{{ m.url | relative_url }}">{{ m.id_code }} · {{ m.title }}</a> · ${{ m.cost.low }}–{{ m.cost.high }}B</h3>
 <div class="tablewrap"><table class="data"><thead><tr><th>Item</th><th>Low</th><th>High</th><th>Basis</th></tr></thead><tbody>
 {% for c in m.cost_items %}<tr><td>{{ c.item }}</td><td>${{ c.low }}B</td><td>${{ c.high }}B</td><td>{{ c.basis }}</td></tr>{% endfor %}
 </tbody></table></div>
-{% endfor %}
+{% endif %}{% endfor %}
