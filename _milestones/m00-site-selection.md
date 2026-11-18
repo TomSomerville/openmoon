@@ -185,15 +185,16 @@ We downloaded NASA's LEND south-polar data (0.5° cells, 2009–2016)<sup class=
 
 ![Hydrogen from NASA LEND data around the south pole to 84°S, with the Open Moon focus area outlined]({{ '/assets/sites/south-pole-lend-hydrogen.jpg' | relative_url }})
 
-### Landable ground and hydrogen together
+### Landable ground, hydrogen and ice candidates
 
-Green marks ground with slope of 8° or less (landable for every published lander rule); steeper ground is left uncoloured. Blue marks high hydrogen.
+Green marks ground with slope of 8° or less (landable for every published lander rule); steeper ground is left uncoloured. **Purple** marks high hydrogen from LEND. **Blue** marks ice candidates: the permanently shadowed floors of Shackleton (233 km²) and de Gerlache (242 km²), outlined from NASA Goddard's shadow map<sup class="r">[18](#s18)</sup>, where published ice detections are reported (see the [ice research]({{ site.repo }}/blob/main/research/ice/south-pole-water-ice.md)). The white dot is ShadowCam's unexplained bright spot at 88.5352°S, 97.4007°W, inside de Gerlache's shadowed floor. Thin pale outlines are other permanently shadowed areas with no published ice data, including Spudis and the small craters along the ridge.
 
-![Open Moon focus area: landable ground of 8° or less in green and high hydrogen from LEND in blue]({{ '/assets/sites/focus-landing-hydrogen.jpg' | relative_url }})
+![Open Moon focus area: landable ground of 8° or less in green, high hydrogen in purple, ice-candidate shadowed floors in blue]({{ '/assets/sites/focus-landing-hydrogen.jpg' | relative_url }})
 
-- In the focus area, **13 %** of the ground is high hydrogen and **4.6 %** is both landable and high hydrogen.
-- The high-hydrogen area in the focus box lies to the upper right (toward 0–60°E, around 88°S). It does not cover Shackleton, Spudis, the Shackleton–de Gerlache Ridge or de Gerlache Rim 2.
-- LEND cells are about 15 km and the smoothing blurs further, so blue shows regions, not individual craters. Small shadowed craters along the ridge are below what LEND can resolve; ground prospecting (M01) has to measure them.
+- **Landable:** 43 % of the focus area is 8° or less.
+- **Hydrogen:** 13 % is high hydrogen, mostly the upper right (toward 0–60°E, around 88°S); 4.6 % is both landable and high hydrogen. It does not cover Shackleton, Spudis, the ridge or de Gerlache Rim 2.
+- **Ice candidates:** Shackleton's floor has a bright floor in LOLA data, radar results allowing some ice in its walls, and nearby M3 ice spectra, but Kaguya and ShadowCam found no exposed ice. de Gerlache has one M3 ice spectrum and the ShadowCam bright spot. None is confirmed.
+- **Why hydrogen and ice candidates differ:** LEND averages the top ~1 m over ~15 km cells, while M3 and LOLA see the top millimetres or microns at a few hundred metres. A thin frost or small patches can show in one and not the other. Only ground measurements (M01) can settle it.
 
 ## Step-by-step
 

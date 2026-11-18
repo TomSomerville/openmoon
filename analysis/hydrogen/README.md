@@ -15,3 +15,11 @@ Method (Open Moon processing, not a NASA product):
 Limits: LEND cells are 0.5° (~15 km); smoothing blurs further, so blue areas show regions, not individual craters.
 A neutron dip shows hydrogen, not its form (ice, solar-wind hydrogen or hydrated minerals). For NASA's own
 calibrated water-equivalent map see Sanin et al. 2017 (Icarus 283).
+
+## Ice candidates (`mk_lhi.py`)
+
+Adds ice candidates in blue and switches hydrogen to purple. Ice candidates are the permanently shadowed regions
+from NASA GSFC's LPSR product (`LPSR_80S_20MPP_ADJ.SHP`, [PGDA product 90](https://pgda.gsfc.nasa.gov/products/90))
+inside Shackleton and de Gerlache, where published ice detections are reported (Li et al. 2018; Li et al. 2026),
+plus the ShadowCam high-reflectance spot at 88.5352°S, 97.4007°W. Other shadowed regions are outlined only.
+`psr_focus.pkl` is built by filtering the shapefile to the focus-area bounding box with pyshp.
