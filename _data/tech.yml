@@ -486,7 +486,7 @@
   - 1
   trl: 6
   status: Three NASA prototype contracts (2022); deploy to ~10 m
-  use: 10 kW-class solar towers
+  use: 10 kW-class solar towers feeding the BMS
   develop: false
   source: https://www.nasa.gov/?p=142765
   source_title: 'NASA RELEASE 22-090: Vertical Solar Array Technology awards'
@@ -546,7 +546,7 @@
   - 1
   trl: 5
   status: NASA Glenn breadboard ran 550+ hours of simulated lunar cycles (open-loop)
-  use: Night and gap storage
+  use: Long-gap storage behind the BMS; charged by surplus, discharges only into the battery
   develop: true
   source: https://ntrs.nasa.gov/citations/20260002730
   source_title: 'NASA NTRS 20260002730: Regenerative fuel cell lunar cycle testing'
@@ -566,7 +566,7 @@
   - 1
   trl: 4
   status: NASA's lunar grid baseline since 2022 (switched from DC; see DD-001). UMIC 1 kW module bench-tested 2023; AC cable tested in vacuum with regolith simulant 2025
-  use: Power transmission between sources and users
+  use: Source lines into the BMS hub and feeders out to the microgrids
   develop: false
   source: https://ntrs.nasa.gov/citations/20220011587
   source_title: 'Thomas et al., NASA GRC: Establishing a Lunar Surface Power Grid (2022)'

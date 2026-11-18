@@ -4,7 +4,7 @@ milestone: M04
 order: 4
 redirect_from: /plan/components/c04-4-hvdc-grid/
 title: 3 kV AC grid and cable-laying rover
-summary: "A 3 kV, 3-phase, 1 kHz AC grid, NASA's lunar baseline, that carries power from every source to the BMS hub, and from the BMS out to the habitat, oxygen plant and other loads. Transformers and modular converters connect 120 V DC equipment. A small rover lays and covers the cable."
+summary: "A 3 kV, 3-phase, 1 kHz AC grid, NASA's lunar baseline, that carries power from every source to the BMS hub, and from the BMS out to the habitat, oxygen plant and other loads. Transformers and modular converters connect 120 V DC equipment. A small rover lays the cable on the surface."
 trl: 4
 spec:
   - {k: "Trunk", v: "3 kV AC, 3-phase, 1 kHz (NASA baseline; design change DD-001)"}
@@ -40,7 +40,7 @@ subcomponents:
     trl: 4
   - name: Microgrids and control
     desc: "Runs habitat and ISRU as separate local grids that share power over the trunk. With no spinning machines, inverters must hold frequency and voltage themselves."
-    parts: ["120 V DC buses and power distribution units", "Droop control in every UMIC (shares load between parallel units)", "Regional grid controller", "Priority load-shedding tables", "Earth link for remote operation"]
+    parts: ["120 V DC buses and power distribution units", "Droop control in every UMIC (shares load between parallel units)", "Regional grid controller (the BMS routing controller, C04.3)", "Priority load-shedding tables", "Earth link for remote operation"]
     tech: "NASA UMIC droop control (simulated and bench tested, 2023)"
     trl: 4
   - name: Cable-laying rover
@@ -80,9 +80,20 @@ sources:
 
 The grid moves power from where it is made to where it is used. NASA's reactor reference design places the user interface 1 km from the reactor<sup class="r">[3](#s3)</sup>, and the oxygen plant needs power over 3–5 km<sup class="r">[6](#s6)</sup>. NASA's baseline is two independent microgrids, one for the habitat and one for ISRU, each with its own sources, joined by a primary line so they can share power<sup class="r">[6](#s6)</sup>.
 
-**Every source goes through the BMS (design change DD-003).** Source lines from the reactor and the solar towers run to the BMS hub (C04.3), not straight to users. The BMS then sends power out over the grid to meet demand, or into storage. So the grid has two kinds of line: source lines into the BMS, and feeders from the BMS to the microgrids and loads. NASA's two-microgrid layout still applies on the output side.
+**Every source goes through the BMS (design change DD-003).** Source lines from the reactor and the solar towers run to the BMS hub (C04.3), not straight to users. The BMS then sends power out over the grid to meet demand, or into storage. So the grid has two kinds of line: source lines into the BMS, and feeders from the BMS to the microgrids and loads. NASA's two-microgrid layout still applies on the output side, but in Open Moon both microgrids get their power from BMS feeders, not from sources of their own.
 
 {% include decision-note.html id="DD-003" extra="Sources no longer feed users directly over the trunk; every line from a source ends at the BMS hub." %}
+
+## Layout
+
+![Plan view, not to scale: 10 kW VSAT towers on two or three ridge points and an LR-1-class reactor 1–3 km away behind terrain each send a 3 kV AC source line to the BMS hub near the habitat zone; feeders run from the BMS to the habitat and ISRU 120 V DC microgrids; landing pads sit at least 1 km from the towers](/assets/tech/base-power-site-layout.svg)
+
+![One-line diagram: source lines at 3 kV AC into BMS halves A and B with a cross-tie; battery strings on each half; fuel cells discharge only into the battery; 3 kV AC feeders through transformers and UMICs to the 120 V DC habitat and ISRU microgrids](/assets/tech/base-power-one-line.svg)
+
+- **Source lines** run from each solar tower and from the reactor to the BMS hub, one line per source (plan design, DD-003).
+- **Feeders** run from the BMS hub to the habitat and ISRU microgrids. At each microgrid a transformer and UMIC convert 3 kV AC to 120 V DC<sup class="r">[2](#s2)</sup>.
+- **Distances.** The reactor sits 1–3 km from the habitat zone (plan design, DD-002); NASA's reference design uses a 1 km link<sup class="r">[3](#s3)</sup>. The ISRU feeder length depends on where the oxygen plant goes; NASA's estimate is 3–5 km<sup class="r">[6](#s6)</sup>.
+- **On the surface.** All lines lie on the surface, as NASA advises<sup class="r">[3](#s3)</sup>. They keep away from rover routes, with ramps at crossings (plan design).
 
 ## Why 3 kV AC at 1 kHz: NASA's reasoning
 

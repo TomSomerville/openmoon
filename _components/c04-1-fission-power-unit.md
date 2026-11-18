@@ -48,7 +48,7 @@ subcomponents:
     tech: "NASA GRC Stirling controllers; ISS-class PMAD"
     trl: 4
   - name: Deployment and lander interface
-    desc: "Gets the unit off the cargo lander and the user interface out to the grid tie point."
+    desc: "Gets the unit off the cargo lander and the user interface out to the start of the source line to the BMS hub."
     parts: ["Reactor pallet adapter on lander", "User interface pallet on a sled", "1 km high-voltage cable spool", "Utility rover for towing", "Levelling legs"]
     tech: "NASA DAC3 concept of operations"
     trl: 4

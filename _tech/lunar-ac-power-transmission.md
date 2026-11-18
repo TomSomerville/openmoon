@@ -30,7 +30,7 @@ links:
 
 ## What it is
 
-Lunar AC power transmission is a three-phase, 3,000 V, 1,000 Hz power line laid across the Moon's surface. It carries electricity from power plants (a fission reactor, solar towers, storage) to users a few kilometres away. Raising the voltage lowers the current, so thinner, lighter wire can carry the same power. This is NASA's lunar grid baseline, set in a [2022 NASA Glenn trade study](https://ntrs.nasa.gov/citations/20220011587). NASA/DOE's [2025 fission reactor reference design](https://ntrs.nasa.gov/citations/20250000841) uses the same link.
+Lunar AC power transmission is a three-phase, 3,000 V, 1,000 Hz power line laid across the Moon's surface. It carries electricity from power plants, such as a fission reactor or solar towers, to users a few kilometres away. In Open Moon every such line ends at the BMS hub, and feeders carry the power on to users. Raising the voltage lowers the current, so thinner, lighter wire can carry the same power. This is NASA's lunar grid baseline, set in a [2022 NASA Glenn trade study](https://ntrs.nasa.gov/citations/20220011587). NASA/DOE's [2025 fission reactor reference design](https://ntrs.nasa.gov/citations/20250000841) uses the same link.
 
 For comparison, the US grid on Earth runs at 60 Hz, with long-distance lines mostly at [230–500 kV](https://en.wikipedia.org/wiki/Electric_power_transmission). The lunar grid is far smaller: tens of kilowatts over 1–3 km, so 3 kV is enough. Its 1 kHz frequency is unusually high. Aircraft and spacecraft use 400 Hz because ["transformers and motors for 400 Hz are much smaller and lighter"](https://en.wikipedia.org/wiki/Utility_frequency), and NASA's lunar grid takes the same idea further.
 
@@ -50,7 +50,9 @@ NASA's reason, in its own words: a DC grid is "practically limited to 1.2-1.5 kV
 
 Milestone M04 builds the base's power grid. Every source line, from the reactor and the solar towers, ends at the base BMS hub. The BMS routes the power over the grid to the oxygen plant and the habitat, or into storage ([design change DD-003](/decisions/#dd-003)). The reactor has to sit away from the crew: NASA's design puts the user interface [1 km away](https://ntrs.nasa.gov/citations/20250000841), and the oxygen plant needs power over [3–5 km](https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf).
 
-Efficiency matters because fission power is heavy, about [0.25–0.27 kg per watt](https://ntrs.nasa.gov/api/citations/20220002315/downloads/Lunar_power_transmission_concepts_FINAL.pdf). Every watt lost in the cable means more reactor mass. Using NASA's AC baseline means Open Moon can plug in a NASA-designed reactor directly and use NASA's interface converters, instead of developing high-voltage DC parts no one makes yet.
+Efficiency matters because fission power is heavy, about [0.25–0.27 kg per watt](https://ntrs.nasa.gov/api/citations/20220002315/downloads/Lunar_power_transmission_concepts_FINAL.pdf). Every watt lost in the cable means more reactor mass. Using NASA's AC baseline means a NASA-designed reactor's 3 kV AC output can run straight down its source line to the BMS hub, and Open Moon can use NASA's interface converters, instead of developing high-voltage DC parts no one makes yet.
+
+![Plan view, not to scale: solar towers on ridge points and an LR-1-class reactor 1–3 km away behind terrain each send a 3 kV AC source line to the BMS hub near the habitat zone; feeders run from the BMS to the habitat and ISRU 120 V DC microgrids](/assets/tech/base-power-site-layout.svg)
 
 ## How it works
 

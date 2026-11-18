@@ -43,8 +43,8 @@ subcomponents:
     tech: "RFC breadboard thermal loop"
     trl: 5
   - name: BMS routing hub
-    desc: "Receives every source (reactor, solar towers, fuel cells) and decides, moment to moment, whether power goes to the grid to meet demand, into storage, or both. Feeds the grid from the battery when generation is short, has the fuel cells recharge the battery, and sheds loads by priority as a last resort (DD-003)."
-    parts: ["Input converters for each source (UMIC-class AC-to-DC for the 3 kV AC lines)", "Common DC bus, split into halves A and B with a cross-tie", "Output converters to the 3 kV AC trunk and 120 V DC microgrids", "Routing and priority controller with load-shedding tables", "Source and feeder switching to either half", "Command links to the reactor, solar towers and fuel cells", "Telemetry and Earth link"]
+    desc: "Receives every source (reactor, solar towers) and decides, moment to moment, whether power goes to the grid to meet demand, into storage, or both. Feeds the grid from the battery when generation is short, has the fuel cells recharge the battery (their output goes only to the battery, never to the feeders), and sheds loads by priority as a last resort (DD-003)."
+    parts: ["Input converters for each source (UMIC-class AC-to-DC for the 3 kV AC lines)", "Common DC bus, split into halves A and B with a cross-tie", "Output converters to the 3 kV AC trunk and 120 V DC microgrids", "Routing and priority controller with load-shedding tables", "Source and feeder switching to either half", "Fuel-cell discharge path to the battery strings only (no path to the feeders)", "Command links to the reactor, solar towers and fuel cells", "Telemetry and Earth link"]
     tech: "NASA GRC UMIC bidirectional converter (2023); NASA lunar microgrid priority control concept; ISS power management practice"
     trl: 4
   - name: Li-ion battery bank
@@ -97,6 +97,10 @@ Default routing (plan design):
 
 NASA Glenn has built a modular, bidirectional converter between 120 V DC equipment and the 3 kV AC grid<sup class="r">[9](#s9)</sup>, the kind of converter the BMS uses at each input and output.
 
+![One-line diagram: each solar tower and the reactor send 3 kV AC over a source line to an input converter on BMS half A or half B, joined by a cross-tie; Li-ion battery strings hang off each half; the fuel cells are charged from BMS surplus and discharge only into the battery, with no direct path to the grid; output converters send 3 kV AC feeders to transformers and UMICs at the 120 V DC habitat and ISRU microgrids](/assets/tech/base-power-one-line.svg)
+
+**Inside the hub (plan design).** Each source line ends at an input converter on half A or half B. The two halves are DC buses joined by a cross-tie, and any source or feeder can be switched to either half. Battery strings hang off both halves: a starter string on half A and the reactor ride-through strings on half B. The fuel-cell electrolyser draws from the bus; the fuel cells discharge only into the battery strings. Output converters feed the 3 kV AC feeders to the microgrids.
+
 **Storage** has two layers behind the BMS:
 - **Li-ion battery bank** for fast response: load steps, fuel cell warm-up, and 8 hours of reactor output for a reactor restart.
 - **Regenerative fuel cells** for long shadows and the years before the reactor arrives. They are charged by BMS surplus and, when they discharge, they recharge the battery rather than feeding the grid. Polar shadows last up to about 100 hours<sup class="r">[1](#s1)</sup>. A regenerative fuel cell (RFC) stores more energy per kilogram than batteries: 320–650 Wh/kg against about 160 Wh/kg for packaged Li-ion<sup class="r">[1](#s1)</sup>.
@@ -141,7 +145,7 @@ Modelled south-pole efficiency is 34.8% for a 10 kW RFC and 36.6% at 50 kW. Abov
 
 ## Open questions
 
-- Where should the BMS hub sit to keep source cables short while staying close to the habitat?
+- Where exactly should the BMS hub sit to keep source cables short while staying close to the habitat? The plan puts it near the habitat zone (see the M04 site layout).
 - Can dry gas tanks sit at lunar shadow temperatures instead of being heated above 4 °C?
 - What membrane thickness and pressure give the best balance for this base's duty cycle?
 - How long do PEM stacks last over thousands of lunar charge cycles?

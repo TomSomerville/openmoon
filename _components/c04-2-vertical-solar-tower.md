@@ -73,7 +73,7 @@ sources:
 
 ## What it does
 
-At the south pole the Sun skims the horizon, so hills and crater rims cast very long shadows. A tall tower lifts its arrays out of those shadows and catches more hours of sun<sup class="r">[1](#s1)</sup>. On the Shackleton connecting ridge, the best point is lit 92% of the time at 2 m height and 96% at 10 m<sup class="r">[10](#s10)</sup>. Each tower turns that sunlight into 10 or 50 kW for the grid. The towers can also be lowered and moved<sup class="r">[1](#s1)</sup>.
+At the south pole the Sun skims the horizon, so hills and crater rims cast very long shadows. A tall tower lifts its arrays out of those shadows and catches more hours of sun<sup class="r">[1](#s1)</sup>. On the Shackleton connecting ridge, the best point is lit 92% of the time at 2 m height and 96% at 10 m<sup class="r">[10](#s10)</sup>. Each tower turns that sunlight into 10 or 50 kW and sends it to the BMS, which routes it to the grid or to storage (design change DD-003). The towers can also be lowered and moved<sup class="r">[1](#s1)</sup>.
 
 ## How it works
 

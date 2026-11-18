@@ -35,6 +35,10 @@ The latest step is a breadboard system built at Glenn. It ran autonomously for o
 
 Open Moon's power milestone ([M04](/plan/m04-power/)) needs to keep about 30 kW of essential load alive through about 100 hours of darkness, which is about 3 MWh. NASA gives ~100 h as the south-pole night and 367 h at the equator ([Csank & Scott](https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf)). At 160 Wh/kg that is about 19 t of Li-ion. At 320-650 Wh/kg, RFCs cut it to roughly 5-9 t. RFC waste heat also helps hardware survive the cold ([Csank & Scott](https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf)).
 
+**Where it sits in the base (plan design).** The RFC sits behind the BMS, the base's central power routing hub. Once the Li-ion battery is full, the BMS sends surplus power, solar or reactor, to the electrolyser. When the RFC discharges, it recharges the battery through the BMS; it never feeds the grid directly. The grid is fed only by generation passing through the BMS, or by the battery ([design change DD-003](/decisions/#dd-003)).
+
+![One-line diagram: sources feed BMS halves A and B; battery strings hang off each half; the fuel cells are charged from BMS surplus and discharge only into the battery, with no direct path to the grid; feeders go to the habitat and ISRU microgrids](/assets/tech/base-power-one-line.svg)
+
 RFCs also fit the base's chemistry. They run on the same water, hydrogen and oxygen as the water plant in M06, so the plan shares tanks between the two. Without RFCs the base would need far more battery mass, or would depend entirely on the fission unit through every shadow period.
 
 ## How it works

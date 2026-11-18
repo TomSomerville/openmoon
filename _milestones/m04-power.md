@@ -60,11 +60,11 @@ workstreams:
 technologies:
   - {name: "Kilopower / KRUSTY (1–10 kWe Stirling reactor)", use: "Small reactor (plan value 1 kWe) feeding the BMS", status: "KRUSTY ground test 2018: 28 h at full power, reactor rated TRL 5. No flight unit built", trl: 5, src: 5}
   - {name: "US Lunar Reactor-1 (20 kWe Brayton reactor)", use: "Main base reactor (plan value 20 kWe) feeding the BMS", status: "Draft SPARC solicitation Aug 2026: ≥20 kWe at 3 kV AC, ≥5 yr, HALEU, closed Brayton, <15 t. No award yet", trl: 4, src: 25}
-  - {name: "Vertical Solar Array Technology (VSAT)", use: "10 kW-class solar towers", status: "Three NASA prototype contracts (2022); deploy to ~10 m", trl: 6, src: 4}
+  - {name: "Vertical Solar Array Technology (VSAT)", use: "10 kW-class solar towers feeding the BMS", status: "Three NASA prototype contracts (2022); deploy to ~10 m", trl: 6, src: 4}
   - {name: "Astrobotic VSAT-XL", use: "50 kW towers", status: "NASA SBIR study award 2024; 34 m tall; Redwire ROSA arrays. Phase II follow-on Jun 2025–Jun 2027", trl: 5, new: true, src: 7}
   - {name: "Astrobotic LunaGrid-Lite", use: "Cable-laying rover and power transfer", status: "1 kW; ~500 m of cable in the 2025 design (1 km in earlier plans); passed CDR Aug 2025", trl: 6, src: 8}
-  - {name: "Regenerative fuel cells", use: "Night and gap storage", status: "NASA Glenn breadboard ran 550+ hours of simulated lunar cycles (open-loop)", trl: 5, new: true, src: 9}
-  - {name: "Lunar AC power transmission (3 kVac, 1 kHz)", use: "Power transmission", status: "NASA lunar grid baseline since 2022; UMIC 1 kW module bench-tested (2023); AC cable tested in vacuum with regolith simulant (2025)", trl: 4, src: 23}
+  - {name: "Regenerative fuel cells", use: "Long-gap storage behind the BMS; recharges the battery", status: "NASA Glenn breadboard ran 550+ hours of simulated lunar cycles (open-loop)", trl: 5, new: true, src: 9}
+  - {name: "Lunar AC power transmission (3 kVac, 1 kHz)", use: "Source lines into the BMS hub and feeders to the microgrids", status: "NASA lunar grid baseline since 2022; UMIC 1 kW module bench-tested (2023); AC cable tested in vacuum with regolith simulant (2025)", trl: 4, src: 23}
 sources:
   - {title: "Csank & Scott, NASA GRC: Power and Energy for the Lunar Surface", url: "https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf", date: "Apr 2022"}
   - {title: "NASA NTRS 20220002315: Lunar power transmission for fission surface power", url: "https://ntrs.nasa.gov/api/citations/20220002315/downloads/Lunar_power_transmission_concepts_FINAL.pdf", date: "2022"}
@@ -155,6 +155,22 @@ This milestone targets about 120 kW of total capacity: 100 kW of solar peak plus
 - **No single point of failure.** The BMS is split into two independent halves (A and B) with a cross-tie. Each can carry the essential loads, and every source and feeder can be switched to either half.
 - **KRUSTY-class units.** A 1 kWe Kilopower-type unit gives 24 kWh a day. That suits a remote comms or science node, not the habitat. No flight unit is being built.
 
+## Site layout
+
+![Plan view, not to scale: 10 kW VSAT towers on two or three ridge points and an LR-1-class reactor 1–3 km away behind terrain, with its 36° shield shadow toward the crew, each send a 3 kV AC source line to the BMS hub near the habitat zone; feeders run from the BMS to the habitat and ISRU 120 V DC microgrids; landing pads sit at least 1 km from the towers](/assets/tech/base-power-site-layout.svg)
+
+- **Solar towers** stand on two or three ridge points, so that when one is in shadow another is usually lit (plan design; see M00). Each tower has its own source line to the BMS hub.
+- **The reactor** sits 1–3 km from the habitat zone, behind terrain (plan design, DD-002). NASA's reference shield has a 36° included angle and keeps the dose below 5 rem/yr at 1 km<sup class="r">[26](#s26)</sup>, so the shield's shadow is pointed at the crew zone.
+- **The BMS hub** sits near the habitat zone (plan design). Every source line ends there. Feeders go out from it to the habitat and ISRU microgrids.
+- **Landing pads** stay at least 1 km from the towers and radiators, to limit dust (plan design).
+- **Cables** lie on the surface. NASA advises against burying them, because regolith traps heat<sup class="r">[21](#s21)</sup>.
+
+## One-line diagram
+
+![One-line diagram: each solar tower and the reactor send 3 kV AC over a source line to an input converter on BMS half A or half B, joined by a cross-tie; Li-ion battery strings hang off each half; the fuel cells are charged from BMS surplus and discharge only into the battery, with no direct path to the grid; output converters send 3 kV AC feeders to transformers and UMICs at the 120 V DC habitat and ISRU microgrids; the reactor's parasitic load radiator takes surplus and solar towers curtail on BMS command](/assets/tech/base-power-one-line.svg)
+
+This is the plan's design, simplified to one line per 3-phase circuit. The source lines and feeders run at 3 kV AC, NASA's lunar grid baseline<sup class="r">[23](#s23)</sup>. UMIC converters link the 120 V DC microgrids to the 3 kV AC feeders<sup class="r">[22](#s22)</sup>. The BMS buses, the converters inside the hub and the battery and fuel-cell connections are plan design (DD-003).
+
 ## Solar towers
 
 - **VSAT.** NASA funded three prototypes in 2022 for $19.4M in total; they deploy to about 10 m<sup class="r">[4](#s4)</sup>. Each is a 10 kW-class array<sup class="r">[20](#s20)</sup>.
@@ -182,6 +198,8 @@ About **85%** of this milestone's cost is **delivery**, not hardware. Two things
 2. **Making power hardware on the Moon.** Blue Origin's Blue Alchemist has made solar cells and wire from regolith simulant<sup class="r">[13](#s13)</sup>. Scaling that up is part of M12.
 
 ## Step-by-step
+
+![Seven panels showing the build-out: first 10 kW VSAT with BMS half A and a starter battery string; second VSAT; more 10 kW VSATs; regenerative fuel cells; BMS half B with the ride-through battery and cross-tie; the LR-1-class reactor; and the closed grid that survives losing any single source](/assets/tech/base-power-build-out.svg)
 
 1. **First landing (small lander):** a 10 kW VSAT, BMS half A with a starter battery string, a LunaGrid-Lite-class cable rover, and the LTE kit from M03. From the first watt, power flows through the BMS.
 2. **Second 10 kW VSAT** on a second ridge point, with a cable link between the two.

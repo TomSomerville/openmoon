@@ -146,7 +146,7 @@
   cal: 2044
   label: ["Lunar", "Factory"]
   headline: "Building with the Moon itself"
-  summary: "Most new construction and half of all spare parts by mass are now made on site. Metals come from oxygen-plant by-products, regolith is printed and sintered into structures, and the first solar array made from lunar silicon feeds the grid."
+  summary: "Most new construction and half of all spare parts by mass are now made on site. Metals come from oxygen-plant by-products, regolith is printed and sintered into structures, and the first solar array made from lunar silicon feeds the BMS."
   crew: 8
   power_kw: 500
   details:
