@@ -284,7 +284,11 @@ window.addEventListener('hashchange',open);open();})();
 - The cables to the mine cross a crater wall that is mostly steeper than 20°.
 - A young fault scarp is mapped in Rim 2<sup class="r">[7](#s7)</sup>.
 
-<!--SUNLIT-->
+#### The base site from orbit
+
+![LROC NAC 1 m per pixel view of the primary base and B3, sun from 310–320°]({{ '/assets/sites/primary-base-nac-315.jpg' | relative_url }})
+
+*4 × 4 km around the primary base (magenta) and B3 (orange), 1 m per pixel. From LROC's south-pole mosaic of images taken with the Sun at 310–320° sub-solar longitude, the best-lit single lighting found for this spot; the base sits at the edge of a shadow. Credit NASA/GSFC/Arizona State University<sup class="r">[20](#s20)</sup>.*
 
 ### Backup: Connecting ridge by Shackleton
 
