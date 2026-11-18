@@ -46,6 +46,8 @@ sources:
   - {title: "NASA PDS Geosciences Node: Lunar Reconnaissance Orbiter data and release schedule (Release 67, Sep 2026)", url: "https://pds-geosciences.wustl.edu/missions/lro/", date: "accessed Nov 2026"}
   - {title: "ShadowCam team (NASA/KARI/ASU/Intuitive Machines): ShadowCam PDS Release - June 2026", url: "https://shadowcam.im-ldi.com/news/1479", date: "May 2026"}
   - {title: "NASA/JPL NAIF: SPICE generic kernels (DE421 planetary ephemeris, lunar orientation)", url: "https://naif.jpl.nasa.gov/naif/data_generic.html", date: "accessed Nov 2026"}
+  - {title: "Pitcairn Island, Wikipedia (area 4.5 km²)", url: "https://en.wikipedia.com/wiki/Pitcairn_Island", date: "accessed Nov 2026"}
+  - {title: "European microstates, Wikipedia (Monaco about 2.02 km², Vatican City about 0.49 km²)", url: "https://www.wikipedia.com/wiki/European_microstate", date: "accessed Nov 2026"}
 risks:
   - {sev: High, title: "Ice at both sites is unconfirmed: Shackleton's evidence is mixed and de Gerlache has only two candidate detections", fix: "M01 prospectors measure ice at both crater floors before the base is committed; switch to the backup if the primary fails"}
   - {sev: High, title: "A young fault scarp is mapped in de Gerlache Rim 2, next to the primary site", fix: "Map scarps from LROC NAC images; keep pads, the reactor and habitats clear of young faults (M05)"}
@@ -295,6 +297,8 @@ Flat ground (8° or less) around the base, measured by Open Moon from NASA's LOL
 | All flat ground within 3 km | 5.4 km² |
 | All flat ground within 5 km | 10.1 km² |
 | Within 5 km, in patches of at least 0.05 km² that can be reached over ground of 15° or less | 6.4 km² |
+
+**For scale** (this plan's arithmetic): the 4.8 km² patch is about the size of **Pitcairn Island** (4.5 km²)<sup class="r">[25](#s25)</sup>, about **2.4 times Monaco** (2.02 km²) and about **10 times Vatican City** (0.49 km²)<sup class="r">[26](#s26)</sup>. The 10.1 km² within 5 km is about 2 Pitcairns, 5 Monacos or 20 Vatican Cities.
 
 The base can grow over its own 4.8 km² patch without crossing steeper ground. Beyond it, about 6–10 km² more lies within 5 km, in separate patches linked by drivable slopes. B3 stands off the patch, so none of it is lost to a pad keep-out (DD-021).
 
