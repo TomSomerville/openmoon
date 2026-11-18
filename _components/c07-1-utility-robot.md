@@ -69,7 +69,7 @@ Crews should not spend surface time moving boxes. Utility robots do the hauling 
 
 **Payload deck.** The deck uses the C02.1 payload interface. A crate that rode on a lander bolts straight onto a cart, with no adapter.
 
-**Inspection rover.** NASA/JPL's CADRE rovers are about the size of a carry-on bag. Each has two stereo cameras and mesh radios, and runs on solar power. They work as a team, mostly without human input, for one lunar day (about 14 Earth days)<sup class="r">[4](#s4)</sup>. Open Moon's inspection rover is a CADRE-class design with a thermal camera added. It drives beside the ±4 kVDC cables that M04 lays<sup class="r">[6](#s6)</sup>, looking for cuts, burial loss and hot joints.
+**Inspection rover.** NASA/JPL's CADRE rovers are about the size of a carry-on bag. Each has two stereo cameras and mesh radios, and runs on solar power. They work as a team, mostly without human input, for one lunar day (about 14 Earth days)<sup class="r">[4](#s4)</sup>. Open Moon's inspection rover is a CADRE-class design with a thermal camera added. It drives beside the 3 kV AC cables that M04 lays (design change DD-001)<sup class="r">[6](#s6)</sup>, looking for cuts, burial loss and hot joints.
 
 **Teleoperation.** In NASA tests, operators drove an LTV with 4, 6 and 8 s delays, and every operator completed the traverses<sup class="r">[5](#s5)</sup>. Open Moon robots run mapped routes on their own. Earth drivers take over for hitching and for anything unusual.
 
