@@ -8,8 +8,9 @@ from hydro import supp_grid, THR, ZMIN
 from PIL import Image, ImageDraw, ImageFont
 PSR, OUT = sys.argv[1], sys.argv[2]
 font = lambda sz: ImageFont.truetype(FB, int(sz))
-base = lonlat2m(-88.4453, -63.44); mine = lonlat2m(-88.3664, -78.31)
-cx, cy = (base[0] * 0.45 + mine[0] * 0.55), (base[1] * 0.45 + mine[1] * 0.55)
+frame_base = lonlat2m(-88.4453, -63.44)   # map frame stays as first drawn
+base = lonlat2m(-88.4262, -63.30); mine = lonlat2m(-88.3664, -78.31)   # primary base moved to the flat-patch centre (DD-020)
+cx, cy = (frame_base[0] * 0.45 + mine[0] * 0.55), (frame_base[1] * 0.45 + mine[1] * 0.55)
 HW, HH = 17500, 13500; RES = 20
 B = (cx - HW, cy - HH, cx + HW, cy + HH)
 s = read('LDSM_83S_10MPP_ADJ', B, RES); h = np.nan_to_num(read('LDEM_83S_10MPP_ADJ_HILL', B, RES)); H, W = s.shape
@@ -113,7 +114,7 @@ pts = []
 for i in range(10):
     ang = math.pi / 2 + i * math.pi / 5; R_ = 22 * k if i % 2 == 0 else 10 * k; pts.append((bx + R_ * math.cos(ang), by - R_ * math.sin(ang)))
 dr.polygon(pts, fill=(255, 60, 200), outline='black')
-dr.text((bx + 26 * k, by), 'PRIMARY BASE  88.445°S, 63.44°W', font=F, fill=(255, 120, 220), anchor='lm', stroke_width=4, stroke_fill=(0, 0, 0))
+dr.text((bx + 26 * k, by), 'PRIMARY BASE  88.426°S, 63.30°W', font=F, fill=(255, 120, 220), anchor='lm', stroke_width=4, stroke_fill=(0, 0, 0))
 # legend
 rows = [((0, 170, 0), 'Slope ≤8° (landable)'), ((255, 220, 0), 'Slope 8–15°'), ((255, 140, 0), 'Slope 15–20°'), ((220, 0, 0), 'Slope ≥20°'),
         ((40, 130, 255), 'Ice candidate: de Gerlache shadowed floor'), ((120, 200, 255), 'Outline: other shadowed areas (no ice data)'),

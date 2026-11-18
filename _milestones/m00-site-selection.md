@@ -6,7 +6,6 @@ phase: 0
 content_first: true
 window: "Before Year 0"
 summary: The primary and backup base sites, chosen from lunar orbiter data before Year 0.
-objective: "Choose a primary and a backup site near the lunar south pole that give the most sunlight, an access route to permanently shadowed ice, safe terrain for landing and building, and workable communications with Earth."
 trl_min: 9
 depends_on: []
 spec:
@@ -17,19 +16,15 @@ cost: {low: 0.045, high: 0.13, note: "people and computing only; no flight hardw
 cost_items:
   - {item: "Core engineering team, 2 years", low: 0.04, high: 0.11, basis: "ESTIMATE: 60–150 full-time staff at ~$350k loaded cost per year"}
   - {item: "Computing, data processing, illumination modelling", low: 0.005, high: 0.02, basis: "ESTIMATE"}
-exit_criteria:
-  - "Primary and backup sites chosen, each with sunlit ground for solar towers and a shadowed crater that may hold ice (done, DD-015)."
-  - "Every landing point on ground of 8° or less (done for both sites from LOLA slope; pads confirmed in M05)."
-  - "Solar tower layout and its sunlight modelled over an 18.6-year cycle for each site (done, ESTIMATE)."
-  - "Hydrogen and ice-candidate maps published, with prospecting targets handed to M01 (done)."
-  - "Open checks handed on: boulder and fault-scarp hazard maps per pad (M05), Earth-visibility hours (M03)."
 technologies:
-  - {name: "Lunar Reconnaissance Orbiter (LRO)", use: "Terrain, imagery, temperature and radar data for site selection", status: "Operating; FY2026 budget request continues operations to support CLPS deliveries, landing-site characterisation and Artemis", trl: 9, src: 1}
-  - {name: "ShadowCam on KPLO/Danuri", use: "Images inside permanently shadowed craters", status: "Operating in extended mission; expected to end in early 2028 when its battery runs out in a lunar eclipse", trl: 9, src: 2}
-  - {name: "NASA Artemis south-pole candidate regions", use: "Starting shortlist of pre-screened regions", status: "9 regions published Oct 2024 (for Artemis III)", trl: 9, src: 3}
-  - {name: "LRO LOLA slope and shadow maps (NASA GSFC)", use: "Slope classes and permanently shadowed region outlines for the focus area", status: "10 m/px south-pole products published 2023 (Barker et al.)", trl: 9, src: 10}
+  - {name: "LRO Lunar Orbiter Laser Altimeter (LOLA): slope, elevation and shadow maps (NASA GSFC)", use: "Slope classes, flat-ground areas, permanently shadowed (ice-candidate) floors, terrain for the sunlight model", status: "10 m/px south-pole products published 2023 (Barker et al.); LRO still operating, PDS data release 67 in Sep 2026", trl: 9, src: 10}
+  - {name: "NASA GSFC average illumination maps", use: "Where solar towers can go (average sunlight over 18.6 years)", status: "Published product (Mazarico et al. 2011)", trl: 9, src: 19}
+  - {name: "LRO Camera (LROC) NAC south-pole mosaics", use: "1 m/px images of the base site; Shackleton–de Gerlache Ridge maps", status: "Mosaics in NASA PDS (2024–2025); LROC still imaging", trl: 9, src: 20}
   - {name: "LRO LEND neutron detector", use: "Hydrogen in the top ~1 m", status: "South-polar averaged data 2009–2016 in NASA PDS; ~15 km cells", trl: 9, src: 13}
-  - {name: "Chandrayaan-1 Moon Mineralogy Mapper (M3)", use: "Surface water-ice detections", status: "Ice spectra published 2018, clustered near Shackleton; one example in de Gerlache", trl: 9, src: 16}
+  - {name: "ShadowCam on KPLO/Danuri", use: "Images inside permanently shadowed craters (de Gerlache bright spot)", status: "Operating; latest PDS release 22 May 2026. Expected to end in early 2028", trl: 9, src: 23}
+  - {name: "Chandrayaan-1 Moon Mineralogy Mapper (M3)", use: "Surface water-ice detections", status: "Mission ended 2009; ice spectra published 2018", trl: 9, src: 16}
+  - {name: "NASA Artemis south-pole candidate regions", use: "Starting shortlist of pre-screened regions", status: "9 regions published Oct 2024", trl: 9, src: 8}
+  - {name: "NASA/JPL NAIF SPICE ephemeris (DE421)", use: "Sun positions for Open Moon's 18.6-year sunlight and darkness model", status: "Public generic kernels", trl: 9, src: 24}
 sources:
   - {title: "NASA FY2026 Budget Technical Supplement (Lunar Reconnaissance Orbiter, PS-28/29)", url: "https://www.nasa.gov/wp-content/uploads/2025/05/fy-2026-budget-technical-supplement-002.pdf", date: "May 2025"}
   - {title: "Univ. of Hawaii SOEST: Scarce ice in Moon's darkest regions (ShadowCam)", url: "https://www.soest.hawaii.edu/soestwp/announce/news/scarce-ice-in-moons-darkest-regions/", date: "Mar 2026"}
@@ -52,6 +47,9 @@ sources:
   - {title: "NASA GSFC PGDA: Lunar Polar Illumination (average solar illumination maps; Mazarico et al. 2011, Icarus 211)", url: "https://pgda.gsfc.nasa.gov/products/69", date: "accessed Nov 2026"}
   - {title: "LROC (NASA/GSFC/Arizona State University): NAC south polar maximum-pixel and sub-solar-longitude mosaics, 1 m/px, tile P878S2925, with PDS labels (NASA PDS)", url: "https://pds.mcp.nasa.gov/data/store/img/lunar_reconnaissance_orbiter/pds4/lroc/lro-l-lroc-5-rdr/LROLRC_2001/EXTRAS/BROWSE/NAC_POLE/NAC_POLE_SOUTH_CM_MAX/NAC_POLE_SOUTH_CM_MAX_P878S2925.xml", date: "accessed Nov 2026"}
   - {title: "JPL IPN Progress Report 42-176: Lunar pole illumination and communications maps (Bryant)", url: "https://ipnpr.jpl.nasa.gov/progress_report/42-176/176C.html", date: "Feb 2009"}
+  - {title: "NASA PDS Geosciences Node: Lunar Reconnaissance Orbiter data and release schedule (Release 67, Sep 2026)", url: "https://pds-geosciences.wustl.edu/missions/lro/", date: "accessed Nov 2026"}
+  - {title: "ShadowCam team (NASA/KARI/ASU/Intuitive Machines): ShadowCam PDS Release - June 2026", url: "https://shadowcam.im-ldi.com/news/1479", date: "May 2026"}
+  - {title: "NASA/JPL NAIF: SPICE generic kernels (DE421 planetary ephemeris, lunar orientation)", url: "https://naif.jpl.nasa.gov/naif/data_generic.html", date: "accessed Nov 2026"}
 risks:
   - {sev: High, title: "Ice at both sites is unconfirmed: Shackleton's evidence is mixed and de Gerlache has only two candidate detections", fix: "M01 prospectors measure ice at both crater floors before the base is committed; switch to the backup if the primary fails"}
   - {sev: High, title: "A young fault scarp is mapped in de Gerlache Rim 2, next to the primary site", fix: "Map scarps from LROC NAC images; keep pads, the reactor and habitats clear of young faults (M05)"}
@@ -65,8 +63,8 @@ risks:
 
 *Both base sites with their final power layouts. Slope in four classes, ice-candidate crater floors in blue, hydrogen in purple. Sunlit percentages are from NASA's illumination map. Click any image to see it full size.*
 
-- **Primary:** de Gerlache north rim, 88.445°S, 63.44°W.
-- **Backup:** Connecting ridge by Shackleton, 89.559°S, 163.66°W, 51.2 km away.
+- **Primary:** de Gerlache north rim, 88.426°S, 63.30°W, at the centre of a 4.8 km² patch of flat ground (DD-020).
+- **Backup:** Connecting ridge by Shackleton, 89.559°S, 163.66°W, 51.8 km away.
 
 Both are chosen from orbital data and are to be confirmed on the ground by the M01 prospectors (DD-015).
 
@@ -168,7 +166,7 @@ NASA's VSAT towers give 10 kW each on 5–10 m masts and stand on slopes up to 1
 | Backup: ridge, 3 towers | 93.0% | 4.8 days |
 | Primary: rim, 2 towers | 84.1% | 6.2 days |
 
-The ridge towers sit on ~2 km cables. The primary's towers need 7.7–8.8 km cables.
+The ridge towers sit on ~2 km cables. The primary's towers need 8.2–9.4 km cables.
 
 </div>
 <div class="tp-media" markdown="1">
@@ -190,7 +188,7 @@ Orbiters map hydrogen in the top metre by counting escaping neutrons. A neutron 
 
 NASA's LEND team found the enhancements "near and in areas of permanent shadow"<sup class="r">[12](#s12)</sup>. Open Moon mapped the dip from NASA's LEND data<sup class="r">[13](#s13)</sup>.
 
-The strongest hydrogen in the focus area lies away from the craters: **19.9 km** from the primary and **28.9 km** from the backup.
+The strongest hydrogen in the focus area lies away from the craters: **20.2 km** from the primary and **28.9 km** from the backup.
 
 </div>
 <div class="tp-media" markdown="1">
@@ -263,11 +261,12 @@ window.addEventListener('hashchange',open);open();})();
 
 | | **Primary: de Gerlache north rim** | **Backup: Connecting ridge** |
 |---|---|---|
-| Position | 88.445°S, 63.44°W | 89.559°S, 163.66°W |
-| Slope at site; landable within 1 km | 5.0°; 65% | 5.8°; 69% |
+| Position | 88.426°S, 63.30°W | 89.559°S, 163.66°W |
+| Slope at site; landable within 1 km | 2.1°; 60% | 6.1°; 69% |
+| Connected flat ground (≤8°); widest flat circle | 4.8 km²; 540 m | 9.7 km²; 450 m |
 | Solar towers (ESTIMATE) | 84.1% lit, longest dark 6.2 days | 93.0% lit, longest dark 4.8 days |
 | Nearest ice-candidate floor | 12.7 km (de Gerlache) | 5.2 km (Shackleton) |
-| Nearest high hydrogen | 19.9 km | 28.9 km |
+| Nearest high hydrogen | 20.2 km | 28.9 km |
 | On NASA's 2024 list | Yes (de Gerlache Rim 2) | No (2022 list only) |
 
 *Distances are straight lines.*
@@ -277,20 +276,19 @@ window.addEventListener('hashchange',open);open();})();
 **Pros**
 
 - Inside NASA's de Gerlache Rim 2, a region NASA screened for landing safety, light and Earth visibility<sup class="r">[3](#s3)</sup>.
-- Flat ground: 5.0° at the site, with a 1° spot for B3 0.8 km away.
+- Room to grow: the base is at the centre of 4.8 km² of connected ground at 8° or less, with a fully flat circle 540 m across. B3 stands 0.8 km away on the same patch.
 - The most hydrogen of the two sites, and an ice target with two independent hints.
 
 **Cons**
 
-- Less sun: 84.1% with blackouts of up to 6.2 days, and the base towers need 7.7–8.8 km cables.
+- Less sun: 84.1% with blackouts of up to 6.2 days, and the base towers need 8.2–9.4 km cables.
 - The ice floor is 12.7 km away, so the mine needs its own grid and stops for up to about 14 days at a time.
 - The cables to the mine cross a crater wall that is mostly steeper than 20°.
 - A young fault scarp is mapped in Rim 2<sup class="r">[7](#s7)</sup>.
 
-![LROC NAC maximum-pixel mosaic of the primary base site, 4 by 4 km]({{ '/assets/sites/primary-base-nac-max-4km.jpg' | relative_url }})
-![LROC NAC maximum-pixel mosaic, close-up of the primary base, 1.2 by 1.2 km]({{ '/assets/sites/primary-base-nac-max-1km.jpg' | relative_url }})
+{% include decision-note.html id="DD-020" %}
 
-*The primary base at 1 m per pixel, 4 km and 1.2 km across, from LROC's maximum-pixel mosaic, which shows each spot at its brightest so that most shadows are gone (credit NASA/GSFC/Arizona State University)<sup class="r">[20](#s20)</sup>.*
+<!--SUNLIT-->
 
 ### Backup: Connecting ridge by Shackleton
 
@@ -307,15 +305,3 @@ window.addEventListener('hashchange',open);open();})();
 - Shackleton's ice evidence is mixed.
 - China's Chang'e-7 targets the Shackleton area.
 - No detailed layout yet.
-
-## Status
-
-Site selection is complete. Year 0 is the first landers: prospectors go to both sites to confirm ice (M01), and site preparation begins (M05).
-
-*Open Moon is a plan for how we, as people, could build a self-sustaining Moon colony. It is hypothetical: a proposal, not a programme or organisation.*
-
-Design decisions behind this page:
-
-<ul class="ddlist">{% assign ids = "DD-010,DD-011,DD-012,DD-013,DD-014,DD-015,DD-016,DD-017,DD-018,DD-019" | split: "," %}{% for i in ids %}{% assign d = site.data.decisions | where: "id", i | first %}<li><a href="{{ '/decisions/' | relative_url }}#{{ i | downcase }}">{{ i }}</a> {{ d.title }}</li>{% endfor %}</ul>
-
-Analysis code and data notes are in `analysis/` in the repository.

@@ -12,8 +12,8 @@ section: plan
     <div class="note">{{ page.summary }}</div>
     {% if page.content_first %}<div class="prose">{{ content }}</div>{% endif %}
 
-    <div class="sec-h">Objective</div>
-    <div class="prose"><p>{{ page.objective }}</p></div>
+    {% if page.objective %}<div class="sec-h">Objective</div>
+    <div class="prose"><p>{{ page.objective }}</p></div>{% endif %}
 
     {% if page.exit_criteria %}
     <div class="sec-h">Exit criteria · what "done" means</div>

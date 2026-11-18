@@ -645,3 +645,21 @@
   tradeoffs:
     - "The Year 0 stage spans plan Years 0–2, so it is longer than any other roadmap stage."
     - "Open checks from site selection (boulder counts, NAC pad hazard maps, Earth-visibility hours) move into Year 0 work under M01, M03 and M05."
+
+- id: DD-020
+  date: "2026-11-18"
+  title: "Primary base moved to the centre of the flat patch by B3 (88.4262°S, 63.30°W)"
+  status: "Adopted; to be confirmed by M01 ground prospecting"
+  affects: [M00, M04, M05, C06.2, roadmap]
+  was: "Primary base at 88.445°S, 63.44°W (DD-015), on 5° ground at the edge of a flat patch, with a fully flat circle only about 160 m across. Base VSATs B1 7.7 km and B2 8.8 km away."
+  now: "Primary base at 88.4262°S, 63.30°W, 0.59 km from the old point, at the centre of the largest fully flat (≤8°) circle in the 4.8 km² flat patch around VSAT B3. Slope at the base about 2°; the flat circle is 543 m across. B1 is 8.2 km, B2 9.4 km and B3 0.84 km away; the de Gerlache ice floor is still 12.7 km away. The base grid's sunlight is unchanged (84.1%, longest dark 6.2 days, ESTIMATE)."
+  why: "The user's decision: put the base at the centre of the flat patch, with Open Moon setting the exact point. The patch is the largest connected area of landable ground near the base and gives the most room to grow: 4.8 km² connected, 3.8 km² of ground at 8° or less within 2 km and 10.1 km² within 5 km (Open Moon measurement from NASA LOLA LDSM, 10 m/px)."
+  timeline:
+    - date: "2023"
+      what: "NASA GSFC LOLA slope map (LDSM, 10 m/px) used to find the patch and its centre."
+      title: "NASA GSFC PGDA: A New View of the Lunar South Pole from LOLA (Barker et al. 2023)"
+      url: "https://pgda.gsfc.nasa.gov/products/90"
+  tradeoffs:
+    - "Base VSAT cables grow by about 0.6 km: B1 8.2 km and B2 9.4 km, still within the 10 km extended-run limit (DD-014) but closer to it."
+    - "B3 stands inside the same flat patch, 0.84 km from the base; landing pads must stay at least 500 m from it (M05 pad requirement) or B3 moves within the patch."
+    - "Boulders are not visible at 10 m/px; pads still need ~1 m hazard maps (M05)."
