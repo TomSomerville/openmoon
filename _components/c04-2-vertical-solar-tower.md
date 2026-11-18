@@ -34,13 +34,13 @@ subcomponents:
     trl: 5
   - name: Base and lander interface
     desc: "Holds the tower on rough ground and gets it off the lander."
-    parts: ["Tripod or sled base with levelling legs", "Launch locks", "Offload interface (self-propelled or towed cart)", "Ballast or ground anchors", "Cable connector for the source line to the BMS"]
+    parts: ["Tripod or sled base with levelling legs", "Launch locks", "Offload interface (self-propelled or towed cart)", "Ballast or ground anchors", "Cable connector for the source line to the PMC"]
     tech: "VSAT prototype bases; Astrobotic VOLT rover base"
     trl: 5
   - name: Power electronics and night survival
-    desc: "Conditions array power for the line to the BMS hub, follows BMS commands to curtail when storage is full, and keeps the tower alive in the dark."
-    parts: ["Maximum-power-point converters", "Line interface converter (UMIC class) to the BMS source line", "Curtailment control on BMS command", "Survival battery", "Heaters and thermostats", "Avionics and radio"]
-    tech: "NASA GRC UMIC; VSAT prototype avionics"
+    desc: "Conditions array power for the line to the power management controller (PMC), reduces or cuts output on PMC command when storage is full, and keeps the tower alive in the dark (DD-008)."
+    parts: ["Maximum-power-point converters", "Array regulator and shunt (sequential shunt unit heritage) to curtail output", "Disconnect contactor to isolate the tower", "Line interface converter (UMIC class) to the PMC source line", "Curtailment control on PMC command", "Survival battery", "Heaters and thermostats", "Avionics and radio"]
+    tech: "NASA GRC UMIC; ISS sequential shunt unit; VSAT prototype avionics"
     trl: 4
   - name: Dust protection
     desc: "Limits dust build-up on the cells, mechanisms and radiators."
@@ -69,13 +69,17 @@ sources:
   - {title: "Wikipedia: Peak of eternal light", url: "https://en.wikipedia.org/wiki/Peak_of_eternal_light", date: "2026"}
   - {title: "Csank & Scott, NASA GRC: Power and Energy for the Lunar Surface", url: "https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf", date: "Apr 2022"}
   - {title: "Wikipedia: Solar constant", url: "https://en.wikipedia.org/wiki/Solar_constant", date: "2026"}
+  - {title: "Button, NASA TM-104510: Development and testing of a source subsystem for the PMAD DC test bed (sequential shunt unit)", url: "https://ntrs.nasa.gov/api/citations/19910016888/downloads/19910016888.pdf", date: "Aug 1991"}
+  - {title: "Wikipedia: Electrical system of the International Space Station", url: "https://en.wikipedia.org/wiki/Electrical_system_of_the_International_Space_Station", date: "2026"}
 ---
 
 ## What it does
 
 {% include decision-note.html id="DD-004" extra="The plan first used two 10 kW VSATs and two 50 kW VSAT-XL towers. It now uses 10 kW VSATs only, with the number set by the Phase 1 load budget." %}
 
-At the south pole the Sun skims the horizon, so hills and crater rims cast very long shadows. A tall tower lifts its arrays out of those shadows and catches more hours of sun<sup class="r">[1](#s1)</sup>. On the Shackleton connecting ridge, the best point is lit 92% of the time at 2 m height and 96% at 10 m<sup class="r">[10](#s10)</sup>. Each tower turns that sunlight into 10 kW and sends it to the BMS, which routes it to the grid or to storage (design change DD-003). The towers can also be lowered and moved<sup class="r">[1](#s1)</sup>.
+At the south pole the Sun skims the horizon, so hills and crater rims cast very long shadows. A tall tower lifts its arrays out of those shadows and catches more hours of sun<sup class="r">[1](#s1)</sup>. On the Shackleton connecting ridge, the best point is lit 92% of the time at 2 m height and 96% at 10 m<sup class="r">[10](#s10)</sup>. Each tower turns that sunlight into 10 kW and sends it to the power management controller (PMC), which routes it to the grid or to storage (design changes DD-003 and DD-008).
+
+**Curtailment and disconnect (plan design, DD-008).** When demand is met and storage is full, the PMC tells each tower to reduce or cut its output. The tower's array regulator does this by shunting array strings, and a disconnect contactor can isolate the whole tower. This is ISS heritage: the station's sequential shunt unit shunts and unshunts array strings to hold the ~160 V DC primary bus<sup class="r">[14](#s14)</sup><sup class="r">[15](#s15)</sup>. The towers can also be lowered and moved<sup class="r">[1](#s1)</sup>.
 
 ## How it works
 
@@ -113,4 +117,4 @@ At the south pole the Sun skims the horizon, so hills and crater rims cast very 
 - Which ridge points give the least overlap in shadow time for the actual landing site?
 - How many towers does the Phase 1 load budget call for, and on which ridge points?
 - How fast do cells degrade from dust, radiation and thermal cycling over 10 years at the pole?
-- Each tower sends its power over a 3 kV AC, 1 kHz line (design change DD-001) to the BMS hub, which routes it to the grid or to storage (design change DD-003). Could Astrobotic's proposed high-voltage AC output<sup class="r">[3](#s3)</sup> feed that line more directly?
+- Each tower sends its power over a 3 kV AC, 1 kHz line (design change DD-001) to the PMC, which routes it to the grid or to storage (design changes DD-003 and DD-008). Could Astrobotic's proposed high-voltage AC output<sup class="r">[3](#s3)</sup> feed that line more directly?

@@ -19,7 +19,7 @@ cost_items:
   - {item: "Delivery of plant modules (~30 t)", low: 6.0, high: 18.0, basis: "30 t × $0.2–0.6M/kg (ESTIMATE)"}
   - {item: "Two more 20 kWe LR-1-class reactors (build)", low: 0.5, high: 1.5, basis: "ESTIMATE; repeat builds"}
   - {item: "Delivery of reactors (15–30 t)", low: 3.0, high: 18.0, basis: "2 × 7.5–15 t (DD-002) × $0.2–0.6M/kg"}
-  - {item: "BMS expansion and 2 × 160 kWh ride-through batteries (build + ~2 t delivery)", low: 0.84, high: 2.12, basis: "2 × ($0.02–0.06B hardware + ~1 t × $0.4–1.0M/kg) (DD-002, DD-003)"}
+  - {item: "PMC expansion and 2 × 160 kWh ride-through batteries (build + ~2 t delivery)", low: 0.84, high: 2.12, basis: "2 × ($0.02–0.06B hardware + ~1 t × $0.4–1.0M/kg) (DD-002, DD-003)"}
   - {item: "Cryogenic depot and transfer equipment (build + ~10 t delivery)", low: 2.5, high: 7.5, basis: "ESTIMATE"}
 exit_criteria:
   - "Sustained production of ≥300 t O₂ and ≥100 t water per year."
@@ -35,10 +35,10 @@ workstreams:
     items: ["Multiple cold-rated excavators", "Heated haul containers", "Purification"]
   - name: Power expansion
     desc: Grow the grid to ≥500 kW.
-    items: ["Two more 20 kWe LR-1-class reactors feeding the BMS (DD-002, DD-003)", "More solar towers", "Grid reinforcement"]
+    items: ["Two more 20 kWe LR-1-class reactors feeding the PMC (DD-002, DD-003, DD-008)", "More solar towers", "Grid reinforcement", "A service connection and 120 V DC panel for each new plant (DD-009)"]
   - name: Propellant depot
     desc: Store and transfer cryogenics.
-    items: ["Liquefaction and storage tanks", "Transfer lines at the pads", "Boil-off control"]
+    items: ["Liquefaction and storage tanks", "Transfer lines at the pads", "Boil-off control", "Own service connection and 120 V DC panel (DD-009)"]
 technologies:
   - {name: "Pilot plant results (M06)", use: "Basis for scale-up", status: "To be demonstrated", trl: 5, src: 1}
   - {name: "Cryogenic propellant transfer", use: "Refuelling landers", status: "Starship propellant transfer demo shown ~Q1 2027 on NASA HLS schedule", trl: 5, new: true, src: 2}
@@ -66,6 +66,6 @@ risks:
 
 1. **Freeze the plant design** from M06 measured data.
 2. **Deliver oxygen and water modules** in batches. Each batch increases output.
-3. **Expand power** with two more 20 kWe LR-1-class reactors and more solar towers, all feeding the BMS (≥500 kW in total, mostly solar).
+3. **Expand power** with two more 20 kWe LR-1-class reactors and more solar towers, all feeding the PMC (≥500 kW in total, mostly solar).
 4. **Build the depot** at the pads.
 5. **First surface refuelling** of a lander.

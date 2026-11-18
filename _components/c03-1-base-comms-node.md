@@ -43,8 +43,8 @@ subcomponents:
     tech: "NASA DSAC; LuGRE"
     trl: 6
   - name: Power, thermal and housing
-    desc: "Takes power from the base grid, rides through short outages on a battery, and keeps the electronics in a stable temperature range."
-    parts: ["Grid power converter (from M04 bus)", "~2.4 kWh Li-ion battery (ESTIMATE)", "Insulated electronics vault with radiator", "Survival heaters", "Mast base, leveling feet and regolith ballast"]
+    desc: "Takes power from the base grid through its own service connection (DD-009), rides through short outages on a battery, and keeps the electronics in a stable temperature range."
+    parts: ["Service connection to the M04 grid (UMIC-class to 120 V DC, meter, main breaker) and 120 V DC panel", "~2.4 kWh Li-ion battery (ESTIMATE)", "Insulated electronics vault with radiator", "Survival heaters", "Mast base, leveling feet and regolith ballast"]
     tech: "Standard spacecraft practice"
     trl: 7
 risks:

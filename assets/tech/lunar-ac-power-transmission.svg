@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
-<title>Hvdc Lunar Cable (concept)</title>
+<title>Lunar AC power cable (concept)</title>
 <defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(56,212,240,.07)" stroke-width="1"/></pattern>
 <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ffb020"/></marker></defs>
 <style>.l{fill:none;stroke:#38d4f0;stroke-width:2}.f{fill:rgba(56,212,240,.08);stroke:#38d4f0;stroke-width:2}.a{fill:none;stroke:#ffb020;stroke-width:2}.af{fill:#ffb020}.c{stroke:#ffb020;stroke-width:1.2;fill:none}text{fill:#d6e2ec;font-family:"Share Tech Mono",monospace;font-size:14px}.s{font-size:12px;fill:#8fa3b3}.h{font-size:20px;letter-spacing:2px}</style>

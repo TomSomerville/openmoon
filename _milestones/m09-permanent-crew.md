@@ -13,7 +13,7 @@ spec:
   - {k: "Crew size", v: "3 per landing"}
   - {k: Rotation, v: "New crew every 3 months; ~6.5-month tours; 2-week handover overlap"}
   - {k: "Crew landings", v: "4 arrivals and 4 departures a year (this plan's arithmetic)"}
-  - {k: Habitats, v: "3 standard 3-person modules, connected and buried before the first landing (M08, DD-007)"}
+  - {k: Habitats, v: "3 standard 3-person modules, connected and buried before the first landing, each with its own service connection and 120 V DC panel (M08, DD-007, DD-009)"}
   - {k: "Life support", v: "≥90% water recovery; local O₂"}
   - {k: Duration, v: "4 years of continuous presence"}
 cost: {low: 33.7, high: 111.5, note: "16 crew rotations and resupply over 4 years dominate"}
@@ -77,7 +77,7 @@ risks:
   - {sev: Critical, title: "Radiation: unshielded surface dose is ~0.5 Sv/yr, against a 600 mSv career limit", fix: "Habitats buried under ≥2 m before the first landing (M08); limit outdoor hours; storm shelter; cap each person's number of tours"}
   - {sev: Critical, title: "Four crewed landings and four departures a year is twice NASA's planned rate of one crewed landing every six months after Artemis V", fix: "Book two crew transport providers; allow a tour to stretch by up to one cycle (3 months) if a landing slips; never leave the base with fewer than 3"}
   - {sev: Critical, title: "Long stays at 1/6 g have never been measured in people; NASA analysis suggests less deconditioning than in zero g, but bone and muscle effects are unquantified", fix: "6.5-month tours; exercise; measure everyone; don't extend tours until data supports it"}
-  - {sev: High, title: "Each crew's lander must wait on the surface about 6.5 months, and up to three may be parked at once; no crewed lander has a published stay that long", fix: "Make lander surface life a transport requirement (M02); power and shade the parked landers; keep a rescue option"}
+  - {sev: High, title: "Each crew's lander must wait on the surface about 6.5 months, and up to three may be parked at once; no crewed lander has a published stay that long", fix: "Make lander surface life a transport requirement (M02); power and shade the parked landers, each from its own service connection on the grid (plan design, DD-009); keep a rescue option"}
   - {sev: High, title: "9 people for 2 weeks uses every bed and pushes life support to its peak", fix: "Size life support and the storm shelter for 9 (C08.2, C09.2); shorten the handover if a module is out of service"}
   - {sev: High, title: "Life support failure far from Earth", fix: "Two independent oxygen sources (electrolysis + regolith O₂ stock); 60+ days of reserves; spares on site"}
   - {sev: High, title: "Resupply landing failure", fix: "Hold 6 months of food and spares on site; two cargo providers; extra food on every crew landing"}

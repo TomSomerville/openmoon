@@ -14,6 +14,7 @@ spec:
   - {k: "Mass", v: "~15 t per module, PROVISIONAL placeholder from the MPH class"}
   - {k: "Life", v: "≥10 years on the surface (MPH reference)"}
   - {k: "Power draw", v: "20–50 kW for a 4-crew habitat (NASA GRC); base load for 6–9 people to be set in the load budget"}
+  - {k: "Power interface", v: "Own service connection to the grid (UMIC-class step-down to 120 V DC, meter, main breaker) and a 120 V DC panel; optional own inverter and AC subpanel (DD-009)"}
   - {k: "Delivery", v: "Heavy cargo lander, NET FY2033"}
 subcomponents:
   - name: Pressure shell and primary structure
@@ -41,10 +42,10 @@ subcomponents:
     parts: ["Internal water coolant loop", "External ammonia or similar loop", "Vertical radiators with dust covers", "Heaters for low-sun periods", "Thermal insulation and window shutters"]
     tech: "ISS active thermal control heritage"
     trl: 5
-  - name: Power interface
-    desc: "Connects the module to the M04 habitat microgrid, which the BMS supplies (DD-003), and keeps essential loads alive if the grid drops."
-    parts: ["UMIC converter from the 3 kV AC grid to the 120 V DC habitat bus", "Internal power distribution units", "Essential-load battery", "Cable connector at the umbilical box"]
-    tech: "M04 grid design; ISS power distribution heritage"
+  - name: Service connection and panels
+    desc: "Each module has its own service connection to the M04 grid, like a house, and its own panels. The grid delivers 120 V DC to the module; any AC the module needs comes from its own inverter. The module keeps essential loads alive if the grid drops, and can be isolated without affecting the other two modules (DD-009)."
+    parts: ["Service drop and cable connector at the umbilical box", "UMIC-class step-down and rectifier, 3 kV AC to 120 V DC", "Energy meter reporting to the PMC", "Main breaker or disconnect", "120 V DC panel and subpanels, a breaker per branch circuit (life support, lighting, galley, avionics, heaters)", "Optional module inverter and local AC subpanel (voltage chosen with the module design)", "Essential-load battery"]
+    tech: "NASA GRC UMIC (2023); Space Station Freedom 120 V DC secondary distribution; terrestrial service-entrance practice"
     trl: 5
 risks:
   - {sev: Critical, title: "No standard 3-person module exists; its design is to be defined later (DD-007)", fix: "Use the MPH class only as reference and its ~15 t only as a placeholder; freeze the design before Phase 1 deliveries; track an inflatable as a backup"}
@@ -54,7 +55,7 @@ risks:
   - {sev: High, title: "An unshielded module gives little protection from radiation", fix: "No crew until the modules are buried under ≥2 m of regolith (C09.1, DD-005)"}
   - {sev: Medium, title: "Wheels and suspension may fail while towing 15 t over rough ground", fix: "Prepared road from pad to habitat zone (M05); slow tow with two LTVs; jacks can level the module where it stops; side-by-side placement needs precise positioning"}
   - {sev: Medium, title: "Pressure shell leak from micrometeoroid hit or seal wear", fix: "Shielded shell, leak checks during the 3-month uncrewed run, patch kit, and nitrogen make-up reserves; neighbouring modules can be sealed off"}
-  - {sev: Medium, title: "Grid outage cuts heating and life support", fix: "Essential-load battery and load shedding; crew moves to an unaffected module or the lander if the outage exceeds battery time"}
+  - {sev: Medium, title: "Grid outage cuts heating and life support", fix: "Essential-load battery and load shedding on the module's own DC panel; a fault in one module trips only its own main breaker (DD-009); crew moves to an unaffected module or the lander if the outage exceeds battery time"}
 sources:
   - {title: "Thales Alenia Space: contract with ASI to develop lunar Multi-Purpose Habitation module", url: "https://www.thalesgroup.com/en/worldwide/space/press_release/thales-alenia-space-signs-contract-italian-space-agency-asi-develop", date: "Jul 2025"}
   - {title: "European Spaceflight: ASI awards new lunar habitat contract to Thales Alenia Space", url: "https://europeanspaceflight.com/asi-awards-new-lunar-habitat-contract-to-thales-alenia-space/", date: "Jul 2025"}
@@ -64,6 +65,9 @@ sources:
   - {title: "Gaier, NASA/TM-2005-213610: Effects of lunar dust on EVA systems during Apollo", url: "https://ntrs.nasa.gov/citations/20050160460", date: "2005"}
   - {title: "Zhang et al., Science Advances: radiation dose on the lunar surface (Chang'e-4)", url: "https://doi.org/10.1126/sciadv.aaz1334", date: "Sep 2020"}
   - {title: "TechCrunch: Sierra Space's inflatable habitat blows up as planned", url: "https://techcrunch.com/2024/01/22/successful-failure-sierra-spaces-inflatable-habitat-blows-up-as-planned", date: "Jan 2024"}
+  - {title: "Thomas et al., NASA GRC: A Modular AC to DC Interface Converter (UMIC) to Enable Lunar Surface Power Transmission", url: "https://ntrs.nasa.gov/citations/20230013309", date: "Sep 2023"}
+  - {title: "Button, NASA TM-104510: Development and testing of a source subsystem for the PMAD DC test bed (120 V DC secondary distribution)", url: "https://ntrs.nasa.gov/api/citations/19910016888/downloads/19910016888.pdf", date: "Aug 1991"}
+  - {title: "Wikipedia: Distribution board", url: "https://en.wikipedia.org/wiki/Distribution_board", date: "2026"}
 ---
 
 {% include decision-note.html id="DD-007" extra="This page used to describe one ~15 t MPH-class module for 4 crew on 14–30-day sorties. It now describes one standard 3-person module design, landed three times and connected. Specific figures from the MPH are reference values and placeholders only." %}
@@ -86,7 +90,18 @@ Open Moon uses the MPH as **heritage only**. Its ~15 t is used as a **provisiona
 - **Connect to its neighbours.** Hatches or tunnels between the three modules are a needed element. They are not yet designed.
 - **Be buried.** The modules sit under a support arch and regolith (C09.1). The regolith must never press on the module skin.
 - **Shed heat through pumped loops** to surface radiators, because the regolith cover is a near-perfect insulator (C09.1). At the pole the sun stays low, so radiators are mounted vertically and kept clean. Apollo showed why: dust on radiator surfaces made one instrument run about 68 °F hotter than expected<sup class="r">[6](#s6)</sup>.
-- **Take power from the grid.** NASA's Glenn team estimates a habitat for four crew on 30+ day stays draws **20–50 kW**<sup class="r">[4](#s4)</sup>. Each module plugs into the M04 habitat microgrid and has a battery for essential loads.
+- **Take power from the grid.** NASA's Glenn team estimates a habitat for four crew on 30+ day stays draws **20–50 kW**<sup class="r">[4](#s4)</sup>. Each module has its own service connection to the M04 grid and a battery for essential loads (see below).
+
+## Power: a service connection and panels for each module
+
+{% include decision-note.html id="DD-009" extra="The modules used to plug into a shared habitat microgrid. Each module now has its own service connection and its own panels, like a house." %}
+
+![Diagram: the 3 kV AC grid feeds three habitat modules and a water electrolysis plant, each through its own service connection: service drop, UMIC-class step-down and rectifier to 120 V DC, meter, main breaker, then a 120 V DC panel with branch circuits such as life support, lighting, galley, avionics and heaters; habitats have an optional unit inverter feeding a local AC subpanel; any one connection can be opened without affecting the others](/assets/tech/base-power-service-connection.svg)
+
+- **Service connection (plan design).** A service drop from the grid, a UMIC-class converter that steps 3 kV AC down to 120 V DC, a meter and a main breaker. NASA's UMIC was built to connect 120 V DC space equipment to the 3 kV AC grid<sup class="r">[9](#s9)</sup>.
+- **DC panel.** The main breaker feeds the module's 120 V DC panel. Like a house's distribution board<sup class="r">[11](#s11)</sup>, it has a breaker for each branch circuit: life support, lighting, galley, avionics, heaters and the rest (plan design). 120 V DC is the user voltage Space Station Freedom was designed to distribute<sup class="r">[10](#s10)</sup>.
+- **AC only if needed.** The grid does not deliver AC to the module. If the module design needs AC, it has its own inverter, fed from its DC panel, feeding a local AC subpanel. The module design chooses that inverter and its voltage (open).
+- **Each module stands alone.** The three modules have three independent connections. Any one can be switched off, or trip on a fault, without affecting the other two (plan design).
 
 ## Input to the load budget
 
@@ -114,4 +129,5 @@ Power sizing is not changed here. As an input to the Phase 1 load budget (DD-004
 - What is the module's size, mass and layout? (To be defined later.)
 - How are the three modules joined: direct hatches, short tunnels or a shared node?
 - How much radiation protection do the shell and stowage give? The surface dose measured by Chang'e-4 was about 1,369 µSv per day<sup class="r">[7](#s7)</sup>. NASA's OLTARIS tool could be run on the real geometry.
+- Does the module need AC at all, and if so at what voltage? Its own inverter would set it (DD-009).
 - Can the module and its connections take the shape change of a regolith arch over three modules side by side?

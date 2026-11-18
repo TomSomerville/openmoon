@@ -63,13 +63,13 @@
   cal: 2032
   label: ["Power Grid", "Complete"]
   headline: "A fission reactor comes online and the grid can ride out any darkness"
-  summary: "The base now has power day and night. A 20 kWe LR-1-class fission reactor sits about 1 km away behind terrain. It and the solar towers feed the base BMS, which routes power to the grid or into storage. Fuel-cell storage covers the gaps, and pads, roads and berms are finished. This completes Phase 0, site selection and preparation (design change DD-005)."
+  summary: "The base now has power day and night. A 20 kWe LR-1-class fission reactor sits about 1 km away behind terrain. It and the solar towers feed the base power management controller (PMC), which routes power to the grid or into storage. Fuel-cell storage covers the gaps, and pads, roads and berms are finished. This completes Phase 0, site selection and preparation (design change DD-005)."
   crew: 0
   power_kw: 140
   details:
-    - {title: "Fission power", text: "A 20 kWe LR-1-class reactor is landed on a heavy cargo lander, driven out and started remotely. It runs continuously regardless of sunlight and feeds the BMS, which sends its power to the grid or into storage (design changes DD-002 and DD-003).", refs: [M04, C04.1, kilopower-krusty-fission-test, us-lunar-reactor-1-sparc]}
-    - {title: "3 kV AC grid", text: "Three-phase 3 kV, 1 kHz links with transformers and UMIC converters, following NASA's grid baseline (design change DD-001).", refs: [M04, C04.4, lunar-ac-power-transmission]}
-    - {title: "Energy storage", text: "A Li-ion battery bank and regenerative fuel cells behind the BMS; the fuel cells share tanks with the water plant.", refs: [M04, C04.3, regenerative-fuel-cells]}
+    - {title: "Fission power", text: "A 20 kWe LR-1-class reactor is landed on a heavy cargo lander, driven out and started remotely. It runs continuously regardless of sunlight and feeds the PMC, which sends its power to the grid or into storage (design changes DD-002, DD-003 and DD-008).", refs: [M04, C04.1, kilopower-krusty-fission-test, us-lunar-reactor-1-sparc]}
+    - {title: "3 kV AC grid", text: "Three-phase 3 kV, 1 kHz links following NASA's grid baseline (design change DD-001). Like a national grid, it feeds every habitat module and facility through its own service connection, which delivers 120 V DC to that unit's panel (design change DD-009).", refs: [M04, C04.4, lunar-ac-power-transmission]}
+    - {title: "Energy storage", text: "A Li-ion battery bank and regenerative fuel cells behind the PMC; the fuel cells share tanks with the water plant.", refs: [M04, C04.3, regenerative-fuel-cells]}
     - {title: "Site preparation complete", text: "Two hardened pads, about 5 km of graded roads, ejecta berms and a shielding berm at the reactor.", refs: [M05, C05.1, C05.2, rassor-2-0]}
 - year: 7
   cal: 2033
@@ -92,7 +92,7 @@
   crew: 0
   power_kw: 140
   details:
-    - {title: "Three connected modules", text: "Three standard 3-person modules landed side by side and joined by hatches or tunnels: 9 beds, 6 for residents and 3 for handovers.", refs: [M08, C08.1]}
+    - {title: "Three connected modules", text: "Three standard 3-person modules landed side by side and joined by hatches or tunnels: 9 beds, 6 for residents and 3 for handovers. Each module has its own service connection to the grid and its own 120 V DC panel, so one can be switched off without the others (design change DD-009).", refs: [M08, C08.1, C04.4]}
     - {title: "Buried before crew", text: "At least 2 m of regolith everywhere and 3 m over the sleeping quarters, finished and dose-checked before the first landing, because the first crew stays for a 6.5-month tour.", refs: [M08, C09.1, regolith-radiation-shielding]}
     - {title: "Life support for 6, peaks of 9", text: "ISS-class water recovery, oxygen generation and CO₂ removal, run uncrewed for at least 3 months with simulated crew loads.", refs: [M08, C08.2, iss-water-recovery-with-brine-processor, four-bed-co-scrubber-4bco2, sabatier-reactor]}
     - {title: "Storm shelter and medical bay", text: "A water-walled shelter for all 9 people at a handover, and a clinic built around 5–12 s communication delays.", refs: [M08, C09.2, C09.3]}
@@ -120,7 +120,7 @@
   details:
     - {title: "Continuous presence proven", text: "Doses within career limits, at least 90% water recovery, and all breathing oxygen produced locally.", refs: [M09]}
     - {title: "Greenhouses arrive", text: "Buried, LED-lit growing modules start with ISS-proven greens, sized for the 6-person design crew.", refs: [M10, C10.1, nasa-veggie, nasa-advanced-plant-habitat]}
-    - {title: "More power for lighting", text: "About 46 kW for the greenhouses: three more 20 kWe reactors feeding the BMS.", refs: [M10, C10.1]}
+    - {title: "More power for lighting", text: "About 46 kW for the greenhouses: three more 20 kWe reactors feeding the PMC.", refs: [M10, C10.1]}
     - {title: "Colony phase begins", text: "Work starts on the self-sustaining colony: growth, local economy and governance.", refs: [M13]}
 - year: 15
   cal: 2041
@@ -144,13 +144,13 @@
   power_kw: 500
   details:
     - {title: "Industrial oxygen and water", text: "At least 300 t of oxygen and 100 t of water a year, sized from measured pilot-plant data.", refs: [M11, C06.1, C06.2]}
-    - {title: "Grid past 500 kW", text: "Two more 20 kWe reactors and more solar towers, all feeding the BMS.", refs: [M11, M04, C04.1]}
+    - {title: "Grid past 500 kW", text: "Two more 20 kWe reactors and more solar towers, all feeding the PMC.", refs: [M11, M04, C04.1]}
     - {title: "Propellant depot", text: "Cryogenic storage and transfer lines at the pads; the first lander refuelled with lunar oxygen.", refs: [M11, C11.1, cryogenic-propellant-transfer, in-orbit-lox-storage-demo-loxsat]}
 - year: 18
   cal: 2044
   label: ["Lunar", "Factory"]
   headline: "Building with the Moon itself"
-  summary: "Most new construction and half of all spare parts by mass are now made on site. Metals come from oxygen-plant by-products, regolith is printed and sintered into structures, and the first solar array made from lunar silicon feeds the BMS."
+  summary: "Most new construction and half of all spare parts by mass are now made on site. Metals come from oxygen-plant by-products, regolith is printed and sintered into structures, and the first solar array made from lunar silicon feeds the PMC."
   crew: 6
   crew_text: "6 (9 at handovers)"
   power_kw: 500

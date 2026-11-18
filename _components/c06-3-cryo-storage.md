@@ -12,6 +12,7 @@ spec:
   - {k: "Storage temperature", v: "LOX at about 90 K; water kept above 273 K"}
   - {k: "Cooling", v: "~150 W at 90 K (liquefaction plus tank heat leak, ESTIMATE)"}
   - {k: "Cryocooler input power", v: "~2–4 kW (ESTIMATE)"}
+  - {k: "Power interface", v: "Storage site and the water electrolysis (H₂/O₂) plant each have their own service connection to the M04 grid (UMIC-class step-down to 120 V DC, meter, main breaker) and their own 120 V DC panel (plan design, DD-009)"}
   - {k: "Boil-off target", v: "Zero with cooler on; ~8 kg per day if cooler off (ESTIMATE)"}
   - {k: "Mass", v: "Part of the ~2 t tanks, liquefier and electrolyser delivery (M06 ESTIMATE)"}
 subcomponents:
@@ -49,7 +50,7 @@ risks:
   - {sev: Critical, title: "Cryocooler failure lets LOX warm and vent", fix: "Two coolers with one spare; tank sized to ride through repair; vent recovery to the liquefier"}
   - {sev: High, title: "Zero boil-off of LOX has only been shown in a simulated-orbit vacuum chamber, not on a planetary surface", fix: "Ground test with a heated floor and sun simulator; measure heat leak on the Moon in the first month"}
   - {sev: High, title: "Heat leak from warm ground and sunlit surfaces (up to ~300 K on ridges) is higher than in orbit", fix: "Shade, standoffs and regolith berm; size coolers with 2× margin"}
-  - {sev: High, title: "Power outages during lunar night stop cooling", fix: "Coolers on the priority M04 bus; the tank's thermal mass gives hours to days of ride-through"}
+  - {sev: High, title: "Power outages during lunar night stop cooling", fix: "Keep the storage site's service connection high on the PMC's load-shedding list, so it is among the last opened (DD-009); the tank's thermal mass gives hours to days of ride-through"}
   - {sev: Medium, title: "Dust degrades insulation and radiators", fix: "Covered MLI outer layer; place radiators upwind of traffic; periodic inspection"}
   - {sev: Medium, title: "Water freezes and splits a tank after a heater fault", fix: "Redundant heaters; partially fill tanks; burial for thermal mass"}
   - {sev: Medium, title: "Liquid oxygen makes organic materials burn violently", fix: "Oxygen-clean parts only; no organics near tanks; keep-out zone"}

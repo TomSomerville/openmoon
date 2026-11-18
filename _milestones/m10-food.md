@@ -18,7 +18,7 @@ cost: {low: 9.7, high: 43.6, note: "greenhouse modules, lighting power, and rese
 cost_items:
   - {item: "Greenhouse modules (build), 3 modules", low: 0.4, high: 1.1, basis: "ESTIMATE; was $0.5–1.5B for 4 modules for 8 crew, scaled × 3/4 for 6 crew (DD-006)"}
   - {item: "Delivery of greenhouse modules (~13–16 t, heavy cargo)", low: 2.6, high: 9.6, basis: "13–16 t (C10.1 ESTIMATE for 6 crew; was 17–21 t for 8) × $0.2–0.6M/kg"}
-  - {item: "Extra ~60 kW for lighting: three more 20 kWe LR-1-class reactors feeding the BMS, each with 160 kWh of ride-through battery (DD-002, DD-003)", low: 6.51, high: 32.43, basis: "C10.1 sizing (~46 kW for 6 crew, still more than two units give, so three are kept; power not resized); build 3 × $0.25–0.75B ESTIMATE + delivery 3 × 7.5–15 t × $0.2–0.6M/kg + batteries 3 × (~1 t × $0.4–1.0M/kg + $0.02–0.06B hardware)"}
+  - {item: "Extra ~60 kW for lighting: three more 20 kWe LR-1-class reactors feeding the PMC, each with 160 kWh of ride-through battery (DD-002, DD-003, DD-008)", low: 6.51, high: 32.43, basis: "C10.1 sizing (~46 kW for 6 crew, still more than two units give, so three are kept; power not resized); build 3 × $0.25–0.75B ESTIMATE + delivery 3 × 7.5–15 t × $0.2–0.6M/kg + batteries 3 × (~1 t × $0.4–1.0M/kg + $0.02–0.06B hardware)"}
   - {item: "Crop research and ground analog", low: 0.2, high: 0.5, basis: "ESTIMATE"}
 exit_criteria:
   - "Fresh vegetables available to every crew member every week."
@@ -28,7 +28,7 @@ exit_criteria:
 workstreams:
   - name: Greenhouse modules
     desc: Buried, shielded growing space.
-    items: ["Pressurised modules under regolith", "LED lighting tuned per crop", "Separate atmosphere loop"]
+    items: ["Pressurised modules under regolith", "LED lighting tuned per crop", "Separate atmosphere loop", "Each module on its own service connection and 120 V DC panel (DD-009)"]
   - name: Crops
     desc: Start easy, then scale to staples.
     items: ["Lettuce, kale, mustard greens (proven on ISS)", "Peppers (grown on ISS 2021)", "Potatoes, wheat, soy for calories"]

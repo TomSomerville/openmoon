@@ -12,6 +12,7 @@ spec:
   - {k: "Oxygen plant", v: "Molten regolith electrolysis or carbothermal, ≥10 t O₂/yr"}
   - {k: "Water plant", v: "Excavate icy regolith in a PSR, heat, capture, purify; ≥10 t H₂O/yr"}
   - {k: "Power", v: "18 kW (NASA study efficiency) to ~120 kW (2024 demo efficiency) for 10 t/yr"}
+  - {k: "Power interface", v: "Each plant (oxygen, water extraction, water electrolysis, storage) has its own service connection to the M04 grid and its own 120 V DC panel (plan design, DD-009)"}
   - {k: "Storage", v: "Liquid oxygen and water tanks"}
 cost: {low: 3.8, high: 9.8, note: "two pilot plants plus storage; delivery is the largest part"}
 cost_items:
@@ -34,7 +35,7 @@ workstreams:
     items: ["Excavator rated for ~40 K", "Heating in a sealed chamber to release water", "Cold-trap capture and filtration"]
   - name: Water processing
     desc: Clean water and split it on demand.
-    items: ["Filtration and contaminant removal", "Electrolysis (ISS OGA heritage)", "Shared tanks with power storage (M04)"]
+    items: ["Filtration and contaminant removal", "Water electrolysis (H₂/O₂) plant (ISS OGA heritage), on its own service connection (DD-009)", "Shared tanks with power storage (M04)"]
   - name: Storage
     desc: Keep the products.
     items: ["Liquid oxygen tanks with cryocoolers", "Water tanks kept above freezing", "Boil-off measurement"]
@@ -97,11 +98,17 @@ None of the regolith processes has run on the Moon yet. That's why this is a **p
   - Demonstration reactors are small and lose most of their heat, so efficiency should improve with size. How much it improves is exactly what this pilot has to measure.
 - **Who it supports.** At 0.895 kg of O₂ per person per day (NASA BVAD, see M09), 10 t a year is enough to breathe for about **30 people**. Most of the oxygen will eventually go to propellant instead (M11).
 
+## Power: one service connection per plant
+
+{% include decision-note.html id="DD-009" extra="The ISRU plants used to share one ISRU microgrid. Each plant now has its own service connection and panel." %}
+
+Each plant connects to the M04 grid like a house: a service drop, a UMIC-class converter to 120 V DC, a meter, a main breaker and its own 120 V DC panel (plan design, see C04.4). That applies to the oxygen plant, the water-extraction plant, the water electrolysis (H₂/O₂) plant and the storage site. A fault in one plant trips only its own breaker, and the power system can shed one plant without touching the others.
+
 ## Step-by-step
 
 1. **Ground-qualify a full-size module** of each process on Earth, using simulant matched to the M01 soil data.
-2. **Land the oxygen plant** next to the M05 regolith stockpile and connect it to the grid.
-3. **Land the water plant** with a cold-rated excavator at the edge of the best PSR from M01.
+2. **Land the oxygen plant** next to the M05 regolith stockpile and connect it to the grid through its own service connection.
+3. **Land the water plant** with a cold-rated excavator at the edge of the best PSR from M01, with its own service connection.
 4. **Run continuously for six months.** Measure output, energy per kg and wear.
 5. **Store and use the products.** Liquefy and store oxygen; feed water into the M04 fuel-cell storage and keep a reserve for the crew.
 6. **Publish all the data** to size the full plants in M11.

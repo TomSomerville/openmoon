@@ -4,17 +4,17 @@ milestone: M04
 order: 4
 redirect_from: /plan/components/c04-4-hvdc-grid/
 title: 3 kV AC grid and cable-laying rover
-summary: "A 3 kV, 3-phase, 1 kHz AC grid, NASA's lunar baseline, that carries power from every source to the BMS hub, and from the BMS out to the habitat, oxygen plant and other loads. Transformers and modular converters connect 120 V DC equipment. A small rover lays the cable on the surface."
+summary: "A 3 kV, 3-phase, 1 kHz AC grid, NASA's lunar baseline, that carries power from every source to the power management controller (PMC), and from the PMC out to every unit like a national grid. Each habitat module and facility has its own service connection that delivers 120 V DC to its panel. A small rover lays the cable on the surface."
 trl: 4
 spec:
   - {k: "Trunk", v: "3 kV AC, 3-phase, 1 kHz (NASA baseline; design change DD-001)"}
-  - {k: "User voltage", v: "120 V DC microgrids (NASA space power standard)"}
+  - {k: "User voltage", v: "120 V DC at each unit's DC panel (NASA space power standard); AC only from a unit's own inverter (DD-009)"}
   - {k: "Interface converter", v: "UMIC: parallel 1 kW inverter modules plus line-frequency transformers"}
   - {k: "Link length", v: "1–3 km per link; ≥3 km laid in M04"}
   - {k: "Efficiency target", v: ">85% transmission system (UMIC target)"}
   - {k: "Mass target", v: "<0.55 kg/m transmission system (UMIC target)"}
   - {k: "Cable mass", v: "325 kg per 1 km main cable and spool (NASA 2025 reference)"}
-  - {k: "Microgrids", v: "2 (habitat, ISRU) plus source nodes"}
+  - {k: "Service connections", v: "One per unit: 3 habitat modules plus each facility (DD-009); no separate microgrids"}
   - {k: "Rover", v: "1 cable layer, ~1 km reel (~0.33 t) per trip"}
   - {k: "Fault location", v: "Time-domain reflectometry from each node"}
 subcomponents:
@@ -29,7 +29,7 @@ subcomponents:
     tech: "NASA UMIC design; NASA FSP 2025 reference (3 kVac step-up)"
     trl: 4
   - name: Universal Modular Interface Converters (UMIC)
-    desc: "Connect 120 V DC equipment and microgrids to the AC grid, in both directions."
+    desc: "Connect 120 V DC equipment to the AC grid, in both directions. A UMIC-class converter is the heart of every unit's service connection (DD-009)."
     parts: ["Standard 1 kW single-phase inverter modules in parallel", "DC switch modules for fault isolation and current limiting", "AC output filters and 3-phase relays", "Ethernet controller", "Housekeeping power module"]
     tech: "NASA GRC UMIC (STMD), 1 kW module bench-tested 2023"
     trl: 4
@@ -38,9 +38,14 @@ subcomponents:
     parts: ["High-voltage AC relays and breakers", "DC switch modules on the 120 V side", "Current limiting in inverters", "Insulation monitoring and grounding", "Surge protection"]
     tech: "UMIC relay and DC switch modules; terrestrial AC protection practice"
     trl: 4
-  - name: Microgrids and control
-    desc: "Runs habitat and ISRU as separate local grids that share power over the trunk. With no spinning machines, inverters must hold frequency and voltage themselves."
-    parts: ["120 V DC buses and power distribution units", "Droop control in every UMIC (shares load between parallel units)", "Regional grid controller (the BMS routing controller, C04.3)", "Priority load-shedding tables", "Earth link for remote operation"]
+  - name: Service connections
+    desc: "Each habitat module and facility connects to the grid like a house: its own service drop, step-down and rectifier to 120 V DC, meter and main breaker, feeding its own DC panel. Each can be isolated without affecting the others (DD-009)."
+    parts: ["Service drop (tap and short cable from the 3 kV AC grid)", "UMIC-class step-down and rectifier, 3 kV AC to 120 V DC", "Energy meter reporting to the PMC", "Main breaker or disconnect", "120 V DC panel and subpanels with a breaker per branch circuit", "Optional unit inverter and local AC subpanel, chosen by each unit"]
+    tech: "NASA GRC UMIC (2023); Space Station Freedom 120 V DC secondary distribution; terrestrial service-entrance practice"
+    trl: 4
+  - name: Grid control
+    desc: "With no spinning machines, inverters must hold frequency and voltage themselves. The PMC sets what each source supplies and which service connections stay closed."
+    parts: ["Droop control in every UMIC (shares load between parallel units)", "Grid controller (the PMC energy management function, C04.3)", "Priority load-shedding tables, by service connection", "Earth link for remote operation"]
     tech: "NASA UMIC droop control (simulated and bench tested, 2023)"
     trl: 4
   - name: Cable-laying rover
@@ -72,6 +77,9 @@ sources:
   - {title: "SatNews: Astrobotic's LunaGrid VSAT enters thermal vacuum testing (press)", url: "https://satnews.com/2024/07/20/astrobotics-lunagrids-vertical-solar-array-technology-vsat-enters-tvac/", date: "Jul 2024"}
   - {title: "Wikipedia: Time-domain reflectometer", url: "https://en.wikipedia.org/wiki/Time-domain_reflectometer", date: "2026"}
   - {title: "Wikipedia: Aluminium", url: "https://en.wikipedia.org/wiki/Aluminium", date: "2026"}
+  - {title: "Button, NASA TM-104510: Development and testing of a source subsystem for the PMAD DC test bed (160 V primary, 120 V secondary)", url: "https://ntrs.nasa.gov/api/citations/19910016888/downloads/19910016888.pdf", date: "Aug 1991"}
+  - {title: "Wikipedia: Service drop", url: "https://en.wikipedia.org/wiki/Service_drop", date: "2026"}
+  - {title: "Wikipedia: Distribution board", url: "https://en.wikipedia.org/wiki/Distribution_board", date: "2026"}
 ---
 
 {% include decision-note.html id="DD-001" extra="This component was first designed as a ±4 kV DC grid, following NASA Glenn's February 2022 transmission review. It was redesigned on 18 November 2026 to NASA's 3 kV AC, 1 kHz baseline." %}
@@ -80,19 +88,39 @@ sources:
 
 The grid moves power from where it is made to where it is used. NASA's reactor reference design places the user interface 1 km from the reactor<sup class="r">[3](#s3)</sup>, and the oxygen plant needs power over 3–5 km<sup class="r">[6](#s6)</sup>. NASA's baseline is two independent microgrids, one for the habitat and one for ISRU, each with its own sources, joined by a primary line so they can share power<sup class="r">[6](#s6)</sup>.
 
-**Every source goes through the BMS (design change DD-003).** Source lines from the reactor and the solar towers run to the BMS hub (C04.3), not straight to users. The BMS then sends power out over the grid to meet demand, or into storage. So the grid has two kinds of line: source lines into the BMS, and feeders from the BMS to the microgrids and loads. NASA's two-microgrid layout still applies on the output side, but in Open Moon both microgrids get their power from BMS feeders, not from sources of their own.
+**Every source goes through the PMC (design changes DD-003 and DD-008).** Source lines from the reactor and the solar towers run to the power management controller (PMC, C04.3), not straight to users. The PMC then sends power out over the grid to meet demand, or into storage. So the grid has two parts: source lines into the PMC, and the distribution grid from the PMC to every unit.
 
-{% include decision-note.html id="DD-003" extra="Sources no longer feed users directly over the trunk; every line from a source ends at the BMS hub." %}
+{% include decision-note.html id="DD-003" extra="Sources no longer feed users directly over the trunk; every line from a source ends at the PMC (called the BMS until DD-008)." %}
+
+**A national grid, and every unit a house (design change DD-009).** Open Moon does not build NASA's two separate microgrids. The distribution grid is one 3 kV AC network, like a national grid. Each habitat module and each facility has its own service connection to it, like a house<sup class="r">[12](#s12)</sup>.
+
+{% include decision-note.html id="DD-009" extra="This component first fed separate habitat and ISRU 120 V DC microgrids, following NASA's 2022 layout." %}
+
+## Service connections
+
+![Diagram: the 3 kV AC grid feeds three habitat modules and a water electrolysis plant, each through its own service connection: service drop, UMIC-class step-down and rectifier to 120 V DC, meter, main breaker, then a 120 V DC panel with branch circuits such as life support, lighting, galley, avionics and heaters; habitats have an optional unit inverter feeding a local AC subpanel; any one connection can be opened without affecting the others](/assets/tech/base-power-service-connection.svg)
+
+Each service connection has the same parts (plan design):
+1. **Service drop.** A tap on the 3 kV AC grid and a short cable to the unit.
+2. **Step-down and rectify.** A UMIC-class converter turns 3 kV AC into 120 V DC. NASA built the UMIC to connect 120 V DC space equipment to a 3 kV AC grid, with DC switch modules to isolate faults and a relay to disconnect the transformer<sup class="r">[2](#s2)</sup>.
+3. **Meter.** Measures what the unit draws and reports it to the PMC.
+4. **Main breaker.** Disconnects the whole unit.
+5. **DC panel.** A 120 V DC panel, and subpanels where needed, split the feed into branch circuits, each with its own breaker, like a distribution board<sup class="r">[13](#s13)</sup>. Space Station Freedom also converted its primary bus to 120 V DC for its users<sup class="r">[11](#s11)</sup>.
+6. **AC only if the unit needs it.** The grid does not supply AC to units. A unit that needs AC has its own inverter, fed from its DC panel, feeding a local AC subpanel for that unit only. Each unit chooses its own inverter and AC voltage.
+
+**Who has one.** Each of the 3 habitat modules (DD-007). Each facility: the regolith water-extraction plant, water electrolysis (H₂/O₂), the oxygen plant, life-support processing outside the habitats, comms nodes, rover chargers, greenhouses and the propellant depot.
+
+**Protection benefit.** Any service connection can be opened without affecting the others. A fault inside one unit trips its own main breaker, not the grid. When the PMC must shed load, it opens whole service connections, lowest priority first (plan design).
 
 ## Layout
 
-![Plan view, not to scale: 10 kW VSAT towers on two or three ridge points and an LR-1-class reactor 1–3 km away behind terrain each send a 3 kV AC source line to the BMS hub near the habitat zone; feeders run from the BMS to the habitat and ISRU 120 V DC microgrids; landing pads sit at least 1 km from the towers](/assets/tech/base-power-site-layout.svg)
+![Plan view, not to scale: 10 kW VSAT towers on two or three ridge points and an LR-1-class reactor 1–3 km away behind terrain each send a 3 kV AC source line to the PMC near the habitat zone; the 3 kV AC distribution grid runs from the PMC to a service connection at each habitat module and facility; landing pads sit at least 1 km from the towers](/assets/tech/base-power-site-layout.svg)
 
-![One-line diagram: source lines at 3 kV AC into BMS halves A and B with a cross-tie; battery strings on each half; fuel cells discharge only into the battery; 3 kV AC feeders through transformers and UMICs to the 120 V DC habitat and ISRU microgrids](/assets/tech/base-power-one-line.svg)
+![One-line diagram: source lines at 3 kV AC into PMC main switching units A and B with a cross-tie; battery strings on each unit through BCDUs; fuel cells discharge only into the battery; the 3 kV AC distribution grid feeds a service connection with a 120 V DC panel at each habitat module and facility](/assets/tech/base-power-one-line.svg)
 
-- **Source lines** run from each solar tower and from the reactor to the BMS hub, one line per source (plan design, DD-003).
-- **Feeders** run from the BMS hub to the habitat and ISRU microgrids. At each microgrid a transformer and UMIC convert 3 kV AC to 120 V DC<sup class="r">[2](#s2)</sup>.
-- **Distances.** The reactor sits 1–3 km from the habitat zone (plan design, DD-002); NASA's reference design uses a 1 km link<sup class="r">[3](#s3)</sup>. The ISRU feeder length depends on where the oxygen plant goes; NASA's estimate is 3–5 km<sup class="r">[6](#s6)</sup>.
+- **Source lines** run from each solar tower and from the reactor to the PMC, one line per source (plan design, DD-003).
+- **Distribution grid** runs from the PMC to every unit. At each unit's service connection a UMIC-class converter turns 3 kV AC into 120 V DC<sup class="r">[2](#s2)</sup> (plan design, DD-009).
+- **Distances.** The reactor sits 1–3 km from the habitat zone (plan design, DD-002); NASA's reference design uses a 1 km link<sup class="r">[3](#s3)</sup>. The grid's length to the ISRU plants depends on where the oxygen plant goes; NASA's estimate is 3–5 km<sup class="r">[6](#s6)</sup>.
 - **On the surface.** All lines lie on the surface, as NASA advises<sup class="r">[3](#s3)</sup>. They keep away from rover routes, with ramps at crossings (plan design).
 
 ## Why 3 kV AC at 1 kHz: NASA's reasoning
@@ -115,8 +143,8 @@ The same study says DC would be "significantly lighter than AC for voltages abov
 
 - **Transformers do the voltage change.** Each source's inverters make low-voltage AC, and a transformer raises it to 3 kV. At each user a transformer lowers it again<sup class="r">[2](#s2)</sup>. Transformers need no high-voltage semiconductor switches, which is the problem that rules out high-voltage DC<sup class="r">[1](#s1)</sup>.
 - **UMIC.** Built from parallel, standard 1 kW single-phase inverter modules converting between 120 V DC and under 100 V AC, then one or more transformers to 3 kV. DC switch modules isolate DC faults, a high-voltage relay can disconnect the transformer, and an Ethernet controller coordinates the modules<sup class="r">[2](#s2)</sup>. NASA's targets are over 85% transmission system efficiency and under 0.55 kg per metre<sup class="r">[2](#s2)</sup>.
-- **Control.** Parallel UMICs share load using droop control, adjusting frequency and voltage slightly with load, so no central controller is needed to balance them<sup class="r">[2](#s2)</sup>. A regional controller sends power to the highest-priority loads first, such as the crewed habitat<sup class="r">[6](#s6)</sup>.
-- **Reactor interface.** NASA's 2025 design couples the Brayton option's 3-phase alternators straight to the 3 kVac step-up transformer, at about 90% PMAD efficiency. The Stirling option needs an extra converter stage and reaches about 83%<sup class="r">[3](#s3)</sup>. In Open Moon the far end of that line is the BMS hub (C04.3), not a grid user (DD-003).
+- **Control.** Parallel UMICs share load using droop control, adjusting frequency and voltage slightly with load, so no central controller is needed to balance them<sup class="r">[2](#s2)</sup>. A regional controller sends power to the highest-priority loads first, such as the crewed habitat<sup class="r">[6](#s6)</sup>. In Open Moon that controller is the PMC, and it sheds load by opening service connections (DD-009).
+- **Reactor interface.** NASA's 2025 design couples the Brayton option's 3-phase alternators straight to the 3 kVac step-up transformer, at about 90% PMAD efficiency. The Stirling option needs an extra converter stage and reaches about 83%<sup class="r">[3](#s3)</sup>. In Open Moon the far end of that line is the PMC (C04.3), not a grid user (DD-003).
 - **Cable laying.** Astrobotic's LunaGrid-Lite pairs a 4U CubeRover with a robotic cable deployer. It is planned to carry 1 kW over 500 m<sup class="r">[7](#s7)</sup>. Earlier plans used 1 km at 1 kV and 1 kHz AC<sup class="r">[8](#s8)</sup>, the same frequency as NASA's grid.
 - **Lay it on the surface.** NASA's 2025 design keeps the cable on the surface, where it has a 180° view to space for shedding heat. It says "burying the cable is not advised due to the poor thermal conductivity of the regolith"<sup class="r">[3](#s3)</sup>.
 - **Fault location.** A time-domain reflectometer sends a pulse down the line and times the echo from any impedance change<sup class="r">[9](#s9)</sup>.
@@ -142,13 +170,14 @@ Insulation, jacket and spool, not metal, make up most of the cable mass. NASA's 
 
 1. **Cable samples.** Partial-discharge and breakdown tests in vacuum at −173 to +130 °C (the lunar range<sup class="r">[6](#s6)</sup>), with dust; then flex and abrasion. NASA's 2025 tests already showed no major losses from simulant, coiled or buried<sup class="r">[4](#s4)</sup>.
 2. **UMIC.** Scale from NASA's single 1 kW module<sup class="r">[2](#s2)</sup> to a multi-kilowatt unit with transformers. Run thermal-vacuum and radiation tests.
-3. **Hardware-in-the-loop microgrid.** Run several UMICs in parallel on simulated sources and loads. Inject load steps and faults and check stability and that only the faulted section trips.
+3. **Hardware-in-the-loop grid.** Run several UMICs in parallel on simulated sources and service connections. Inject load steps and faults and check stability and that only the faulted service connection trips.
 4. **Rover field trials.** Lay and recover 1 km of cable on simulant slopes. Measure tension, payout accuracy and how the cable lies on rough ground.
 5. **On the Moon.** Use LunaGrid-Lite's flight results<sup class="r">[7](#s7)</sup> to set the first route. Energise each link at low voltage first, then 3 kV. Record its TDR signature as a baseline.
 
 ## Open questions
 
 - How should surface cables be protected from rover traffic and micrometeoroids, given that NASA advises against burial<sup class="r">[3](#s3)</sup>?
-- How do many inverter-only sources share control, with the BMS hub setting how much each one supplies?
+- How do many inverter-only sources share control, with the PMC setting how much each one supplies?
+- How large should each service connection be? Each unit's rating waits for the Phase 1 load budget.
 - If radiation-hard high-voltage switches mature, would a DC upgrade be worth revisiting? (See DD-001.)
 - Can aluminium cable later be made on the Moon (M12)?

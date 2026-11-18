@@ -141,18 +141,18 @@ Definitions: [NASA TRL definitions](https://www.nasa.gov/wp-content/uploads/2017
 
 **Reasonable planning value for Open Moon.** We plan on **1 kWe per KRUSTY-class unit**, because that is the design KRUSTY actually represents. The 10 kWe version was never built or tested, so we do not count on it. One NASA Mars study ran a 10 kWe unit at 6.5 kWe (65%) ([Gibson 2017](https://ntrs.nasa.gov/citations/20170002010)). The 1 kWe figure is an Open Moon planning choice.
 
-## How Open Moon uses it: the reactor feeds the BMS
+## How Open Moon uses it: the reactor feeds the PMC
 
-{% include decision-note.html id="DD-003" extra="KRUSTY-class units are the plan's small-load reactor option (DD-002). Like every source, they feed the BMS." %}
+{% include decision-note.html id="DD-003" extra="KRUSTY-class units are the plan's small-load reactor option (DD-002). Like every source, they feed the power management controller (PMC; called the BMS until DD-008)." %}
 
-![Diagram: fission reactors and solar towers feed the BMS; the grid is fed by generation or by the battery, and the fuel cells recharge the battery; surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator](/assets/tech/base-power-bms-flow.svg)
+![Diagram: fission reactors and solar towers feed the power management controller (PMC); the PMC sends power to the grid, to the batteries through their BCDUs, or to excess-power handling; the grid is fed by generation or by the battery, and the fuel cells recharge the battery; with storage full, solar is curtailed by each tower's shunt regulator and reactor surplus goes to its parasitic load radiator](/assets/tech/base-power-pmc-flow.svg)
 
-In Open Moon every source, including the reactor, sends its power to the **BMS**. The BMS decides whether that power goes to the grid to meet demand, into storage, or some of each. When generation falls short, the battery feeds the grid ([design change DD-003](/decisions/#dd-003)).
+In Open Moon every source, including the reactor, sends its power to the **power management controller (PMC)**. The PMC decides whether that power goes to the grid to meet demand, to the batteries to charge, or to excess-power handling, or some of each. When generation falls short, the battery feeds the grid ([design changes DD-003 and DD-008](/decisions/#dd-008)). The grid then feeds every habitat module and facility through its own service connection ([DD-009](/decisions/#dd-009)).
 
 1. **Reactor.** A KRUSTY-class unit runs at a steady output. That suits a Stirling reactor, which holds its temperature best at a steady heat draw.
-2. **BMS.** Takes the controllers' output and routes it: first to the grid for demand, then to charge the battery, then to the fuel-cell electrolyser.
-3. **Storage.** The Li-ion battery and regenerative fuel cells behind the BMS cover peaks and any reactor outage.
-4. **Outputs.** The grid and its loads.
+2. **PMC.** Takes the controllers' output and routes it: first to the grid for demand, then to charge the battery, then to the fuel-cell electrolyser.
+3. **Storage.** The Li-ion battery and regenerative fuel cells behind the PMC cover peaks and any reactor outage.
+4. **Outputs.** The grid, and each unit's service connection and 120 V DC panel.
 
 When demand is met and storage is full, the reactor's surplus goes to a dump load. NASA's lunar Stirling design does this already: the controllers dump unused power into a resistor bank or radiator ([Oleson et al. 2022](https://ntrs.nasa.gov/citations/20220004670)).
 
@@ -166,4 +166,4 @@ When demand is met and storage is full, the reactor's surplus goes to a dump loa
 - **Low electrical output in the test.** Only two small engines made about 180 We. A full 1 kWe system was never run on nuclear heat ([Gibson et al. 2018](https://ntrs.nasa.gov/citations/20180005435)).
 - **Heat pipes in low gravity.** The test heat pipes partly worked as thermosiphons in Earth gravity and struggled at startup. Flight heat pipes must be qualified for low gravity ([Poston et al. 2020](https://ntrs.nasa.gov/citations/20205009351)).
 - **Highly enriched fuel.** KRUSTY used 93% uranium-235 ([Wikipedia](https://en.wikipedia.org/wiki/Kilopower)). NASA's current lunar requirement specifies HALEU fuel ([NASA SPARC Industry Day](https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download)), so a KRUSTY-class unit as tested would not meet it.
-- **Everything goes through the BMS.** Every watt passes through the BMS, so it is split into two independent halves with a cross-tie, and the battery into several strings (see C04.3).
+- **Everything goes through the PMC.** Every watt passes through the PMC, so it has two independent main switching units (A and B) with a cross-tie, and the battery is split into several strings (see C04.3).

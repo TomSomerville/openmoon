@@ -27,7 +27,7 @@ cost_items:
   - {item: "Spacesuits, EVA tools, airlock/dust lock", low: 0.3, high: 0.8, basis: "ESTIMATE"}
   - {item: "Mission operations for the uncrewed build and checkout", low: 0.3, high: 1.0, basis: "ESTIMATE"}
 exit_criteria:
-  - "Three habitat modules landed, connected to each other with sealed hatches or tunnels, and powered from the M04 grid."
+  - "Three habitat modules landed, connected to each other with sealed hatches or tunnels, and each powered from the M04 grid through its own service connection and 120 V DC panel; switching any one off leaves the other two powered (DD-009)."
   - "Regolith cover of at least 2 m everywhere and 3 m over the sleeping quarters complete, and its dose checked with area monitors, before the first crew lands."
   - "Life support running uncrewed for at least 3 months with simulated loads for 6 people, and for 9 people for at least 2 weeks of that."
   - "Storm shelter filled and checked for 9 people; medical bay and exercise equipment installed and tested remotely."
@@ -35,7 +35,7 @@ exit_criteria:
 workstreams:
   - name: Habitat modules
     desc: One standard module design, built three times (DD-007).
-    items: ["Standard 3-person module, design to be defined later", "Delivered on heavy cargo landers (~15 t each, provisional)", "Landed and placed side by side in the habitat zone", "Connecting hatches or tunnels between modules (needed, not yet designed)"]
+    items: ["Standard 3-person module, design to be defined later", "Delivered on heavy cargo landers (~15 t each, provisional)", "Landed and placed side by side in the habitat zone", "Connecting hatches or tunnels between modules (needed, not yet designed)", "One service connection and 120 V DC panel per module (DD-009)"]
   - name: Shielding
     desc: Bury the modules before people arrive (C09.1).
     items: ["Support arch over the three modules", "≥2 m regolith, 3 m over sleeping quarters", "Radiators and pumped loops installed before burial", "Dose checks with area monitors"]
@@ -116,7 +116,7 @@ There are no short visits any more. The first crew lands and stays for a tour of
 ## Step-by-step
 
 1. **Land three habitat modules** on heavy landers at the pads (M05), one at a time.
-2. **Place them side by side.** LTVs and robots move them into the habitat zone, where they are connected to each other and to the habitat microgrid (M04).
+2. **Place them side by side.** LTVs and robots move them into the habitat zone, where they are connected to each other. Each module gets its own service connection to the M04 grid: a service drop, a UMIC-class converter to 120 V DC, a meter and a main breaker feeding its DC panel (C08.1, design change DD-009).
 3. **Install radiators and pumped loops,** then build the support arch.
 4. **Bury the modules** with the M05 excavators: ≥2 m everywhere, 3 m over the sleeping quarters (C09.1).
 5. **Fit out the crew systems:** storm shelter for 9 (C09.2), medical bay (C09.3), dust lock and suits (C08.3, C08.4).

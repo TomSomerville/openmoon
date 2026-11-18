@@ -4,16 +4,17 @@ order: 4
 title: Surface power grid
 phase: 0
 window: "2028–2032"
-summary: Build a hybrid power system of tall solar towers on the sunlit ridges, a fission reactor for darkness, energy storage and high-voltage cables, all routed through one BMS that sends power to the grid or to storage, sized to run the oxygen plant and the first habitat.
-objective: "Deliver solar peak power from NASA-class 10 kW VSAT towers, sized by the Phase 1 load budget (provisionally 100 kW; design change DD-004), and at least 20 kWe of continuous fission power from an LR-1-class reactor (design change DD-002), with every source feeding a BMS that routes power to the grid, to storage, or both (design change DD-003), connected by a 3 kV AC, 1 kHz grid (NASA's lunar grid baseline; design change DD-001), so the base never loses essential power, even during the longest polar darkness."
+summary: Build a hybrid power system of tall solar towers on the sunlit ridges, a fission reactor for darkness, energy storage and high-voltage cables, all routed through one power management controller (PMC) that sends power to the grid or to storage. Every habitat module and facility takes its power from the grid through its own service connection. Sized to run the oxygen plant and the first habitat.
+objective: "Deliver solar peak power from NASA-class 10 kW VSAT towers, sized by the Phase 1 load budget (provisionally 100 kW; design change DD-004), and at least 20 kWe of continuous fission power from an LR-1-class reactor (design change DD-002), with every source feeding a power management controller (PMC) that routes power to the grid, to storage, or both (design changes DD-003 and DD-008), connected by a 3 kV AC, 1 kHz grid (NASA's lunar grid baseline; design change DD-001) that feeds every unit through its own service connection (design change DD-009), so the base never loses essential power, even during the longest polar darkness."
 trl_min: 5
 depends_on: [M00, M02, M03]
 spec:
   - {k: "Solar", v: "N × 10 kW VSAT towers, N set by the Phase 1 load budget (provisional 10 = 100 kW) (DD-004)"}
   - {k: "Fission", v: "1 × LR-1-class reactor, 20 kWe (7.5–15 t) (DD-002)"}
-  - {k: "BMS", v: "Central power routing hub, two halves (A/B); all sources in, grid and storage out (DD-003)"}
-  - {k: "Storage", v: "~260 kWh Li-ion bank (160 kWh reactor ride-through + 100 kWh peaks) + regenerative fuel cells, ~3 MWh"}
+  - {k: "PMC", v: "Power management controller: main switching units A/B with a cross-tie; all sources in, grid and storage out (DD-003, DD-008)"}
+  - {k: "Storage", v: "~260 kWh Li-ion bank (160 kWh reactor ride-through + 100 kWh peaks), each string on a BCDU with its own BMS (DD-008) + regenerative fuel cells, ~3 MWh"}
   - {k: "Grid", v: "3 kV AC, 3-phase, 1 kHz; 1–3 km links (NASA baseline, DD-001)"}
+  - {k: "Service connections", v: "One per unit (3 habitat modules + each facility): UMIC-class step-down to 120 V DC, meter, main breaker, DC panel (DD-009)"}
   - {k: "Load at end", v: "Oxygen pilot plant ~26 kW + habitat 20–50 kW"}
 cost: {low: 9.8, high: 29.8, note: "about 85% of this is delivery cost; see the analysis below"}
 cost_items:
@@ -23,18 +24,19 @@ cost_items:
   - {item: "Delivery of 8 more VSATs (~8 t, medium landers)", low: 3.2, high: 8.0, basis: "8 × ~1 t (C04.2 ESTIMATE) × $0.4–1.0M/kg"}
   - {item: "20 kWe LR-1-class fission unit (develop, build, qualify)", low: 1.0, high: 3.0, basis: "ESTIMATE; Congress gave $250M for Fission Surface Power in FY2026 alone [src 16]"}
   - {item: "Delivery of fission unit (7.5–15 t, heavy lander)", low: 1.5, high: 9.0, basis: "No LR-1 design yet: 7.5 t (NASA 2025 40 kWe Brayton reference [src 26]) to 15 t (LR-1 mass cap [src 25]) × $0.2–0.6M/kg"}
-  - {item: "BMS hub (two halves) and 160 kWh reactor ride-through battery strings (hardware)", low: 0.02, high: 0.06, basis: "ESTIMATE; DD-002 and DD-003 sizing (8 h × 20 kWe)"}
-  - {item: "Delivery of BMS hub and ride-through battery (~1 t, medium lander)", low: 0.4, high: 1.0, basis: "160 kWh ÷ 160 Wh/kg [src 1] ≈ 1 t × $0.4–1.0M/kg"}
+  - {item: "PMC (main switching units A/B), BCDUs and 160 kWh reactor ride-through battery strings (hardware)", low: 0.02, high: 0.06, basis: "ESTIMATE; DD-002 and DD-003 sizing (8 h × 20 kWe)"}
+  - {item: "Delivery of PMC and ride-through battery (~1 t, medium lander)", low: 0.4, high: 1.0, basis: "160 kWh ÷ 160 Wh/kg [src 1] ≈ 1 t × $0.4–1.0M/kg"}
   - {item: "Regenerative fuel cell storage, ~3 MWh (hardware)", low: 0.05, high: 0.15, basis: "ESTIMATE"}
   - {item: "Delivery of storage (~3 t, medium lander)", low: 1.2, high: 3.0, basis: "3 MWh ÷ ~500 Wh/kg ≈ 6 t at cell level; ~3 t assumes partial reuse of ISRU tanks (ESTIMATE) × $0.4–1.0M/kg"}
-  - {item: "Cables, converters, switchgear (hardware)", low: 0.05, high: 0.15, basis: "ESTIMATE"}
-  - {item: "Delivery of grid hardware (~2 t: ~5 km of 3 kVac cable on spools, transformers, UMIC converters, switchgear)", low: 0.8, high: 2.0, basis: "NASA 2025 reference: 325 kg per 1 km main cable and spool [src 21]; UMIC target <0.55 kg/m [src 22]; rest ESTIMATE; × $0.4–1.0M/kg"}
+  - {item: "Cables, converters, switchgear, service connections (hardware)", low: 0.05, high: 0.15, basis: "ESTIMATE"}
+  - {item: "Delivery of grid hardware (~2 t: ~5 km of 3 kVac cable on spools, transformers, UMIC-class service converters, switchgear)", low: 0.8, high: 2.0, basis: "NASA 2025 reference: 325 kg per 1 km main cable and spool [src 21]; UMIC target <0.55 kg/m [src 22]; rest ESTIMATE; × $0.4–1.0M/kg"}
   - {item: "Integration, testing, operations", low: 0.1, high: 0.3, basis: "ESTIMATE"}
 exit_criteria:
   - "Solar peak power installed to the level set by the Phase 1 load budget (provisionally 100 kW of 10 kW VSATs), on at least two separate ridge points."
-  - "Fission unit delivering at least 20 kWe continuously to the BMS for six months (DD-002)."
-  - "All generated power reaches loads and storage through the BMS; it meets demand, charges storage with surplus, and feeds the grid from the battery when short, with no power dip on essential loads (DD-003)."
-  - "With storage full, surplus solar is curtailed and surplus reactor power goes to its parasitic load radiator, with no fault."
+  - "Fission unit delivering at least 20 kWe continuously to the PMC for six months (DD-002)."
+  - "All generated power reaches loads and storage through the PMC; it meets demand, charges storage with surplus, and feeds the grid from the battery when short, with no power dip on essential loads (DD-003)."
+  - "With storage full, surplus solar is curtailed by each VSAT's array regulator and shunt on PMC command, and surplus reactor power goes to its parasitic load radiator, with no fault."
+  - "Every habitat module and facility is powered through its own service connection, and opening any one main breaker leaves all the others powered (DD-009)."
   - "Essential loads (comms, heaters, life support standby) never lose power across the longest darkness period recorded at the site."
   - "Grid survives loss of any single power source without dropping essential loads."
   - "Cable-laying rover has laid at least 3 km of cable."
@@ -44,26 +46,26 @@ workstreams:
     items: ["10 kW VSAT, ~10 m mast (the only tower type, DD-004)", "Number set by the Phase 1 load budget", "Spread across 2–3 ridge points"]
   - name: Fission power
     desc: Continuous power regardless of sunlight.
-    items: ["LR-1-class 20 kWe unit (HALEU, closed Brayton, 3 kV AC); KRUSTY-class 1 kWe units for small remote loads", "Placed 1–3 km away, behind terrain", "Remote start after landing", "Feeds the BMS, which routes its power to the grid or storage (DD-003)"]
+    items: ["LR-1-class 20 kWe unit (HALEU, closed Brayton, 3 kV AC); KRUSTY-class 1 kWe units for small remote loads", "Placed 1–3 km away, behind terrain", "Remote start after landing", "Feeds the PMC, which routes its power to the grid or storage (DD-003, DD-008)", "Excess power to its parasitic load radiator (PLR)"]
   - name: Storage
     desc: Ride through solar gaps and peaks.
-    items: ["Li-ion battery bank behind the BMS: 160 kWh per 20 kWe reactor plus ~100 kWh for peaks, in several strings", "Regenerative fuel cells (320–650 Wh/kg), charged by BMS surplus", "Shares water and gas tanks with ISRU"]
+    items: ["Li-ion battery bank behind the PMC: 160 kWh per 20 kWe reactor plus ~100 kWh for peaks, in several strings", "Each string on its own battery charge/discharge unit (BCDU), with its own BMS for cell management (DD-008)", "Regenerative fuel cells (320–650 Wh/kg), charged by PMC surplus", "Shares water and gas tanks with ISRU"]
   - name: Grid and cables
     desc: Move power between sources and users.
-    items: ["3 kV AC, 3-phase, 1 kHz aluminium cable", "Transformers plus UMIC converters at each source and user", "Separate 120 V DC habitat and ISRU microgrids"]
+    items: ["3 kV AC, 3-phase, 1 kHz aluminium cable", "Step-up transformers at each source", "One service connection per unit: UMIC-class step-down to 120 V DC, meter, main breaker, DC panel (DD-009)", "No separate habitat or ISRU microgrids (DD-009)"]
   - name: Cable laying
     desc: Robots lay cable on the surface.
     items: ["LunaGrid-Lite-style rover reels out cable", "Cable left on the surface to shed heat (NASA advises against burial); ramps at rover crossings", "Fault location by time-domain reflectometry"]
-  - name: BMS and control
-    desc: "Every source feeds the BMS, which routes power to the grid, to storage, or both (DD-003)."
-    items: ["Two independent BMS halves (A/B) with a cross-tie", "Routing: demand first, then battery, then fuel-cell electrolyser; curtail or dump only when storage is full", "Priority load shedding", "Remote operation from Earth", "Fault isolation"]
+  - name: PMC and control
+    desc: "Every source feeds the power management controller (PMC), which routes power to the grid, to storage, or both (DD-003, DD-008)."
+    items: ["Two independent PMC main switching units (A/B) with a cross-tie", "Microgrid controller / energy management function (IEEE 2030.7 terms)", "Solar curtailment by each VSAT's array regulator and shunt; a disconnect contactor per tower", "Routing: demand first, then battery, then fuel-cell electrolyser; curtail or dump only when storage is full", "Priority load shedding", "Remote operation from Earth", "Fault isolation"]
 technologies:
-  - {name: "Kilopower / KRUSTY (1–10 kWe Stirling reactor)", use: "Small reactor (plan value 1 kWe) feeding the BMS", status: "KRUSTY ground test 2018: 28 h at full power, reactor rated TRL 5. No flight unit built", trl: 5, src: 5}
-  - {name: "US Lunar Reactor-1 (20 kWe Brayton reactor)", use: "Main base reactor (plan value 20 kWe) feeding the BMS", status: "Draft SPARC solicitation Aug 2026: ≥20 kWe at 3 kV AC, ≥5 yr, HALEU, closed Brayton, <15 t. No award yet", trl: 4, src: 25}
-  - {name: "Vertical Solar Array Technology (VSAT)", use: "10 kW-class solar towers feeding the BMS", status: "Three NASA prototype contracts (2022); deploy to ~10 m", trl: 6, src: 4}
+  - {name: "Kilopower / KRUSTY (1–10 kWe Stirling reactor)", use: "Small reactor (plan value 1 kWe) feeding the PMC", status: "KRUSTY ground test 2018: 28 h at full power, reactor rated TRL 5. No flight unit built", trl: 5, src: 5}
+  - {name: "US Lunar Reactor-1 (20 kWe Brayton reactor)", use: "Main base reactor (plan value 20 kWe) feeding the PMC", status: "Draft SPARC solicitation Aug 2026: ≥20 kWe at 3 kV AC, ≥5 yr, HALEU, closed Brayton, <15 t. No award yet", trl: 4, src: 25}
+  - {name: "Vertical Solar Array Technology (VSAT)", use: "10 kW-class solar towers feeding the PMC", status: "Three NASA prototype contracts (2022); deploy to ~10 m", trl: 6, src: 4}
   - {name: "Astrobotic LunaGrid-Lite", use: "Cable-laying rover and power transfer", status: "1 kW; ~500 m of cable in the 2025 design (1 km in earlier plans); passed CDR Aug 2025", trl: 6, src: 8}
-  - {name: "Regenerative fuel cells", use: "Long-gap storage behind the BMS; recharges the battery", status: "NASA Glenn breadboard ran 550+ hours of simulated lunar cycles (open-loop)", trl: 5, new: true, src: 9}
-  - {name: "Lunar AC power transmission (3 kVac, 1 kHz)", use: "Source lines into the BMS hub and feeders to the microgrids", status: "NASA lunar grid baseline since 2022; UMIC 1 kW module bench-tested (2023); AC cable tested in vacuum with regolith simulant (2025)", trl: 4, src: 23}
+  - {name: "Regenerative fuel cells", use: "Long-gap storage behind the PMC; recharges the battery", status: "NASA Glenn breadboard ran 550+ hours of simulated lunar cycles (open-loop)", trl: 5, new: true, src: 9}
+  - {name: "Lunar AC power transmission (3 kVac, 1 kHz)", use: "Source lines into the PMC and the distribution grid to every service connection", status: "NASA lunar grid baseline since 2022; UMIC 1 kW module bench-tested (2023); AC cable tested in vacuum with regolith simulant (2025)", trl: 4, src: 23}
 sources:
   - {title: "Csank & Scott, NASA GRC: Power and Energy for the Lunar Surface", url: "https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf", date: "Apr 2022"}
   - {title: "NASA NTRS 20220002315: Lunar power transmission for fission surface power", url: "https://ntrs.nasa.gov/api/citations/20220002315/downloads/Lunar_power_transmission_concepts_FINAL.pdf", date: "2022"}
@@ -91,10 +93,16 @@ sources:
   - {title: "Klopp, Thomas & Csank, NASA GRC: An Experimental Study of Losses in High Voltage AC Lunar Power Cables (SciTech 2026)", url: "https://ntrs.nasa.gov/citations/20250011012", date: "Dec 2025"}
   - {title: "NASA Glenn: SPARC Industry Day presentation (Lunar Reactor-1 requirements)", url: "https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download", date: "Sep 2026"}
   - {title: "INL/NASA: Fission Surface Power Technical Maturation Webinar (2025 reference design: masses, 8 h start-up)", url: "https://inl.gov/content/uploads/2024/11/FSP-Technical-Maturation-Webinar-Final-250924-1.pdf", date: "Sep 2025"}
+  - {title: "Button, NASA TM-104510: Development and testing of a source subsystem for the PMAD DC test bed (SSU, BCDU, DCSU; 160 V primary, 120 V secondary)", url: "https://ntrs.nasa.gov/api/citations/19910016888/downloads/19910016888.pdf", date: "Aug 1991"}
+  - {title: "Wikipedia: Electrical system of the International Space Station", url: "https://en.wikipedia.org/wiki/Electrical_system_of_the_International_Space_Station", date: "2026"}
+  - {title: "IEEE 2030.7: Standard for the Specification of Microgrid Controllers", url: "https://standards.ieee.org/ieee/2030.7/5941/", date: "2017"}
+  - {title: "Wikipedia: Service drop", url: "https://en.wikipedia.org/wiki/Service_drop", date: "2026"}
+  - {title: "Wikipedia: Distribution board", url: "https://en.wikipedia.org/wiki/Distribution_board", date: "2026"}
 risks:
   - {sev: Critical, title: "Darkness: even the best ridges have shadow periods; NASA cites up to ~100 h at the pole, and 354 h is the design night for the US reactor", fix: "Fission base load + solar on multiple ridge points + storage; never rely on one source"}
-  - {sev: Critical, title: "The US lunar reactor's requirements keep changing (40 → 100 → 20 kWe) and no contract has been awarded", fix: "Plan on the LR-1 minimum of 20 kWe (DD-002); size the BMS so a larger unit can be added; solar-only fallback with more storage"}
-  - {sev: Critical, title: "Every watt passes through the BMS (DD-003), so a BMS fault could cut every source off from every load", fix: "Two independent BMS halves (A/B), each able to carry the essential loads, with a cross-tie; battery in several strings; every source and feeder can be switched to either half; ground-test failover before flight"}
+  - {sev: Critical, title: "The US lunar reactor's requirements keep changing (40 → 100 → 20 kWe) and no contract has been awarded", fix: "Plan on the LR-1 minimum of 20 kWe (DD-002); size the PMC so a larger unit can be added; solar-only fallback with more storage"}
+  - {sev: Critical, title: "Every watt passes through the PMC (DD-003, DD-008), so a PMC fault could cut every source off from every load", fix: "Two independent PMC main switching units (A/B), each able to carry the essential loads, with a cross-tie; battery in several strings; every source and grid output can be switched to either unit; ground-test failover before flight"}
+  - {sev: High, title: "A fault inside one habitat module or facility could pull down the grid for everyone", fix: "Each unit has its own service connection with a main breaker and UMIC DC switch modules, so it can be isolated without affecting the others (DD-009)"}
   - {sev: High, title: "Delivery cost dominates: ~85% of this milestone is shipping mass", fix: "Push heavy-cargo pricing down; make cables and later solar cells from regolith (Blue Alchemist, M12)"}
   - {sev: High, title: "Dust on arrays and radiators", fix: "Vertical arrays shed dust; keep 1 km+ from landing pads; landing pads in M05"}
   - {sev: High, title: "Reactor radiation near crew", fix: "1–3 km separation, terrain or berm shielding; US draft sets ≤5 rem/yr at 1 km"}
@@ -132,45 +140,62 @@ This milestone targets about 120 kW of total capacity (provisional until the Pha
 
 - **KRUSTY (2018).** For under $20 million, NASA and DOE designed, built and ran a real fission reactor with Stirling converters for 28 hours straight, at various power levels<sup class="r">[5](#s5)</sup>.
 - **NASA reference design.** 40 kWe, about 10 t, four pairs of Stirling engines, sodium heat pipes, 10-year life<sup class="r">[1](#s1)</sup>.
-- **Moving target.** The US programme has changed requirements several times: 40 kWe in 2022<sup class="r">[1](#s1)</sup>, then at least 100 kWe with closed Brayton conversion in 2025<sup class="r">[12](#s12)</sup>. In 2026 it settled on "Lunar Reactor-1": at least 20 kWe, at least 5 years, HALEU fuel, under 15 t<sup class="r">[6](#s6)</sup><sup class="r">[14](#s14)</sup>. No contract has been awarded yet. Open Moon now plans on that 20 kWe minimum (see design changes DD-002 and DD-003 below).
+- **Moving target.** The US programme has changed requirements several times: 40 kWe in 2022<sup class="r">[1](#s1)</sup>, then at least 100 kWe with closed Brayton conversion in 2025<sup class="r">[12](#s12)</sup>. In 2026 it settled on "Lunar Reactor-1": at least 20 kWe, at least 5 years, HALEU fuel, under 15 t<sup class="r">[6](#s6)</sup><sup class="r">[14](#s14)</sup>. No contract has been awarded yet. Open Moon now plans on that 20 kWe minimum (see design changes DD-002, DD-003 and DD-008 below).
 
 {% include decision-note.html id="DD-002" extra="Open Moon first planned one 40 kWe-class reactor feeding the grid directly. On 18 November 2026 it changed to KRUSTY-class (1 kWe) or LR-1-class (20 kWe) reactors. Its first rule, that reactors only charge a battery, was later widened by DD-003." %}
 
-{% include decision-note.html id="DD-003" extra="DD-002 had the reactor charge only a battery. DD-003 widens that: every source now feeds one BMS, which routes power to the grid, to storage, or both." %}
+{% include decision-note.html id="DD-003" extra="DD-002 had the reactor charge only a battery. DD-003 widens that: every source now feeds one hub, which routes power to the grid, to storage, or both. DD-008 renamed that hub the power management controller (PMC)." %}
 
-## How power flows: inputs, BMS, storage, outputs
+## How power flows: inputs, PMC, storage, outputs
 
-![Diagram: fission reactors and solar towers feed the BMS; the grid is fed by generation or by the battery, and the fuel cells recharge the battery; surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator](/assets/tech/base-power-bms-flow.svg)
+{% include decision-note.html id="DD-008" extra="Until 18 November 2026 the plan called this hub the BMS. The routing rules did not change; only the names did." %}
 
-- **Inputs.** The reactor and the solar towers always send their power to the BMS. Nothing feeds a load directly.
-- **The BMS decides.** In this plan BMS means the base's central power management and routing system, including battery cell management. Moment to moment it sends power to the grid to meet demand, into storage, or some of each.
-- **The grid has only two feeds:** generation passing through the BMS, or the battery. The regenerative fuel cells never feed the grid directly; when they discharge, they recharge the battery.
+![Diagram: fission reactors and solar towers feed the power management controller (PMC); the PMC sends power to the grid, to the batteries through their BCDUs, or to excess-power handling; the grid is fed by generation or by the battery, and the fuel cells recharge the battery; with storage full, solar is curtailed by each tower's shunt regulator and reactor surplus goes to its parasitic load radiator](/assets/tech/base-power-pmc-flow.svg)
+
+- **Names (design change DD-008).** The whole system is the **EPS** (electrical power system): generation, storage, distribution and protection. Its routing and distribution part is **PMAD** (power management and distribution). Space Station Freedom used the same terms<sup class="r">[27](#s27)</sup>. The **power management controller (PMC)** is the part that decides where power goes. Ground grids call this a microgrid controller or energy management system (EMS)<sup class="r">[29](#s29)</sup>.
+- **Inputs.** The reactor and the solar towers always send their power to the PMC. Nothing feeds a load directly.
+- **The PMC decides.** Moment to moment it sends power to the grid to meet demand, to the batteries to charge, to excess-power handling, or some of each.
+- **The grid has only two feeds:** generation passing through the PMC, or the battery. The regenerative fuel cells never feed the grid directly; when they discharge, they recharge the battery.
 - **Default routing (plan design).**
   1. Meet grid demand, highest priority first (life support before everything else). NASA's lunar microgrid concept also has a controller that serves the highest-priority loads first<sup class="r">[1](#s1)</sup>.
   2. Charge the Li-ion battery with any surplus.
   3. With the battery full, run the fuel-cell electrolyser to fill long-term storage.
-  4. With all storage full, curtail the solar towers and let the reactor dump its surplus to its parasitic load radiator. LR-1 must accept any load from 0 to 100% of its output and starts up into that radiator<sup class="r">[25](#s25)</sup>. NASA's 40 kWe Stirling concept also dumped unused power into a resistor bank or radiator<sup class="r">[15](#s15)</sup>.
+  4. With all storage full, curtail the solar towers and let the reactor dump its surplus to its parasitic load radiator (PLR). Each VSAT's array regulator shunts array strings to cut its output on PMC command, and a disconnect contactor can isolate the tower (plan design). The ISS does the same with its sequential shunt unit, which shunts array strings to hold its ~160 V DC bus<sup class="r">[27](#s27)</sup><sup class="r">[28](#s28)</sup>. LR-1 must accept any load from 0 to 100% of its output and starts up into that radiator<sup class="r">[25](#s25)</sup>. NASA's 40 kWe Stirling concept also dumped unused power into a resistor bank or radiator<sup class="r">[15](#s15)</sup>.
   5. When short: the battery feeds the grid; the fuel cells recharge the battery; as a last resort, shed loads by priority.
-- **Outputs.** The grid: the 3 kV AC trunk and the 120 V DC habitat and ISRU microgrids (C04.4).
+- **Outputs.** The grid: one 3 kV AC distribution network, like a national grid. Every habitat module and facility takes power from it through its own service connection (C04.4, design change DD-009).
+- **Batteries.** Each Li-ion string connects to the PMC through its own battery charge/discharge unit (BCDU), as on the ISS<sup class="r">[28](#s28)</sup>. Each string has its own BMS, which now means only cell management: cell voltage, temperature, balancing and charge limits. It reports to the PMC (plan design).
 - **Battery size (plan design).** About 260 kWh of Li-ion: 160 kWh per 20 kWe reactor, which is 8 hours at full output, about the time NASA's reference reactor takes to start up<sup class="r">[26](#s26)</sup>, plus about 100 kWh for fast peaks. At 160 Wh/kg<sup class="r">[1](#s1)</sup> that is about 1.6 t.
-- **No single point of failure.** The BMS is split into two independent halves (A and B) with a cross-tie. Each can carry the essential loads, and every source and feeder can be switched to either half.
+- **No single point of failure.** The PMC has two independent main switching units (A and B) with a cross-tie. Each can carry the essential loads, and every source and grid output can be switched to either unit.
 - **KRUSTY-class units.** A 1 kWe Kilopower-type unit gives 24 kWh a day. That suits a remote comms or science node, not the habitat. No flight unit is being built.
+
+## Service connections: every unit is a house on the grid
+
+{% include decision-note.html id="DD-009" extra="The plan first followed NASA's 2022 layout of separate habitat and ISRU microgrids. It now has one grid and a service connection for each unit." %}
+
+![Diagram: the 3 kV AC grid feeds three habitat modules and a water electrolysis plant, each through its own service connection: service drop, UMIC-class step-down and rectifier to 120 V DC, meter, main breaker, then a 120 V DC panel with branch circuits such as life support, lighting, galley, avionics and heaters; habitats have an optional unit inverter feeding a local AC subpanel; any one connection can be opened without affecting the others](/assets/tech/base-power-service-connection.svg)
+
+- **The grid is the national grid.** The PMC feeds one 3 kV AC, 1 kHz distribution network (DD-001). There are no separate habitat or ISRU microgrids (plan design, DD-009).
+- **Every unit is a house.** Each habitat module, and each facility, has its own service connection: a service drop from the grid, a UMIC-class converter that steps down and rectifies to 120 V DC, a meter, and a main breaker. This is the same pattern as a house on a terrestrial grid<sup class="r">[30](#s30)</sup> (plan design).
+- **DC panel.** The main breaker feeds the unit's 120 V DC panel. Like a house's distribution board<sup class="r">[31](#s31)</sup>, it splits the feed into branch circuits, each with its own breaker. NASA's UMIC is built to connect 120 V DC equipment to the 3 kV AC grid<sup class="r">[22](#s22)</sup>. Space Station Freedom also converted its primary bus to 120 V DC for its users<sup class="r">[27](#s27)</sup>.
+- **AC only where a unit needs it.** The grid does not supply AC to units. A unit that needs AC has its own inverter, fed from its DC panel, feeding a local AC subpanel. Each unit chooses its own inverter and AC voltage (plan design).
+- **Who gets one.** Each of the 3 habitat modules (DD-007), and each facility: the regolith water-extraction plant, water electrolysis (H₂/O₂), the oxygen plant, life-support processing outside the habitats, comms nodes, rover chargers, greenhouses and the propellant depot.
+- **Protection.** Any service connection can be opened without affecting the others. A fault in one unit trips its own main breaker, not the grid (plan design).
 
 ## Site layout
 
-![Plan view, not to scale: 10 kW VSAT towers on two or three ridge points and an LR-1-class reactor 1–3 km away behind terrain, with its 36° shield shadow toward the crew, each send a 3 kV AC source line to the BMS hub near the habitat zone; feeders run from the BMS to the habitat and ISRU 120 V DC microgrids; landing pads sit at least 1 km from the towers](/assets/tech/base-power-site-layout.svg)
+![Plan view, not to scale: 10 kW VSAT towers on two or three ridge points and an LR-1-class reactor 1–3 km away behind terrain, with its 36° shield shadow toward the crew, each send a 3 kV AC source line to the PMC near the habitat zone; the 3 kV AC distribution grid runs from the PMC to a service connection at each habitat module and facility; landing pads sit at least 1 km from the towers](/assets/tech/base-power-site-layout.svg)
 
-- **Solar towers** stand on two or three ridge points, so that when one is in shadow another is usually lit (plan design; see M00). Each tower has its own source line to the BMS hub.
+- **Solar towers** stand on two or three ridge points, so that when one is in shadow another is usually lit (plan design; see M00). Each tower has its own source line to the PMC.
 - **The reactor** sits 1–3 km from the habitat zone, behind terrain (plan design, DD-002). NASA's reference shield has a 36° included angle and keeps the dose below 5 rem/yr at 1 km<sup class="r">[26](#s26)</sup>, so the shield's shadow is pointed at the crew zone.
-- **The BMS hub** sits near the habitat zone (plan design). Every source line ends there. Feeders go out from it to the habitat and ISRU microgrids.
+- **The PMC** sits near the habitat zone (plan design). Every source line ends there. The distribution grid runs out from it to a service connection at each habitat module and facility (DD-009).
 - **Landing pads** stay at least 1 km from the towers and radiators, to limit dust (plan design).
 - **Cables** lie on the surface. NASA advises against burying them, because regolith traps heat<sup class="r">[21](#s21)</sup>.
 
 ## One-line diagram
 
-![One-line diagram: each solar tower and the reactor send 3 kV AC over a source line to an input converter on BMS half A or half B, joined by a cross-tie; Li-ion battery strings hang off each half; the fuel cells are charged from BMS surplus and discharge only into the battery, with no direct path to the grid; output converters send 3 kV AC feeders to transformers and UMICs at the 120 V DC habitat and ISRU microgrids; the reactor's parasitic load radiator takes surplus and solar towers curtail on BMS command](/assets/tech/base-power-one-line.svg)
+![One-line diagram: each solar tower and the reactor send 3 kV AC over a source line to an input converter on PMC main switching unit A or B, joined by a cross-tie; Li-ion battery strings connect to each unit through BCDUs, each string with its own BMS; the fuel cells are charged from PMC surplus and discharge only into the battery, with no direct path to the grid; output converters feed the 3 kV AC distribution grid, which feeds a service connection with a 120 V DC panel at each of three habitat modules and each facility; the reactor's parasitic load radiator takes surplus and solar towers curtail on PMC command](/assets/tech/base-power-one-line.svg)
 
-This is the plan's design, simplified to one line per 3-phase circuit. The source lines and feeders run at 3 kV AC, NASA's lunar grid baseline<sup class="r">[23](#s23)</sup>. UMIC converters link the 120 V DC microgrids to the 3 kV AC feeders<sup class="r">[22](#s22)</sup>. The BMS buses, the converters inside the hub and the battery and fuel-cell connections are plan design (DD-003).
+This is the plan's design, simplified to one line per 3-phase circuit. The source lines and the distribution grid run at 3 kV AC, NASA's lunar grid baseline<sup class="r">[23](#s23)</sup>. A UMIC-class converter in each service connection links that unit's 120 V DC panel to the 3 kV AC grid<sup class="r">[22](#s22)</sup>. The PMC buses, the converters inside it, the service connections and the battery and fuel-cell connections are plan design (DD-003, DD-008, DD-009).
 
 ## Solar towers
 
@@ -203,12 +228,12 @@ About **85%** of this milestone's cost is **delivery**, not hardware. Two things
 
 ## Step-by-step
 
-![Seven panels showing the build-out: first 10 kW VSAT with BMS half A and a starter battery string; second VSAT; more 10 kW VSATs; regenerative fuel cells; BMS half B with the ride-through battery and cross-tie; the LR-1-class reactor; and the closed grid that survives losing any single source](/assets/tech/base-power-build-out.svg)
+![Seven panels showing the build-out: first 10 kW VSAT with PMC main switching unit A and a starter battery string; second VSAT; more 10 kW VSATs; regenerative fuel cells; PMC unit B with the ride-through battery and cross-tie; the LR-1-class reactor; and the closed grid that survives losing any single source](/assets/tech/base-power-build-out.svg)
 
-1. **First landing (small lander):** a 10 kW VSAT, BMS half A with a starter battery string, a LunaGrid-Lite-class cable rover, and the LTE kit from M03. From the first watt, power flows through the BMS.
+1. **First landing (small lander):** a 10 kW VSAT, PMC main switching unit A with a starter battery string, a LunaGrid-Lite-class cable rover, and the LTE kit from M03. From the first watt, power flows through the PMC, and each load gets its own service connection.
 2. **Second 10 kW VSAT** on a second ridge point, with a cable link between the two.
 3. **More 10 kW VSATs** on medium landers, up to the number the Phase 1 load budget sets (provisionally 8 more, for 10 in total).
-4. **Regenerative fuel cell storage**, sharing tanks with the M06 water plant, connected to the BMS.
-5. **BMS half B and the reactor ride-through battery strings**, with the cross-tie to half A.
-6. **Fission unit on a heavy lander.** Rovers set it 1–3 km from the habitat zone behind terrain, then it starts remotely into its parasitic load radiator and is switched over to feed the BMS.
+4. **Regenerative fuel cell storage**, sharing tanks with the M06 water plant, connected to the PMC.
+5. **PMC main switching unit B and the reactor ride-through battery strings**, with the cross-tie to unit A.
+6. **Fission unit on a heavy lander.** Rovers set it 1–3 km from the habitat zone behind terrain, then it starts remotely into its parasitic load radiator and is switched over to feed the PMC.
 7. **Close the grid** so it survives losing any single source.

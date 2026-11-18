@@ -16,6 +16,7 @@ spec:
   - {k: "O₂ recovery from CO₂", v: "~50% (Sabatier, methane vented)"}
   - {k: "Mass", v: "~2 t per string installed (ESTIMATE, the earlier 4-crew figure, now a placeholder)"}
   - {k: "Power", v: "Part of the 20–50 kW habitat load (breakdown TBD)"}
+  - {k: "Power interface", v: "Inside each module: branch circuits on that module's 120 V DC panel. Any life-support processing outside the habitats has its own service connection and panel (plan design, DD-009)"}
 subcomponents:
   - name: Atmosphere control and monitoring
     desc: "Holds cabin pressure and oxygen fraction, adds nitrogen to make up leaks, and measures the main gases."

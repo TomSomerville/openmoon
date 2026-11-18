@@ -16,6 +16,7 @@ spec:
   - {k: "Water transpired", v: "~0.9 t per day, condensed and reused (ESTIMATE)"}
   - {k: "Delivered mass", v: "~13–16 t for 3 modules (ESTIMATE)"}
   - {k: "Shielding", v: "≥2 m regolith cover, as C09.1"}
+  - {k: "Power interface", v: "Each greenhouse module has its own service connection to the M04 grid (UMIC-class step-down to 120 V DC, meter, main breaker) and its own 120 V DC panel for lighting, pumps and fans (plan design, DD-009)"}
 subcomponents:
   - name: Growth racks
     desc: "Stacked hydroponic trays, with aeroponic root chambers for potatoes, holding the crops at the right spacing."

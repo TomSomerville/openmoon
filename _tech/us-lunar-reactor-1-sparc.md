@@ -100,22 +100,22 @@ Key draft requirements ([NASA SPARC Industry Day](https://sam.gov/api/prod/opps/
 
 **Reasonable planning value for Open Moon:** **20 kWe**, continuously. That is NASA's guaranteed minimum after a single failure, and the figure NASA uses for both LR-1 and SR-1. It works out to **480 kWh a day** (Open Moon arithmetic). The SPARC draft does not set the AC frequency. NASA's earlier lunar grid trade study chose 3 kV AC ([Thomas et al. 2022](https://ntrs.nasa.gov/citations/20220011587)).
 
-## How Open Moon uses it: the reactor feeds the BMS
+## How Open Moon uses it: the reactor feeds the PMC
 
-{% include decision-note.html id="DD-003" extra="An LR-1-class unit is the plan's base reactor (DD-002). Like every source, it feeds the BMS." %}
+{% include decision-note.html id="DD-003" extra="An LR-1-class unit is the plan's base reactor (DD-002). Like every source, it feeds the power management controller (PMC; called the BMS until DD-008)." %}
 
-![Diagram: fission reactors and solar towers feed the BMS; the grid is fed by generation or by the battery, and the fuel cells recharge the battery; surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator](/assets/tech/base-power-bms-flow.svg)
+![Diagram: fission reactors and solar towers feed the power management controller (PMC); the PMC sends power to the grid, to the batteries through their BCDUs, or to excess-power handling; the grid is fed by generation or by the battery, and the fuel cells recharge the battery; with storage full, solar is curtailed by each tower's shunt regulator and reactor surplus goes to its parasitic load radiator](/assets/tech/base-power-pmc-flow.svg)
 
-In Open Moon every source, including the reactor, sends its power to the **BMS**. The BMS decides whether that power goes to the grid to meet demand, into storage, or some of each. When generation falls short, the battery feeds the grid ([design change DD-003](/decisions/#dd-003)).
+In Open Moon every source, including the reactor, sends its power to the **power management controller (PMC)**. The PMC decides whether that power goes to the grid to meet demand, to the batteries to charge, or to excess-power handling, or some of each. When generation falls short, the battery feeds the grid ([design changes DD-003 and DD-008](/decisions/#dd-008)). The grid then feeds every habitat module and facility through its own service connection ([DD-009](/decisions/#dd-009)).
 
-1. **Reactor.** LR-1 runs at up to 20 kWe and sends 3 kV AC down the cable to the BMS hub.
-2. **BMS.** Converts the incoming power and routes it: first to the grid for demand, then to charge the battery, then to the fuel-cell electrolyser. NASA Glenn has already built a modular, bidirectional converter between 120 V DC equipment and the 3 kV AC grid ([Thomas et al. 2023](https://ntrs.nasa.gov/citations/20230013309)).
+1. **Reactor.** LR-1 runs at up to 20 kWe and sends 3 kV AC down the cable to the PMC.
+2. **PMC.** Converts the incoming power and routes it: first to the grid for demand, then to charge the battery, then to the fuel-cell electrolyser. NASA Glenn has already built a modular, bidirectional converter between 120 V DC equipment and the 3 kV AC grid ([Thomas et al. 2023](https://ntrs.nasa.gov/citations/20230013309)).
 3. **Storage.** A Li-ion bank with 160 kWh per reactor (8 hours at full output, to ride through a restart), plus regenerative fuel cells for long shadows.
-4. **Outputs.** The grid: the habitat, ISRU plants and other loads.
+4. **Outputs.** The grid, which feeds each habitat module, ISRU plant and other facility through its own service connection.
 
-**Why this fits LR-1.** LR-1 must accept any load from 0 to 100% and has its own parasitic load radiator ([NASA](https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download)). So the BMS can take as much or as little as it needs at any moment, and when demand is met and storage is full, the reactor dumps the surplus as heat.
+**Why this fits LR-1.** LR-1 must accept any load from 0 to 100% and has its own parasitic load radiator ([NASA](https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download)). So the PMC can take as much or as little as it needs at any moment, and when demand is met and storage is full, the reactor sends its excess power to that radiator as heat.
 
-**Sizing (Open Moon arithmetic).** One LR-1 gives **480 kWh a day**. Generation must cover the base's *average* load plus losses; storage must cover *peaks* and the longest planned outage. A habitat drawing 20–50 kW (see C08.1) is above one LR-1's 20 kWe, so a crewed base needs more than one reactor, or solar towers feeding the same BMS.
+**Sizing (Open Moon arithmetic).** One LR-1 gives **480 kWh a day**. Generation must cover the base's *average* load plus losses; storage must cover *peaks* and the longest planned outage. A habitat drawing 20–50 kW (see C08.1) is above one LR-1's 20 kWe, so a crewed base needs more than one reactor, or solar towers feeding the same PMC.
 
 ## Limitations and open issues
 
@@ -126,4 +126,4 @@ In Open Moon every source, including the reactor, sends its power to the **BMS**
 - **Brayton not yet run on a reactor.** The only recent nuclear test (KRUSTY, 28 hours) used Stirling engines ([Poston et al. 2020](https://ntrs.nasa.gov/citations/20205009351)). Brayton first flies on SR-1, which may slip.
 - **Fuel supply.** HALEU depends on DOE building a [domestic supply chain](https://www.energy.gov/infrastructure/availability-high-assay-low-enriched-uranium-haleu).
 - **Siting.** The radiation limit applies only at 1 km. Habitats need distance, berms or terrain shielding. The user also supplies the long-distance cable ([NASA](https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download)).
-- **Everything goes through the BMS.** Every watt passes through the BMS, so it is split into two independent halves with a cross-tie, and the battery into several strings (see C04.3).
+- **Everything goes through the PMC.** Every watt passes through the PMC, so it has two independent main switching units (A and B) with a cross-tie, and the battery is split into several strings (see C04.3).
