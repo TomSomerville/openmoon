@@ -315,7 +315,11 @@ A 1.8 m human figure for scale, standing at the base point (DD-023), in a Blende
 
 ![Rendered high oblique view of the base area from 3 km south-west and 1.5 km up, with the base and tower B3 in frame]({{ '/assets/sites/primary-base-render-overview.jpg' | relative_url }})
 
-*The base area from 3 km south-west of the base and 1.5 km above it, looking north-north-east. The base is right of centre and B3 left of centre, about 2.1 km apart. Each tower is marked by a self-lit orange stand-in 10 m tall and 1 m wide (VSAT masts are 5–10 m<sup class="r">[18](#s18)</sup>). At this distance B3 shows only as a faint orange glint, and the 1.8 m figure is far too small to see. All three renders by Open Moon; terrain NASA GSFC LOLA, texture NASA/GSFC/Arizona State University. Figure: "Cesium Man", © 2017 Cesium, CC BY 4.0<sup class="r">[27](#s27)</sup>.*
+*The base area from 3 km south-west of the base and 1.5 km above it, looking north-north-east. The base is right of centre and B3 left of centre, about 2.1 km apart. Each tower is marked by a self-lit stand-in 10 m tall and 1 m wide (VSAT masts are 5–10 m<sup class="r">[18](#s18)</sup>), orange for base towers and cyan for mine towers. At this distance B3 shows only as a faint orange glint, and the 1.8 m figure is far too small to see.*
+
+![Rendered high oblique view from the north of the base and all solar towers, with labels: B4 and M3 on the far rim, B1 with M1 and B2 with M2 on the near rim, the base, and B3]({{ '/assets/sites/primary-base-render-towers.jpg' | relative_url }})
+
+*All the towers (DD-024), seen from about 10 km up to the north, looking south, so east is on the left. The masts are 9–17 km from the camera, too thin to show at this size, so their positions are ringed and labelled on the image: orange for base towers, cyan for mine towers. Each base tower stands beside a mine tower (the markers are 20 m apart), so each pair shares one ring. All four renders by Open Moon; terrain NASA GSFC LOLA, texture NASA/GSFC/Arizona State University. Figure: "Cesium Man", © 2017 Cesium, CC BY 4.0<sup class="r">[27](#s27)</sup>.*
 
 #### Sun and shadow at the base (ESTIMATE)
 
