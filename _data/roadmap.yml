@@ -9,6 +9,7 @@
   details:
     - {title: "Open site database", text: "LRO terrain, imagery and temperature data, ShadowCam images inside shadowed craters and Chandrayaan-2 radar are merged into one public map of the south pole.", refs: [M00, lunar-reconnaissance-orbiter-lro, shadowcam-on-kplo-danuri, chandrayaan-2-orbiter-dfsar-radar]}
     - {title: "Shortlist from NASA's nine regions", text: "NASA's nine Artemis south-pole candidate regions are the starting shortlist, already screened for landing safety, light and Earth visibility.", refs: [M00]}
+    - {title: "Focus area: Shackleton–de Gerlache", text: "The search narrows to about 180 × 130 km around the Shackleton–de Gerlache Ridge. Slope, hydrogen (LEND) and ice-candidate maps are published; 43% of the area is 8° or less, Open Moon's landing limit.", refs: [M00]}
     - {title: "Illumination and hazard models", text: "Sunlight is modelled at several mast heights, and young fault scarps and landslide-prone slopes are mapped so nothing is built on them.", refs: [M00]}
     - {title: "Programme and legal set-up", text: "Open licensing (CC BY-SA 4.0), Artemis Accords coordination and a buy-before-build procurement strategy.", refs: [M00]}
 - year: 1
