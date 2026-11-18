@@ -46,5 +46,8 @@ document.addEventListener('click',function(e){var t=e.target;
  if(!b.hidden&&(t===b||t.classList.contains('lbx')||t===im))close();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!b.hidden)close();});})();
 </script>
+<script>
+document.querySelectorAll('a[href^="http"]').forEach(function(a){if(a.host!==location.host){a.target='_blank';a.rel='noopener noreferrer';}});
+</script>
 </body>
 </html>
