@@ -239,6 +239,14 @@ The ice floor is 13.4 km from the base, beyond the 10 km cable limit, so the bas
 
 - **B3**, 2.1 km from the base and clear of the flat patch, adds redundancy and faster charging (DD-017, DD-021). It is almost never lit when B1 and B2 are dark (about 2 hours a year), so it does not shorten their dark spells.
 - **B4 and M3** stand together at the far rim, 9.4 km from the base and 9.6 km from the mine PMC. They are lit when the near rim is dark, which cuts the longest dark spell from about 14 days to 6.
+
+The longest dark spell of the base towers depends on the lunar season (typical spell in the lunar day around each event, ESTIMATE):
+
+| Season | First towers: dark spell | With B4: dark spell |
+|---|---|---|
+| Summer solstice | 1.6 days | none |
+| Equinoxes | 4.4–4.5 days | 2.5–2.8 days |
+| Winter solstice | 12 days (up to 14) | 5.8 days (up to 6) |
 - **The mine stops in the dark.** Its battery only keeps systems alive.
 - **Towers within 3 km were rejected.** They reach only 56.9%.
 

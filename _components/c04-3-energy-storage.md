@@ -137,6 +137,16 @@ NASA Glenn has built a modular, bidirectional converter between 120 V DC equipme
 
 Modelled south-pole efficiency is 34.8% for a 10 kW RFC and 36.6% at 50 kW. Above about 25 kW there is little gain, so two 25 kW units give redundancy at almost no cost in efficiency<sup class="r">[3](#s3)</sup>. With a 50% round-trip efficiency, the solar array must make about 3 times the RFC's output power<sup class="r">[4](#s4)</sup>.
 
+**At the primary base (DD-024; ESTIMATE).** The sizing above uses 100-hour shadows<sup class="r">[1](#s1)</sup>. At the chosen site the base towers' longest dark spell is longer, and it depends on the lunar season:
+
+| Base towers | Longest dark spell | Energy at the 30 kW design load (this plan's arithmetic) | RFC mass at 320–650 Wh/kg<sup class="r">[1](#s1)</sup> |
+|---|---|---|---|
+| First towers B1, B2, B3 (winter) | 14.0 days (336 h) | ~10.1 MWh | ~15.5–31.5 t |
+| With expansion tower B4 (winter) | 6.0 days (144 h) | ~4.3 MWh | ~6.6–13.5 t |
+| Either layout, equinoxes | about 2.5–4.5 days | ~1.8–3.2 MWh | about the 3.0 MWh case |
+
+Around the equinoxes the dark spells need about as much as the 3.0 MWh case, and in summer far less. Whether storage, the fission reactor or load shedding covers the winter spells before B4 is built is open.
+
 ## Testing and qualification
 
 1. **Done.** NASA Glenn's breadboard RFC ran autonomously for more than 550 hours of simulated lunar cycles, at balanced pressures up to 12.4 MPa. It ran open-loop (bottled gas in, products vented) and had five unplanned safe-state stops<sup class="r">[2](#s2)</sup>.
