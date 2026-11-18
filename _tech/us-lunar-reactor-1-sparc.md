@@ -104,9 +104,9 @@ Key draft requirements ([NASA SPARC Industry Day](https://sam.gov/api/prod/opps/
 
 {% include decision-note.html id="DD-003" extra="An LR-1-class unit is the plan's base reactor (DD-002). Like every source, it feeds the BMS." %}
 
-![Diagram: fission reactors, solar towers and fuel cells all feed the BMS; the BMS routes power to the grid for demand, to storage, or both; surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator](/assets/tech/base-power-bms-flow.svg)
+![Diagram: fission reactors and solar towers feed the BMS; the grid is fed by generation or by the battery, and the fuel cells recharge the battery; surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator](/assets/tech/base-power-bms-flow.svg)
 
-In Open Moon every source, including the reactor, sends its power to the **BMS**. The BMS decides whether that power goes to the grid to meet demand, into storage, or some of each, and draws on storage when generation falls short ([design change DD-003](/decisions/#dd-003)).
+In Open Moon every source, including the reactor, sends its power to the **BMS**. The BMS decides whether that power goes to the grid to meet demand, into storage, or some of each. When generation falls short, the battery feeds the grid ([design change DD-003](/decisions/#dd-003)).
 
 1. **Reactor.** LR-1 runs at up to 20 kWe and sends 3 kV AC down the cable to the BMS hub.
 2. **BMS.** Converts the incoming power and routes it: first to the grid for demand, then to charge the battery, then to the fuel-cell electrolyser. NASA Glenn has already built a modular, bidirectional converter between 120 V DC equipment and the 3 kV AC grid ([Thomas et al. 2023](https://ntrs.nasa.gov/citations/20230013309)).

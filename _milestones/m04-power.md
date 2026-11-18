@@ -33,7 +33,7 @@ cost_items:
 exit_criteria:
   - "At least 100 kW solar peak power installed on at least two separate ridge points."
   - "Fission unit delivering at least 20 kWe continuously to the BMS for six months (DD-002)."
-  - "All generated power reaches loads and storage through the BMS; it meets demand, charges storage with surplus, and draws on storage when short, with no power dip on essential loads (DD-003)."
+  - "All generated power reaches loads and storage through the BMS; it meets demand, charges storage with surplus, and feeds the grid from the battery when short, with no power dip on essential loads (DD-003)."
   - "With storage full, surplus solar is curtailed and surplus reactor power goes to its parasitic load radiator, with no fault."
   - "Essential loads (comms, heaters, life support standby) never lose power across the longest darkness period recorded at the site."
   - "Grid survives loss of any single power source without dropping essential loads."
@@ -139,16 +139,17 @@ This milestone targets about 120 kW of total capacity: 100 kW of solar peak plus
 
 ## How power flows: inputs, BMS, storage, outputs
 
-![Diagram: fission reactors, solar towers and fuel cells all feed the BMS; the BMS routes power to the grid for demand, to storage, or both; surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator](/assets/tech/base-power-bms-flow.svg)
+![Diagram: fission reactors and solar towers feed the BMS; the grid is fed by generation or by the battery, and the fuel cells recharge the battery; surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator](/assets/tech/base-power-bms-flow.svg)
 
-- **Inputs.** The reactor, the solar towers and the fuel cells (when storage is discharging) always send their power to the BMS. Nothing feeds a load directly.
-- **The BMS decides.** In this plan BMS means the base's central power management and routing system, including battery cell management. Moment to moment it sends power to the grid to meet demand, into storage, or some of each. When generation falls short it draws on storage.
+- **Inputs.** The reactor and the solar towers always send their power to the BMS. Nothing feeds a load directly.
+- **The BMS decides.** In this plan BMS means the base's central power management and routing system, including battery cell management. Moment to moment it sends power to the grid to meet demand, into storage, or some of each.
+- **The grid has only two feeds:** generation passing through the BMS, or the battery. The regenerative fuel cells never feed the grid directly; when they discharge, they recharge the battery.
 - **Default routing (plan design).**
   1. Meet grid demand, highest priority first (life support before everything else). NASA's lunar microgrid concept also has a controller that serves the highest-priority loads first<sup class="r">[1](#s1)</sup>.
   2. Charge the Li-ion battery with any surplus.
   3. With the battery full, run the fuel-cell electrolyser to fill long-term storage.
   4. With all storage full, curtail the solar towers and let the reactor dump its surplus to its parasitic load radiator. LR-1 must accept any load from 0 to 100% of its output and starts up into that radiator<sup class="r">[25](#s25)</sup>. NASA's 40 kWe Stirling concept also dumped unused power into a resistor bank or radiator<sup class="r">[15](#s15)</sup>.
-  5. When short: discharge the battery, then the fuel cells, then shed loads by priority.
+  5. When short: the battery feeds the grid; the fuel cells recharge the battery; as a last resort, shed loads by priority.
 - **Outputs.** The grid: the 3 kV AC trunk and the 120 V DC habitat and ISRU microgrids (C04.4).
 - **Battery size (plan design).** About 260 kWh of Li-ion: 160 kWh per 20 kWe reactor, which is 8 hours at full output, about the time NASA's reference reactor takes to start up<sup class="r">[26](#s26)</sup>, plus about 100 kWh for fast peaks. At 160 Wh/kg<sup class="r">[1](#s1)</sup> that is about 1.6 t.
 - **No single point of failure.** The BMS is split into two independent halves (A and B) with a cross-tie. Each can carry the essential loads, and every source and feeder can be switched to either half.

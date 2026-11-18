@@ -43,7 +43,7 @@ subcomponents:
     tech: "RFC breadboard thermal loop"
     trl: 5
   - name: BMS routing hub
-    desc: "Receives every source (reactor, solar towers, fuel cells) and decides, moment to moment, whether power goes to the grid to meet demand, into storage, or both. Draws on storage when generation is short and sheds loads by priority as a last resort (DD-003)."
+    desc: "Receives every source (reactor, solar towers, fuel cells) and decides, moment to moment, whether power goes to the grid to meet demand, into storage, or both. Feeds the grid from the battery when generation is short, has the fuel cells recharge the battery, and sheds loads by priority as a last resort (DD-003)."
     parts: ["Input converters for each source (UMIC-class AC-to-DC for the 3 kV AC lines)", "Common DC bus, split into halves A and B with a cross-tie", "Output converters to the 3 kV AC trunk and 120 V DC microgrids", "Routing and priority controller with load-shedding tables", "Source and feeder switching to either half", "Command links to the reactor, solar towers and fuel cells", "Telemetry and Earth link"]
     tech: "NASA GRC UMIC bidirectional converter (2023); NASA lunar microgrid priority control concept; ISS power management practice"
     trl: 4
@@ -84,22 +84,22 @@ sources:
 
 {% include decision-note.html id="DD-003" extra="This component now includes the BMS, the hub every source feeds and every load and store draws from." %}
 
-![Diagram: fission reactors, solar towers and fuel cells all feed the BMS; the BMS routes power to the grid for demand, to storage, or both; surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator](/assets/tech/base-power-bms-flow.svg)
+![Diagram: fission reactors and solar towers feed the BMS; the grid is fed by generation or by the battery, and the fuel cells recharge the battery; surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator](/assets/tech/base-power-bms-flow.svg)
 
-**The BMS.** Every source sends its power to the BMS: the reactor's 3 kV AC line, the solar towers, and the fuel cells when they discharge. The BMS decides whether that power goes to the grid to meet demand, into storage, or some of each, and it draws on storage when generation falls short (design change DD-003). In this plan BMS means the whole power management and routing system, including battery cell management.
+**The BMS.** Every source sends its power to the BMS: the reactor's 3 kV AC line and the solar towers. The BMS decides whether that power goes to the grid to meet demand, into storage, or some of each (design change DD-003). **The grid is fed only by generation passing through the BMS, or by the battery.** The fuel cells never feed the grid directly; when they discharge, they recharge the battery. In this plan BMS means the whole power management and routing system, including battery cell management.
 
 Default routing (plan design):
 1. Meet grid demand, highest priority first. NASA's lunar microgrid concept also serves the highest-priority loads, such as the crewed habitat, first<sup class="r">[1](#s1)</sup>.
 2. Charge the Li-ion battery with surplus.
 3. With the battery full, run the electrolyser to fill the fuel-cell tanks.
 4. With all storage full, curtail solar and let the reactor dump surplus into its parasitic load radiator. An LR-1-class reactor must accept any load from 0 to 100%<sup class="r">[8](#s8)</sup>, so the BMS can change its draw at any time.
-5. When short: battery first, then fuel cells, then shed loads by priority.
+5. When short: the battery feeds the grid, the fuel cells recharge the battery, and as a last resort loads are shed by priority.
 
 NASA Glenn has built a modular, bidirectional converter between 120 V DC equipment and the 3 kV AC grid<sup class="r">[9](#s9)</sup>, the kind of converter the BMS uses at each input and output.
 
 **Storage** has two layers behind the BMS:
 - **Li-ion battery bank** for fast response: load steps, fuel cell warm-up, and 8 hours of reactor output for a reactor restart.
-- **Regenerative fuel cells** for long shadows and the years before the reactor arrives. Polar shadows last up to about 100 hours<sup class="r">[1](#s1)</sup>. A regenerative fuel cell (RFC) stores more energy per kilogram than batteries: 320–650 Wh/kg against about 160 Wh/kg for packaged Li-ion<sup class="r">[1](#s1)</sup>.
+- **Regenerative fuel cells** for long shadows and the years before the reactor arrives. They are charged by BMS surplus and, when they discharge, they recharge the battery rather than feeding the grid. Polar shadows last up to about 100 hours<sup class="r">[1](#s1)</sup>. A regenerative fuel cell (RFC) stores more energy per kilogram than batteries: 320–650 Wh/kg against about 160 Wh/kg for packaged Li-ion<sup class="r">[1](#s1)</sup>.
 
 ## How it works
 

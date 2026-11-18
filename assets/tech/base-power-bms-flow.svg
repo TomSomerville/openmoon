@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" font-family="Share Tech Mono, monospace" role="img" aria-labelledby="t d">
 <title id="t">Open Moon power flow: every source feeds the BMS</title>
-<desc id="d">Fission reactors, solar towers and fuel cells all send their power to the BMS. The BMS routes it to the grid to meet demand, to storage, or to both, and draws on storage when generation falls short. Surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator.</desc>
+<desc id="d">Fission reactors and solar towers send their power to the BMS. The BMS routes it to the grid to meet demand, to storage, or to both. The grid is fed only by generation or by the battery; the fuel cells recharge the battery. Surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator.</desc>
 <defs>
 <pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(56,212,240,.07)"/></pattern>
 <marker id="ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#38d4f0"/></marker>
@@ -8,7 +8,7 @@
 </defs>
 <rect width="960" height="520" fill="#0a1015"/><rect width="960" height="520" fill="url(#g)"/>
 <text x="24" y="36" fill="#d6e2ec" font-size="19" letter-spacing="1">OPEN MOON POWER FLOW · INPUTS → BMS → GRID / STORAGE</text>
-<text x="24" y="58" fill="#d6e2ec" font-size="12" opacity=".7">All generated power goes to the BMS. The BMS decides: grid, storage, or some of each (design change DD-003).</text>
+<text x="24" y="58" fill="#d6e2ec" font-size="12" opacity=".7">All generated power goes to the BMS. The grid is fed by generation or by the battery, nothing else (design change DD-003).</text>
 
 <text x="110" y="92" fill="#ffb020" font-size="13" text-anchor="middle" letter-spacing="1">INPUTS</text>
 <g font-size="12" fill="#d6e2ec" text-anchor="middle">
@@ -20,14 +20,10 @@
 <text x="110" y="216" fill="#ffb020" font-size="13">SOLAR TOWERS</text>
 <text x="110" y="234">VSAT 10 kW</text>
 <text x="110" y="250" font-size="11" opacity=".8">VSAT-XL 50 kW</text>
-<rect x="20" y="276" width="180" height="70" rx="8" fill="rgba(255,176,32,.06)" stroke="#ffb020" stroke-dasharray="5 4"/>
-<text x="110" y="302" fill="#ffb020" font-size="13">FUEL CELLS</text>
-<text x="110" y="320" font-size="11">(storage discharging)</text>
 </g>
 <g stroke="#ffb020" stroke-width="3" fill="none" marker-end="url(#ah)">
-<path d="M200 139C250 139 260 200 318 210"/>
-<path d="M200 225H318"/>
-<path d="M200 311C250 311 260 250 318 240"/>
+<path d="M200 139C250 139 260 190 318 200"/>
+<path d="M200 225C250 225 260 240 318 245"/>
 </g>
 
 <!-- BMS hub -->
@@ -40,14 +36,15 @@
 <text x="336" y="231">2. Surplus → charge battery</text>
 <text x="336" y="251">3. Battery full → fuel-cell</text>
 <text x="350" y="266">electrolyser</text>
-<text x="336" y="286">4. Short of demand → draw</text>
-<text x="350" y="301">battery, then fuel cells</text>
+<text x="336" y="286">4. Short → battery feeds grid;</text>
+<text x="350" y="301">fuel cells recharge battery</text>
 <text x="336" y="321" opacity=".8">5. Still short → shed loads</text>
 </g>
 
 <!-- outputs: grid -->
 <path d="M570 200H668" stroke="#38d4f0" stroke-width="3" marker-end="url(#ac)"/>
-<text x="618" y="190" fill="#d6e2ec" font-size="11" text-anchor="middle">to demand</text>
+<text x="618" y="182" fill="#d6e2ec" font-size="11" text-anchor="middle">generation</text>
+<text x="618" y="222" fill="#d6e2ec" font-size="11" text-anchor="middle">or battery</text>
 <text x="800" y="92" fill="#38d4f0" font-size="13" text-anchor="middle" letter-spacing="1">OUTPUTS</text>
 <rect x="670" y="104" width="270" height="190" rx="10" fill="rgba(56,212,240,.12)" stroke="#38d4f0" stroke-width="2"/>
 <text x="805" y="132" fill="#38d4f0" font-size="14" text-anchor="middle">GRID</text>
@@ -67,7 +64,7 @@
 <g stroke="#38d4f0" stroke-width="2" fill="rgba(56,212,240,.15)"><rect x="318" y="426" width="20" height="44" rx="3"/><rect x="344" y="426" width="20" height="44" rx="3"/><rect x="370" y="426" width="20" height="44" rx="3"/></g>
 <text x="400" y="444" fill="#d6e2ec" font-size="11">Li-ion battery bank</text>
 <text x="400" y="460" fill="#d6e2ec" font-size="10" opacity=".75">fast, peaks, reactor restarts</text>
-<text x="400" y="480" fill="#d6e2ec" font-size="11">+ regenerative fuel cells</text>
+<text x="400" y="480" fill="#d6e2ec" font-size="11">+ fuel cells → battery</text>
 
 <!-- surplus -->
 <path d="M570 300C640 330 650 400 668 420" stroke="#ffb020" stroke-width="2" fill="none" stroke-dasharray="6 5" marker-end="url(#ah)"/>

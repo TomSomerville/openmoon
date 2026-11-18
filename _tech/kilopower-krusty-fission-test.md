@@ -145,9 +145,9 @@ Definitions: [NASA TRL definitions](https://www.nasa.gov/wp-content/uploads/2017
 
 {% include decision-note.html id="DD-003" extra="KRUSTY-class units are the plan's small-load reactor option (DD-002). Like every source, they feed the BMS." %}
 
-![Diagram: fission reactors, solar towers and fuel cells all feed the BMS; the BMS routes power to the grid for demand, to storage, or both; surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator](/assets/tech/base-power-bms-flow.svg)
+![Diagram: fission reactors and solar towers feed the BMS; the grid is fed by generation or by the battery, and the fuel cells recharge the battery; surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator](/assets/tech/base-power-bms-flow.svg)
 
-In Open Moon every source, including the reactor, sends its power to the **BMS**. The BMS decides whether that power goes to the grid to meet demand, into storage, or some of each, and draws on storage when generation falls short ([design change DD-003](/decisions/#dd-003)).
+In Open Moon every source, including the reactor, sends its power to the **BMS**. The BMS decides whether that power goes to the grid to meet demand, into storage, or some of each. When generation falls short, the battery feeds the grid ([design change DD-003](/decisions/#dd-003)).
 
 1. **Reactor.** A KRUSTY-class unit runs at a steady output. That suits a Stirling reactor, which holds its temperature best at a steady heat draw.
 2. **BMS.** Takes the controllers' output and routes it: first to the grid for demand, then to charge the battery, then to the fuel-cell electrolyser.
