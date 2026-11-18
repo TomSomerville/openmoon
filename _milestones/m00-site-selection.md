@@ -80,6 +80,7 @@ Both are chosen from orbital data and are to be confirmed on the ground by the M
 <input type="radio" name="m00tab" id="m00t5"><label for="m00t5">Hydrogen</label>
 <input type="radio" name="m00tab" id="m00t6"><label for="m00t6">Ice</label>
 <input type="radio" name="m00tab" id="m00t7"><label for="m00t7">Power layout</label>
+<div class="tabpanels" markdown="1">
 <div class="tabpanel" id="m00p1" markdown="1">
 
 ### Why the south pole
@@ -193,6 +194,7 @@ The ice floor is 12.7 km from the primary base, beyond the 10 km cable limit, so
 - **The mine shuts down in the dark.** Its battery only keeps heaters, controls and comms alive.
 - **Towers within 3 km of the base were rejected.** Up to five of them reach only 56.9%, because nearby high ground blocks the low Sun.
 
+</div>
 </div>
 </div>
 <script>
