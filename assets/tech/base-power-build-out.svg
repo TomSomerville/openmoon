@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 704" width="960" height="704" font-family="Share Tech Mono, monospace" role="img" aria-labelledby="t d">
 <title id="t">Open Moon base power build-out by stage</title>
-<desc id="d">Seven panels following milestone M04's step-by-step plan. 1: first 10 kW VSAT tower with power management controller (PMC) main switching unit A, a starter battery string and a cable rover. 2: second VSAT on a second ridge point. 3: more 10 kW VSAT towers, number still to be decided. 4: regenerative fuel cells, charged by PMC surplus and discharging only into the battery. 5: PMC main switching unit B with the reactor ride-through battery strings and the cross-tie. 6: the LR-1-class reactor, 1 to 3 km away behind terrain, starting into its parasitic load radiator and then switched over to feed the PMC. 7: the grid closed so it survives the loss of any single source.</desc>
+<desc id="d">Seven panels following milestone M04's step-by-step plan. 1: first 10 kW VSAT tower with power management controller (PMC) main switching unit A, a starter battery string and a cable rover. 2: second VSAT on a second ridge point, within 3 km of cable run of the PMC as standard or up to 10 km as an extended run. 3: more 10 kW VSAT towers, number still to be decided. 4: regenerative fuel cells, charged by PMC surplus and discharging only into the battery. 5: PMC main switching unit B with the reactor ride-through battery strings and the cross-tie. 6: the LR-1-class reactor, 1 to 3 km away behind terrain, starting into its parasitic load radiator and then switched over to feed the PMC. 7: the grid closed so it survives the loss of any single source.</desc>
 <defs><pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(56,212,240,.07)"/></pattern></defs>
 <rect width="960" height="704" fill="#0a1015"/><rect width="960" height="704" fill="url(#g)"/>
 <text x="24" y="36" fill="#d6e2ec" font-size="19" letter-spacing="1">BASE POWER BUILD-OUT · M04 STEP BY STEP</text>
@@ -27,7 +27,8 @@
 <g opacity=".35"><path d="M84 180V190" stroke="#38d4f0" stroke-width="2"/><rect x="76" y="190" width="16" height="22" rx="2" fill="rgba(56,212,240,.15)" stroke="#38d4f0"/></g>
 <g opacity=".35"><path d="M102 158C140 140 160 160 168 186" stroke="#38d4f0" stroke-width="2" fill="none"/><rect x="156" y="186" width="56" height="26" rx="4" fill="rgba(56,212,240,.10)" stroke="#38d4f0"/><text x="184" y="203" fill="#d6e2ec" font-size="9" text-anchor="middle">LOADS</text></g>
 <text x="12" y="246" fill="#d6e2ec" font-size="10" opacity=".85">On a second ridge point, with</text>
-<text x="12" y="260" fill="#d6e2ec" font-size="10" opacity=".85">its own source line to the PMC.</text>
+<text x="12" y="260" fill="#d6e2ec" font-size="10" opacity=".85">its own source line to the PMC:</text>
+<text x="12" y="274" fill="#ffb020" font-size="10" opacity=".85">≤3 km standard / ≤10 km extended.</text>
 </g>
 <g transform="translate(488 76)">
 <rect width="222" height="292" rx="10" fill="rgba(56,212,240,.04)" stroke="#d6e2ec" stroke-opacity=".25"/>

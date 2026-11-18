@@ -12,7 +12,7 @@ spec:
   - {k: "Cart payload", v: "500 kg rated (design choice; must match LTV tow limit, not yet published)"}
   - {k: "Payload deck", v: "Open Moon payload interface (C02.1)"}
   - {k: "Inspection rover", v: "~25 kg, carry-on-bag scale, solar and battery (ESTIMATE)"}
-  - {k: "Patrol", v: "M04 cable routes, each 3 km or less (DD-013)"}
+  - {k: "Patrol", v: "M04 cable routes: standard runs of 3 km or less (DD-013), extended runs up to 10 km (DD-014)"}
   - {k: "Control", v: "Autonomous with Earth supervision at 6–8 s delay"}
   - {k: "Life", v: "5 years (design goal)"}
 subcomponents:
@@ -59,7 +59,7 @@ sources:
 
 ## What it does
 
-Crews should not spend surface time moving boxes. Utility robots do the hauling and routine checks. Payload carts carry cargo from the landing pads to the habitat, the ISRU plant and the power sites. An LTV tows them, with or without crew. Small inspection rovers drive the M04 cable routes and look for damage.
+Crews should not spend surface time moving boxes. Utility robots do the hauling and routine checks. Payload carts carry cargo from the landing pads to the habitat, the ISRU plant and the power sites. An LTV tows them, with or without crew. Small inspection rovers drive the M04 cable routes and look for damage. Standard runs are 3 km or less, and extended runs reach up to 10 km (DD-013, DD-014), so patrolling the longest route means about 20 km out and back (this plan's arithmetic).
 
 ## How it works
 

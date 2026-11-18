@@ -4,23 +4,23 @@ milestone: M04
 order: 4
 redirect_from: /plan/components/c04-4-hvdc-grid/
 title: 3 kV AC grid and cable-laying rover
-summary: "A 3 kV, 3-phase, 1 kHz AC grid, NASA's lunar baseline, that carries power from every source to the power management controller (PMC), and from the PMC out to every unit like a national grid. Each habitat module and facility has its own service connection that delivers 120 V DC to its panel. Every source converts to 3 kV AC on the spot and sits within 3 km of cable run of the PMC (DD-013). A small rover lays the cable on the surface."
+summary: "A 3 kV, 3-phase, 1 kHz AC grid, NASA's lunar baseline, that carries power from every source to the power management controller (PMC), and from the PMC out to every unit like a national grid. Each habitat module and facility has its own service connection that delivers 120 V DC to its panel. Every source converts to 3 kV AC on the spot and sits within 3 km of cable run of the PMC as standard, or up to 10 km on an extended run (DD-013, DD-014). A small rover lays the cable on the surface."
 trl: 4
 spec:
   - {k: "Trunk", v: "3 kV AC, 3-phase, 1 kHz (NASA baseline; design change DD-001)"}
   - {k: "User voltage", v: "120 V DC at each unit's DC panel (NASA space power standard); AC only from a unit's own inverter (DD-009)"}
   - {k: "Interface converter", v: "UMIC: parallel 1 kW inverter modules plus line-frequency transformers"}
-  - {k: "Link length", v: "≤3 km per run (DD-013): every generation source within 3 km of cable run of the PMC"}
+  - {k: "Link length", v: "Standard ≤3 km per run (DD-013); extended up to 10 km at ~10–15% loss, with receiving-end voltage regulation and a 1 kHz stability analysis per run; beyond 10 km rejected (DD-014)"}
   - {k: "Source-end conversion", v: "At every source: low-voltage UMIC-class inverter + 1 kHz step-up transformer to 3 kV AC; LR-1 at 3 kV, 3-phase, 1 kHz at its output (DD-013)"}
   - {k: "Efficiency target", v: ">85% transmission system (UMIC target)"}
   - {k: "Mass target", v: "<0.55 kg/m transmission system (UMIC target)"}
-  - {k: "Cable mass", v: "325 kg per 1 km main cable and spool (NASA 2025 reference); ~1 t per 3 km run"}
+  - {k: "Cable mass", v: "325 kg per 1 km main cable and spool (NASA 2025 reference); ~1 t per 3 km run, ~3.3 t per 10 km extended run (this plan's arithmetic)"}
   - {k: "Service connections", v: "One per unit: 3 habitat modules plus each facility (DD-009); no separate microgrids"}
   - {k: "Rover", v: "1 cable layer, ~1 km reel (~0.33 t) per trip"}
   - {k: "Fault location", v: "Time-domain reflectometry from each node"}
 subcomponents:
   - name: Transmission cable
-    desc: "Three-phase cable carrying power up to 3 km per run (DD-013) at 3 kV so conductors stay thin."
+    desc: "Three-phase cable carrying power up to 3 km per standard run (DD-013), or up to 10 km per extended run (DD-014), at 3 kV so conductors stay thin."
     parts: ["Three aluminium conductors", "FEP insulation rated with margin for 3 kV in vacuum", "Outer abrasion-resistant jacket", "Vacuum-rated HV connectors and splices", "Cable markers"]
     tech: "NASA GRC AC cable tests in vacuum with regolith simulant (2025)"
     trl: 4
@@ -65,8 +65,8 @@ risks:
   - {sev: High, title: "High voltage in vacuum risks partial discharge and arcing, made worse by abrasive dust on insulation.", fix: "Insulation margin, sealed connectors, and partial-discharge testing in vacuum with dust before flight."}
   - {sev: High, title: "Cables on the surface can be damaged by rovers, thermal cycling and micrometeoroids, but NASA advises against burying them because regolith conducts heat poorly and the cable needs its view to space to shed heat.", fix: "Lay cables on the surface along surveyed routes away from traffic; protect only rover crossings with ramps; separate the main feeds to limit common failures; build a ring so every node has two paths."}
   - {sev: Medium, title: "AC cable is heavier than DC would be at higher voltage (NASA says DC is significantly lighter above 3–4 kV).", fix: "Accepted trade-off (DD-001): AC uses parts that exist; revisit if radiation-hard high-voltage switches become available."}
-  - {sev: Medium, title: "Much longer grids may need a lower frequency to avoid stability and propagation problems (NASA).", fix: "Keep 1 kHz and cap every run at 3 km (DD-013); runs of 10–30 km are rejected for now; study voltage and frequency again before any long-distance expansion."}
-  - {sev: High, title: "The 3 km cap (DD-013) may keep the base from the best-lit pair of ridge points (~8 km apart) and from ISRU sites that NASA expects at 3–5 km.", fix: "Site selection (M00) finds the best light inside a 3 km reach; ISRU plants within 3 km; PSR work beyond on the mobile power cart (PW.5) or a local source."}
+  - {sev: Medium, title: "Much longer grids may need a lower frequency to avoid stability and propagation problems (NASA). Extended runs of up to 10 km (DD-014) go beyond NASA's 1–3 km Artemis scale, and NASA has not published 1 kHz charging and stability data for this cable.", fix: "Keep 1 kHz; 3 km stays the standard run (DD-013); approve each extended run up to 10 km only after its own 1 kHz cable-charging and stability analysis, with receiving-end voltage regulation or transformer taps; runs beyond 10 km are rejected (DD-014); study voltage and frequency again before any longer expansion."}
+  - {sev: High, title: "The 3 km standard run (DD-013) cannot reach the best-lit pair of ridge points (~8 km apart) or ISRU sites that NASA expects at 3–5 km. Extended runs up to 10 km (DD-014) can, at ~10–15% loss.", fix: "Site selection (M00) puts at least one point of the pair within 10 km and keeps each run 10 km or less; ISRU plants at 3–5 km on extended runs; size generation for the extra loss; PSR work beyond 10 km on the mobile power cart (PW.5) or a local source."}
   - {sev: Medium, title: "LR-1's alternator frequency is not set by NASA; its 2025 reference Brayton alternators ran at 2 kHz.", fix: "Specify 3 kV, 3-phase, 1 kHz at the reactor output, or add a frequency converter at the reactor end (open, DD-013)."}
   - {sev: Medium, title: "Laying long cables on rough terrain can snag or overstress the cable; LunaGrid-Lite's demo length dropped from 1 km to 500 m.", fix: "Survey routes from orbit and by rover first; use 1 km reels with field splices; monitor tension and payout."}
 sources:
@@ -92,7 +92,7 @@ sources:
 
 ## What it does
 
-The grid moves power from where it is made to where it is used. NASA's reactor reference design places the user interface 1 km from the reactor<sup class="r">[3](#s3)</sup>, and NASA says the oxygen plant needs power over 3–5 km<sup class="r">[6](#s6)</sup>. Open Moon keeps every power run to 3 km, so its ISRU plants must sit within 3 km of the PMC (DD-013). NASA's baseline is two independent microgrids, one for the habitat and one for ISRU, each with its own sources, joined by a primary line so they can share power<sup class="r">[6](#s6)</sup>.
+The grid moves power from where it is made to where it is used. NASA's reactor reference design places the user interface 1 km from the reactor<sup class="r">[3](#s3)</sup>, and NASA says the oxygen plant needs power over 3–5 km<sup class="r">[6](#s6)</sup>. Open Moon's standard power run is 3 km (DD-013), and ISRU plants at NASA's 3–5 km are fed by extended runs of up to 10 km (DD-014). NASA's baseline is two independent microgrids, one for the habitat and one for ISRU, each with its own sources, joined by a primary line so they can share power<sup class="r">[6](#s6)</sup>.
 
 **Every source goes through the PMC (design changes DD-003 and DD-008).** Source lines from the reactor and the solar towers run to the power management controller (PMC, C04.3), not straight to users. The PMC then sends power out over the grid to meet demand, or into storage. So the grid has two parts: source lines into the PMC, and the distribution grid from the PMC to every unit.
 
@@ -102,7 +102,9 @@ The grid moves power from where it is made to where it is used. NASA's reactor r
 
 {% include decision-note.html id="DD-009" extra="This component first fed separate habitat and ISRU 120 V DC microgrids, following NASA's 2022 layout." %}
 
-**3 km at most, converted at the source (design change DD-013).** Every generation source sits within 3 km of cable run of the PMC, and converts to 3 kV, 3-phase, 1 kHz AC right where it stands. See [Source-end conversion](#source-end-conversion-dd-010) below.
+**3 km standard, 10 km extended, converted at the source (design changes DD-013 and DD-014).** Every generation source sits within 3 km of cable run of the PMC as standard (DD-013), or up to 10 km on an extended run at about 10–15% loss (DD-014), and converts to 3 kV, 3-phase, 1 kHz AC right where it stands. See [Source-end conversion](#source-end-conversion-dd-010) below.
+
+{% include decision-note.html id="DD-014" extra="DD-013 capped every run at 3 km. 3 km is now the standard, and runs of up to 10 km are allowed as extended runs. See the 10 km row under Sizing below." %}
 
 {% include decision-note.html id="DD-013" extra="This component used '1–3 km' links with no set maximum, and said only that each source had a step-up transformer." %}
 
@@ -130,7 +132,7 @@ Each service connection has the same parts (plan design):
 
 - **Source lines** run from each solar tower and from the reactor to the PMC, one line per source (plan design, DD-003).
 - **Distribution grid** runs from the PMC to every unit. At each unit's service connection a UMIC-class converter turns 3 kV AC into 120 V DC<sup class="r">[2](#s2)</sup> (plan design, DD-009).
-- **Distances.** No source run is longer than 3 km of cable (plan design, DD-013). The reactor sits 1–3 km from the habitat zone (plan design, DD-002); NASA's reference design uses a 1 km link<sup class="r">[3](#s3)</sup>. NASA's estimate for ISRU is power over 3–5 km<sup class="r">[6](#s6)</sup>, so under DD-013 the ISRU plants must be placed within 3 km of the PMC, and work further out uses the mobile power cart (PBS PW.5) or a local source (open).
+- **Distances.** Standard source runs are 3 km of cable or less (plan design, DD-013); extended runs reach up to 10 km (plan design, DD-014). The reactor sits 1–3 km from the habitat zone (plan design, DD-002); NASA's reference design uses a 1 km link<sup class="r">[3](#s3)</sup>. NASA's estimate for ISRU is power over 3–5 km<sup class="r">[6](#s6)</sup>, so ISRU plants at that distance are fed by extended runs (DD-014), and work beyond 10 km uses the mobile power cart (PBS PW.5) or a local source (open).
 - **On the surface.** All lines lie on the surface, as NASA advises<sup class="r">[3](#s3)</sup>. They keep away from rover routes, with ramps at crossings (plan design).
 
 ## Why 3 kV AC at 1 kHz: NASA's reasoning
@@ -161,7 +163,7 @@ The same study says DC would be "significantly lighter than AC for voltages abov
 
 ## Source-end conversion (DD-013)
 
-![Diagram: three conversion chains, each built at the source. VSAT: native DC, array regulator and shunt, UMIC-class low-voltage inverter, 1 kHz step-up transformer, 3 kV AC. Kilopower: eight Stirling alternators at about 12 V AC and 100 Hz, one controller each rectifying to DC, a shared DC bus, a UMIC-class inverter, a 1 kHz transformer, 3 kV AC. LR-1: 3 kV AC at the reactor output, with the frequency matched to 1 kHz by the vendor or a converter. Every source then runs at most 3 km of cable to the PMC](/assets/tech/source-to-3kv-conversion.svg)
+![Diagram: three conversion chains, each built at the source. VSAT: native DC, array regulator and shunt, UMIC-class low-voltage inverter, 1 kHz step-up transformer, 3 kV AC. Kilopower: eight Stirling alternators at about 12 V AC and 100 Hz, one controller each rectifying to DC, a shared DC bus, a UMIC-class inverter, a 1 kHz transformer, 3 kV AC. LR-1: 3 kV AC at the reactor output, with the frequency matched to 1 kHz by the vendor or a converter. Every source then runs 3 km of cable or less to the PMC as standard, or up to 10 km as an extended run](/assets/tech/source-to-3kv-conversion.svg)
 
 Each source makes its own 3 kV, 3-phase, 1 kHz AC (plan design, DD-013):
 - **Low-voltage inverter, then transformer.** A UMIC-class inverter of parallel 1 kW modules turns the source's DC into under 100 V AC, and a 1 kHz transformer next to the source steps it up to 3 kV<sup class="r">[2](#s2)</sup>. Only low-voltage switches are used; the transformer has none. There are no high-voltage DC lines.
@@ -170,7 +172,7 @@ Each source makes its own 3 kV, 3-phase, 1 kHz AC (plan design, DD-013):
 - **KRUSTY-class.** Eight Stirling alternators, each about 12 V AC at ~100 Hz → one controller per engine rectifies to DC → one DC bus (voltage not published) → inverter → transformer. NASA's 2025 Stirling reference does the same at 40 kWe: controllers to 350 V DC, then DC-to-AC and a transformer to 3 kVac<sup class="r">[14](#s14)</sup>. See the [Kilopower / KRUSTY card](/technology/kilopower-krusty-fission-test/).
 - **LR-1.** 3 kV RMS AC is required, but no frequency is set<sup class="r">[16](#s16)</sup>. NASA's 2025 Brayton reference alternators gave 240 Vrms, 2 kHz, 3-phase<sup class="r">[14](#s14)</sup>. The plan requires **3 kV, 3-phase, 1 kHz at the reactor output**, by vendor specification or a frequency converter at the reactor end (**open**).
 
-**Why 3 km.** For 100 kW on 8 AWG cable at 1 kHz, NASA's grid study gives 3 kV as usable to about 600 m and 6 kV to 2.5 km, rising to 18 kV for 20 km, and warns that "long distances beyond Artemis may require dropping to lower frequency (TBD)"<sup class="r">[1](#s1)</sup>. NASA's Artemis working scale is 1–3 km links at "elevated voltage (2 kV+)"<sup class="r">[6](#s6)</sup>. The base's links carry 20 kW or less, so a 3 km cap keeps them inside NASA's 3 kV, 1 kHz design scale (plan design).
+**Why 3 km.** For 100 kW on 8 AWG cable at 1 kHz, NASA's grid study gives 3 kV as usable to about 600 m and 6 kV to 2.5 km, rising to 18 kV for 20 km, and warns that "long distances beyond Artemis may require dropping to lower frequency (TBD)"<sup class="r">[1](#s1)</sup>. NASA's Artemis working scale is 1–3 km links at "elevated voltage (2 kV+)"<sup class="r">[6](#s6)</sup>. The base's links carry 20 kW or less, so a 3 km standard run keeps them inside NASA's 3 kV, 1 kHz design scale (plan design). An extended run of up to 10 km goes beyond it, so each one needs its own 1 kHz charging and stability analysis before approval (plan design, DD-014).
 
 ## Sizing
 
@@ -187,7 +189,23 @@ The worst case under DD-013 is the 20 kWe reactor link over the full 3 km (this 
 
 - **At 8 AWG** (8.37 mm², the size NASA's grid study used<sup class="r">[1](#s1)</sup>), the loss is about 2.1% (422 W) and the aluminium weighs about 203 kg (this plan's arithmetic).
 - **A 10 kW tower link** carries half the current, about 1.9 A, and a quarter of the loss on the same cable (this plan's arithmetic).
-- Insulation, jacket and spool, not metal, make up most of the cable mass. NASA's 325 kg per km is the planning figure: about 1 t per 3 km run.
+- Insulation, jacket and spool, not metal, make up most of the cable mass. NASA's 325 kg per km is the planning figure: about 1 t per 3 km run, and about 3.3 t per 10 km extended run (this plan's arithmetic).
+
+**Extended run: the same cable over 10 km (this plan's arithmetic, DD-014).** Same 20 kW, 3 kV, 3-phase, unity power factor, 3.85 A per phase, and the ~5.9 mm² conductor sized for 3% at 3 km:
+
+| Run on the same cable | Resistance per conductor | Resistive loss | Voltage drop |
+|---|---|---|---|
+| 3 km | ~13.5 Ω | ~0.6 kW (~3%) | ~3% |
+| 10 km | ~45 Ω | ~2.0 kW (~10%) | ~10% |
+
+| Run on NASA's 8 AWG (8.37 mm²) | Resistance per conductor | Resistive loss |
+|---|---|---|
+| 3 km | ~9.5 Ω | ~0.42 kW (~2.1%) |
+| 10 km | ~32 Ω | ~1.4 kW (~7%) |
+
+- **Why the band goes up to ~15% (ESTIMATE, plan margin).** Two effects are not in the tables. First, the current rises a little as the voltage sags: if the load holds 20 kW at the receiving end, the current rises to about 4.3 A and the loss to about 2.5 kW, about 11% of the power sent (this plan's arithmetic). Second, the 1 kHz reactive effects, cable charging current and inductance, are not quantified, because NASA has not published them for this cable. NASA warns that "long distances beyond Artemis may require dropping to lower frequency (TBD) to avoid stability, propagation issues"<sup class="r">[1](#s1)</sup>.
+- **Conditions (plan design).** Voltage regulation or transformer taps at the receiving end, for the ~10% sag. An analysis of 1 kHz cable charging and stability for that run before it is approved. Optionally, a thicker cable.
+- **Thicker cable.** At constant loss, cable mass rises with the square of distance. Holding 3% at 10 km needs about 20 mm² per conductor, about 1.6 t of aluminium for 3 conductors × 10 km, against ~143 kg at 3 km (this plan's arithmetic).
 
 - **Voltage check.** NASA found no mass benefit above 3 kVac for a 1 km link, because higher voltage pushed wire sizes below the smallest practical gauge. Dropping to 1 kVac added 570 kg<sup class="r">[3](#s3)</sup>.
 
@@ -196,7 +214,7 @@ The worst case under DD-013 is the 20 kWe reactor link over the full 3 km (this 
 1. **Cable samples.** Partial-discharge and breakdown tests in vacuum at −173 to +130 °C (the lunar range<sup class="r">[6](#s6)</sup>), with dust; then flex and abrasion. NASA's 2025 tests already showed no major losses from simulant, coiled or buried<sup class="r">[4](#s4)</sup>.
 2. **UMIC.** Scale from NASA's single 1 kW module<sup class="r">[2](#s2)</sup> to a multi-kilowatt unit with transformers. Run thermal-vacuum and radiation tests.
 3. **Hardware-in-the-loop grid.** Run several UMICs in parallel on simulated sources and service connections. Inject load steps and faults and check stability and that only the faulted service connection trips.
-4. **Rover field trials.** Lay and recover 1 km reels of cable on simulant slopes, and splice three of them into a full 3 km run (DD-013). Measure tension, payout accuracy and how the cable lies on rough ground.
+4. **Rover field trials.** Lay and recover 1 km reels of cable on simulant slopes, and splice three of them into a full 3 km run (DD-013), and ten into a 10 km extended run (DD-014). Measure tension, payout accuracy and how the cable lies on rough ground.
 5. **On the Moon.** Use LunaGrid-Lite's flight results<sup class="r">[7](#s7)</sup> to set the first route. Energise each link at low voltage first, then 3 kV. Record its TDR signature as a baseline.
 
 ## Open questions
@@ -204,7 +222,10 @@ The worst case under DD-013 is the 20 kWe reactor link over the full 3 km (this 
 - How should surface cables be protected from rover traffic and micrometeoroids, given that NASA advises against burial<sup class="r">[3](#s3)</sup>?
 - Will LR-1 deliver 1 kHz itself, or does the reactor end need a frequency converter (DD-013)?
 - What DC bus voltage will a KRUSTY-class unit's controllers hold, and does it match a UMIC-class inverter's 120 V DC input (DD-013)?
-- How much illumination does the base give up by keeping every ridge point within 3 km, and how far out must the mobile power cart reach for PSR work (DD-013)?
+- Which ridge points and ISRU sites need extended runs, and how much illumination does the base gain from them against ~10–15% loss each (DD-013, DD-014)?
+- What are the 1 kHz cable charging current, inductance and stability margin of a 10 km run of this cable? NASA has not published them, and each extended run needs this analysis before approval (DD-014).
+- Does an extended run need receiving-end voltage regulation, transformer taps, or a thicker cable (DD-014)?
+- How far beyond 10 km must the mobile power cart reach for PSR work (DD-014)?
 - How do many inverter-only sources share control, with the PMC setting how much each one supplies?
 - How large should each service connection be? Each unit's rating waits for the Phase 1 load budget.
 - If radiation-hard high-voltage switches mature, would a DC upgrade be worth revisiting? (See DD-001.)

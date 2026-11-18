@@ -15,7 +15,7 @@ spec:
   - {k: "Mass", v: "~3 t delivered (M06 ESTIMATE)"}
   - {k: "Life", v: "6 months continuous operation, with electrode and crucible change-out"}
   - {k: "Delivery class", v: "Medium lander"}
-  - {k: "Power interface", v: "Own service connection to the M04 grid (UMIC-class step-down to 120 V DC, meter, main breaker) and its own 120 V DC panel; can be isolated without affecting other units (plan design, DD-009); within 3 km of cable run of the PMC (DD-013)"}
+  - {k: "Power interface", v: "Own service connection to the M04 grid (UMIC-class step-down to 120 V DC, meter, main breaker) and its own 120 V DC panel; can be isolated without affecting other units (plan design, DD-009); within 3 km of cable run of the PMC as standard, or up to 10 km on an extended run at ~10–15% loss (DD-013, DD-014)"}
 subcomponents:
   - name: "Feedstock handling and beneficiation"
     desc: "Takes regolith from the M05 stockpile, sieves it, and feeds a measured batch into each reactor."
@@ -117,7 +117,7 @@ Design choice: four electrolysis cells of about 1,000 A each, plus one spare. Th
 
 ## Open questions
 
-- The plant must sit within 3 km of cable run of the PMC (DD-013), but NASA expects ISRU to need power over 3–5 km<sup class="r">[9](#s9)</sup>. Is regolith of the right quality within that reach, or must feedstock be hauled in?
+- The plant sits within 3 km of cable run of the PMC as standard (DD-013). NASA expects ISRU to need power over 3–5 km<sup class="r">[9](#s9)</sup>, so a plant at that distance runs on an extended run of up to 10 km, at about 10–15% loss (plan design, DD-014). Is regolith of the right quality within 10 km, and does the extended run pass its 1 kHz stability analysis, or must feedstock be hauled in?
 - What anode material survives months in molten regolith, and how fast does it wear?
 - Does energy per kg fall toward the study figure as the reactor gets bigger?
 - Is beneficiation worth its mass, or should raw sieved regolith go straight in?

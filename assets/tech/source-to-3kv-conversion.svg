@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="Share Tech Mono, monospace" role="img" aria-labelledby="t d">
 <title id="t">Source-end conversion to 3 kV AC (DD-013)</title>
-<desc id="d">Three rows show how each power source makes 3 kV AC, 3-phase, 1 kHz right where it stands, then sends it over no more than 3 km of cable to the power management controller (PMC). Row 1, VSAT solar tower: the array makes DC at a voltage that is not published (the ISS arrays hold about 160 V DC); an array regulator and shunt holds the bus and curtails or disconnects on PMC command; a UMIC-class inverter of parallel 1 kW modules turns DC into under 100 V AC; a 1 kHz step-up transformer raises it to 3 kV AC. Row 2, KRUSTY-class Kilopower unit: eight Stirling engines in opposed pairs each make single-phase AC at about 12 V RMS, 100 Hz and 7 to 10 A (values for the Advanced Stirling Convertor family); one controller per engine rectifies to DC and holds a set voltage; the controller outputs share one DC bus, whose voltage is not published; a UMIC-class inverter and a 1 kHz transformer make 3 kV AC. The 12 V never leaves the machine. Row 3, LR-1-class reactor: closed Brayton alternators (NASA's 2025 reference gave 240 Vrms at 2 kHz) and the vendor's power electronics deliver 3 kV RMS AC; the plan requires 3 kV, 3-phase, 1 kHz at the reactor output, either specified to the vendor or made by a frequency converter at the reactor end, which is open. Only low-voltage switches are used; the transformer does the step-up and has no switches.</desc>
+<desc id="d">Three rows show how each power source makes 3 kV AC, 3-phase, 1 kHz right where it stands, then sends it over no more than 3 km of cable as standard, or up to 10 km as an extended run, to the power management controller (PMC). Row 1, VSAT solar tower: the array makes DC at a voltage that is not published (the ISS arrays hold about 160 V DC); an array regulator and shunt holds the bus and curtails or disconnects on PMC command; a UMIC-class inverter of parallel 1 kW modules turns DC into under 100 V AC; a 1 kHz step-up transformer raises it to 3 kV AC. Row 2, KRUSTY-class Kilopower unit: eight Stirling engines in opposed pairs each make single-phase AC at about 12 V RMS, 100 Hz and 7 to 10 A (values for the Advanced Stirling Convertor family); one controller per engine rectifies to DC and holds a set voltage; the controller outputs share one DC bus, whose voltage is not published; a UMIC-class inverter and a 1 kHz transformer make 3 kV AC. The 12 V never leaves the machine. Row 3, LR-1-class reactor: closed Brayton alternators (NASA's 2025 reference gave 240 Vrms at 2 kHz) and the vendor's power electronics deliver 3 kV RMS AC; the plan requires 3 kV, 3-phase, 1 kHz at the reactor output, either specified to the vendor or made by a frequency converter at the reactor end, which is open. Only low-voltage switches are used; the transformer does the step-up and has no switches.</desc>
 <defs>
 <pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(56,212,240,.07)"/></pattern>
 <marker id="ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#38d4f0"/></marker>
 <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ffb020"/></marker>
 </defs>
 <rect width="960" height="640" fill="#0a1015"/><rect width="960" height="640" fill="url(#g)"/>
-<text x="24" y="36" fill="#d6e2ec" font-size="19" letter-spacing="1">SOURCE-END CONVERSION TO 3 kV AC · ≤3 km TO THE PMC</text>
-<text x="24" y="56" fill="#d6e2ec" font-size="12" opacity=".7">Plan design (DD-013). Low-voltage switches only; the 1 kHz transformer does the step-up and has no switches.</text>
+<text x="24" y="36" fill="#d6e2ec" font-size="19" letter-spacing="1">SOURCE-END CONVERSION TO 3 kV AC · ≤3 km STD / ≤10 km EXT.</text>
+<text x="24" y="56" fill="#d6e2ec" font-size="12" opacity=".7">Plan design (DD-013, DD-014). Low-voltage switches only; the 1 kHz transformer does the step-up and has no switches.</text>
 
 <!-- PMC -->
 <rect x="872" y="86" width="72" height="420" rx="10" fill="rgba(56,212,240,.16)" stroke="#38d4f0" stroke-width="2.5"/>
@@ -115,9 +115,9 @@
 <!-- cables to PMC -->
 <g stroke="#ffb020" stroke-width="3" fill="none" marker-end="url(#ah)"><path d="M778 142H868"/><path d="M778 272H868"/><path d="M778 402H868"/></g>
 <g font-size="10" fill="#ffb020" text-anchor="middle">
-<text x="825" y="134">3 kV AC</text><text x="825" y="158">≤3 km</text>
-<text x="825" y="264">3 kV AC</text><text x="825" y="288">≤3 km</text>
-<text x="825" y="394">3 kV AC</text><text x="825" y="418">≤3 km</text>
+<text x="825" y="134">3 kV AC</text><text x="825" y="158">≤3 km std</text><text x="825" y="176">≤10 km ext.</text>
+<text x="825" y="264">3 kV AC</text><text x="825" y="288">≤3 km std</text><text x="825" y="306">≤10 km ext.</text>
+<text x="825" y="394">3 kV AC</text><text x="825" y="418">≤3 km std</text><text x="825" y="436">≤10 km ext.</text>
 </g>
 
 <!-- notes -->
@@ -127,6 +127,7 @@
 <text x="16" y="526">· NASA: at 100 kW on 8 AWG, 1 kHz: 3 kV to ~600 m, 6 kV to 2.5 km, 18 kV for 20 km.</text>
 <text x="16" y="542">· 1 kW at 12 V ≈ 83 A: only ~1.4 m one-way on 10 mm² Al for 5% loss (this plan's arithmetic).</text>
 <text x="16" y="558">· 20 kW over 3 km at 3 kV: 3.85 A; ~5.9 mm² Al for ≤3% loss (this plan's arithmetic).</text>
+<text x="16" y="574">· Same cable over a 10 km extended run: ~10% loss, up to ~15% with margin (ESTIMATE).</text>
 </g>
 <g font-size="10" fill="#d6e2ec">
 <path d="M640 590H672" stroke="#38d4f0" stroke-width="2"/><text x="680" y="594">low voltage, inside the unit</text>

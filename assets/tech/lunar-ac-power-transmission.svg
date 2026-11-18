@@ -10,15 +10,15 @@
 <path class="l" d="M110 410 V200"/><rect class="f" x="70" y="150" width="35" height="110"/><rect class="f" x="115" y="150" width="35" height="110"/>
 <path class="l" d="M70 177h35M70 205h35M70 232h35M115 177h35M115 205h35M115 232h35" opacity=".5"/>
 <path class="l" d="M110 410 L92 418 M110 410 L128 418"/>
-<rect class="f" x="160" y="370" width="60" height="45"/><text class="s" x="190" y="397" text-anchor="middle">UMIC + XFMR</text>
+<rect class="f" x="160" y="370" width="60" height="45"/><text class="s" x="190" y="389" text-anchor="middle">UMIC</text><text class="s" x="190" y="405" text-anchor="middle">+ XFMR</text>
 <path class="l" d="M110 395 H160"/>
 <path class="a" d="M220 405 C300 420 360 412 430 418 S560 414 600 410" stroke-width="3"/>
-<rect class="f" x="600" y="370" width="60" height="45"/><text class="s" x="630" y="397" text-anchor="middle">UMIC + XFMR</text>
+<rect class="f" x="600" y="370" width="60" height="45"/><text class="s" x="630" y="389" text-anchor="middle">UMIC</text><text class="s" x="630" y="405" text-anchor="middle">+ XFMR</text>
 <path class="f" d="M670 410 V330 Q670 300 710 300 H740 Q770 300 770 330 V410Z"/><rect class="f" x="700" y="350" width="22" height="30"/>
 <path class="l" d="M660 395 H670"/>
 <circle class="f" cx="300" cy="290" r="40"/><circle class="a" cx="300" cy="290" r="14"/><path class="l" d="M300 250 V276 M300 304 V330 M260 290 H286 M314 290 H340" opacity=".5"/>
 <path class="c" d="M300 330 L310 414" stroke-dasharray="3 3"/>
-<path class="c" d="M220 450 H600"/><path class="c" d="M220 444 V456 M600 444 V456"/><text x="410" y="470" text-anchor="middle">~3 km</text>
+<path class="c" d="M220 450 H600"/><path class="c" d="M220 444 V456 M600 444 V456"/><text x="410" y="470" text-anchor="middle">≤3 km standard / ≤10 km extended</text>
 <path class="c" d="M150 150L180 100"/><circle class="af" cx="150" cy="150" r="3"/><text x="186" y="105" text-anchor="start">SOLAR ARRAY / POWER SOURCE</text>
 <text x="345" y="280">ALUMINIUM CONDUCTOR</text><text x="345" y="300">3 kVac · 3-PHASE · 1 kHz</text><text class="s" x="345" y="318">CROSS-SECTION (CONCEPT)</text>
 <path class="c" d="M720 300L700 220"/><circle class="af" cx="720" cy="300" r="3"/><text x="694" y="225" text-anchor="end">HABITAT LOAD</text>

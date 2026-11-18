@@ -16,7 +16,7 @@ spec:
   - {k: "Night survival", v: "≥96 h in darkness"}
   - {k: "Quantity", v: "N × 10 kW on 2–3 ridge points; N set by the Phase 1 load budget (provisional 10 for costing) (DD-004)"}
   - {k: "Output", v: "3 kV AC, 3-phase, 1 kHz made at the tower: array regulator, UMIC-class inverter, 1 kHz step-up transformer (DD-013)"}
-  - {k: "Run to PMC", v: "≤3 km of cable from every tower (DD-013)"}
+  - {k: "Run to PMC", v: "Standard ≤3 km of cable from a tower (DD-013); extended up to 10 km at ~10–15% loss (DD-014)"}
   - {k: "Delivery", v: "Small landers for the first towers; medium landers can carry several"}
 subcomponents:
   - name: Mast and deployer
@@ -51,7 +51,7 @@ subcomponents:
     trl: 5
 risks:
   - {sev: High, title: "Even at 10 m, the best single point is in shadow 4–8% of the time.", fix: "Spread towers over two or three ridge points that are shadowed at different times; back them up with fission (C04.1) and storage (C04.3)."}
-  - {sev: High, title: "Every tower must be within 3 km of cable run of the PMC (DD-013), but the best published pair of Shackleton-ridge points (~94% combined) is about 8 km apart.", fix: "M00 picks the best combined light from ridge points inside a 3 km reach of the base; accept the loss or add storage; no runs of 10–30 km for now."}
+  - {sev: High, title: "The standard tower run is 3 km of cable to the PMC (DD-013), but the best published pair of Shackleton-ridge points (~94% combined) is about 8 km apart.", fix: "Reach the pair with extended runs of up to 10 km at ~10–15% loss (DD-014): at least one point within 10 km, each run 10 km or less, receiving-end voltage regulation and a 1 kHz stability analysis per run; no runs beyond 10 km."}
   - {sev: High, title: "Tall masts can buckle or tip on slopes or soft regolith.", fix: "Use active plumbness control and wide levelling legs; test full-height towers on regolith simulant slopes before flight."}
   - {sev: High, title: "All prototype designs were above their mass goals at preliminary design.", fix: "Budget ~1 t per 10 kW tower now (ESTIMATE); fly the first towers and measure before buying the rest."}
   - {sev: High, title: "Dust thrown up by landers can sandblast and coat the arrays.", fix: "Keep towers 1 km+ from landing pads (M05); vertical blankets shed falling dust; electrodynamic dust shields."}
@@ -86,14 +86,16 @@ At the south pole the Sun skims the horizon, so hills and crater rims cast very 
 
 **Curtailment and disconnect (plan design, DD-008).** When demand is met and storage is full, the PMC tells each tower to reduce or cut its output. The tower's array regulator does this by shunting array strings, and a disconnect contactor can isolate the whole tower. This is ISS heritage: the station's sequential shunt unit shunts and unshunts array strings to hold the ~160 V DC primary bus<sup class="r">[14](#s14)</sup><sup class="r">[15](#s15)</sup>. The towers can also be lowered and moved<sup class="r">[1](#s1)</sup>.
 
-**Conversion at the tower, and 3 km at most (design change DD-013).** Solar cells make DC. VSAT's array voltage is not published; for comparison, the ISS arrays run a ~160 V DC bus<sup class="r">[14](#s14)</sup><sup class="r">[15](#s15)</sup>. Each tower turns that DC into 3 kV AC on the spot (plan design):
+**Conversion at the tower, 3 km standard and 10 km at most (design changes DD-013 and DD-014).** Solar cells make DC. VSAT's array voltage is not published; for comparison, the ISS arrays run a ~160 V DC bus<sup class="r">[14](#s14)</sup><sup class="r">[15](#s15)</sup>. Each tower turns that DC into 3 kV AC on the spot (plan design):
 1. **Array regulator and shunt.** Holds the DC bus and curtails or disconnects on PMC command (DD-008).
 2. **UMIC-class inverter.** Parallel 1 kW modules turn DC into under 100 V AC<sup class="r">[16](#s16)</sup>.
 3. **1 kHz step-up transformer.** Raises it to 3 kV, 3-phase, 1 kHz, the grid standard (DD-001). The transformer has no switches, so only low-voltage switches are needed. NASA limits a DC grid to 1.2–1.5 kV for lack of radiation-hard high-voltage switches<sup class="r">[17](#s17)</sup>.
 
-Astrobotic's VSAT team already proposed high-voltage AC transmission using NASA Glenn's UMIC<sup class="r">[3](#s3)</sup>. Every tower must sit within **3 km of cable run** of the PMC.
+Astrobotic's VSAT team already proposed high-voltage AC transmission using NASA Glenn's UMIC<sup class="r">[3](#s3)</sup>. Every tower sits within **3 km of cable run** of the PMC as standard (DD-013), or up to **10 km** on an extended run at about 10–15% loss (DD-014).
 
 {% include decision-note.html id="DD-013" extra="Each tower had a 'line interface converter' with no set distance. Now the tower converts to 3 kV AC itself and stands within 3 km of cable run of the PMC." %}
+
+{% include decision-note.html id="DD-014" extra="A tower may now stand up to 10 km of cable from the PMC on an extended run, so the ~94% ridge-point pair about 8 km apart is back in reach." %}
 
 ## How it works
 
@@ -116,7 +118,7 @@ Astrobotic's VSAT team already proposed high-voltage AC transmission using NASA 
 | 10 kW tower | 10 (provisional) | 100 kW | ~10 t |
 
 - **Why several ridges.** Two points about 8 km apart on a Shackleton ridge are lit a combined ~94% of a lunar year<sup class="r">[11](#s11)</sup>. Shadows of up to about 100 hours remain<sup class="r">[12](#s12)</sup>, so fission and storage still carry the night.
-- **The 3 km conflict (DD-013).** Those two points cannot both be within 3 km of cable run of one PMC: even with the PMC exactly between them, each would be about 4 km away in a straight line (this plan's arithmetic). The plan must use ridge points inside a 3 km reach of the base, and may get less combined light. Site selection (M00) must resolve this (open).
+- **The 3 km conflict (DD-013), resolved by extended runs (DD-014).** Those two points cannot both be within 3 km of cable run of one PMC: even with the PMC exactly between them, each would be about 4 km away in a straight line (this plan's arithmetic). With extended runs of up to 10 km, both can be reached (plan design, DD-014). At least one point must be within 10 km of cable run, and each run must be 10 km or less. Each extended run loses about 10–15% (this plan's arithmetic and ESTIMATE) and needs a 1 kHz stability analysis. Site selection (M00) still picks the base point and the routes (open).
 
 ## Testing and qualification
 
@@ -129,8 +131,8 @@ Astrobotic's VSAT team already proposed high-voltage AC transmission using NASA 
 ## Open questions
 
 - What is the real flight mass of a 10 kW tower?
-- Which ridge points give the least overlap in shadow time for the actual landing site, using only points within 3 km of cable run of the PMC (DD-013)?
+- Which ridge points give the least overlap in shadow time for the actual landing site, using points within 3 km of cable run of the PMC where possible and within 10 km at most (DD-013, DD-014)?
 - What DC voltage does a VSAT array deliver to its regulator and inverter? It is not published.
 - How many towers does the Phase 1 load budget call for, and on which ridge points?
 - How fast do cells degrade from dust, radiation and thermal cycling over 10 years at the pole?
-- Each tower sends its power over a 3 kV AC, 1 kHz line of no more than 3 km (design changes DD-001 and DD-013) to the PMC, which routes it to the grid or to storage (design changes DD-003 and DD-008). Could Astrobotic's proposed high-voltage AC output<sup class="r">[3](#s3)</sup> serve as the tower's inverter and transformer?
+- Each tower sends its power over a 3 kV AC, 1 kHz line of no more than 3 km as standard, or up to 10 km as an extended run (design changes DD-001, DD-013 and DD-014), to the PMC, which routes it to the grid or to storage (design changes DD-003 and DD-008). Could Astrobotic's proposed high-voltage AC output<sup class="r">[3](#s3)</sup> serve as the tower's inverter and transformer?
