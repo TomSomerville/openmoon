@@ -53,8 +53,8 @@ doc_id: OM-100
 </div>
 {% for p in site.data.phases %}
 {% assign ps = stages | where: "phase", p.n %}{% assign last = ps | last %}
-{% assign lo = 0 %}{% assign hi = 0 %}{% assign done = 0 %}
-{% for m in ms %}{% assign endy = m.window | remove: "Before Year " | remove: "Years " | remove: "Year " | split: "–" | last | plus: 0 %}{% if endy <= last.end %}{% assign lo = lo | plus: m.cost.low %}{% assign hi = hi | plus: m.cost.high %}{% assign done = done | plus: 1 %}{% endif %}{% endfor %}
+{% assign lo = 0 %}{% assign hi = 0 %}
+{% for m in ms %}{% assign endy = m.window | remove: "Before Year " | remove: "Years " | remove: "Year " | split: "–" | last | plus: 0 %}{% if endy <= last.end %}{% assign lo = lo | plus: m.cost.low %}{% assign hi = hi | plus: m.cost.high %}{% endif %}{% endfor %}
 <section class="rm-panel" role="tabpanel" id="phase-{{ p.n }}" aria-labelledby="tab-p{{ p.n }}"{% unless forloop.first %} hidden{% endunless %}>
   {% if p.n == 0 %}<div class="rm-pair"><img src="{{ '/assets/sites/primary-base-site.jpg' | relative_url }}" alt="Primary base site close-up: slope classes, de Gerlache ice-candidate floor, hydrogen, base and ice-mine power grids"><div class="rm-ph">Image to come</div></div>
   {% else %}{% capture yy %}{% if last.year < 10 %}0{% endif %}{{ last.year }}{% endcapture %}<img class="rm-img" src="{{ '/assets/roadmap/year-' | append: yy | append: '.svg' | relative_url }}" alt="Concept illustration of the base at the end of Phase {{ p.n }}" loading="lazy">{% endif %}
@@ -66,13 +66,12 @@ doc_id: OM-100
     <div class="rm-stats">
       <div><small>Crew (end)</small><b>{{ last.crew_text | default: last.crew }}</b></div>
       <div><small>Power (end)</small><b>{% if last.power_kw > 0 %}{% if last.power_kw >= 500 %}≥{% endif %}{{ last.power_kw }} kW{% else %}–{% endif %}</b></div>
-      <div><small>Milestones done</small><b>{{ done }} / {{ ms | size }}</b></div>
       <div><small>Spent (est.)</small><b>{% if hi > 0 %}${{ lo | round: 0 }}–{{ hi | round: 0 }}B{% else %}–{% endif %}</b></div>
     </div>
   </div>
 </section>
 {% endfor %}
-<p style="font-size:12.5px;color:var(--dim);margin:8px 0 26px">Illustrations are Open Moon concepts, not engineering drawings. Spent = milestones finished by the end of the phase (estimate).</p>
+<p style="font-size:12.5px;color:var(--dim);margin:8px 0 26px">Illustrations are Open Moon concepts, not engineering drawings. Spent = estimated cost of the milestones planned to end by the end of the phase.</p>
 
 <script>
 (function(){
@@ -100,6 +99,6 @@ doc_id: OM-100
 <div class="tablewrap"><table class="data">
 <thead><tr><th>ID</th><th>Milestone</th><th>Phase</th><th>Window</th><th>Cost (est.)</th><th>Lowest TRL</th><th>Depends on</th></tr></thead>
 <tbody>
-{% for m in ms %}<tr><td><span class="tag hi">{{ m.id_code }}</span></td><td><a href="{{ m.url | relative_url }}"><strong>{{ m.title }}</strong></a><br><span style="color:var(--dim)">{{ m.summary }}</span></td><td>{{ m.phase }}</td><td style="white-space:nowrap">{{ m.window }}</td><td style="white-space:nowrap">{% if m.cost %}${{ m.cost.low }}–{{ m.cost.high }}B{% else %}done{% endif %}</td><td style="white-space:nowrap">{% include trl.html n=m.trl_min %}</td><td>{{ m.depends_on | join: ", " }}</td></tr>
+{% for m in ms %}<tr><td><span class="tag hi">{{ m.id_code }}</span></td><td><a href="{{ m.url | relative_url }}"><strong>{{ m.title }}</strong></a><br><span style="color:var(--dim)">{{ m.summary }}</span></td><td>{{ m.phase }}</td><td style="white-space:nowrap">{{ m.window }}</td><td style="white-space:nowrap">{% if m.cost %}${{ m.cost.low }}–{{ m.cost.high }}B{% else %}–{% endif %}</td><td style="white-space:nowrap">{% include trl.html n=m.trl_min %}</td><td>{{ m.depends_on | join: ", " }}</td></tr>
 {% endfor %}
 </tbody></table></div>

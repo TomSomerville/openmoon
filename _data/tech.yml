@@ -78,6 +78,26 @@
     credit: Open Moon concept illustration
     license: CC BY-SA 4.0
     source_page: https://www.nasa.gov/missions/artemis/clps/nasas-lunar-drill-technology-passes-tests-on-the-moon/
+- name: Resource Prospector drill-to-oven system (NASA)
+  category: Science and survey
+  milestones:
+  - M01
+  phases:
+  - 0
+  trl: 5
+  status: Cancelled in 2018 before flight. Its OVEN passed vibration and thermal-vacuum tests (-50 to 75 °C) and is not on any current mission
+  use: Heritage for the prospector rover's drill-fed bake chamber
+  develop: true
+  source: https://ntrs.nasa.gov/citations/20210013522
+  source_title: 'NASA NTRS: Environmental testing of the OVEN system for lunar water extraction and prospecting'
+  slug: resource-prospector-nasa
+  image:
+    file: /assets/tech/resource-prospector-nasa.jpg
+    kind: photo
+    caption: A lightweight simulator version of NASA's Resource Prospector in a mobility test in a regolith bin at Kennedy Space Center, June 2017. It carries no drill or oven, and no flight rover was built
+    credit: NASA/Kim Shiflett
+    license: NASA media (public domain in the US)
+    source_page: https://images.nasa.gov/details/KSC-20170628-PH_KLS01_0073
 - name: MSolo mass spectrometer
   category: Science and survey
   milestones:

@@ -10,7 +10,7 @@ trl_min: 6
 depends_on: [M00]
 spec:
   - {k: Missions, v: "2 prospecting landings, plus data from partner missions"}
-  - {k: Payload, v: "Prospecting rover, neutron spectrometer, drill, mass spectrometer, cameras"}
+  - {k: Payload, v: "Prospecting rover: neutron spectrometer, scoop arm, 1 m drill, sealed bake chamber, mass spectrometer, cameras"}
   - {k: Delivery, v: "Commercial lander service (CLPS-class)"}
 cost: {low: 0.5, high: 1.2, note: "two missions; delivery priced from published task orders"}
 cost_items:
@@ -18,7 +18,7 @@ cost_items:
   - {item: "Delivery to the south pole ×2", low: 0.25, high: 0.5, basis: "VIPER delivery task order up to $190M each (CS-7); range covers price growth"}
   - {item: "Operations, science team, data release", low: 0.05, high: 0.2, basis: "ESTIMATE"}
 exit_criteria:
-  - "Ice concentration measured by drilling (not only by orbit) in at least two PSRs, to at least 1 m depth, at several points in each."
+  - "Ice concentration measured by drilling and baking samples (not only by orbit) in at least two PSRs, to at least 1 m depth, at several points in each."
   - "Ice map with enough resolution to site an extraction plant, published openly."
   - "Regolith bearing strength, density and grain size measured at the planned pad and habitat locations."
   - "Surface radiation dose and dust levitation measured over at least one full lunar day and night."
@@ -28,8 +28,8 @@ workstreams:
     desc: Fold in results from missions already planned.
     items: ["NASA VIPER (if delivered)", "China's Chang'e-7 near Shackleton", "ISRO/JAXA LUPEX", "Lessons from PRIME-1 on IM-2"]
   - name: Prospector rover
-    desc: A small rover that drives into PSRs and drills.
-    items: ["Neutron spectrometer for hydrogen", "1 m drill (TRIDENT heritage)", "Mass spectrometer (MSolo heritage)", "Survives 25–40 K cold for hours"]
+    desc: A small rover that drives into PSRs, scoops and drills icy soil, and bakes it to measure the water released.
+    items: ["Neutron spectrometer for hydrogen", "1 m drill (TRIDENT heritage) that brushes cuttings into the bake chamber", "Scoop arm with rasp (Phoenix heritage)", "Sealed bake chamber to 450 °C (Resource Prospector OVEN heritage)", "Mass spectrometer (MSolo heritage)", "Survives 25–40 K cold for hours"]
   - name: Lander selection
     desc: Pick the delivery service with the best landing record.
     items: ["Demonstrated soft landings", "Terrain-relative navigation", "Landing ellipse inside site hazards map"]
@@ -42,6 +42,7 @@ workstreams:
 technologies:
   - {name: "TRIDENT drill (Honeybee Robotics)", use: "Drilling up to 1 m to sample ice", status: "Flew on IM-2 (2025). Powered up and extended to its full range; lander ended on its side and the mission ended early", trl: 7, src: 1}
   - {name: "MSolo mass spectrometer", use: "Identifying volatiles released from drilled soil", status: "Flew on IM-2; worked, but gases detected were from the lander or Earth", trl: 7, src: 2}
+  - {name: "Resource Prospector OVEN (NASA)", use: "Heritage for the sealed bake chamber fed by the drill", status: "Rover cancelled 2018; OVEN passed vibration and thermal-vacuum tests", trl: 5, src: 17}
   - {name: "VIPER rover (NASA)", use: "Partner ice-prospecting data", status: "Revived Sep 2025 via CLPS task order up to $190M; delivery option tied to Blue Moon MK1's first flight", trl: 8, src: 3}
   - {name: "Commercial lunar landers (CLPS)", use: "Delivering the prospector", status: "Mixed record: Peregrine never attempted a landing (2024); IM-1 and IM-2 tipped; Blue Ghost M1 fully successful (2025)", trl: 7, src: 16}
   - {name: "Radioisotope heater units", use: "Keeping electronics warm in PSRs and at night", status: "Flight-proven (Cassini carried 82), about 1 W each", trl: 9, src: 15}
@@ -62,6 +63,7 @@ sources:
   - {title: "Chang'e 7, Wikipedia", url: "https://en.wikipedia.org/wiki/Chang'e_7", date: "accessed Nov 2026"}
   - {title: "NASA Science: Cassini's radioisotope thermoelectric generators (82 RHUs, one watt each)", url: "https://science.nasa.gov/mission/cassini/radioisotope-thermoelectric-generator", date: ""}
   - {title: "Commercial Lunar Payload Services, Wikipedia", url: "https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services", date: "accessed Nov 2026"}
+  - {title: "NASA NTRS: Paz, Environmental testing of the OVEN system for lunar water extraction and prospecting", url: "https://ntrs.nasa.gov/citations/20210013522", date: "2021"}
 risks:
   - {sev: Critical, title: "Lander tips over or crashes (IM-1 and IM-2 landed on their sides; ispace M2 crashed)", fix: "Fly two prospectors on two different landers; pick services with a demonstrated upright landing; require terrain-relative navigation"}
   - {sev: High, title: "Ice is patchy: ShadowCam found no widespread surface ice above ~20–30%, only small patches", fix: "Drill many points across several PSRs rather than one deep hole; rank by measured, not modelled, ice"}
