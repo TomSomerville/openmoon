@@ -11,7 +11,7 @@ from rasterio.windows import from_bounds
 ILL, ROIDIR, OUTDIR = sys.argv[1], sys.argv[2], sys.argv[3]
 import csv as _csv
 _est = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sun_at_height_estimate.csv')
-RED = [(float(r['x_m']), float(r['y_m'])) for r in _csv.DictReader(open(_est)) if float(r['est_10m_pct']) > 90] if os.path.exists(_est) else []
+RED = []
 font = lambda sz: ImageFont.truetype(FB, int(sz))
 fx0, fy1 = px2m(292, 518); fx1, fy0 = px2m(953, 989); B = (fx0, fy0, fx1, fy1); RES = 60
 with rasterio.open(ILL) as r:
@@ -108,7 +108,7 @@ for sp in spots:
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'vsat_spots.csv'), 'w') as fh:
     fh.write('sunlit_pct,lat,lon_east,x_m,y_m\n')
     for sp in spots: fh.write('%.1f,%.4f,%.3f,%.0f,%.0f\n' % sp)
-rows = [('red', 'ESTIMATE: sunlit >90% at 10 m height (Open Moon calculation)'), ((255, 140, 0), 'Sunlit ≥80% of the time, slope ≤15° (orange dots)'), ((255, 230, 0), 'Sunlit 70–80%, slope ≤15° (yellow dots)'), (None, 'NASA best-lit regions of interest: Sites 1, 4, 7, 11 (PGDA product 78)')]
+rows = [((255, 140, 0), 'Sunlit ≥80% of the time, slope ≤15° (orange dots)'), ((255, 230, 0), 'Sunlit 70–80%, slope ≤15° (yellow dots)'), (None, 'NASA best-lit regions of interest: Sites 1, 4, 7, 11 (PGDA product 78)')]
 decorate(im, 'Focus area: VSAT sites, sunlit ≥70% (yellow) and ≥80% (orange) at ground level, slope ≤15°. Sunlight: NASA GSFC PGDA; slope: NASA LOLA LDSM.',
          rows, 'VSAT sites (ground-level sunlight; a 10 m mast sees more)', numbers=sites, dots=dots, red=RED).save(os.path.join(OUTDIR, 'focus-vsat-candidates.jpg'), quality=85, optimize=True)
 for t in (70, 80, 85): print('sunlit>=%d%% & slope<=15: %.1f km2' % (t, ((il >= t) & ok).sum() * RES * RES / 1e6))

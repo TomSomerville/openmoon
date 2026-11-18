@@ -14,11 +14,3 @@ Data:
 Plan design: VSAT sites = sunlit ≥80 % (orange) or 70–80 % (yellow) at ground level and slope ≤15° (NASA's VSAT terrain-slope goal
 with a 10 m mast). Ground-level sunlight understates what a 10 m mast sees.
 
-## Sunlight at height (ESTIMATE)
-
-`sun_at_height.py` computes average sunlight at 0.5 m, 5 m and 10 m for the candidate spots (`cands.npy`: every 1 km
-cell with a spot ≥60 % sunlit at ground level and slope ≤15°). Inputs: LOLA `LDEM_83S_10MPP_ADJ` (20 m block-averaged
-to 60 m within 12 km; 80 m to 210 km) and Sun directions every 2 h over 18.6 years from NAIF kernels `de421.bsp`,
-`moon_pa_de421_1900-2050.bpc`, `moon_080317.tf` (frame MOON_ME_DE421, via skyfield). Results: `sun_at_height_estimate.csv`.
-Validation: ground-level results at 60 random points match NASA's AVGVISIB_85S_060M map, mean −1.6 points, RMS 2.2, r = 0.99.
-`mk_sun.py` draws spots with >90 % at 10 m as red dots.
