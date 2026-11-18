@@ -42,8 +42,8 @@ def make(name,bounds,res,out,alpha=0.6,threshold_mode=False,annot=(),title=''):
             if side=='t': d.text((x,y-r-6*k),lab,font=F,fill=(0,230,255),anchor='md',stroke_width=3,stroke_fill=(0,0,0))
             else: d.text((x+(r+8*k if side=='r' else -r-8*k),y),lab,font=F,fill=(0,230,255),anchor='lm' if side=='r' else 'rm',stroke_width=3,stroke_fill=(0,0,0))
         if a[0]=='text':
-            _,lat,lon,lab,col,dy=a; x,y=m2p(*lonlat2m(lat,lon))
-            d.text((x,y+dy*k),lab,font=F,fill=col,anchor='mm',stroke_width=3,stroke_fill=(0,0,0))
+            _,lat,lon,lab,col,dy=a[:6]; fs=a[6] if len(a)>6 else 24; x,y=m2p(*lonlat2m(lat,lon))
+            d.text((x,y+dy*k),lab,font=ImageFont.truetype(FB,int(fs*k)),fill=col,anchor='mm',stroke_width=3,stroke_fill=(0,0,0))
         if a[0]=='tri':
             _,lat,lon,lab=a; x,y=m2p(*lonlat2m(lat,lon)); r=9*k
             d.polygon([(x,y-r),(x-r*0.9,y+r*0.7),(x+r*0.9,y+r*0.7)],fill=(255,255,255),outline=(0,0,0))
