@@ -85,6 +85,18 @@ So ice exists, but its amount and depth at any one spot are unknown. That is why
 - **Lunar Trailblazer** was lost the day after launch in February 2025<sup class="r">[11](#s11)</sup>. **Lesson:** orbital ice mapping can't be counted on either.
 - **Blue Ghost M1** operated for 14 days and into the lunar night<sup class="r">[4](#s4)</sup>. **Lesson:** reliable commercial landers now exist.
 
+## Where to prospect
+
+{% include decision-note.html id="DD-010" extra="M01's prospectors go to the focus area." %}
+
+The [M00 maps]({{ '/plan/m00-site-selection/' | relative_url }}) give three kinds of target in the Shackleton–de Gerlache focus area (plan design):
+
+- **Ice candidates:** the permanently shadowed floors of Shackleton and de Gerlache, reached from landable ground on their rims. de Gerlache also holds ShadowCam's unexplained bright spot at 88.5352°S, 97.4007°W.
+- **Hydrogen:** the high-hydrogen zone in NASA's LEND data, around 88°S, 0–60°E.
+- **Unmeasured cold traps:** Spudis and the small shadowed craters along the ridge, which have no published ice data.
+
+Each prospector lands on ground of 8° or less (DD-011).
+
 ## Step-by-step
 
 1. **Collect partner results.** NASA will decide whether to deliver VIPER after Blue Moon MK1's first flight<sup class="r">[3](#s3)</sup>. Chang'e-7, which targets the Shackleton area, slipped to 2027<sup class="r">[14](#s14)</sup>. Use whatever arrives, but don't wait on it.

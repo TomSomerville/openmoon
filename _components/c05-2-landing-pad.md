@@ -80,6 +80,8 @@ NASA KSC splits a pad into a central zone for normal landings, an outer perimete
 
 **Inspection.** NASA's SCALPSS stereo cameras imaged a real landing on Blue Ghost Mission 1 in 2025<sup class="r">[6](#s6)</sup>. NASA is now using them in vacuum-chamber plume tests to measure craters, the ejecta sheet angle and particle speeds<sup class="r">[5](#s5)</sup>. Open Moon puts the same kind of cameras on each berm.
 
+{% include decision-note.html id="DD-011" extra="The pad site starts on natural ground of 8° or less, then is graded level." %}
+
 ## Sizing
 
 | Item | Pad 1 | Pad 2 | Basis |

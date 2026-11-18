@@ -126,6 +126,8 @@ No point on the Moon is sunlit all the time<sup class="r">[6](#s6)</sup>. The be
 
 ## Focus area: Shackleton – de Gerlache
 
+{% include decision-note.html id="DD-010" extra="The primary and backup sites will be chosen inside this area." %}
+
 Open Moon's site search concentrates on the area outlined in red, about 180 × 130 km around the south pole. It contains:
 
 - **Shackleton crater**, whose rim the south pole lies on<sup class="r">[15](#s15)</sup>.
@@ -150,6 +152,10 @@ The LDSM values as published, in degrees, on a continuous scale with no classes 
 ![Raw LOLA slope in degrees across the Open Moon focus area, dark flat to yellow steep]({{ '/assets/sites/focus-slope-raw.jpg' | relative_url }})
 
 ### Slope classes
+
+{% include decision-note.html id="DD-011" extra="Rovers, masts and towers may still work on steeper ground within their own limits." %}
+
+{% include decision-note.html id="DD-012" %}
 
 Laid over NASA's LOLA hillshade. Open Moon colours slope in four classes, set from what landers can actually handle (see [Lander candidates]({{ '/landers/' | relative_url }})):
 

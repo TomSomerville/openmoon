@@ -78,7 +78,7 @@ When a lander touches down on bare regolith, its exhaust throws dust and rocks o
 
 ## Step-by-step
 
-1. **Survey.** Use M01 geotechnical data and the M00 hazard maps to set pad and road locations.
+1. **Survey.** Use M01 geotechnical data and the M00 hazard maps to set pad and road locations. Pads go on natural ground of 8° or less (DD-011), so grading only removes local bumps.
 2. **Land the excavators** on a small lander, on the pad site itself.
 3. **Grade and compact** the first pad area and the roads to the power towers.
 4. **Sinter pad 1 in stages**, then test it with a small lander. Measure ejecta with cameras and witness plates.

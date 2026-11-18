@@ -321,3 +321,88 @@
     - "More service drops from the grid. Each is short, but the grid needs a tap and protection for every unit."
     - "Units that need AC carry their own inverter. No base-wide AC user voltage is set; each unit picks its own."
     - "Mass and cost of the extra converters are not yet in M04, M06 or M08; they sit inside the existing converter and grid hardware items until the load budget sizes them (open)."
+
+- id: DD-010
+  date: "2026-11-18"
+  title: "Site search narrows to the Shackleton–de Gerlache focus area"
+  status: Adopted
+  affects: [M00, M01, M02, roadmap]
+  was: "The site search started from NASA's nine Artemis III candidate regions across the whole south pole, with no preferred area."
+  now: "Open Moon's site search concentrates on a focus area of about 180 × 130 km around the south pole, centred on the Shackleton–de Gerlache Ridge between Shackleton, Spudis and de Gerlache craters. It includes NASA's de Gerlache Rim 2 region. The primary and backup sites will be chosen inside it from the slope, hydrogen and ice-candidate maps on the M00 page."
+  why: "The user's decision. The ridge is the sunniest ground studied near the pole, a 30 km topographic high joining two craters whose shadowed floors are the area's ice candidates, and NASA's first Blue Moon Mark 1 cargo mission also targets the Shackleton connecting ridge."
+  timeline:
+    - date: "Aug 2022"
+      what: "NASA's first list of 13 Artemis III regions includes Connecting Ridge and Connecting Ridge Extension."
+      title: "NASA: NASA Identifies Candidate Regions for Landing Next Americans on Moon"
+      url: "https://www.nasa.gov/news-release/nasa-identifies-candidate-regions-for-landing-next-americans-on-moon/"
+    - date: "Oct 2024"
+      what: "NASA narrows to nine regions; de Gerlache Rim 2 is the one inside the focus area."
+      title: "NASA: NASA Provides Update on Artemis III Moon Landing Regions"
+      url: "https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/"
+    - date: "Mar 2024"
+      what: "LROC publishes 2 m/px maps of the Shackleton–de Gerlache Ridge: 30 km long, summit 1959.5 m, benign slopes from Cheetham crater to the summit."
+      title: "LROC: Shackleton–de Gerlache Ridge maps"
+      url: "https://lroc.im-ldi.com/data/support/popular_downloads/LROC_Shackleton_deGerlache_Ridge_maps.zip"
+    - date: "2023"
+      what: "NASA Goddard publishes 10 m/px LOLA slope and shadowed-region maps of the south pole, used for the focus-area maps."
+      title: "NASA GSFC PGDA: A New View of the Lunar South Pole from LOLA (Barker et al. 2023)"
+      url: "https://pgda.gsfc.nasa.gov/products/90"
+  tradeoffs:
+    - "Concentrating on one area means other NASA regions (Malapert Massif, Mons Mouton, Haworth and others) are not mapped in the same detail."
+    - "The strongest LEND hydrogen in the focus area (around 88°S, 0–60°E) is away from the ridge, and ice in Shackleton and de Gerlache is unconfirmed."
+    - "Other programmes target the same ground (NASA's Blue Moon Mark 1 Pathfinder, China's Chang'e-7 near Shackleton), so coordination under the Artemis Accords matters more."
+
+- id: DD-011
+  date: "2026-11-18"
+  title: "Landing points must be on ground of 8° slope or less"
+  status: Adopted
+  affects: [M00, M01, M02, M05, C05.2]
+  was: "Open Moon's slope maps marked 15° or less as suitable for landing."
+  now: "Every landing point, for any lander, must be on ground of 8° or less in NASA's LOLA slope data, and within the lander's own published limit. Ground steeper than 8° is not a landing site, though rovers, masts and towers may still work on it within their own limits (for example 15° for VSAT and IPEx)."
+  why: "The user's decision, based on the lander research. No lander publishes a certified slope above 10°; Nova-C's design limit is 10° and IM-1 tipped over after landing on 12° ground. NASA caps crewed landers at 8° tilt after landing and requires landing sites under 10°."
+  timeline:
+    - date: "Feb 2024"
+      what: "IM-1 lands near Malapert A on 12° terrain, faster than planned, breaks a leg and tips over."
+      title: "NASA: LRO images Intuitive Machines' Odysseus lander"
+      url: "https://www.nasa.gov/missions/lro/nasas-lro-images-intuitive-machines-odysseus-lander/"
+    - date: "Mar 2024"
+      what: "Intuitive Machines states Nova-C 'can land on slopes up to 10°'."
+      title: "Bussey & Martin, LPSC 2024 abstract 1931"
+      url: "https://www.hou.usra.edu/meetings/lpsc2024/pdf/1931.pdf"
+    - date: "2024"
+      what: "NASA's HLS requirements give a landing-site slope under 10° over 100 m."
+      title: "NASA NTRS: Artemis HLS Update 2024"
+      url: "https://ntrs.nasa.gov/api/citations/20240009596/downloads/ArtemisHLSUpdate_2024.pdf"
+    - date: "Mar 2026"
+      what: "NASA OIG reports NASA's limit of no more than 8° post-landing tilt for crew activities on both HLS landers."
+      title: "NASA OIG IG-26-004"
+      url: "https://oig.nasa.gov/wp-content/uploads/2026/03/final-report-ig-26-004-nasas-management-of-the-human-landing-system-contracts.pdf"
+  tradeoffs:
+    - "Less landable ground: in the focus area 43% is 8° or less, against 78% at 15° or less."
+    - "Some ground that robotic landers could probably handle (8–10°) is excluded."
+    - "At 10–40 m per pixel, boulders and small craters are not resolved; each pad still needs ~1 m LROC NAC hazard maps."
+
+- id: DD-012
+  date: "2026-11-18"
+  title: "Slope maps use four classes: ≤8°, 8–15°, 15–20°, ≥20°"
+  status: Adopted
+  affects: [M00, landers]
+  was: "Slope maps used a continuous green-to-red colour ramp, then a single ≤15° / >15° split."
+  now: "Slope maps use four classes: green ≤8° (landable, DD-011), yellow 8–15°, orange 15–20°, red ≥20°. The raw LDSM values are also shown on a continuous scale, and the combined landing map shows only the ≤8° ground in green."
+  why: "The user's decision. The breaks follow the lander research: 8° is NASA's crewed-lander tilt limit, published robotic lander limits stop at 10°, nothing is rated above 15°, and the NASA OIG notes south-pole slopes reach about 20°."
+  timeline:
+    - date: "2023"
+      what: "NASA Goddard's LOLA slope map (LDSM) at 10 m/px is the data behind every class."
+      title: "NASA GSFC PGDA: A New View of the Lunar South Pole from LOLA"
+      url: "https://pgda.gsfc.nasa.gov/products/90"
+    - date: "Oct 2026"
+      what: "Griffin's parent company says its wide stance 'can easily tolerate a 10-degree slope'."
+      title: "Voyager Technologies: How Voyager chose Griffin's lunar landing site"
+      url: "https://voyagertechnologies.com/insights/how-voyager-chose-griffins-lunar-landing-site/"
+    - date: "Mar 2026"
+      what: "NASA OIG: post-landing tilt limit of 8°; south-pole slopes reach about 20°."
+      title: "NASA OIG IG-26-004"
+      url: "https://oig.nasa.gov/wp-content/uploads/2026/03/final-report-ig-26-004-nasas-management-of-the-human-landing-system-contracts.pdf"
+  tradeoffs:
+    - "Classes hide detail inside each band; the raw slope map is kept alongside for that."
+    - "Class breaks are this plan's choice from published limits, not a NASA standard."
