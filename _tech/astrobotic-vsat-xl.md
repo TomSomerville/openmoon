@@ -32,13 +32,15 @@ NASA funded it through its Small Business Innovation Research (SBIR) program. Th
 
 As of November 2026, no test results from the Phase II prototype have been published. The tower is a ground-development project. No flight is scheduled.
 
-## Why Open Moon uses it
+## Why Open Moon does not use it (design change DD-004)
 
-Open Moon's power milestone (M04) plans two 50 kW VSAT-XL towers alongside two 10 kW VSATs and a fission reactor. The towers supply the bulk of the solar power for the oxygen pilot plant and the habitat. Like every source in the plan, they feed the base BMS, which routes their power to the grid or to storage ([design change DD-003](/decisions/#dd-003)). Astrobotic itself names the target loads: [pressurized rovers, habitats and ISRU pilot plants](https://www.highergov.com/contract/80NSSC24PB267/).
+{% include decision-note.html id="DD-004" extra="VSAT-XL was planned as two 50 kW towers in M04. It is now kept only as an alternative." %}
+
+Open Moon first planned two 50 kW VSAT-XL towers in M04, alongside two 10 kW VSATs. On 18 November 2026 the plan switched to NASA's 10 kW-class VSAT only, because VSAT is the tower closest to flight: three NASA-funded prototypes, two of them tested in a thermal-vacuum chamber in 2024 ([NASA](https://www.nasa.gov/centers-and-facilities/johnson/from-houston-to-the-moon-johnsons-thermal-vacuum-chamber-tests-lunar-solar-technology/)). VSAT-XL is a small-business study that is building a deployment prototype by June 2027, and no flight is planned ([USAspending](https://www.usaspending.gov/award/CONT_AWD_80NSSC25C0032_8000_-NONE-_-NONE-)). The plan will revisit VSAT-XL if it reaches flight-like testing.
 
 Height is the point. At the poles the Sun stays close to the horizon, and terrain can block light from low arrays. Masts lift the arrays into steadier light, [NASA explains](https://www.nasa.gov/news-release/three-companies-to-help-nasa-advance-solar-array-technology-for-moon/). VSAT-XL is part of Astrobotic's [LunaGrid](https://www.astrobotic.com/lunar-delivery/lunar-surface-power/) power service. That service also uses cable-laying rovers and wireless chargers to carry power to users. Astrobotic and Honda are also studying how to pair [VSAT and VSAT-XL with Honda's regenerative fuel cell](https://www.astrobotic.com/honda-and-astrobotic-establish-joint-development-agreement-to-explore-scalable-lunar-power-solutions/) to get through dark periods.
 
-Without VSAT-XL, Open Moon would need about five times as many 10 kW towers to reach the same solar capacity. The alternative is to rely more on a fission reactor that does not exist yet. Astrobotic says no existing lunar power solution meets needs [at the 50 kW scale and above](https://www.astrobotic.com/astrobotic-awarded-lunar-power-study-with-vsat-xl/).
+The cost of leaving it out: Open Moon needs about five 10 kW VSATs for every 50 kW VSAT-XL, so more landings and ridge sites. Astrobotic says no existing lunar power solution meets needs [at the 50 kW scale and above](https://www.astrobotic.com/astrobotic-awarded-lunar-power-study-with-vsat-xl/).
 
 ## How it works
 

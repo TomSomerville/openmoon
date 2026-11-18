@@ -506,7 +506,7 @@
   - 1
   trl: 5
   status: NASA SBIR study award 2024; 34 m tall; Redwire ROSA arrays. Phase II follow-on Jun 2025–Jun 2027
-  use: 50 kW towers
+  use: "Alternative only: dropped from M04 in favour of 10 kW VSATs (DD-004)"
   develop: true
   source: https://www.astrobotic.com/astrobotic-awarded-lunar-power-study-with-vsat-xl/
   source_title: 'Astrobotic: awarded lunar power study with VSAT-XL'

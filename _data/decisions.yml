@@ -124,3 +124,33 @@
     - "Every conversion step loses some energy. Power routed straight to the grid avoids the battery round trip that DD-002 required, but each source still passes through the BMS converters."
     - "The BMS software decides priorities for the whole base. It must keep working through communication gaps with Earth and be testable on the ground before flight."
     - "The name BMS usually means only battery cell management. In this plan it means the whole routing system; industry often calls this an energy management system or power management and distribution (PMAD)."
+- id: DD-004
+  date: "2026-11-18"
+  title: "Solar towers: NASA's 10 kW VSAT only; number set by the Phase 1 load budget"
+  status: Adopted
+  affects: [M04, C04.2, C04.3, C04.4, M11, vertical-solar-array-technology-vsat, astrobotic-vsat-xl]
+  was: "M04 planned two 10 kW VSATs plus two 50 kW Astrobotic VSAT-XL towers, for at least 100 kW of solar peak power."
+  now: "The plan uses only the 10 kW-class Vertical Solar Array Technology (VSAT) towers that NASA is developing. VSAT-XL is dropped and kept only as an alternative. The number of VSATs, and where they stand, will be set once the Phase 1 total power draw (load budget) is worked out. Until then, M04 costs use a provisional count of 10 towers (100 kW), marked as provisional."
+  why: "VSAT is the solar tower closest to flight: NASA funded three full prototypes in 2022 and two were thermal-vacuum tested at NASA Johnson in 2024, aiming at TRL 6. VSAT-XL is a small-business study with a deployment prototype due by June 2027, and no flight is planned."
+  timeline:
+    - date: "Aug 2022"
+      what: "NASA awards $19.4M to Astrobotic, Honeybee Robotics and Lockheed Martin to build 10 kW-class vertical solar array prototypes that deploy to about 10 m."
+      title: "NASA Release 22-090: Three companies to help NASA advance solar array technology for the Moon"
+      url: "https://www.nasa.gov/news-release/three-companies-to-help-nasa-advance-solar-array-technology-for-moon/"
+    - date: "Sep 2023"
+      what: "NASA's project review sets the goal of taking all three VSAT designs to TRL 6 in thermal-vacuum tests, and proposes a flight demonstration."
+      title: "NASA GCD annual review: Vertical Solar Array Technology (VSAT) project"
+      url: "https://ntrs.nasa.gov/citations/20230012849"
+    - date: "Summer 2024"
+      what: "Honeybee and Astrobotic VSAT prototypes are tested in Chamber A at NASA Johnson."
+      title: "NASA: Johnson's thermal vacuum chamber tests lunar solar technology"
+      url: "https://www.nasa.gov/centers-and-facilities/johnson/from-houston-to-the-moon-johnsons-thermal-vacuum-chamber-tests-lunar-solar-technology/"
+    - date: "Jun 2025"
+      what: "Astrobotic's 50 kW VSAT-XL gets an SBIR Phase II contract (to June 2027) to build a prototype of its deployment system. No flight is planned."
+      title: "USAspending: NASA contract 80NSSC25C0032 (VSAT-XL SBIR Phase II)"
+      url: "https://www.usaspending.gov/award/CONT_AWD_80NSSC25C0032_8000_-NONE-_-NONE-"
+  quotes: []
+  tradeoffs:
+    - "Five 10 kW towers are needed for every 50 kW VSAT-XL they replace, which means more landings, more ridge sites and more cable."
+    - "The solar capacity of M04, and its cost, stay provisional until the Phase 1 load budget is done."
+    - "VSAT test results from 2024 are still not public, so its readiness rests on NASA's stated goals rather than published data."
