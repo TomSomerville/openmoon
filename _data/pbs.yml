@@ -29,7 +29,7 @@
   items:
     - {id: PW.1, name: Fission surface power unit, ms: M04, comp: C04.1, how: partner}
     - {id: PW.2, name: Vertical solar towers, ms: M04, comp: C04.2, how: buy}
-    - {id: PW.3, name: "Energy storage (fission battery and BMS, fuel cells, batteries)", ms: M04, comp: C04.3, how: build}
+    - {id: PW.3, name: "BMS power routing hub and energy storage (batteries, fuel cells)", ms: M04, comp: C04.3, how: build}
     - {id: PW.4, name: 3 kV AC grid and cable-laying rover, ms: M04, comp: C04.4, how: build}
     - {id: PW.5, name: Mobile power cart for PSR work, ms: M06, how: build}
     - {id: PW.6, name: Habitat power distribution and emergency power, ms: M08, how: build}

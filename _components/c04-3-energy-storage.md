@@ -2,8 +2,8 @@
 id_code: "C04.3"
 milestone: M04
 order: 3
-title: Energy storage (regenerative fuel cells and batteries)
-summary: "The fission battery takes all of the reactor's output through a charger and battery management system, and the base draws fission power only from it. Regenerative fuel cells store solar energy as hydrogen and oxygen for long shadows. Li-ion also handles fast peaks and start-ups."
+title: BMS and energy storage (power routing, batteries, regenerative fuel cells)
+summary: "The BMS is the hub of the base's power: every source feeds it, and it routes power to the grid to meet demand, into storage, or both. Storage is a Li-ion battery bank for peaks and reactor restarts, and regenerative fuel cells that store surplus as hydrogen and oxygen for long shadows."
 trl: 5
 spec:
   - {k: "Stored energy", v: "~3 MWh net (30 kW essential load for 100 h)"}
@@ -12,9 +12,9 @@ spec:
   - {k: "Reactants", v: "~150 kg H₂ + ~1.2 t O₂ from ~1.4 t water (ESTIMATE)"}
   - {k: "Gas pressure", v: "Up to ~12.4 MPa (1,800 psia)"}
   - {k: "RFC mass", v: "4.6–9.4 t at 320–650 Wh/kg; ~3 t new hardware if ISRU tanks are shared (ESTIMATE)"}
-  - {k: "Fission battery", v: "160 kWh per 20 kWe reactor in 2 strings, ~1 t at 160 Wh/kg, with charger and BMS (plan design, DD-002)"}
-  - {k: "Li-ion peak buffer", v: "~100 kWh, ~0.6 t at 160 Wh/kg (plan design)"}
-  - {k: "Recharge power", v: "~29–43 kW of solar over 200–300 h (ESTIMATE)"}
+  - {k: "BMS", v: "Central routing hub in two independent halves (A/B) with a cross-tie; all sources in, grid and storage out (plan design, DD-003)"}
+  - {k: "Li-ion battery bank", v: "~260 kWh: 160 kWh per 20 kWe reactor (8 h ride-through) + ~100 kWh for peaks; ~1.6 t at 160 Wh/kg; several strings (plan design)"}
+  - {k: "Recharge power", v: "~29–43 kW of BMS surplus (solar or reactor) over 200–300 h (ESTIMATE)"}
   - {k: "Delivery", v: "Medium lander; tanks may arrive with the M06 oxygen plant"}
 subcomponents:
   - name: Electrolyser
@@ -42,33 +42,29 @@ subcomponents:
     parts: ["Coolant pump loop", "Heat exchangers", "Radiator panel", "Insulated enclosure (MLI)", "Heaters"]
     tech: "RFC breadboard thermal loop"
     trl: 5
-  - name: Fission charger and BMS
-    desc: "Ends the reactor's 3 kV AC line at the base. Converts it to battery charging voltage, and the battery management system controls charging, balances cells and stops charging when full (Reactor > BMS > Battery > Base, DD-002)."
-    parts: ["Step-down transformer and rectifier (UMIC-class AC-to-DC converter)", "Charge controller per battery string", "Battery management system: cell voltage, current and temperature monitoring", "Cell balancing", "String isolation contactors", "Command link to the reactor controller"]
-    tech: "NASA GRC UMIC AC-to-DC converter (2023); terrestrial and ISS battery management practice"
+  - name: BMS routing hub
+    desc: "Receives every source (reactor, solar towers, fuel cells) and decides, moment to moment, whether power goes to the grid to meet demand, into storage, or both. Draws on storage when generation is short and sheds loads by priority as a last resort (DD-003)."
+    parts: ["Input converters for each source (UMIC-class AC-to-DC for the 3 kV AC lines)", "Common DC bus, split into halves A and B with a cross-tie", "Output converters to the 3 kV AC trunk and 120 V DC microgrids", "Routing and priority controller with load-shedding tables", "Source and feeder switching to either half", "Command links to the reactor, solar towers and fuel cells", "Telemetry and Earth link"]
+    tech: "NASA GRC UMIC bidirectional converter (2023); NASA lunar microgrid priority control concept; ISS power management practice"
     trl: 4
-  - name: Fission battery strings
-    desc: "Store the reactor's output and feed the base bus. Sized for 8 hours at full reactor output, enough to ride through one reactor restart."
-    parts: ["160 kWh per 20 kWe reactor, in two independent strings", "Commercial Li-ion cells", "Module heaters and heated enclosure", "Discharge converter to the 120 V DC base bus"]
+  - name: Li-ion battery bank
+    desc: "Fast storage behind the BMS. Covers load steps, fuel cell warm-up, and 8 hours of reactor output for a reactor restart. The BMS manages each cell: voltage, current, temperature, balancing and charge limits."
+    parts: ["~260 kWh in several independent strings", "Commercial Li-ion cells (LG MJ1 class, 18650)", "Cell monitoring and balancing electronics", "String isolation contactors", "Module heaters and heated enclosure", "Spare string"]
     tech: "COTS cell packs as used in NASA FSP concept"
     trl: 5
-  - name: Li-ion battery modules
-    desc: "Cover fast load steps, fuel cell warm-up and reactor start-up."
-    parts: ["Commercial 18650 cells (LG MJ1 class)", "Battery management electronics", "Spare string", "Module heaters", "Heated enclosure"]
-    tech: "COTS cell packs as used in NASA FSP concept"
-    trl: 6
   - name: Power electronics and control
-    desc: "Connects storage to the grid and runs the system without people."
-    parts: ["Bidirectional DC–DC converter to the 120 VDC microgrid", "Small flight computer (CubeSat class)", "Safe-state logic", "Telemetry link"]
+    desc: "Connects the fuel cells and electrolyser to the BMS and runs them without people."
+    parts: ["Bidirectional DC–DC converter to the BMS bus", "Small flight computer (CubeSat class)", "Safe-state logic", "Telemetry link"]
     tech: "NASA GRC RFC breadboard controller"
     trl: 5
 risks:
-  - {sev: Critical, title: "All fission power passes through the charger, BMS and fission battery (DD-002); a fault there cuts the base off from the reactor.", fix: "Two independent strings, each with its own charger and BMS; either string alone can take the full 20 kWe; a failed string isolates itself and the reactor dumps surplus to its parasitic load radiator."}
-  - {sev: Critical, title: "Low round-trip efficiency (~35% at the pole): every 1 kWh delivered needs about 3 kWh of daytime power.", fix: "Size solar for recharge; choose lower electrolyser pressure and better membranes to raise efficiency. Fission power reaches the base only through its battery, so it cannot recharge the fuel cells directly."}
+  - {sev: Critical, title: "Every watt passes through the BMS (DD-003); a BMS fault could cut every source off from every load.", fix: "Two independent BMS halves (A/B), each able to carry the essential loads, with a cross-tie; every source and feeder switchable to either half; battery in several strings; ground-test failover before flight."}
+  - {sev: High, title: "The BMS routing software sets priorities for the whole base and must work through gaps in contact with Earth.", fix: "Simple, fixed priority tables (life support first); hardware-in-the-loop tests of every routing case; safe default if the controller resets."}
+  - {sev: Critical, title: "Low round-trip efficiency (~35% at the pole): every 1 kWh delivered needs about 3 kWh of daytime power.", fix: "The BMS sends any surplus, solar or reactor, to the electrolyser once the battery is full; size solar for recharge; choose lower electrolyser pressure and better membranes to raise efficiency."}
   - {sev: High, title: "The NASA breadboard needed five manual restarts in 550 hours, four from thermal control and one from water management.", fix: "Run a long closed-loop test with redundant thermal control and automatic recovery before flight."}
   - {sev: High, title: "Only open-loop operation has been shown; gases were vented, not stored and reused.", fix: "Add a closed-loop ground test at ≥5 kW for many simulated lunar cycles as a gate before buying flight units."}
   - {sev: High, title: "Hydrogen crossing into oxygen nears the flammability limit above ~2,000 psia.", fix: "Keep storage at or below ~1,800 psia; add hydrogen-in-oxygen sensors and automatic shutdown."}
-  - {sev: High, title: "Mass: 3 MWh of storage is 5–9 t of hardware.", fix: "Share tanks and water with the M06 oxygen plant; use modular 25 kW units; let the fission battery carry the essential load through the night."}
+  - {sev: High, title: "Mass: 3 MWh of storage is 5–9 t of hardware.", fix: "Share tanks and water with the M06 oxygen plant; use modular 25 kW units; let the reactor, through the BMS, carry the essential load through the night."}
   - {sev: Medium, title: "Tank heating is a large parasitic load in shadow.", fix: "Bury or berm tanks; route fuel cell waste heat to them; test whether dry gas tanks can run colder."}
   - {sev: Medium, title: "Li-ion cells lose capacity sharply in the cold and stop working below about −60 °C.", fix: "Keep batteries in heated enclosures inside the habitat or ISRU plant thermal zone."}
   - {sev: Medium, title: "ISRU water may carry contaminants that poison membranes.", fix: "Deionise make-up water; keep the RFC water loop separate except for metered top-ups."}
@@ -86,13 +82,24 @@ sources:
 
 ## What it does
 
-{% include decision-note.html id="DD-002" extra="Storage now includes the fission battery: the reactor only charges it, and the base draws fission power only from it." %}
+{% include decision-note.html id="DD-003" extra="This component now includes the BMS, the hub every source feeds and every load and store draws from." %}
 
-Storage has two jobs.
+![Diagram: fission reactors, solar towers and fuel cells all feed the BMS; the BMS routes power to the grid for demand, to storage, or both; surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator](/assets/tech/base-power-bms-flow.svg)
 
-**1. Fission battery (Reactor > BMS > Battery > Base).** The reactor's 3 kV AC line ends here. A charger converts it to battery voltage, and the battery management system (BMS) watches each cell, balances them and stops charging when the battery is full. The base draws its fission power only from this battery. An LR-1-class reactor makes at least 20 kWe and must accept any load from 0 to 100%, dumping the rest into its parasitic load radiator<sup class="r">[8](#s8)</sup>, so the BMS can cut charging at any time. NASA Glenn has built a modular AC-to-DC converter for this kind of lunar link<sup class="r">[9](#s9)</sup>.
+**The BMS.** Every source sends its power to the BMS: the reactor's 3 kV AC line, the solar towers, and the fuel cells when they discharge. The BMS decides whether that power goes to the grid to meet demand, into storage, or some of each, and it draws on storage when generation falls short (design change DD-003). In this plan BMS means the whole power management and routing system, including battery cell management.
 
-**2. Solar storage.** It covers the hours when no sunlight reaches the towers and the fission battery alone is not enough. It also covers the years before the reactor arrives. Polar shadows last up to about 100 hours<sup class="r">[1](#s1)</sup>. A regenerative fuel cell (RFC) stores more energy per kilogram than batteries: 320–650 Wh/kg against about 160 Wh/kg for packaged Li-ion<sup class="r">[1](#s1)</sup>. Batteries stay in the system for fast peaks.
+Default routing (plan design):
+1. Meet grid demand, highest priority first. NASA's lunar microgrid concept also serves the highest-priority loads, such as the crewed habitat, first<sup class="r">[1](#s1)</sup>.
+2. Charge the Li-ion battery with surplus.
+3. With the battery full, run the electrolyser to fill the fuel-cell tanks.
+4. With all storage full, curtail solar and let the reactor dump surplus into its parasitic load radiator. An LR-1-class reactor must accept any load from 0 to 100%<sup class="r">[8](#s8)</sup>, so the BMS can change its draw at any time.
+5. When short: battery first, then fuel cells, then shed loads by priority.
+
+NASA Glenn has built a modular, bidirectional converter between 120 V DC equipment and the 3 kV AC grid<sup class="r">[9](#s9)</sup>, the kind of converter the BMS uses at each input and output.
+
+**Storage** has two layers behind the BMS:
+- **Li-ion battery bank** for fast response: load steps, fuel cell warm-up, and 8 hours of reactor output for a reactor restart.
+- **Regenerative fuel cells** for long shadows and the years before the reactor arrives. Polar shadows last up to about 100 hours<sup class="r">[1](#s1)</sup>. A regenerative fuel cell (RFC) stores more energy per kilogram than batteries: 320–650 Wh/kg against about 160 Wh/kg for packaged Li-ion<sup class="r">[1](#s1)</sup>.
 
 ## How it works
 
@@ -117,9 +124,9 @@ Storage has two jobs.
 | Recharge power (ESTIMATE) | 8.6 MWh over 200–300 h of sun | ~29–43 kW |
 | RFC system mass | 3 MWh ÷ 320–650 Wh/kg<sup class="r">[1](#s1)</sup> | 4.6–9.4 t |
 | Same energy in Li-ion | 3 MWh ÷ 160 Wh/kg<sup class="r">[1](#s1)</sup> | ~19 t |
-| Li-ion peak buffer (plan design) | 100 kWh ÷ 160 Wh/kg | ~0.6 t |
-| Fission battery (plan design, DD-002) | 20 kWe × 8 h = 160 kWh ÷ 160 Wh/kg | ~1 t per reactor |
-| Fission energy into the battery | 20 kWe × 24 h | 480 kWh/day |
+| Li-ion: reactor ride-through (plan design) | 20 kWe × 8 h = 160 kWh ÷ 160 Wh/kg | ~1 t per reactor |
+| Li-ion: peaks (plan design) | 100 kWh ÷ 160 Wh/kg | ~0.6 t |
+| Reactor energy into the BMS | 20 kWe × 24 h | 480 kWh/day |
 
 Modelled south-pole efficiency is 34.8% for a 10 kW RFC and 36.6% at 50 kW. Above about 25 kW there is little gain, so two 25 kW units give redundancy at almost no cost in efficiency<sup class="r">[3](#s3)</sup>. With a 50% round-trip efficiency, the solar array must make about 3 times the RFC's output power<sup class="r">[4](#s4)</sup>.
 
@@ -130,11 +137,11 @@ Modelled south-pole efficiency is 34.8% for a 10 kW RFC and 36.6% at 50 kW. Abov
 3. **5–25 kW engineering unit.** Test in thermal vacuum with flight-like tanks, at the cold sink temperatures of the chosen site.
 4. **Tank sharing test.** Run the RFC with water from an ISRU simulant loop (M06) to check membrane life.
 5. **On the Moon.** Start with a single 25 kW module carrying only non-essential loads. Move essential loads onto it after a full year without faults.
-6. **Fission battery.** Before the reactor lands, test the charger, BMS and both strings on solar power. Check that a string fault isolates only that string, and that a full battery stops charging cleanly.
+6. **BMS.** Build both halves on the ground with simulated sources and loads. Test every routing case: demand only, surplus to battery, surplus to electrolyser, storage full, shortfall, and loss of half A or B. On the Moon, half A arrives with the first solar tower, so the BMS is proven on solar power before the reactor lands.
 
 ## Open questions
 
-- Should the fission battery also feed the regenerative fuel cells, so spare reactor power can be stored for long shadows?
+- Where should the BMS hub sit to keep source cables short while staying close to the habitat?
 - Can dry gas tanks sit at lunar shadow temperatures instead of being heated above 4 °C?
 - What membrane thickness and pressure give the best balance for this base's duty cycle?
 - How long do PEM stacks last over thousands of lunar charge cycles?

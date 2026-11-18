@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" font-family="Share Tech Mono, monospace" role="img" aria-labelledby="t d">
+<title id="t">Open Moon power flow: every source feeds the BMS</title>
+<desc id="d">Fission reactors, solar towers and fuel cells all send their power to the BMS. The BMS routes it to the grid to meet demand, to storage, or to both, and draws on storage when generation falls short. Surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator.</desc>
+<defs>
+<pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(56,212,240,.07)"/></pattern>
+<marker id="ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#38d4f0"/></marker>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ffb020"/></marker>
+</defs>
+<rect width="960" height="520" fill="#0a1015"/><rect width="960" height="520" fill="url(#g)"/>
+<text x="24" y="36" fill="#d6e2ec" font-size="19" letter-spacing="1">OPEN MOON POWER FLOW · INPUTS → BMS → GRID / STORAGE</text>
+<text x="24" y="58" fill="#d6e2ec" font-size="12" opacity=".7">All generated power goes to the BMS. The BMS decides: grid, storage, or some of each (design change DD-003).</text>
+
+<text x="110" y="92" fill="#ffb020" font-size="13" text-anchor="middle" letter-spacing="1">INPUTS</text>
+<g font-size="12" fill="#d6e2ec" text-anchor="middle">
+<rect x="20" y="104" width="180" height="70" rx="8" fill="rgba(255,176,32,.12)" stroke="#ffb020" stroke-width="2"/>
+<text x="110" y="130" fill="#ffb020" font-size="13">FISSION</text>
+<text x="110" y="148">LR-1-class 20 kWe</text>
+<text x="110" y="164" font-size="11" opacity=".8">KRUSTY-class 1 kWe</text>
+<rect x="20" y="190" width="180" height="70" rx="8" fill="rgba(255,176,32,.12)" stroke="#ffb020" stroke-width="2"/>
+<text x="110" y="216" fill="#ffb020" font-size="13">SOLAR TOWERS</text>
+<text x="110" y="234">VSAT 10 kW</text>
+<text x="110" y="250" font-size="11" opacity=".8">VSAT-XL 50 kW</text>
+<rect x="20" y="276" width="180" height="70" rx="8" fill="rgba(255,176,32,.06)" stroke="#ffb020" stroke-dasharray="5 4"/>
+<text x="110" y="302" fill="#ffb020" font-size="13">FUEL CELLS</text>
+<text x="110" y="320" font-size="11">(storage discharging)</text>
+</g>
+<g stroke="#ffb020" stroke-width="3" fill="none" marker-end="url(#ah)">
+<path d="M200 139C250 139 260 200 318 210"/>
+<path d="M200 225H318"/>
+<path d="M200 311C250 311 260 250 318 240"/>
+</g>
+
+<!-- BMS hub -->
+<rect x="320" y="120" width="250" height="210" rx="12" fill="rgba(56,212,240,.14)" stroke="#38d4f0" stroke-width="2.5"/>
+<text x="445" y="150" fill="#38d4f0" font-size="18" text-anchor="middle" letter-spacing="1">BMS</text>
+<text x="445" y="168" fill="#d6e2ec" font-size="11" text-anchor="middle" opacity=".85">routes and manages all power</text>
+<g fill="#d6e2ec" font-size="11">
+<text x="336" y="196">1. Meet grid demand,</text>
+<text x="350" y="211">highest priority first</text>
+<text x="336" y="231">2. Surplus → charge battery</text>
+<text x="336" y="251">3. Battery full → fuel-cell</text>
+<text x="350" y="266">electrolyser</text>
+<text x="336" y="286">4. Short of demand → draw</text>
+<text x="350" y="301">battery, then fuel cells</text>
+<text x="336" y="321" opacity=".8">5. Still short → shed loads</text>
+</g>
+
+<!-- outputs: grid -->
+<path d="M570 200H668" stroke="#38d4f0" stroke-width="3" marker-end="url(#ac)"/>
+<text x="618" y="190" fill="#d6e2ec" font-size="11" text-anchor="middle">to demand</text>
+<text x="800" y="92" fill="#38d4f0" font-size="13" text-anchor="middle" letter-spacing="1">OUTPUTS</text>
+<rect x="670" y="104" width="270" height="190" rx="10" fill="rgba(56,212,240,.12)" stroke="#38d4f0" stroke-width="2"/>
+<text x="805" y="132" fill="#38d4f0" font-size="14" text-anchor="middle">GRID</text>
+<text x="805" y="150" fill="#d6e2ec" font-size="11" text-anchor="middle" opacity=".85">3 kV AC trunk + 120 V DC microgrids</text>
+<g font-size="12" fill="#d6e2ec">
+<rect x="686" y="164" width="116" height="48" rx="6" fill="none" stroke="#38d4f0" opacity=".8"/><text x="744" y="186" text-anchor="middle">Habitat</text><text x="744" y="202" text-anchor="middle" font-size="10" opacity=".75">life support first</text>
+<rect x="810" y="164" width="116" height="48" rx="6" fill="none" stroke="#38d4f0" opacity=".8"/><text x="868" y="186" text-anchor="middle">ISRU plants</text><text x="868" y="202" text-anchor="middle" font-size="10" opacity=".75">oxygen, water</text>
+<rect x="686" y="224" width="116" height="48" rx="6" fill="none" stroke="#38d4f0" opacity=".8"/><text x="744" y="246" text-anchor="middle">Greenhouses</text><text x="744" y="262" text-anchor="middle" font-size="10" opacity=".75">LED lighting</text>
+<rect x="810" y="224" width="116" height="48" rx="6" fill="none" stroke="#38d4f0" opacity=".8"/><text x="868" y="246" text-anchor="middle">Comms, rovers</text><text x="868" y="262" text-anchor="middle" font-size="10" opacity=".75">chargers, nodes</text>
+</g>
+
+<!-- storage -->
+<path d="M445 330V388" stroke="#38d4f0" stroke-width="3" marker-start="url(#ac)" marker-end="url(#ac)"/>
+<text x="455" y="364" fill="#d6e2ec" font-size="11">charge / discharge</text>
+<rect x="300" y="390" width="290" height="100" rx="10" fill="rgba(56,212,240,.12)" stroke="#38d4f0" stroke-width="2"/>
+<text x="445" y="414" fill="#38d4f0" font-size="14" text-anchor="middle">STORAGE</text>
+<g stroke="#38d4f0" stroke-width="2" fill="rgba(56,212,240,.15)"><rect x="318" y="426" width="20" height="44" rx="3"/><rect x="344" y="426" width="20" height="44" rx="3"/><rect x="370" y="426" width="20" height="44" rx="3"/></g>
+<text x="400" y="444" fill="#d6e2ec" font-size="11">Li-ion battery bank</text>
+<text x="400" y="460" fill="#d6e2ec" font-size="10" opacity=".75">fast, peaks, reactor restarts</text>
+<text x="400" y="480" fill="#d6e2ec" font-size="11">+ regenerative fuel cells</text>
+
+<!-- surplus -->
+<path d="M570 300C640 330 650 400 668 420" stroke="#ffb020" stroke-width="2" fill="none" stroke-dasharray="6 5" marker-end="url(#ah)"/>
+<rect x="670" y="390" width="270" height="100" rx="10" fill="none" stroke="#ffb020" stroke-dasharray="5 4"/>
+<text x="805" y="414" fill="#ffb020" font-size="13" text-anchor="middle">SURPLUS, STORAGE FULL</text>
+<text x="805" y="436" fill="#d6e2ec" font-size="11" text-anchor="middle">Solar towers: curtailed</text>
+<text x="805" y="454" fill="#d6e2ec" font-size="11" text-anchor="middle">Reactor: dumps to its parasitic</text>
+<text x="805" y="470" fill="#d6e2ec" font-size="11" text-anchor="middle">load radiator (LR-1 requirement)</text>
+
+<text x="24" y="510" fill="#d6e2ec" font-size="10" opacity=".6" letter-spacing="1">DIAGRAM · OPEN MOON PLAN DESIGN (DD-003) · CC BY-SA 4.0</text>
+</svg>

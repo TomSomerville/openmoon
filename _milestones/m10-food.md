@@ -18,7 +18,7 @@ cost: {low: 10.6, high: 47.0, note: "greenhouse modules, lighting power, and res
 cost_items:
   - {item: "Greenhouse modules (build)", low: 0.5, high: 1.5, basis: "ESTIMATE"}
   - {item: "Delivery of greenhouse modules (~17–21 t, heavy cargo)", low: 3.4, high: 12.6, basis: "17–21 t (C10.1 ESTIMATE) × $0.2–0.6M/kg"}
-  - {item: "Extra ~60 kW for lighting: three more 20 kWe LR-1-class reactors, each with charger, BMS and 160 kWh battery (DD-002)", low: 6.51, high: 32.43, basis: "C10.1 sizing (~61 kW); build 3 × $0.25–0.75B ESTIMATE + delivery 3 × 7.5–15 t × $0.2–0.6M/kg + batteries 3 × (~1 t × $0.4–1.0M/kg + $0.02–0.06B hardware)"}
+  - {item: "Extra ~60 kW for lighting: three more 20 kWe LR-1-class reactors feeding the BMS, each with 160 kWh of ride-through battery (DD-002, DD-003)", low: 6.51, high: 32.43, basis: "C10.1 sizing (~61 kW); build 3 × $0.25–0.75B ESTIMATE + delivery 3 × 7.5–15 t × $0.2–0.6M/kg + batteries 3 × (~1 t × $0.4–1.0M/kg + $0.02–0.06B hardware)"}
   - {item: "Crop research and ground analog", low: 0.2, high: 0.5, basis: "ESTIMATE"}
 exit_criteria:
   - "Fresh vegetables available to every crew member every week."

@@ -4,14 +4,15 @@ order: 4
 title: Surface power grid
 phase: 1
 window: "2028–2032"
-summary: Build a hybrid power grid of tall solar towers on the sunlit ridges, a fission reactor for darkness, energy storage and high-voltage cables, sized to run the oxygen plant and the first habitat.
-objective: "Deliver at least 100 kW of solar peak power and at least 20 kWe of continuous fission power from an LR-1-class reactor that charges the base battery through a battery management system (Reactor > BMS > Battery > Base; design change DD-002), connected by a 3 kV AC, 1 kHz grid (NASA's lunar grid baseline; design change DD-001), so the base never loses essential power, even during the longest polar darkness."
+summary: Build a hybrid power system of tall solar towers on the sunlit ridges, a fission reactor for darkness, energy storage and high-voltage cables, all routed through one BMS that sends power to the grid or to storage, sized to run the oxygen plant and the first habitat.
+objective: "Deliver at least 100 kW of solar peak power and at least 20 kWe of continuous fission power from an LR-1-class reactor (design change DD-002), with every source feeding a BMS that routes power to the grid, to storage, or both (design change DD-003), connected by a 3 kV AC, 1 kHz grid (NASA's lunar grid baseline; design change DD-001), so the base never loses essential power, even during the longest polar darkness."
 trl_min: 5
 depends_on: [M00, M02, M03]
 spec:
   - {k: "Solar", v: "2 × 10 kW VSAT + 2 × 50 kW VSAT-XL towers"}
-  - {k: "Fission", v: "1 × LR-1-class reactor, 20 kWe (7.5–15 t); charges batteries only (DD-002)"}
-  - {k: "Storage", v: "160 kWh fission battery with BMS + regenerative fuel cells, ~3 MWh"}
+  - {k: "Fission", v: "1 × LR-1-class reactor, 20 kWe (7.5–15 t) (DD-002)"}
+  - {k: "BMS", v: "Central power routing hub, two halves (A/B); all sources in, grid and storage out (DD-003)"}
+  - {k: "Storage", v: "~260 kWh Li-ion bank (160 kWh reactor ride-through + 100 kWh peaks) + regenerative fuel cells, ~3 MWh"}
   - {k: "Grid", v: "3 kV AC, 3-phase, 1 kHz; 1–3 km links (NASA baseline, DD-001)"}
   - {k: "Load at end", v: "Oxygen pilot plant ~26 kW + habitat 20–50 kW"}
 cost: {low: 8.9, high: 27.5, note: "about 85% of this is delivery cost; see the analysis below"}
@@ -22,8 +23,8 @@ cost_items:
   - {item: "Delivery of VSAT-XL (~6 t, medium landers)", low: 2.4, high: 6.0, basis: "6 t × $0.4–1.0M/kg (mass ESTIMATE)"}
   - {item: "20 kWe LR-1-class fission unit (develop, build, qualify)", low: 1.0, high: 3.0, basis: "ESTIMATE; Congress gave $250M for Fission Surface Power in FY2026 alone [src 16]"}
   - {item: "Delivery of fission unit (7.5–15 t, heavy lander)", low: 1.5, high: 9.0, basis: "No LR-1 design yet: 7.5 t (NASA 2025 40 kWe Brayton reference [src 26]) to 15 t (LR-1 mass cap [src 25]) × $0.2–0.6M/kg"}
-  - {item: "Fission charger, BMS and 160 kWh battery in two strings (hardware)", low: 0.02, high: 0.06, basis: "ESTIMATE; DD-002 sizing (8 h × 20 kWe)"}
-  - {item: "Delivery of fission battery and charger (~1 t, medium lander)", low: 0.4, high: 1.0, basis: "160 kWh ÷ 160 Wh/kg [src 1] ≈ 1 t × $0.4–1.0M/kg"}
+  - {item: "BMS hub (two halves) and 160 kWh reactor ride-through battery strings (hardware)", low: 0.02, high: 0.06, basis: "ESTIMATE; DD-002 and DD-003 sizing (8 h × 20 kWe)"}
+  - {item: "Delivery of BMS hub and ride-through battery (~1 t, medium lander)", low: 0.4, high: 1.0, basis: "160 kWh ÷ 160 Wh/kg [src 1] ≈ 1 t × $0.4–1.0M/kg"}
   - {item: "Regenerative fuel cell storage, ~3 MWh (hardware)", low: 0.05, high: 0.15, basis: "ESTIMATE"}
   - {item: "Delivery of storage (~3 t, medium lander)", low: 1.2, high: 3.0, basis: "3 MWh ÷ ~500 Wh/kg ≈ 6 t at cell level; ~3 t assumes partial reuse of ISRU tanks (ESTIMATE) × $0.4–1.0M/kg"}
   - {item: "Cables, converters, switchgear (hardware)", low: 0.05, high: 0.15, basis: "ESTIMATE"}
@@ -31,8 +32,9 @@ cost_items:
   - {item: "Integration, testing, operations", low: 0.1, high: 0.3, basis: "ESTIMATE"}
 exit_criteria:
   - "At least 100 kW solar peak power installed on at least two separate ridge points."
-  - "Fission unit charging the base battery at at least 20 kWe continuously for six months, with all fission power reaching the base through the BMS and battery (DD-002)."
-  - "A full battery hands surplus fission power to the reactor's parasitic load radiator with no fault or power dip on the base."
+  - "Fission unit delivering at least 20 kWe continuously to the BMS for six months (DD-002)."
+  - "All generated power reaches loads and storage through the BMS; it meets demand, charges storage with surplus, and draws on storage when short, with no power dip on essential loads (DD-003)."
+  - "With storage full, surplus solar is curtailed and surplus reactor power goes to its parasitic load radiator, with no fault."
   - "Essential loads (comms, heaters, life support standby) never lose power across the longest darkness period recorded at the site."
   - "Grid survives loss of any single power source without dropping essential loads."
   - "Cable-laying rover has laid at least 3 km of cable."
@@ -42,22 +44,22 @@ workstreams:
     items: ["10 kW VSAT, ~10 m mast", "50 kW VSAT-XL, 34 m tall", "Spread across 2–3 ridge points"]
   - name: Fission power
     desc: Continuous power regardless of sunlight.
-    items: ["LR-1-class 20 kWe unit (HALEU, closed Brayton, 3 kV AC); KRUSTY-class 1 kWe units for small remote loads", "Placed 1–3 km away, behind terrain", "Remote start after landing", "Charges batteries only: Reactor > BMS > Battery > Base (DD-002)"]
+    items: ["LR-1-class 20 kWe unit (HALEU, closed Brayton, 3 kV AC); KRUSTY-class 1 kWe units for small remote loads", "Placed 1–3 km away, behind terrain", "Remote start after landing", "Feeds the BMS, which routes its power to the grid or storage (DD-003)"]
   - name: Storage
     desc: Ride through solar gaps and peaks.
-    items: ["160 kWh fission battery per 20 kWe reactor, two strings, with charger and BMS", "Regenerative fuel cells (320–650 Wh/kg)", "Li-ion for fast peaks (~160 Wh/kg)", "Shares water and gas tanks with ISRU"]
+    items: ["Li-ion battery bank behind the BMS: 160 kWh per 20 kWe reactor plus ~100 kWh for peaks, in several strings", "Regenerative fuel cells (320–650 Wh/kg), charged by BMS surplus", "Shares water and gas tanks with ISRU"]
   - name: Grid and cables
     desc: Move power between sources and users.
     items: ["3 kV AC, 3-phase, 1 kHz aluminium cable", "Transformers plus UMIC converters at each source and user", "Separate 120 V DC habitat and ISRU microgrids"]
   - name: Cable laying
     desc: Robots lay cable on the surface.
     items: ["LunaGrid-Lite-style rover reels out cable", "Cable left on the surface to shed heat (NASA advises against burial); ramps at rover crossings", "Fault location by time-domain reflectometry"]
-  - name: Control
-    desc: Automatic load management.
-    items: ["Priority load shedding", "Remote operation from Earth", "Fault isolation"]
+  - name: BMS and control
+    desc: "Every source feeds the BMS, which routes power to the grid, to storage, or both (DD-003)."
+    items: ["Two independent BMS halves (A/B) with a cross-tie", "Routing: demand first, then battery, then fuel-cell electrolyser; curtail or dump only when storage is full", "Priority load shedding", "Remote operation from Earth", "Fault isolation"]
 technologies:
-  - {name: "Kilopower / KRUSTY (1–10 kWe Stirling reactor)", use: "Small reactor (plan value 1 kWe) charging batteries via a BMS", status: "KRUSTY ground test 2018: 28 h at full power, reactor rated TRL 5. No flight unit built", trl: 5, src: 5}
-  - {name: "US Lunar Reactor-1 (20 kWe Brayton reactor)", use: "Main base reactor (plan value 20 kWe) charging batteries via a BMS", status: "Draft SPARC solicitation Aug 2026: ≥20 kWe at 3 kV AC, ≥5 yr, HALEU, closed Brayton, <15 t. No award yet", trl: 4, src: 25}
+  - {name: "Kilopower / KRUSTY (1–10 kWe Stirling reactor)", use: "Small reactor (plan value 1 kWe) feeding the BMS", status: "KRUSTY ground test 2018: 28 h at full power, reactor rated TRL 5. No flight unit built", trl: 5, src: 5}
+  - {name: "US Lunar Reactor-1 (20 kWe Brayton reactor)", use: "Main base reactor (plan value 20 kWe) feeding the BMS", status: "Draft SPARC solicitation Aug 2026: ≥20 kWe at 3 kV AC, ≥5 yr, HALEU, closed Brayton, <15 t. No award yet", trl: 4, src: 25}
   - {name: "Vertical Solar Array Technology (VSAT)", use: "10 kW-class solar towers", status: "Three NASA prototype contracts (2022); deploy to ~10 m", trl: 6, src: 4}
   - {name: "Astrobotic VSAT-XL", use: "50 kW towers", status: "NASA SBIR study award 2024; 34 m tall; Redwire ROSA arrays. Phase II follow-on Jun 2025–Jun 2027", trl: 5, new: true, src: 7}
   - {name: "Astrobotic LunaGrid-Lite", use: "Cable-laying rover and power transfer", status: "1 kW; ~500 m of cable in the 2025 design (1 km in earlier plans); passed CDR Aug 2025", trl: 6, src: 8}
@@ -92,8 +94,8 @@ sources:
   - {title: "INL/NASA: Fission Surface Power Technical Maturation Webinar (2025 reference design: masses, 8 h start-up)", url: "https://inl.gov/content/uploads/2024/11/FSP-Technical-Maturation-Webinar-Final-250924-1.pdf", date: "Sep 2025"}
 risks:
   - {sev: Critical, title: "Darkness: even the best ridges have shadow periods; NASA cites up to ~100 h at the pole, and 354 h is the design night for the US reactor", fix: "Fission base load + solar on multiple ridge points + storage; never rely on one source"}
-  - {sev: Critical, title: "The US lunar reactor's requirements keep changing (40 → 100 → 20 kWe) and no contract has been awarded", fix: "Plan on the LR-1 minimum of 20 kWe (DD-002); size the charger and BMS so a larger unit can be added; solar-only fallback with more storage"}
-  - {sev: High, title: "All fission power passes through the charger, BMS and battery (DD-002), so a fault there cuts the base off from the reactor", fix: "At least two independent battery strings, each with its own charger and BMS; a full or failed string hands surplus to the reactor's parasitic load radiator"}
+  - {sev: Critical, title: "The US lunar reactor's requirements keep changing (40 → 100 → 20 kWe) and no contract has been awarded", fix: "Plan on the LR-1 minimum of 20 kWe (DD-002); size the BMS so a larger unit can be added; solar-only fallback with more storage"}
+  - {sev: Critical, title: "Every watt passes through the BMS (DD-003), so a BMS fault could cut every source off from every load", fix: "Two independent BMS halves (A/B), each able to carry the essential loads, with a cross-tie; battery in several strings; every source and feeder can be switched to either half; ground-test failover before flight"}
   - {sev: High, title: "Delivery cost dominates: ~85% of this milestone is shipping mass", fix: "Push heavy-cargo pricing down; make cables and later solar cells from regolith (Blue Alchemist, M12)"}
   - {sev: High, title: "Dust on arrays and radiators", fix: "Vertical arrays shed dust; keep 1 km+ from landing pads; landing pads in M05"}
   - {sev: High, title: "Reactor radiation near crew", fix: "1–3 km separation, terrain or berm shielding; US draft sets ≤5 rem/yr at 1 km"}
@@ -129,18 +131,28 @@ This milestone targets about 120 kW of total capacity: 100 kW of solar peak plus
 
 - **KRUSTY (2018).** For under $20 million, NASA and DOE designed, built and ran a real fission reactor with Stirling converters for 28 hours straight, at various power levels<sup class="r">[5](#s5)</sup>.
 - **NASA reference design.** 40 kWe, about 10 t, four pairs of Stirling engines, sodium heat pipes, 10-year life<sup class="r">[1](#s1)</sup>.
-- **Moving target.** The US programme has changed requirements several times: 40 kWe in 2022<sup class="r">[1](#s1)</sup>, then at least 100 kWe with closed Brayton conversion in 2025<sup class="r">[12](#s12)</sup>. In 2026 it settled on "Lunar Reactor-1": at least 20 kWe, at least 5 years, HALEU fuel, under 15 t<sup class="r">[6](#s6)</sup><sup class="r">[14](#s14)</sup>. No contract has been awarded yet. Open Moon now plans on that 20 kWe minimum (see design change DD-002 below).
+- **Moving target.** The US programme has changed requirements several times: 40 kWe in 2022<sup class="r">[1](#s1)</sup>, then at least 100 kWe with closed Brayton conversion in 2025<sup class="r">[12](#s12)</sup>. In 2026 it settled on "Lunar Reactor-1": at least 20 kWe, at least 5 years, HALEU fuel, under 15 t<sup class="r">[6](#s6)</sup><sup class="r">[14](#s14)</sup>. No contract has been awarded yet. Open Moon now plans on that 20 kWe minimum (see design changes DD-002 and DD-003 below).
 
-{% include decision-note.html id="DD-002" extra="Open Moon first planned one 40 kWe-class reactor feeding the grid directly. On 18 November 2026 it changed to KRUSTY-class (1 kWe) or LR-1-class (20 kWe) reactors that only charge batteries." %}
+{% include decision-note.html id="DD-002" extra="Open Moon first planned one 40 kWe-class reactor feeding the grid directly. On 18 November 2026 it changed to KRUSTY-class (1 kWe) or LR-1-class (20 kWe) reactors. Its first rule, that reactors only charge a battery, was later widened by DD-003." %}
 
-## Reactor > BMS > Battery > Base
+{% include decision-note.html id="DD-003" extra="DD-002 had the reactor charge only a battery. DD-003 widens that: every source now feeds one BMS, which routes power to the grid, to storage, or both." %}
 
-![Diagram: the reactor feeds a charger and battery management system, which charges the battery; the base draws only from the battery; surplus power goes to the reactor's parasitic load radiator](/assets/tech/fission-to-battery-chain.svg)
+## How power flows: inputs, BMS, storage, outputs
 
-- **The reactor only charges batteries.** The 3 kV AC line from the reactor ends at a charger at the base. The charger converts it to the battery's charging voltage, and a battery management system (BMS) watches every cell and controls charging. The base's loads draw fission power only from the battery bus.
-- **Why it fits.** LR-1 must accept any load from 0 to 100% of its output and starts up into a parasitic load radiator<sup class="r">[25](#s25)</sup>. So when the battery is full and the BMS stops charging, the reactor dumps the surplus as heat. Stirling reactors already work this way: NASA's 40 kWe Stirling concept dumped unused power into a resistor bank or radiator<sup class="r">[15](#s15)</sup>.
-- **Battery size (plan design).** 160 kWh per 20 kWe reactor, in two strings: 8 hours at full output, about the time NASA's reference reactor takes to start up<sup class="r">[26](#s26)</sup>. At 160 Wh/kg<sup class="r">[1](#s1)</sup> that is about 1 t.
-- **KRUSTY-class units.** A 1 kWe Kilopower-type unit puts 24 kWh a day into storage. That suits a remote comms or science node, not the habitat. No flight unit is being built.
+![Diagram: fission reactors, solar towers and fuel cells all feed the BMS; the BMS routes power to the grid for demand, to storage, or both; surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator](/assets/tech/base-power-bms-flow.svg)
+
+- **Inputs.** The reactor, the solar towers and the fuel cells (when storage is discharging) always send their power to the BMS. Nothing feeds a load directly.
+- **The BMS decides.** In this plan BMS means the base's central power management and routing system, including battery cell management. Moment to moment it sends power to the grid to meet demand, into storage, or some of each. When generation falls short it draws on storage.
+- **Default routing (plan design).**
+  1. Meet grid demand, highest priority first (life support before everything else). NASA's lunar microgrid concept also has a controller that serves the highest-priority loads first<sup class="r">[1](#s1)</sup>.
+  2. Charge the Li-ion battery with any surplus.
+  3. With the battery full, run the fuel-cell electrolyser to fill long-term storage.
+  4. With all storage full, curtail the solar towers and let the reactor dump its surplus to its parasitic load radiator. LR-1 must accept any load from 0 to 100% of its output and starts up into that radiator<sup class="r">[25](#s25)</sup>. NASA's 40 kWe Stirling concept also dumped unused power into a resistor bank or radiator<sup class="r">[15](#s15)</sup>.
+  5. When short: discharge the battery, then the fuel cells, then shed loads by priority.
+- **Outputs.** The grid: the 3 kV AC trunk and the 120 V DC habitat and ISRU microgrids (C04.4).
+- **Battery size (plan design).** About 260 kWh of Li-ion: 160 kWh per 20 kWe reactor, which is 8 hours at full output, about the time NASA's reference reactor takes to start up<sup class="r">[26](#s26)</sup>, plus about 100 kWh for fast peaks. At 160 Wh/kg<sup class="r">[1](#s1)</sup> that is about 1.6 t.
+- **No single point of failure.** The BMS is split into two independent halves (A and B) with a cross-tie. Each can carry the essential loads, and every source and feeder can be switched to either half.
+- **KRUSTY-class units.** A 1 kWe Kilopower-type unit gives 24 kWh a day. That suits a remote comms or science node, not the habitat. No flight unit is being built.
 
 ## Solar towers
 
@@ -170,10 +182,10 @@ About **85%** of this milestone's cost is **delivery**, not hardware. Two things
 
 ## Step-by-step
 
-1. **First landing (small lander):** a 10 kW VSAT, a LunaGrid-Lite-class cable rover, and the LTE kit from M03.
+1. **First landing (small lander):** a 10 kW VSAT, BMS half A with a starter battery string, a LunaGrid-Lite-class cable rover, and the LTE kit from M03. From the first watt, power flows through the BMS.
 2. **Second 10 kW VSAT** on a second ridge point, with a cable link between the two.
 3. **Two 50 kW VSAT-XL towers** on medium landers.
-4. **Regenerative fuel cell storage**, sharing tanks with the M06 water plant.
-5. **Fission battery, charger and BMS** installed at the base end of the reactor cable, in two strings.
-6. **Fission unit on a heavy lander.** Rovers set it 1–3 km from the habitat zone behind terrain, then it starts remotely into its parasitic load radiator and begins charging the battery.
+4. **Regenerative fuel cell storage**, sharing tanks with the M06 water plant, connected to the BMS.
+5. **BMS half B and the reactor ride-through battery strings**, with the cross-tie to half A.
+6. **Fission unit on a heavy lander.** Rovers set it 1–3 km from the habitat zone behind terrain, then it starts remotely into its parasitic load radiator and is switched over to feed the BMS.
 7. **Close the grid** so it survives losing any single source.

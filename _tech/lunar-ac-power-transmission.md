@@ -48,7 +48,7 @@ NASA's reason, in its own words: a DC grid is "practically limited to 1.2-1.5 kV
 
 ## Why Open Moon uses it
 
-Milestone M04 builds the base's power grid. It links solar towers and storage to the oxygen plant and the habitat. The fission reactor's 3 kV AC line is a separate point-to-point link that ends at the base's fission battery charger: the reactor only charges batteries ([design change DD-002](/decisions/#dd-002)). The reactor has to sit away from the crew: NASA's design puts the user interface [1 km away](https://ntrs.nasa.gov/citations/20250000841), and the oxygen plant needs power over [3–5 km](https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf).
+Milestone M04 builds the base's power grid. Every source line, from the reactor and the solar towers, ends at the base BMS hub. The BMS routes the power over the grid to the oxygen plant and the habitat, or into storage ([design change DD-003](/decisions/#dd-003)). The reactor has to sit away from the crew: NASA's design puts the user interface [1 km away](https://ntrs.nasa.gov/citations/20250000841), and the oxygen plant needs power over [3–5 km](https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf).
 
 Efficiency matters because fission power is heavy, about [0.25–0.27 kg per watt](https://ntrs.nasa.gov/api/citations/20220002315/downloads/Lunar_power_transmission_concepts_FINAL.pdf). Every watt lost in the cable means more reactor mass. Using NASA's AC baseline means Open Moon can plug in a NASA-designed reactor directly and use NASA's interface converters, instead of developing high-voltage DC parts no one makes yet.
 

@@ -100,22 +100,22 @@ Key draft requirements ([NASA SPARC Industry Day](https://sam.gov/api/prod/opps/
 
 **Reasonable planning value for Open Moon:** **20 kWe**, continuously. That is NASA's guaranteed minimum after a single failure, and the figure NASA uses for both LR-1 and SR-1. It works out to **480 kWh a day** (Open Moon arithmetic). The SPARC draft does not set the AC frequency. NASA's earlier lunar grid trade study chose 3 kV AC ([Thomas et al. 2022](https://ntrs.nasa.gov/citations/20220011587)).
 
-## How Open Moon uses it: Reactor > BMS > Battery > Base
+## How Open Moon uses it: the reactor feeds the BMS
 
-{% include decision-note.html id="DD-002" extra="An LR-1-class unit is the plan's base reactor." %}
+{% include decision-note.html id="DD-003" extra="An LR-1-class unit is the plan's base reactor (DD-002). Like every source, it feeds the BMS." %}
 
-![Diagram: the reactor feeds a charger and battery management system, which charges the battery; the base draws only from the battery; surplus power goes to the reactor's parasitic load radiator](/assets/tech/fission-to-battery-chain.svg)
+![Diagram: fission reactors, solar towers and fuel cells all feed the BMS; the BMS routes power to the grid for demand, to storage, or both; surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator](/assets/tech/base-power-bms-flow.svg)
 
-In Open Moon the reactor **only charges batteries**. The base never runs directly off the reactor.
+In Open Moon every source, including the reactor, sends its power to the **BMS**. The BMS decides whether that power goes to the grid to meet demand, into storage, or some of each, and draws on storage when generation falls short ([design change DD-003](/decisions/#dd-003)).
 
-1. **Reactor.** LR-1 runs at up to 20 kWe and sends 3 kV AC down the cable.
-2. **Charger and BMS.** At the base end, a converter steps the 3 kV AC down and rectifies it to the battery's charging voltage. NASA Glenn has already built a modular AC-to-DC interface converter for lunar transmission ([Thomas et al. 2023](https://ntrs.nasa.gov/citations/20230013309)). The battery management system (BMS) watches every cell's voltage, current and temperature, balances the cells, and cuts back charging as the battery fills.
-3. **Battery.** Stores the energy and covers load peaks above 20 kW and any reactor outage.
-4. **Base.** All loads draw from the battery bus.
+1. **Reactor.** LR-1 runs at up to 20 kWe and sends 3 kV AC down the cable to the BMS hub.
+2. **BMS.** Converts the incoming power and routes it: first to the grid for demand, then to charge the battery, then to the fuel-cell electrolyser. NASA Glenn has already built a modular, bidirectional converter between 120 V DC equipment and the 3 kV AC grid ([Thomas et al. 2023](https://ntrs.nasa.gov/citations/20230013309)).
+3. **Storage.** A Li-ion bank with 160 kWh per reactor (8 hours at full output, to ride through a restart), plus regenerative fuel cells for long shadows.
+4. **Outputs.** The grid: the habitat, ISRU plants and other loads.
 
-**Why this fits LR-1.** LR-1 must accept any load from 0 to 100% and has its own parasitic load radiator ([NASA](https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download)). So when the BMS stops charging a full battery, the reactor simply dumps the surplus as heat, and nothing on the base sees a sudden change.
+**Why this fits LR-1.** LR-1 must accept any load from 0 to 100% and has its own parasitic load radiator ([NASA](https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download)). So the BMS can take as much or as little as it needs at any moment, and when demand is met and storage is full, the reactor dumps the surplus as heat.
 
-**Sizing (Open Moon arithmetic).** The reactor must cover the base's *average* load plus charging losses. The battery must cover the *peak* load and the longest planned reactor outage. A habitat drawing 20–50 kW (see C08.1) is above one LR-1's 20 kWe, so a crewed base needs more than one reactor, or solar towers charging the same batteries.
+**Sizing (Open Moon arithmetic).** One LR-1 gives **480 kWh a day**. Generation must cover the base's *average* load plus losses; storage must cover *peaks* and the longest planned outage. A habitat drawing 20–50 kW (see C08.1) is above one LR-1's 20 kWe, so a crewed base needs more than one reactor, or solar towers feeding the same BMS.
 
 ## Limitations and open issues
 
@@ -126,4 +126,4 @@ In Open Moon the reactor **only charges batteries**. The base never runs directl
 - **Brayton not yet run on a reactor.** The only recent nuclear test (KRUSTY, 28 hours) used Stirling engines ([Poston et al. 2020](https://ntrs.nasa.gov/citations/20205009351)). Brayton first flies on SR-1, which may slip.
 - **Fuel supply.** HALEU depends on DOE building a [domestic supply chain](https://www.energy.gov/infrastructure/availability-high-assay-low-enriched-uranium-haleu).
 - **Siting.** The radiation limit applies only at 1 km. Habitats need distance, berms or terrain shielding. The user also supplies the long-distance cable ([NASA](https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download)).
-- **Battery in the loop.** With Reactor > BMS > Battery > Base, the converter, BMS and battery carry every watt. They need redundant strings so one failure does not cut the base off from the reactor.
+- **Everything goes through the BMS.** Every watt passes through the BMS, so it is split into two independent halves with a cross-tie, and the battery into several strings (see C04.3).

@@ -34,7 +34,7 @@ As of November 2026, no test results from the Phase II prototype have been publi
 
 ## Why Open Moon uses it
 
-Open Moon's power milestone (M04) plans two 50 kW VSAT-XL towers alongside two 10 kW VSATs and a fission reactor. The towers supply the bulk of the solar power for the oxygen pilot plant and the habitat. Astrobotic itself names the target loads: [pressurized rovers, habitats and ISRU pilot plants](https://www.highergov.com/contract/80NSSC24PB267/).
+Open Moon's power milestone (M04) plans two 50 kW VSAT-XL towers alongside two 10 kW VSATs and a fission reactor. The towers supply the bulk of the solar power for the oxygen pilot plant and the habitat. Like every source in the plan, they feed the base BMS, which routes their power to the grid or to storage ([design change DD-003](/decisions/#dd-003)). Astrobotic itself names the target loads: [pressurized rovers, habitats and ISRU pilot plants](https://www.highergov.com/contract/80NSSC24PB267/).
 
 Height is the point. At the poles the Sun stays close to the horizon, and terrain can block light from low arrays. Masts lift the arrays into steadier light, [NASA explains](https://www.nasa.gov/news-release/three-companies-to-help-nasa-advance-solar-array-technology-for-moon/). VSAT-XL is part of Astrobotic's [LunaGrid](https://www.astrobotic.com/lunar-delivery/lunar-surface-power/) power service. That service also uses cable-laying rovers and wireless chargers to carry power to users. Astrobotic and Honda are also studying how to pair [VSAT and VSAT-XL with Honda's regenerative fuel cell](https://www.astrobotic.com/honda-and-astrobotic-establish-joint-development-agreement-to-explore-scalable-lunar-power-solutions/) to get through dark periods.
 

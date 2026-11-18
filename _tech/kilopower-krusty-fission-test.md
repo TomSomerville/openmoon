@@ -141,22 +141,22 @@ Definitions: [NASA TRL definitions](https://www.nasa.gov/wp-content/uploads/2017
 
 **Reasonable planning value for Open Moon.** We plan on **1 kWe per KRUSTY-class unit**, because that is the design KRUSTY actually represents. The 10 kWe version was never built or tested, so we do not count on it. One NASA Mars study ran a 10 kWe unit at 6.5 kWe (65%) ([Gibson 2017](https://ntrs.nasa.gov/citations/20170002010)). The 1 kWe figure is an Open Moon planning choice.
 
-## How Open Moon uses it: Reactor > BMS > Battery > Base
+## How Open Moon uses it: the reactor feeds the BMS
 
-{% include decision-note.html id="DD-002" extra="KRUSTY-class units are the plan's small-load reactor option." %}
+{% include decision-note.html id="DD-003" extra="KRUSTY-class units are the plan's small-load reactor option (DD-002). Like every source, they feed the BMS." %}
 
-![Diagram: the reactor feeds a charger and battery management system, which charges the battery; the base draws only from the battery; surplus power goes to the reactor's parasitic load radiator](/assets/tech/fission-to-battery-chain.svg)
+![Diagram: fission reactors, solar towers and fuel cells all feed the BMS; the BMS routes power to the grid for demand, to storage, or both; surplus with storage full is curtailed or dumped to the reactor's parasitic load radiator](/assets/tech/base-power-bms-flow.svg)
 
-In Open Moon the reactor **only charges batteries**. The base never runs directly off the reactor.
+In Open Moon every source, including the reactor, sends its power to the **BMS**. The BMS decides whether that power goes to the grid to meet demand, into storage, or some of each, and draws on storage when generation falls short ([design change DD-003](/decisions/#dd-003)).
 
 1. **Reactor.** A KRUSTY-class unit runs at a steady output. That suits a Stirling reactor, which holds its temperature best at a steady heat draw.
-2. **Charger and BMS.** A charger turns the controllers' output into the battery's charging voltage. The battery management system (BMS) watches every cell's voltage, current and temperature, balances the cells, and stops charging when the battery is full.
-3. **Battery.** Stores the energy and covers peaks above the reactor's output, plus any reactor outage.
-4. **Base.** All loads draw from the battery bus.
+2. **BMS.** Takes the controllers' output and routes it: first to the grid for demand, then to charge the battery, then to the fuel-cell electrolyser.
+3. **Storage.** The Li-ion battery and regenerative fuel cells behind the BMS cover peaks and any reactor outage.
+4. **Outputs.** The grid and its loads.
 
-When the battery is full, surplus power goes to a dump load. NASA's lunar Stirling design does this already: the controllers dump unused power into a resistor bank or radiator ([Oleson et al. 2022](https://ntrs.nasa.gov/citations/20220004670)).
+When demand is met and storage is full, the reactor's surplus goes to a dump load. NASA's lunar Stirling design does this already: the controllers dump unused power into a resistor bank or radiator ([Oleson et al. 2022](https://ntrs.nasa.gov/citations/20220004670)).
 
-**What this means at 1 kWe (Open Moon arithmetic).** A 1 kWe unit puts **24 kWh a day** into storage. That suits small loads: a comms node, a science station or keep-alive heaters through the polar night. It is far too small for a crewed habitat drawing 20–50 kW (see C08.1). A habitat needs the 20 kWe Lunar Reactor-1, or several of them.
+**What this means at 1 kWe (Open Moon arithmetic).** A 1 kWe unit delivers **24 kWh a day**. That suits small loads: a comms node, a science station or keep-alive heaters through the polar night. It is far too small for a crewed habitat drawing 20–50 kW (see C08.1). A habitat needs the 20 kWe Lunar Reactor-1, or several of them.
 
 ## Limitations and open issues
 
@@ -166,4 +166,4 @@ When the battery is full, surplus power goes to a dump load. NASA's lunar Stirli
 - **Low electrical output in the test.** Only two small engines made about 180 We. A full 1 kWe system was never run on nuclear heat ([Gibson et al. 2018](https://ntrs.nasa.gov/citations/20180005435)).
 - **Heat pipes in low gravity.** The test heat pipes partly worked as thermosiphons in Earth gravity and struggled at startup. Flight heat pipes must be qualified for low gravity ([Poston et al. 2020](https://ntrs.nasa.gov/citations/20205009351)).
 - **Highly enriched fuel.** KRUSTY used 93% uranium-235 ([Wikipedia](https://en.wikipedia.org/wiki/Kilopower)). NASA's current lunar requirement specifies HALEU fuel ([NASA SPARC Industry Day](https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download)), so a KRUSTY-class unit as tested would not meet it.
-- **Battery in the loop.** With Reactor > BMS > Battery > Base, the charger, BMS and battery carry every watt. They need redundant strings so one failure does not cut the base off from the reactor.
+- **Everything goes through the BMS.** Every watt passes through the BMS, so it is split into two independent halves with a cross-tie, and the battery into several strings (see C04.3).

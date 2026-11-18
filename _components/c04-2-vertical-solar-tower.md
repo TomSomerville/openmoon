@@ -34,12 +34,12 @@ subcomponents:
     trl: 5
   - name: Base and lander interface
     desc: "Holds the tower on rough ground and gets it off the lander."
-    parts: ["Tripod or sled base with levelling legs", "Launch locks", "Offload interface (self-propelled or towed cart)", "Ballast or ground anchors", "Grid cable connector"]
+    parts: ["Tripod or sled base with levelling legs", "Launch locks", "Offload interface (self-propelled or towed cart)", "Ballast or ground anchors", "Cable connector for the source line to the BMS"]
     tech: "VSAT prototype bases; Astrobotic VOLT rover base"
     trl: 5
   - name: Power electronics and night survival
-    desc: "Conditions array power for the grid and keeps the tower alive in the dark."
-    parts: ["Maximum-power-point converters", "Grid interface converter (UMIC class)", "Survival battery", "Heaters and thermostats", "Avionics and radio"]
+    desc: "Conditions array power for the line to the BMS hub, follows BMS commands to curtail when storage is full, and keeps the tower alive in the dark."
+    parts: ["Maximum-power-point converters", "Line interface converter (UMIC class) to the BMS source line", "Curtailment control on BMS command", "Survival battery", "Heaters and thermostats", "Avionics and radio"]
     tech: "NASA GRC UMIC; VSAT prototype avionics"
     trl: 4
   - name: Dust protection
@@ -114,4 +114,4 @@ At the south pole the Sun skims the horizon, so hills and crater rims cast very 
 - Which ridge points give the least overlap in shadow time for the actual landing site?
 - Should the XL be a fixed tower (Astrobotic 2025) or have a mobile version (Astrobotic 2024)<sup class="r">[5](#s5)</sup><sup class="r">[6](#s6)</sup>?
 - How fast do cells degrade from dust, radiation and thermal cycling over 10 years at the pole?
-- Each tower connects to the 3 kV AC, 1 kHz grid (design change DD-001) through a UMIC-class converter. Could Astrobotic's proposed high-voltage AC output<sup class="r">[3](#s3)</sup> feed the grid more directly?
+- Each tower sends its power over a 3 kV AC, 1 kHz line (design change DD-001) to the BMS hub, which routes it to the grid or to storage (design change DD-003). Could Astrobotic's proposed high-voltage AC output<sup class="r">[3](#s3)</sup> feed that line more directly?
