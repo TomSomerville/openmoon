@@ -77,6 +77,8 @@ risks:
 - **Rock is mostly oxygen.** Lunar rock and soil is about **41–45% oxygen by mass**<sup class="r">[3](#s3)</sup>.
 - **Polar ice gives water directly.** LCROSS found ejecta water "on the order of five percent"<sup class="r">[10](#s10)</sup>.
 
+{% include decision-note.html id="DD-016" extra="Remote sites may run their own isolated grid; the ice mine at the primary site does (M00, C06.2)." %}
+
 ## How ready are the processes?
 
 | Process | Best demonstration so far | Readiness |

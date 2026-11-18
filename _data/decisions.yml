@@ -290,7 +290,7 @@
 - id: DD-009
   date: "2026-11-18"
   title: "Distribution: the base grid works like a national grid, and every unit has its own service connection and 120 V DC panel"
-  status: Adopted
+  status: "Adopted for the base grid; remote sites may run their own isolated grid (DD-016)"
   affects: [M04, C04.3, C04.4, M06, C06.1, C06.2, C06.3, M08, C08.1, C08.2, M09, M10, C10.1, M11, C11.1, C03.1, C05.1, lunar-ac-power-transmission, roadmap, pbs]
   was: "Following NASA's 2022 grid study, the PMC (then called the BMS) sent 3 kV AC feeders to two separate 120 V DC microgrids, one for the habitat and one for ISRU. Habitat modules plugged into the habitat microgrid."
   now: "The base grid is the 'national grid': the 3 kV AC, 3-phase, 1 kHz distribution network fed by the PMC (DD-001 voltage and frequency unchanged). There are no separate habitat and ISRU microgrids. Each unit has its own independent service connection to the grid, like a house: a service drop from the grid, a step-down and rectifier converter (UMIC-class) that delivers 120 V DC (NASA's space power standard), a meter, and a main breaker or disconnect, feeding the unit's DC panel and subpanels. Every system in the unit is then fed from that panel by branch circuits. The grid does not supply AC to units. A unit that needs AC has its own inverter, fed from its DC panel, feeding a local AC subpanel for that unit only; each unit chooses its own inverter and AC voltage. Each of the 3 habitat modules (DD-007) has its own service connection. Non-habitat systems connect the same way, each with its own service connection and panel: the regolith water-extraction plant, water electrolysis (H₂/O₂), the oxygen plant, life-support processing outside the habitats, comms nodes, rover chargers, greenhouses and the propellant depot. Any service connection can be isolated without affecting the others."
@@ -564,4 +564,27 @@
     - "The ice-candidate floor is 12.7 km from the base, beyond the 10 km extended-run limit (DD-014), so ice mining is powered from rim VSATs nearer the floor, not from the base grid directly."
     - "A young fault scarp is mapped in de Gerlache Rim 2; pads and habitats must stay clear of it."
     - "Ice at de Gerlache is unconfirmed (one M3 spectrum and a ShadowCam bright spot); M01 must measure it before the base is committed."
+
+- id: DD-016
+  date: "2026-11-18"
+  title: "Isolated grids: the ice mine has its own VSATs, PMC and grid on the de Gerlache rim, separate from the base grid"
+  status: "Adopted"
+  affects: [M00, M04, M06, C04.3, C04.4, C06.2, pbs]
+  was: "DD-009 made one base-wide grid with no separate habitat or ISRU microgrids; the ice mine would draw power from the base grid over an extended run (DD-014), or from the mobile power cart."
+  now: "The base keeps one grid (DD-009). A remote site may run its own isolated grid with its own generation, PMC and storage, not connected to the base grid. First case: the ice mine at the edge of de Gerlache's shadowed floor is powered by two 10 kW VSATs on the crater rim (88.4657°S, 67.87°W and 88.3937°S, 68.69°W, 2.3 km apart) feeding a mine PMC on the rim, with an 8.3 km feeder down to the mine. The base is powered by its own VSATs: first site 5 (88.6652°S, 68.42°W, 7.7 km) and a second tower at 88.7108°S, 68.28°W (8.8 km)."
+  why: "The user's decision. The base and the mine are 12.7 km apart, beyond the 10 km run limit, so one grid cannot serve both. Separate grids keep every source run short (the mine VSATs are 2.3 km apart) and let each site be sized for its own load; a fault on one grid does not take down the other."
+  timeline:
+    - date: "Aug 2022"
+      what: "NASA Glenn's lunar grid study planned separate habitat and ISRU microgrids joined by a 3 kV AC trunk; DD-016 returns to separate grids for remote sites, without the trunk."
+      title: "Thomas, Granger, Csank & Gardner, Establishing a Lunar Surface Power Grid"
+      url: "https://ntrs.nasa.gov/citations/20220011587"
+    - date: "2011"
+      what: "NASA GSFC average illumination map used to pick the VSAT sites for each grid."
+      title: "NASA GSFC PGDA: Lunar Polar Illumination (Mazarico et al. 2011)"
+      url: "https://pgda.gsfc.nasa.gov/products/69"
+  tradeoffs:
+    - "No power sharing: the base cannot help the mine, or the mine the base, unless a tie line is added later (open)."
+    - "Two PMCs, two storage banks and two sets of spares instead of one."
+    - "The mine grid's two VSATs are lit 77.4% of the time together and both go dark for up to about 14 days (ESTIMATE). The mine shuts down when both are dark; its storage only keeps systems minimally alive (heaters, controls, comms), not the mining load (plan design)."
+    - "The base's two VSATs are lit about 84.1% together, with blackouts up to about 6 days (ESTIMATE); adding two more nearby adds under 1 point."
 

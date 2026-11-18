@@ -108,6 +108,8 @@ The grid moves power from where it is made to where it is used. NASA's reactor r
 
 {% include decision-note.html id="DD-013" extra="This component used '1–3 km' links with no set maximum, and said only that each source had a step-up transformer." %}
 
+{% include decision-note.html id="DD-016" extra="Remote sites may run their own isolated grid; the ice mine at the primary site does (M00, C06.2)." %}
+
 ## Service connections
 
 ![Diagram: the 3 kV AC grid feeds three habitat modules and a water electrolysis plant, each through its own service connection: service drop, UMIC-class step-down and rectifier to 120 V DC, meter, main breaker, then a 120 V DC panel with branch circuits such as life support, lighting, galley, avionics and heaters; habitats have an optional unit inverter feeding a local AC subpanel; any one connection can be opened without affecting the others](/assets/tech/base-power-service-connection.svg)

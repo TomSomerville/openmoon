@@ -112,6 +112,8 @@ NASA Glenn has built a modular, bidirectional converter between 120 V DC equipme
 - **Li-ion battery bank** for fast response: load steps, fuel cell warm-up, and 8 hours of reactor output for a reactor restart.
 - **Regenerative fuel cells** for long shadows and the years before the reactor arrives. They are charged by PMC surplus and, when they discharge, they recharge the battery rather than feeding the grid. Polar shadows last up to about 100 hours<sup class="r">[1](#s1)</sup>. A regenerative fuel cell (RFC) stores more energy per kilogram than batteries: 320–650 Wh/kg against about 160 Wh/kg for packaged Li-ion<sup class="r">[1](#s1)</sup>.
 
+{% include decision-note.html id="DD-016" extra="Remote sites may run their own isolated grid; the ice mine at the primary site does (M00, C06.2)." %}
+
 ## How it works
 
 - **Charge.** By day, a PEM electrolyser splits water. The stack compresses its own gases, so no separate compressor is needed<sup class="r">[2](#s2)</sup>.

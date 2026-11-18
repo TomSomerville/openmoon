@@ -35,6 +35,7 @@
     - {id: PW.5, name: "Mobile power cart for PSR work beyond 10 km of cable from the PMC (DD-013, DD-014)", ms: M06, how: build}
     - {id: PW.6, name: "Habitat service connections (×3), 120 V DC panels and emergency power", ms: M08, comp: C08.1, how: build}
     - {id: PW.8, name: "Facility service connections and 120 V DC panels (ISRU plants, comms, rover chargers, greenhouses, depot)", ms: M04, comp: C04.4, how: build}
+    - {id: PW.9, name: "Ice-mine isolated grid: 2 rim VSATs, mine PMC and storage, feeder to the mine (DD-016)", ms: M06, comp: C06.2, how: build}
     - {id: PW.7, name: Lunar-made solar array line, ms: M12, how: build}
 - id: SC
   name: Site and construction

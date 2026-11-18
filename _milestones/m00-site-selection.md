@@ -416,15 +416,18 @@ The primary base and only what serves it: slope classes everywhere, the de Gerla
 
 ### Ice mining for the primary site (ESTIMATE)
 
-The de Gerlache floor is 12.7 km from the primary base, beyond the 10 km extended-run limit (DD-014). So mining power comes from VSATs on the rim that sit within 10 km of the floor (plan design):
+The de Gerlache floor is 12.7 km from the primary base, beyond the 10 km extended-run limit (DD-014). So the mine has **its own isolated grid** (DD-016): two VSATs on the rim within 10 km of the floor, a mine PMC on the rim, and a feeder down to the mine. It is not connected to the base grid.
+
+{% include decision-note.html id="DD-016" %}
 
 | Mining VSAT | Position | Sunlit (NASA map; Open Moon estimate) | To the floor edge | To the primary base |
 |---|---|---|---|---|
 | M1 (also VSAT site 12) | 88.4657°S, 67.87°W | 75.1 %; 72.7 % | 9.2 km, to 88.3664°S, 78.31°W | 3.7 km |
 | M2 (also C3) | 88.3937°S, 68.69°W | 71.9 %; 71.2 % | 8.1 km, to 88.3395°S, 77.87°W | 4.7 km |
 
-- **Together, M1 and M2 are lit 77.4 % of the time (ESTIMATE)**, 2.3 km apart, but both go dark together for up to about 14 days, so mining is paused or battery-backed through those stretches.
-- **Power:** two 10 kW VSATs give about 20 kW peak for the ~15 kW mine (C06.2). Each cable run to the floor is under 10 km, an extended run (DD-014), and each VSAT is a standard 3–5 km from the base, so the same towers can feed the base when the mine is idle.
+- **Together, M1 and M2 are lit 77.4 % of the time (ESTIMATE)**, 2.3 km apart, but both go dark together for up to about 14 days. **The mine shuts down when both are dark** (plan design, DD-016): its batteries only keep systems minimally alive (heaters, controls, comms), not the mining load, so the mine grid needs only a small battery.
+- **Power:** two 10 kW VSATs give about 20 kW peak for the ~15 kW mine (C06.2). They are 2.3 km apart, so the mine PMC on the rim is a standard run from each; the feeder from the rim to the mine is about 8.3 km.
+- **The base has its own VSATs** (separate grid, DD-016): site 5 (88.6652°S, 68.42°W; 82.7 % sunlit on NASA's map; 7.7 km from the base) and a second tower at 88.7108°S, 68.28°W (53.8 %; 8.8 km), chosen because it is lit when site 5 is dark. Together they are lit about **84.1 %** of the time, with blackouts up to about 6 days (ESTIMATE). Two more towers nearby add under 1 point.
 - **The mine target** is the floor edge nearest the rim. No published ice detection has coordinates there; M01 must measure ice along this edge before mining is planned.
 
 ### Power loss over a 13 km run (this plan's arithmetic)

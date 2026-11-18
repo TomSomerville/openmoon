@@ -54,7 +54,7 @@ workstreams:
     items: ["Li-ion battery bank behind the PMC: 160 kWh per 20 kWe reactor plus ~100 kWh for peaks, in several strings", "Each string on its own battery charge/discharge unit (BCDU), with its own BMS for cell management (DD-008)", "Regenerative fuel cells (320–650 Wh/kg), charged by PMC surplus", "Shares water and gas tanks with ISRU"]
   - name: Grid and cables
     desc: Move power between sources and users.
-    items: ["3 kV AC, 3-phase, 1 kHz aluminium cable", "At each source: low-voltage UMIC-class inverter + 1 kHz step-up transformer; only low-voltage switches, no high-voltage DC (DD-013)", "Source runs: standard ≤3 km (DD-013); extended up to 10 km at ~10–15% loss (DD-014)", "One service connection per unit: UMIC-class step-down to 120 V DC, meter, main breaker, DC panel (DD-009)", "No separate habitat or ISRU microgrids (DD-009)"]
+    items: ["3 kV AC, 3-phase, 1 kHz aluminium cable", "At each source: low-voltage UMIC-class inverter + 1 kHz step-up transformer; only low-voltage switches, no high-voltage DC (DD-013)", "Source runs: standard ≤3 km (DD-013); extended up to 10 km at ~10–15% loss (DD-014)", "One service connection per unit: UMIC-class step-down to 120 V DC, meter, main breaker, DC panel (DD-009)", "One base grid; no separate habitat or ISRU microgrids at the base (DD-009); remote sites such as the ice mine may run their own isolated grid (DD-016)"]
   - name: Cable laying
     desc: Robots lay cable on the surface.
     items: ["LunaGrid-Lite-style rover reels out cable", "Cable left on the surface to shed heat (NASA advises against burial); ramps at rover crossings", "Fault location by time-domain reflectometry"]
@@ -228,6 +228,12 @@ This is the plan's design, simplified to one line per 3-phase circuit. Each sour
 - **Why not beam power wirelessly?** Power beaming was 13–27% efficient and would need 30–60 t of extra generating capacity to make up the losses<sup class="r">[2](#s2)</sup>.
 - **Cable mass.** NASA's 2025 reactor reference lists **325 kg for a 1 km main cable and spool** on the 3 kVac link<sup class="r">[21](#s21)</sup>, heavier than the ~240 kg per 3 km NASA once estimated for a 2,800 V DC cable<sup class="r">[15](#s15)</sup>. Because the reactor is heavy (about 0.25 kg per watt), the line must still be efficient: any power lost in the cable has to be made up with extra generating capacity<sup class="r">[2](#s2)</sup>.
 - **Laying the cable.** Astrobotic's LunaGrid-Lite is designed to transmit 1 kW; its 2025 design lays about 500 m of cable<sup class="r">[8](#s8)</sup>. NASA's 2023 award described 1 km<sup class="r">[19](#s19)</sup>.
+
+## Isolated grids for remote sites (DD-016)
+
+{% include decision-note.html id="DD-016" %}
+
+The base runs one grid (DD-009). A remote site too far from the base for a power run can have its own isolated grid: its own generation, PMC and storage, with no tie to the base (plan design). The first case is the ice mine at the primary site, 12.7 km from the base: two 10 kW VSATs on the de Gerlache rim feed a mine PMC there, with a feeder down to the mine (M00). The base keeps its own VSATs. Each isolated grid needs its own storage and spares. The ice-mine grid stores only enough to keep its systems minimally alive while it is dark; mining stops until the VSATs are lit again (plan design). Its keep-alive load is not yet sized (open).
 
 ## Power runs: 3 km standard, up to 10 km extended, converted to 3 kV AC at the source
 
