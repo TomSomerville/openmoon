@@ -40,3 +40,6 @@ defaults:
 
 exclude:
   - README.md
+  - blender
+  - analysis
+  - _archive
