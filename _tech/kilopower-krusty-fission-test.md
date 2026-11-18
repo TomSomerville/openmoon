@@ -27,6 +27,11 @@ links:
   - {title: "Wikipedia: Multi-mission radioisotope thermoelectric generator", url: "https://en.wikipedia.org/wiki/Multi-mission_radioisotope_thermoelectric_generator", kind: wiki, date: "2026"}
   - {title: "NASA Release 22-090: Three Companies to Help NASA Advance Solar Array Technology for Moon", url: "https://www.nasa.gov/news-release/three-companies-to-help-nasa-advance-solar-array-technology-for-moon/", kind: official, date: "Aug 2022"}
   - {title: "NASA NTRS 20260002730: Performance of a Regenerative Fuel Cell System for the Lunar Surface", url: "https://ntrs.nasa.gov/citations/20260002730", kind: official, date: "Apr 2026"}
+  - {title: "Dugala, NASA Glenn: Stirling convertor controller development (presentation; ASC alternator 12 V RMS, 7–10 A, 102–103 Hz)", url: "https://ntrs.nasa.gov/api/citations/20180007412/downloads/20180007412.pdf", kind: official, date: "Jul 2018"}
+  - {title: "Dugala, NASA Glenn: Stirling convertor controller development (AIAA 2018-4801 paper)", url: "https://ntrs.nasa.gov/api/citations/20180005438/downloads/20180005438.pdf", kind: paper, date: "Jul 2018"}
+  - {title: "Dugala, NASA/TM-2018-219963: Stirling convertor controller development at NASA Glenn Research Center", url: "https://ntrs.nasa.gov/api/citations/20180008496/downloads/20180008496.pdf", kind: official, date: "Nov 2018"}
+  - {title: "INL/NASA: Fission Surface Power Technical Maturation Webinar (Stirling PMAD: 350 V DC, DC-to-AC, transformer to 3 kVac)", url: "https://inl.gov/content/uploads/2024/11/FSP-Technical-Maturation-Webinar-Final-250924-1.pdf", kind: official, date: "Sep 2025"}
+  - {title: "Wikipedia: Aluminium (resistivity)", url: "https://en.wikipedia.org/wiki/Aluminium", kind: wiki, date: "2026"}
 ---
 
 ## What it is
@@ -141,6 +146,33 @@ Definitions: [NASA TRL definitions](https://www.nasa.gov/wp-content/uploads/2017
 
 **Reasonable planning value for Open Moon.** We plan on **1 kWe per KRUSTY-class unit**, because that is the design KRUSTY actually represents. The 10 kWe version was never built or tested, so we do not count on it. One NASA Mars study ran a 10 kWe unit at 6.5 kWe (65%) ([Gibson 2017](https://ntrs.nasa.gov/citations/20170002010)). The 1 kWe figure is an Open Moon planning choice.
 
+## Native output and conversion chain
+
+![Diagram: three conversion chains, each built at the source. VSAT: native DC, array regulator and shunt, UMIC-class low-voltage inverter, 1 kHz step-up transformer, 3 kV AC. Kilopower: eight Stirling alternators at about 12 V AC and 100 Hz, one controller each rectifying to DC, a shared DC bus, a UMIC-class inverter, a 1 kHz transformer, 3 kV AC. LR-1: 3 kV AC at the reactor output, with the frequency matched to 1 kHz by the vendor or a converter. Every source then runs at most 3 km of cable to the PMC](/assets/tech/source-to-3kv-conversion.svg)
+
+**What each engine makes.** Each free-piston Stirling engine drives a linear alternator, which makes **single-phase AC**. KRUSTY's engines were Sunpower units repurposed from the Advanced Stirling Radioisotope Generator (ASRG) project ([Gibson et al. 2017](https://ntrs.nasa.gov/citations/20170002010)). That project's convertor family is the Sunpower-built Advanced Stirling Convertor (ASC), and NASA's ASC controllers were made for the ASRG ([NASA/TM-2018-219963](https://ntrs.nasa.gov/api/citations/20180008496/downloads/20180008496.pdf)). NASA Glenn lists ASC alternators at about **12 V RMS** and **7–10 A**, running at **102–103 Hz** ([Dugala, NASA Glenn 2018](https://ntrs.nasa.gov/api/citations/20180007412/downloads/20180007412.pdf)). These are values for the engine family, not measured KRUSTY outputs.
+
+**From AC to one DC bus.**
+- **One controller per engine.** Each controller rectifies its engine's AC to DC and controls the applied load to hold a set DC output voltage ([NASA/TM-2018-219963](https://ntrs.nasa.gov/api/citations/20180008496/downloads/20180008496.pdf); [Dugala 2018](https://ntrs.nasa.gov/api/citations/20180005438/downloads/20180005438.pdf)). In KRUSTY a dedicated controller ran each engine ([Gibson et al. 2018](https://ntrs.nasa.gov/citations/20180005435)).
+- **Opposed pairs.** The 1 kWe baseline places engines in opposed pairs, hot ends together, so their inertia forces cancel through synchronous motion control ([Gibson et al. 2017](https://ntrs.nasa.gov/citations/20170002010)).
+- **One DC bus.** The controllers' DC outputs are paralleled onto one DC bus. That bus is the unit's native output. **Its voltage is not published** for Kilopower. For comparison, NASA's ASC controllers fed 22–36 V spacecraft buses ([NASA/TM-2018-219963](https://ntrs.nasa.gov/api/citations/20180008496/downloads/20180008496.pdf)), and NASA's 2025 40 kWe Stirling reference used 350 V DC ([INL/NASA 2025](https://inl.gov/content/uploads/2024/11/FSP-Technical-Maturation-Webinar-Final-250924-1.pdf)).
+
+**Native power, at the engines (this plan's arithmetic).**
+
+| Case | Working | Electrical power |
+|---|---|---|
+| Eight KRUSTY-family engines | 8 × ~90 W, the output each 80 W-rated engine gave in the test ([Poston et al. 2020](https://ntrs.nasa.gov/citations/20205009351)) | ≈ 0.72 kWe |
+| 1 kWe flight design | 8 × 125 W ([Gibson et al. 2018](https://ntrs.nasa.gov/citations/20180005435)) | 1.0 kWe |
+| Reactor heat ceiling | 3.6–4.6 kWt × 30–34% engine efficiency ([Gibson et al. 2018](https://ntrs.nasa.gov/citations/20180005435)) | ≈ 1.1–1.6 kWe |
+
+The heat ceiling is this plan's estimate: KRUSTY's engines and simulators could draw a steady ~4 kWt at most, and it was rated at 5 kWt ([Poston et al. 2020](https://ntrs.nasa.gov/citations/20205009351)), less the 300–400 W the test lost through insulation (same source). All three figures are at the engines, before conversion losses.
+
+**Why the 12 V stays inside the machine (this plan's arithmetic).** At 12 V, 1 kW is about 83 A. For a 5% loss on two 10 mm² aluminium conductors (resistivity 26.5 nΩ·m, [Wikipedia](https://en.wikipedia.org/wiki/Aluminium)), the cable could be only about **1.4 m** long one-way. So the low-voltage AC never leaves the unit.
+
+**Conversion at the unit (plan design, [DD-013](/decisions/#dd-013)).** The DC bus feeds a UMIC-class inverter of parallel 1 kW modules ([Thomas et al. 2023](https://ntrs.nasa.gov/citations/20230013309)), and a 1 kHz step-up transformer next to the unit raises it to **3 kV AC, 3-phase, 1 kHz**, the base grid standard. Only low-voltage switches are used. The unit must sit within **3 km of cable run** of the PMC. NASA's 2025 Stirling reference follows the same pattern: controllers to 350 V DC, then DC-to-AC and a transformer to 3 kVac ([INL/NASA 2025](https://inl.gov/content/uploads/2024/11/FSP-Technical-Maturation-Webinar-Final-250924-1.pdf)).
+
+{% include decision-note.html id="DD-013" extra="This card said only that the engines' raw output alternates and that each has a controller. It now sets out the chain from 12 V AC to 3 kV AC at the unit." %}
+
 ## How Open Moon uses it: the reactor feeds the PMC
 
 {% include decision-note.html id="DD-003" extra="KRUSTY-class units are the plan's small-load reactor option (DD-002). Like every source, they feed the power management controller (PMC; called the BMS until DD-008)." %}
@@ -150,7 +182,7 @@ Definitions: [NASA TRL definitions](https://www.nasa.gov/wp-content/uploads/2017
 In Open Moon every source, including the reactor, sends its power to the **power management controller (PMC)**. The PMC decides whether that power goes to the grid to meet demand, to the batteries to charge, or to excess-power handling, or some of each. When generation falls short, the battery feeds the grid ([design changes DD-003 and DD-008](/decisions/#dd-008)). The grid then feeds every habitat module and facility through its own service connection ([DD-009](/decisions/#dd-009)).
 
 1. **Reactor.** A KRUSTY-class unit runs at a steady output. That suits a Stirling reactor, which holds its temperature best at a steady heat draw.
-2. **PMC.** Takes the controllers' output and routes it: first to the grid for demand, then to charge the battery, then to the fuel-cell electrolyser.
+2. **PMC.** Takes the unit's 3 kV AC line, at most 3 km long (DD-013), and routes it: first to the grid for demand, then to charge the battery, then to the fuel-cell electrolyser.
 3. **Storage.** The Li-ion battery and regenerative fuel cells behind the PMC cover peaks and any reactor outage.
 4. **Outputs.** The grid, and each unit's service connection and 120 V DC panel.
 
