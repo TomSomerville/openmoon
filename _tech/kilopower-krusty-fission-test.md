@@ -86,6 +86,24 @@ KRUSTY was tested step by step, with electric heat first and nuclear heat last.
 
 **Power type.** Each Stirling engine drives a linear alternator, so the raw output alternates with the piston stroke. Each engine has its own controller ([Gibson et al. 2018](https://ntrs.nasa.gov/citations/20180005435)). The flight design delivers its power to the spacecraft bus ([Gibson et al. 2017](https://ntrs.nasa.gov/citations/20170002010)).
 
+### Why KRUSTY made only ~180 W
+
+183 W is about 0.18 kWe of electricity. That is far below the 1 kWe flight design, but the shortfall came from how the test was equipped, not from the reactor:
+
+- **Only two real engines.** The flight design has eight Stirling engines of 125 W each. Budget and schedule allowed only two existing Sunpower engines, rated 80 W and originally built for a radioisotope generator ([Gibson et al. 2018](https://ntrs.nasa.gov/citations/20180005435)). An earlier NASA paper says funding was not available to buy new engines ([Gibson et al. 2017](https://ntrs.nasa.gov/citations/20170002010)).
+- **The other six slots made no electricity.** They held gas-cooled simulators that drew heat from the core, up to 600 W of heat each, to mimic real engines ([Gibson et al. 2018](https://ntrs.nasa.gov/citations/20180005435)). That heat was carried away, not converted.
+- **Electricity was not the goal.** The test's three objectives were 4 kW of heat at 800 °C, stable load-following, and code-benchmark data. NASA notes the test "could have been performed entirely with the Stirling thermal simulators" ([Gibson et al. 2018](https://ntrs.nasa.gov/citations/20180005435)).
+- **The two engines beat their rating.** Each made 88–95 W against an 80 W rating, at 30–34% efficiency ([Gibson et al. 2018](https://ntrs.nasa.gov/citations/20180005435)).
+
+### Why 1 kWe is a reasonable assumption for a flight unit
+
+- **The reactor already made enough heat.** It ran at over 4 kW of heat at 800 °C ([Gibson et al. 2018](https://ntrs.nasa.gov/citations/20180005435)). Eight 125 W engines at the 30–34% efficiency KRUSTY measured need about 1,000 ÷ 0.30–0.34 ≈ **2.9–3.3 kW of heat** (this plan's arithmetic). That is less than the heat KRUSTY delivered, even after the 300–400 W the test lost through insulation ([Poston et al. 2020](https://ntrs.nasa.gov/citations/20205009351)).
+- **The test hardware was full scale.** The core, reflectors, heat pipes, simulators and shield structure were all full-scale parts of the 1 kWe system ([Gibson et al. 2018](https://ntrs.nasa.gov/citations/20180005435)). Only the engines were undersized.
+- **The engines set the limit, not the reactor.** The test team wrote that "any practical Kilopower system design would be limited by the amount of power the PCS could remove ... not by how much power the reactor could tolerate" ([Poston et al. 2020](https://ntrs.nasa.gov/citations/20205009351)). Fitting eight right-sized engines is the step that raises the output.
+- **Measured efficiency, not a guess.** The 30–34% engine efficiency was measured on nuclear heat ([Gibson et al. 2018](https://ntrs.nasa.gov/citations/20180005435)), so the 1 kWe flight figure rests on test data, not only on design studies.
+
+**What is still unproven.** A full 1 kWe system was never run on nuclear heat ([Gibson et al. 2018](https://ntrs.nasa.gov/citations/20180005435)). The 125 W engines, the flight controllers and power electronics, and the radiator were not tested with the reactor; KRUSTY was cooled by gas in a vacuum chamber. The 1 kWe figure is the flight design value backed by KRUSTY's measured heat and efficiency, not a measured output.
+
 **Reasonable planning value for Open Moon.** We plan on **1 kWe per KRUSTY-class unit**, because that is the design KRUSTY actually represents. The 10 kWe version was never built or tested, so we do not count on it. One NASA Mars study ran a 10 kWe unit at 6.5 kWe (65%) ([Gibson 2017](https://ntrs.nasa.gov/citations/20170002010)). The 1 kWe figure is an Open Moon planning choice.
 
 ## How Open Moon uses it: Reactor > BMS > Battery > Base
