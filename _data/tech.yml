@@ -181,7 +181,7 @@
 - name: Firefly Blue Ghost lander
   category: Transport
   milestones:
-  - M02
+  - Transport
   phases:
   - 0
   trl: 9
@@ -201,7 +201,7 @@
 - name: Intuitive Machines Nova-C
   category: Transport
   milestones:
-  - M02
+  - Transport
   phases:
   - 0
   trl: 7
@@ -221,7 +221,7 @@
 - name: Astrobotic Griffin
   category: Transport
   milestones:
-  - M02
+  - Transport
   phases:
   - 0
   trl: 6
@@ -241,7 +241,7 @@
 - name: Blue Origin Blue Moon Mark 1
   category: Transport
   milestones:
-  - M02
+  - Transport
   phases:
   - 0
   trl: 6
@@ -261,7 +261,7 @@
 - name: SpaceX Starship HLS / cargo
   category: Transport
   milestones:
-  - M02
+  - Transport
   phases:
   - 0
   trl: 6
@@ -281,7 +281,7 @@
 - name: Blue Origin Blue Moon Mk2
   category: Transport
   milestones:
-  - M02
+  - Transport
   phases:
   - 0
   trl: 5
@@ -301,7 +301,7 @@
 - name: Lunar Surface Manipulation System (LSMS)
   category: Mobility and robotics
   milestones:
-  - M02
+  - Transport
   phases:
   - 0
   trl: 4
@@ -601,7 +601,7 @@
 - name: NASA ISRU Pilot Excavator (IPEx)
   category: Construction
   milestones:
-  - M05
+  - M02
   phases:
   - 0
   trl: 5
@@ -621,7 +621,7 @@
 - name: RASSOR 2.0
   category: Construction
   milestones:
-  - M05
+  - M02
   phases:
   - 0
   trl: 4
@@ -641,7 +641,7 @@
 - name: ICON Project Olympus
   category: Construction
   milestones:
-  - M05
+  - M02
   - M12
   phases:
   - 0
@@ -663,7 +663,7 @@
 - name: Sintered basalt pavers / regolith-polymer pads
   category: Construction
   milestones:
-  - M05
+  - M02
   phases:
   - 0
   trl: 4

@@ -15,7 +15,7 @@ spec:
   - {k: "Mass", v: "~205 kg solar version, ~120 kg cable version, incl. 30% margin (ESTIMATE)"}
   - {k: "Site", v: "Crater rim, slope up to 15° (VSAT goal)"}
   - {k: "Quantity", v: "3: one per PSR worksite (2) + 1 spare (design choice)"}
-  - {k: "Delivery class", v: "Small or medium lander; placed by rover and crane (C02.2)"}
+  - {k: "Delivery class", v: "Small or medium lander; placed by rover and crane (CT.2)"}
 subcomponents:
   - name: Deployable mast
     desc: "A mast that packs short for launch and extends on the surface, carrying the antennas and solar panel high above the rim."
@@ -49,7 +49,7 @@ risks:
   - {sev: Medium, title: "Frequencies for lunar surface cellular networks are not yet approved", fix: "Keep Wi-Fi mesh as a fallback and keep LTE equipment able to retune."}
   - {sev: Medium, title: "Dust from rovers and landers coats the solar panel and antennas", fix: "Keep masts far from roads and pads. Use a dust shield or brush, and the option of cable power."}
   - {sev: Medium, title: "A mast on a rim is a hazard to rovers and landers", fix: "Map every mast in the base hazard map and the landing keep-out zones. Fit a navigation beacon."}
-  - {sev: Medium, title: "Moving or replacing a mast needs a rover and a crane", fix: "Use a retractable mast and the standard C02.1 lifting lugs so the C02.2 crane can move it."}
+  - {sev: Medium, title: "Moving or replacing a mast needs a rover and a crane", fix: "Use a retractable mast and the standard CT.1 lifting lugs so the CT.2 crane can move it."}
 sources:
   - {title: "NASA NTRS: Vertical Solar Array Technology annual review", url: "https://ntrs.nasa.gov/api/citations/20230012849/downloads/GCD%20Annual%20Review%20VSAT%20September%202023%20Final.pdf", date: "Sep 2023"}
   - {title: "NASA: From Houston to the Moon, Johnson's thermal vacuum chamber tests lunar solar technology", url: "https://www.nasa.gov/centers-and-facilities/johnson/from-houston-to-the-moon-johnsons-thermal-vacuum-chamber-tests-lunar-solar-technology", date: "2024"}
@@ -73,7 +73,7 @@ Radio needs line of sight. A rover on the floor of a deep, permanently shadowed 
 - **Mast.** NASA's VSAT project developed masts for lunar solar arrays. Its goals were a 10 m height (5 m threshold), stable deployment on slopes of up to 15° (10° threshold), 10 deploy-and-retract cycles, and survival from −180 °C to +175 °C<sup class="r">[1](#s1)</sup>. Honeybee used a helical metal-band mast, Lockheed Martin a thin rolled composite mast, and Astrobotic a self-propelled cart with a gimbal<sup class="r">[1](#s1)</sup>. Prototypes were tested in thermal vacuum at NASA Johnson in 2024. Those tests required deployment on a curved surface and survival through 96 h of darkness<sup class="r">[2](#s2)</sup>. We use the same masts to carry antennas.
 - **Radio.** Nokia's network-in-a-box ran its base station, radio and core on IM-2<sup class="r">[8](#s8)</sup>. The rim mast carries a smaller cell of the same kind, plus a Wi-Fi access point. Astrobotic landers already use 802.11n WLAN for deployed payloads<sup class="r">[10](#s10)</sup>. LunaNet expects surface users on Wi-Fi or 3GPP links, but the frequency bands for lunar cellular service are still under study<sup class="r">[9](#s9)</sup>.
 - **Power.** Rim peaks at Shackleton are lit about 80–90% of the time<sup class="r">[4](#s4)</sup>. The best ridge point is lit 96% of the time at 10 m height<sup class="r">[5](#s5)</sup>. NASA cites intermittent darkness of up to about 100 h at the pole<sup class="r">[6](#s6)</sup>. Where the rim is close enough to the base, a power cable is simpler: Astrobotic's LunaGrid-Lite plans to send 1 kW over 500 m of light cable<sup class="r">[7](#s7)</sup>.
-- **Anchoring.** NASA's VSAT work included auto-leveling bases<sup class="r">[1](#s1)</sup>. We add regolith ballast trays, filled by a rover or by the crane (C02.2), to resist tipping.
+- **Anchoring.** NASA's VSAT work included auto-leveling bases<sup class="r">[1](#s1)</sup>. We add regolith ballast trays, filled by a rover or by the crane (CT.2), to resist tipping.
 - **Why it matters for prospecting.** VIPER planned only about 6 h of work per PSR visit<sup class="r">[11](#s11)</sup>. With a live link, operators can steer the rover and drill in real time instead of planning blind.
 
 ## Sizing

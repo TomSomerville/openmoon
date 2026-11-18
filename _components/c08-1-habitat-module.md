@@ -53,7 +53,7 @@ risks:
   - {sev: High, title: "At handover peaks all 9 beds are full, so a module out of service leaves no spare bed", fix: "Shorten or delay the handover if a module is closed; storm shelter can serve as an emergency sleep area (C09.2)"}
   - {sev: High, title: "Dust on radiators and windows degrades heat rejection (Apollo saw instruments run ~68 °F hot)", fix: "Vertical radiators, covers when crews are outside, and electrodynamic dust shields on critical surfaces (C08.3)"}
   - {sev: High, title: "An unshielded module gives little protection from radiation", fix: "No crew until the modules are buried under ≥2 m of regolith (C09.1, DD-005)"}
-  - {sev: Medium, title: "Wheels and suspension may fail while towing 15 t over rough ground", fix: "Prepared road from pad to habitat zone (M05); slow tow with two LTVs; jacks can level the module where it stops; side-by-side placement needs precise positioning"}
+  - {sev: Medium, title: "Wheels and suspension may fail while towing 15 t over rough ground", fix: "Prepared road from pad to habitat zone (M02); slow tow with two LTVs; jacks can level the module where it stops; side-by-side placement needs precise positioning"}
   - {sev: Medium, title: "Pressure shell leak from micrometeoroid hit or seal wear", fix: "Shielded shell, leak checks during the 3-month uncrewed run, patch kit, and nitrogen make-up reserves; neighbouring modules can be sealed off"}
   - {sev: Medium, title: "Grid outage cuts heating and life support", fix: "Essential-load battery and load shedding on the module's own DC panel; a fault in one module trips only its own main breaker (DD-009); crew moves to an unaffected module or the lander if the outage exceeds battery time"}
 sources:

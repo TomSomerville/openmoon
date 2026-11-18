@@ -37,7 +37,7 @@ In 2020-2021 NASA Kennedy's "LPAD" project, a partnership with SpaceX, hot-fire 
 
 Rocket exhaust on bare regolith throws particles at over 2,000 m/s for kilometres ([NASA NTRS](https://ntrs.nasa.gov/citations/20205007522)). Apollo 12 sandblasted the Surveyor 3 probe from about 180 m away ([ESA](https://www.esa.int/Enabling_Support/Space_Engineering_Technology/How_to_make_roads_on_the_Moon)). Artemis-class landers have more thrust, so the risk to nearby equipment is larger ([NASA NTRS](https://ntrs.nasa.gov/citations/20220000334)).
 
-Milestone M05 (site preparation) needs at least two hardened pads before regular cargo and crew landings. Sintered pavers are the main option there; a regolith-polymer pad is the fallback. Without a pad, every landing would sandblast the solar towers, reactor and habitats, and the base would have to spread out much further.
+Milestone M02 (site preparation) needs at least two hardened pads before regular cargo and crew landings. Sintered pavers are the main option there; a regolith-polymer pad is the fallback. Without a pad, every landing would sandblast the solar towers, reactor and habitats, and the base would have to spread out much further.
 
 ## How it works
 

@@ -1,6 +1,6 @@
 ---
-id_code: "C02.1"
-milestone: M02
+id_code: "CT.1"
+milestone: Transport
 order: 1
 title: Common payload interface
 summary: "One published standard for how every Open Moon payload bolts down, plugs in, stays warm and gets lifted, so the same payload can fly on any selected lander without a redesign."
@@ -43,14 +43,14 @@ subcomponents:
     tech: "Lander user-guide practice; dust covers are a design choice"
     trl: 6
   - name: Lifting points
-    desc: "Every payload heavier than a person can lift carries standard lugs and pockets that the offloading crane (C02.2) can grab."
+    desc: "Every payload heavier than a person can lift carries standard lugs and pockets that the offloading crane (CT.2) can grab."
     parts: ["Four lifting lugs on the pallet corners", "Forklift tine pockets", "Hoist spreader bar", "Centre-of-mass marking", "Fiducial targets for crane cameras"]
     tech: "Matches LSMS hoist and forklift tools"
     trl: 5
 risks:
   - {sev: High, title: "Lander providers do not publish full interface documents; deck layouts and loads arrive late and change", fix: "Keep payloads independent of bolt holes by using adapter plates. Sign interface agreements early and fund per-lander adapter drawings."}
   - {sev: High, title: "One standard may not fit both 240 kg small landers and 15 t cargo landers", fix: "Define three classes (plate, pallet, heavy pallet) that share the same connector, voltage and data protocols."}
-  - {sev: High, title: "Heavy landers put cargo high above the ground (Starship is 52 m tall)", fix: "Put lifting lugs and forklift pockets on every pallet so a lander elevator or the C02.2 crane can handle it."}
+  - {sev: High, title: "Heavy landers put cargo high above the ground (Starship is 52 m tall)", fix: "Put lifting lugs and forklift pockets on every pallet so a lander elevator or the CT.2 crane can handle it."}
   - {sev: Medium, title: "Launch and landing loads differ between landers and launch vehicles", fix: "Qualify each payload to an envelope of all selected landers' environments, using GEVS-style tests."}
   - {sev: Medium, title: "Landing plume dust coats optics, radiators and connectors", fix: "Covers stay closed until after landing and are released only after any nearby landing. Connectors carry dust caps."}
   - {sev: Medium, title: "Power and data per kilogram differ widely between landers", fix: "Design payloads to the lowest common level (1 W/kg, 10 kbps/kg) and buy extra where needed."}
@@ -69,7 +69,7 @@ sources:
 
 ## What it does
 
-Open Moon buys rides on several landers (M02). Each lander company publishes its own payload rules, and no two are the same. The common payload interface is **one Open Moon standard** that sits between our payloads and every lander. A payload built to it needs only a small adapter, not a redesign, to move from one lander to another. That matters because M02 plans to fly critical items twice, on different providers.
+Open Moon buys rides on several landers (M02). Each lander company publishes its own payload rules, and no two are the same. The common payload interface is **one Open Moon standard** that sits between our payloads and every lander. A payload built to it needs only a small adapter, not a redesign, to move from one lander to another. That matters because the plan flies critical items twice, on different providers.
 
 ## How it works
 
@@ -79,7 +79,7 @@ Open Moon buys rides on several landers (M02). Each lander company publishes its
 - **Data and time.** RS-422 (with SLIP/UDP) or SpaceWire, both carrying "time at the tone" so payload clocks match the lander. After deployment the payload can switch to 802.11n WLAN<sup class="r">[1](#s1)</sup>. LunaNet uses IP networking and expects surface links built on IETF and 3GPP standards<sup class="r">[7](#s7)</sup>, so the pallet class adds Ethernet/IP. Nokia's IM-2 network showed that 3GPP cellular equipment can run on a lander<sup class="r">[9](#s9)</sup>.
 - **Thermal and dust.** The payload must be thermally isolated from the lander, with a conductance below 0.1 W/K, and must control its own temperature<sup class="r">[1](#s1)</sup>. We add dust covers on optics and connectors, released after landing.
 - **Release.** Surface release devices must be non-pyrotechnic, make little debris and put no more than 300 g of shock into the lander<sup class="r">[1](#s1)</sup>.
-- **Lifting.** The LSMS crane has hoist and forklift-tine tools<sup class="r">[6](#s6)</sup>. Every pallet therefore carries four lifting lugs and two tine pockets, so the C02.2 crane can grab it.
+- **Lifting.** The LSMS crane has hoist and forklift-tine tools<sup class="r">[6](#s6)</sup>. Every pallet therefore carries four lifting lugs and two tine pockets, so the CT.2 crane can grab it.
 
 ## How it maps to each lander
 
@@ -115,7 +115,7 @@ Pallet classes (design choice, ESTIMATE):
 2. **Fit checks.** Build a mass-and-connector dummy for each class and fit-check it at each provider's integration facility.
 3. **Environment tests.** Shake, shock and acoustic-test the dummy pallet to the envelope of all landers' environments (GEVS-style<sup class="r">[1](#s1)</sup>).
 4. **Thermal-vacuum test.** Measure the plate's conductance to confirm it stays below 0.1 W/K. Cycle the dust covers in vacuum and cold.
-5. **Crane interface test.** Lift dummy pallets with the C02.2 crane's hoist and tines on Earth.
+5. **Crane interface test.** Lift dummy pallets with the CT.2 crane's hoist and tines on Earth.
 6. **First flight.** The first small payloads (M01, M03) fly on the plate class. The crane's own delivery tests the pallet class on the Moon.
 
 ## Open questions

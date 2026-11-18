@@ -32,7 +32,7 @@ In February 2025, ICON's Olympus team flew its first space payload, [Duneflow](h
 
 ## Why Open Moon uses it
 
-Open Moon needs hard surfaces early. Landing pads, blast shields and roads are part of site preparation in M05, and regolith construction of berms, pads and shells continues in M12 manufacturing. Olympus is the most advanced US-funded system aiming to make these from local material rather than shipped concrete or metal. NASA notes the melted regolith is meant to [withstand lunar dust, radiation and temperature extremes](https://www.nasa.gov/directorates/stmd/nasa-enables-construction-technology-for-moon-and-mars-exploration/).
+Open Moon needs hard surfaces early. Landing pads, blast shields and roads are part of site preparation in M02, and regolith construction of berms, pads and shells continues in M12 manufacturing. Olympus is the most advanced US-funded system aiming to make these from local material rather than shipped concrete or metal. NASA notes the melted regolith is meant to [withstand lunar dust, radiation and temperature extremes](https://www.nasa.gov/directorates/stmd/nasa-enables-construction-technology-for-moon-and-mars-exploration/).
 
 Without a system like this, landers would keep blasting dust and rock across the site, and every pad would need imported material. The plan would fall back on pavers, blankets or binders shipped from Earth (see alternatives).
 

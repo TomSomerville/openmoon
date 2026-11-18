@@ -10,7 +10,7 @@ spec:
   - {k: "Total delivered mass", v: "~250 kg including spares (M07 budget)"}
   - {k: "Cart mass", v: "~50 kg each (ESTIMATE)"}
   - {k: "Cart payload", v: "500 kg rated (design choice; must match LTV tow limit, not yet published)"}
-  - {k: "Payload deck", v: "Open Moon payload interface (C02.1)"}
+  - {k: "Payload deck", v: "Open Moon payload interface (CT.1)"}
   - {k: "Inspection rover", v: "~25 kg, carry-on-bag scale, solar and battery (ESTIMATE)"}
   - {k: "Patrol", v: "M04 cable routes: standard runs of 3 km or less (DD-013), extended runs up to 10 km (DD-014)"}
   - {k: "Control", v: "Autonomous with Earth supervision at 6–8 s delay"}
@@ -27,9 +27,9 @@ subcomponents:
     tech: "Plan design choice; LTV tow interface not yet published"
     trl: 4
   - name: Payload deck
-    desc: "A flat deck with the standard C02.1 bolt pattern and connectors, so any Open Moon payload can ride on it."
-    parts: ["C02.1 mechanical bolt pattern", "C02.1 power and data pass-through", "Crane lift points (LSMS-class)", "Dust cover"]
-    tech: "Open Moon payload interface standard (C02.1)"
+    desc: "A flat deck with the standard CT.1 bolt pattern and connectors, so any Open Moon payload can ride on it."
+    parts: ["CT.1 mechanical bolt pattern", "CT.1 power and data pass-through", "Crane lift points (LSMS-class)", "Dust cover"]
+    tech: "Open Moon payload interface standard (CT.1)"
     trl: 4
   - name: Inspection rover
     desc: "A small solar-powered rover that drives along cable routes and around the base, looking for damage."
@@ -38,15 +38,15 @@ subcomponents:
     trl: 6
   - name: Teleoperation and autonomy
     desc: "Robots run set routes on their own; drivers on Earth step in for hitching and unusual events."
-    parts: ["Route maps from M05 road survey", "Onboard hazard detection", "Earth control station with delay simulator", "Fault reports to the base network"]
+    parts: ["Route maps from M02 road survey", "Onboard hazard detection", "Earth control station with delay simulator", "Fault reports to the base network"]
     tech: "NASA LTV delay tests; CADRE autonomy"
     trl: 6
 risks:
   - {sev: High, title: "Neither selected LTV has published a towing capacity or hitch interface", fix: "Agree a tow interface with Astrolab and Lunar Outpost early; size cart payload to the lower tow limit."}
-  - {sev: High, title: "Carts can get stuck on rough ground; Apollo 14 crew had to carry the MET over rough terrain", fix: "Use graded M05 roads; large wheels; carts stay on mapped routes."}
+  - {sev: High, title: "Carts can get stuck on rough ground; Apollo 14 crew had to carry the MET over rough terrain", fix: "Use graded M02 roads; large wheels; carts stay on mapped routes."}
   - {sev: Medium, title: "Small rovers like CADRE are built to work for one lunar day, about 14 Earth days", fix: "Add batteries and heaters for night survival, or park the rovers in a heated shelter at night."}
   - {sev: Medium, title: "Automatic hitching has never been done on the Moon", fix: "Test on Earth with real LTV prototypes; fall back to Earth-driven hitching or crew help."}
-  - {sev: Medium, title: "Dust wears wheel bearings over long distances", fix: "Sealed, covered bearings; spare wheels in the 250 kg budget; sintered road sections (M05)."}
+  - {sev: Medium, title: "Dust wears wheel bearings over long distances", fix: "Sealed, covered bearings; spare wheels in the 250 kg budget; sintered road sections (M02)."}
   - {sev: Medium, title: "Inspection rover near 3 kV AC grid cables could short or be damaged", fix: "Keep a set distance from cables; inspect by camera only; never touch the cable."}
 sources:
   - {title: "Wikipedia: Modular Equipment Transporter", url: "https://en.wikipedia.org/wiki/Modular_Equipment_Transporter", date: "accessed Nov 2026"}
@@ -63,11 +63,11 @@ Crews should not spend surface time moving boxes. Utility robots do the hauling 
 
 ## How it works
 
-**Cart chassis.** The idea is old. On Apollo 14 the crew pulled a two-wheeled cart, the Modular Equipment Transporter (MET). It weighed at most 30 lb empty and carried up to 340 lb. It used the first tyres on the Moon. On rough ground the crew had to lift and carry it<sup class="r">[1](#s1)</sup>. Open Moon's cart has four wheels, so it stands on its own. It runs on graded M05 roads.
+**Cart chassis.** The idea is old. On Apollo 14 the crew pulled a two-wheeled cart, the Modular Equipment Transporter (MET). It weighed at most 30 lb empty and carried up to 340 lb. It used the first tyres on the Moon. On rough ground the crew had to lift and carry it<sup class="r">[1](#s1)</sup>. Open Moon's cart has four wheels, so it stands on its own. It runs on graded M02 roads.
 
 **Hitch.** NASA chose two LTVs in May 2026: Astrolab CLV-1 (about 2,000 lb, over 6 mph) and Lunar Outpost Pegasus (over 9 mph, manual, autonomous or teleoperated)<sup class="r">[2](#s2)</sup>. CLV-1 is adapted from Astrolab's FLEX. Astrolab says FLEX carries up to 2,000 kg on a modular payload interface<sup class="r">[2](#s2)</sup><sup class="r">[3](#s3)</sup>. Neither company has published a towing rating. So the hitch is an Open Moon design that must be agreed with both providers. A fiducial marker on the tow bar lets the LTV line up by itself.
 
-**Payload deck.** The deck uses the C02.1 payload interface. A crate that rode on a lander bolts straight onto a cart, with no adapter.
+**Payload deck.** The deck uses the CT.1 payload interface. A crate that rode on a lander bolts straight onto a cart, with no adapter.
 
 **Inspection rover.** NASA/JPL's CADRE rovers are about the size of a carry-on bag. Each has two stereo cameras and mesh radios, and runs on solar power. They work as a team, mostly without human input, for one lunar day (about 14 Earth days)<sup class="r">[4](#s4)</sup>. Open Moon's inspection rover is a CADRE-class design with a thermal camera added. It drives beside the 3 kV AC cables that M04 lays (design change DD-001)<sup class="r">[6](#s6)</sup>, looking for cuts, burial loss and hot joints.
 

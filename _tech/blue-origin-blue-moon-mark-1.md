@@ -33,7 +33,7 @@ The first mission, Pathfinder (NASA task order CT-3), will land on the Shackleto
 
 ## Why Open Moon uses it
 
-Mark 1 is Open Moon's **medium cargo** lander in milestone M02 (Transport), Phase 0 (design change DD-005). Small landers carry under a tonne. Heavy landers like Starship and Mk2 are still unproven. Mark 1 fills the gap at about 3 t, enough for rovers, pilot ISRU plants and the first power units.
+Mark 1 is Open Moon's **medium cargo** lander in Open Moon's transport plan, Phase 0 (design change DD-005). Small landers carry under a tonne. Heavy landers like Starship and Mk2 are still unproven. Mark 1 fills the gap at about 3 t, enough for rovers, pilot ISRU plants and the first power units.
 
 Other milestones lean on it too. NASA's choice to deliver VIPER, which feeds M01 (Prospecting), waits on MK1's first flight ([NASA](https://www.nasa.gov/news-release/nasa-selects-blue-origin-to-deliver-viper-rover-to-moons-south-pole/)). NASA has also paid Blue Origin $188 million, with a $280.4 million option, to deliver the Lunar Terrain Vehicles for M07 (Mobility) to the south pole ([NASA](https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/)).
 

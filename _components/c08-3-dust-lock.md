@@ -42,8 +42,8 @@ subcomponents:
     trl: 6
   - name: Seals and exterior apron
     desc: "Dust-tolerant seals at every hatch and a hard, clean surface outside so less dust is kicked up near the door."
-    parts: ["Double seals with a dust lip", "Seal covers when hatches are open", "Sintered regolith apron around the dust lock (M05)", "Seal inspection and cleaning kit"]
-    tech: "Design choice; sintered pavers from M05"
+    parts: ["Double seals with a dust lip", "Seal covers when hatches are open", "Sintered regolith apron around the dust lock (M02)", "Seal inspection and cleaning kit"]
+    tech: "Design choice; sintered pavers from M02"
     trl: 4
 risks:
   - {sev: Critical, title: "Dust ruins seals; on Apollo 12 a suit leak rose to 0.25 psi/min against a 0.30 psi/min limit after two EVAs", fix: "Double seals with dust lips, seal covers, inspection after every EVA, and EDS on seal faces"}

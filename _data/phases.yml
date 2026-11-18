@@ -1,7 +1,7 @@
 - n: 0
   years: "Years 0–5"
   name: Site selection and preparation
-  desc: "Choose the site with data already in hand from lunar orbiters, ground-truth it with robotic prospectors, and lock the transport contracts. Then robots prepare the site: communications, the power grid, hardened landing pads, roads and berms. Nothing that the base itself depends on lands until the site is confirmed (design change DD-005)."
+  desc: "Three milestones: choose the site from data already in hand from lunar orbiters (M00), prospect it on the ground with robot rovers that measure how much water the soil really gives up (M01), and at the same time prepare it with robots that clear rocks, grade the ground and build hardened landing pads, roads and berms (M02)."
 - n: 1
   years: "Years 5–8"
   name: Base construction

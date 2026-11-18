@@ -35,7 +35,7 @@ Today, both Artemis landers depend on it. SpaceX's Starship lander uses liquid o
 
 Open Moon uses this technology for **refuelling landers**. It matters at two points in the plan:
 
-- **Heavy cargo (M02).** The heavy landers that carry habitats and reactors are refuelled in Earth orbit before they go to the Moon. Starship needs a depot filled by [more than 10 tanker flights](https://oig.nasa.gov/wp-content/uploads/2026/03/final-report-ig-26-004-nasas-management-of-the-human-landing-system-contracts.pdf). Blue Moon needs a transporter and refuelers.
+- **Heavy cargo.** The heavy landers that carry habitats and reactors are refuelled in Earth orbit before they go to the Moon. Starship needs a depot filled by [more than 10 tanker flights](https://oig.nasa.gov/wp-content/uploads/2026/03/final-report-ig-26-004-nasas-management-of-the-human-landing-system-contracts.pdf). Blue Moon needs a transporter and refuelers.
 - **Propellant and industrial ISRU (M11).** The M11 depot stores and moves cryogens at the landing pads, so landers can fill up with oxygen made on the Moon. M11's exit criteria include refuelling at least one lander with lunar oxygen. NASA's [CryoFILL project](https://www.nasa.gov/general/nasa-tests-lander-refueling-tech/) is working towards the same goal: liquefy oxygen on the surface and fuel landers where they land.
 
 Without it, every heavy item would need its own fully fuelled launch. That would cut the mass per landing, and lunar oxygen would have nowhere to go. The plan's fallback is to split heavy items into medium-lander pieces.

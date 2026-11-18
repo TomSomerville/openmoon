@@ -1,6 +1,6 @@
 ---
-id_code: "C02.2"
-milestone: M02
+id_code: "CT.2"
+milestone: Transport
 order: 2
 title: Offloading crane
 summary: "A lightweight, cable-driven crane based on NASA's LSMS that lifts cargo off a lander deck and sets it on the ground. It can also dig, act as a forklift and position payloads around the base."
@@ -18,7 +18,7 @@ spec:
 subcomponents:
   - name: Base and self-leveling turret
     desc: "Holds the crane to a lander deck or rover and keeps it level on slopes or on a tilted lander."
-    parts: ["Mounting frame to C02.1 pallet hard points", "Waist rotation bearing and drive", "Self-leveling legs or wedges (±15°)", "Launch locks", "Counterweight bay (filled with regolith on the surface)"]
+    parts: ["Mounting frame to CT.1 pallet hard points", "Waist rotation bearing and drive", "Self-leveling legs or wedges (±15°)", "Launch locks", "Counterweight bay (filled with regolith on the surface)"]
     tech: "LSMS proposal: self-leveling base"
     trl: 4
   - name: Boom links
@@ -33,7 +33,7 @@ subcomponents:
     trl: 4
   - name: End effectors
     desc: "A quick-change wrist lets the crane switch tools without an astronaut."
-    parts: ["Hook and hoist with spreader bar", "Forklift tines for C02.1 pallets", "Regolith bucket", "Quick-change tool interface", "Power connector at the tip for recharging a rover"]
+    parts: ["Hook and hoist with spreader bar", "Forklift tines for CT.1 pallets", "Regolith bucket", "Quick-change tool interface", "Power connector at the tip for recharging a rover"]
     tech: "LSMS end-effector toolbox; Honeybee quick-change"
     trl: 4
   - name: Sensing and control
@@ -43,7 +43,7 @@ subcomponents:
     trl: 4
   - name: Power and thermal
     desc: "Runs from the lander or base grid during lifts and keeps its motors and electronics warm between jobs."
-    parts: ["28 V DC power input (C02.1 interface)", "Small battery for safe-stow on power loss", "Survival heaters on motors and electronics", "Multi-layer insulation on the base box", "Dust seals on bearings"]
+    parts: ["28 V DC power input (CT.1 interface)", "Small battery for safe-stow on power loss", "Survival heaters on motors and electronics", "Multi-layer insulation on the base box", "Dust seals on bearings"]
     tech: "Standard lander-hosted payload practice"
     trl: 5
 risks:
@@ -52,7 +52,7 @@ risks:
   - {sev: High, title: "A tipped or sloped lander puts the crane far off level", fix: "Self-leveling base (±15°). If the lander leans more than that, the mobile crane offloads it from the ground."}
   - {sev: High, title: "A load swings or drops and damages the payload or the lander", fix: "Lift slowly with a load cell and pose camera. Brakes hold on power loss. Proof-load test before every first lift of a new payload type."}
   - {sev: Medium, title: "Starship decks are far higher than the crane can reach", fix: "Use the lander's own elevator to bring cargo to the ground, then let the crane move it from there."}
-  - {sev: Medium, title: "Integration with each lander's structure and avionics is not yet designed", fix: "Mount the crane through the C02.1 pallet hard points and connector, so integration is the same as for any other payload."}
+  - {sev: Medium, title: "Integration with each lander's structure and avionics is not yet designed", fix: "Mount the crane through the CT.1 pallet hard points and connector, so integration is the same as for any other payload."}
   - {sev: Medium, title: "A 1 t limit cannot lift a whole 3 t Blue Moon Mk1 payload in one piece", fix: "Split medium cargo into pieces of 1 t or less, or use the lander's own offloading system for single heavy items."}
 sources:
   - {title: "NASA NTRS: LSMS technology overview (Jones, for Blue Origin)", url: "https://ntrs.nasa.gov/api/citations/20205006977/downloads/LSMS%20Technology%20Overview%20V5%20Blue%20Origin.pdf", date: "Aug 2020"}
@@ -88,7 +88,7 @@ Load at the hook (arithmetic, lunar gravity 1.62 m/s²<sup class="r">[6](#s6)</s
 | Moment at 7.6 m reach | ~12.3 kN·m | 1,620 × 7.6 |
 | Same weight on Earth | ~165 kg | 1,620 ÷ 9.81 |
 | Payload-to-crane mass ratio | 2 : 1 | 1,000 ÷ 500 kg goal<sup class="r">[1](#s1)</sup> |
-| Two cranes delivered | ~1,000 kg | 2 × 500 kg (matches M02 budget) |
+| Two cranes delivered | ~1,000 kg | 2 × 500 kg (transport budget) |
 
 The fourth row matters for testing. On Earth, a 165 kg test mass loads the crane the way a full 1 t payload does on the Moon. The crane's own weight is six times higher on Earth, though, so ground tests need a gravity-offload rig.
 
@@ -96,7 +96,7 @@ The fourth row matters for testing. On Earth, a 165 kg test mass loads the crane
 
 1. **Component tests.** Cycle cables, spools, brakes and gearboxes in thermal vacuum down to the south-pole design low of −180 °C used by NASA's VSAT project<sup class="r">[7](#s7)</sup>, with lunar dust simulant present.
 2. **Engineering unit.** Build the full-size crane. Run lifts with a 165 kg test mass at full reach on a gravity-offload rig. Test self-leveling on a ±15° tilt table.
-3. **Field test.** Offload a full-size lander deck mock-up and C02.1 pallets outdoors, as the 2008 Moses Lake tests did<sup class="r">[1](#s1)</sup>.
+3. **Field test.** Offload a full-size lander deck mock-up and CT.1 pallets outdoors, as the 2008 Moses Lake tests did<sup class="r">[1](#s1)</sup>.
 4. **Proto-flight unit.** Run vibration, acoustic and thermal-vacuum tests to the lander environment, then a fit check on the lander.
 5. **On the Moon.** Deploy from stowage and lift a dummy mass, then the real cargo. Measure cable wear and dust after every lift.
 

@@ -32,7 +32,7 @@ The flight record is mixed. Astrobotic's Peregrine (January 2024) had a valve fa
 
 ## Why Open Moon uses it
 
-In milestone M01 (prospecting), CLPS-class landers deliver the prospecting rover, drill and instruments to the south pole. The plan calls for two prospecting landings so that one lander failure does not end the search for ice. In M02 (transport), the same landers form the "small cargo" class, under 1 t per trip, for instruments and small robots.
+In milestone M01 (prospecting), CLPS-class landers deliver the prospecting rover, drill and instruments to the south pole. The plan calls for two prospecting landings so that one lander failure does not end the search for ice. For transport, the same landers form the "small cargo" class, under 1 t per trip, for instruments and small robots.
 
 Buying a ride is far cheaper and faster than designing a lander. Without CLPS-class services, Open Moon would need to fund its own lander or wait for larger landers such as Blue Moon Mark 1 or Argonaut, which have not flown yet.
 

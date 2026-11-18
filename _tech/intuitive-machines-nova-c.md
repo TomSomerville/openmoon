@@ -33,7 +33,7 @@ The second mission, IM-2 *Athena*, landed on Mons Mouton near the south pole on 
 
 ## Why Open Moon uses it
 
-Open Moon's transport milestone (M02) buys small cargo rides of under 1 t from commercial landers instead of building its own. Nova-C is one of three named options, next to Firefly Blue Ghost and Astrobotic Griffin. The plan wants two providers per payload where possible. Nova-C gives that second (or third) supplier for instruments, small robots and early site surveys.
+Open Moon's transport plan buys small cargo rides of under 1 t from commercial landers instead of building its own. Nova-C is one of three named options, next to Firefly Blue Ghost and Astrobotic Griffin. The plan wants two providers per payload where possible. Nova-C gives that second (or third) supplier for instruments, small robots and early site surveys.
 
 Nova-C also has the most flight experience of any US commercial lander: two landings near the south pole, the region Open Moon targets ([Wikipedia](https://en.wikipedia.org/wiki/Intuitive_Machines_Nova-C)). Both missions returned data, but neither landed upright. Open Moon therefore treats Nova-C as a useful but not yet proven carrier. Without it, small-cargo delivery would rest on one flown lander (Blue Ghost) and one untested lander (Griffin).
 

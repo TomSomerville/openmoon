@@ -28,7 +28,7 @@ The first flight, Griffin Mission One, will carry Astrolab's 500 kg FLIP rover a
 
 ## Why Open Moon uses it
 
-Griffin is one of three small-cargo landers in milestone M02 (Transport), next to Firefly Blue Ghost and Intuitive Machines Nova-C. It fills the gap between landers that carry about 100 kg and Blue Moon Mark 1's 3 t. That size suits single rovers, science packages and small power or communications units. Its optional [egress ramps](https://www.astrobotic.com/lunar-delivery/landers/griffin-lander/) let a rover drive off without a crane.
+Griffin is one of three small-cargo landers in Open Moon's transport plan, next to Firefly Blue Ghost and Intuitive Machines Nova-C. It fills the gap between landers that carry about 100 kg and Blue Moon Mark 1's 3 t. That size suits single rovers, science packages and small power or communications units. Its optional [egress ramps](https://www.astrobotic.com/lunar-delivery/landers/griffin-lander/) let a rover drive off without a crane.
 
 Open Moon's rule is to fly each payload class with two providers where possible. Without Griffin, the only flown landers in the plan carry much less than a 500 kg rover. Payloads of that size would wait for the first Blue Moon Mark 1 flights, which are larger, costlier and also not yet flown.
 

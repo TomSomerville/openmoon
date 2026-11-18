@@ -4,12 +4,12 @@
 - id: TL
   name: Transport and logistics
   items:
-    - {id: TL.1, name: Small cargo delivery service (<1 t), ms: M02, how: buy}
-    - {id: TL.2, name: Medium cargo delivery service (~3 t), ms: M02, how: buy}
-    - {id: TL.3, name: Heavy cargo delivery service (~15 t), ms: M02, how: buy}
-    - {id: TL.4, name: Crew transport (launch, lander, return), ms: M02, how: partner}
-    - {id: TL.5, name: Common payload interface, ms: M02, comp: C02.1, how: build}
-    - {id: TL.6, name: Offloading crane, ms: M02, comp: C02.2, how: build}
+    - {id: TL.1, name: Small cargo delivery service (<1 t), ms: Transport, how: buy}
+    - {id: TL.2, name: Medium cargo delivery service (~3 t), ms: Transport, how: buy}
+    - {id: TL.3, name: Heavy cargo delivery service (~15 t), ms: Transport, how: buy}
+    - {id: TL.4, name: Crew transport (launch, lander, return), ms: Transport, how: partner}
+    - {id: TL.5, name: Common payload interface, ms: Transport, comp: CT.1, how: build}
+    - {id: TL.6, name: Offloading crane, ms: Transport, comp: CT.2, how: build}
     - {id: TL.7, name: Cargo containers and inventory tracking, ms: M09, how: build}
     - {id: TL.8, name: Spares strategy and on-site stores, ms: M09, how: build}
     - {id: TL.9, name: Lander refuelling interface, ms: M11, comp: C11.1, how: build}
@@ -40,12 +40,12 @@
 - id: SC
   name: Site and construction
   items:
-    - {id: SC.1, name: Excavator, ms: M05, comp: C05.1, how: build}
-    - {id: SC.2, name: Hardened landing pad, ms: M05, comp: C05.2, how: build}
-    - {id: SC.3, name: Regolith sintering robot, ms: M05, comp: C05.3, how: build}
-    - {id: SC.4, name: Roads, berms and stockpiles, ms: M05, how: build}
-    - {id: SC.5, name: Site lighting and markers, ms: M05, how: build}
-    - {id: SC.6, name: Outdoor dust mitigation, ms: M05, how: build}
+    - {id: SC.1, name: Excavator, ms: M02, comp: C02.1, how: build}
+    - {id: SC.2, name: Hardened landing pad, ms: M02, comp: C02.2, how: build}
+    - {id: SC.3, name: Regolith sintering robot, ms: M02, comp: C02.3, how: build}
+    - {id: SC.4, name: Roads, berms and stockpiles, ms: M02, how: build}
+    - {id: SC.5, name: Site lighting and markers, ms: M02, how: build}
+    - {id: SC.6, name: Outdoor dust mitigation, ms: M02, how: build}
     - {id: SC.7, name: Geotechnical survey kit, ms: M01, how: build}
 - id: IS
   name: Resource production (ISRU)
