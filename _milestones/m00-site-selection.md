@@ -1,22 +1,21 @@
 ---
 id_code: M00
 order: 0
-title: Programme set-up and site selection
+title: Site selection
 phase: 0
 window: "2026–2027"
 summary: Pick the base site, and a backup, using data already returned by lunar orbiters, before anything is built for it.
-objective: "Choose a primary and a backup site near the lunar south pole that give the most sunlight, an access route to permanently shadowed ice, safe terrain for landing and building, and workable communications with Earth. Set up the open-source engineering programme that runs every later milestone."
+objective: "Choose a primary and a backup site near the lunar south pole that give the most sunlight, an access route to permanently shadowed ice, safe terrain for landing and building, and workable communications with Earth."
 trl_min: 9
 depends_on: []
 spec:
-  - {k: Team, v: "Engineering and science core team plus open contributors"}
+  - {k: Team, v: "Engineering and science team"}
   - {k: Hardware, v: "None flown; uses existing orbital data"}
   - {k: Output, v: "Site certification package, open data set"}
-cost: {low: 0.05, high: 0.15, note: "people and computing only; no flight hardware"}
+cost: {low: 0.045, high: 0.13, note: "people and computing only; no flight hardware"}
 cost_items:
   - {item: "Core engineering team, 2 years", low: 0.04, high: 0.11, basis: "ESTIMATE: 60–150 full-time staff at ~$350k loaded cost per year"}
   - {item: "Computing, data processing, illumination modelling", low: 0.005, high: 0.02, basis: "ESTIMATE"}
-  - {item: "Legal, international coordination", low: 0.005, high: 0.02, basis: "ESTIMATE"}
 exit_criteria:
   - "Primary and backup sites chosen, each with a sunlit ridge for solar power within cable distance of a permanently shadowed region (PSR) that may hold ice."
   - "Base and PMC point chosen within 10 km of cable run of every planned generation site (each VSAT ridge point and the reactor) and of the ISRU plants, using standard runs of 3 km or less where possible and extended runs of up to 10 km where needed, with the combined illumination of the ridge points inside that reach reported (DD-013, DD-014)."
@@ -25,7 +24,7 @@ exit_criteria:
   - "Every landing point on ground of 8° or less (NASA's crewed-lander tilt limit), checked against the lander's own published slope limit (10° for the landers that publish one; see the Lander candidates page)."
   - "Hydrogen (LEND) and ice-candidate maps published for the primary and backup sites, with the M01 prospecting targets chosen from them."
   - "Earth-visibility and relay-coverage analysis showing how many hours per month each site can talk to Earth directly."
-  - "Site plan published openly and notified to other lunar operators under Artemis Accords deconfliction practice."
+  - "Site plan published openly."
 workstreams:
   - name: Data assembly
     desc: Gather every public data set for the south pole into one open GIS.
@@ -42,9 +41,6 @@ workstreams:
   - name: Communications geometry
     desc: Work out when each site can see Earth and where relay satellites are needed.
     items: ["Earth-visibility hours per month", "Relay orbit coverage", "Surface line-of-sight between sites"]
-  - name: Programme and legal
-    desc: Set up the open-source programme and coordinate with other operators.
-    items: ["Open data and CC BY-SA licensing", "Artemis Accords notification", "Partner and procurement strategy"]
 technologies:
   - {name: "Lunar Reconnaissance Orbiter (LRO)", use: "Terrain, imagery, temperature and radar data for site selection", status: "Operating; FY2026 budget request continues operations to support CLPS deliveries, landing-site characterisation and Artemis", trl: 9, src: 1}
   - {name: "ShadowCam on KPLO/Danuri", use: "Images inside permanently shadowed craters", status: "Operating in extended mission; expected to end in early 2028 when its battery runs out in a lunar eclipse", trl: 9, src: 2}
@@ -90,7 +86,7 @@ sources:
   - {title: "LROC (NASA/GSFC/Arizona State University): NAC south polar maximum-pixel and sub-solar-longitude mosaics, 1 m/px, tile P878S2925, with PDS labels (NASA PDS)", url: "https://pds.mcp.nasa.gov/data/store/img/lunar_reconnaissance_orbiter/pds4/lroc/lro-l-lroc-5-rdr/LROLRC_2001/EXTRAS/BROWSE/NAC_POLE/NAC_POLE_SOUTH_CM_MAX/NAC_POLE_SOUTH_CM_MAX_P878S2925.xml", date: "accessed Nov 2026"}
 risks:
   - {sev: High, title: "ShadowCam's mission is expected to end in early 2028, cutting off new images inside shadowed craters", fix: "Request targeted ShadowCam imaging of candidate PSRs now; archive everything; plan our own prospecting in M01"}
-  - {sev: High, title: "Other programmes want the same few sunlit ridges (NASA Moon Base, China's Chang'e-7 near Shackleton)", fix: "Choose a primary and backup site; publish plans early and coordinate under Artemis Accords deconfliction; design for shared infrastructure"}
+  - {sev: High, title: "Other nations' missions target the same few sunlit ridges (China's Chang'e-7 near Shackleton)", fix: "Choose a primary and backup site; keep landing and work zones clear of other nations' planned activity"}
   - {sev: High, title: "Young fault scarps and landslide-prone slopes near some candidate regions (e.g. de Gerlache Rim 2)", fix: "Map scarps from LROC NAC; keep pads, reactors and habitats off and away from young faults"}
   - {sev: Medium, title: "Even at the best base site studied by JPL, Earth is in direct view only about half the time", fix: "Treat relay satellites as mandatory (M03); pick sites with long Earth-visibility windows for the first lander"}
   - {sev: High, title: "The standard power run is 3 km of cable to the base PMC (DD-013), but the best published pair of Shackleton-ridge points (~94% combined light) is about 8 km apart, and NASA expects ISRU to need power over 3–5 km. Extended runs of up to 10 km (DD-014) reach both, at ~10–15% loss and with 1 kHz stability not yet analysed", fix: "Rank candidate base points by the combined light of ridge points within a 10 km cable reach, preferring 3 km standard runs; for the 8 km pair, put at least one point within 10 km and keep each run 10 km or less; feed ISRU plants at 3–5 km by extended runs; plan PSR work beyond 10 km on the mobile power cart (PW.5) or a local source"}
@@ -99,6 +95,10 @@ risks:
   - {sev: Medium, title: "The strongest hydrogen (LEND) and the ice-candidate craters are in different parts of the focus area", fix: "Treat hydrogen and ice as separate targets; measure both on the ground before choosing the base site"}
   - {sev: Medium, title: "No lander publishes a certified slope limit above 10°, and IM-1 tipped over on 12° ground", fix: "Land only on ground of 8° or less; confirm each pad with ~1 m LROC NAC hazard maps"}
 ---
+*Open Moon is a hypothetical plan: what this plan proposes NASA's Moon Base should be. There is no Open Moon programme or organisation, and the base is not meant to land beside NASA's base or work with it. It is an alternative design for that base (DD-018).*
+
+{% include decision-note.html id="DD-018" extra="M00 is site selection only. Site preparation is its own milestone (M05). There is no programme set-up step." %}
+
 ## Where the site search stands (November 2026)
 
 - **Focus area chosen:** about 180 × 130 km around the south pole, centred on the Shackleton–de Gerlache Ridge, between Shackleton, Spudis and de Gerlache craters. It includes NASA's de Gerlache Rim 2 candidate region.
@@ -126,7 +126,7 @@ Each tab covers one factor that was weighed. The final selection, with the combi
 
 ### Why the south pole
 
-NASA's own architecture work explains the choice: near the south pole some ridges are sunlit most of the time, while nearby craters stay permanently in shadow and cold enough to trap water ice<sup class="r">[7](#s7)</sup>. That pairing, near-constant solar power next to frozen water, is what makes a self-sustaining base possible without inventing new technology. NASA's 2026 Moon Base programme also targets the south pole<sup class="r">[12](#s12)</sup>, so a base there can share transport, relays and data.
+NASA's own architecture work explains the choice: near the south pole some ridges are sunlit most of the time, while nearby craters stay permanently in shadow and cold enough to trap water ice<sup class="r">[7](#s7)</sup>. That pairing, near-constant solar power next to frozen water, is what makes a self-sustaining base possible without inventing new technology. NASA's 2026 Moon Base programme also targets the south pole<sup class="r">[12](#s12)</sup>. This plan is a proposal for that base, not a second base beside it (DD-018).
 ### How sunny is "near-eternal light"?
 
 No point on the Moon is sunlit all the time<sup class="r">[6](#s6)</sup>. The best points are close:
@@ -551,6 +551,6 @@ The primary base and only what serves it: slope classes everywhere, the de Gerla
 4. **Map hazards.** Slope is mapped for the focus area in four classes from NASA's LOLA data, with 8° as the landing limit (done). Also include young fault scarps: NASA-funded work links the shrinking Moon to faults and moonquakes near the south pole, including a scarp in de Gerlache Rim 2, and some shadowed slopes are prone to landslides<sup class="r">[8](#s8)</sup>.
 5. **Rank ice targets.** ShadowCam found little widespread surface ice, but some 20–50 m patches consistent with more than 10% ice<sup class="r">[2](#s2)</sup>. Ice is patchy, so M01 must confirm it on the ground. For the focus area, hydrogen from LEND and ice candidates from M3, LOLA and ShadowCam are now mapped (see above).
 6. **Check communications.** Earth visibility varies from site to site: some Earth-facing areas see Earth almost all the time, others never do<sup class="r">[7](#s7)</sup>. At the best proposed base site in a JPL study, direct-to-Earth links were available only about 51% of the time<sup class="r">[13](#s13)</sup>, so relay coverage is a hard requirement.
-7. **Decide, publish and notify.** Under the Outer Space Treaty no one can claim territory<sup class="r">[11](#s11)</sup>. The Artemis Accords (78 signatories after Vietnam joined on 28 October 2026<sup class="r">[9](#s9)</sup>) ask operators to give notice and coordinate to avoid harmful interference<sup class="r">[9](#s9)</sup>. Open Moon publishes its site plan and follows that practice.
+7. **Decide and publish.** Under the Outer Space Treaty no one can claim territory<sup class="r">[11](#s11)</sup>. The Artemis Accords (78 signatories after Vietnam joined on 28 October 2026<sup class="r">[9](#s9)</sup>) ask operators to give notice and coordinate to avoid harmful interference<sup class="r">[9](#s9)</sup>. NASA, as the agency this plan is written for, would give that notice for the chosen site.
 
-> Open question for contributors: within the focus area, which two sites give the best combination of landable ground (≤8°), illumination, access to the Shackleton and de Gerlache shadowed floors and the LEND hydrogen zone, and distance from other programmes' planned activity?
+> Open question for contributors: within the focus area, which two sites give the best combination of landable ground (≤8°), illumination, access to the Shackleton and de Gerlache shadowed floors and the LEND hydrogen zone, and distance from other nations' planned activity?

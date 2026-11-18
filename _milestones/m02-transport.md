@@ -12,7 +12,7 @@ spec:
   - {k: "Small cargo", v: "Under 1 t: commercial landers (Blue Ghost, Griffin, Nova-C)"}
   - {k: "Medium cargo", v: "About 3 t: Blue Moon Mark 1"}
   - {k: "Heavy cargo", v: "About 15 t: Starship and Blue Moon Mk2 cargo variants"}
-  - {k: Crew, v: "Seats via NASA Artemis / Moon Base partnership or commercial HLS"}
+  - {k: Crew, v: "NASA Artemis crew flights or commercial HLS seats"}
   - {k: "Crew cadence", v: "From Phase 2: crews of 3, 4 landings and 4 departures a year (DD-006)"}
 cost: {low: 0.95, high: 2.2, note: "interfaces, offloading and integration only; each delivery is costed in the milestone that uses it"}
 cost_items:
@@ -37,7 +37,7 @@ workstreams:
     items: ["Starship cargo variant", "Blue Moon Mk2 cargo variant", "NASA states ~15 t per cargo landing"]
   - name: Crew access
     desc: Seats for Open Moon crews.
-    items: ["Partnership with NASA Moon Base / Artemis", "Commercial HLS seats once offered", "4 crew landings and 4 departures a year from Phase 2 (DD-006)", "Return vehicle that can wait ~6.5 months on the surface", "Crew training and medical certification"]
+    items: ["NASA Artemis crew flights (Orion and HLS)", "Commercial HLS seats once offered", "4 crew landings and 4 departures a year from Phase 2 (DD-006)", "Return vehicle that can wait ~6.5 months on the surface", "Crew training and medical certification"]
   - name: Offloading and handling
     desc: Getting cargo off tall landers safely.
     items: ["Cable-driven crane (LSMS heritage)", "Ramps and winches", "Payload carts towed by LTVs"]
@@ -71,7 +71,7 @@ risks:
   - {sev: High, title: "Landing reliability: of four CLPS missions in 2024–25, two landers tipped over and one never attempted a landing", fix: "Fly critical items twice; prefer providers with upright landings; insure or hold spares"}
   - {sev: High, title: "Cost and schedule growth: CLPS orders grew nearly 26% in total value and slipped 14 months on average", fix: "Budget 30% growth on every delivery; plan for slips in the schedule"}
   - {sev: Medium, title: "Tall landers (Starship) put cargo many metres above the ground", fix: "Crane or elevator on the lander; LSMS-style cable crane on the surface"}
-  - {sev: High, title: "Crew seats depend on government programmes, and this plan needs a crewed landing every 3 months, twice NASA's planned rate of one every six months after Artemis V", fix: "Partner with NASA Moon Base; contract two crew transport providers; keep commercial-seat option open; let a tour stretch by one cycle if a landing slips"}
+  - {sev: High, title: "Crew seats depend on government programmes, and this plan needs a crewed landing every 3 months, twice NASA's planned rate of one every six months after Artemis V", fix: "Plan crew flights at this cadence from the start; contract two crew transport providers; keep commercial-seat option open; let a tour stretch by one cycle if a landing slips"}
   - {sev: High, title: "Each crew's vehicle must wait about 6.5 months on the surface as its way home, with up to three parked at once at handovers; no crewed lander has published a stay that long", fix: "Make surface wait time a contract requirement; power, shade and inspect parked vehicles; keep a rescue option"}
 ---
 

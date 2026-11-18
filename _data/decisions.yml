@@ -610,3 +610,20 @@
     - "B3 adds about 0.3 points of combined sunlight (84.1% to about 84.4%, ESTIMATE); its value is charging rate and redundancy, not uptime."
     - "Battery chargers and the PMC must accept the extra peak input while all three towers are lit (sizing open)."
 
+
+- id: DD-018
+  date: "2026-11-18"
+  title: "Open Moon is a hypothetical proposal for NASA's Moon Base; M00 is site selection only"
+  status: "Adopted"
+  affects: [M00, M02]
+  was: "M00 was titled 'Programme set-up and site selection'. It included setting up an open-source programme, legal and partner work, and notifying other operators. Pages treated Open Moon as its own operator that might land near NASA's Moon Base and partner with it for crew seats."
+  now: "Open Moon is a hypothetical plan for what NASA's Moon Base should be. There is no Open Moon programme or organisation, and the base does not land beside NASA's base or work with it. M00 is 'Site selection', inside Phase 0, 'Site selection and preparation'. The programme and legal workstream and its cost item are removed. Crew come on NASA Artemis crew flights or commercial HLS seats, not through a partnership with NASA."
+  why: "The user's decision: this is a hypothetical plan for what NASA should do, not a separate programme."
+  timeline:
+    - date: "Mar 2026"
+      what: "NASA describes its own Moon Base phases; Open Moon is written as an alternative design for that base."
+      title: "NASA Moon Base – Phases"
+      url: "https://www.nasa.gov/moonbase-phases/"
+  tradeoffs:
+    - "M00 cost falls from $0.05–0.15B to $0.045–0.13B (the legal and coordination item is removed)."
+    - "Notice under the Artemis Accords becomes NASA's job as the agency carrying out the plan, not a separate Open Moon step."

@@ -1,9 +1,9 @@
-# Roadmap stages. year = years after programme start (Year 0 = 2026). Planning targets, not commitments.
+# Roadmap stages. year = years after the plan starts (Year 0 = 2026). Planning targets, not commitments.
 - year: 0
   cal: 2026
-  label: ["Programme", "Founded"]
-  headline: "Open Moon is founded and the site search begins"
-  summary: "The programme starts with no hardware at all. A small engineering team pulls every public orbital data set of the lunar south pole into one open map, models sunlight and temperature hour by hour, and sets up the legal and partner framework the base will run under."
+  label: ["Site", "Search"]
+  headline: "The site search begins"
+  summary: "The plan starts with no hardware at all. A small engineering team pulls every public orbital data set of the lunar south pole into one open map, models sunlight and temperature hour by hour, and chooses the base site."
   crew: 0
   power_kw: 0
   details:
@@ -12,16 +12,15 @@
     - {title: "Focus area: Shackleton–de Gerlache", text: "The search narrows to about 180 × 130 km around the Shackleton–de Gerlache Ridge. Slope, hydrogen (LEND) and ice-candidate maps are published; 43% of the area is 8° or less, Open Moon's landing limit.", refs: [M00]}
     - {title: "Base sites chosen", text: "Primary base on the north rim of de Gerlache (88.445°S, 63.44°W), backup on the Connecting ridge by Shackleton (design change DD-015). Ice mining at the primary draws power from rim VSATs within 10 km of the crater floor.", refs: [M00, C06.2]}
     - {title: "Illumination and hazard models", text: "Sunlight is modelled at several mast heights, and young fault scarps and landslide-prone slopes are mapped so nothing is built on them.", refs: [M00]}
-    - {title: "Programme and legal set-up", text: "Open licensing (CC BY-SA 4.0), Artemis Accords coordination and a buy-before-build procurement strategy.", refs: [M00]}
 - year: 1
   cal: 2027
   label: ["Site", "Selected"]
   headline: "A primary and backup site are chosen, and the rides are booked"
-  summary: "With the site picked, the programme turns to getting there. Transport is booked across small, medium and heavy landers, relay service is arranged, and two prospector rovers are built to check the site on the ground."
+  summary: "With the site picked, the plan turns to getting there. Transport is booked across small, medium and heavy landers, relay service is arranged, and two prospector rovers are built to check the site on the ground."
   crew: 0
   power_kw: 0
   details:
-    - {title: "Site certified", text: "A primary and backup site are chosen, each pairing a sunlit ridge for power with a nearby shadowed crater that may hold ice. The plan is published and notified to other operators.", refs: [M00]}
+    - {title: "Site certified", text: "A primary and backup site are chosen, each pairing a sunlit ridge for power with a nearby shadowed crater that may hold ice. The site plan is published.", refs: [M00]}
     - {title: "Transport contracts", text: "Rides reserved on small commercial landers, Blue Moon Mark 1 for about 3 t, and heavy cargo landers for about 15 t, with two providers per critical payload. The Open Moon payload interface standard is published.", refs: [M02, C02.1, firefly-blue-ghost-lander, blue-origin-blue-moon-mark-1]}
     - {title: "Relay service agreements", text: "Service is contracted from two lunar relay networks that follow the shared LunaNet standard.", refs: [M03, nasa-commercial-lunar-relay-intuitive-machines, esa-moonlight]}
     - {title: "Prospector rovers built", text: "Two small rovers carry a 1 m drill, a mass spectrometer and a neutron spectrometer, all with flight heritage.", refs: [M01, C01.1, trident-drill-honeybee-robotics, msolo-mass-spectrometer]}
