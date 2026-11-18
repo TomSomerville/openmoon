@@ -404,6 +404,16 @@ Both sites were picked on the combined map below. Figures are measured from the 
 | LEND hydrogen at the site; nearest high-hydrogen zone | 0.82 % dip; 19.9 km | 0.55 % dip; 28.9 km |
 | Distance between the sites | about 44 km | |
 
+### Primary site close-up
+
+The primary base and only what serves it: slope classes everywhere, the de Gerlache ice-candidate floor (blue), other shadowed areas (outlines), hydrogen (purple), and the two VSAT sites nearest the base, with their cables to the base (orange) and to the ice mine at the floor edge (white dashes). The combined map below still shows every layer for the whole focus area.
+
+![Primary base site on the north rim of de Gerlache: slope classes, de Gerlache shadowed floor, hydrogen, the two nearest VSAT sites and the ice mine]({{ '/assets/sites/primary-base-site.jpg' | relative_url }})
+
+- **The two nearest VSAT sites** are 3.7 km (75.1 % sunlit) and 4.7 km (71.9 %) from the base, on the crater rim, and are also the ice-mining VSATs below.
+- **The cables to the mine cross the crater wall,** which is mostly steeper than 20° (red). Laying them needs a route down the wall that the cable rover can drive (open).
+- **Hydrogen:** no high-hydrogen ground in this frame; only a little moderate hydrogen at the top-right corner. The nearest high-hydrogen zone is about 20 km away.
+
 ### Ice mining for the primary site (ESTIMATE)
 
 The de Gerlache floor is 12.7 km from the primary base, beyond the 10 km extended-run limit (DD-014). So mining power comes from VSATs on the rim that sit within 10 km of the floor (plan design):
