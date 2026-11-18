@@ -57,7 +57,7 @@
   details:
     - {title: "Communications complete", text: "Relay service from two networks, a backup relay, rim masts covering the crater worksites and an optical link for bulk data.", refs: [M03, C03.1, C03.2, optical-laser-communications, lunanet-interoperability-specification-v5]}
     - {title: "Transport complete", text: "Contracts with two providers in every cargo class, and an offloading crane working on the surface.", refs: [M02, C02.2, lunar-surface-manipulation-system-lsms]}
-    - {title: "Solar towers", text: "Two 10 kW towers and two 50 kW VSAT-XL towers, spread so at least one is almost always lit.", refs: [M04, C04.2, astrobotic-vsat-xl]}
+    - {title: "Solar towers", text: "NASA-class 10 kW VSAT towers, the number set by the Phase 1 load budget, spread so at least one is almost always lit (design change DD-004).", refs: [M04, C04.2, vertical-solar-array-technology-vsat]}
     - {title: "First hardened pad", text: "A sintered landing pad with an ejecta berm, tested with small landers, so landings stop sandblasting the site.", refs: [M05, C05.2, C05.3, icon-project-olympus, sintered-basalt-pavers-regolith-polymer-pads]}
 - year: 6
   cal: 2032
