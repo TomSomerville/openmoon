@@ -38,7 +38,7 @@ subcomponents:
     tech: "Lunar Safe Haven access goal; ISS external inspection practice"
     trl: 4
   - name: Thermal pass-through
-    desc: "Buried modules cannot radiate heat, so heat is piped out to radiators on the surface."
+    desc: "Regolith is a near-perfect insulator, so a buried module can neither radiate nor conduct its heat away. Almost all of it is piped out to radiators on the surface."
     parts: ["Pumped fluid loop through the overburden", "Surface radiator panels with dust covers", "Insulated pipe sleeves", "Habitat heaters for low-load periods"]
     tech: "ISS external active thermal control heritage"
     trl: 5
@@ -53,7 +53,7 @@ risks:
   - {sev: High, title: "Burial is slow: ~1 year with 4 excavators at 200 kg/h, ~3–5 years at the IPEx design rate", fix: "Start piling as soon as the arch is up, before crew; add excavators; use the storm shelter (C09.2) until the cover is complete."}
   - {sev: High, title: "Arch failure would drop tonnes of regolith onto a pressurised module", fix: "Design the arch to carry the full load on its own with margin; monitor load cells; add regolith in even layers on both sides."}
   - {sev: Medium, title: "A buried hull cannot be seen or repaired", fix: "Keep the inspection gallery and access panels; never pile regolith directly on the module."}
-  - {sev: Medium, title: "Buried modules overheat because they cannot radiate", fix: "Surface radiators on a pumped loop; size them before burial; keep heaters for low-power periods."}
+  - {sev: High, title: "Buried modules overheat: regolith conducts only ~0.003–0.013 W/m·K, so the cover passes ~0.05–0.2 kW against a 20–50 kW habitat load, and a pumped-loop failure has no passive backup", fix: "Surface radiators on two independent pumped loops; size them for full load before burial; load-shed plan if a loop fails; keep heaters for low-power periods."}
   - {sev: Medium, title: "No lunar bag-filling system exists yet", fix: "Use bulk regolith for most of the cover; limit bags to end walls; develop and test a filler on Earth first."}
   - {sev: Medium, title: "Dust gets into the gallery and entrance", fix: "Dust door at the tunnel mouth; membrane over the arch; sintered ground at the entrance."}
 sources:
@@ -68,6 +68,9 @@ sources:
   - {title: "Evans et al., NASA MSFC: Meteoroid risk assessment of lunar habitat concepts", url: "https://ntrs.nasa.gov/api/citations/20060024733/downloads/20060024733.pdf", date: "2006"}
   - {title: "NASA: Artemis I radiation measurements validate Orion safety for astronauts", url: "https://www.nasa.gov/humans-in-space/artemis-i-radiation-measurements-validate-orion-safety-for-astronauts/", date: "Oct 2024"}
   - {title: "NASA NTRS: IPEx TRL 5 design overview (ASCEND 2024)", url: "https://ntrs.nasa.gov/api/citations/20240008162/downloads/ASCEND24_IPEx%20TRL%205%20Design%20Overview.pdf", date: "2024"}
+  - {title: "Langseth et al., Proc. Lunar Sci. Conf.: Revised lunar heat-flow values (Apollo 15 and 17 regolith conductivity)", url: "https://www.osti.gov/biblio/5787569", date: "1976"}
+  - {title: "Hayne et al., JGR Planets: Global regolith thermophysical properties of the Moon from Diviner", url: "https://arxiv.org/pdf/1711.00977", date: "2017"}
+  - {title: "NASA GRC (via C08.1): habitat power draw 20–50 kW for 4 crew", url: "https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf", date: "Apr 2022"}
 ---
 
 ## What it does
@@ -93,7 +96,12 @@ Open Moon keeps M09's working value of **≥2 m everywhere**. It builds **3 m ov
 
 **End walls.** The study looked at Vectran sandbags, but noted that no system for filling them exists yet<sup class="r">[6](#s6)</sup>. Open Moon uses bags only to close the vault ends.
 
-**Thermal.** Apollo heat-flow sensors below 90 cm read within about 0.1 K of their December 1974 values when checked in 1975<sup class="r">[8](#s8)</sup>. So a buried module sits in a nearly constant temperature. However, it cannot radiate its own heat, so it needs radiators on the surface.
+**Thermal.** Regolith is one of the best natural insulators known. This cuts both ways.
+
+- **How good an insulator.** Apollo 15 and 17 long-term heater runs put the bulk regolith at **0.009–0.013 W/m·K**<sup class="r">[12](#s12)</sup>. Diviner orbital data gives **0.00074 W/m·K at the surface**, rising to **0.0034 W/m·K at about 1 m** depth<sup class="r">[13](#s13)</sup>. The near-surface fines are poor conductors because the loose grains touch at few points and there is no air between them.
+- **Good: steady surroundings.** Apollo heat-flow sensors below 90 cm read within about 0.1 K of their December 1974 values when checked in 1975<sup class="r">[8](#s8)</sup>. Under 2–3 m of cover, the habitat sees almost none of the surface swing between lunar day and night. The modules need far less heater power in shadow than on the open surface, and the hull stops thermal cycling.
+- **Bad: heat cannot leave.** The crew, the electronics and life support turn nearly all of the habitat's 20–50 kW<sup class="r">[14](#s14)</sup> into heat. Through 2 m of regolith only a fraction of a kilowatt gets out (see Sizing). The rest would warm the module and the soil around it with no limit. So nearly all of the heat must go out on a pumped fluid loop to radiators on the surface, and that loop is life-critical: if it stops, the cover provides no passive backup.
+- **Placement matters.** The crawl-space gallery between hull and arch is in vacuum, so the hull exchanges heat with the arch only by radiation. Pipe runs through the overburden need insulated sleeves so the loop doesn't lose or gain heat on the way to the radiators.
 
 **Micrometeoroids.** A NASA study found that impact risk drives wall thickness and burial depth<sup class="r">[9](#s9)</sup>. The Lunar Safe Haven study says thick regolith gives ample micrometeorite protection. It rejected an ISS-style Whipple shield (about 11.5 cm thick) as the only protection, because it stops too little radiation<sup class="r">[6](#s6)</sup>.
 
@@ -110,6 +118,8 @@ The arch's clear space is 5 m × 4.5 m × 26 m. The slopes are 45°, which is mo
 
 **Load on the arch:** 3 m × 1,500 kg/m³ × 1.62 m/s² ≈ **7.3 kPa** (4.9 kPa at 2 m).
 
+**Heat leak through the cover:** q = k × ΔT ÷ thickness. Take k = 0.0034–0.013 W/m·K<sup class="r">[12](#s12)</sup><sup class="r">[13](#s13)</sup>, a 100 K difference between the warm inner face and the cold ground, and 2 m of cover. That gives 0.17–0.65 W/m². Over the ~330 m² arch, about **55–215 W** gets out. That is **under 1%** of a 20–50 kW habitat load<sup class="r">[14](#s14)</sup>. The 100 K difference is an assumption. Even if it were several times larger, conduction would still remove only a few percent.
+
 ## Testing and qualification
 
 1. Load-test a full-scale arch segment on Earth to 2× the 3 m load, with simulated moonquake shaking.
@@ -125,3 +135,4 @@ The arch's clear space is 5 m × 4.5 m × 26 m. The slopes are 45°, which is mo
 - Does the 1 m secondary-radiation peak appear for real south-pole regolith?
 - What angle of repose does excavated polar regolith hold in practice?
 - How many six-month rotations can one person fly within 600 mSv once EVA dose is added?
+- How warm does the regolith next to the arch get over 10 years of small heat leaks, and does that matter for the arch or the hull?

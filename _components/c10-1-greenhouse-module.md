@@ -50,7 +50,7 @@ subcomponents:
 risks:
   - {sev: High, title: "Lighting needs ~60 kW on average, more than one 40 kWe fission unit", fix: "Phase crops by calories per kWh; greens first; grow power in step (M11); stagger photoperiods so peak power stays close to the average."}
   - {sev: High, title: "Disease or a system failure wipes out a module", fix: "Four isolated modules with separate air and water loops; seed bank; 12-month stored food reserve (M10)."}
-  - {sev: High, title: "~60 kW of heat and ~1.2 t a day of transpired water must be removed", fix: "Size condensing heat exchangers and surface radiators for full load; test in a ground chamber at full scale."}
+  - {sev: High, title: "~60 kW of heat and ~1.2 t a day of transpired water must be removed", fix: "Size condensing heat exchangers and surface radiators for full load, because the regolith cover is a near-perfect insulator and passes well under 1% of it (C09.1); test in a ground chamber at full scale."}
   - {sev: Medium, title: "Delivered mass (~17–21 t) is above the M10 estimate", fix: "Consider inflatable shells; deliver in two phases; make racks locally once the fab shop works (C12.1)."}
   - {sev: Medium, title: "Raw lunar soil stunts plants", fix: "Use hydroponics; research treated regolith separately."}
   - {sev: Medium, title: "Effects of 1/6 g on crops over many generations are unknown", fix: "Start with ISS-proven crops; track yields per crop; keep shipped food until yields are proven."}

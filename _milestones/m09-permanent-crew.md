@@ -74,6 +74,7 @@ risks:
   - {sev: Critical, title: "Long stays at 1/6 g have never been measured in people; NASA analysis suggests less deconditioning than in zero g, but bone and muscle effects are unquantified", fix: "Six-month rotations; exercise; measure everyone; don't extend stays until data supports it"}
   - {sev: High, title: "Life support failure far from Earth", fix: "Two independent oxygen sources (electrolysis + regolith O₂ stock); 60+ days of reserves; spares on site"}
   - {sev: High, title: "Resupply landing failure", fix: "Hold 6 months of food and spares on site; two cargo providers"}
+  - {sev: High, title: "Buried habitats cannot shed heat: regolith is a near-perfect insulator (~0.003–0.013 W/m·K), so the cover passes well under 1% of the 20–50 kW load", fix: "Pumped loops to surface radiators sized for full load before burial, with two independent loops (see C09.1)"}
   - {sev: Medium, title: "Psychological strain from isolation", fix: "Crew selection and training from analogs (CHAPEA, HERA); private quarters; regular contact with Earth"}
 ---
 
@@ -117,7 +118,7 @@ That's why this milestone pairs ISS-class recycling with oxygen and water made i
 ## Step-by-step
 
 1. **Deliver two more modules** and link them to the M08 habitat.
-2. **Bury them.** Excavators from M05 cover the modules with ≥2 m of regolith, held in bags or a sintered shell.
+2. **Bury them.** Excavators from M05 cover the modules with ≥2 m of regolith, held in bags or a sintered shell. The cover steadies the temperature but traps heat, so surface radiators and their pumped loops go in first (C09.1).
 3. **Upgrade life support** to the full ISS-class closed loop, fed by M06 oxygen and water.
 4. **Start continuous presence.** Four crew, six-month rotations, two cargo landings a year.
 5. **Measure everything:** dose, bone density, resupply mass per day. Publish the results.

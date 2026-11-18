@@ -20,6 +20,8 @@ links:
   - {title: "Johnson et al., NASA NTRS: Radiation shielding of lunar regolith/polyethylene composites and regolith/water mixtures", url: "https://ntrs.nasa.gov/citations/20110012713", kind: paper, date: "2011"}
   - {title: "DLR: MARE, the Matroshka AstroRad Radiation Experiment on Artemis I", url: "https://www.dlr.de/en/me/research-and-transfer/projects-and-studies/mare", kind: official, date: "accessed Nov 2026"}
   - {title: "ESA: Building a lunar base with 3D printing", url: "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Building_a_lunar_base_with_3D_printing", kind: official, date: "Jan 2013"}
+  - {title: "Langseth et al.: Revised lunar heat-flow values (regolith thermal conductivity, Apollo 15 and 17)", url: "https://www.osti.gov/biblio/5787569", kind: paper, date: "1976"}
+  - {title: "Hayne et al., JGR Planets: Global regolith thermophysical properties of the Moon from Diviner", url: "https://arxiv.org/pdf/1711.00977", kind: paper, date: "2017"}
   - {title: "Lunar regolith, Wikipedia", url: "https://en.wikipedia.org/wiki/Lunar_regolith", kind: wiki, date: "accessed Nov 2026"}
 ---
 
@@ -63,4 +65,5 @@ Designers check a layout with [OLTARIS](https://oltaris.nasa.gov), NASA's web to
 - **No design requirement yet.** NASA has [not released radiation design requirements](https://ntrs.nasa.gov/api/citations/20210009760/downloads/Clowdsley_Lunar_Radiation_Talk_v2.pdf) for lunar surface habitats.
 - **Construction is unproven.** Bagging, piling or printing metres of regolith around a module has only been done as concepts and Earth demos, such as [ESA's printed block](https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Building_a_lunar_base_with_3D_printing). ESA also flagged dust control as needing more study.
 - **Solar storms still need a plan.** NASA suggests a [storm shelter or wearable protection](https://ntrs.nasa.gov/api/citations/20210009760/downloads/Clowdsley_Lunar_Radiation_Talk_v2.pdf) for large solar particle events, and dose outside the berm during surface work is not covered by the burial.
+- **It traps heat.** Regolith conducts heat very poorly: about [0.009–0.013 W/m·K](https://www.osti.gov/biblio/5787569) in bulk from Apollo, and as low as [0.00074 W/m·K](https://arxiv.org/pdf/1711.00977) in the loose surface layer from Diviner. A buried habitat sits in steady surroundings, but its own heat cannot escape through the cover, so it needs pumped loops to radiators on the surface. NASA advises against burying power cables [for the same reason](https://ntrs.nasa.gov/citations/20250000841).
 - **Excavation mass and time.** The tonnes moved and machine hours needed for a full burial are not published for a specific design.
