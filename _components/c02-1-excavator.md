@@ -1,6 +1,6 @@
 ---
-id_code: "C05.1"
-milestone: M05
+id_code: "C02.1"
+milestone: M02
 order: 1
 title: Excavator robot (IPEx / RASSOR class)
 summary: "A small, battery-powered robot that digs regolith with counter-rotating bucket drums, carries it, and dumps it where it is needed. Four of them grade pads and roads, pile berms and feed the oxygen plant."
@@ -96,7 +96,7 @@ IPEx is a 30 kg-class robot. It carries up to 30 kg per dig cycle and targets 10
 | Time with 4 IPEx units (168 kg/h) | ~20,200 h, ~2.3 years nonstop | 3,400,000 ÷ 168 |
 | Time with 4 Open Moon units (800 kg/h) | ~4,250 h, ~6 months nonstop | 3,400,000 ÷ 800 |
 
-So the design target of 200 kg/h per unit (ESTIMATE, about 5× IPEx) is needed. That is why the unit is scaled up to about 300 kg (ESTIMATE). Four units plus docks and spares fit the ~2 t delivery in M05.
+So the design target of 200 kg/h per unit (ESTIMATE, about 5× IPEx) is needed. That is why the unit is scaled up to about 300 kg (ESTIMATE). Four units plus docks and spares fit the ~2 t delivery in M02.
 
 ## Testing and qualification
 

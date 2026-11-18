@@ -49,7 +49,7 @@ subcomponents:
 risks:
   - {sev: Critical, title: "No lander operator has committed to buy lunar oxygen", fix: "Sign agreements and an open coupling standard with lander operators before building the depot"}
   - {sev: High, title: "Cryogenic transfer between separate vehicles is not yet flight-proven; large-scale tests are scheduled from 2027", fix: "Use results from Starship and LOXSAT tests; ground-test the full arm and coupling with LOX in a dusty vacuum chamber"}
-  - {sev: High, title: "Lander plumes blast regolith onto the farm and arm", fix: "Place the farm behind berms at a distance set by M05 pad plume data; stow the arm under a cover during landings"}
+  - {sev: High, title: "Lander plumes blast regolith onto the farm and arm", fix: "Place the farm behind berms at a distance set by M02 pad plume data; stow the arm under a cover during landings"}
   - {sev: High, title: "Dust in couplings causes leaks or stuck connectors", fix: "Dust-tolerant couplings with purge and covers; spare seals; inspect after each use"}
   - {sev: High, title: "LOX leak near organic materials or hot surfaces can start a fire", fix: "Oxygen-clean design; automatic shut-off; no crew at the pad during transfer"}
   - {sev: Medium, title: "Each lander may need a different coupling and flow rate", fix: "Publish one interface standard; adapters for early landers"}

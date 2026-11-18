@@ -793,3 +793,24 @@
   tradeoffs:
     - "Plan cost totals show as not yet estimated until new milestones carry cost items."
     - "Components and roadmap entries still name the deleted milestones (M01–M13) as text until those milestones are rewritten."
+
+- id: DD-027
+  date: "2026-11-18"
+  title: "Phase 0 is three milestones: M00 Site selection, M01 Site prospecting, M02 Site preparation"
+  status: "Adopted"
+  affects: [M00, M01, M02, C01.1, C02.1, C02.2, C02.3, CT.1, CT.2, roadmap, phases, pbs, tech]
+  was: "After DD-026 only M00 existed. Site preparation had been M05 (with components C05.1–C05.3), transport had been M02 (components C02.1–C02.2), and the Phase 0 roadmap also covered transport, communications and the power grid."
+  now: "Phase 0 holds exactly three milestones. M01 Site prospecting (Years 0–2): two scoop-drill-bake prospector rovers (C01.1, DD-025) measure water in PSRs and survey small rocks and ground strength for site preparation. M02 Site preparation (Years 0–5, at the same time): rock clearing (push, pick up and haul, rake), blade grading, fused-regolith surfaces (laser baseline; microwave and concentrated sunlight as alternatives), two hardened pads, ~5 km of roads and ejecta berms. Site-preparation components renumbered C05.x to C02.x; the former transport components became CT.1 and CT.2. The Phase 0 roadmap now covers only these three milestones."
+  why: "The user's decision: site selection, site prospecting and site preparation are the only three things in Phase 0, and prospecting and preparation happen at the same time."
+  timeline:
+    - date: "Oct 2023"
+      what: "ESA describes PAVER, its project to pave lunar roads and pads by melting regolith with light."
+      title: "ESA: How to make roads on the Moon"
+      url: "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/How_to_make_roads_on_the_Moon"
+    - date: "Apr 2026"
+      what: "NASA KSC publishes a site plan with 2.5 m berms, a 1 m crest and an 8 m standoff."
+      title: "Gelino, NASA KSC: Lunar Innovation Park site plan"
+      url: "https://ntrs.nasa.gov/api/citations/20260002816/downloads/329%20-%20Site%20Plan%20and%20Bulk%20Presentation.pdf"
+  tradeoffs:
+    - "Phase 0 no longer contains transport, communications or power. The fusing robots need tens of kilowatts, so their power source is an open question in M02."
+    - "Components and roadmap entries of later phases still name deleted milestones as text."

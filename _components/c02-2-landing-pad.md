@@ -1,6 +1,6 @@
 ---
-id_code: "C05.2"
-milestone: M05
+id_code: "C02.2"
+milestone: M02
 order: 2
 title: Hardened landing pad
 summary: "A prepared, fused-regolith surface with a compacted apron and an ejecta berm, so landers can touch down and lift off without blasting dust and rocks across the base."
@@ -19,10 +19,10 @@ subcomponents:
   - name: Sub-grade preparation
     desc: "Excavators clear rocks, level the site and compact the loose top layer so the fused surface sits on a firm base."
     parts: ["Rock clearing and survey", "Grading to a level surface", "Compaction passes", "Drainage-free cross-slope check by lidar"]
-    tech: "IPEx-class excavators (C05.1); PISCES robotic site grading"
+    tech: "IPEx-class excavators (C02.1); PISCES robotic site grading"
     trl: 4
   - name: Fused surface (sintered or pavers)
-    desc: "The core is fused regolith, either laid in place by the C05.3 robot or as interlocking pavers with grouted joints."
+    desc: "The core is fused regolith, either laid in place by the C02.3 robot or as interlocking pavers with grouted joints."
     parts: ["In-place laser or microwave fused layers", "Interlocking sintered pavers", "Regolith-polymer grout for joints", "Compacted outer apron"]
     tech: "NASA/Masten hot-fire tests of sintered pavers; ICON laser VMX"
     trl: 4
@@ -70,9 +70,9 @@ A rocket plume on bare regolith erodes the surface and throws particles out at h
 
 NASA KSC splits a pad into a central zone for normal landings, an outer perimeter for off-target landings and dust control, and blast barriers<sup class="r">[3](#s3)</sup>. Open Moon follows that layout.
 
-**Sub-grade.** Lunar regolith is loose at the top. Its bulk density is about 1.30 g/cm³ at the surface, rising to 1.92 g/cm³ below 1 m<sup class="r">[10](#s10)</sup>. It also compacts less than simulants on Earth<sup class="r">[8](#s8)</sup>. So C05.1 excavators clear rocks, level the site and compact it before any fusing. In 2015 the PISCES team in Hawaii, working with NASA Swamp Works, used a rover to grade a site and lay 100 basalt pavers<sup class="r">[7](#s7)</sup>.
+**Sub-grade.** Lunar regolith is loose at the top. Its bulk density is about 1.30 g/cm³ at the surface, rising to 1.92 g/cm³ below 1 m<sup class="r">[10](#s10)</sup>. It also compacts less than simulants on Earth<sup class="r">[8](#s8)</sup>. So C02.1 excavators clear rocks, level the site and compact it before any fusing. In 2015 the PISCES team in Hawaii, working with NASA Swamp Works, used a rover to grade a site and lay 100 basalt pavers<sup class="r">[7](#s7)</sup>.
 
-**Fused surface.** NASA and Masten hot-fire tested sintered basalt pavers, carbon fibre blankets and regolith-polymer pavers<sup class="r">[2](#s2)</sup>. They used a 444 N methane-oxygen engine. Erosion was heavy under the most extreme thermal case, but every test article stopped regolith ejecta<sup class="r">[1](#s1)</sup>. One test had nine sintered pavers with polymer grout in the joints<sup class="r">[1](#s1)</sup>. ICON's laser-fused regolith reached about 50,000 psi compressive strength. Its density is 2.7 g/cm³<sup class="r">[9](#s9)</sup>. Open Moon fuses the core with the C05.3 robot. It lays pavers where joints are needed.
+**Fused surface.** NASA and Masten hot-fire tested sintered basalt pavers, carbon fibre blankets and regolith-polymer pavers<sup class="r">[2](#s2)</sup>. They used a 444 N methane-oxygen engine. Erosion was heavy under the most extreme thermal case, but every test article stopped regolith ejecta<sup class="r">[1](#s1)</sup>. One test had nine sintered pavers with polymer grout in the joints<sup class="r">[1](#s1)</sup>. ICON's laser-fused regolith reached about 50,000 psi compressive strength. Its density is 2.7 g/cm³<sup class="r">[9](#s9)</sup>. Open Moon fuses the core with the C02.3 robot. It lays pavers where joints are needed.
 
 **Berm.** A ring of piled regolith around each pad blocks low-angle spray. Road gaps are offset, so no straight path leads from the pad centre to the base.
 
@@ -91,7 +91,7 @@ NASA KSC splits a pad into a central zone for normal landings, an outer perimete
 | Fused mass | ~95 t | ~265 t | × 2.7 t/m³<sup class="r">[9](#s9)</sup> |
 | Polymer for same pad | — | ~35 t | NASA table, 50 m at 50 mm<sup class="r">[1](#s1)</sup> |
 
-NASA's Artemis pad requirement was 200 m across. NASA's landing experts were working to cut it to 100 m<sup class="r">[1](#s1)</sup>. Pad 2's compacted apron reaches 100 m for that reason. A polymer-only pad would need far more than the ~2 t of binder in the M05 budget. So polymer is kept for grout and repairs.
+NASA's Artemis pad requirement was 200 m across. NASA's landing experts were working to cut it to 100 m<sup class="r">[1](#s1)</sup>. Pad 2's compacted apron reaches 100 m for that reason. A polymer-only pad would need far more than the ~2 t of binder in the M02 budget. So polymer is kept for grout and repairs.
 
 ## Testing and qualification
 

@@ -31,7 +31,7 @@ More flights are booked. Mission 2 will go to the far side with ESA's Lunar Path
 
 ## Why Open Moon uses it
 
-Open Moon's transport milestone (M02) splits deliveries by size. Blue Ghost is one of three commercial landers in the "small cargo, under 1 t" class, beside Astrobotic Griffin and Intuitive Machines Nova-C. It is the only one so far with a fully successful landing that stayed upright and worked through a whole lunar day ([Firefly](https://fireflyspace.com/news/firefly-aerospace-successfully-completes-14-days-of-surface-operations-on-the-moon)). That makes it the most proven way to land instruments, small rovers and test hardware early in Phase 1.
+Open Moon's transport plan splits deliveries by size. Blue Ghost is one of three commercial landers in the "small cargo, under 1 t" class, beside Astrobotic Griffin and Intuitive Machines Nova-C. It is the only one so far with a fully successful landing that stayed upright and worked through a whole lunar day ([Firefly](https://fireflyspace.com/news/firefly-aerospace-successfully-completes-14-days-of-surface-operations-on-the-moon)). That makes it the most proven way to land instruments, small rovers and test hardware early in Phase 1.
 
 The prospecting milestone (M01) also leans on commercial landers to deliver its instruments, and the comms milestone (M03) depends on Lunar Pathfinder, which flies on Blue Ghost Mission 2 ([ESA](https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Firefly_to_take_Lunar_Pathfinder_to_the_Moon)). Without Blue Ghost, Open Moon would rely on landers that have either tipped over or not yet flown, and small payloads would wait longer for a ride.
 

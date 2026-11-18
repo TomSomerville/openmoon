@@ -18,7 +18,7 @@ spec:
   - {k: "Power interface", v: "Own service connection to the M04 grid (UMIC-class step-down to 120 V DC, meter, main breaker) and its own 120 V DC panel; can be isolated without affecting other units (plan design, DD-009); within 3 km of cable run of the PMC as standard, or up to 10 km on an extended run at ~10–15% loss (DD-013, DD-014)"}
 subcomponents:
   - name: "Feedstock handling and beneficiation"
-    desc: "Takes regolith from the M05 stockpile, sieves it, and feeds a measured batch into each reactor."
+    desc: "Takes regolith from the M02 stockpile, sieves it, and feeds a measured batch into each reactor."
     parts: ["Hopper and loader interface", "Vibrating sieve (rejects rocks)", "Magnetic or size separator (optional)", "Mass-metering feeder", "Dust-sealed feed valve"]
     tech: "Sierra Space automated regolith feed in TVAC (2024)"
     trl: 5
@@ -79,7 +79,7 @@ Lunar rock and soil is about 41–45% oxygen by mass<sup class="r">[5](#s5)</sup
 
 ## How it works
 
-**Feedstock.** Sieved regolith from the M05 stockpile is metered into the reactor. Sierra Space's carbothermal reactor has already shown automated regolith feed, processing and removal of spent material in a dusty thermal-vacuum chamber at NASA JSC<sup class="r">[2](#s2)</sup>.
+**Feedstock.** Sieved regolith from the M02 stockpile is metered into the reactor. Sierra Space's carbothermal reactor has already shown automated regolith feed, processing and removal of spent material in a dusty thermal-vacuum chamber at NASA JSC<sup class="r">[2](#s2)</sup>.
 
 **Reactor and electrodes.** In NASA and Lunar Resources' 2024 ground test, heaters brought 25 kg of simulant to about 1,300 °C. Electrolysis then started at 45 V. The current itself kept the melt hot (Joule heating), pushing it beyond 1,700 °C. The run lasted 9 hours at 45 V and 210 A, and made oxygen at an average of 0.07 kg/h. That is 2.3% of the melt by weight<sup class="r">[1](#s1)</sup>. Peak power draw was about 9 kW<sup class="r">[1](#s1)</sup>. Blue Origin's Blue Alchemist, also a molten regolith process, passed its critical design review in September 2025<sup class="r">[3](#s3)</sup>.
 

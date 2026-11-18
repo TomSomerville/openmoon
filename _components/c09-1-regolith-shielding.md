@@ -25,7 +25,7 @@ subcomponents:
     trl: 3
   - name: Regolith overburden
     desc: "Loose regolith is dug, carried and piled over the arch, then lightly compacted in layers."
-    parts: ["Excavator fleet (C05.1)", "Layer compaction roller", "Depth survey markers", "Slope profile surveys (lidar)"]
+    parts: ["Excavator fleet (C02.1)", "Layer compaction roller", "Depth survey markers", "Slope profile surveys (lidar)"]
     tech: "IPEx / RASSOR excavation; Lunar Safe Haven bulk overburden"
     trl: 4
   - name: End walls and entrances

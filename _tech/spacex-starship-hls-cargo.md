@@ -31,7 +31,7 @@ Flight testing is moving fast. [Flight 14 (28 September 2026) reached orbit](htt
 
 ## Why Open Moon uses it
 
-Open Moon needs one heavy lander for its largest items: habitats, the fission reactor and large ISRU plants. Starship cargo is one of two candidates for the "heavy cargo" class in milestone M02 (transport). The habitat in M08 and later propellant work in M11 depend on that class. NASA already intends to give SpaceX the job of [landing JAXA's pressurized rover no earlier than FY2032](https://ntrs.nasa.gov/api/citations/20260009199/downloads/HLS%20IAC%202026%20Presentation%20FINAL.pdf). That makes Starship one of the first landers likely to carry a large payload to the Moon.
+Open Moon needs one heavy lander for its largest items: habitats, the fission reactor and large ISRU plants. Starship cargo is one of two candidates for the "heavy cargo" class in Open Moon's transport plan. The habitat in M08 and later propellant work in M11 depend on that class. NASA already intends to give SpaceX the job of [landing JAXA's pressurized rover no earlier than FY2032](https://ntrs.nasa.gov/api/citations/20260009199/downloads/HLS%20IAC%202026%20Presentation%20FINAL.pdf). That makes Starship one of the first landers likely to carry a large payload to the Moon.
 
 It is also a possible crew ride. Starship HLS has an [elevator that moves crew and cargo between the cabin and the surface](https://www.nasa.gov/reference/human-landing-systems/).
 

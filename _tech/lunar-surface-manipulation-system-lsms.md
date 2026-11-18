@@ -33,7 +33,7 @@ Two lab prototypes exist at Langley: the LSMS-L1000 (1,000 kg) and the small LSM
 
 ## Why Open Moon uses it
 
-Milestone M02 (Transport) must deliver cargo to the surface, not just to a lander deck. Its exit criteria include an offloading crane tested on the Moon. Tall landers put cargo several metres above the ground. NASA's own study found that cargo height and whether cargo can move itself matter most when choosing how to offload ([Gill et al. 2022](https://ntrs.nasa.gov/citations/20220005086)). In 2023, CLPS missions had no general offloading capability: payloads other than rovers stayed on the lander ([NASA 2023](https://ntrs.nasa.gov/citations/20230004222)).
+Open Moon's transport plan must deliver cargo to the surface, not just to a lander deck. It calls for an offloading crane tested on the Moon. Tall landers put cargo several metres above the ground. NASA's own study found that cargo height and whether cargo can move itself matter most when choosing how to offload ([Gill et al. 2022](https://ntrs.nasa.gov/citations/20220005086)). In 2023, CLPS missions had no general offloading capability: payloads other than rovers stayed on the lander ([NASA 2023](https://ntrs.nasa.gov/citations/20230004222)).
 
 LSMS fills that gap with one reusable machine. A davit or ramp is built for one payload. An LSMS can unload many payloads and, with self-offloading, serve many landers ([Seubert et al. 2026](https://ntrs.nasa.gov/citations/20250011487)). NASA has sized one for a 7-tonne, 40 kWe fission reactor, with members of about 146 kg, or 2% of the payload mass ([Seubert et al. 2026](https://ntrs.nasa.gov/citations/20250011487)). Without such a crane, every later milestone would need its own custom offloading hardware, adding mass to every delivery.
 

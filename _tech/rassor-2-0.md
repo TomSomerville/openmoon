@@ -31,7 +31,7 @@ RASSOR 2.0 is a ground prototype. Its designers rated it [TRL 4](https://ntrs.na
 
 ## Why Open Moon uses it
 
-Open Moon lists RASSOR 2.0 for light excavation in **M05 (site preparation)**: grading pads and roads, digging trenches and piling up berms that shield equipment from landing blast. It sits beside NASA's IPEx in the plan. RASSOR 2.0 is the larger, heavier, older design; IPEx is its [30 kg-class successor](https://ntrs.nasa.gov/api/citations/20210025846/downloads/ASCE%20E%26S%202022-%20ISRU%20Pilot%20Excavator%20BD%20scaling.pdf) built on the same drums.
+Open Moon lists RASSOR 2.0 for light excavation in **M02 (site preparation)**: grading pads and roads, digging trenches and piling up berms that shield equipment from landing blast. It sits beside NASA's IPEx in the plan. RASSOR 2.0 is the larger, heavier, older design; IPEx is its [30 kg-class successor](https://ntrs.nasa.gov/api/citations/20210025846/downloads/ASCE%20E%26S%202022-%20ISRU%20Pilot%20Excavator%20BD%20scaling.pdf) built on the same drums.
 
 NASA's original mission concept was to send RASSOR to the Moon for five years to [feed regolith to an oxygen plant](https://ntrs.nasa.gov/api/citations/20150022134/downloads/20150022134.pdf). The fact sheet describes 35 trips with 20 kg loads every 24 hours, and says four units together could support 10 t of oxygen a year. That same job, delivering feedstock, matters for later Open Moon oxygen production.
 

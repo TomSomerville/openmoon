@@ -1,14 +1,14 @@
 ---
-id_code: "C05.3"
-milestone: M05
+id_code: "C02.3"
+milestone: M02
 order: 3
 title: Regolith sintering and construction robot
 summary: "A mobile robot that spreads thin layers of regolith and fuses them with a laser or microwave beam, building pad surfaces, road sections and berm crests from local material."
 trl: 4
 spec:
   - {k: "Heritage", v: "ICON Project Olympus (laser VMX); NASA MMPACT microwave sintering"}
-  - {k: "Quantity", v: "2 units (M05 plan)"}
-  - {k: "Mass per unit", v: "~1.5 t (ESTIMATE; M05 budgets ~3 t for two; NASA studied a 2 t microwave paver vehicle)"}
+  - {k: "Quantity", v: "2 units (M02 plan)"}
+  - {k: "Mass per unit", v: "~1.5 t (ESTIMATE; M02 budgets ~3 t for two; NASA studied a 2 t microwave paver vehicle)"}
   - {k: "Beam power", v: "30 kW per unit (design choice, ESTIMATE)"}
   - {k: "Fusing rate", v: "~72 kg/h per unit (ESTIMATE, see Sizing)"}
   - {k: "Layer", v: "Thin layers built up to 50 mm surfaces (design choice)"}
@@ -28,7 +28,7 @@ subcomponents:
     trl: 4
   - name: Feed system
     desc: "Scoops, filters and tamps regolith into a flat, even layer before fusing."
-    parts: ["Scoop and hopper", "Sieve to remove large grains and rocks", "Spreader blade", "Tamp or roller", "Interface to excavator dumps (C05.1)"]
+    parts: ["Scoop and hopper", "Sieve to remove large grains and rocks", "Spreader blade", "Tamp or roller", "Interface to excavator dumps (C02.1)"]
     tech: "ICON scoop/tamp/filter system, designed with NASA KSC"
     trl: 4
   - name: Sensors
@@ -59,7 +59,7 @@ sources:
 
 ## What it does
 
-The construction robot turns loose regolith into a hard, ceramic-like surface. It builds the fused cores of the C05.2 landing pads, busy road sections and the crests of berms. It uses only local regolith, so Open Moon does not have to ship binder from Earth.
+The construction robot turns loose regolith into a hard, ceramic-like surface. It builds the fused cores of the C02.2 landing pads, busy road sections and the crests of berms. It uses only local regolith, so Open Moon does not have to ship binder from Earth.
 
 ## How it works
 
@@ -67,7 +67,7 @@ The construction robot turns loose regolith into a hard, ceramic-like surface. I
 
 **Arm.** ICON's process uses a 6-DOF robot arm with a multi-tool end effector. ICON reported the arm working in thermal vacuum at subsystem scale. A full-scale test at NASA Marshall was planned for early 2024<sup class="r">[2](#s2)</sup>. Open Moon mounts the arm on a wheeled base.
 
-**Feed.** ICON's scoop, tamp and filter system was designed with NASA KSC<sup class="r">[2](#s2)</sup>. C05.1 excavators dump regolith next to the robot. The robot sieves it, spreads it and tamps it flat.
+**Feed.** ICON's scoop, tamp and filter system was designed with NASA KSC<sup class="r">[2](#s2)</sup>. C02.1 excavators dump regolith next to the robot. The robot sieves it, spreads it and tamps it flat.
 
 **Sensors.** MMPACT lists the sensors still to be adapted: terrain mapping, applicator positioning, temperature measurement by radiometer or thermography, and off-gas mass spectrometry<sup class="r">[4](#s4)</sup>.
 
@@ -83,8 +83,8 @@ The energy needed per kilogram of fused regolith is not published for VMX or MMP
 | Energy to fuse 1 kg | 1.5 MJ | ASSUMPTION, unsourced |
 | Rate per unit | 72 kg/h | 30 kW × 3,600 s ÷ 1.5 MJ |
 | Rate, 2 units | 144 kg/h | 2 × 72 |
-| Pad 1 core (~95 t, C05.2) | ~660 h, ~28 days nonstop | 95,000 ÷ 144 |
-| Pad 2 core (~265 t, C05.2) | ~1,840 h, ~77 days nonstop | 265,000 ÷ 144 |
+| Pad 1 core (~95 t, C02.2) | ~660 h, ~28 days nonstop | 95,000 ÷ 144 |
+| Pad 2 core (~265 t, C02.2) | ~1,840 h, ~77 days nonstop | 265,000 ÷ 144 |
 | Grid draw, 2 units | ~70 kW | 60 kW beam + ~10 kW other loads (ESTIMATE) |
 
 At 50% uptime, pad 1 takes about 2 months and pad 2 about 5 months. That is a large share of the early grid. So fusing should be scheduled when the ISRU plant is not running at full power.

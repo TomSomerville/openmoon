@@ -3,50 +3,40 @@
   phase: 0
   end: 2
   span: "Years 0–2"
-  label: ["Landers", "Launch"]
-  headline: "Landers launch to scout and prepare the chosen site"
-  summary: "The site is already chosen from orbital data (M00). Year 0 is the first flights: rides are booked, two prospector rovers land to drill for ice, and the first permanent hardware arrives to start site preparation: a 10 kW solar tower, a cable-laying rover, a communications kit and excavators grading the first landing pad."
+  label: ["Prospecting", "Begins"]
+  headline: "Prospector rovers measure the water while robots start clearing the site"
+  summary: "The site is already chosen from orbital data (M00). Two prospector rovers land to scoop, drill and bake icy soil and measure the water it gives up (M01). At the same time the first excavators land and start clearing rocks and grading the first pad site (M02)."
   crew: 0
-  power_kw: 10
+  power_kw: 0
   details:
     - {title: "Site selection complete", text: "Done before Year 0, from orbital data alone: primary base on the north rim of de Gerlache (88.4365°S, 62.46°W, design change DD-023), backup on the Connecting ridge by Shackleton (89.559°S, 163.66°W) (design change DD-015).", refs: [M00]}
-    - {title: "Transport contracts", text: "Rides reserved on small commercial landers, Blue Moon Mark 1 for about 3 t, and heavy cargo landers for about 15 t, with two providers per critical payload. The Open Moon payload interface standard is published.", refs: [M02, C02.1, firefly-blue-ghost-lander, blue-origin-blue-moon-mark-1]}
-    - {title: "Relay service agreements", text: "Service is contracted from two lunar relay networks that follow the shared LunaNet standard.", refs: [M03, nasa-commercial-lunar-relay-intuitive-machines, esa-moonlight]}
     - {title: "Prospector rovers built and launched", text: "Two small rovers carry a neutron spectrometer, a scoop arm and a 1 m drill that feed a sealed bake chamber, and a mass spectrometer. The chamber heats scooped soil and drill cuttings to measure how much water actually comes out.", refs: [M01, C01.1, resource-prospector-nasa, trident-drill-honeybee-robotics, msolo-mass-spectrometer]}
-    - {title: "Two prospector landings", text: "Each rover parks in sunlight to recharge and makes short trips into the cold, dark crater, kept alive by radioisotope heaters.", refs: [M01, C01.1, radioisotope-heater-units]}
-    - {title: "Drilling and baking a grid of samples", text: "Several holes per crater, down to 1 m, each 10 cm bite baked for its water, plus scooped surface samples, because orbital data shows ice is patchy.", refs: [M01, trident-drill-honeybee-robotics]}
-    - {title: "Lunar terrain vehicles", text: "NASA's two LTVs (Astrolab CLV-1 and Lunar Outpost Pegasus) are scheduled by NASA for delivery to the south pole region; Open Moon leases their services.", refs: [M07, astrolab-clv-1-ltv, lunar-outpost-pegasus-ltv]}
-    - {title: "Environment logging begins", text: "Radiation, dust and seismic sensors start recording what crews will later live with.", refs: [M01]}
-    - {title: "Go / no-go on the site", text: "Ice is measured by drilling in at least two craters and the data is published. If the ice wasn't there, this is where the plan would switch to the backup site.", refs: [M01]}
-    - {title: "First solar tower", text: "A 10 kW vertical solar array on a 10 m mast is raised on a sunlit ridge point.", refs: [M04, C04.2, vertical-solar-array-technology-vsat]}
-    - {title: "First cable and comms", text: "A cable-laying rover starts the grid, and an LTE base station brings a surface network.", refs: [M04, C04.4, M03, C03.1, astrobotic-lunagrid-lite, nokia-lunar-4g-lte-network]}
-    - {title: "Excavators at work", text: "Excavator robots grade and compact the first pad site and the roads to the power towers.", refs: [M05, C05.1, nasa-isru-pilot-excavator-ipex]}
+    - {title: "Two prospector landings", text: "Each rover lands on a different lander, parks in sunlight to recharge and makes short trips into the cold, dark crater, kept alive by radioisotope heaters.", refs: [M01, C01.1, radioisotope-heater-units]}
+    - {title: "Scooping, drilling and baking a grid of samples", text: "Several points per crater: a scooped surface batch, then drill bites to 1 m, each baked for its water, because orbital data shows ice is patchy.", refs: [M01, trident-drill-honeybee-robotics]}
+    - {title: "Ground truth for the builders", text: "The prospectors count the small rocks that orbital images cannot see and measure ground strength along the planned pad and road routes.", refs: [M01, M02]}
+    - {title: "Excavators at work", text: "Excavator robots with blades clear small rocks, haul larger ones away, and grade and compact the first pad site.", refs: [M02, C02.1, nasa-isru-pilot-excavator-ipex]}
+    - {title: "Go / no-go on the site", text: "Water is measured in at least two craters and the data is published. If the water isn't there, this is where the plan would switch to the backup site.", refs: [M01]}
 - year: 4
   phase: 0
   end: 4
-  label: ["Outpost", "Connected"]
-  headline: "Always-on links, a hardened landing pad and 120 kW of solar power"
-  summary: "Since the first tower, the outpost has grown into a connected site. Two relay networks keep it in touch with Earth at least 95% of the time, landers touch down on a sintered pad instead of bare dust, and four solar towers now stand on separate ridge points."
+  label: ["First Pad", "Fused"]
+  headline: "A fused landing pad stops landers sandblasting the site"
+  summary: "Rocks are cleared and the first pad site is graded. A fusing robot melts the pad's surface into a hard layer, and an ejecta berm is piled around it. Small landers test it before heavier ones are allowed."
   crew: 0
-  power_kw: 120
+  power_kw: 0
   details:
-    - {title: "Communications complete", text: "Relay service from two networks, a backup relay, rim masts covering the crater worksites and an optical link for bulk data.", refs: [M03, C03.1, C03.2, optical-laser-communications, lunanet-interoperability-specification-v5]}
-    - {title: "Transport complete", text: "Contracts with two providers in every cargo class, and an offloading crane working on the surface.", refs: [M02, C02.2, lunar-surface-manipulation-system-lsms]}
-    - {title: "Solar towers", text: "NASA-class 10 kW VSAT towers, the number set by the Phase 1 load budget, spread so at least one is almost always lit (design change DD-004).", refs: [M04, C04.2, vertical-solar-array-technology-vsat]}
-    - {title: "First hardened pad", text: "A sintered landing pad with an ejecta berm, tested with small landers, so landings stop sandblasting the site.", refs: [M05, C05.2, C05.3, icon-project-olympus, sintered-basalt-pavers-regolith-polymer-pads]}
+    - {title: "First hardened pad", text: "A fused-regolith landing pad with an ejecta berm, tested with small landers, so landings stop sandblasting the site.", refs: [M02, C02.2, C02.3, icon-project-olympus, sintered-basalt-pavers-regolith-polymer-pads]}
+    - {title: "First roads", text: "Graded and compacted roads from the pad to the base site, fused on the busiest sections.", refs: [M02, C02.1]}
 - year: 5
   phase: 0
   end: 5
-  label: ["Power Grid", "Complete"]
-  headline: "A fission reactor comes online and the grid can ride out any darkness"
-  summary: "The base now has power day and night. A 20 kWe LR-1-class fission reactor sits about 1 km away behind terrain. It and the solar towers feed the base power management controller (PMC), which routes power to the grid or into storage. Fuel-cell storage covers the gaps, and pads, roads and berms are finished. This completes Phase 0, site selection and preparation (design change DD-005)."
+  label: ["Site", "Prepared"]
+  headline: "The site is cleared, graded and paved, ready for the base"
+  summary: "Phase 0 ends with the site confirmed by prospecting and prepared for building: two hardened pads, about 5 km of graded roads and ejecta berms around the pads."
   crew: 0
-  power_kw: 140
+  power_kw: 0
   details:
-    - {title: "Fission power", text: "A 20 kWe LR-1-class reactor is landed on a heavy cargo lander, driven out and started remotely. It runs continuously regardless of sunlight and feeds the PMC, which sends its power to the grid or into storage (design changes DD-002, DD-003 and DD-008).", refs: [M04, C04.1, kilopower-krusty-fission-test, us-lunar-reactor-1-sparc]}
-    - {title: "3 kV AC grid", text: "Three-phase 3 kV, 1 kHz links following NASA's grid baseline (design change DD-001). Every tower and the reactor make their own 3 kV AC on the spot and sit within 3 km of cable run of the PMC as standard, or up to 10 km on an extended run at about 10–15% loss (design changes DD-013 and DD-014). Like a national grid, it feeds every habitat module and facility through its own service connection, which delivers 120 V DC to that unit's panel (design change DD-009).", refs: [M04, C04.4, lunar-ac-power-transmission]}
-    - {title: "Energy storage", text: "A Li-ion battery bank and regenerative fuel cells behind the PMC; the fuel cells share tanks with the water plant.", refs: [M04, C04.3, regenerative-fuel-cells]}
-    - {title: "Site preparation complete", text: "Two hardened pads, about 5 km of graded roads, ejecta berms and a shielding berm at the reactor.", refs: [M05, C05.1, C05.2, rassor-2-0]}
+    - {title: "Site preparation complete", text: "Two hardened pads, about 5 km of graded roads and ejecta berms around each pad.", refs: [M02, C02.1, C02.2, rassor-2-0]}
 - year: 6
   phase: 1
   end: 6
