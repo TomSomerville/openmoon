@@ -3,8 +3,8 @@ from read import *
 from PIL import Image, ImageDraw, ImageFont
 FB='/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf'
 def cmap(s):
-    # 0 green -> 15 yellow -> 30 orange -> 60+ red (linear between stops)
-    stops=np.array([0,15,30,60.]); cols=np.array([[0,170,0],[255,230,0],[255,140,0],[220,0,0]],float)
+    # 0 green -> 10 yellow -> 25 orange -> 60+ red (linear between stops)
+    stops=np.array([0,10,25,60.]); cols=np.array([[0,170,0],[255,230,0],[255,140,0],[220,0,0]],float)
     s=np.clip(s,0,60); out=np.zeros(s.shape+(3,))
     for c in range(3): out[...,c]=np.interp(s,stops,cols[:,c])
     return out
@@ -46,7 +46,7 @@ def make(name,bounds,res,out,alpha=0.6,threshold_mode=False,annot=(),title=''):
     else:
         g=cmap(np.linspace(0,60,lw)); 
         for i in range(lw): d.line([(lx+i,ly),(lx+i,ly+lh)],fill=tuple(int(c) for c in g[i]))
-        for v in (0,15,30,45,60):
+        for v in (0,10,25,45,60):
             xx=lx+lw*v/60; d.line([(xx,ly+lh),(xx,ly+lh+5*k)],fill='white',width=2); d.text((xx,ly+lh+6*k),f'{v}°'+('+' if v==60 else ''),font=Fs,fill='white',anchor='mt')
         xx=lx+lw*15/60; d.line([(xx,ly-3*k),(xx,ly+lh)],fill='white',width=max(2,int(3*k)))
         d.text((lx,ly-6*k),'Slope (°)  — white tick: 15° landing limit',font=Fs,fill='white',anchor='ld')

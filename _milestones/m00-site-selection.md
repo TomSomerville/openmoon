@@ -117,7 +117,7 @@ Connecting Ridge and Connecting Ridge Extension were on NASA's original 2022 lis
 
 ## Terrain slope in the focus area
 
-Open Moon treats **slopes of 15° or less as suitable for landing**. Slope comes from NASA Goddard's LOLA slope map (LDSM) at 10 m per pixel<sup class="r">[18](#s18)</sup>. Colours run from green at 0° through yellow at 15° (the landing limit) and orange at 30° to red at 60° and steeper, laid over NASA's LOLA hillshade. The boxes are placed using the alignment of the NASA map above, so their edges are approximate.
+Open Moon treats **slopes of 15° or less as suitable for landing**. Slope comes from NASA Goddard's LOLA slope map (LDSM) at 10 m per pixel<sup class="r">[18](#s18)</sup>. Colours run from green at 0° through yellow at 10° and orange at 25° to red at 60° and steeper; the 15° landing limit falls between yellow and orange and is marked on the legend, laid over NASA's LOLA hillshade. The boxes are placed using the alignment of the NASA map above, so their edges are approximate.
 
 | Area | Share at ≤15° | Median slope | 95th percentile | Steepest | Map resolution |
 |---|---|---|---|---|---|
