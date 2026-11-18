@@ -409,7 +409,7 @@
 - id: DD-013
   date: "2026-11-18"
   title: "Power transmission: every source within 3 km of cable run of the PMC, and each source converts to 3 kV AC on the spot"
-  status: "Adopted; LR-1 output frequency match is an open item"
+  status: "Run length superseded by DD-014 (10 km); source-end conversion to 3 kV AC still adopted; LR-1 output frequency match is an open item"
   affects: [M00, M04, M06, C04.1, C04.2, C04.3, C04.4, C06.1, C06.2, C07.1, kilopower-krusty-fission-test, us-lunar-reactor-1-sparc, vertical-solar-array-technology-vsat, lunar-ac-power-transmission, astrobotic-lunagrid-lite, roadmap, pbs]
   was: "Links were described as '1–3 km' (NASA's Artemis scale), but no maximum was set. The reactor sat 1–3 km from the habitat zone, the solar towers stood on two or three ridge points at any distance, and the ISRU plants could be 3–5 km away (NASA's estimate). How each source reached 3 kV AC was only sketched: 'step-up transformers at each source' and, for the towers, a 'line interface converter (UMIC class)'. The reactor's output frequency was not set."
   now: "1) Maximum power run: 3 km. Every generation source (VSAT towers, the LR-1-class reactor, KRUSTY-class units) must sit within 3 km of cable run of the PMC. Runs of 10–30 km are rejected for now. 2) Every source converts to 3 kV AC, 3-phase, 1 kHz (the DD-001 grid standard) right at the source. A low-voltage, UMIC-class inverter (parallel 1 kW modules converting 120 V DC to under 100 V AC) feeds a 1 kHz step-up transformer next to the source. Only low-voltage switches are used; the transformer does the step-up and has no switches. There are no high-voltage DC lines. 3) Chains: VSAT: native DC (voltage not published) → array regulator and shunt (curtailment and disconnect, DD-008) → UMIC-class inverter → 1 kHz transformer → 3 kV AC. KRUSTY-class: 8 Stirling linear alternators (single-phase AC, about 12 V RMS, ~100 Hz, 7–10 A each, for the engine family) → one controller per engine rectifies to DC and holds a set voltage → controller outputs paralleled onto one DC bus (the unit's native output; voltage not published) → UMIC-class inverter → 1 kHz transformer → 3 kV AC. The 12 V never leaves the machine. LR-1: native 3 kV RMS AC (SPARC requirement). The plan's interface requirement is 3 kV, 3-phase, 1 kHz at the reactor's output; whether that is specified to the vendor or met with a frequency converter at the reactor end is OPEN. 4) Cable: 3 kV AC, 3-phase, aluminium conductors with vacuum-rated insulation, laid on the surface; planning mass 325 kg per 1 km main cable and spool (NASA 2025)."
@@ -485,3 +485,31 @@
     - "Every source carries its own inverter and transformer. That adds mass and boxes at each tower and each reactor; the mass sits inside M04's existing converter and grid hardware items until the load budget sizes it (open). No cost line changes."
     - "1 kHz is kept because 3 km is within NASA's design scale. Longer runs would need higher voltage or a lower frequency, which is why they are rejected for now."
     - "LR-1's alternator frequency is not set by NASA, and NASA's 2025 Brayton reference ran at 2 kHz. A 1 kHz output must be specified to the vendor or added as a frequency converter at the reactor end (open)."
+
+- id: DD-014
+  date: "2026-11-18"
+  title: "Power runs up to 10 km from the base (sources up to 20 km apart), accepting 10–15% transmission loss"
+  status: "Adopted; cable size, frequency and cable mass for 10 km runs are open items"
+  affects: [M00, M04, M06, C04.1, C04.2, C04.3, C04.4, C06.1, C06.2, C07.1, kilopower-krusty-fission-test, us-lunar-reactor-1-sparc, vertical-solar-array-technology-vsat, lunar-ac-power-transmission, astrobotic-lunagrid-lite, roadmap, pbs]
+  was: "DD-013 capped every power run at 3 km of cable from the source to the PMC. Runs of 10–30 km were rejected."
+  now: "Every generation source (VSAT towers and reactors) and every ISRU plant may sit up to 10 km of cable run from the base PMC, so two sources can be up to 20 km apart. The plan accepts 10–15% transmission loss on the longest runs. Each source still converts to 3 kV, 3-phase, 1 kHz AC at the source (DD-013 conversion rule unchanged)."
+  why: "The user's decision. The sunlight analysis on M00 shows that spots close together share the same shadows: on the de Gerlache rim near site 5, VSATs within 3 km of the base reach about 84.5% combined sunlight with a longest blackout of about 6 days. Pairing site 5 with the crater's east rim, about 20 km away, raises this to about 87.5–89% and cuts the longest blackout to about 4 days (Open Moon ESTIMATE). Up to 10 km of cable from a PMC placed between them allows that pairing. The 10–15% loss is the price accepted for it."
+  timeline:
+    - date: "Apr 2022"
+      what: "NASA Glenn gives the Artemis working scale as 1–3 km links at elevated voltage (2 kV+), and expects ISRU to need power over 3–5 km."
+      title: "Csank & Scott, Power and Energy for the Lunar Surface"
+      url: "https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf"
+    - date: "Aug 2022"
+      what: "NASA's grid study, for 100 kW on 8 AWG cable at 1 kHz, gives 3 kV as usable to about 600 m, 6 kV to 2.5 km and 18 kV for 20 km, and warns that long distances beyond Artemis may require a lower frequency."
+      title: "Thomas, Granger, Csank & Gardner, Establishing a Lunar Surface Power Grid"
+      url: "https://ntrs.nasa.gov/api/citations/20220011587/downloads/APS4DS_Establishing_Lunar_Grid_V3.pdf"
+    - date: "2025"
+      what: "NASA/DOE's reactor reference design lists 325 kg for a 1 km main cable and spool on its 3 kVac link."
+      title: "Mason et al., Key Design Trades for a Near-term Lunar Fission Surface Power System (NETS 2025)"
+      url: "https://ntrs.nasa.gov/citations/20250000841"
+  tradeoffs:
+    - "Loss: at 3 kV, one 10 kW VSAT draws 1.92 A per phase. Over 10 km, 10% loss needs about 2.9 mm² of aluminium per conductor and 15% about 2.0 mm² (this plan's arithmetic, C04.4 method: aluminium 26.5 nΩ·m, unity power factor). A 20 kWe reactor over 10 km needs about 5.9 mm² for 10%."
+    - "Voltage and frequency: NASA's grid study puts 3 kV at 1 kHz well short of 10 km for 100 kW, and says long distances may need a lower frequency. Keeping 3 kV, 1 kHz for 10 km runs at 10–20 kW per line must be checked for voltage drop, charging current and stability (open)."
+    - "Cable mass: at NASA's 325 kg per km planning figure, a 10 km run is about 3.3 t of cable and spool, against about 1 t for 3 km. This is not yet in M04's mass or cost lines (open)."
+    - "More cable to lay and inspect: the cable rover and utility robots cover runs up to 10 km."
+

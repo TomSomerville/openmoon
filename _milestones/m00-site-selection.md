@@ -19,7 +19,7 @@ cost_items:
   - {item: "Legal, international coordination", low: 0.005, high: 0.02, basis: "ESTIMATE"}
 exit_criteria:
   - "Primary and backup sites chosen, each with a sunlit ridge for solar power within cable distance of a permanently shadowed region (PSR) that may hold ice."
-  - "Base and PMC point chosen within 3 km of cable run of every planned generation site (each VSAT ridge point and the reactor) and of the ISRU plants, with the combined illumination of the ridge points inside that reach reported (DD-013)."
+  - "Base and PMC point chosen within 10 km of cable run of every planned generation site (each VSAT point and the reactor) and of the ISRU plants, with the combined illumination of the VSAT points inside that reach reported (DD-014)."
   - "Illumination modelled for at least an 18.6-year cycle at mast heights of 0, 10 and 20 m, from LOLA terrain data."
   - "Hazard maps (slopes, boulders, craters, young fault scarps) at the best available LROC NAC resolution for every planned landing, pad and building location."
   - "Every landing point on ground of 8° or less (NASA's crewed-lander tilt limit), checked against the lander's own published slope limit (10° for the landers that publish one; see the Lander candidates page)."
@@ -32,7 +32,7 @@ workstreams:
     items: ["LRO LOLA terrain and LROC imagery", "LRO Diviner temperatures", "ShadowCam images inside PSRs", "Chandrayaan-2 DFSAR radar"]
   - name: Illumination and thermal
     desc: Model sunlight and temperature hour by hour across years.
-    items: ["Ray-traced horizon models", "Longest-night statistics per point", "Mast-height trade study", "Best combined light from ridge points within 3 km of cable run of each candidate base point (DD-013)"]
+    items: ["Ray-traced horizon models", "Longest-night statistics per point", "Mast-height trade study", "Best combined light from VSAT points within 10 km of cable run of each candidate base point (DD-014; done for the de Gerlache rim, Nov 2026)"]
   - name: Hazards
     desc: Map everything that can tip a lander or a building.
     items: ["Slope classes from LOLA LDSM: ≤8°, 8–15°, 15–20°, ≥20° (done for the focus area, Nov 2026)", "Lander slope limits for ten landers (done, Nov 2026)", "Boulder counts", "Young fault scarps and landslide-prone slopes"]
@@ -91,7 +91,7 @@ risks:
   - {sev: High, title: "Other programmes want the same few sunlit ridges (NASA Moon Base, China's Chang'e-7 near Shackleton)", fix: "Choose a primary and backup site; publish plans early and coordinate under Artemis Accords deconfliction; design for shared infrastructure"}
   - {sev: High, title: "Young fault scarps and landslide-prone slopes near some candidate regions (e.g. de Gerlache Rim 2)", fix: "Map scarps from LROC NAC; keep pads, reactors and habitats off and away from young faults"}
   - {sev: Medium, title: "Even at the best base site studied by JPL, Earth is in direct view only about half the time", fix: "Treat relay satellites as mandatory (M03); pick sites with long Earth-visibility windows for the first lander"}
-  - {sev: High, title: "All power generation must sit within 3 km of cable run of the base PMC (DD-013), but the best published pair of Shackleton-ridge points (~94% combined light) is about 8 km apart, and NASA expects ISRU to need power over 3–5 km", fix: "Rank candidate base points by the combined light of ridge points within a 3 km cable reach; report the illumination lost against the 8 km pair; place ISRU plants within 3 km; plan PSR work further out on the mobile power cart (PW.5) or a local source"}
+  - {sev: Medium, title: "Power runs of up to 10 km (DD-014) lose 10–15% of their power and need about 3.3 t of cable each; even the best de Gerlache layout leaves about 11% of the time with every VSAT dark", fix: "Size cables for the accepted loss; carry storage and fission power for blackouts of up to about 4 days; prove the shadow pattern on the ground before committing"}
   - {sev: Medium, title: "Some illumination figures in the literature are second-hand or model-dependent", fix: "Re-run illumination ourselves from LOLA terrain data and publish the code"}
   - {sev: High, title: "Ice in the focus area is unconfirmed: Shackleton's evidence is mixed and de Gerlache has only two candidate detections", fix: "Send M01 prospectors to the crater rims next to both shadowed floors; keep a backup site with stronger hydrogen"}
   - {sev: Medium, title: "The strongest hydrogen (LEND) and the ice-candidate craters are in different parts of the focus area", fix: "Treat hydrogen and ice as separate targets; measure both on the ground before choosing the base site"}
@@ -126,9 +126,9 @@ No point on the Moon is sunlit all the time<sup class="r">[6](#s6)</sup>. The be
 
 **Design consequence:** spread solar arrays across two or three nearby high points so that at least one is almost always lit, and raise them on masts. The longest darkness at a single point can still be days long<sup class="r">[5](#s5)</sup>, so the base still needs storage and fission power. In this plan the reactor and the solar towers both feed a central power management controller (PMC), which sends power to the base or into storage (see M04 and design changes DD-003 and DD-008).
 
-**Site constraint: every power source within 3 km of the base (design change DD-013).** Every solar tower and reactor must sit within 3 km of cable run of the base PMC (plan design). This is NASA's Artemis working scale of 1–3 km links<sup class="r">[27](#s27)</sup>. It clashes with the table above: the two Shackleton-ridge points that reach ~94% together are about 8 km apart<sup class="r">[5](#s5)</sup>, so both cannot be within 3 km of one base. Site selection must find the best combined light from ridge points inside a 3 km cable reach, and report what is lost against the 8 km pair (open). The ISRU plants must also be within 3 km, although NASA expects ISRU to need power over 3–5 km<sup class="r">[27](#s27)</sup>; ice mining further out uses the mobile power cart (PBS PW.5) or a local source (open).
+**Site constraint: every power source within 10 km of the base (design changes DD-013 and DD-014).** Every solar tower and reactor must sit within 10 km of cable run of the base PMC (plan design), so two sources can be up to 20 km apart. The plan accepts 10–15% transmission loss on the longest runs. NASA's Artemis working scale is 1–3 km links<sup class="r">[27](#s27)</sup>, so 10 km runs go beyond it; their voltage drop and stability are open (see M04). The ISRU plants must also be within 10 km, which covers NASA's expectation that ISRU needs power over 3–5 km<sup class="r">[27](#s27)</sup>; ice mining further out uses the mobile power cart (PBS PW.5) or a local source (open).
 
-{% include decision-note.html id="DD-013" extra="Before this, the plan put solar towers on two or three ridge points at any distance and cited the ~94% two-point figure without a distance limit." %}
+{% include decision-note.html id="DD-014" extra="DD-013 had set 3 km, which kept spots on opposite sides of a crater from sharing one PMC. 10 km lets the de Gerlache rim near site 5 pair with the crater's east rim." %}
 
 ## Candidate regions map
 
@@ -266,38 +266,49 @@ The 16 sites (best single 60 m pixel in each, ground level, slope ≤15°), from
 - **Spread out for shadows:** no spot is lit all the time. Two ridge points about 8 km apart are lit a combined ~94 % of the year (see the sunlight table above), so the plan spreads VSATs over several of these sites.
 - **Landing vs. set-down:** VSAT sites can be up to 15°, but the lander carrying each VSAT still lands on 8° or less (DD-011) and the VSAT moves to its site.
 
-### Multiple VSAT placements (ESTIMATE)
+### Light over time (ESTIMATE)
 
-No single spot is lit all the time, so the base needs several VSATs placed where their dark periods do not line up. NASA publishes only average sunlight, not when each spot is lit, so Open Moon calculated light and shadow over time itself (**ESTIMATE**, this plan's own calculation). For about 1,860 spots in the focus area it traced the horizon over NASA's LOLA terrain<sup class="r">[18](#s18)</sup> and tested it against the Sun's position every 2 hours for 18.6 years, using NASA/JPL's DE421 ephemeris. Its ground-level averages match NASA's illumination map<sup class="r">[30](#s30)</sup> within 1.6 points on average at 60 random test points (RMS 2.2 points). A spot counts as lit when at least half the Sun's disc is above its horizon. All figures are at ground level; a 10 m mast sees more sun.
+Sunlight and shadow across the focus area over one lunar day (about 29.5 Earth days, one frame every 12 hours), 23 October to 21 November 2027, when the Sun is at its most southerly and polar sunlight is at its best. Open Moon's own shadow calculation over NASA's LOLA terrain<sup class="r">[18](#s18)</sup> with Sun positions from NASA/JPL's DE421 ephemeris (**ESTIMATE**). Dots are the VSAT sites above.
 
-The power rule DD-013 puts every VSAT within 3 km of cable run of the power management centre (PMC). The best sets were found both within that rule (set A, green) and with no distance limit (set B, blue):
+![Animation of sunlight and shadow over the Open Moon focus area during one lunar day in October–November 2027]({{ '/assets/sites/focus-sunlight-summer-2027.gif' | relative_url }})
 
-![Best multi-VSAT sets in the focus area: set A within 3 km of one PMC on the Connecting ridge, set B spread across the Shackleton and de Gerlache rims]({{ '/assets/sites/focus-vsat-sets.jpg' | relative_url }})
+### Multiple VSAT placements on the de Gerlache rim (ESTIMATE)
 
-**Set A: within 3 km of one PMC (DD-013).** The best PMC location is on the Connecting ridge at 89.438°S, 137.65°W, beside LROC's ridge summit.
+{% include decision-note.html id="DD-014" %}
 
-| VSATs | Time at least one is lit | Longest time all are dark | Spots added (sunlit alone, ESTIMATE) | Distance to PMC |
+No single spot is lit all the time, so the base needs several VSATs placed where their dark periods do not line up. NASA publishes only average sunlight, not when each spot is lit, so Open Moon calculated light and shadow over time itself (**ESTIMATE**, this plan's own calculation). For 1,172 spots on and around the de Gerlache rim it traced the horizon over NASA's LOLA terrain<sup class="r">[18](#s18)</sup> and tested it against the Sun's position every 2 hours for 18.6 years, using NASA/JPL's DE421 ephemeris. The method matches NASA's illumination map<sup class="r">[30](#s30)</sup> within 1.6 points on average at 60 random test points (RMS 2.2 points), but for the best-lit rim spots it reads several points lower than NASA's map (for example 70.8 % against 82.7 % at site 5). So **use these figures to compare layouts; the true values are likely somewhat higher.** A spot counts as lit when at least half the Sun's disc is above its horizon. All figures are at ground level; a 10 m mast sees more sun.
+
+Under DD-014 every VSAT can be up to 10 km of cable from the PMC, so VSATs can be up to 20 km apart. Straight-line distances are used here; real cable routes will be somewhat longer.
+
+![VSAT layouts on the de Gerlache rim: option 1 with the base at site 5, option 2 with the PMC between site 5 and the crater's east rim]({{ '/assets/sites/de-gerlache-vsat-sets.jpg' | relative_url }})
+
+**Option 1: base and PMC at site 5, VSATs within 10 km of it (orange, C1–C4).**
+
+| VSATs | Time at least one is lit | Longest time all are dark | Spot added (sunlit alone, ESTIMATE) | Distance from site 5 |
 |---|---|---|---|---|
-| 1 | 82.7 % | 98 h (4.1 days) | best single spot: Shackleton west rim, 89.6857°S, 163.04°W (82.7 %) | — |
-| 2 | 92.7 % | 116 h (4.8 days) | A1 Connecting ridge, 89.4745°S, 137.53°W (81.9 %) + A2 89.3807°S, 140.91°W (59.6 %) | 1.1 km, 2.0 km |
-| 3 | 93.0 % | 116 h (4.8 days) | + A3 89.4176°S, 134.94°W (48.3 %) | 1.0 km |
-| 4 | 93.2 % | 98 h (4.1 days) | + A4 89.4376°S, 138.50°W (52.2 %) | 0.25 km |
+| 1 | 72.4 % | 336 h (14 days) | best single spot: 88.4651°S, 67.85°W (72.4 %) | 6.1 km |
+| 2 | 84.2 % | 142 h (5.9 days) | C1 88.3745°S, 69.29°W (56.3 %) + C2 88.6812°S, 68.11°W (62.5 %) | 8.8 km, 0.5 km |
+| 3 | 84.7 % | 142 h (5.9 days) | + C3 88.3931°S, 68.66°W (66.9 %) | 8.3 km |
+| 4 | 85.0 % | 142 h (5.9 days) | + C4 88.9562°S, 74.55°W (40.2 %) | 9.6 km |
 
-Set A spots are 1.2–3.0 km apart.
+C1 and C2 are 9.4 km apart; the four spots are 0.8–18.0 km apart. For comparison, DD-013's old 3 km limit gave 84.0 % with two VSATs and 84.5 % with four, with a longest blackout of 148 h.
 
-**Set B: no distance limit.**
+**Option 2: PMC between site 5 and the crater's east rim (blue, D1–D4).** The PMC sits inside the crater rim at about 88.88°S, 80.3°W, so a VSAT near site 5 and one on the east rim are each within 10 km of it.
 
-| VSATs | Time at least one is lit | Longest time all are dark | Spots added (sunlit alone, ESTIMATE) | Distance apart |
+| VSATs | Time at least one is lit | Longest time all are dark | Spot added (sunlit alone, ESTIMATE) | Distance to PMC / to site 5 |
 |---|---|---|---|---|
-| 1 | 82.7 % | 98 h (4.1 days) | B1 Shackleton west rim, 89.6857°S, 163.04°W (82.7 %) | — |
-| 2 | 96.5 % | 66 h (2.8 days) | + B2 de Gerlache rim (NASA Site 11), 88.6652°S, 68.42°W (77.1 %) | B1–B2 42.3 km |
-| 3 | 98.9 % | 34 h (1.4 days) | + B3 by the Peak near Shackleton, 88.7440°S, 123.78°E (51.0 %) | B1–B3 36.5 km, B2–B3 78.1 km |
-| 4 | 99.3 % | 26 h (1.1 days) | + B4 ridge south of Spudis, 89.2699°S, 113.12°W (57.0 %) | B4 to B1/B2/B3: 17.6 / 29.2 / 53.5 km |
+| 2 | 87.5 % | 102 h (4.3 days) | D1 near site 5, 88.7035°S, 67.52°W (40.6 %) + D2 east rim, 89.0032°S, 96.55°W (61.0 %) | 9.8 km / 1.3 km; 9.8 km / 19.9 km |
+| 3 | 88.8 % | 102 h (4.3 days) | + D3 east rim, 89.0147°S, 92.47°W (66.4 %) | 7.8 km / 18.0 km |
+| 4 | 89.2 % | 100 h (4.2 days) | + D4 by site 5, 88.6812°S, 68.11°W (62.5 %) | 9.8 km / 0.5 km |
 
-- **Close spots share shadows.** Within 3 km, the 3rd and 4th VSAT add only 0.3 and 0.2 points, because nearby spots see almost the same horizon. Their main value is more power, not more hours of sun.
-- **Spread-out spots fill each other's gaps.** Spots on opposite sides of the craters (set B) reach 99.3 % with four VSATs and cut the longest blackout to about a day, but they are 18–78 km apart, which DD-013 does not allow.
-- **No set reaches 100 %.** Even set B has short periods when every spot is dark, so storage (and fission power, M04) is still needed.
-- **The trade-off for the plan:** staying within DD-013 means planning for blackouts of up to about 5 days; relaxing it for longer power runs would cut them to about a day. Any such change would be a new design decision.
+D1 and D2 are 19.5 km apart; the four spots are 0.8–19.7 km apart.
+
+- **Pairing across the crater works best.** A VSAT near site 5 and one on the east rim, where the ridge meets de Gerlache (site 10 on the map above), are lit at different times. Option 2 reaches 89.2 % with four VSATs and cuts the longest blackout to about 4 days.
+- **VSATs close together share shadows.** In option 1 the 3rd and 4th VSAT add only 0.5 and 0.3 points, because nearby spots see almost the same horizon. They add power, not hours of sun.
+- **The base can still sit at site 5 in option 2** if the PMC is placed separately: site 5 is about 10 km from that PMC, so it connects through the distribution grid. Where the PMC goes is a design choice for M04.
+- **No layout reaches 100 %.** Even option 2 leaves about 11 % of the time with every VSAT dark, in stretches of up to about 4 days, so storage and fission power (M04) are still needed.
+
+The analysis scripts and full results are in `analysis/sunlight/multi/`.
 
 ## Hydrogen
 
@@ -357,7 +368,7 @@ Green: slope of 8° or less (landable for every published lander rule); steeper 
 
 1. **Build the open site database.** Pull LRO LOLA, LROC, Diviner and Mini-RF data<sup class="r">[1](#s1)</sup>, ShadowCam images<sup class="r">[2](#s2)</sup> and Chandrayaan-2 radar products<sup class="r">[3](#s3)</sup> into one public GIS.
 2. **Start from NASA's shortlist, then narrow to a focus area.** NASA cut its Artemis III list to nine regions in October 2024: Peak near Cabeus B, Haworth, Malapert Massif, Mons Mouton Plateau, Mons Mouton, Nobile Rim 1 and 2, de Gerlache Rim 2 and Slater Plain<sup class="r">[4](#s4)</sup>. These are already screened for landing safety, light and Earth visibility. Open Moon has chosen the Shackleton–de Gerlache area, which includes de Gerlache Rim 2 (see above).
-3. **Model light and temperature** hour by hour, for every candidate, at several mast heights. For each candidate base point, find the ridge points within 3 km of cable run and their combined light (DD-013).
+3. **Model light and temperature** hour by hour, for every candidate, at several mast heights. For each candidate base point, find the VSAT points within 10 km of cable run and their combined light (DD-014; done for the de Gerlache rim, see above).
 4. **Map hazards.** Slope is mapped for the focus area in four classes from NASA's LOLA data, with 8° as the landing limit (done). Also include young fault scarps: NASA-funded work links the shrinking Moon to faults and moonquakes near the south pole, including a scarp in de Gerlache Rim 2, and some shadowed slopes are prone to landslides<sup class="r">[8](#s8)</sup>.
 5. **Rank ice targets.** ShadowCam found little widespread surface ice, but some 20–50 m patches consistent with more than 10% ice<sup class="r">[2](#s2)</sup>. Ice is patchy, so M01 must confirm it on the ground. For the focus area, hydrogen from LEND and ice candidates from M3, LOLA and ShadowCam are now mapped (see above).
 6. **Check communications.** Earth visibility varies from site to site: some Earth-facing areas see Earth almost all the time, others never do<sup class="r">[7](#s7)</sup>. At the best proposed base site in a JPL study, direct-to-Earth links were available only about 51% of the time<sup class="r">[13](#s13)</sup>, so relay coverage is a hard requirement.

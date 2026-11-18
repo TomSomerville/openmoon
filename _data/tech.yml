@@ -446,7 +446,7 @@
   - 0
   trl: 5
   status: 'KRUSTY ground test 2018: 28 h at full power, 183 We from 2 Stirling engines, reactor rated TRL 5. No flight unit built; DARPA–LANL test agreement reported Oct 2026'
-  use: Small reactor (plan value 1 kWe) feeding the power management controller (PMC); converts its controllers' DC bus to 3 kV AC at the unit, within 3 km of the PMC (DD-013)
+  use: Small reactor (plan value 1 kWe) feeding the power management controller (PMC); converts its controllers' DC bus to 3 kV AC at the unit, within 10 km of the PMC (DD-013, DD-014)
   develop: true
   source: https://ntrs.nasa.gov/citations/20180005435
   source_title: 'Gibson et al.: KRUSTY nuclear ground test results and lessons learned (NTRS 20180005435)'
@@ -466,7 +466,7 @@
   - 0
   trl: 4
   status: 'Draft SPARC solicitation Aug 2026 (amended 16 Nov): ≥20 kWe at 3 kV AC, ≥5 yr, HALEU, closed Brayton, <15 t, landing 2030. No award, no hardware; sister reactor SR-1 flies late 2028'
-  use: Main base reactor (plan value 20 kWe) feeding the power management controller (PMC); interface 3 kV, 3-phase, 1 kHz at its output (frequency open), within 3 km of the PMC (DD-013)
+  use: Main base reactor (plan value 20 kWe) feeding the power management controller (PMC); interface 3 kV, 3-phase, 1 kHz at its output (frequency open), within 10 km of the PMC (DD-013, DD-014)
   develop: true
   source: https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download
   source_title: 'NASA Glenn: SPARC Industry Day presentation (LR-1 requirements)'
@@ -486,7 +486,7 @@
   - 0
   trl: 6
   status: Three NASA prototype contracts (2022); deploy to ~10 m
-  use: 10 kW-class solar towers feeding the power management controller (PMC); curtailed by their array shunt regulators; each converts to 3 kV AC at the tower and stands within 3 km of the PMC (DD-013)
+  use: 10 kW-class solar towers feeding the power management controller (PMC); curtailed by their array shunt regulators; each converts to 3 kV AC at the tower and stands within 10 km of the PMC (DD-013, DD-014)
   develop: false
   source: https://www.nasa.gov/?p=142765
   source_title: 'NASA RELEASE 22-090: Vertical Solar Array Technology awards'
@@ -526,7 +526,7 @@
   - 0
   trl: 6
   status: 1 kW; ~500 m of cable in the 2025 design (1 km in earlier plans); passed CDR Aug 2025
-  use: Cable-laying rover and power transfer; Open Moon runs are up to 3 km (DD-013)
+  use: Cable-laying rover and power transfer; Open Moon runs are up to 10 km (DD-013, DD-014)
   develop: false
   source: https://www.astrobotic.com/lunagrid-lite-completes-critical-design-review-flight-model-underway/
   source_title: 'Astrobotic: LunaGrid-Lite completes critical design review'
@@ -566,7 +566,7 @@
   - 0
   trl: 4
   status: NASA's lunar grid baseline since 2022 (switched from DC; see DD-001). UMIC 1 kW module bench-tested 2023; AC cable tested in vacuum with regolith simulant 2025
-  use: Source lines into the PMC (each 3 km or less, converted to 3 kV AC at the source, DD-013) and the distribution grid out to each unit's service connection
+  use: Source lines into the PMC (each 10 km or less, converted to 3 kV AC at the source, DD-013, DD-014) and the distribution grid out to each unit's service connection
   develop: false
   source: https://ntrs.nasa.gov/citations/20220011587
   source_title: 'Thomas et al., NASA GRC: Establishing a Lunar Surface Power Grid (2022)'

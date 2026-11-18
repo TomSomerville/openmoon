@@ -44,7 +44,7 @@ subcomponents:
     trl: 5
   - name: Power management controller (PMC)
     desc: "Receives every source (reactor, solar towers) and decides, moment to moment, whether power goes to the grid to meet demand, to the batteries to charge, or to excess-power handling. Feeds the grid from the battery when generation is short, has the fuel cells recharge the battery (their output goes only to the battery, never to the grid), and sheds loads by priority as a last resort, by opening service connections (DD-003, DD-008, DD-009). Its decision-making function is what ground grids call a microgrid controller or energy management system (EMS)."
-    parts: ["Input converters for each source (UMIC-class AC-to-DC for the incoming 3 kV, 1 kHz AC lines; every source arrives already at 3 kV AC, over no more than 3 km, DD-013)", "PMC main switching units A and B (common DC buses) with a cross-tie", "Output converters to the 3 kV AC distribution grid", "Energy management controller with priority and load-shedding tables", "Source and grid switching to either unit", "Curtailment and disconnect commands to each VSAT; excess-power commands to the reactor PLR", "Fuel-cell discharge path to the battery strings only (no path to the grid)", "Command links to the reactor, solar towers, BCDUs and fuel cells", "Telemetry and Earth link"]
+    parts: ["Input converters for each source (UMIC-class AC-to-DC for the incoming 3 kV, 1 kHz AC lines; every source arrives already at 3 kV AC, over no more than 10 km, DD-013, DD-014)", "PMC main switching units A and B (common DC buses) with a cross-tie", "Output converters to the 3 kV AC distribution grid", "Energy management controller with priority and load-shedding tables", "Source and grid switching to either unit", "Curtailment and disconnect commands to each VSAT; excess-power commands to the reactor PLR", "Fuel-cell discharge path to the battery strings only (no path to the grid)", "Command links to the reactor, solar towers, BCDUs and fuel cells", "Telemetry and Earth link"]
     tech: "NASA GRC UMIC bidirectional converter (2023); NASA lunar microgrid priority control concept; ISS PMAD practice (SSU, BCDU, DCSU); IEEE 2030.7 microgrid controller functions"
     trl: 4
   - name: Li-ion battery bank
@@ -93,7 +93,7 @@ sources:
 
 **The names (DD-008).** The base's whole electrical power system (EPS) covers generation, storage, distribution and protection. Its routing and distribution part is PMAD (power management and distribution), the term Space Station Freedom used<sup class="r">[10](#s10)</sup>. The power management controller (PMC) is the part that decides. Ground grids call this a microgrid controller or energy management system (EMS); IEEE 2030.7 specifies such controllers<sup class="r">[12](#s12)</sup>.
 
-**The PMC.** Every source sends its power to the PMC: the reactor's 3 kV AC line and the solar towers. Every source converts to 3 kV, 3-phase, 1 kHz AC at the source and sits within 3 km of cable run of the PMC, so every line arrives at the PMC as 3 kV AC (design change DD-013; see C04.4). The PMC directs it to the grid to meet demand, to the batteries to charge, to excess-power handling, or some of each (design change DD-003). **The grid is fed only by generation passing through the PMC, or by the battery.** The fuel cells never feed the grid directly; when they discharge, they recharge the battery.
+**The PMC.** Every source sends its power to the PMC: the reactor's 3 kV AC line and the solar towers. Every source converts to 3 kV, 3-phase, 1 kHz AC at the source and sits within 10 km of cable run of the PMC, so every line arrives at the PMC as 3 kV AC (design changes DD-013 and DD-014; see C04.4). The PMC directs it to the grid to meet demand, to the batteries to charge, to excess-power handling, or some of each (design change DD-003). **The grid is fed only by generation passing through the PMC, or by the battery.** The fuel cells never feed the grid directly; when they discharge, they recharge the battery.
 
 Default routing (plan design):
 1. Meet grid demand, highest priority first. NASA's lunar microgrid concept also serves the highest-priority loads, such as the crewed habitat, first<sup class="r">[1](#s1)</sup>.
@@ -152,7 +152,7 @@ Modelled south-pole efficiency is 34.8% for a 10 kW RFC and 36.6% at 50 kW. Abov
 
 ## Open questions
 
-- Where exactly should the PMC sit to keep every source within 3 km of cable run (DD-013) while staying close to the habitat? The plan puts it near the habitat zone (see the M04 site layout).
+- Where exactly should the PMC sit to keep every source within 10 km of cable run (DD-013, DD-014) while staying close to the habitat? The plan puts it near the habitat zone (see the M04 site layout).
 - Can dry gas tanks sit at lunar shadow temperatures instead of being heated above 4 °C?
 - What membrane thickness and pressure give the best balance for this base's duty cycle?
 - How long do PEM stacks last over thousands of lunar charge cycles?

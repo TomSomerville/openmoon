@@ -148,7 +148,7 @@ Definitions: [NASA TRL definitions](https://www.nasa.gov/wp-content/uploads/2017
 
 ## Native output and conversion chain
 
-![Diagram: three conversion chains, each built at the source. VSAT: native DC, array regulator and shunt, UMIC-class low-voltage inverter, 1 kHz step-up transformer, 3 kV AC. Kilopower: eight Stirling alternators at about 12 V AC and 100 Hz, one controller each rectifying to DC, a shared DC bus, a UMIC-class inverter, a 1 kHz transformer, 3 kV AC. LR-1: 3 kV AC at the reactor output, with the frequency matched to 1 kHz by the vendor or a converter. Every source then runs at most 3 km of cable to the PMC](/assets/tech/source-to-3kv-conversion.svg)
+![Diagram: three conversion chains, each built at the source. VSAT: native DC, array regulator and shunt, UMIC-class low-voltage inverter, 1 kHz step-up transformer, 3 kV AC. Kilopower: eight Stirling alternators at about 12 V AC and 100 Hz, one controller each rectifying to DC, a shared DC bus, a UMIC-class inverter, a 1 kHz transformer, 3 kV AC. LR-1: 3 kV AC at the reactor output, with the frequency matched to 1 kHz by the vendor or a converter. Every source then runs at most 10 km of cable to the PMC](/assets/tech/source-to-3kv-conversion.svg)
 
 **What each engine makes.** Each free-piston Stirling engine drives a linear alternator, which makes **single-phase AC**. KRUSTY's engines were Sunpower units repurposed from the Advanced Stirling Radioisotope Generator (ASRG) project ([Gibson et al. 2017](https://ntrs.nasa.gov/citations/20170002010)). That project's convertor family is the Sunpower-built Advanced Stirling Convertor (ASC), and NASA's ASC controllers were made for the ASRG ([NASA/TM-2018-219963](https://ntrs.nasa.gov/api/citations/20180008496/downloads/20180008496.pdf)). NASA Glenn lists ASC alternators at about **12 V RMS** and **7–10 A**, running at **102–103 Hz** ([Dugala, NASA Glenn 2018](https://ntrs.nasa.gov/api/citations/20180007412/downloads/20180007412.pdf)). These are values for the engine family, not measured KRUSTY outputs.
 
@@ -169,7 +169,7 @@ The heat ceiling is this plan's estimate: KRUSTY's engines and simulators could 
 
 **Why the 12 V stays inside the machine (this plan's arithmetic).** At 12 V, 1 kW is about 83 A. For a 5% loss on two 10 mm² aluminium conductors (resistivity 26.5 nΩ·m, [Wikipedia](https://en.wikipedia.org/wiki/Aluminium)), the cable could be only about **1.4 m** long one-way. So the low-voltage AC never leaves the unit.
 
-**Conversion at the unit (plan design, [DD-013](/decisions/#dd-013)).** The DC bus feeds a UMIC-class inverter of parallel 1 kW modules ([Thomas et al. 2023](https://ntrs.nasa.gov/citations/20230013309)), and a 1 kHz step-up transformer next to the unit raises it to **3 kV AC, 3-phase, 1 kHz**, the base grid standard. Only low-voltage switches are used. The unit must sit within **3 km of cable run** of the PMC. NASA's 2025 Stirling reference follows the same pattern: controllers to 350 V DC, then DC-to-AC and a transformer to 3 kVac ([INL/NASA 2025](https://inl.gov/content/uploads/2024/11/FSP-Technical-Maturation-Webinar-Final-250924-1.pdf)).
+**Conversion at the unit (plan design, [DD-013](/decisions/#dd-013) and [DD-014](/decisions/#dd-014)).** The DC bus feeds a UMIC-class inverter of parallel 1 kW modules ([Thomas et al. 2023](https://ntrs.nasa.gov/citations/20230013309)), and a 1 kHz step-up transformer next to the unit raises it to **3 kV AC, 3-phase, 1 kHz**, the base grid standard. Only low-voltage switches are used. The unit must sit within **10 km of cable run** of the PMC. NASA's 2025 Stirling reference follows the same pattern: controllers to 350 V DC, then DC-to-AC and a transformer to 3 kVac ([INL/NASA 2025](https://inl.gov/content/uploads/2024/11/FSP-Technical-Maturation-Webinar-Final-250924-1.pdf)).
 
 {% include decision-note.html id="DD-013" extra="This card said only that the engines' raw output alternates and that each has a controller. It now sets out the chain from 12 V AC to 3 kV AC at the unit." %}
 
@@ -182,7 +182,7 @@ The heat ceiling is this plan's estimate: KRUSTY's engines and simulators could 
 In Open Moon every source, including the reactor, sends its power to the **power management controller (PMC)**. The PMC decides whether that power goes to the grid to meet demand, to the batteries to charge, or to excess-power handling, or some of each. When generation falls short, the battery feeds the grid ([design changes DD-003 and DD-008](/decisions/#dd-008)). The grid then feeds every habitat module and facility through its own service connection ([DD-009](/decisions/#dd-009)).
 
 1. **Reactor.** A KRUSTY-class unit runs at a steady output. That suits a Stirling reactor, which holds its temperature best at a steady heat draw.
-2. **PMC.** Takes the unit's 3 kV AC line, at most 3 km long (DD-013), and routes it: first to the grid for demand, then to charge the battery, then to the fuel-cell electrolyser.
+2. **PMC.** Takes the unit's 3 kV AC line, at most 10 km long (DD-013, DD-014), and routes it: first to the grid for demand, then to charge the battery, then to the fuel-cell electrolyser.
 3. **Storage.** The Li-ion battery and regenerative fuel cells behind the PMC cover peaks and any reactor outage.
 4. **Outputs.** The grid, and each unit's service connection and 120 V DC panel.
 
