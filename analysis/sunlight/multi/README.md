@@ -16,3 +16,4 @@ Open Moon's own calculation, used on the M00 page "Multiple VSAT placements".
    - `mk_dg_sets.py` draws `assets/sites/de-gerlache-vsat-sets.jpg`.
 
 All values are at ground level; a 10 m mast sees more sun.
+5. `vsat_sets.py` → `vsat_sets.json`: best 1–4 VSAT sets across the whole focus area (set A within 3 km of one PMC, on the Connecting ridge; set B with no limit). `mk_sets.py` draws `assets/sites/focus-vsat-sets.jpg`.

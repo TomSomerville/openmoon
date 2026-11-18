@@ -316,6 +316,31 @@ D1 and D2 are 19.5 km apart; the four spots are 0.8–19.7 km apart.
 
 The analysis scripts and full results are in `analysis/sunlight/multi/`.
 
+### Connecting ridge VSAT set (ESTIMATE, for comparison)
+
+The same calculation, run across the whole focus area, finds that the Connecting ridge gives the highest combined sunlight of any compact layout: VSATs there sit within a standard 3 km run of one PMC (DD-013). The best PMC location is on the ridge at 89.438°S, 137.65°W, beside LROC's ridge summit. Set A (green, with inset) is this layout. Set B (blue) is shown only for reference: its spots are 18–78 km apart, beyond even DD-014's extended runs.
+
+![Best multi-VSAT sets in the focus area: set A within 3 km of one PMC on the Connecting ridge, set B spread across the Shackleton and de Gerlache rims]({{ '/assets/sites/focus-vsat-sets.jpg' | relative_url }})
+
+| VSATs on the Connecting ridge | Time at least one is lit | Longest time all are dark | Spot added (sunlit alone, ESTIMATE) | Distance to PMC |
+|---|---|---|---|---|
+| 1 | 81.9 % | — | A1 89.4745°S, 137.53°W (81.9 %) | 1.1 km |
+| 2 | 92.7 % | 116 h (4.8 days) | + A2 89.3807°S, 140.91°W (59.6 %) | 2.0 km |
+| 3 (trio) | **93.0 %** | 116 h (4.8 days) | + A3 89.4176°S, 134.94°W (48.3 %) | 1.0 km |
+| 4 | 93.2 % | 98 h (4.1 days) | + A4 89.4376°S, 138.50°W (52.2 %) | 0.25 km |
+
+The ridge spots are 1.2–3.0 km apart, all on standard 3 km runs.
+
+| Layout | VSATs | Time at least one is lit | Longest time all are dark | Longest power run |
+|---|---|---|---|---|
+| Connecting ridge trio (set A) | 3 | 93.0 % | 4.8 days | ~2 km (standard) |
+| de Gerlache, base at site 5 (option 1) | 3 | 84.7 % | 5.9 days | ~9 km (extended) |
+| de Gerlache, PMC across the crater (option 2) | 3 | 88.8 % | 4.3 days | ~10 km (extended) |
+
+- **The ridge trio has the highest uptime on standard runs**, about 4 to 8 points more than the de Gerlache layouts, with no 10–15 % extended-run loss.
+- **de Gerlache option 2 has the shortest blackout** (4.3 days), because its VSATs sit on opposite sides of the crater.
+- The ridge is about 25 km from site 5, so a ridge power field and a de Gerlache base would need either a separate PMC or a run longer than DD-014 allows.
+
 ## Hydrogen
 
 Hydrogen matters to Open Moon whether it sits in water ice or is bound in the soil: either way it is a raw material (extraction is planned in later milestones). Orbiters map hydrogen in the top metre or so by counting neutrons leaving the surface; hydrogen slows them, so fewer escape. A neutron dip shows hydrogen but not its form: ice, solar-wind hydrogen or hydrated minerals<sup class="r">[22](#s22)</sup>.
