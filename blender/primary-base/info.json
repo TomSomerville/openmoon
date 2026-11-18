@@ -1,24 +1,24 @@
 {
  "centre_lat_lon": [
-  -88.4262,
-  -63.3
+  -88.4365,
+  -62.46
  ],
  "size_m": 20000.0,
  "pixel_m": 5.0,
  "pixels": 4000,
  "bounds_polar_stereographic_m": [
-  -52636.944307483354,
-  11444.148951466064,
-  -32636.944307483354,
-  31444.148951466064
+  -52040.99416008461,
+  11922.47364996151,
+  -32040.994160084607,
+  31922.47364996151
  ],
- "height_min_m": -1698.11,
- "height_max_m": 1815.87,
- "height_range_m": 3513.98,
- "base_height_m": 1014.18,
- "base_height_above_min_m": 2712.29,
- "share_from_5m_dem_pct": 35.7,
- "site11_offset_vs_10m_m": 0.11,
+ "height_min_m": -1786.45,
+ "height_max_m": 1815.04,
+ "height_range_m": 3601.49,
+ "base_height_m": 1037.05,
+ "base_height_above_min_m": 2823.5,
+ "share_from_5m_dem_pct": 35.9,
+ "site11_offset_vs_10m_m": 0.95,
  "curvature_drop_at_edge_mid_m": 28.8,
  "curvature_drop_at_corner_m": 57.6,
  "mesh": {

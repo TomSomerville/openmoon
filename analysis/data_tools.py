@@ -64,7 +64,8 @@ def pack(W):
     for d in glob.glob(os.path.join(W, 'nac_max*')):
         if os.path.exists(os.path.join(d, 'full.npy')):
             od = os.path.join(DATA, 'lroc', os.path.basename(d)); os.makedirs(od, exist_ok=True)
-            Image.fromarray(np.load(os.path.join(d, 'full.npy'))).save(os.path.join(od, 'full.png'), optimize=True)
+            arr = np.load(os.path.join(d, 'full.npy')); h = arr.shape[0] // 2   # two halves keep each file under 50 MB
+            Image.fromarray(arr[:h]).save(os.path.join(od, 'full_top.png'), optimize=True); Image.fromarray(arr[h:]).save(os.path.join(od, 'full_bottom.png'), optimize=True)
             shutil.copy2(os.path.join(d, 'bounds.npy'), os.path.join(od, 'bounds.npy')); print(d, 'mosaic saved', flush=True)
     tot = sum(os.path.getsize(f) for f in glob.glob(os.path.join(DATA, '**', '*'), recursive=True) if os.path.isfile(f))
     big = [f for f in glob.glob(os.path.join(DATA, '**', '*'), recursive=True) if os.path.isfile(f) and os.path.getsize(f) > LIMIT]
@@ -91,7 +92,9 @@ def restore(W):
         for d in ('slope', 'sun10'): np.save(os.path.join(W, d, os.path.basename(f)[:-4] + '.npy'), a)
     for d in glob.glob(os.path.join(DATA, 'lroc', 'nac_max*')):
         od = os.path.join(W, os.path.basename(d)); os.makedirs(od, exist_ok=True)
-        np.save(os.path.join(od, 'full.npy'), np.array(Image.open(os.path.join(d, 'full.png')))); shutil.copy2(os.path.join(d, 'bounds.npy'), os.path.join(od, 'bounds.npy'))
+        if os.path.exists(os.path.join(d, 'full.png')): arr = np.array(Image.open(os.path.join(d, 'full.png')))
+        else: arr = np.vstack([np.array(Image.open(os.path.join(d, 'full_top.png'))), np.array(Image.open(os.path.join(d, 'full_bottom.png')))])
+        np.save(os.path.join(od, 'full.npy'), arr); shutil.copy2(os.path.join(d, 'bounds.npy'), os.path.join(od, 'bounds.npy'))
     print('restored into', W)
 if __name__ == '__main__':
     {'pack': pack, 'restore': restore}[sys.argv[1]](sys.argv[2])
