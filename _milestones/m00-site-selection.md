@@ -302,12 +302,16 @@ LROC's maximum-pixel mosaic keeps each spot at its brightest across thousands of
 
 #### Standing at the base (rendered view)
 
-A 1.8 m human figure for scale, standing at the previous base point (DD-020, 0.76 km south-west of the current one; renders at the new point to follow), in a Blender render of the terrain at true size. The terrain is NASA LOLA heights<sup class="r">[26](#s26)</sup><sup class="r">[10](#s10)</sup> at 20 m mesh spacing, coloured with the LROC all-sun mosaic<sup class="r">[20](#s20)</sup>. The Sun is set 2° above the horizon with a black sky. **Cast shadows are turned off**, so this is an illustration of the ground's shape, not a prediction of the real light. Black patches in the texture are ground that LROC never saw lit. Terrain files for Blender: [`blender/primary-base`](https://github.com/TomSomerville/openmoon/tree/main/blender/primary-base).
+A 1.8 m human figure for scale, standing at the base point (DD-023), in a Blender render of the terrain at true size. The terrain is NASA LOLA heights<sup class="r">[26](#s26)</sup><sup class="r">[10](#s10)</sup> at 20 m mesh spacing, coloured with the LROC all-sun mosaic<sup class="r">[20](#s20)</sup>. The Sun is set 2° above the horizon with a black sky. **Cast shadows are turned off**, so this is an illustration of the ground's shape, not a prediction of the real light. Black patches in the texture are ground that LROC never saw lit. Terrain files for Blender: [`blender/primary-base`](https://github.com/TomSomerville/openmoon/tree/main/blender/primary-base).
 
-![Rendered view from 15 m: a 1.8 m figure at the primary base, with the rising ground to the south-southwest behind]({{ '/assets/sites/primary-base-render-close_15m.jpg' | relative_url }})
-![Rendered view from 250 m: the figure as a speck at the base, with the ridge to the south-southwest behind]({{ '/assets/sites/primary-base-render-wide_250m.jpg' | relative_url }})
+![Rendered view from 15 m: a 1.8 m figure at the primary base, with the rising ground to the south-southwest behind]({{ '/assets/sites/primary-base-render-close.jpg' | relative_url }})
+![Rendered view from 250 m: the figure as a speck at the base, with the ridge to the south-southwest behind]({{ '/assets/sites/primary-base-render-wide.jpg' | relative_url }})
 
-*Left: from 15 m. Right: from 250 m, looking south-southwest; the ground behind rises about 500 m within 4 km (this plan's arithmetic, from the LOLA mesh). Render by Open Moon; terrain NASA GSFC LOLA, texture NASA/GSFC/Arizona State University. Figure: "Cesium Man", © 2017 Cesium, CC BY 4.0<sup class="r">[27](#s27)</sup>.*
+*Left: from 15 m. Right: from 250 m, looking south-southwest; the ground behind rises about 480 m within 4 km (this plan's arithmetic, from the LOLA mesh).*
+
+![Rendered high oblique view of the base area from 3 km south-west and 1.5 km up, with the base and tower B3 in frame]({{ '/assets/sites/primary-base-render-overview.jpg' | relative_url }})
+
+*The base area from 3 km south-west of the base and 1.5 km above it, looking north-north-east. The base is right of centre and B3 left of centre, about 2.1 km apart. Each tower is marked by a self-lit orange stand-in 10 m tall and 1 m wide (VSAT masts are 5–10 m<sup class="r">[18](#s18)</sup>). At this distance B3 shows only as a faint orange glint, and the 1.8 m figure is far too small to see. All three renders by Open Moon; terrain NASA GSFC LOLA, texture NASA/GSFC/Arizona State University. Figure: "Cesium Man", © 2017 Cesium, CC BY 4.0<sup class="r">[27](#s27)</sup>.*
 
 #### Sun and shadow at the base (ESTIMATE)
 
