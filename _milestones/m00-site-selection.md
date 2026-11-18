@@ -386,9 +386,9 @@ Blue marks the permanently shadowed floors of Shackleton (233 km²) and de Gerla
 
 ## All layers combined
 
-Green: slope of 8° or less (landable for every published lander rule); steeper ground is left uncoloured. **Purple:** high hydrogen from LEND. **Blue:** ice candidates. White dot: ShadowCam bright spot.
+Green: slope of 8° or less (landable for every published lander rule); steeper ground is left uncoloured. **Purple:** high hydrogen from LEND. **Blue:** ice candidates. White dot: ShadowCam bright spot. **VSAT layouts (ESTIMATE, see Sunlight and VSAT locations):** orange A1–A4, the Connecting ridge set on standard 3 km runs (93.0 % lit with three, 93.2 % with four); yellow C1–C4, base at site 5 (85.0 % with four); cyan D1–D4, PMC across de Gerlache (89.2 % with four). Squares are PMCs; the triangle is the site 5 base. Spots less than about 1.5 km apart share one label.
 
-![Open Moon focus area: landable ground of 8° or less in green, high hydrogen in purple, ice-candidate shadowed floors in blue]({{ '/assets/sites/focus-landing-hydrogen.jpg' | relative_url }})
+![Open Moon focus area: landable ground of 8° or less in green, high hydrogen in purple, ice-candidate shadowed floors in blue, and the VSAT layouts on the Connecting ridge and the de Gerlache rim]({{ '/assets/sites/focus-landing-hydrogen.jpg' | relative_url }})
 
 - **Landable:** 43 % of the focus area is 8° or less.
 - **Hydrogen:** 13 % is high hydrogen, mostly the upper right (toward 0–60°E, around 88°S); 4.6 % is both landable and high hydrogen. It does not cover Shackleton, Spudis, the ridge or de Gerlache Rim 2.
