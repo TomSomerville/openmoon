@@ -68,7 +68,7 @@
   power_kw: 140
   details:
     - {title: "Fission power", text: "A 20 kWe LR-1-class reactor is landed on a heavy cargo lander, driven out and started remotely. It runs continuously regardless of sunlight and feeds the PMC, which sends its power to the grid or into storage (design changes DD-002, DD-003 and DD-008).", refs: [M04, C04.1, kilopower-krusty-fission-test, us-lunar-reactor-1-sparc]}
-    - {title: "3 kV AC grid", text: "Three-phase 3 kV, 1 kHz links following NASA's grid baseline (design change DD-001). Like a national grid, it feeds every habitat module and facility through its own service connection, which delivers 120 V DC to that unit's panel (design change DD-009).", refs: [M04, C04.4, lunar-ac-power-transmission]}
+    - {title: "3 kV AC grid", text: "Three-phase 3 kV, 1 kHz links following NASA's grid baseline (design change DD-001). Every tower and the reactor make their own 3 kV AC on the spot and sit within 3 km of cable run of the PMC (design change DD-010). Like a national grid, it feeds every habitat module and facility through its own service connection, which delivers 120 V DC to that unit's panel (design change DD-009).", refs: [M04, C04.4, lunar-ac-power-transmission]}
     - {title: "Energy storage", text: "A Li-ion battery bank and regenerative fuel cells behind the PMC; the fuel cells share tanks with the water plant.", refs: [M04, C04.3, regenerative-fuel-cells]}
     - {title: "Site preparation complete", text: "Two hardened pads, about 5 km of graded roads, ejecta berms and a shielding berm at the reactor.", refs: [M05, C05.1, C05.2, rassor-2-0]}
 - year: 7

@@ -31,8 +31,8 @@
     - {id: PW.1, name: Fission surface power unit, ms: M04, comp: C04.1, how: partner}
     - {id: PW.2, name: Vertical solar towers, ms: M04, comp: C04.2, how: buy}
     - {id: PW.3, name: "Power management controller (PMC) and energy storage (batteries with BCDUs and BMS, fuel cells)", ms: M04, comp: C04.3, how: build}
-    - {id: PW.4, name: 3 kV AC grid and cable-laying rover, ms: M04, comp: C04.4, how: build}
-    - {id: PW.5, name: Mobile power cart for PSR work, ms: M06, how: build}
+    - {id: PW.4, name: "3 kV AC grid (runs of 3 km or less), source-end inverters and step-up transformers, and cable-laying rover", ms: M04, comp: C04.4, how: build}
+    - {id: PW.5, name: "Mobile power cart for PSR work beyond the 3 km power run (DD-010)", ms: M06, how: build}
     - {id: PW.6, name: "Habitat service connections (×3), 120 V DC panels and emergency power", ms: M08, comp: C08.1, how: build}
     - {id: PW.8, name: "Facility service connections and 120 V DC panels (ISRU plants, comms, rover chargers, greenhouses, depot)", ms: M04, comp: C04.4, how: build}
     - {id: PW.7, name: Lunar-made solar array line, ms: M12, how: build}

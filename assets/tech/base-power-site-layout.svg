@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="Share Tech Mono, monospace" role="img" aria-labelledby="t d">
 <title id="t">Open Moon base power site layout (plan view, not to scale)</title>
-<desc id="d">Plan view of the base power system. Several 10 kW VSAT solar towers stand on two or three ridge points. An LR-1-class reactor sits 1 to 3 km from the habitat zone behind terrain, with its 36 degree shield shadow pointed at the crew. Source lines run from each tower and from the reactor to the power management controller (PMC) near the habitat zone. The 3 kV AC distribution grid runs from the PMC to the three habitat modules and the ISRU plants, and each of them has its own service connection with a main breaker. Landing pads are kept at least 1 km from the towers. Distances are plan values; the drawing is schematic and not to scale.</desc>
+<desc id="d">Plan view of the base power system. Several 10 kW VSAT solar towers stand on two or three ridge points. An LR-1-class reactor sits 1 to 3 km from the habitat zone behind terrain, with its 36 degree shield shadow pointed at the crew. Each tower and the reactor makes its own 3 kV AC at the source (inverter and 1 kHz step-up transformer at each tower; 3 kV, 1 kHz at the reactor output), and every source sits within 3 km of cable run of the PMC. Source lines run from each tower and from the reactor to the power management controller (PMC) near the habitat zone. The ISRU plants are also within 3 km. The 3 kV AC distribution grid runs from the PMC to the three habitat modules and the ISRU plants, and each of them has its own service connection with a main breaker. Landing pads are kept at least 1 km from the towers. Distances are plan values; the drawing is schematic and not to scale.</desc>
 <defs>
 <pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(56,212,240,.07)"/></pattern>
 <pattern id="hill" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V8" stroke="rgba(214,226,236,.18)" stroke-width="2"/></pattern>
@@ -11,7 +11,7 @@
 </defs>
 <rect width="960" height="640" fill="#0a1015"/><rect width="960" height="640" fill="url(#g)"/>
 <text x="24" y="36" fill="#d6e2ec" font-size="19" letter-spacing="1">BASE POWER SITE LAYOUT · PLAN VIEW</text>
-<text x="24" y="58" fill="#d6e2ec" font-size="12" opacity=".7">Schematic, NOT TO SCALE. Distances are plan values. Every source line ends at the PMC (DD-003, DD-008).</text>
+<text x="24" y="58" fill="#d6e2ec" font-size="12" opacity=".7">Schematic, NOT TO SCALE. Every source converts to 3 kV AC on the spot and runs ≤3 km of cable to the PMC (DD-010).</text>
 
 <!-- ridge -->
 <path d="M30 175C120 150 200 140 280 132S460 120 560 140 650 150 680 160" fill="none" stroke="#d6e2ec" stroke-width="2" opacity=".35"/>
@@ -35,6 +35,7 @@
 <text x="548" y="226" fill="#d6e2ec" font-size="10" opacity=".7">on 2–3 ridge points</text>
 <text x="548" y="240" fill="#d6e2ec" font-size="10" opacity=".7">shadowed at different</text>
 <text x="548" y="254" fill="#d6e2ec" font-size="10" opacity=".7">times; count TBD</text>
+<text x="548" y="268" fill="#ffb020" font-size="10">each ≤3 km cable to PMC</text>
 
 <!-- reactor, terrain, shield cone -->
 <path d="M800 380L480 276L480 484Z" fill="rgba(56,212,240,.06)" stroke="#38d4f0" stroke-dasharray="5 5" opacity=".8"/>
@@ -45,14 +46,14 @@
 <path d="M786 356V404" stroke="#38d4f0" stroke-width="4" opacity=".7"/>
 <path d="M836 364H870M836 380H876M836 396H870" stroke="#ffb020" opacity=".7"/>
 <text x="812" y="336" fill="#ffb020" font-size="12" text-anchor="middle">LR-1-CLASS REACTOR</text>
-<text x="812" y="350" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".8">20 kWe · radiators + PLR</text>
+<text x="812" y="350" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".8">3 kV · 1 kHz out · PLR</text>
 <text x="830" y="424" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".8">shield faces crew zone</text>
 <text x="830" y="438" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".8">≤5 rem/yr at 1 km</text>
 
 <!-- distance: reactor to habitat -->
 <path d="M786 512H430" stroke="#d6e2ec" stroke-width="1" marker-start="url(#dw)" marker-end="url(#dw)" opacity=".8"/>
 <path d="M786 500V522M430 500V522" stroke="#d6e2ec" opacity=".6"/>
-<text x="608" y="530" fill="#d6e2ec" font-size="11" text-anchor="middle">1–3 km reactor to habitat zone (plan)</text>
+<text x="608" y="530" fill="#d6e2ec" font-size="11" text-anchor="middle">reactor 1–3 km from habitat zone; ≤3 km cable to PMC</text>
 
 <!-- PMC and habitat zone -->
 <rect x="300" y="420" width="260" height="70" rx="10" fill="none" stroke="#d6e2ec" stroke-dasharray="4 4" opacity=".5"/>
@@ -73,8 +74,10 @@
 <rect x="40" y="420" width="170" height="70" rx="8" fill="rgba(56,212,240,.10)" stroke="#38d4f0"/>
 <text x="125" y="446" fill="#d6e2ec" font-size="11" text-anchor="middle">ISRU PLANTS</text>
 <text x="125" y="462" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">one connection per plant</text>
-<text x="125" y="476" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">(M06)</text>
+<text x="125" y="476" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">(M06) · ≤3 km from PMC</text>
 
+<!-- source-end converters: inverter + 1 kHz transformer (DD-010) -->
+<g fill="#ffb020" stroke="#0a1015" stroke-width="1"><rect x="145" y="172" width="11" height="11" transform="rotate(45 150.5 177.5)"/><rect x="329" y="150" width="11" height="11" transform="rotate(45 334.5 155.5)"/><rect x="523" y="160" width="11" height="11" transform="rotate(45 528.5 165.5)"/></g>
 <!-- source lines (amber) -->
 <g stroke="#ffb020" stroke-width="2.5" fill="none" marker-end="url(#ah)">
 <path d="M150 178C170 260 330 300 392 330"/>
@@ -82,7 +85,7 @@
 <path d="M528 166C520 240 480 290 466 316"/>
 <path d="M788 388C700 380 660 340 600 340S520 344 488 346"/>
 </g>
-<text x="600" y="368" fill="#ffb020" font-size="10" text-anchor="middle">source line, 3 kV AC</text>
+<text x="600" y="368" fill="#ffb020" font-size="10" text-anchor="middle">source line, 3 kV AC, ≤3 km</text>
 
 <!-- feeders (cyan) -->
 <g stroke="#38d4f0" stroke-width="2.5" fill="none" marker-end="url(#ac)">
@@ -101,14 +104,15 @@
 <text x="215" y="598" fill="#d6e2ec" font-size="10" opacity=".75">and radiators (plan)</text>
 
 <!-- legend -->
-<rect x="716" y="76" width="226" height="204" rx="8" fill="rgba(10,16,21,.85)" stroke="#d6e2ec" stroke-opacity=".25"/>
+<rect x="716" y="76" width="226" height="226" rx="8" fill="rgba(10,16,21,.85)" stroke="#d6e2ec" stroke-opacity=".25"/>
 <text x="730" y="98" fill="#d6e2ec" font-size="12">KEY</text>
 <path d="M730 118H770" stroke="#ffb020" stroke-width="2.5"/><text x="780" y="122" fill="#d6e2ec" font-size="10">source line → PMC</text>
 <path d="M730 140H770" stroke="#38d4f0" stroke-width="2.5"/><text x="780" y="144" fill="#d6e2ec" font-size="10">3 kV AC grid PMC → units</text>
 <use href="#tower" transform="translate(750 192) scale(.6)"/><text x="780" y="180" fill="#d6e2ec" font-size="10">10 kW VSAT tower</text>
 <rect x="736" y="202" width="28" height="18" rx="3" fill="rgba(56,212,240,.18)" stroke="#38d4f0"/><text x="780" y="215" fill="#d6e2ec" font-size="10">PMC units A / B</text>
 <rect x="745" y="232" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="2"/><text x="780" y="241" fill="#d6e2ec" font-size="10">service connection</text>
-<text x="730" y="266" fill="#d6e2ec" font-size="10" opacity=".75">Cable lies on the surface</text>
+<rect x="745" y="253" width="10" height="10" fill="#ffb020" transform="rotate(45 750 258)"/><text x="780" y="262" fill="#d6e2ec" font-size="10">inverter + 1 kHz xfmr</text>
+<text x="730" y="288" fill="#d6e2ec" font-size="10" opacity=".75">Cable lies on the surface</text>
 
-<text x="24" y="628" fill="#d6e2ec" font-size="10" opacity=".6" letter-spacing="1">DIAGRAM · OPEN MOON PLAN DESIGN (DD-002, DD-003, DD-008, DD-009) · NOT TO SCALE · CC BY-SA 4.0</text>
+<text x="24" y="628" fill="#d6e2ec" font-size="10" opacity=".6" letter-spacing="1">DIAGRAM · OPEN MOON PLAN DESIGN (DD-002, DD-003, DD-008, DD-009, DD-010) · NOT TO SCALE · CC BY-SA 4.0</text>
 </svg>

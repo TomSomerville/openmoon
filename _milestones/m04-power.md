@@ -5,7 +5,7 @@ title: Surface power grid
 phase: 0
 window: "2028–2032"
 summary: Build a hybrid power system of tall solar towers on the sunlit ridges, a fission reactor for darkness, energy storage and high-voltage cables, all routed through one power management controller (PMC) that sends power to the grid or to storage. Every habitat module and facility takes its power from the grid through its own service connection. Sized to run the oxygen plant and the first habitat.
-objective: "Deliver solar peak power from NASA-class 10 kW VSAT towers, sized by the Phase 1 load budget (provisionally 100 kW; design change DD-004), and at least 20 kWe of continuous fission power from an LR-1-class reactor (design change DD-002), with every source feeding a power management controller (PMC) that routes power to the grid, to storage, or both (design changes DD-003 and DD-008), connected by a 3 kV AC, 1 kHz grid (NASA's lunar grid baseline; design change DD-001) that feeds every unit through its own service connection (design change DD-009), so the base never loses essential power, even during the longest polar darkness."
+objective: "Deliver solar peak power from NASA-class 10 kW VSAT towers, sized by the Phase 1 load budget (provisionally 100 kW; design change DD-004), and at least 20 kWe of continuous fission power from an LR-1-class reactor (design change DD-002), with every source feeding a power management controller (PMC) that routes power to the grid, to storage, or both (design changes DD-003 and DD-008), connected by a 3 kV AC, 1 kHz grid (NASA's lunar grid baseline; design change DD-001) that feeds every unit through its own service connection (design change DD-009), with every generation source within 3 km of cable run of the PMC and converting to 3 kV AC on the spot (design change DD-010), so the base never loses essential power, even during the longest polar darkness."
 trl_min: 5
 depends_on: [M00, M02, M03]
 spec:
@@ -13,7 +13,8 @@ spec:
   - {k: "Fission", v: "1 × LR-1-class reactor, 20 kWe (7.5–15 t) (DD-002)"}
   - {k: "PMC", v: "Power management controller: main switching units A/B with a cross-tie; all sources in, grid and storage out (DD-003, DD-008)"}
   - {k: "Storage", v: "~260 kWh Li-ion bank (160 kWh reactor ride-through + 100 kWh peaks), each string on a BCDU with its own BMS (DD-008) + regenerative fuel cells, ~3 MWh"}
-  - {k: "Grid", v: "3 kV AC, 3-phase, 1 kHz; 1–3 km links (NASA baseline, DD-001)"}
+  - {k: "Grid", v: "3 kV AC, 3-phase, 1 kHz (NASA baseline, DD-001); every source converts to it on the spot: UMIC-class low-voltage inverter + 1 kHz step-up transformer, LR-1 at its output (DD-010)"}
+  - {k: "Max power run", v: "3 km of cable from any generation source to the PMC; longer runs rejected for now (DD-010)"}
   - {k: "Service connections", v: "One per unit (3 habitat modules + each facility): UMIC-class step-down to 120 V DC, meter, main breaker, DC panel (DD-009)"}
   - {k: "Load at end", v: "Oxygen pilot plant ~26 kW + habitat 20–50 kW"}
 cost: {low: 9.8, high: 29.8, note: "about 85% of this is delivery cost; see the analysis below"}
@@ -39,20 +40,21 @@ exit_criteria:
   - "Every habitat module and facility is powered through its own service connection, and opening any one main breaker leaves all the others powered (DD-009)."
   - "Essential loads (comms, heaters, life support standby) never lose power across the longest darkness period recorded at the site."
   - "Grid survives loss of any single power source without dropping essential loads."
-  - "Cable-laying rover has laid at least 3 km of cable."
+  - "Every generation source sits within 3 km of cable run of the PMC and delivers 3 kV, 3-phase, 1 kHz AC from its own source-end converter (DD-010)."
+  - "Cable-laying rover has laid every source run (none longer than 3 km) and the distribution grid (DD-010)."
 workstreams:
   - name: Solar towers
     desc: Tall, sun-tracking arrays that see over the terrain.
-    items: ["10 kW VSAT, ~10 m mast (the only tower type, DD-004)", "Number set by the Phase 1 load budget", "Spread across 2–3 ridge points"]
+    items: ["10 kW VSAT, ~10 m mast (the only tower type, DD-004)", "Number set by the Phase 1 load budget", "Spread across 2–3 ridge points, each within 3 km of cable run of the PMC (DD-010)", "At each tower: array regulator and shunt, UMIC-class inverter, 1 kHz step-up transformer to 3 kV AC (DD-010)"]
   - name: Fission power
     desc: Continuous power regardless of sunlight.
-    items: ["LR-1-class 20 kWe unit (HALEU, closed Brayton, 3 kV AC); KRUSTY-class 1 kWe units for small remote loads", "Placed 1–3 km away, behind terrain", "Remote start after landing", "Feeds the PMC, which routes its power to the grid or storage (DD-003, DD-008)", "Excess power to its parasitic load radiator (PLR)"]
+    items: ["LR-1-class 20 kWe unit (HALEU, closed Brayton, 3 kV AC); KRUSTY-class 1 kWe units for small remote loads", "Placed 1–3 km away, behind terrain, with no more than 3 km of cable run to the PMC (DD-010)", "LR-1 interface: 3 kV, 3-phase, 1 kHz at the reactor output; vendor spec or frequency converter at the reactor (open, DD-010)", "KRUSTY-class units convert their DC bus to 3 kV AC at the unit (DD-010)", "Remote start after landing", "Feeds the PMC, which routes its power to the grid or storage (DD-003, DD-008)", "Excess power to its parasitic load radiator (PLR)"]
   - name: Storage
     desc: Ride through solar gaps and peaks.
     items: ["Li-ion battery bank behind the PMC: 160 kWh per 20 kWe reactor plus ~100 kWh for peaks, in several strings", "Each string on its own battery charge/discharge unit (BCDU), with its own BMS for cell management (DD-008)", "Regenerative fuel cells (320–650 Wh/kg), charged by PMC surplus", "Shares water and gas tanks with ISRU"]
   - name: Grid and cables
     desc: Move power between sources and users.
-    items: ["3 kV AC, 3-phase, 1 kHz aluminium cable", "Step-up transformers at each source", "One service connection per unit: UMIC-class step-down to 120 V DC, meter, main breaker, DC panel (DD-009)", "No separate habitat or ISRU microgrids (DD-009)"]
+    items: ["3 kV AC, 3-phase, 1 kHz aluminium cable", "At each source: low-voltage UMIC-class inverter + 1 kHz step-up transformer; only low-voltage switches, no high-voltage DC (DD-010)", "Every source run 3 km or less (DD-010)", "One service connection per unit: UMIC-class step-down to 120 V DC, meter, main breaker, DC panel (DD-009)", "No separate habitat or ISRU microgrids (DD-009)"]
   - name: Cable laying
     desc: Robots lay cable on the surface.
     items: ["LunaGrid-Lite-style rover reels out cable", "Cable left on the surface to shed heat (NASA advises against burial); ramps at rover crossings", "Fault location by time-domain reflectometry"]
@@ -98,6 +100,11 @@ sources:
   - {title: "IEEE 2030.7: Standard for the Specification of Microgrid Controllers", url: "https://standards.ieee.org/ieee/2030.7/5941/", date: "2017"}
   - {title: "Wikipedia: Service drop", url: "https://en.wikipedia.org/wiki/Service_drop", date: "2026"}
   - {title: "Wikipedia: Distribution board", url: "https://en.wikipedia.org/wiki/Distribution_board", date: "2026"}
+  - {title: "Austin et al., IEEE TNS: Inclusion of radiation environment variability for reliability estimates for SiC power MOSFETs (single-event burnout)", url: "https://ntrs.nasa.gov/api/citations/20205000795/downloads/2020-561-Austin-Final-Paper-TNS.pdf", date: "Jan 2020"}
+  - {title: "Dugala, NASA Glenn: Stirling convertor controller development (presentation; ASC alternator voltage, current and frequency)", url: "https://ntrs.nasa.gov/api/citations/20180007412/downloads/20180007412.pdf", date: "Jul 2018"}
+  - {title: "Dugala, NASA/TM-2018-219963: Stirling convertor controller development at NASA Glenn Research Center", url: "https://ntrs.nasa.gov/api/citations/20180008496/downloads/20180008496.pdf", date: "Nov 2018"}
+  - {title: "Gibson et al.: NASA's Kilopower reactor development and the path to higher power missions (NTRS 20170002010)", url: "https://ntrs.nasa.gov/citations/20170002010", date: "Mar 2017"}
+  - {title: "Wikipedia: Aluminium (resistivity and density)", url: "https://en.wikipedia.org/wiki/Aluminium", date: "2026"}
 risks:
   - {sev: Critical, title: "Darkness: even the best ridges have shadow periods; NASA cites up to ~100 h at the pole, and 354 h is the design night for the US reactor", fix: "Fission base load + solar on multiple ridge points + storage; never rely on one source"}
   - {sev: Critical, title: "The US lunar reactor's requirements keep changing (40 → 100 → 20 kWe) and no contract has been awarded", fix: "Plan on the LR-1 minimum of 20 kWe (DD-002); size the PMC so a larger unit can be added; solar-only fallback with more storage"}
@@ -106,7 +113,8 @@ risks:
   - {sev: High, title: "Delivery cost dominates: ~85% of this milestone is shipping mass", fix: "Push heavy-cargo pricing down; make cables and later solar cells from regolith (Blue Alchemist, M12)"}
   - {sev: High, title: "Dust on arrays and radiators", fix: "Vertical arrays shed dust; keep 1 km+ from landing pads; landing pads in M05"}
   - {sev: High, title: "Reactor radiation near crew", fix: "1–3 km separation, terrain or berm shielding; US draft sets ≤5 rem/yr at 1 km"}
-  - {sev: High, title: "The 3 kV AC grid hardware is early: NASA has bench-tested a single 1 kW UMIC module, and an AC grid with no spinning machines is harder to keep stable", fix: "Track NASA's UMIC development; test parallel UMICs and droop control in hardware before flight; keep links short (1–3 km), where NASA says 1 kHz suits"}
+  - {sev: High, title: "The 3 kV AC grid hardware is early: NASA has bench-tested a single 1 kW UMIC module, and an AC grid with no spinning machines is harder to keep stable", fix: "Track NASA's UMIC development; test parallel UMICs and droop control in hardware before flight; keep every source run to 3 km or less (DD-010), within NASA's Artemis design scale"}
+  - {sev: High, title: "The 3 km power-run limit (DD-010) constrains siting: two Shackleton-ridge points about 8 km apart reach ~94% combined light, but both cannot be within 3 km of one PMC; NASA expects ISRU to need power over 3–5 km", fix: "M00 site selection must find a base point within 3 km of cable run of every ridge point it uses, and accept the illumination it gives; ISRU plants within 3 km; PSR work further out on the mobile power cart (PW.5) or a local source"}
   - {sev: Medium, title: "Cable damage from rovers, thermal cycling and micrometeoroids", fix: "Surface routes away from traffic with protected crossings (NASA advises against burial because regolith traps heat [src 21]); redundant routes; fault-locating electronics"}
 ---
 
@@ -185,17 +193,19 @@ This milestone targets about 120 kW of total capacity (provisional until the Pha
 
 ![Plan view, not to scale: 10 kW VSAT towers on two or three ridge points and an LR-1-class reactor 1–3 km away behind terrain, with its 36° shield shadow toward the crew, each send a 3 kV AC source line to the PMC near the habitat zone; the 3 kV AC distribution grid runs from the PMC to a service connection at each habitat module and facility; landing pads sit at least 1 km from the towers](/assets/tech/base-power-site-layout.svg)
 
-- **Solar towers** stand on two or three ridge points, so that when one is in shadow another is usually lit (plan design; see M00). Each tower has its own source line to the PMC.
-- **The reactor** sits 1–3 km from the habitat zone, behind terrain (plan design, DD-002). NASA's reference shield has a 36° included angle and keeps the dose below 5 rem/yr at 1 km<sup class="r">[26](#s26)</sup>, so the shield's shadow is pointed at the crew zone.
-- **The PMC** sits near the habitat zone (plan design). Every source line ends there. The distribution grid runs out from it to a service connection at each habitat module and facility (DD-009).
+- **3 km at most.** Every generation source must sit within 3 km of cable run of the PMC (plan design, DD-010). That sets the size of the power site: the base, the ridge points and the reactor all fit inside a 3 km cable reach.
+- **Solar towers** stand on two or three ridge points, so that when one is in shadow another is usually lit (plan design; see M00). Each tower converts its own output to 3 kV AC and has its own source line to the PMC (DD-010).
+- **The reactor** sits 1–3 km from the habitat zone, behind terrain, with no more than 3 km of cable run to the PMC (plan design, DD-002, DD-010). NASA's reference shield has a 36° included angle and keeps the dose below 5 rem/yr at 1 km<sup class="r">[26](#s26)</sup>, so the shield's shadow is pointed at the crew zone.
+- **The PMC** sits near the habitat zone (plan design). Every source line ends there, already at 3 kV AC (DD-010). The distribution grid runs out from it to a service connection at each habitat module and facility (DD-009).
 - **Landing pads** stay at least 1 km from the towers and radiators, to limit dust (plan design).
+- **ISRU plants** must also be within 3 km of cable run of the PMC. NASA expects ISRU to need power over 3–5 km<sup class="r">[1](#s1)</sup>, so this is a siting conflict for M00 and M06 to resolve (DD-010).
 - **Cables** lie on the surface. NASA advises against burying them, because regolith traps heat<sup class="r">[21](#s21)</sup>.
 
 ## One-line diagram
 
 ![One-line diagram: each solar tower and the reactor send 3 kV AC over a source line to an input converter on PMC main switching unit A or B, joined by a cross-tie; Li-ion battery strings connect to each unit through BCDUs, each string with its own BMS; the fuel cells are charged from PMC surplus and discharge only into the battery, with no direct path to the grid; output converters feed the 3 kV AC distribution grid, which feeds a service connection with a 120 V DC panel at each of three habitat modules and each facility; the reactor's parasitic load radiator takes surplus and solar towers curtail on PMC command](/assets/tech/base-power-one-line.svg)
 
-This is the plan's design, simplified to one line per 3-phase circuit. The source lines and the distribution grid run at 3 kV AC, NASA's lunar grid baseline<sup class="r">[23](#s23)</sup>. A UMIC-class converter in each service connection links that unit's 120 V DC panel to the 3 kV AC grid<sup class="r">[22](#s22)</sup>. The PMC buses, the converters inside it, the service connections and the battery and fuel-cell connections are plan design (DD-003, DD-008, DD-009).
+This is the plan's design, simplified to one line per 3-phase circuit. Each source converts to 3 kV AC on the spot and every source line is 3 km or shorter (DD-010). The source lines and the distribution grid run at 3 kV AC, NASA's lunar grid baseline<sup class="r">[23](#s23)</sup>. A UMIC-class converter in each service connection links that unit's 120 V DC panel to the 3 kV AC grid<sup class="r">[22](#s22)</sup>. The PMC buses, the converters inside it, the service connections and the battery and fuel-cell connections are plan design (DD-003, DD-008, DD-009).
 
 ## Solar towers
 
@@ -219,6 +229,50 @@ This is the plan's design, simplified to one line per 3-phase circuit. The sourc
 - **Cable mass.** NASA's 2025 reactor reference lists **325 kg for a 1 km main cable and spool** on the 3 kVac link<sup class="r">[21](#s21)</sup>, heavier than the ~240 kg per 3 km NASA once estimated for a 2,800 V DC cable<sup class="r">[15](#s15)</sup>. Because the reactor is heavy (about 0.25 kg per watt), the line must still be efficient: any power lost in the cable has to be made up with extra generating capacity<sup class="r">[2](#s2)</sup>.
 - **Laying the cable.** Astrobotic's LunaGrid-Lite is designed to transmit 1 kW; its 2025 design lays about 500 m of cable<sup class="r">[8](#s8)</sup>. NASA's 2023 award described 1 km<sup class="r">[19](#s19)</sup>.
 
+## Power runs: 3 km at most, converted to 3 kV AC at the source
+
+{% include decision-note.html id="DD-010" extra="Before this, links were '1–3 km' with no set maximum, and how each source reached 3 kV AC was only sketched." %}
+
+![Diagram: three conversion chains, each built at the source. VSAT: native DC, array regulator and shunt, UMIC-class low-voltage inverter, 1 kHz step-up transformer, 3 kV AC. Kilopower: eight Stirling alternators at about 12 V AC and 100 Hz, one controller each rectifying to DC, a shared DC bus, a UMIC-class inverter, a 1 kHz transformer, 3 kV AC. LR-1: 3 kV AC at the reactor output, with the frequency matched to 1 kHz by the vendor or a converter. Every source then runs at most 3 km of cable to the PMC](/assets/tech/source-to-3kv-conversion.svg)
+
+**The rule (plan design, DD-010).**
+- Every generation source, whether a VSAT tower, the LR-1-class reactor or a KRUSTY-class unit, sits within **3 km of cable run** of the PMC. Runs of 10–30 km are rejected for now.
+- Every source converts to **3 kV AC, 3-phase, 1 kHz** (DD-001) right where it stands. A low-voltage, UMIC-class inverter feeds a 1 kHz step-up transformer next to the source. NASA's UMIC is built from parallel 1 kW modules converting between 120 V DC and under 100 V AC, with transformers to 3 kV<sup class="r">[22](#s22)</sup>.
+- Only low-voltage switches are used. The transformer does the step-up and has no switches. There are no high-voltage DC lines.
+
+**Why.**
+- **Switches.** NASA says a DC grid is "practically limited to 1.2-1.5 kV, due to lack of high voltage rad-hard switches"<sup class="r">[23](#s23)</sup>. Heavy ions can burn out high-voltage power MOSFETs: for 1200 V silicon carbide parts, even a 50% voltage derating "does not eliminate the risk"<sup class="r">[32](#s32)</sup>. NASA's 2025 reference notes that AC "allows use of existing flight-rated switches without stacking"<sup class="r">[26](#s26)</sup>.
+- **Distance.** For 100 kW on 8 AWG cable at 1 kHz, NASA's study gives 3 kV as usable to about 600 m and 6 kV to 2.5 km, rising to 18 kV for 20 km. It adds that "long distances beyond Artemis may require dropping to lower frequency (TBD)"<sup class="r">[23](#s23)</sup>. NASA's Artemis working scale is 1–3 km links at "elevated voltage (2 kV+)"<sup class="r">[1](#s1)</sup>. So 1 kHz is kept, and runs stay at 3 km or less.
+- **NASA does the same.** NASA's 2025 fission reference design converts its Stirling option to 350 V DC, then inverts it and steps it up with a transformer to 3 kVac<sup class="r">[26](#s26)</sup>.
+
+**Each source (plan design, DD-010).**
+
+| Source | Native output | Conversion at the source |
+|---|---|---|
+| VSAT tower | DC. The voltage is not published. For comparison, the ISS arrays hold a ~160 V DC bus<sup class="r">[27](#s27)</sup> | Array regulator and shunt (curtailment and disconnect, DD-008) → UMIC-class inverter → 1 kHz transformer → 3 kV AC |
+| KRUSTY-class Kilopower | Each Stirling alternator makes single-phase AC: about 12 V RMS, 7–10 A, 102–103 Hz in its engine family, the Advanced Stirling Convertor<sup class="r">[33](#s33)</sup>. Each engine's controller rectifies to DC and holds a set voltage<sup class="r">[34](#s34)</sup>. Engines run in opposed pairs kept in step<sup class="r">[35](#s35)</sup>. The controllers feed one DC bus, at a voltage not published | DC bus → UMIC-class inverter → 1 kHz transformer → 3 kV AC. The 12 V never leaves the machine |
+| LR-1-class reactor | 3 kV RMS AC is required<sup class="r">[25](#s25)</sup>. The requirements do not set the frequency; NASA's 2025 reference Brayton alternators gave 240 Vrms at 2 kHz<sup class="r">[26](#s26)</sup> | Plan interface: 3 kV, 3-phase, **1 kHz at the reactor output**. Specified to the vendor, or met with a frequency converter at the reactor end: **open** |
+
+**Why 12 V cannot travel (this plan's arithmetic).** 1 kW at 12 V is about 83 A. For a 5% loss (50 W) on two 10 mm² aluminium conductors (26.5 nΩ·m<sup class="r">[36](#s36)</sup>), the cable can be only about 1.4 m long one-way. The same 1 kW at 3 kV, 3-phase is about 0.19 A.
+
+**Sizing check: the worst case, 20 kW over 3 km (this plan's arithmetic).** Unity power factor; aluminium at 26.5 nΩ·m and 2,699 kg/m³<sup class="r">[36](#s36)</sup>.
+
+| Quantity | Working | ≤3% loss | ≤5% loss |
+|---|---|---|---|
+| Current per phase | 20 kW ÷ (√3 × 3 kV) | 3.85 A | 3.85 A |
+| Allowed loss | 3% or 5% × 20 kW | 600 W | 1,000 W |
+| Resistance per conductor, 3 km | loss ÷ (3 × 3.85²) | 13.5 Ω (4.5 Ω/km) | 22.5 Ω (7.5 Ω/km) |
+| Aluminium area | 26.5 nΩ·m ÷ (Ω per m) | ~5.9 mm² | ~3.5 mm² |
+| Aluminium mass, 3 conductors × 3 km | area × 9 km × 2,699 kg/m³ | ~143 kg | ~86 kg |
+
+- **At NASA's 8 AWG size** (8.37 mm², the size in NASA's grid study<sup class="r">[23](#s23)</sup>), the loss is about 2.1% (422 W) and the aluminium weighs about 203 kg (this plan's arithmetic).
+- **Planning mass.** Insulation, jacket and spool make up most of a real cable. The plan uses NASA's 325 kg per 1 km main cable and spool<sup class="r">[21](#s21)</sup>: about 1 t for a 3 km run.
+
+**What it costs the plan (DD-010 trade-offs).**
+- **Siting.** The base must sit within 3 km of cable run of every ridge point it uses. Two Shackleton-ridge points about 8 km apart reach ~94% combined light (M00), but both cannot be within 3 km of one PMC. M00 must resolve this.
+- **ISRU.** The oxygen and water plants must also be within 3 km, against NASA's 3–5 km estimate<sup class="r">[1](#s1)</sup>. Ice mining in shadowed craters further out uses the mobile power cart (PBS PW.5) or a local source (open).
+- **Mass.** Every source carries its own inverter and transformer. That mass sits in this milestone's converter and grid hardware items until the load budget sizes it; no cost line changes.
+
 ## Where the money goes
 
 About **85%** of this milestone's cost is **delivery**, not hardware. Two things change that:
@@ -230,10 +284,10 @@ About **85%** of this milestone's cost is **delivery**, not hardware. Two things
 
 ![Seven panels showing the build-out: first 10 kW VSAT with PMC main switching unit A and a starter battery string; second VSAT; more 10 kW VSATs; regenerative fuel cells; PMC unit B with the ride-through battery and cross-tie; the LR-1-class reactor; and the closed grid that survives losing any single source](/assets/tech/base-power-build-out.svg)
 
-1. **First landing (small lander):** a 10 kW VSAT, PMC main switching unit A with a starter battery string, a LunaGrid-Lite-class cable rover, and the LTE kit from M03. From the first watt, power flows through the PMC, and each load gets its own service connection.
-2. **Second 10 kW VSAT** on a second ridge point, with a cable link between the two.
+1. **First landing (small lander):** a 10 kW VSAT with its own regulator, inverter and 1 kHz transformer (DD-010), PMC main switching unit A with a starter battery string, a LunaGrid-Lite-class cable rover, and the LTE kit from M03. From the first watt, power flows through the PMC, and each load gets its own service connection.
+2. **Second 10 kW VSAT** on a second ridge point, within 3 km of cable run of the PMC, with its own source line (DD-010).
 3. **More 10 kW VSATs** on medium landers, up to the number the Phase 1 load budget sets (provisionally 8 more, for 10 in total).
 4. **Regenerative fuel cell storage**, sharing tanks with the M06 water plant, connected to the PMC.
 5. **PMC main switching unit B and the reactor ride-through battery strings**, with the cross-tie to unit A.
-6. **Fission unit on a heavy lander.** Rovers set it 1–3 km from the habitat zone behind terrain, then it starts remotely into its parasitic load radiator and is switched over to feed the PMC.
+6. **Fission unit on a heavy lander.** Rovers set it 1–3 km from the habitat zone behind terrain, no more than 3 km of cable from the PMC (DD-010). It starts remotely into its parasitic load radiator and is then switched over to feed the PMC at 3 kV, 1 kHz.
 7. **Close the grid** so it survives losing any single source.

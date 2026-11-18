@@ -12,7 +12,7 @@ spec:
   - {k: "Oxygen plant", v: "Molten regolith electrolysis or carbothermal, ≥10 t O₂/yr"}
   - {k: "Water plant", v: "Excavate icy regolith in a PSR, heat, capture, purify; ≥10 t H₂O/yr"}
   - {k: "Power", v: "18 kW (NASA study efficiency) to ~120 kW (2024 demo efficiency) for 10 t/yr"}
-  - {k: "Power interface", v: "Each plant (oxygen, water extraction, water electrolysis, storage) has its own service connection to the M04 grid and its own 120 V DC panel (plan design, DD-009)"}
+  - {k: "Power interface", v: "Each plant (oxygen, water extraction, water electrolysis, storage) has its own service connection to the M04 grid and its own 120 V DC panel (plan design, DD-009); every plant within 3 km of cable run of the PMC, PSR work beyond that on the mobile power cart or a local source (DD-010)"}
   - {k: "Storage", v: "Liquid oxygen and water tanks"}
 cost: {low: 3.8, high: 9.8, note: "two pilot plants plus storage; delivery is the largest part"}
 cost_items:
@@ -61,6 +61,7 @@ sources:
   - {title: "NASA Kennedy: NASA Kennedy breathes life into Moon soil testing", url: "https://www.nasa.gov/centers-and-facilities/kennedy/nasa-kennedy-breathes-life-into-moon-soil-testing", date: "2025"}
   - {title: "NASA M2M-30044 Lunar Surface Data Book", url: "https://ntrs.nasa.gov/api/citations/20250002845/downloads/M2M-30044%20Lunar%20Surface%20Data%20Book%20Baseline_Final.pdf", date: "2025"}
   - {title: "NASA: 2023 NASA Tipping Point selections", url: "https://www.nasa.gov/general/2023-nasa-tipping-point-selections/", date: "Jul 2023"}
+  - {title: "Csank & Scott, NASA GRC: Power and Energy for the Lunar Surface (ISRU power over 3–5 km)", url: "https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf", date: "Apr 2022"}
 risks:
   - {sev: Critical, title: "Oxygen-from-rock is only proven at small scale on the ground (0.07 kg/h, ~100 kWh/kg); a 10 t/yr plant needs ~1.1 kg/h and, at demo efficiency, ~120 kW", fix: "Modular cells; ground-test a full-size module and measure kWh/kg before flight; start at the output the grid can power and add cells as efficiency is proven; run two different processes"}
   - {sev: Critical, title: "Ice may be scarcer or deeper than hoped", fix: "Size the water plant from M01 drilling, not orbital estimates; oxygen-from-rock doesn't need ice and covers breathing oxygen"}
@@ -104,11 +105,15 @@ None of the regolith processes has run on the Moon yet. That's why this is a **p
 
 Each plant connects to the M04 grid like a house: a service drop, a UMIC-class converter to 120 V DC, a meter, a main breaker and its own 120 V DC panel (plan design, see C04.4). That applies to the oxygen plant, the water-extraction plant, the water electrolysis (H₂/O₂) plant and the storage site. A fault in one plant trips only its own breaker, and the power system can shed one plant without touching the others.
 
+**Within 3 km of the PMC (design change DD-010).** Every power run in the base is 3 km of cable or less, so the oxygen plant, the water-extraction and electrolysis plants and the storage site must all sit within 3 km of cable run of the PMC (plan design). NASA expects ISRU to need power over 3–5 km<sup class="r">[12](#s12)</sup>, so this is a real siting limit. Ice mining inside a shadowed crater that lies further out is powered by the mobile power cart (PBS PW.5) or a local source, and the water is carried back to the plants by tanker (open; see C06.2).
+
+{% include decision-note.html id="DD-010" extra="The plants could sit wherever the ice and the regolith stockpile were. Now they must sit within 3 km of cable run of the PMC." %}
+
 ## Step-by-step
 
 1. **Ground-qualify a full-size module** of each process on Earth, using simulant matched to the M01 soil data.
-2. **Land the oxygen plant** next to the M05 regolith stockpile and connect it to the grid through its own service connection.
-3. **Land the water plant** with a cold-rated excavator at the edge of the best PSR from M01, with its own service connection.
+2. **Land the oxygen plant** next to the M05 regolith stockpile, within 3 km of cable run of the PMC (DD-010), and connect it to the grid through its own service connection.
+3. **Land the water plant** with a cold-rated excavator at the edge of the best PSR from M01, with its own service connection. If that PSR edge is more than 3 km of cable from the PMC, power the mine from the mobile power cart (PW.5) or a local source (DD-010).
 4. **Run continuously for six months.** Measure output, energy per kg and wear.
 5. **Store and use the products.** Liquefy and store oxygen; feed water into the M04 fuel-cell storage and keep a reserve for the crew.
 6. **Publish all the data** to size the full plants in M11.

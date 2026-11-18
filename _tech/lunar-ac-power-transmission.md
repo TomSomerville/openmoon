@@ -32,7 +32,7 @@ links:
 
 Lunar AC power transmission is a three-phase, 3,000 V, 1,000 Hz power line laid across the Moon's surface. It carries electricity from power plants, such as a fission reactor or solar towers, to users a few kilometres away. In Open Moon every such line ends at the power management controller (PMC), and the distribution grid carries the power on to every user's service connection. Raising the voltage lowers the current, so thinner, lighter wire can carry the same power. This is NASA's lunar grid baseline, set in a [2022 NASA Glenn trade study](https://ntrs.nasa.gov/citations/20220011587). NASA/DOE's [2025 fission reactor reference design](https://ntrs.nasa.gov/citations/20250000841) uses the same link.
 
-For comparison, the US grid on Earth runs at 60 Hz, with long-distance lines mostly at [230–500 kV](https://en.wikipedia.org/wiki/Electric_power_transmission). The lunar grid is far smaller: tens of kilowatts over 1–3 km, so 3 kV is enough. Its 1 kHz frequency is unusually high. Aircraft and spacecraft use 400 Hz because ["transformers and motors for 400 Hz are much smaller and lighter"](https://en.wikipedia.org/wiki/Utility_frequency), and NASA's lunar grid takes the same idea further.
+For comparison, the US grid on Earth runs at 60 Hz, with long-distance lines mostly at [230–500 kV](https://en.wikipedia.org/wiki/Electric_power_transmission). The lunar grid is far smaller: tens of kilowatts over 1–3 km, so 3 kV is enough. Open Moon caps every power run at 3 km of cable ([DD-010](/decisions/#dd-010)). Its 1 kHz frequency is unusually high. Aircraft and spacecraft use 400 Hz because ["transformers and motors for 400 Hz are much smaller and lighter"](https://en.wikipedia.org/wiki/Utility_frequency), and NASA's lunar grid takes the same idea further.
 
 ## Why NASA chose it, and when
 
@@ -48,7 +48,7 @@ NASA's reason, in its own words: a DC grid is "practically limited to 1.2-1.5 kV
 
 ## Why Open Moon uses it
 
-Milestone M04 builds the base's power grid. Every source line, from the reactor and the solar towers, ends at the base PMC. The PMC routes the power over the grid, or into storage ([design changes DD-003 and DD-008](/decisions/#dd-008)). The grid works like a national grid: each habitat module and facility, such as the oxygen plant, has its own service connection that turns 3 kV AC into 120 V DC for its panel ([DD-009](/decisions/#dd-009)). The reactor has to sit away from the crew: NASA's design puts the user interface [1 km away](https://ntrs.nasa.gov/citations/20250000841), and the oxygen plant needs power over [3–5 km](https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf).
+Milestone M04 builds the base's power grid. Every source line, from the reactor and the solar towers, ends at the base PMC. The PMC routes the power over the grid, or into storage ([design changes DD-003 and DD-008](/decisions/#dd-008)). The grid works like a national grid: each habitat module and facility, such as the oxygen plant, has its own service connection that turns 3 kV AC into 120 V DC for its panel ([DD-009](/decisions/#dd-009)). The reactor has to sit away from the crew: NASA's design puts the user interface [1 km away](https://ntrs.nasa.gov/citations/20250000841), and the oxygen plant needs power over [3–5 km](https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf). Open Moon keeps every run to 3 km of cable, so its oxygen plant must sit within 3 km of the PMC ([DD-010](/decisions/#dd-010)).
 
 Efficiency matters because fission power is heavy, about [0.25–0.27 kg per watt](https://ntrs.nasa.gov/api/citations/20220002315/downloads/Lunar_power_transmission_concepts_FINAL.pdf). Every watt lost in the cable means more reactor mass. Using NASA's AC baseline means a NASA-designed reactor's 3 kV AC output can run straight down its source line to the PMC, and Open Moon can use NASA's interface converters, instead of developing high-voltage DC parts no one makes yet.
 
@@ -56,7 +56,11 @@ Efficiency matters because fission power is heavy, about [0.25–0.27 kg per wat
 
 ## How it works
 
-Each power source's inverters produce low-voltage AC. A transformer raises it to 3 kV for the cable. At the far end, another transformer lowers it, and NASA's [Universal Modular Interface Converter](https://ntrs.nasa.gov/citations/20230013309) (UMIC) turns it into 120 V DC for equipment. In Open Moon a UMIC-class converter sits in each unit's service connection ([DD-009](/decisions/#dd-009)). The UMIC is built from parallel, standard 1 kW inverter modules, with DC switch modules to isolate faults. Parallel units share load by droop control.
+{% include decision-note.html id="DD-010" extra="Open Moon now builds the inverter and step-up transformer at every source and keeps every run to 3 km." %}
+
+![Diagram: three conversion chains, each built at the source. VSAT: native DC, array regulator and shunt, UMIC-class low-voltage inverter, 1 kHz step-up transformer, 3 kV AC. Kilopower: eight Stirling alternators at about 12 V AC and 100 Hz, one controller each rectifying to DC, a shared DC bus, a UMIC-class inverter, a 1 kHz transformer, 3 kV AC. LR-1: 3 kV AC at the reactor output, with the frequency matched to 1 kHz by the vendor or a converter. Every source then runs at most 3 km of cable to the PMC](/assets/tech/source-to-3kv-conversion.svg)
+
+Each power source's inverters produce low-voltage AC right at the source. A transformer next to the source raises it to 3 kV for the cable, so only low-voltage switches are needed ([DD-010](/decisions/#dd-010)). At the far end, another transformer lowers it, and NASA's [Universal Modular Interface Converter](https://ntrs.nasa.gov/citations/20230013309) (UMIC) turns it into 120 V DC for equipment. In Open Moon a UMIC-class converter sits in each unit's service connection ([DD-009](/decisions/#dd-009)). The UMIC is built from parallel, standard 1 kW inverter modules, with DC switch modules to isolate faults. Parallel units share load by droop control.
 
 The Brayton reactor option's three-phase alternators can feed the 3 kVac step-up transformer directly, at about [90% PMAD efficiency](https://ntrs.nasa.gov/citations/20250000841). The Stirling option needs an extra converter stage and reaches about 83%. The cable lies on the surface: NASA says ["burying the cable is not advised due to the poor thermal conductivity of the regolith"](https://ntrs.nasa.gov/citations/20250000841).
 
@@ -69,6 +73,9 @@ The Brayton reactor option's three-phase alternators can feed the 3 kVac step-up
 | Efficiency target | >85% transmission system | [NASA UMIC](https://ntrs.nasa.gov/citations/20230013309) |
 | Mass target | <0.55 kg/m | [NASA UMIC](https://ntrs.nasa.gov/citations/20230013309) |
 | Main cable and spool | 325 kg per 1 km | [NASA 2025](https://ntrs.nasa.gov/citations/20250000841) |
+| Usable distance at 100 kW, 8 AWG, 1 kHz | 3 kV to ~600 m; 6 kV to 2.5 km; 18 kV to 20 km | [NASA 2022](https://ntrs.nasa.gov/api/citations/20220011587/downloads/APS4DS_Establishing_Lunar_Grid_V3.pdf) |
+| Open Moon run length | ≤3 km per source (plan design) | [DD-010](/decisions/#dd-010) |
+| Worst case, 20 kW over 3 km | 3.85 A per phase; ~5.9 mm² Al for ≤3% loss, ~3.5 mm² for ≤5% (this plan's arithmetic) | [C04.4](/plan/components/c04-4-ac-grid/) |
 | Voltage sensitivity | 1 kVac adds 570 kg; no gain above 3 kVac at 1 km | [NASA 2025](https://ntrs.nasa.gov/citations/20250000841) |
 
 ## Limitations and open issues
@@ -76,6 +83,6 @@ The Brayton reactor option's three-phase alternators can feed the 3 kVac step-up
 - **Heavier than ideal DC.** NASA's own study says DC is ["significantly lighter than AC for voltages above 3-4 kV"](https://ntrs.nasa.gov/citations/20220011587). AC is chosen because its parts can be built, not because it is the lightest in theory.
 - **Early converter hardware.** NASA has bench-tested a single [1 kW UMIC module](https://ntrs.nasa.gov/citations/20230013309) and simulated parallel units. A full multi-kilowatt unit has not been tested in vacuum.
 - **Stability without rotating machines.** Every source is an inverter, so the grid's frequency and voltage are held entirely by control software ([UMIC droop control](https://ntrs.nasa.gov/citations/20230013309)).
-- **Longer grids.** NASA notes that grids much larger than Artemis scale may need a [lower frequency](https://ntrs.nasa.gov/citations/20220011587) to avoid stability and propagation problems.
+- **Longer grids.** NASA notes that grids much larger than Artemis scale may need a [lower frequency](https://ntrs.nasa.gov/citations/20220011587) to avoid stability and propagation problems. That is why Open Moon rejects runs of 10–30 km for now ([DD-010](/decisions/#dd-010)).
 - **Insulation in vacuum.** Vacuum-rated high-voltage cables that avoid partial discharge are [still being studied](https://ntrs.nasa.gov/api/citations/20220002315/downloads/Lunar_power_transmission_concepts_FINAL.pdf).
 - **Surface exposure.** Because the cable is not buried, it faces rover traffic and micrometeoroids. NASA's first cable-laying demonstration was scoped at [1 km](https://www.nasa.gov/general/2023-nasa-tipping-point-selections/), and Astrobotic's 2025 design lays [500 m](https://www.astrobotic.com/lunagrid-lite-completes-critical-design-review-flight-model-underway/).

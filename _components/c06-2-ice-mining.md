@@ -15,6 +15,7 @@ spec:
   - {k: "Power interface", v: "Water-extraction plant has its own service connection to the M04 grid (UMIC-class step-down to 120 V DC, meter, main breaker) and its own 120 V DC panel; rover chargers likewise (plan design, DD-009)"}
   - {k: "Mass", v: "~3 t including excavator (M06 ESTIMATE)"}
   - {k: "Haul distance", v: "~5 km each way, slopes ~16° (NASA study site)"}
+  - {k: "Power reach", v: "Grid power only within 3 km of cable run of the PMC (DD-010); a mine further out runs on the mobile power cart (PBS PW.5) or a local source (open)"}
   - {k: "Delivery class", v: "Medium lander"}
 subcomponents:
   - name: "Cold-rated excavator"
@@ -62,6 +63,7 @@ sources:
   - {title: "NASA: NASA missions uncover the Moon's buried treasures (LCROSS and LRO results)", url: "https://www.nasa.gov/news-release/nasa-missions-uncover-the-moons-buried-treasures", date: "Oct 2010"}
   - {title: "Colaprete et al., Science: Detection of water in the LCROSS ejecta plume", url: "https://experts.arizona.edu/en/publications/detection-of-water-in-the-lcross-ejecta-plume/", date: "Oct 2010"}
   - {title: "Townsend, Mueller and Tamasy, NASA KSC: Dust tolerant commodity transfer interface mechanisms for planetary surfaces", url: "https://ntrs.nasa.gov/citations/20150000177", date: "Oct 2014"}
+  - {title: "Csank & Scott, NASA GRC: Power and Energy for the Lunar Surface (ISRU power over 3–5 km)", url: "https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf", date: "Apr 2022"}
 ---
 
 ## What it does
@@ -81,6 +83,10 @@ This plan follows the architecture of a NASA case study. Excavators work in the 
 **Purification.** LCROSS and LRO found that up to 20% of the material thrown up by the impact was volatiles. These included methane, ammonia, hydrogen, carbon dioxide and carbon monoxide, plus light metals such as sodium and mercury<sup class="r">[3](#s3)</sup>. Sulfur-bearing species and light hydrocarbons were also seen<sup class="r">[4](#s4)</sup>. The NASA study did not yet include water clean-up<sup class="r">[1](#s1)</sup>. This plan adds degassing, filtration, sorbent beds and distillation.
 
 **Transfer and storage.** The NASA study used a dust-tolerant automated umbilical for fluid transfer<sup class="r">[1](#s1)</sup>. NASA KSC has built and demonstrated an automated interface for fluids, power and data, designed against regolith dust<sup class="r">[5](#s5)</sup>.
+
+**Power at the mine (design change DD-010).** The base's power runs are 3 km of cable at most. In the NASA study the mine is about 5 km from the ridge<sup class="r">[1](#s1)</sup>, and NASA expects ISRU to need power over 3–5 km<sup class="r">[6](#s6)</sup>. So the ~15 kW at the mine cannot come from the grid unless the mine is within 3 km of the PMC. Otherwise it comes from the mobile power cart (PBS PW.5) or a local source, and tankers carry the water to the plant (plan design; open).
+
+{% include decision-note.html id="DD-010" extra="The mine was assumed to draw grid power wherever it was." %}
 
 ## Sizing
 
@@ -109,6 +115,7 @@ The NASA study found that at 1% water the extraction system no longer scales wel
 
 - What is the real ice content and depth at the chosen PSR? (M01)
 - Should water be carried out as ice or as liquid?
+- Is the best PSR within 3 km of cable run of the PMC? If not, what powers the mine: the mobile power cart (PW.5), a KRUSTY-class unit at the crater edge, or batteries swapped by rover (DD-010)?
 - Can waste heat from the power system heat the oven, to save electricity?
 - How much mercury and sulphur is in the water, and which purification stage removes it best?
 - How fast does dust wear the oven seals?
