@@ -63,6 +63,7 @@ doc_id: OM-100
     <h2>{{ p.name }}</h2>
     <p class="rm-sum">{{ p.desc | split: ". " | first | append: "." | replace: "..", "." }}</p>
     <p class="rm-list">{% for s in ps %}<span id="year-{{ s.year }}"><b>Year {{ s.year }}</b> {{ s.label | join: " " | downcase | capitalize }}</span>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
+    {% assign pm = ms | where: "phase", p.n %}<p class="rm-list"><b>Milestones</b> {% if pm.size > 0 %}{% for m in pm %}<a href="{{ m.url | relative_url }}">{{ m.id_code }} {{ m.title }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}{% else %}to come{% endif %}</p>
     <div class="rm-stats">
       <div><small>Crew (end)</small><b>{{ last.crew_text | default: last.crew }}</b></div>
       <div><small>Power (end)</small><b>{% if last.power_kw > 0 %}{% if last.power_kw >= 500 %}≥{% endif %}{{ last.power_kw }} kW{% else %}–{% endif %}</b></div>
