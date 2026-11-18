@@ -40,6 +40,15 @@ In Open Moon, VSAT is the first source of power in milestone M04 (Power). It is 
 
 **At the primary base (DD-024; ESTIMATE).** The base starts with three towers: B1 and B2 on the de Gerlache rim beside the ice mine's towers, 4.5 and 5.4 km away, and B3 2.1 km from the base. Together they are lit 77.4% of the time, with dark spells of about 1.6 days at the summer solstice, 4.4–4.5 days at the equinoxes and up to 14 days at the winter solstice. The first expansion tower, B4 on the far rim 9.4 km away, raises this to 84.6% and caps the winter spells at about 6 days (Open Moon shadow model over LOLA terrain; see the solar tower component C04.2).
 
+| Season | Initial towers B1, B2, B3: longest dark spell | With B4: longest dark spell |
+|---|---|---|
+| Summer solstice (Sun furthest south) | 1.6 days | none |
+| Equinoxes | 4.4–4.5 days | 2.5–2.8 days |
+| Winter solstice (Sun furthest north) | 12 days (up to 14) | 5.8 days (up to 6) |
+| Whole year | 77.4% sunlit, about 20 spells of a day or more | 84.6% sunlit, about 15 spells of a day or more |
+
+*Typical longest spell in the lunar day around each event, from Open Moon's 18.6-year shadow model over LOLA terrain (ESTIMATE). The lunar seasons repeat every 346.6 days, so they drift about 19 days earlier each Earth year.*
+
 ## How it works
 
 Each VSAT unit is a mast on a stable base, a solar blanket carried up the mast, and electronics to track the Sun, store power and send it out. NASA's goals were autonomous deployment on uneven ground, reliable retraction for moving, and low mass and packed volume ([NTRS](https://ntrs.nasa.gov/citations/20230012849)). Designs must also stay stable on slopes and resist abrasive dust ([NASA](https://www.nasa.gov/news-release/three-companies-to-help-nasa-advance-solar-array-technology-for-moon/)). The three prototypes are very different ([NTRS](https://ntrs.nasa.gov/citations/20230012849)):

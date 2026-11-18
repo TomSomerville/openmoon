@@ -224,6 +224,15 @@ The base runs one grid (DD-009). A remote site too far from the base for a power
 
 **Base VSATs at the primary site (DD-016, DD-017).** B1 and B2 stand beside mine towers M1 and M2, 4.5 and 5.4 km from the base, and B4 at the far rim (9.4 km) is the first expansion tower (DD-024); B3, 2.1 km from the base on a standard run and clear of the flat patch (DD-021), adds redundancy and faster battery charging while the Sun is up (plan design; see M00).
 
+| Season | Initial towers B1, B2, B3: longest dark spell | With B4: longest dark spell |
+|---|---|---|
+| Summer solstice (Sun furthest south) | 1.6 days | none |
+| Equinoxes | 4.4–4.5 days | 2.5–2.8 days |
+| Winter solstice (Sun furthest north) | 12 days (up to 14) | 5.8 days (up to 6) |
+| Whole year | 77.4% sunlit, about 20 spells of a day or more | 84.6% sunlit, about 15 spells of a day or more |
+
+*Typical longest spell in the lunar day around each event, from Open Moon's 18.6-year shadow model over LOLA terrain (ESTIMATE). The lunar seasons repeat every 346.6 days, so they drift about 19 days earlier each Earth year.*
+
 ## Power runs: 3 km standard, up to 10 km extended, converted to 3 kV AC at the source
 
 ![Diagram: three conversion chains, each built at the source. VSAT: native DC, array regulator and shunt, UMIC-class low-voltage inverter, 1 kHz step-up transformer, 3 kV AC. Kilopower: eight Stirling alternators at about 12 V AC and 100 Hz, one controller each rectifying to DC, a shared DC bus, a UMIC-class inverter, a 1 kHz transformer, 3 kV AC. LR-1: 3 kV AC at the reactor output, with the frequency matched to 1 kHz by the vendor or a converter. Every source then runs 3 km of cable or less to the PMC as standard, or up to 10 km as an extended run](/assets/tech/source-to-3kv-conversion.svg)

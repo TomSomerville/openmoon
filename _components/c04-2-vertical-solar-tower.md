@@ -138,6 +138,7 @@ The dark spells depend on the lunar season (typical longest spell in the lunar d
 | Summer solstice | 1.6 days | none |
 | Equinoxes | 4.4–4.5 days | 2.5–2.8 days |
 | Winter solstice | 12 days (up to 14) | 5.8 days (up to 6) |
+| Whole year | about 20 spells of a day or more | about 15 spells of a day or more |
 
 B1, B2 and B3 are on the same stretch of rim and go dark together; B3 is lit only about 2 hours a year while B1 and B2 are dark. B4 on the far rim is lit when they are dark, which is why it shortens the winter spells.
 
