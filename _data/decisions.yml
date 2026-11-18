@@ -588,3 +588,25 @@
     - "The mine grid's two VSATs are lit 77.4% of the time together and both go dark for up to about 14 days (ESTIMATE). The mine shuts down when both are dark; its storage only keeps systems minimally alive (heaters, controls, comms), not the mining load (plan design)."
     - "The base's two VSATs are lit about 84.1% together, with blackouts up to about 6 days (ESTIMATE); adding two more nearby adds under 1 point."
 
+- id: DD-017
+  date: "2026-11-18"
+  title: "Base VSAT B3 near the base for redundancy and faster battery charging"
+  status: "Adopted"
+  affects: [M00, M04]
+  was: "The base grid had two VSATs on long runs: B1 at site 5 (7.7 km) and B2 (8.8 km) (DD-016)."
+  now: "A third base VSAT, B3, stands 0.8 km from the base at 88.4411°S, 62.44°W on flat ground (about 1° slope), on a standard run. Its job is redundancy (the base keeps solar power if B1 or B2 or their long cables fail) and faster battery charging while the Sun is up. It is not meant to add hours of sunlight."
+  why: "The user's decision. Tests of up to five VSATs within 3 km showed they cannot replace the long-run pair (56.9% against 84.1% combined sunlight) and do not shorten the 6.2-day longest blackout (M00, ESTIMATE). B3 is the best-lit spot within 3 km (50.4% on NASA's map, 48.7% Open Moon estimate). It is lit during 57.7% of the time B1 or B2 is lit, adding about 4,250 hours a year of extra charging power, and almost never when both are dark (about 11 hours a year)."
+  timeline:
+    - date: "2011"
+      what: "NASA GSFC average illumination map used to pick B3 as the best-lit spot within 3 km of the base."
+      title: "NASA GSFC PGDA: Lunar Polar Illumination (Mazarico et al. 2011)"
+      url: "https://pgda.gsfc.nasa.gov/products/69"
+    - date: "2023"
+      what: "NASA GSFC LOLA slope map: B3's spot is about 1° with no slope above 7.2° within 100 m."
+      title: "NASA GSFC PGDA: A New View of the Lunar South Pole from LOLA (Barker et al. 2023)"
+      url: "https://pgda.gsfc.nasa.gov/products/90"
+  tradeoffs:
+    - "One more 10 kW tower to fly and maintain, inside M04's provisional count of 10 towers (DD-004)."
+    - "B3 adds about 0.3 points of combined sunlight (84.1% to about 84.4%, ESTIMATE); its value is charging rate and redundancy, not uptime."
+    - "Battery chargers and the PMC must accept the extra peak input while all three towers are lit (sizing open)."
+

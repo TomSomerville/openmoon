@@ -445,6 +445,10 @@ Could up to five VSATs within a standard 3 km run of the base replace the two lo
 - Adding close-in towers to the two long-run base VSATs raises uptime by under half a point (84.5 % with five near and two far), so close-in towers would add power during daylight, not hours of light.
 - **The base keeps its two long-run VSATs** (site 5 at 7.7 km and B2 at 8.8 km).
 
+{% include decision-note.html id="DD-017" %}
+
+**Third base VSAT B3 (DD-017).** One VSAT stands close to the base for redundancy and faster battery charging, not for extra hours of sun: the best-lit spot within 3 km, at **88.4411°S, 62.44°W, 0.8 km from the base**, on flat ground (about 1°). It is 50.4 % sunlit on NASA's map (48.7 % in Open Moon's estimate). It is lit during 57.7 % of the time B1 or B2 is lit, adding about 4,250 hours a year of extra charging power, and keeps the base on solar power if B1, B2 or their long cables fail. It is almost never lit when both are dark (about 11 hours a year), so the 6.2-day blackout is unchanged (ESTIMATE).
+
 ### Power loss over a 13 km run (this plan's arithmetic)
 
 A direct run from the primary base to the floor edge is about 13 km. At 3 kV, 3-phase, unity power factor, aluminium at 26.5 nΩ·m (the C04.4 method), loss grows in step with length:
