@@ -7,7 +7,7 @@ U = ('/vsicurl/https://pds.mcp.nasa.gov/data/store/img/lunar_reconnaissance_orbi
      'LROLRC_2001/EXTRAS/BROWSE/NAC_POLE/NAC_POLE_SOUTH_{p}/NAC_POLE_SOUTH_{p}_P878S2925.{e}')
 R = 1737400.; FB = '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf'
 xy = lambda la, lo: (2 * R * math.tan(math.radians(90 + la) / 2) * math.sin(math.radians(lo)), 2 * R * math.tan(math.radians(90 + la) / 2) * math.cos(math.radians(lo)))
-BASE = xy(-88.4262, -63.30); B3 = xy(-88.3693, -62.11)
+BASE = xy(-88.4365, -62.46); B3 = xy(-88.3693, -62.11)
 def rd(p, half, px):
     cx, cy = BASE
     for e in ('PYR.TIF', 'TIF'):

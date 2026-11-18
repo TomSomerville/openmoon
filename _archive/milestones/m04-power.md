@@ -220,9 +220,9 @@ This is the plan's design, simplified to one line per 3-phase circuit. Each sour
 
 ## Isolated grids for remote sites (DD-016)
 
-The base runs one grid (DD-009). A remote site too far from the base for a power run can have its own isolated grid: its own generation, PMC and storage, with no tie to the base (plan design). The first case is the ice mine at the primary site, 12.7 km from the base: two 10 kW VSATs on the de Gerlache rim feed a mine PMC there, with a feeder down to the mine (M00). The base keeps its own VSATs. Each isolated grid needs its own storage and spares. The ice-mine grid stores only enough to keep its systems minimally alive while it is dark; mining stops until the VSATs are lit again (plan design). Its keep-alive load is not yet sized (open).
+The base runs one grid (DD-009). A remote site too far from the base for a power run can have its own isolated grid: its own generation, PMC and storage, with no tie to the base (plan design). The first case is the ice mine at the primary site, 13.5 km from the base: two 10 kW VSATs on the de Gerlache rim feed a mine PMC there, with a feeder down to the mine (M00). The base keeps its own VSATs. Each isolated grid needs its own storage and spares. The ice-mine grid stores only enough to keep its systems minimally alive while it is dark; mining stops until the VSATs are lit again (plan design). Its keep-alive load is not yet sized (open).
 
-**Base VSATs at the primary site (DD-016, DD-017).** B1 (site 5, 8.2 km) and B2 (9.4 km) on extended runs (DD-020) give the base its hours of sunlight; B3, 2.0 km from the base on a standard run and clear of the flat patch (DD-021), adds redundancy and faster battery charging while the Sun is up (plan design; see M00).
+**Base VSATs at the primary site (DD-016, DD-017).** B1 (site 5, 8.3 km) and B2 (9.4 km) on extended runs (DD-023) give the base its hours of sunlight; B3, 2.1 km from the base on a standard run and clear of the flat patch (DD-021), adds redundancy and faster battery charging while the Sun is up (plan design; see M00).
 
 ## Power runs: 3 km standard, up to 10 km extended, converted to 3 kV AC at the source
 

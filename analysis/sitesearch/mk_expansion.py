@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '../
 from render import read, lonlat2m, FB
 from scipy import ndimage
 from PIL import Image, ImageDraw, ImageFont
-N = lonlat2m(-88.4262, -63.30); B3 = lonlat2m(-88.3693, -62.11); W = 6000; RES = 10
+N = lonlat2m(-88.4365, -62.46); B3 = lonlat2m(-88.3693, -62.11); W = 6000; RES = 10
 bb = (N[0] - W, N[1] - W, N[0] + W, N[1] + W)
 s = read('LDSM_83S_10MPP_ADJ', bb, RES); h = np.nan_to_num(read('LDEM_83S_10MPP_ADJ_HILL', bb, RES)); H, Wd = s.shape
 c = (H // 2, Wd // 2); yy, xx = np.mgrid[0:H, 0:Wd]; d = np.hypot(yy - c[0], xx - c[1]) * RES

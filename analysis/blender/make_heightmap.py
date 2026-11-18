@@ -12,7 +12,7 @@ from scipy import ndimage
 from PIL import Image
 OUT = sys.argv[1]; os.makedirs(OUT, exist_ok=True)
 os.environ['CURL_CA_BUNDLE'] = os.environ.get('CURL_CA_BUNDLE', '/root/.ccr/ca-bundle.crt')
-R = 1737400.; C = lonlat2m(-88.4262, -63.30); HALF = 10000.; RES = 5.
+R = 1737400.; C = lonlat2m(-88.4365, -62.46); HALF = 10000.; RES = 5.
 B = (C[0] - HALF, C[1] - HALF, C[0] + HALF, C[1] + HALF); N = int(2 * HALF / RES)
 d10 = np.nan_to_num(read('LDEM_83S_10MPP_ADJ', B, 10)).astype('float64')
 h = np.array(Image.fromarray(d10.astype('float32'), mode='F').resize((N, N), Image.BICUBIC)).astype('float64')
@@ -56,7 +56,7 @@ with open(os.path.join(OUT, 'mesh_20m.ply'), 'wb') as f:
     f.write(('ply\nformat binary_little_endian 1.0\ncomment Open Moon primary base terrain, NASA LOLA, metres\nelement vertex %d\nproperty float x\nproperty float y\nproperty float z\nproperty float s\nproperty float t\nelement face %d\nproperty list uchar int vertex_indices\nend_header\n' % (n * n, len(faces))).encode())
     f.write(verts.tobytes()); f.write(faces.tobytes())
 bz = float(hm[N // 2, N // 2])
-info = {'centre_lat_lon': [-88.4262, -63.30], 'size_m': 2 * HALF, 'pixel_m': RES, 'pixels': N, 'bounds_polar_stereographic_m': [float(v) for v in B],
+info = {'centre_lat_lon': [-88.4365, -62.46], 'size_m': 2 * HALF, 'pixel_m': RES, 'pixels': N, 'bounds_polar_stereographic_m': [float(v) for v in B],
         'height_min_m': round(lo, 2), 'height_max_m': round(hi, 2), 'height_range_m': round(hi - lo, 2), 'base_height_m': round(bz, 2),
         'base_height_above_min_m': round(bz - lo, 2), 'share_from_5m_dem_pct': round(float(has.mean()) * 100, 1), 'site11_offset_vs_10m_m': round(off, 2),
         'curvature_drop_at_edge_mid_m': round(HALF ** 2 / (2 * R), 1), 'curvature_drop_at_corner_m': round(2 * HALF ** 2 / (2 * R), 1),

@@ -9,7 +9,7 @@ from scipy import ndimage
 from PIL import Image, ImageDraw, ImageFont
 SEASON, OUT = sys.argv[1], sys.argv[2]
 R = 1737400.
-C = np.array(lonlat2m(-88.4262, -63.30)); HALF = 10000.; G = 40.
+C = np.array(lonlat2m(-88.4365, -62.46)); HALF = 10000.; G = 40.
 d80 = np.load('dem80.npy'); B80 = (-216400., -216400., 216400., 216400.)
 d20 = np.load('dem20.npy'); B20 = tuple(np.load('dem20_bounds.npy'))
 NB = (C[0] - 15000, C[1] - 15000, C[0] + 15000, C[1] + 15000)

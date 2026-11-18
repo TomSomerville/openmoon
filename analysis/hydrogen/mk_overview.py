@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw, ImageFont
 PSR, OUT = sys.argv[1], sys.argv[2]
 font = lambda sz: ImageFont.truetype(FB, int(sz))
 frame_base = lonlat2m(-88.4453, -63.44)   # map frame stays as first drawn
-base = lonlat2m(-88.4262, -63.30); mine = lonlat2m(-88.3664, -78.31)   # primary base moved to the flat-patch centre (DD-020)
+base = lonlat2m(-88.4365, -62.46); mine = lonlat2m(-88.3664, -78.31)   # primary base on the sunlit side of the flat patch (DD-023)
 backup = lonlat2m(-89.559, -163.66); shack = lonlat2m(-89.67, 129.78)
 KEY = [frame_base, mine, backup, shack, lonlat2m(-88.7108, -68.28), lonlat2m(-88.5, -87.1)]
 xs_k = [p[0] for p in KEY]; ys_k = [p[1] for p in KEY]; M = 9000; RES = 40
@@ -102,7 +102,7 @@ r = 11 * k; dr.rectangle((mx - r, my - r, mx + r, my + r), fill=(40, 130, 255), 
 txt(mx, my + 18 * k, 'Ice mine', 'white', 'mt')
 star(bx, by, (255, 60, 200), 26)
 txt(bx + 28 * k, by - 6 * k, 'PRIMARY BASE', (255, 120, 220), 'lb', F)
-txt(bx + 28 * k, by + 2 * k, '88.426°S, 63.30°W', (255, 160, 230), 'lt')
+txt(bx + 28 * k, by + 2 * k, '88.4365°S, 62.46°W', (255, 160, 230), 'lt')
 # ---- backup: Connecting ridge trio on 3 km runs to a ridge PMC, extended run to the base
 AV = [('A1', -89.4745, -137.53, 81.9), ('A2', -89.3807, -140.91, 59.6), ('A3', -89.4176, -134.94, 48.3)]
 rp = P2(-89.438, -137.65); kx, ky = m2p(*backup)

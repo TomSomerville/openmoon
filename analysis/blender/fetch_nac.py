@@ -9,7 +9,7 @@ PROD, OUT = sys.argv[1], sys.argv[2]; RES = float(sys.argv[3]) if len(sys.argv) 
 U = ('/vsicurl/https://pds.mcp.nasa.gov/data/store/img/lunar_reconnaissance_orbiter/pds4/lroc/lro-l-lroc-5-rdr/'
      'LROLRC_2001/EXTRAS/BROWSE/NAC_POLE/NAC_POLE_SOUTH_{p}/NAC_POLE_SOUTH_{p}_{t}.PYR.TIF')
 TILES = ['P878S2925', 'P892S3150']
-R = 1737400.; la, lo = -88.4262, -63.30
+R = 1737400.; la, lo = -88.4365, -62.46
 rho = 2 * R * math.tan(math.radians(90 + la) / 2); CX, CY = rho * math.sin(math.radians(lo)), rho * math.cos(math.radians(lo))
 HALF = 10000.; B = (CX - HALF, CY - HALF, CX + HALF, CY + HALF)
 N = int(2 * HALF / RES); STRIP = 1000.   # metres per strip

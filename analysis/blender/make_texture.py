@@ -16,7 +16,7 @@ g = (np.clip((a - lo) / (hi - lo), 0, 1) ** 0.85 * 255).astype('uint8')
 im = Image.fromarray(g)
 if not os.environ.get('SITE_ONLY'):
     im.save(os.path.join(BO, 'texture_2m.jpg'), quality=90); im.resize((4096, 4096), Image.LANCZOS).save(os.path.join(BO, 'texture_4k.jpg'), quality=92)
-C = lonlat2m(-88.4262, -63.30); HALF = (B[2] - B[0]) / 2; F = lambda z: ImageFont.truetype(FB, int(z))
+C = lonlat2m(-88.4365, -62.46); HALF = (B[2] - B[0]) / 2; F = lambda z: ImageFont.truetype(FB, int(z))
 def markers(img, px_per_m, x0, y1, star=True):
     dr = ImageDraw.Draw(img); k = img.width / 1600
     P = [('B1', (-88.6652, -68.42), (255, 140, 0)), ('B2', (-88.7108, -68.28), (255, 140, 0)), ('B3', (-88.3693, -62.11), (255, 140, 0)),

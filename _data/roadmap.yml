@@ -9,7 +9,7 @@
   crew: 0
   power_kw: 10
   details:
-    - {title: "Site selection complete", text: "Done before Year 0, from orbital data alone: primary base on the north rim of de Gerlache (88.426°S, 63.30°W, design change DD-020), backup on the Connecting ridge by Shackleton (89.559°S, 163.66°W) (design change DD-015).", refs: [M00]}
+    - {title: "Site selection complete", text: "Done before Year 0, from orbital data alone: primary base on the north rim of de Gerlache (88.4365°S, 62.46°W, design change DD-023), backup on the Connecting ridge by Shackleton (89.559°S, 163.66°W) (design change DD-015).", refs: [M00]}
     - {title: "Transport contracts", text: "Rides reserved on small commercial landers, Blue Moon Mark 1 for about 3 t, and heavy cargo landers for about 15 t, with two providers per critical payload. The Open Moon payload interface standard is published.", refs: [M02, C02.1, firefly-blue-ghost-lander, blue-origin-blue-moon-mark-1]}
     - {title: "Relay service agreements", text: "Service is contracted from two lunar relay networks that follow the shared LunaNet standard.", refs: [M03, nasa-commercial-lunar-relay-intuitive-machines, esa-moonlight]}
     - {title: "Prospector rovers built and launched", text: "Two small rovers carry a 1 m drill, a mass spectrometer and a neutron spectrometer, all with flight heritage.", refs: [M01, C01.1, trident-drill-honeybee-robotics, msolo-mass-spectrometer]}

@@ -103,7 +103,7 @@ for la, lo in ((-88.4657, -67.87), (-88.3937, -68.69)):
     r = 9 * k; dr.ellipse((x - r, y - r, x + r, y + r), fill=ICE, outline='black', width=2)
 r = 10 * k; dr.rectangle((mine[0] - r, mine[1] - r, mine[0] + r, mine[1] + r), fill=(40, 130, 255), outline='white', width=2)
 dr.text((mine[0], mine[1] + 16 * k), 'Ice mine (floor edge)', font=Fs, fill='white', anchor='mt', stroke_width=3, stroke_fill=(0, 0, 0))
-_star(-88.4262, -63.30, (255, 60, 200), 'PRIMARY base', 'r')
+_star(-88.4365, -62.46, (255, 60, 200), 'PRIMARY base', 'r')
 _star(-89.5587, -163.66, (200, 120, 255), 'Backup base', 'r')
 # group labels for spots within ~1.5 km (37 px at 40 m/px)
 groups = []

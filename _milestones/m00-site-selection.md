@@ -59,8 +59,8 @@ risks:
 
 *Both base sites with their final power layouts. Slope in four classes, ice-candidate crater floors in blue, hydrogen in purple. Sunlit percentages are from NASA's illumination map. Click any image to see it full size.*
 
-- **Primary:** de Gerlache north rim, 88.426°S, 63.30°W, at the centre of a 4.8 km² patch of flat ground (DD-020).
-- **Backup:** Connecting ridge by Shackleton, 89.559°S, 163.66°W, 51.8 km away.
+- **Primary:** de Gerlache north rim, 88.4365°S, 62.46°W, on the sunlit north-east side of a 4.8 km² patch of flat ground (DD-023).
+- **Backup:** Connecting ridge by Shackleton, 89.559°S, 163.66°W, 51.7 km away.
 
 Both are chosen from orbital data and are to be confirmed on the ground by the M01 prospectors (DD-015).
 
@@ -162,7 +162,7 @@ NASA's VSAT towers give 10 kW each on 5–10 m masts and stand on slopes up to 1
 | Backup: ridge, 3 towers | 93.0% | 4.8 days |
 | Primary: rim, 2 towers | 84.1% | 6.2 days |
 
-The ridge towers sit on ~2 km cables. The primary's towers need 8.2–9.4 km cables.
+The ridge towers sit on ~2 km cables. The primary's towers need 8.3–9.4 km cables.
 
 </div>
 <div class="tp-media" markdown="1">
@@ -184,7 +184,7 @@ Orbiters map hydrogen in the top metre by counting escaping neutrons. A neutron 
 
 NASA's LEND team found the enhancements "near and in areas of permanent shadow"<sup class="r">[12](#s12)</sup>. Open Moon mapped the dip from NASA's LEND data<sup class="r">[13](#s13)</sup>.
 
-The strongest hydrogen in the focus area lies away from the craters: **20.2 km** from the primary and **28.9 km** from the backup.
+The strongest hydrogen in the focus area lies away from the craters: **19.5 km** from the primary and **28.9 km** from the backup.
 
 </div>
 <div class="tp-media" markdown="1">
@@ -225,14 +225,14 @@ Top: ice candidates in the focus area. Bottom: surface ice found by NASA's M3, s
 
 ### Power layout at the primary
 
-The ice floor is 12.7 km from the base, beyond the 10 km cable limit, so the base and the mine have **separate grids** (DD-016; ESTIMATE):
+The ice floor is 13.4 km from the base, beyond the 10 km cable limit, so the base and the mine have **separate grids** (DD-016; ESTIMATE):
 
 | Grid | Lit | Longest dark |
 |---|---|---|
 | Base: B1, B2 (+B3) | 84.1% (84.2% with B3) | 6.2 days |
 | Mine: M1, M2 | 77.4% | 14.2 days |
 
-- **B3**, 2.0 km from the base and clear of the flat patch, adds redundancy and faster charging (DD-017, DD-021).
+- **B3**, 2.1 km from the base and clear of the flat patch, adds redundancy and faster charging (DD-017, DD-021).
 - **The mine stops in the dark.** Its battery only keeps systems alive.
 - **Towers within 3 km were rejected.** They reach only 56.9%.
 
@@ -257,12 +257,12 @@ window.addEventListener('hashchange',open);open();})();
 
 | | **Primary: de Gerlache north rim** | **Backup: Connecting ridge** |
 |---|---|---|
-| Position | 88.426°S, 63.30°W | 89.559°S, 163.66°W |
-| Slope at site; landable within 1 km | 2.1°; 60% | 6.1°; 69% |
+| Position | 88.4365°S, 62.46°W | 89.559°S, 163.66°W |
+| Slope at site; landable within 1 km | 2.2°; 58% | 6.1°; 69% |
 | Connected flat ground (≤8°); widest flat circle | 4.8 km²; 540 m | 9.7 km²; 450 m |
 | Solar towers (ESTIMATE) | 84.1% lit, longest dark 6.2 days | 93.0% lit, longest dark 4.8 days |
-| Nearest ice-candidate floor | 12.7 km (de Gerlache) | 5.2 km (Shackleton) |
-| Nearest high hydrogen | 20.2 km | 28.9 km |
+| Nearest ice-candidate floor | 13.4 km (de Gerlache) | 5.2 km (Shackleton) |
+| Nearest high hydrogen | 19.5 km | 28.9 km |
 | On NASA's 2024 list | Yes (de Gerlache Rim 2) | No (2022 list only) |
 
 *Distances are straight lines.*
@@ -272,13 +272,14 @@ window.addEventListener('hashchange',open);open();})();
 **Pros**
 
 - Inside NASA's de Gerlache Rim 2, a region NASA screened for landing safety, light and Earth visibility<sup class="r">[3](#s3)</sup>.
-- Room to grow: the base is at the centre of 4.8 km² of connected ground at 8° or less, with a fully flat circle 540 m across. B3 stands 2.0 km away, off the patch, so the whole patch stays free (DD-021).
+- Room to grow: the base sits on the sunlit side of 4.8 km² of connected ground at 8° or less, with a fully flat circle 300 m across at the base itself. B3 stands 2.1 km away, off the patch, so the whole patch stays free (DD-021).
+- Sunnier base point: sunlit 45% of the time, against 35% at the patch centre (Open Moon model; NASA's average map gives 44.8%), with just under half the days in a typical month mostly in sun (DD-023; ESTIMATE).
 - The most hydrogen of the two sites, and an ice target with two independent hints.
 
 **Cons**
 
-- Less sun: 84.1% with blackouts of up to 6.2 days, and the base towers need 8.2–9.4 km cables.
-- The ice floor is 12.7 km away, so the mine needs its own grid and stops for up to about 14 days at a time.
+- Less sun: 84.1% with blackouts of up to 6.2 days, and the base towers need 8.3–9.4 km cables.
+- The ice floor is 13.4 km away, so the mine needs its own grid and stops for up to about 14 days at a time.
 - The cables to the mine cross a crater wall that is mostly steeper than 20°.
 - A young fault scarp is mapped in Rim 2<sup class="r">[7](#s7)</sup>.
 
@@ -330,12 +331,12 @@ Flat ground (8° or less) around the base, measured by Open Moon from NASA's LOL
 |---|---|
 | Connected patch the base sits in | **4.8 km²** |
 | All flat ground within 2 km | 3.8 km² |
-| All flat ground within 3 km | 5.4 km² |
-| All flat ground within 5 km | 10.1 km² |
-| Within 5 km, in patches of at least 0.05 km² that can be reached over ground of 15° or less | 6.4 km² |
+| All flat ground within 3 km | 5.3 km² |
+| All flat ground within 5 km | 11.0 km² |
+| Within 5 km, in patches of at least 0.05 km² that can be reached over ground of 15° or less | 7.1 km² |
 
-**For scale** (this plan's arithmetic): the 4.8 km² patch is about the size of **Pitcairn Island** (4.5 km²)<sup class="r">[24](#s24)</sup>, about **2.4 times Monaco** (2.02 km²) and about **10 times Vatican City** (0.49 km²)<sup class="r">[25](#s25)</sup>. The 10.1 km² within 5 km is about 2 Pitcairns, 5 Monacos or 20 Vatican Cities.
+**For scale** (this plan's arithmetic): the 4.8 km² patch is about the size of **Pitcairn Island** (4.5 km²)<sup class="r">[24](#s24)</sup>, about **2.4 times Monaco** (2.02 km²) and about **10 times Vatican City** (0.49 km²)<sup class="r">[25](#s25)</sup>. The 11.0 km² within 5 km is about 2.4 Pitcairns, 5.4 Monacos or 22 Vatican Cities.
 
-The base can grow over its own 4.8 km² patch without crossing steeper ground. Beyond it, about 6–10 km² more lies within 5 km, in separate patches linked by drivable slopes. B3 stands off the patch, so none of it is lost to a pad keep-out (DD-021).
+The base can grow over its own 4.8 km² patch without crossing steeper ground. Within 5 km there is 7–11 km² of flat ground in all, in separate patches linked by drivable slopes. B3 stands off the patch, so none of it is lost to a pad keep-out (DD-021).
 
 ![Flat ground around the primary base: the connected 4.8 km² patch and other ground at 8° or less within 2, 3 and 5 km]({{ '/assets/sites/primary-expansion.jpg' | relative_url }})

@@ -701,3 +701,25 @@
   tradeoffs:
     - "The base depends on the relay constellation for all communications with Earth until a direct link is added (open)."
   notes: "Other site-selection checks were set aside by the user on the same date: boulder-scale hazard maps (not feasible now), landing windows by lighting, hardware shading, fault-scarp distance (skipped); landing pads, plume keep-out and traverse routes (moved to site preparation); thermal environment (not site preparation); reactor site, ground properties and ice quantity (later); the backup site is not being developed further."
+
+- id: DD-023
+  date: "2026-11-18"
+  title: "Primary base moved to the sunlit side of the flat patch (88.4365°S, 62.46°W)"
+  status: "Adopted; to be confirmed by M01 ground prospecting"
+  affects: [M00, M04, C06.2, roadmap, blender]
+  was: "Primary base at 88.4262°S, 63.30°W (DD-020), at the centre of the largest flat circle in the 4.8 km² patch. That point is sunlit 34.9% of the time (Open Moon model; 32.5% on NASA's average map) and sits beside a ~40 m deep depression that is black in every LROC image; 27% of the patch (1.3 km²) is never seen lit."
+  now: "Primary base at 88.4365°S, 62.46°W, 0.76 km north-east, in the same flat patch on its sunlit side: slope 2.2°, a fully flat circle 300 m across, 58% of the ground within 1 km at 8° or less. It is sunlit 45.0% of the time (Open Moon model; 44.8% on NASA's map), with a median of 47% of days per lunar month mostly in sun and 47% of months more than half sunny; longest dark spell 21.6 days at ground level (ESTIMATE). Distances: B1 8.3 km, B2 9.4 km, B3 2.1 km, M1 4.5 km, M2 5.4 km, ice-mine floor edge 13.4–13.5 km, nearest high hydrogen 19.5 km, backup 51.7 km."
+  why: "The user's decision, after a Blender render and the all-sun mosaic showed the patch centre next to depressions in near-constant shadow. Spot D was the sunniest flat ground near the old point; it costs at most 0.7 km on any distance and keeps every tower within the 10 km run limit (DD-014)."
+  timeline:
+    - date: "2011"
+      what: "NASA GSFC average illumination map used to find the sunnier flat ground."
+      title: "NASA GSFC PGDA: Lunar Polar Illumination (Mazarico et al. 2011)"
+      url: "https://pgda.gsfc.nasa.gov/products/69"
+    - date: "2023"
+      what: "NASA GSFC LOLA slope map used for the flat patch."
+      title: "NASA GSFC PGDA: A New View of the Lunar South Pole from LOLA (Barker et al. 2023)"
+      url: "https://pgda.gsfc.nasa.gov/products/90"
+  tradeoffs:
+    - "The base is no longer at the centre of the widest flat circle (540 m); its own flat circle is about 300 m across."
+    - "The ice mine is 0.7 km further away (13.4–13.5 km); it keeps its own grid (DD-016)."
+    - "Even at the new point the ground is dark for up to about three weeks at a time, so the base still depends on its towers and storage."
