@@ -18,6 +18,9 @@ doc_id: OM-000
   <div class="kpi"><small>Programme cost</small><b>${{ lo | round: 0 }}–{{ hi | round: 0 }}B</b><span>sum of milestone estimates</span></div>
   <div class="kpi"><small>Timeline</small><b>{{ ms.first.window | split: "–" | first }}–{{ ms.last.window | split: "–" | last }}</b><span>planned windows</span></div>
 </div>
+<div class="draw" style="border-right:0;padding-bottom:0">
+{% include phase-chart.html %}
+</div>
 <div class="draw" style="border-right:0">
   <div class="sec-h">Milestones</div>
   <div class="tl">

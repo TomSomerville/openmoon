@@ -1,0 +1,69 @@
+{% comment %}
+Phase timeline (Gantt). Built from milestone windows, so it updates when they change.
+Axis: Y0 = 2026 to 2050.
+{% endcomment %}
+{% assign y0 = 2026 %}{% assign y1 = 2050 %}{% assign span = y1 | minus: y0 %}
+{% assign colors = "#38d4f0,#4fc3f7,#7cf29a,#c6e86a,#fbbf24,#fb923c" | split: "," %}
+{% assign ms = site.milestones | sort: "order" %}
+<style>
+.pc{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:14px 16px 10px;margin:0 0 6px}
+.pc-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;align-items:baseline;margin-bottom:10px}
+.pc-head h2{margin:0;font:700 18px var(--fh);text-transform:uppercase;letter-spacing:.05em}
+.pc-head span{font:11px var(--fm);color:var(--dim)}
+.pc-grid{display:grid;grid-template-columns:210px 1fr;column-gap:12px}
+.pc-axis{position:relative;height:22px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.pc-axis span{position:absolute;bottom:4px;transform:translateX(-50%);font:10.5px var(--fm);color:var(--dim);white-space:nowrap}
+.pc-axis span.first{transform:none}.pc-axis span.last{transform:translateX(-100%)}
+.pc-track{position:relative}
+.pc-track .gl{position:absolute;top:0;bottom:0;border-left:1px dashed var(--line);opacity:.45;pointer-events:none}
+.pc-track .now{position:absolute;top:-6px;bottom:0;border-left:2px solid var(--hi);pointer-events:none}
+.pc-track .now b{position:absolute;bottom:2px;left:4px;font:10px var(--fm);color:var(--hi);white-space:nowrap;background:var(--panel);padding:0 3px;border-radius:3px}
+.pc-phase{display:contents}
+.pc-lab{padding:8px 0 6px;border-top:1px solid var(--line)}
+.pc-lab .n{font:11px var(--fm);letter-spacing:.1em;text-transform:uppercase}
+.pc-lab .t{display:block;font:700 15px/1.2 var(--fh);text-transform:uppercase;letter-spacing:.03em;color:var(--ink)}
+.pc-lab .y{font:11px var(--fm);color:var(--dim)}
+.pc-rows{position:relative;padding:8px 0 6px;border-top:1px solid var(--line)}
+.pc-band{position:absolute;top:4px;bottom:2px;border-radius:6px;opacity:.13}
+.pc-bar{position:relative;display:flex;gap:6px;height:20px;margin:0 0 4px;border-radius:4px;text-decoration:none;font:11px/20px var(--fm);color:#10171c;padding:0 5px;white-space:nowrap;overflow:hidden;min-width:36px;box-sizing:border-box}
+.pc-bar .id{flex:none;font-weight:600}
+.pc-bar .full{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.pc-bar:hover{filter:brightness(1.12);outline:1px solid var(--ink)}
+.pc-legend{font:11px var(--fm);color:var(--dim);margin-top:8px}
+@media (max-width:760px){
+  .pc-grid{grid-template-columns:1fr}
+  .pc-axis-lab{display:none}
+  .pc-lab{border-top:1px solid var(--line);padding-bottom:2px}
+  .pc-rows{border-top:0;padding-top:2px}
+  .pc-bar .full{display:none}
+}
+</style>
+<section class="pc" aria-label="Plan phases timeline">
+  <div class="pc-head"><h2>The plan in six phases</h2><span>{{ y0 }}–{{ y1 }} · bars are milestone windows · click a bar for details</span></div>
+  <div class="pc-grid">
+    <div class="pc-axis-lab"></div>
+    <div class="pc-axis">
+      {% for y in (y0..y1) %}{% assign m4 = y | modulo: 4 %}{% if m4 == 2 or y == y0 or y == y1 %}{% assign pos = y | minus: y0 | times: 100.0 | divided_by: span %}<span class="{% if y == y0 %}first{% elsif y == y1 %}last{% endif %}" style="left:{{ pos }}%">{{ y }}</span>{% endif %}{% endfor %}
+    </div>
+    {% for p in site.data.phases %}
+      {% assign pm = ms | where: "phase", p.n %}
+      {% assign ps = 9999 %}{% assign pe = 0 %}
+      {% for m in pm %}{% assign a = m.window | split: "–" | first | plus: 0 %}{% assign b = m.window | split: "–" | last | plus: 0 %}{% if a < ps %}{% assign ps = a %}{% endif %}{% if b > pe %}{% assign pe = b %}{% endif %}{% endfor %}
+      {% assign col = colors[p.n] %}
+      <div class="pc-lab">
+        <span class="n" style="color:{{ col }}">Phase {{ p.n }}</span>
+        <span class="t">{{ p.name }}</span>
+        <span class="y">{{ ps }}–{{ pe }} · {{ pm | size }} milestone{% if pm.size != 1 %}s{% endif %}</span>
+      </div>
+      <div class="pc-rows pc-track">
+        {% for y in (y0..y1) %}{% assign m4 = y | modulo: 4 %}{% if m4 == 2 %}<i class="gl" style="left:{{ y | minus: y0 | times: 100.0 | divided_by: span }}%"></i>{% endif %}{% endfor %}
+        {% if forloop.first %}<i class="now" style="left:0%"><b>NOW</b></i>{% endif %}
+        <i class="pc-band" style="left:{{ ps | minus: y0 | times: 100.0 | divided_by: span }}%;width:{{ pe | minus: ps | times: 100.0 | divided_by: span }}%;background:{{ col }}"></i>
+        {% for m in pm %}{% assign a = m.window | split: "–" | first | plus: 0 %}{% assign b = m.window | split: "–" | last | plus: 0 %}{% assign w = b | minus: a %}{% if w < 1 %}{% assign w = 1 %}{% endif %}
+        <a class="pc-bar" href="{{ m.url | relative_url }}" title="{{ m.id_code }} {{ m.title }} ({{ m.window }})" style="margin-left:{{ a | minus: y0 | times: 100.0 | divided_by: span }}%;width:{{ w | times: 100.0 | divided_by: span }}%;background:{{ col }}"><span class="id">{{ m.id_code }}</span><span class="full">{{ m.title }}</span></a>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+  <div class="pc-legend">Dates are planning targets. Year 0 is {{ y0 }}. See the <a href="{{ '/plan/' | relative_url }}">year-by-year roadmap</a> for what the base looks like at each step.</div>
+</section>
