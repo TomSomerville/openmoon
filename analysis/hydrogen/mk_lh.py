@@ -66,17 +66,18 @@ def pole_map():
     Su, Zu = up(S), up(Z)
     hv = np.nan_to_num(h); hv = np.clip((hv - np.percentile(hv, 1)) / (np.percentile(hv, 99) - np.percentile(hv, 1)), 0, 1)
     base = np.stack([hv * 255] * 3, -1)
-    t = np.clip(Su / 2.0, 0, 1) * (Zu >= ZMIN)          # 0..2 % neutron dip -> 0..1 blue strength
-    blue = np.array([20, 90, 255])
-    rgb = base * (1 - 0.7 * t[..., None]) + blue * (0.7 * t[..., None])
     hi = (Su >= THR) & (Zu >= ZMIN)
+    mod = (Su >= 0.98) & (Zu >= ZMIN) & ~hi            # 0.98 % = top 25 % south of 84 S
+    blue = np.array([20, 90, 255])
+    a = np.where(hi, 0.7, np.where(mod, 0.25, 0.0))
+    rgb = base * (1 - a[..., None]) + blue * a[..., None]
     im = Image.fromarray(rgb.clip(0, 255).astype('uint8')); dr = ImageDraw.Draw(im)
     k = max(W, H) / 1400; F = font(22 * k); Fs = font(16 * k)
     m2p = lambda x, y: ((x - B[0]) / 80, (B[3] - y) / 80)
     # outline of high-hydrogen areas
-    edge = hi ^ np.roll(hi, 1, 0) | hi ^ np.roll(hi, 1, 1)
+    edge = (hi ^ np.roll(hi, 1, 0)) | (hi ^ np.roll(hi, 1, 1))
     ys, xs = np.nonzero(edge)
-    for x, y in zip(xs[::2], ys[::2]): dr.point((x, y), fill=(255, 255, 255))
+    for x, y in zip(xs, ys): dr.ellipse((x - 2 * k, y - 2 * k, x + 2 * k, y + 2 * k), fill=(255, 255, 255))
     fx0, fy1 = px2m(292, 518); fx1, fy0 = px2m(953, 989)
     dr.rectangle((*m2p(fx0, fy1), *m2p(fx1, fy0)), outline=(230, 30, 30), width=int(4 * k))
     p = m2p(fx0, fy1); dr.text((p[0], p[1] - 6 * k), 'Open Moon focus area', font=F, fill=(255, 80, 80), anchor='ld', stroke_width=3, stroke_fill=(0, 0, 0))
@@ -87,19 +88,17 @@ def pole_map():
         dr.text((c[0] + 4 * k, c[1] - rho - 2 * k), f'{-lat_}°S', font=Fs, fill=(220, 220, 220), anchor='ld', stroke_width=2, stroke_fill=(0, 0, 0))
     for lon_, lab in ((0, '0°'), (90, '90°E'), (180, '180°'), (-90, '90°W')):
         x, y = m2p(*lonlat2m(-84.6, lon_)); dr.text((x, y), lab, font=Fs, fill='white', anchor='mm', stroke_width=3, stroke_fill=(0, 0, 0))
-    lx, ly = int(20 * k), H - int(80 * k); lw = int(360 * k)
-    dr.rectangle((lx - 10 * k, ly - 34 * k, lx + lw + 260 * k, H - 8 * k), fill=(0, 0, 0))
-    dr.text((lx, ly - 6 * k), 'LEND neutron dip (more hydrogen →)', font=Fs, fill='white', anchor='ld')
-    for i in range(lw):
-        tt = i / lw; c = (base.mean() * (1 - 0.7 * tt) + blue * 0.7 * tt).astype(int)
-        dr.line([(lx + i, ly), (lx + i, ly + 18 * k)], fill=tuple(int(v) for v in c))
-    for v in (0, 1, 2):
-        xx = lx + lw * v / 2; dr.text((xx, ly + 24 * k), f'{v}%', font=Fs, fill='white', anchor='mt')
-    dr.text((lx + lw + 20 * k, ly + 9 * k), 'white outline = top 10%', font=Fs, fill='white', anchor='lm')
+    lx, ly = int(20 * k), H - int(95 * k)
+    dr.rectangle((lx - 10 * k, ly - 34 * k, lx + 640 * k, H - 8 * k), fill=(0, 0, 0))
+    dr.text((lx, ly - 6 * k), 'LEND neutron dip (hydrogen in top ~1 m)', font=Fs, fill='white', anchor='ld')
+    c1 = tuple(int(v) for v in base.mean() * 0.3 + blue * 0.7); c2 = tuple(int(v) for v in base.mean() * 0.75 + blue * 0.25)
+    dr.rectangle((lx, ly, lx + 40 * k, ly + 18 * k), fill=c1, outline='white', width=2); dr.text((lx + 50 * k, ly + 9 * k), 'High: dip ≥1.28 % (top 10 % south of 84°S)', font=Fs, fill='white', anchor='lm')
+    dr.rectangle((lx, ly + 30 * k, lx + 40 * k, ly + 48 * k), fill=c2); dr.text((lx + 50 * k, ly + 39 * k), 'Moderate: dip 0.98–1.28 % (top 25 %)', font=Fs, fill='white', anchor='lm')
     dr.rectangle((0, 0, W, int(30 * k)), fill=(0, 0, 0))
     dr.text((10 * k, 6 * k), 'South pole to 84°S: hydrogen from NASA LRO LEND collimated epithermal neutrons, 2009–2016 (PDS), processed by Open Moon. Base: NASA LOLA hillshade.', font=Fs, fill='white')
     im.thumbnail((2000, 2000), Image.LANCZOS); im.save(OUT + 'south-pole-lend-hydrogen.jpg', quality=85, optimize=True)
 
 if __name__ == '__main__':
-    print('focus high-H share %, landable AND high-H share %:', focus_map())
+    import sys as _s
+    if 'pole' not in _s.argv: print('focus high-H share %, landable AND high-H share %:', focus_map())
     pole_map(); print('done')

@@ -67,6 +67,9 @@ sources:
   - {title: "NASA: NASA Identifies Candidate Regions for Landing Next Americans on Moon (original 13 regions)", url: "https://www.nasa.gov/news-release/nasa-identifies-candidate-regions-for-landing-next-americans-on-moon/", date: "Aug 2022"}
   - {title: "NASA GSFC PGDA: A New View of the Lunar South Pole from LOLA (LDSM slope and hillshade maps, 10 m/px; Barker et al. 2023, Planet. Sci. J. 4, 183, doi:10.3847/PSJ/acf3e1)", url: "https://pgda.gsfc.nasa.gov/products/90", date: "2023"}
   - {title: "LROC (NASA/GSFC/Arizona State University): Shackleton–de Gerlache Ridge maps, sheets 1–3", url: "https://lroc.im-ldi.com/data/support/popular_downloads/LROC_Shackleton_deGerlache_Ridge_maps.zip", date: "Mar 2024"}
+  - {title: "NASA Science: Hydrogen at the Lunar Poles: How Much Water Is There? (summary of Sanin et al. 2017, Icarus 283)", url: "https://science.nasa.gov/wp-content/uploads/2023/05/NuggetHydrogenAtTheLunarPoles20170210.pdf", date: "Feb 2017"}
+  - {title: "NASA PDS Geosciences Node: LRO LEND data (averaged south-polar products ALDS, 2009–2016)", url: "https://pds-geosciences.wustl.edu/missions/lro/lend.htm", date: "accessed Nov 2026"}
+  - {title: "Feldman et al. 2000, Polar hydrogen deposits on the Moon (J. Geophys. Res.)", url: "https://earthref.org/ERR/61400/", date: "2000"}
 risks:
   - {sev: High, title: "ShadowCam's mission is expected to end in early 2028, cutting off new images inside shadowed craters", fix: "Request targeted ShadowCam imaging of candidate PSRs now; archive everything; plan our own prospecting in M01"}
   - {sev: High, title: "Other programmes want the same few sunlit ridges (NASA Moon Base, China's Chang'e-7 near Shackleton)", fix: "Choose a primary and backup site; publish plans early and coordinate under Artemis Accords deconfliction; design for shared infrastructure"}
@@ -161,6 +164,36 @@ The ridge actually bends around Spudis crater, so the straight orange line on th
 ![LROC Shackleton–de Gerlache Ridge, sheet 3: oblique views]({{ '/assets/sites/lroc-ridge-sheet3-oblique-views.jpg' | relative_url }})
 
 *Sheets 1–3 credit NASA/GSFC/Arizona State University (LROC), March 2024, reduced from 21,600 × 14,400 px. Full-resolution sheets are in the source download<sup class="r">[19](#s19)</sup>.*
+
+## Hydrogen
+
+Hydrogen matters to Open Moon whether it sits in water ice or is bound in the soil: either way it is a raw material (extraction is planned in later milestones). Orbiters map hydrogen in the top metre or so by counting neutrons leaving the surface; hydrogen slows them, so fewer escape. A neutron dip shows hydrogen but not its form: ice, solar-wind hydrogen or hydrated minerals<sup class="r">[22](#s22)</sup>.
+
+### NASA's map
+
+NASA's LRO LEND team converted the neutron data to water-equivalent hydrogen (WEH). Enhancements sit "near and in areas of permanent shadow"; the highest value is about 0.54 wt% water in Cabeus crater (location 1S), assuming the hydrogen is water spread evenly through the top 1 m<sup class="r">[20](#s20)</sup>.
+
+![NASA LEND map of water-equivalent hydrogen around the lunar south pole, with enhanced locations 1S to 8S marked]({{ '/assets/sites/nasa-lend-weh-south-pole.jpg' | relative_url }})
+
+![NASA LEND water-equivalent hydrogen in Cabeus crater]({{ '/assets/sites/nasa-lend-weh-cabeus.jpg' | relative_url }})
+
+*NASA Science, from Sanin et al. 2017<sup class="r">[20](#s20)</sup>. Permanently shadowed areas are outlined in grey; scale 0–0.5 wt% WEH.*
+
+### Open Moon's hydrogen map from the LEND data
+
+We downloaded NASA's LEND south-polar data (0.5° cells, 2009–2016)<sup class="r">[21](#s21)</sup> and mapped the dip in collimated epithermal neutrons, smoothed over 10 km, against the 80–84°S average. **High hydrogen** means a dip of at least 1.28 % (the top 10 % of the region south of 84°S) that is at least three times its statistical error. This is Open Moon processing, not a NASA product; the scripts are in `analysis/hydrogen/`.
+
+![Hydrogen from NASA LEND data around the south pole to 84°S, with the Open Moon focus area outlined]({{ '/assets/sites/south-pole-lend-hydrogen.jpg' | relative_url }})
+
+### Landable ground and hydrogen together
+
+Green marks ground with slope of 8° or less (landable for every published lander rule); steeper ground is left uncoloured. Blue marks high hydrogen.
+
+![Open Moon focus area: landable ground of 8° or less in green and high hydrogen from LEND in blue]({{ '/assets/sites/focus-landing-hydrogen.jpg' | relative_url }})
+
+- In the focus area, **13 %** of the ground is high hydrogen and **4.6 %** is both landable and high hydrogen.
+- The high-hydrogen area in the focus box lies to the upper right (toward 0–60°E, around 88°S). It does not cover Shackleton, Spudis, the Shackleton–de Gerlache Ridge or de Gerlache Rim 2.
+- LEND cells are about 15 km and the smoothing blurs further, so blue shows regions, not individual craters. Small shadowed craters along the ridge are below what LEND can resolve; ground prospecting (M01) has to measure them.
 
 ## Step-by-step
 
