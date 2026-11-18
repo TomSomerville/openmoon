@@ -1,6 +1,6 @@
 # Multiple VSAT placements (ESTIMATE)
 
-Open Moon's own calculation, used on the M00 page "Multiple VSAT placements".
+Open Moon's own calculation, behind the M00 site selection page (Sunlight and Power layout tabs). The explored layouts (C1–C4, D1–D4) are kept here for reference.
 
 1. `get_dem.py` reads NASA LOLA `LDEM_83S_10MPP_ADJ` at 80 m (whole tile) and 20 m (focus area); the 20 m grid is
    block-averaged to 60 m for the near field.

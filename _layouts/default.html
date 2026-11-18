@@ -37,5 +37,14 @@
   </div>
 </div>
 <footer class="foot"><span>Open Moon is an open-source plan. Figures marked ESTIMATE are this plan's own calculations; everything else links to its source.</span><a href="{{ site.repo }}">github.com/TomSomerville/openmoon</a></footer>
+<div id="lbox" class="lbox" hidden role="dialog" aria-modal="true" aria-label="Full-size image"><button class="lbx" aria-label="Close">×</button><img alt=""><p></p></div>
+<script>
+(function(){var b=document.getElementById('lbox'),im=b.querySelector('img'),cap=b.querySelector('p');
+function close(){b.hidden=true;im.src='';document.body.style.overflow='';}
+document.addEventListener('click',function(e){var t=e.target;
+ if(t.tagName==='IMG'&&t.closest('.prose')&&!t.closest('a')){im.src=t.currentSrc||t.src;im.alt=t.alt;cap.textContent=t.alt;b.hidden=false;document.body.style.overflow='hidden';return;}
+ if(!b.hidden&&(t===b||t.classList.contains('lbx')||t===im))close();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!b.hidden)close();});})();
+</script>
 </body>
 </html>
