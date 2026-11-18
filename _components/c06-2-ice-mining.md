@@ -90,6 +90,10 @@ This plan follows the architecture of a NASA case study. Excavators work in the 
 
 {% include decision-note.html id="DD-014" extra="A mine at NASA's ~5 km distance can now draw grid power over an extended run." %}
 
+**Primary base site (DD-015).** At the primary site on de Gerlache's north rim, the mine is planned at the edge of de Gerlache's shadowed floor around 88.37°S, 78.3°W, 12.7–13 km from the base. It is powered by two rim VSATs 8–9 km from the floor edge (M00, "Ice mining for the primary site"), not by a direct 13 km run from the base (plan design; ESTIMATE for sunlight).
+
+{% include decision-note.html id="DD-015" %}
+
 ## Sizing
 
 The NASA baseline: 15 t of water from regolith with 5% water and 75% extraction needed 398 t of regolith, a 32 m × 32 m mine 30 cm deep, and 22 kW at the mine, over 225 days of production<sup class="r">[1](#s1)</sup>.

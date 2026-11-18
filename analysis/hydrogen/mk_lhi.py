@@ -81,9 +81,30 @@ _set(_A['spots'], RIDGE, 'A', pa)
 s5 = m2p(*lonlat2m(-88.6652, -68.42))
 _set(_C['spots'], OPT1, 'C', s5)
 dr.polygon([(s5[0], s5[1] - 14 * k), (s5[0] - 12 * k, s5[1] + 9 * k), (s5[0] + 12 * k, s5[1] + 9 * k)], fill='white', outline='black')
-dr.text((s5[0] - 16 * k, s5[1] + 18 * k), 'Site 5 base', font=Fs, fill='white', anchor='rm', stroke_width=3, stroke_fill=(0, 0, 0))
+dr.text((s5[0] + 4 * k, s5[1] + 26 * k), 'Site 5', font=Fs, fill='white', anchor='lm', stroke_width=3, stroke_fill=(0, 0, 0))
 pd = _pmc(*_D['pmc'], OPT2, 'Option 2 PMC', (16, 0))
 _set(_D['spots'], OPT2, 'D', pd)
+# DD-015 base sites and ice-mining VSATs (ESTIMATE)
+def _star(la, lo, col, lab, side):
+    x, y = m2p(*lonlat2m(la, lo)); r = 16 * k; pts = []
+    for i in range(10):
+        a = math.pi / 2 + i * math.pi / 5; rr = r if i % 2 == 0 else r * 0.45
+        pts.append((x + rr * math.cos(a), y - rr * math.sin(a)))
+    dr.polygon(pts, fill=col, outline='black')
+    dr.text((x + (20 * k if side == 'r' else -20 * k), y), lab, font=font(20 * k), fill=col, anchor='lm' if side == 'r' else 'rm', stroke_width=4, stroke_fill=(0, 0, 0))
+    return x, y
+ICE = (255, 255, 255)
+mine = m2p(*lonlat2m(-88.3664, -78.31))
+for la, lo in ((-88.4657, -67.87), (-88.3937, -68.69)):
+    x, y = m2p(*lonlat2m(la, lo))
+    for q_ in range(0, 100, 6):  # dashed cable to the mine
+        t0, t1 = q_ / 100, min(1, (q_ + 3) / 100)
+        dr.line([(x + (mine[0] - x) * t0, y + (mine[1] - y) * t0), (x + (mine[0] - x) * t1, y + (mine[1] - y) * t1)], fill=ICE, width=max(2, int(2 * k)))
+    r = 9 * k; dr.ellipse((x - r, y - r, x + r, y + r), fill=ICE, outline='black', width=2)
+r = 10 * k; dr.rectangle((mine[0] - r, mine[1] - r, mine[0] + r, mine[1] + r), fill=(40, 130, 255), outline='white', width=2)
+dr.text((mine[0], mine[1] + 16 * k), 'Ice mine (floor edge)', font=Fs, fill='white', anchor='mt', stroke_width=3, stroke_fill=(0, 0, 0))
+_star(-88.4453, -63.44, (255, 60, 200), 'PRIMARY base', 'r')
+_star(-89.5587, -163.66, (200, 120, 255), 'Backup base', 'r')
 # group labels for spots within ~1.5 km (37 px at 40 m/px)
 groups = []
 for x, y, t, c in _LAB:
@@ -93,9 +114,9 @@ for x, y, t, c in _LAB:
 for x, y, items in groups:
     txt = ', '.join(t for t, _ in items); col = items[0][1]
     dr.text((x + 14 * k, y - 14 * k), txt, font=Fs, fill=col, anchor='lb', stroke_width=3, stroke_fill=(0, 0, 0))
-lx, ly = int(20 * k), H - int(270 * k)
+lx, ly = int(20 * k), H - int(330 * k)
 dr.rectangle((lx - 10 * k, ly - 34 * k, lx + 760 * k, H - 8 * k), fill=(0, 0, 0))
-dr.text((lx, ly - 6 * k), 'Landing, hydrogen, ice candidates and VSAT layouts', font=Fs, fill='white', anchor='ld')
+dr.text((lx, ly - 6 * k), 'Landing, hydrogen, ice, VSAT layouts and base sites', font=Fs, fill='white', anchor='ld')
 rows = [((60, 150, 60), 'Slope ≤8° (landable); steeper ground uncoloured'),
         ((150, 80, 190), 'High hydrogen: LEND neutron dip, top 10% south of 84°S'),
         ((40, 130, 255), 'Ice candidate: shadowed floor with published ice detections'),
@@ -103,7 +124,9 @@ rows = [((60, 150, 60), 'Slope ≤8° (landable); steeper ground uncoloured'),
         (RIDGE, 'VSAT set A1–A4, Connecting ridge, 3 km runs: 93.0% (3), 93.2% (4) lit'),
         (OPT1, 'VSATs C1–C4, base at site 5: 85.0% lit with 4'),
         (OPT2, 'VSATs D1–D4, PMC across de Gerlache: 89.2% lit with 4'),
-        ((255, 255, 255), 'Square: PMC · triangle: site 5 base · VSAT figures are ESTIMATES')]
+        ((255, 255, 255), 'White dots + dashes: ice-mining VSATs and cables to the de Gerlache floor'),
+        ((255, 60, 200), 'Stars: primary (de Gerlache north rim) and backup (ridge) base, DD-015'),
+        ((200, 200, 200), 'Square: PMC · triangle: site 5 · VSAT figures are ESTIMATES')]
 for i, (c, t) in enumerate(rows):
     yy = ly + i * 30 * k; dr.rectangle((lx, yy, lx + 40 * k, yy + 18 * k), fill=c); dr.text((lx + 50 * k, yy + 9 * k), t, font=Fs, fill='white', anchor='lm')
 L = 10000 / RES; sx = W - L - 30 * k; sy = H - 30 * k

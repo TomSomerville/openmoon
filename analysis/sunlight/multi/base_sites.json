@@ -1,0 +1,114 @@
+{
+ "Circle 1 (north rim of de Gerlache)": {
+  "lat": -88.4453,
+  "lon": -63.44,
+  "slope_deg": 5.0,
+  "landable_within_1km_pct": 65.0,
+  "sunlit_ground_pct": 6.3,
+  "best_sunlit_within_1km": 51.9,
+  "to_de_gerlache_floor_km": 12.7,
+  "to_shackleton_floor_km": 49.0,
+  "to_nearest_psr_0.5km2_km": 0.76,
+  "to_shadowcam_spot_km": 26.9,
+  "hydrogen_dip_here_pct": 0.82,
+  "to_high_hydrogen_km": 19.9,
+  "to_site5_km": 7.7,
+  "to_ridge_pmc_km": 45.6,
+  "to_opt2_pmc_km": 17.6,
+  "setA_dists_km": [
+   45.4,
+   46.8,
+   44.8,
+   45.8
+  ],
+  "setC_dists_km": [
+   5.4,
+   8.0,
+   4.6,
+   17.2
+  ],
+  "setD_dists_km": [
+   8.4,
+   27.4,
+   25.5,
+   8.0
+  ],
+  "vsat_sites_80_within_10km": [
+   [
+    7.7,
+    82.7
+   ]
+  ],
+  "vsat_sites_70_within_10km": 7,
+  "nearest_80_site": [
+   [
+    7.7,
+    82.7
+   ]
+  ]
+ },
+ "Circle 2 (Connecting ridge, by Shackleton)": {
+  "lat": -89.5587,
+  "lon": -163.66,
+  "slope_deg": 5.8,
+  "landable_within_1km_pct": 69.0,
+  "sunlit_ground_pct": 12.3,
+  "best_sunlit_within_1km": 36.8,
+  "to_de_gerlache_floor_km": 36.9,
+  "to_shackleton_floor_km": 5.2,
+  "to_nearest_psr_0.5km2_km": 0.0,
+  "to_shadowcam_spot_km": 40.9,
+  "hydrogen_dip_here_pct": 0.55,
+  "to_high_hydrogen_km": 28.9,
+  "to_site5_km": 43.8,
+  "to_ridge_pmc_km": 7.7,
+  "to_opt2_pmc_km": 35.1,
+  "setA_dists_km": [
+   7.1,
+   8.3,
+   8.7,
+   7.5
+  ],
+  "setC_dists_km": [
+   52.1,
+   43.4,
+   51.6,
+   34.2
+  ],
+  "setD_dists_km": [
+   42.9,
+   27.9,
+   28.5,
+   43.4
+  ],
+  "vsat_sites_80_within_10km": [
+   [
+    3.9,
+    87.1
+   ],
+   [
+    6.4,
+    81.6
+   ],
+   [
+    6.6,
+    80.1
+   ],
+   [
+    6.9,
+    85.5
+   ],
+   [
+    7.1,
+    88.4
+   ]
+  ],
+  "vsat_sites_70_within_10km": 15,
+  "nearest_80_site": [
+   [
+    3.9,
+    87.1
+   ]
+  ]
+ }
+}

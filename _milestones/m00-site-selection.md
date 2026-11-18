@@ -105,7 +105,8 @@ risks:
 - **Landers compared:** no lander publishes a certified slope limit above 10° ([Lander candidates]({{ '/landers/' | relative_url }})).
 - **Hydrogen mapped:** 13 % of the focus area is high hydrogen in NASA's LEND data, mostly in the upper right (around 88°S, 0–60°E), away from the craters.
 - **Ice candidates:** the shadowed floors of Shackleton and de Gerlache (483 km² together) have published but unconfirmed ice detections. Spudis and the ridge craters have no ice data.
-- **Next:** choose primary and backup sites from these layers, then prove the ice and hydrogen on the ground in M01.
+- **Base sites chosen (DD-015):** primary on de Gerlache's north rim at 88.445°S, 63.44°W; backup on the Connecting ridge by Shackleton at 89.559°S, 163.66°W.
+- **Next:** prove the ice and hydrogen at both sites on the ground in M01.
 
 ## Why the south pole
 
@@ -384,9 +385,55 @@ Blue marks the permanently shadowed floors of Shackleton (233 km²) and de Gerla
 - **Shackleton:** a bright floor in LOLA data, radar results allowing some ice in its walls, and nearby M3 ice spectra; but Kaguya and ShadowCam found no exposed ice, and part of the floor gets above 110 K in summer.
 - **de Gerlache:** one M3 ice spectrum and the ShadowCam bright spot, which needs more viewing angles to test.
 
+## Base sites (DD-015)
+
+{% include decision-note.html id="DD-015" %}
+
+Both sites were picked on the combined map below. Figures are measured from the same data as the maps above; VSAT figures are **ESTIMATES** at ground level. Distances are straight lines; cable and road routes will be longer.
+
+| | **Primary: de Gerlache north rim** | **Backup: Connecting ridge by Shackleton** |
+|---|---|---|
+| Position | 88.445°S, 63.44°W (inside NASA's de Gerlache Rim 2) | 89.559°S, 163.66°W |
+| Slope at the site; ground ≤8° within 1 km | 5.0°; 65 % | 5.8°; 69 % |
+| VSAT sites ≥80 % sunlit within 10 km | 1 (site 5, 82.7 %, 7.7 km) | 5 (best 88.4 % at 7.1 km and 87.1 % at 3.9 km) |
+| VSAT sites ≥70 % within 10 km | 7 | 15 |
+| Best VSAT layout (ESTIMATE) | base at site 5 (C1–C4): 85.0 % lit, longest blackout ~6 days | Connecting ridge trio: 93.0 % lit, longest blackout ~4.8 days |
+| Nearest ice-candidate floor | de Gerlache floor edge, 12.7 km | Shackleton floor edge, 5.2 km |
+| Small shadowed craters (no ice data) | 0.9 km² at 0.8 km; 3.5 km² at 4.0 km | 2.0 km² beside the site; two more within 2.6 km |
+| ShadowCam bright spot | 26.9 km | 40.9 km |
+| LEND hydrogen at the site; nearest high-hydrogen zone | 0.82 % dip; 19.9 km | 0.55 % dip; 28.9 km |
+| Distance between the sites | about 44 km | |
+
+### Ice mining for the primary site (ESTIMATE)
+
+The de Gerlache floor is 12.7 km from the primary base, beyond the 10 km extended-run limit (DD-014). So mining power comes from VSATs on the rim that sit within 10 km of the floor (plan design):
+
+| Mining VSAT | Position | Sunlit (NASA map; Open Moon estimate) | To the floor edge | To the primary base |
+|---|---|---|---|---|
+| M1 (also VSAT site 12) | 88.4657°S, 67.87°W | 75.1 %; 72.7 % | 9.2 km, to 88.3664°S, 78.31°W | 3.7 km |
+| M2 (also C3) | 88.3937°S, 68.69°W | 71.9 %; 71.2 % | 8.1 km, to 88.3395°S, 77.87°W | 4.7 km |
+
+- **Together, M1 and M2 are lit 77.4 % of the time (ESTIMATE)**, 2.3 km apart, but both go dark together for up to about 14 days, so mining is paused or battery-backed through those stretches.
+- **Power:** two 10 kW VSATs give about 20 kW peak for the ~15 kW mine (C06.2). Each cable run to the floor is under 10 km, an extended run (DD-014), and each VSAT is a standard 3–5 km from the base, so the same towers can feed the base when the mine is idle.
+- **The mine target** is the floor edge nearest the rim. No published ice detection has coordinates there; M01 must measure ice along this edge before mining is planned.
+
+### Power loss over a 13 km run (this plan's arithmetic)
+
+A direct run from the primary base to the floor edge is about 13 km. At 3 kV, 3-phase, unity power factor, aluminium at 26.5 nΩ·m (the C04.4 method), loss grows in step with length:
+
+| Load | 8 AWG (8.37 mm²) | 5.9 mm² | 3.9 mm² | Area for 10 % / 15 % loss | Aluminium mass at 10 % / 15 % |
+|---|---|---|---|---|---|
+| 10 kW (one VSAT) | 4.6 % (457 W) | 6.5 % (650 W) | 9.7 % (974 W) | 3.8 / 2.6 mm² | 403 / 269 kg |
+| 15 kW (ice mine) | 6.9 % (1,029 W) | 9.7 % (1,462 W) | 14.6 % (2,191 W) | 5.7 / 3.8 mm² | 604 / 403 kg |
+| 20 kW (reactor) | 9.1 % (1,829 W) | 13.0 % (2,600 W) | 19.5 % (3,896 W) | 7.7 / 5.1 mm² | 806 / 537 kg |
+
+- On the cable sizes already planned, a 13 km run stays within 10–15 % loss for loads up to 15 kW, and for 20 kW on 8 AWG or 5.9 mm².
+- **Cable and spool:** about 4.2 t at NASA's 325 kg per km planning figure, against 3.3 t for 10 km.
+- **Not allowed yet:** 13 km is beyond DD-014's 10 km maximum, and NASA warns long runs may need a lower frequency; it would need a new design decision and a voltage and stability check. The rim VSATs above avoid it.
+
 ## All layers combined
 
-Green: slope of 8° or less (landable for every published lander rule); steeper ground is left uncoloured. **Purple:** high hydrogen from LEND. **Blue:** ice candidates. White dot: ShadowCam bright spot. **VSAT layouts (ESTIMATE, see Sunlight and VSAT locations):** orange A1–A4, the Connecting ridge set on standard 3 km runs (93.0 % lit with three, 93.2 % with four); yellow C1–C4, base at site 5 (85.0 % with four); cyan D1–D4, PMC across de Gerlache (89.2 % with four). Squares are PMCs; the triangle is the site 5 base. Spots less than about 1.5 km apart share one label.
+Green: slope of 8° or less (landable for every published lander rule); steeper ground is left uncoloured. **Purple:** high hydrogen from LEND. **Blue:** ice candidates. White dot: ShadowCam bright spot. **VSAT layouts (ESTIMATE, see Sunlight and VSAT locations):** orange A1–A4, the Connecting ridge set on standard 3 km runs (93.0 % lit with three, 93.2 % with four); yellow C1–C4, base at site 5 (85.0 % with four); cyan D1–D4, PMC across de Gerlache (89.2 % with four). Squares are PMCs; the triangle is site 5. Stars are the primary (magenta) and backup (violet) base sites (DD-015); white dots with dashed lines are the ice-mining VSATs and their cables to the de Gerlache floor. Spots less than about 1.5 km apart share one label.
 
 ![Open Moon focus area: landable ground of 8° or less in green, high hydrogen in purple, ice-candidate shadowed floors in blue, and the VSAT layouts on the Connecting ridge and the de Gerlache rim]({{ '/assets/sites/focus-landing-hydrogen.jpg' | relative_url }})
 
