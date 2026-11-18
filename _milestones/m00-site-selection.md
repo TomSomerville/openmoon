@@ -86,6 +86,8 @@ sources:
   - {title: "NASA GSFC PGDA: Lunar Polar Illumination (average solar illumination maps; Mazarico et al. 2011, Icarus 211)", url: "https://pgda.gsfc.nasa.gov/products/69", date: "accessed Nov 2026"}
   - {title: "NASA GSFC PGDA: High-Resolution LOLA Topography for Lunar South Pole Sites (best-lit regions of interest)", url: "https://pgda.gsfc.nasa.gov/products/78", date: "accessed Nov 2026"}
   - {title: "Gläser et al. 2014, Illumination conditions at the lunar south pole using high resolution digital terrain models from LOLA (Icarus 243)", url: "https://ui.adsabs.harvard.edu/abs/2014Icar..243...78G", date: "2014"}
+  - {title: "LROC (NASA/GSFC/Arizona State University): NAC south polar mosaic, 1 m/px, tile NAC_POLE_P880S2925 (NASA PDS)", url: "https://pds.mcp.nasa.gov/data/store/img/lunar_reconnaissance_orbiter/pds4/lroc/lro-l-lroc-5-rdr/LROLRC_2001/EXTRAS/BROWSE/NAC_POLE/NAC_POLE_SOUTH/", date: "accessed Nov 2026"}
+  - {title: "LROC (NASA/GSFC/Arizona State University): NAC south polar maximum-pixel and sub-solar-longitude mosaics, 1 m/px, tile P878S2925, with PDS labels (NASA PDS)", url: "https://pds.mcp.nasa.gov/data/store/img/lunar_reconnaissance_orbiter/pds4/lroc/lro-l-lroc-5-rdr/LROLRC_2001/EXTRAS/BROWSE/NAC_POLE/NAC_POLE_SOUTH_CM_MAX/NAC_POLE_SOUTH_CM_MAX_P878S2925.xml", date: "accessed Nov 2026"}
 risks:
   - {sev: High, title: "ShadowCam's mission is expected to end in early 2028, cutting off new images inside shadowed craters", fix: "Request targeted ShadowCam imaging of candidate PSRs now; archive everything; plan our own prospecting in M01"}
   - {sev: High, title: "Other programmes want the same few sunlit ridges (NASA Moon Base, China's Chang'e-7 near Shackleton)", fix: "Choose a primary and backup site; publish plans early and coordinate under Artemis Accords deconfliction; design for shared infrastructure"}
@@ -97,7 +99,6 @@ risks:
   - {sev: Medium, title: "The strongest hydrogen (LEND) and the ice-candidate craters are in different parts of the focus area", fix: "Treat hydrogen and ice as separate targets; measure both on the ground before choosing the base site"}
   - {sev: Medium, title: "No lander publishes a certified slope limit above 10°, and IM-1 tipped over on 12° ground", fix: "Land only on ground of 8° or less; confirm each pad with ~1 m LROC NAC hazard maps"}
 ---
-
 ## Where the site search stands (November 2026)
 
 - **Focus area chosen:** about 180 × 130 km around the south pole, centred on the Shackleton–de Gerlache Ridge, between Shackleton, Spudis and de Gerlache craters. It includes NASA's de Gerlache Rim 2 candidate region.
@@ -108,11 +109,25 @@ risks:
 - **Base sites chosen (DD-015):** primary on de Gerlache's north rim at 88.445°S, 63.44°W; backup on the Connecting ridge by Shackleton at 89.559°S, 163.66°W.
 - **Next:** prove the ice and hydrogen at both sites on the ground in M01.
 
-## Why the south pole
+## How the site was chosen
+
+Each tab covers one factor that was weighed. The final selection, with the combined map and the deciding points, is below the tabs.
+
+<div class="tabs" id="m00tabs">
+<input type="radio" name="m00tab" id="m00t1" checked><label for="m00t1">Why the south pole</label>
+<input type="radio" name="m00tab" id="m00t2"><label for="m00t2">Regions &amp; focus area</label>
+<input type="radio" name="m00tab" id="m00t3"><label for="m00t3">Slope &amp; landing</label>
+<input type="radio" name="m00tab" id="m00t4"><label for="m00t4">Sunlight & VSATs</label>
+<input type="radio" name="m00tab" id="m00t5"><label for="m00t5">Hydrogen</label>
+<input type="radio" name="m00tab" id="m00t6"><label for="m00t6">Ice</label>
+<input type="radio" name="m00tab" id="m00t7"><label for="m00t7">Power at the base</label>
+<input type="radio" name="m00tab" id="m00t8"><label for="m00t8">Site imagery</label>
+<div class="tabpanel" id="m00p1" markdown="1">
+
+### Why the south pole
 
 NASA's own architecture work explains the choice: near the south pole some ridges are sunlit most of the time, while nearby craters stay permanently in shadow and cold enough to trap water ice<sup class="r">[7](#s7)</sup>. That pairing, near-constant solar power next to frozen water, is what makes a self-sustaining base possible without inventing new technology. NASA's 2026 Moon Base programme also targets the south pole<sup class="r">[12](#s12)</sup>, so a base there can share transport, relays and data.
-
-## How sunny is "near-eternal light"?
+### How sunny is "near-eternal light"?
 
 No point on the Moon is sunlit all the time<sup class="r">[6](#s6)</sup>. The best points are close:
 
@@ -133,13 +148,15 @@ No point on the Moon is sunlit all the time<sup class="r">[6](#s6)</sup>. The be
 
 {% include decision-note.html id="DD-013" extra="Before this, the plan put solar towers on two or three ridge points at any distance and cited the ~94% two-point figure without a distance limit." %}
 
-## Candidate regions map
+</div>
+<div class="tabpanel" id="m00p2" markdown="1">
+
+### Candidate regions map
 
 ![NASA's nine candidate landing regions near the lunar south pole, with Shackleton crater, de Gerlache crater and the Connecting Ridge added, and the Open Moon focus area outlined in red]({{ '/assets/sites/south-pole-candidate-regions.jpg' | relative_url }})
 
 *Base map: NASA's October 2024 map of the nine candidate regions (yellow boxes), an LRO Wide Angle Camera mosaic, credit NASA/GSFC/ASU/JSC/AGDT<sup class="r">[14](#s14)</sup>. Open Moon additions: Shackleton (89.67°S 129.78°E, 21 km)<sup class="r">[15](#s15)</sup> and de Gerlache (88.5°S 87.1°W, 32.4 km)<sup class="r">[16](#s16)</sup> in cyan, placed from their published coordinates using NASA's pole marker and 50 km scale bar; the Connecting Ridge in orange, drawn rim to rim and **approximate** (no published outline yet); the Open Moon focus area in red.*
-
-## Focus area: Shackleton – de Gerlache
+### Focus area: Shackleton – de Gerlache
 
 {% include decision-note.html id="DD-010" extra="The primary and backup sites will be chosen inside this area." %}
 
@@ -155,18 +172,39 @@ Connecting Ridge and Connecting Ridge Extension were on NASA's original 2022 lis
 ![Close-up of the Open Moon focus area: de Gerlache Rim 2, de Gerlache crater, the Connecting Ridge and Shackleton crater]({{ '/assets/sites/shackleton-de-gerlache-focus.jpg' | relative_url }})
 
 *Close-up of the focus area (same sources and caveats as above).*
+### The Shackleton–de Gerlache Ridge (LROC maps)
 
-## Terrain slope in the focus area
+The LROC team's 2024 map set<sup class="r">[19](#s19)</sup> (NAC images at 2 m per pixel) describes the ridge as a "30-kilometer-long topographic high" that meets Shackleton's rim at Rickinson crater and "dog-legs around Vincent crater up towards de Gerlache crater". Key facts from the sheets:
+
+- **Summit:** 1959.5 m elevation at 89.4385°S, 222.82°E, with "favorable solar illumination, and Earth visibility".
+- **Slope:** within the mapped area, median 11.5°, average 12.2° (from 20 m LOLA data). Slopes on the Spudis crater side are "generally above 15°" and on the Henson crater side "above 10°".
+- **Best ground:** "relatively benign slopes for landers and rovers ... especially the stretch from Cheetham crater up to the ridge summit and the rim of Shackleton crater 'above' Rickinson crater."
+- **Ice targets:** small craters along the ridge (Worsley, Vincent, Holness, Marston, Wild, Cheetham, Wordie, McCarthy, Kerr, Hurley) "host permanently shadowed regions, which may harbor volatiles".
+
+The ridge actually bends around Spudis crater, so the straight orange line on the maps above is only a rough guide.
+
+![LROC Shackleton–de Gerlache Ridge, sheet 1: multi-lighting controlled mosaic]({{ '/assets/sites/lroc-ridge-sheet1-controlled-mosaic.jpg' | relative_url }})
+
+![LROC Shackleton–de Gerlache Ridge, sheet 2: topographic mosaic with contours and slope histogram]({{ '/assets/sites/lroc-ridge-sheet2-topographic.jpg' | relative_url }})
+
+![LROC Shackleton–de Gerlache Ridge, sheet 3: oblique views]({{ '/assets/sites/lroc-ridge-sheet3-oblique-views.jpg' | relative_url }})
+
+*Sheets 1–3 credit NASA/GSFC/Arizona State University (LROC), March 2024, reduced from 21,600 × 14,400 px. Full-resolution sheets are in the source download<sup class="r">[19](#s19)</sup>.*
+
+</div>
+<div class="tabpanel" id="m00p3" markdown="1">
+
+### Terrain slope in the focus area
 
 Slope comes from NASA Goddard's LOLA slope map (LDSM) at 10 m per pixel<sup class="r">[18](#s18)</sup>.
 
-### Raw slope data
+#### Raw slope data
 
 The LDSM values as published, in degrees, on a continuous scale with no classes (averaged to 40 m per pixel for the whole focus area). The data file is [LDSM_83S_10MPP_ADJ.TIF](https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDSM_83S_10MPP_ADJ.TIF) (7.5 GB) on NASA Goddard's [product page](https://pgda.gsfc.nasa.gov/products/90).
 
 ![Raw LOLA slope in degrees across the Open Moon focus area, dark flat to yellow steep]({{ '/assets/sites/focus-slope-raw.jpg' | relative_url }})
 
-### Slope classes
+#### Slope classes
 
 {% include decision-note.html id="DD-011" extra="Rovers, masts and towers may still work on steeper ground within their own limits." %}
 
@@ -192,46 +230,30 @@ The boxes are placed using the alignment of the NASA map above, so their edges a
 
 ![Slope classes across the Open Moon focus area: green ≤8°, yellow 8–15°, orange 15–20°, red ≥20°]({{ '/assets/sites/focus-slope-classes.jpg' | relative_url }})
 
-### de Gerlache Rim 2 close-up (10 m/px)
+#### de Gerlache Rim 2 close-up (10 m/px)
 
 ![Slope classes across NASA's de Gerlache Rim 2 candidate region]({{ '/assets/sites/de-gerlache-rim2-slope-classes.jpg' | relative_url }})
 
 **Limits of this analysis.** At 10 m per pixel, boulders and small craters that can tip a lander are not resolved; NASA's own criteria also weigh lighting and Earth visibility. Final pads need LROC NAC hazard maps at about 1 m per pixel (exit criteria above).
 
-## The Shackleton–de Gerlache Ridge (LROC maps)
+</div>
+<div class="tabpanel" id="m00p4" markdown="1">
 
-The LROC team's 2024 map set<sup class="r">[19](#s19)</sup> (NAC images at 2 m per pixel) describes the ridge as a "30-kilometer-long topographic high" that meets Shackleton's rim at Rickinson crater and "dog-legs around Vincent crater up towards de Gerlache crater". Key facts from the sheets:
+### Sunlight and VSAT locations
 
-- **Summit:** 1959.5 m elevation at 89.4385°S, 222.82°E, with "favorable solar illumination, and Earth visibility".
-- **Slope:** within the mapped area, median 11.5°, average 12.2° (from 20 m LOLA data). Slopes on the Spudis crater side are "generally above 15°" and on the Henson crater side "above 10°".
-- **Best ground:** "relatively benign slopes for landers and rovers ... especially the stretch from Cheetham crater up to the ridge summit and the rim of Shackleton crater 'above' Rickinson crater."
-- **Ice targets:** small craters along the ridge (Worsley, Vincent, Holness, Marston, Wild, Cheetham, Wordie, McCarthy, Kerr, Hurley) "host permanently shadowed regions, which may harbor volatiles".
-
-The ridge actually bends around Spudis crater, so the straight orange line on the maps above is only a rough guide.
-
-![LROC Shackleton–de Gerlache Ridge, sheet 1: multi-lighting controlled mosaic]({{ '/assets/sites/lroc-ridge-sheet1-controlled-mosaic.jpg' | relative_url }})
-
-![LROC Shackleton–de Gerlache Ridge, sheet 2: topographic mosaic with contours and slope histogram]({{ '/assets/sites/lroc-ridge-sheet2-topographic.jpg' | relative_url }})
-
-![LROC Shackleton–de Gerlache Ridge, sheet 3: oblique views]({{ '/assets/sites/lroc-ridge-sheet3-oblique-views.jpg' | relative_url }})
-
-*Sheets 1–3 credit NASA/GSFC/Arizona State University (LROC), March 2024, reduced from 21,600 × 14,400 px. Full-resolution sheets are in the source download<sup class="r">[19](#s19)</sup>.*
-
-## Sunlight and VSAT locations
-
-### How high NASA's VSAT goes
+#### How high NASA's VSAT goes
 
 NASA's Vertical Solar Array Technology (VSAT) arrays "autonomously deploy up to 32 feet high" (about 10 m) and retract to move<sup class="r">[28](#s28)</sup>. NASA's key performance parameters set the mast height at a **5 m threshold and a 10 m goal**, measured from the ground to where the solar blanket attaches; and terrain stability at a **10° slope with a 5 m mast (threshold) and 15° with a 10 m mast (goal)**<sup class="r">[29](#s29)</sup>. Each array is 10 kW<sup class="r">[29](#s29)</sup>.
 
 Height matters at the pole because the Sun skims the horizon: on the Shackleton–de Gerlache ridge, sunlight rises from 92.27 % of the time at 2 m to 95.65 % at 10 m<sup class="r">[32](#s32)</sup>.
 
-### Average sunlight (NASA data)
+#### Average sunlight (NASA data)
 
 NASA Goddard's average solar illumination over a full 18.6-year lunar cycle, at ground level, 60 m per pixel<sup class="r">[30](#s30)</sup>. Magenta circles are NASA's own best-lit regions of interest at the Connecting Ridge (Site 1), Shackleton rim (Site 4), Peak near Shackleton (Site 7) and de Gerlache rim (Site 11)<sup class="r">[31](#s31)</sup>.
 
 ![Average sunlight at ground level across the Open Moon focus area, with NASA's best-lit regions of interest]({{ '/assets/sites/focus-sunlight-raw.jpg' | relative_url }})
 
-### Where VSATs could go
+#### Where VSATs could go
 
 VSAT sites (plan design) are spots on slopes of 15° or less (the VSAT goal with a 10 m mast) that are sunlit at ground level:
 
@@ -269,7 +291,7 @@ The 16 sites (best single 60 m pixel in each, ground level, slope ≤15°), from
 - **Spread out for shadows:** no spot is lit all the time. Two ridge points about 8 km apart are lit a combined ~94 % of the year (see the sunlight table above), so the plan spreads VSATs over several of these sites.
 - **Landing vs. set-down:** VSAT sites can be up to 15°, but the lander carrying each VSAT still lands on 8° or less (DD-011) and the VSAT moves to its site.
 
-### Light over time (ESTIMATE)
+#### Light over time (ESTIMATE)
 
 Sunlight and shadow across the focus area over one lunar day (about 29.5 Earth days, one frame every 12 hours), in the best and the worst season for the south pole. Open Moon's own shadow calculation over NASA's LOLA terrain<sup class="r">[18](#s18)</sup> with Sun positions from NASA/JPL's DE421 ephemeris (**ESTIMATE**). Dots are the VSAT sites above.
 
@@ -281,7 +303,7 @@ Sunlight and shadow across the focus area over one lunar day (about 29.5 Earth d
 
 ![Animation of sunlight and shadow over the Open Moon focus area during one lunar day in April–May 2027]({{ '/assets/sites/focus-sunlight-winter-2027.gif' | relative_url }})
 
-### Multiple VSAT placements on the de Gerlache rim (ESTIMATE)
+#### Multiple VSAT placements on the de Gerlache rim (ESTIMATE)
 
 No single spot is lit all the time, so the base needs several VSATs placed where their dark periods do not line up. NASA publishes only average sunlight, not when each spot is lit, so Open Moon calculated light and shadow over time itself (**ESTIMATE**, this plan's own calculation). For 1,172 spots on and around the de Gerlache rim it traced the horizon over NASA's LOLA terrain<sup class="r">[18](#s18)</sup> and tested it against the Sun's position every 2 hours for 18.6 years, using NASA/JPL's DE421 ephemeris. The method matches NASA's illumination map<sup class="r">[30](#s30)</sup> within 1.6 points on average at 60 random test points (RMS 2.2 points), but for the best-lit rim spots it reads several points lower than NASA's map (for example 70.8 % against 82.7 % at site 5). So **use these figures to compare layouts; the true values are likely somewhat higher.** A spot counts as lit when at least half the Sun's disc is above its horizon. All figures are at ground level; a 10 m mast sees more sun.
 
@@ -317,7 +339,7 @@ D1 and D2 are 19.5 km apart; the four spots are 0.8–19.7 km apart.
 
 The analysis scripts and full results are in `analysis/sunlight/multi/`.
 
-### Connecting ridge VSAT set (ESTIMATE, for comparison)
+#### Connecting ridge VSAT set (ESTIMATE, for comparison)
 
 The same calculation, run across the whole focus area, finds that the Connecting ridge gives the highest combined sunlight of any compact layout: VSATs there sit within a standard 3 km run of one PMC (DD-013). The best PMC location is on the ridge at 89.438°S, 137.65°W, beside LROC's ridge summit. Set A (green, with inset) is this layout. Set B (blue) is shown only for reference: its spots are 18–78 km apart, beyond even DD-014's extended runs.
 
@@ -342,11 +364,14 @@ The ridge spots are 1.2–3.0 km apart, all on standard 3 km runs.
 - **de Gerlache option 2 has the shortest blackout** (4.3 days), because its VSATs sit on opposite sides of the crater.
 - The ridge is about 25 km from site 5, so a ridge power field and a de Gerlache base would need either a separate PMC or a run longer than DD-014 allows.
 
-## Hydrogen
+</div>
+<div class="tabpanel" id="m00p5" markdown="1">
+
+### Hydrogen
 
 Hydrogen matters to Open Moon whether it sits in water ice or is bound in the soil: either way it is a raw material (extraction is planned in later milestones). Orbiters map hydrogen in the top metre or so by counting neutrons leaving the surface; hydrogen slows them, so fewer escape. A neutron dip shows hydrogen but not its form: ice, solar-wind hydrogen or hydrated minerals<sup class="r">[22](#s22)</sup>.
 
-### NASA's map
+#### NASA's map
 
 NASA's LRO LEND team converted the neutron data to water-equivalent hydrogen (WEH). Enhancements sit "near and in areas of permanent shadow"; the highest value is about 0.54 wt% water in Cabeus crater (location 1S), assuming the hydrogen is water spread evenly through the top 1 m<sup class="r">[20](#s20)</sup>.
 
@@ -356,17 +381,20 @@ NASA's LRO LEND team converted the neutron data to water-equivalent hydrogen (WE
 
 *NASA Science, from Sanin et al. 2017<sup class="r">[20](#s20)</sup>. Permanently shadowed areas are outlined in grey; scale 0–0.5 wt% WEH.*
 
-### Open Moon's hydrogen map from the LEND data
+#### Open Moon's hydrogen map from the LEND data
 
 We downloaded NASA's LEND south-polar data (0.5° cells, 2009–2016)<sup class="r">[21](#s21)</sup> and mapped the dip in collimated epithermal neutrons, smoothed over 10 km, against the 80–84°S average. **High hydrogen** means a dip of at least 1.28 % (the top 10 % of the region south of 84°S) that is at least three times its statistical error. This is Open Moon processing, not a NASA product; the scripts are in `analysis/hydrogen/`.
 
 ![Hydrogen from NASA LEND data around the south pole to 84°S, with the Open Moon focus area outlined]({{ '/assets/sites/south-pole-lend-hydrogen.jpg' | relative_url }})
 
-## Ice candidates
+</div>
+<div class="tabpanel" id="m00p6" markdown="1">
+
+### Ice candidates
 
 Ice candidates are places where instruments have reported signs of water ice at or near the surface. None in the focus area is confirmed; the evidence for and against is in the [ice research]({{ site.repo }}/blob/main/research/ice/south-pole-water-ice.md).
 
-### NASA's maps
+#### NASA's maps
 
 ![NASA map of surface water ice detected by the Moon Mineralogy Mapper at the lunar south pole (left) and north pole (right)]({{ '/assets/sites/nasa-m3-polar-ice-2018.jpg' | relative_url }})
 
@@ -376,7 +404,7 @@ Ice candidates are places where instruments have reported signs of water ice at 
 
 *"Areas of the Moon's south pole with possible deposits of water ice, shown in blue. The map is based on data taken by NASA's Lunar Reconnaissance Orbiter."<sup class="r">[24](#s24)</sup>*
 
-### Ice candidates in the focus area
+#### Ice candidates in the focus area
 
 Blue marks the permanently shadowed floors of Shackleton (233 km²) and de Gerlache (242 km²), outlined from NASA Goddard's shadow map<sup class="r">[18](#s18)</sup>, where published ice detections are reported<sup class="r">[25](#s25)</sup>. The white dot is ShadowCam's unexplained bright spot at 88.5352°S, 97.4007°W, inside de Gerlache's shadowed floor<sup class="r">[26](#s26)</sup>. Pale outlines are other permanently shadowed areas with no published ice data, including Spudis and the small craters along the ridge.
 
@@ -385,36 +413,12 @@ Blue marks the permanently shadowed floors of Shackleton (233 km²) and de Gerla
 - **Shackleton:** a bright floor in LOLA data, radar results allowing some ice in its walls, and nearby M3 ice spectra; but Kaguya and ShadowCam found no exposed ice, and part of the floor gets above 110 K in summer.
 - **de Gerlache:** one M3 ice spectrum and the ShadowCam bright spot, which needs more viewing angles to test.
 
-## Base sites (DD-015)
+</div>
+<div class="tabpanel" id="m00p7" markdown="1">
 
-{% include decision-note.html id="DD-015" %}
+### Power layout at the primary site
 
-Both sites were picked on the combined map below. Figures are measured from the same data as the maps above; VSAT figures are **ESTIMATES** at ground level. Distances are straight lines; cable and road routes will be longer.
-
-| | **Primary: de Gerlache north rim** | **Backup: Connecting ridge by Shackleton** |
-|---|---|---|
-| Position | 88.445°S, 63.44°W (inside NASA's de Gerlache Rim 2) | 89.559°S, 163.66°W |
-| Slope at the site; ground ≤8° within 1 km | 5.0°; 65 % | 5.8°; 69 % |
-| VSAT sites ≥80 % sunlit within 10 km | 1 (site 5, 82.7 %, 7.7 km) | 5 (best 88.4 % at 7.1 km and 87.1 % at 3.9 km) |
-| VSAT sites ≥70 % within 10 km | 7 | 15 |
-| Best VSAT layout (ESTIMATE) | base at site 5 (C1–C4): 85.0 % lit, longest blackout ~6 days | Connecting ridge trio: 93.0 % lit, longest blackout ~4.8 days |
-| Nearest ice-candidate floor | de Gerlache floor edge, 12.7 km | Shackleton floor edge, 5.2 km |
-| Small shadowed craters (no ice data) | 0.9 km² at 0.8 km; 3.5 km² at 4.0 km | 2.0 km² beside the site; two more within 2.6 km |
-| ShadowCam bright spot | 26.9 km | 40.9 km |
-| LEND hydrogen at the site; nearest high-hydrogen zone | 0.82 % dip; 19.9 km | 0.55 % dip; 28.9 km |
-| Distance between the sites | about 44 km | |
-
-### Primary site close-up
-
-The primary base and only what serves it: slope classes everywhere, the de Gerlache ice-candidate floor (blue), other shadowed areas (outlines), hydrogen (purple), and the two VSAT sites nearest the base, with their cables to the base (orange) and to the ice mine at the floor edge (white dashes). The combined map below still shows every layer for the whole focus area.
-
-![Primary base site on the north rim of de Gerlache: slope classes, de Gerlache shadowed floor, hydrogen, the two nearest VSAT sites and the ice mine]({{ '/assets/sites/primary-base-site.jpg' | relative_url }})
-
-- **The two nearest VSAT sites** are 3.7 km (75.1 % sunlit) and 4.7 km (71.9 %) from the base, on the crater rim, and are also the ice-mining VSATs below.
-- **The cables to the mine cross the crater wall,** which is mostly steeper than 20° (red). Laying them needs a route down the wall that the cable rover can drive (open).
-- **Hydrogen:** purple lines and tint show the LEND neutron dip (0.6–0.9 %; more dip means more hydrogen). It rises from about 0.8 % at the base to 0.9 % along the crater rim and the cable route to the mine. Moderate hydrogen (white edge) reaches the top-right corner, and the arrow points to the nearest high-hydrogen zone, about 20 km from the base. LEND cells are about 15 km, so these are regional trends, not crater-level detail.
-
-### Ice mining for the primary site (ESTIMATE)
+#### Ice mining for the primary site (ESTIMATE)
 
 The de Gerlache floor is 12.7 km from the primary base, beyond the 10 km extended-run limit (DD-014). So the mine has **its own isolated grid** (DD-016): two VSATs on the rim within 10 km of the floor, a mine PMC on the rim, and a feeder down to the mine. It is not connected to the base grid.
 
@@ -425,12 +429,12 @@ The de Gerlache floor is 12.7 km from the primary base, beyond the 10 km extende
 | M1 (also VSAT site 12) | 88.4657°S, 67.87°W | 75.1 %; 72.7 % | 9.2 km, to 88.3664°S, 78.31°W | 3.7 km |
 | M2 (also C3) | 88.3937°S, 68.69°W | 71.9 %; 71.2 % | 8.1 km, to 88.3395°S, 77.87°W | 4.7 km |
 
-- **Together, M1 and M2 are lit 77.4 % of the time (ESTIMATE)**, 2.3 km apart, but both go dark together for up to about 14 days. **The mine shuts down when both are dark** (plan design, DD-016): its batteries only keep systems minimally alive (heaters, controls, comms), not the mining load, so the mine grid needs only a small battery.
+- **Together, M1 and M2 are lit 77.4 % of the time (ESTIMATE)**, 2.3 km apart, but both go dark together for up to about 14 days (14.2 days at most over 18.6 years). The longest dark spell reaches 13–14 days in almost every year. On average there are about 29 dark spells a year, averaging 2.8 days, and about 2 a year last longer than a week (ESTIMATE). **The mine shuts down when both are dark** (plan design, DD-016): its batteries only keep systems minimally alive (heaters, controls, comms), not the mining load, so the mine grid needs only a small battery.
 - **Power:** two 10 kW VSATs give about 20 kW peak for the ~15 kW mine (C06.2). They are 2.3 km apart, so the mine PMC on the rim is a standard run from each; the feeder from the rim to the mine is about 8.3 km.
 - **The base has its own VSATs** (separate grid, DD-016): site 5 (88.6652°S, 68.42°W; 82.7 % sunlit on NASA's map; 7.7 km from the base) and a second tower at 88.7108°S, 68.28°W (53.8 %; 8.8 km), chosen because it is lit when site 5 is dark. Together they are lit about **84.1 %** of the time, with blackouts up to about 6 days (ESTIMATE). Two more towers nearby add under 1 point.
 - **The mine target** is the floor edge nearest the rim. No published ice detection has coordinates there; M01 must measure ice along this edge before mining is planned.
 
-### Closer base VSATs: tested and rejected (ESTIMATE)
+#### Closer base VSATs: tested and rejected (ESTIMATE)
 
 Could up to five VSATs within a standard 3 km run of the base replace the two long-run base VSATs? The rule (plan design): a closer layout is used only if its daylight uptime is equal to or greater than the current two-VSAT base layout (site 5 + B2: **84.1 %**, longest blackout about 6 days). Open Moon tested 380 spots within 3 km of the base with the same time-series method.
 
@@ -449,7 +453,7 @@ Could up to five VSATs within a standard 3 km run of the base replace the two lo
 
 **Third base VSAT B3 (DD-017).** One VSAT stands close to the base for redundancy and faster battery charging, not for extra hours of sun: the best-lit spot within 3 km, at **88.4411°S, 62.44°W, 0.8 km from the base**, on flat ground (about 1°). It is 50.4 % sunlit on NASA's map (48.7 % in Open Moon's estimate). It is lit during 57.7 % of the time B1 or B2 is lit, adding about 4,250 hours a year of extra charging power, and keeps the base on solar power if B1, B2 or their long cables fail. It is almost never lit when both are dark (about 11 hours a year), so the 6.2-day blackout is unchanged (ESTIMATE).
 
-### Power loss over a 13 km run (this plan's arithmetic)
+#### Power loss over a 13 km run (this plan's arithmetic)
 
 A direct run from the primary base to the floor edge is about 13 km. At 3 kV, 3-phase, unity power factor, aluminium at 26.5 nΩ·m (the C04.4 method), loss grows in step with length:
 
@@ -463,16 +467,81 @@ A direct run from the primary base to the floor edge is about 13 km. At 3 kV, 3-
 - **Cable and spool:** about 4.2 t at NASA's 325 kg per km planning figure, against 3.3 t for 10 km.
 - **Not allowed yet:** 13 km is beyond DD-014's 10 km maximum, and NASA warns long runs may need a lower frequency; it would need a new design decision and a voltage and stability check. The rim VSATs above avoid it.
 
-## All layers combined
+</div>
+<div class="tabpanel" id="m00p8" markdown="1">
 
-Green: slope of 8° or less (landable for every published lander rule); steeper ground is left uncoloured. **Purple:** high hydrogen from LEND. **Blue:** ice candidates. White dot: ShadowCam bright spot. **VSAT layouts (ESTIMATE, see Sunlight and VSAT locations):** orange A1–A4, the Connecting ridge set on standard 3 km runs (93.0 % lit with three, 93.2 % with four); yellow C1–C4, base at site 5 (85.0 % with four); cyan D1–D4, PMC across de Gerlache (89.2 % with four). Squares are PMCs; the triangle is site 5. Stars are the primary (magenta) and backup (violet) base sites (DD-015); white dots with dashed lines are the ice-mining VSATs and their cables to the de Gerlache floor. Spots less than about 1.5 km apart share one label.
+#### Highest-resolution images of the primary site
 
-![Open Moon focus area: landable ground of 8° or less in green, high hydrogen in purple, ice-candidate shadowed floors in blue, and the VSAT layouts on the Connecting ridge and the de Gerlache rim]({{ '/assets/sites/focus-landing-hydrogen.jpg' | relative_url }})
+The best public images are NASA's LROC Narrow Angle Camera (NAC) south polar mosaics at **1 m per pixel**, read directly from NASA's Planetary Data System. The Sun at 88°S never rises more than a few degrees, so every single photo has long shadows. To get around this, LROC also publishes mosaics built from many photos taken under different lighting.
 
-- **Landable:** 43 % of the focus area is 8° or less.
-- **Hydrogen:** 13 % is high hydrogen, mostly the upper right (toward 0–60°E, around 88°S); 4.6 % is both landable and high hydrogen. It does not cover Shackleton, Spudis, the ridge or de Gerlache Rim 2.
-- **Ice candidates:** 483 km² of shadowed crater floor in Shackleton and de Gerlache, with landable ground on the rims next to both.
-- **Why hydrogen and ice candidates differ:** LEND averages the top ~1 m over ~15 km cells, while M3 and LOLA see the top millimetres or microns at a few hundred metres. A thin frost or small patches can show in one and not the other. Only ground measurements (M01) can settle it.
+**Least shadow: the maximum-pixel mosaic.** NASA's label says it was made "by finding the maximum pixel value at each pixel location in a stack of images", drawn from a controlled set of 18,323 NAC images taken between 2009 and 2013<sup class="r">[34](#s34)</sup>. Each spot is shown at its brightest, so the shadows of any single photo are largely removed. Areas that stay black were shadowed in every photo used.
+
+![LROC NAC maximum-pixel mosaic of the primary base site, 4 by 4 km, with the base and VSAT B3 marked]({{ '/assets/sites/primary-base-nac-max-4km.jpg' | relative_url }})
+
+*4 × 4 km around the primary base (magenta) and VSAT B3 (orange). LROC NAC south polar maximum-pixel mosaic, tile P878S2925, 1 m/px. Credit: NASA/GSFC/Arizona State University<sup class="r">[34](#s34)</sup>. Contrast stretched; Open Moon markers.*
+
+![LROC NAC maximum-pixel mosaic, full-resolution close-up of the primary base, 1.2 by 1.2 km]({{ '/assets/sites/primary-base-nac-max-1km.jpg' | relative_url }})
+
+*Full 1 m/px close-up, 1.2 × 1.2 km. Craters a few metres across are visible. The base marker sits on open, gently cratered ground just northwest of a crater about 40 m across. Same source and credit.*
+
+**For comparison: one lighting condition.** LROC's standard south polar mosaic shows a single moment<sup class="r">[33](#s33)</sup>. In it, the base point sits just inside a shadow cast by the terrain to its east, while B3 is in sunlight.
+
+![LROC NAC single-lighting mosaic of the primary base site, 4 by 4 km, base in shadow]({{ '/assets/sites/primary-base-nac-4km.jpg' | relative_url }})
+
+- At 1 m per pixel, boulders of about 2 m and up can be counted for pad hazard maps (exit criteria above).
+- The maximum-pixel mosaic shows the ground clearly, but it is not a slope or hazard map. Pad certification still needs a NAC stereo terrain model of this site, and none has been published (open).
+
+</div>
+</div>
+<script>
+(function(){function open(){var h=location.hash.slice(1);if(!h)return;var el=document.getElementById(h);if(!el)return;var p=el.closest('.tabpanel');if(!p)return;var n=p.id.replace('m00p','');var r=document.getElementById('m00t'+n);if(r){r.checked=true;el.scrollIntoView();}}
+window.addEventListener('hashchange',open);open();})();
+</script>
+
+## Final selection (DD-015)
+
+![Open Moon focus area: all layers combined, with both base sites, the VSAT layouts and the ice-mining grid]({{ '/assets/sites/focus-landing-hydrogen.jpg' | relative_url }})
+
+*All layers combined: slope ≤8° (green), high hydrogen (purple), ice candidates (blue), VSAT layouts (ESTIMATE), and the primary (magenta star) and backup (violet star) base sites. Each layer is explained in the tabs above.*
+
+
+{% include decision-note.html id="DD-015" %}
+
+Both sites were picked on the combined map below. Figures are measured from the same data as the maps above; VSAT figures are **ESTIMATES** at ground level. Distances are straight lines; cable and road routes will be longer.
+
+| | **Primary: de Gerlache north rim** | **Backup: Connecting ridge by Shackleton** |
+|---|---|---|
+| Position | 88.445°S, 63.44°W (inside NASA's de Gerlache Rim 2) | 89.559°S, 163.66°W |
+| Slope at the site; ground ≤8° within 1 km | 5.0°; 65 % | 5.8°; 69 % |
+| VSAT sites ≥80 % sunlit within 10 km | 1 (site 5, 82.7 %, 7.7 km) | 5 (best 88.4 % at 7.1 km and 87.1 % at 3.9 km) |
+| VSAT sites ≥70 % within 10 km | 7 | 15 |
+| Best VSAT layout (ESTIMATE) | base at site 5 (C1–C4): 85.0 % lit, longest blackout ~6 days | Connecting ridge trio: 93.0 % lit, longest blackout ~4.8 days |
+| Nearest ice-candidate floor | de Gerlache floor edge, 12.7 km | Shackleton floor edge, 5.2 km |
+| Small shadowed craters (no ice data) | 0.9 km² at 0.8 km; 3.5 km² at 4.0 km | 2.0 km² beside the site; two more within 2.6 km |
+| ShadowCam bright spot | 26.9 km | 40.9 km |
+| LEND hydrogen at the site; nearest high-hydrogen zone | 0.82 % dip; 19.9 km | 0.55 % dip; 28.9 km |
+| Distance between the sites | about 44 km | |
+
+
+### Deciding points
+
+- **Landing:** the primary base sits on 5° ground, with 65 % of the land within 1 km at 8° or less, the landing limit (DD-011).
+- **Power:** two long-run VSATs (site 5 at 7.7 km and B2 at 8.8 km) give about 84.1 % combined sunlight, with a longest blackout of about 6.2 days that no extra tower within 10 km can shorten. B3, 0.8 km away, adds redundancy and faster charging (DD-016, DD-017; ESTIMATE).
+- **Ice:** de Gerlache's shadowed floor is 12.7 km away. A separate mine grid on the rim (two VSATs, M1 and M2, with a mine PMC and an 8.3 km feeder) powers the mine. The mine VSATs are lit about 77.4 % of the time, with dark spells of up to about 14 days, and the mine shuts down in darkness (DD-016; ESTIMATE).
+- **Hydrogen:** about 0.8 % neutron dip at the base, rising toward the crater rim; the nearest high-hydrogen zone is about 20 km away.
+- **NASA screening:** the primary lies inside NASA's de Gerlache Rim 2 region; a young fault scarp mapped there must be avoided.
+- **Backup:** the Connecting ridge site, 44 km away, has the best power in the focus area (about 93 % with three VSATs) and is 5.2 km from Shackleton's floor.
+
+### Primary site close-up
+
+The primary base and only what serves it: slope classes everywhere, the de Gerlache ice-candidate floor (blue), other shadowed areas (outlines), hydrogen (purple), and the two VSAT sites nearest the base, with their cables to the base (orange) and to the ice mine at the floor edge (white dashes). The combined map below still shows every layer for the whole focus area.
+
+![Primary base site on the north rim of de Gerlache: slope classes, de Gerlache shadowed floor, hydrogen, the two nearest VSAT sites and the ice mine]({{ '/assets/sites/primary-base-site.jpg' | relative_url }})
+
+- **The two nearest VSAT sites** are 3.7 km (75.1 % sunlit) and 4.7 km (71.9 %) from the base, on the crater rim, and are also the ice-mining VSATs below.
+- **The cables to the mine cross the crater wall,** which is mostly steeper than 20° (red). Laying them needs a route down the wall that the cable rover can drive (open).
+- **Hydrogen:** purple lines and tint show the LEND neutron dip (0.6–0.9 %; more dip means more hydrogen). It rises from about 0.8 % at the base to 0.9 % along the crater rim and the cable route to the mine. Moderate hydrogen (white edge) reaches the top-right corner, and the arrow points to the nearest high-hydrogen zone, about 20 km from the base. LEND cells are about 15 km, so these are regional trends, not crater-level detail.
+
 
 ## Step-by-step
 
