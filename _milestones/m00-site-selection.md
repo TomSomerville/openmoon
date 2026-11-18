@@ -266,6 +266,39 @@ The 16 sites (best single 60 m pixel in each, ground level, slope ≤15°), from
 - **Spread out for shadows:** no spot is lit all the time. Two ridge points about 8 km apart are lit a combined ~94 % of the year (see the sunlight table above), so the plan spreads VSATs over several of these sites.
 - **Landing vs. set-down:** VSAT sites can be up to 15°, but the lander carrying each VSAT still lands on 8° or less (DD-011) and the VSAT moves to its site.
 
+### Multiple VSAT placements (ESTIMATE)
+
+No single spot is lit all the time, so the base needs several VSATs placed where their dark periods do not line up. NASA publishes only average sunlight, not when each spot is lit, so Open Moon calculated light and shadow over time itself (**ESTIMATE**, this plan's own calculation). For about 1,860 spots in the focus area it traced the horizon over NASA's LOLA terrain<sup class="r">[18](#s18)</sup> and tested it against the Sun's position every 2 hours for 18.6 years, using NASA/JPL's DE421 ephemeris. Its ground-level averages match NASA's illumination map<sup class="r">[30](#s30)</sup> within 1.6 points on average at 60 random test points (RMS 2.2 points). A spot counts as lit when at least half the Sun's disc is above its horizon. All figures are at ground level; a 10 m mast sees more sun.
+
+The power rule DD-013 puts every VSAT within 3 km of cable run of the power management centre (PMC). The best sets were found both within that rule (set A, green) and with no distance limit (set B, blue):
+
+![Best multi-VSAT sets in the focus area: set A within 3 km of one PMC on the Connecting ridge, set B spread across the Shackleton and de Gerlache rims]({{ '/assets/sites/focus-vsat-sets.jpg' | relative_url }})
+
+**Set A: within 3 km of one PMC (DD-013).** The best PMC location is on the Connecting ridge at 89.438°S, 137.65°W, beside LROC's ridge summit.
+
+| VSATs | Time at least one is lit | Longest time all are dark | Spots added (sunlit alone, ESTIMATE) | Distance to PMC |
+|---|---|---|---|---|
+| 1 | 82.7 % | 98 h (4.1 days) | best single spot: Shackleton west rim, 89.6857°S, 163.04°W (82.7 %) | — |
+| 2 | 92.7 % | 116 h (4.8 days) | A1 Connecting ridge, 89.4745°S, 137.53°W (81.9 %) + A2 89.3807°S, 140.91°W (59.6 %) | 1.1 km, 2.0 km |
+| 3 | 93.0 % | 116 h (4.8 days) | + A3 89.4176°S, 134.94°W (48.3 %) | 1.0 km |
+| 4 | 93.2 % | 98 h (4.1 days) | + A4 89.4376°S, 138.50°W (52.2 %) | 0.25 km |
+
+Set A spots are 1.2–3.0 km apart.
+
+**Set B: no distance limit.**
+
+| VSATs | Time at least one is lit | Longest time all are dark | Spots added (sunlit alone, ESTIMATE) | Distance apart |
+|---|---|---|---|---|
+| 1 | 82.7 % | 98 h (4.1 days) | B1 Shackleton west rim, 89.6857°S, 163.04°W (82.7 %) | — |
+| 2 | 96.5 % | 66 h (2.8 days) | + B2 de Gerlache rim (NASA Site 11), 88.6652°S, 68.42°W (77.1 %) | B1–B2 42.3 km |
+| 3 | 98.9 % | 34 h (1.4 days) | + B3 by the Peak near Shackleton, 88.7440°S, 123.78°E (51.0 %) | B1–B3 36.5 km, B2–B3 78.1 km |
+| 4 | 99.3 % | 26 h (1.1 days) | + B4 ridge south of Spudis, 89.2699°S, 113.12°W (57.0 %) | B4 to B1/B2/B3: 17.6 / 29.2 / 53.5 km |
+
+- **Close spots share shadows.** Within 3 km, the 3rd and 4th VSAT add only 0.3 and 0.2 points, because nearby spots see almost the same horizon. Their main value is more power, not more hours of sun.
+- **Spread-out spots fill each other's gaps.** Spots on opposite sides of the craters (set B) reach 99.3 % with four VSATs and cut the longest blackout to about a day, but they are 18–78 km apart, which DD-013 does not allow.
+- **No set reaches 100 %.** Even set B has short periods when every spot is dark, so storage (and fission power, M04) is still needed.
+- **The trade-off for the plan:** staying within DD-013 means planning for blackouts of up to about 5 days; relaxing it for longer power runs would cut them to about a day. Any such change would be a new design decision.
+
 ## Hydrogen
 
 Hydrogen matters to Open Moon whether it sits in water ice or is bound in the soil: either way it is a raw material (extraction is planned in later milestones). Orbiters map hydrogen in the top metre or so by counting neutrons leaving the surface; hydrogen slows them, so fewer escape. A neutron dip shows hydrogen but not its form: ice, solar-wind hydrogen or hydrated minerals<sup class="r">[22](#s22)</sup>.

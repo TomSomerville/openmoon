@@ -1,0 +1,232 @@
+{
+ "any": [
+  {
+   "k": 1,
+   "either_lit_pct": 82.7,
+   "longest_blackout_h": 98,
+   "spots": [
+    {
+     "lat": -89.6857,
+     "lon": -163.04,
+     "single_pct": 82.7,
+     "to_pmc_km": null
+    }
+   ],
+   "pair_dist_km": []
+  },
+  {
+   "k": 2,
+   "either_lit_pct": 96.5,
+   "longest_blackout_h": 66,
+   "spots": [
+    {
+     "lat": -89.6857,
+     "lon": -163.04,
+     "single_pct": 82.7,
+     "to_pmc_km": null
+    },
+    {
+     "lat": -88.6652,
+     "lon": -68.42,
+     "single_pct": 77.1,
+     "to_pmc_km": null
+    }
+   ],
+   "pair_dist_km": [
+    42.32
+   ]
+  },
+  {
+   "k": 3,
+   "either_lit_pct": 98.9,
+   "longest_blackout_h": 34,
+   "spots": [
+    {
+     "lat": -89.6857,
+     "lon": -163.04,
+     "single_pct": 82.7,
+     "to_pmc_km": null
+    },
+    {
+     "lat": -88.6652,
+     "lon": -68.42,
+     "single_pct": 77.1,
+     "to_pmc_km": null
+    },
+    {
+     "lat": -88.744,
+     "lon": 123.78,
+     "single_pct": 51.0,
+     "to_pmc_km": null
+    }
+   ],
+   "pair_dist_km": [
+    42.32,
+    36.49,
+    78.12
+   ]
+  },
+  {
+   "k": 4,
+   "either_lit_pct": 99.3,
+   "longest_blackout_h": 26,
+   "spots": [
+    {
+     "lat": -89.6857,
+     "lon": -163.04,
+     "single_pct": 82.7,
+     "to_pmc_km": null
+    },
+    {
+     "lat": -88.6652,
+     "lon": -68.42,
+     "single_pct": 77.1,
+     "to_pmc_km": null
+    },
+    {
+     "lat": -88.744,
+     "lon": 123.78,
+     "single_pct": 51.0,
+     "to_pmc_km": null
+    },
+    {
+     "lat": -89.2699,
+     "lon": -113.12,
+     "single_pct": 57.0,
+     "to_pmc_km": null
+    }
+   ],
+   "pair_dist_km": [
+    42.32,
+    36.49,
+    17.59,
+    78.12,
+    29.23,
+    53.5
+   ]
+  }
+ ],
+ "dd013": [
+  {
+   "k": 1,
+   "either_lit_pct": 82.7,
+   "longest_blackout_h": 98,
+   "pmc": [
+    -89.6857,
+    -163.04
+   ],
+   "spots": [
+    {
+     "lat": -89.6857,
+     "lon": -163.04,
+     "single_pct": 82.7,
+     "to_pmc_km": 0.0
+    }
+   ],
+   "pair_dist_km": []
+  },
+  {
+   "k": 2,
+   "either_lit_pct": 92.7,
+   "longest_blackout_h": 116,
+   "pmc": [
+    -89.438,
+    -137.65
+   ],
+   "spots": [
+    {
+     "lat": -89.4745,
+     "lon": -137.53,
+     "single_pct": 81.9,
+     "to_pmc_km": 1.11
+    },
+    {
+     "lat": -89.3807,
+     "lon": -140.91,
+     "single_pct": 59.6,
+     "to_pmc_km": 2.01
+    }
+   ],
+   "pair_dist_km": [
+    3.02
+   ]
+  },
+  {
+   "k": 3,
+   "either_lit_pct": 93.0,
+   "longest_blackout_h": 116,
+   "pmc": [
+    -89.438,
+    -137.65
+   ],
+   "spots": [
+    {
+     "lat": -89.4745,
+     "lon": -137.53,
+     "single_pct": 81.9,
+     "to_pmc_km": 1.11
+    },
+    {
+     "lat": -89.3807,
+     "lon": -140.91,
+     "single_pct": 59.6,
+     "to_pmc_km": 2.01
+    },
+    {
+     "lat": -89.4176,
+     "lon": -134.94,
+     "single_pct": 48.3,
+     "to_pmc_km": 1.03
+    }
+   ],
+   "pair_dist_km": [
+    3.02,
+    1.88,
+    2.2
+   ]
+  },
+  {
+   "k": 4,
+   "either_lit_pct": 93.2,
+   "longest_blackout_h": 98,
+   "pmc": [
+    -89.438,
+    -137.65
+   ],
+   "spots": [
+    {
+     "lat": -89.4745,
+     "lon": -137.53,
+     "single_pct": 81.9,
+     "to_pmc_km": 1.11
+    },
+    {
+     "lat": -89.3807,
+     "lon": -140.91,
+     "single_pct": 59.6,
+     "to_pmc_km": 2.01
+    },
+    {
+     "lat": -89.4176,
+     "lon": -134.94,
+     "single_pct": 48.3,
+     "to_pmc_km": 1.03
+    },
+    {
+     "lat": -89.4376,
+     "lon": -138.5,
+     "single_pct": 52.2,
+     "to_pmc_km": 0.25
+    }
+   ],
+   "pair_dist_km": [
+    3.02,
+    1.88,
+    1.15,
+    2.2,
+    1.88,
+    1.24
+   ]
+  }
+ ]
+}
