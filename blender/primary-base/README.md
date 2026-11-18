@@ -2,7 +2,7 @@
 
 Terrain of the Open Moon primary base and the 10 km around it, at true size, ready to render in Blender.
 
-- **Centre:** the primary base, 88.4262°S, 63.30°W (north rim of de Gerlache crater).
+- **Centre:** the primary base, 88.4365°S, 62.46°W (north rim of de Gerlache crater; moved here by design change DD-023).
 - **Area:** 20 × 20 km, centred on the base.
 - **Units:** metres. 1 Blender unit = 1 m.
 
@@ -24,10 +24,10 @@ Terrain of the Open Moon primary base and the 10 km around it, at true size, rea
 | | Value |
 |---|---|
 | Size | 20,000 × 20,000 m |
-| Lowest point | −1,698.1 m |
-| Highest point | +1,815.9 m |
-| Height range (Displace strength) | **3,514.0 m** |
-| Base height above the lowest point | 2,712.3 m |
+| Lowest point | −1,786.5 m |
+| Highest point | +1,815.0 m |
+| Height range (Displace strength) | **3,601.5 m** |
+| Base height above the lowest point | 2,823.5 m |
 
 The heights are relative to a 1,737.4 km lunar sphere.
 
@@ -44,7 +44,7 @@ The heights are relative to a 1,737.4 km lunar sphere.
 3. Add a **Displace** modifier:
    - Texture: `heightmap_5m_16bit.png`, colour space **Non-Color**.
    - Texture coordinates: **UV**.
-   - Strength: **3514.0**.
+   - Strength: **3601.5**.
    - Midlevel: **0**.
 4. Give the plane a material with `texture_2m.jpg` on its UVs.
 
@@ -61,7 +61,7 @@ The Sun is always low here. The maximum Sun elevation at this latitude is about 
 
 ## Sources and credit
 
-- **Heights, 5 m/px:** NASA GSFC, LOLA high-resolution topography for lunar south pole sites, Site 11 (de Gerlache rim). [PGDA product 78](https://pgda.gsfc.nasa.gov/products/78). Used for 35.7% of the area. It matches the 10 m data to within 0.11 m on average (median offset).
+- **Heights, 5 m/px:** NASA GSFC, LOLA high-resolution topography for lunar south pole sites, Site 11 (de Gerlache rim). [PGDA product 78](https://pgda.gsfc.nasa.gov/products/78). Used for 35.9% of the area. Its median offset from the 10 m data is 0.95 m, which is removed before blending.
 - **Heights, 10 m/px:** NASA GSFC, LOLA LDEM_83S_10MPP_ADJ (Barker et al. 2023). [PGDA product 90](https://pgda.gsfc.nasa.gov/products/90). Resampled to 5 m and feathered over 500 m into the 5 m data.
 - **Texture:** LROC NAC south-pole maximum-pixel mosaic, tiles P878S2925 and P892S3150, 1 m/px, averaged to 2 m/px. Credit NASA/GSFC/Arizona State University. [NASA PDS](https://pds.mcp.nasa.gov/data/index.html#/data/store/img/lunar_reconnaissance_orbiter/pds4/lroc/lro-l-lroc-5-rdr/LROLRC_2001/EXTRAS/BROWSE/NAC_POLE/).
 - **Processing:** Open Moon. Scripts are in `analysis/blender/` (`make_heightmap.py`, `fetch_nac.py`, `make_texture.py`).
