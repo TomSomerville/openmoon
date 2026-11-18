@@ -23,3 +23,6 @@ Phase → System → Component → Sub-component. Every level records:
 
 Content is licensed CC BY-SA 4.0 (see `LICENSE`).
 
+## Primary research resources
+
+- [NASA: Moon Base Systems](https://www.nasa.gov/moonbase-systems/) — check this first when researching. Also listed on the Sources page.
