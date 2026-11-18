@@ -290,6 +290,15 @@ window.addEventListener('hashchange',open);open();})();
 
 *4 × 4 km around the primary base (magenta) and B3 (orange), 1 m per pixel. From LROC's south-pole mosaic of images taken with the Sun at 310–320° sub-solar longitude, the best-lit single lighting found for this spot; the base sits at the edge of a shadow. Credit NASA/GSFC/Arizona State University<sup class="r">[20](#s20)</sup>.*
 
+#### Sun and shadow at the base (ESTIMATE)
+
+One lunar day (about 29.5 Earth days, a frame every 12 hours) over the base and the 10 km around it, in the best and the worst season. This is Open Moon's shadow calculation over NASA LOLA terrain, with Sun positions from NASA/JPL's DE421 ephemeris<sup class="r">[24](#s24)</sup>. The base point itself is lit in 26 of 60 frames in the best season and 7 of 60 in the worst.
+
+![Animation of sunlight and shadow over the primary base area, best season]({{ '/assets/sites/primary-base-sun-best.gif' | relative_url }})
+![Animation of sunlight and shadow over the primary base area, worst season]({{ '/assets/sites/primary-base-sun-worst.gif' | relative_url }})
+
+*Left: best season. Right: worst season. Star: base. Orange: base towers. Cyan: mine towers. Green outline: the 4.8 km² flat patch.*
+
 ### Backup: Connecting ridge by Shackleton
 
 **Pros**
