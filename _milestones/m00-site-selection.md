@@ -139,7 +139,7 @@ From NASA's LOLA slope map at 10 m per pixel<sup class="r">[10](#s10)</sup>. Lan
 | Orange | 15–20° | Driving only |
 | Red | ≥20° | Avoid |
 
-43% of the focus area is landable. Within 1 km of the sites: 65% (primary) and 69% (backup).
+43% of the focus area is landable. Within 1 km of the sites: 58% (primary) and 69% (backup).
 
 </div>
 <div class="tp-media" markdown="1">
@@ -248,7 +248,7 @@ The longest dark spell of the base towers depends on the lunar season (typical s
 | Equinoxes | 4.4–4.5 days | 2.5–2.8 days |
 | Winter solstice | 12 days (up to 14) | 5.8 days (up to 6) |
 - **The mine stops in the dark.** Its battery only keeps systems alive.
-- **Towers within 3 km were rejected.** They reach only 56.9%.
+- **Towers within 3 km cannot replace the rim towers.** Up to five towers within 3 km of the base reach only 56.1%, so the main towers stand on the rim.
 
 </div>
 <div class="tp-media" markdown="1">
@@ -301,11 +301,11 @@ window.addEventListener('hashchange',open);open();})();
 
 ![LROC NAC 1 m per pixel view of the primary base and B3, sun from 310–320°]({{ '/assets/sites/primary-base-nac-315.jpg' | relative_url }})
 
-*4 × 4 km around the primary base (magenta) and B3 (orange), 1 m per pixel. From LROC's south-pole mosaic of images taken with the Sun at 310–320° sub-solar longitude, the best-lit single lighting found for this spot; the base sits at the edge of a shadow. Credit NASA/GSFC/Arizona State University<sup class="r">[20](#s20)</sup>.*
+*4 × 4 km around the primary base (magenta) and B3 (orange), 1 m per pixel. From LROC's south-pole mosaic of images taken with the Sun at 310–320° sub-solar longitude, the best-lit single lighting found for this spot; the base is on lit ground near the edge of a shadow. Credit NASA/GSFC/Arizona State University<sup class="r">[20](#s20)</sup>.*
 
 #### All-sun view of the base area
 
-LROC's maximum-pixel mosaic keeps each spot at its brightest across thousands of 1 m images, so almost all shadow is removed<sup class="r">[20](#s20)</sup>. Only two crater interiors stay black, the larger a small shadowed crater just southeast of the base.
+LROC's maximum-pixel mosaic keeps each spot at its brightest across thousands of 1 m images, so almost all shadow is removed<sup class="r">[20](#s20)</sup>. Only a few crater interiors stay black; the nearest is a shadowed crater about 1 km south-east of the base in these images.
 
 ![All-sun view of the 20 by 20 km area around the primary base, LROC NAC maximum-pixel mosaic]({{ '/assets/sites/primary-base-allsun.jpg' | relative_url }})
 ![The same view with flat ground of 8 degrees or less in green and the 4.8 square km patch around the base outlined]({{ '/assets/sites/primary-base-allsun-flat.jpg' | relative_url }})
@@ -344,7 +344,7 @@ One lunar day (about 29.5 Earth days, a frame every 12 hours) over the base and 
 
 - The best sun in the focus area: 93.0% with three towers, on short cables.
 - Shackleton's ice floor is 5.2 km away, close enough for a mine on the base grid.
-- Flat ground: 5.8° at the site.
+- Flat ground: 6.1° at the site, in 9.7 km² of connected ground at 8° or less.
 
 **Cons**
 
