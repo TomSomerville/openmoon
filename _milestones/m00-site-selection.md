@@ -430,6 +430,21 @@ The de Gerlache floor is 12.7 km from the primary base, beyond the 10 km extende
 - **The base has its own VSATs** (separate grid, DD-016): site 5 (88.6652°S, 68.42°W; 82.7 % sunlit on NASA's map; 7.7 km from the base) and a second tower at 88.7108°S, 68.28°W (53.8 %; 8.8 km), chosen because it is lit when site 5 is dark. Together they are lit about **84.1 %** of the time, with blackouts up to about 6 days (ESTIMATE). Two more towers nearby add under 1 point.
 - **The mine target** is the floor edge nearest the rim. No published ice detection has coordinates there; M01 must measure ice along this edge before mining is planned.
 
+### Closer base VSATs: tested and rejected (ESTIMATE)
+
+Could up to five VSATs within a standard 3 km run of the base replace the two long-run base VSATs? The rule (plan design): a closer layout is used only if its daylight uptime is equal to or greater than the current two-VSAT base layout (site 5 + B2: **84.1 %**, longest blackout about 6 days). Open Moon tested 380 spots within 3 km of the base with the same time-series method.
+
+| VSATs within 3 km | Time at least one is lit | Longest time all are dark |
+|---|---|---|
+| 1 | 48.7 % | 21.5 days |
+| 2 | 55.3 % | 19.6 days |
+| 3 | 56.8 % | 19.5 days |
+| 4–5 | 56.9 % | 19.5 days |
+
+- **Rejected.** No close-in layout comes near 84.1 %: the base sits back from the crater rim, so nearby high ground blocks the low Sun. The best spot within 3 km is about 50 % sunlit on NASA's map.
+- Adding close-in towers to the two long-run base VSATs raises uptime by under half a point (84.5 % with five near and two far), so close-in towers would add power during daylight, not hours of light.
+- **The base keeps its two long-run VSATs** (site 5 at 7.7 km and B2 at 8.8 km).
+
 ### Power loss over a 13 km run (this plan's arithmetic)
 
 A direct run from the primary base to the floor edge is about 13 km. At 3 kV, 3-phase, unity power factor, aluminium at 26.5 nΩ·m (the C04.4 method), loss grows in step with length:
