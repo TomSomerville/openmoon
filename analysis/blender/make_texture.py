@@ -14,7 +14,8 @@ a = np.load(os.path.join(NAC, 'full.npy')).astype('float32'); B = np.load(os.pat
 v = a[a > 0]; lo, hi = np.percentile(v, 0.5), np.percentile(v, 99.7)
 g = (np.clip((a - lo) / (hi - lo), 0, 1) ** 0.85 * 255).astype('uint8')
 im = Image.fromarray(g)
-im.save(os.path.join(BO, 'texture_2m.jpg'), quality=90); im.resize((4096, 4096), Image.LANCZOS).save(os.path.join(BO, 'texture_4k.jpg'), quality=92)
+if not os.environ.get('SITE_ONLY'):
+    im.save(os.path.join(BO, 'texture_2m.jpg'), quality=90); im.resize((4096, 4096), Image.LANCZOS).save(os.path.join(BO, 'texture_4k.jpg'), quality=92)
 C = lonlat2m(-88.4262, -63.30); HALF = (B[2] - B[0]) / 2; F = lambda z: ImageFont.truetype(FB, int(z))
 def markers(img, px_per_m, x0, y1, star=True):
     dr = ImageDraw.Draw(img); k = img.width / 1600
@@ -37,7 +38,14 @@ def bar(img, px_per_m, metres, label, title):
     dr.rectangle((0, 0, img.width, 34 * k), fill='black'); dr.text((10 * k, 8 * k), title, font=F(17 * k), fill='white')
 # site image 1: all-sun view, 20 km
 S = 1600; base = Image.fromarray(g).resize((S, S), Image.LANCZOS).convert('RGB'); ppm = S / (2 * HALF)
-markers(base, ppm, B[0], B[3]); bar(base, ppm, 2000, '2 km', 'All-sun view, 20 × 20 km around the primary base: LROC NAC maximum-pixel mosaic, 1 m/px (NASA/GSFC/ASU)')
+# 100 m height contours from NASA LOLA (10 m DEM), drawn on both site images
+dem = np.nan_to_num(read('LDEM_83S_10MPP_ADJ', tuple(B), 10)).astype('float32')
+zz = np.array(Image.fromarray(dem, mode='F').resize((S, S), Image.BILINEAR)); lv = np.floor(zz / 100.)
+CT = (lv != np.roll(lv, 1, 0)) | (lv != np.roll(lv, 1, 1)); CT[0, :] = CT[:, 0] = False
+def contours(img):
+    a_ = np.array(img).astype('float32'); a_[CT] = a_[CT] * 0.35 + np.array([255, 215, 0]) * 0.65; return Image.fromarray(a_.astype('uint8'))
+base = contours(base)
+markers(base, ppm, B[0], B[3]); bar(base, ppm, 2000, '2 km', 'All-sun view, 20 × 20 km around the primary base. LROC NAC maximum-pixel mosaic (NASA/GSFC/ASU). Yellow: 100 m height contours (LOLA)')
 base.save(os.path.join(SA, 'primary-base-allsun.jpg'), quality=88)
 # site image 2: flat-ground overlay, 20 km
 sl = read('LDSM_83S_10MPP_ADJ', tuple(B), 10); flat = sl <= 8
@@ -47,7 +55,7 @@ pa = np.array(Image.fromarray((patch * 255).astype('uint8')).resize((S, S), Imag
 rgb = np.array(Image.fromarray(g).resize((S, S), Image.LANCZOS).convert('RGB')).astype('float32')
 rgb = np.where(fl[..., None], rgb * 0.55 + np.array([40, 200, 90]) * 0.45, rgb)
 e = pa & ~ndimage.binary_erosion(pa, iterations=2); rgb[e] = (60, 255, 140)
-ov = Image.fromarray(rgb.clip(0, 255).astype('uint8')); markers(ov, ppm, B[0], B[3])
-bar(ov, ppm, 2000, '2 km', 'Flat ground ≤8° (green; bright outline = 4.8 km² patch with the base). Slope: NASA LOLA 10 m; image: LROC NAC (NASA/GSFC/ASU)')
+ov = contours(Image.fromarray(rgb.clip(0, 255).astype('uint8'))); markers(ov, ppm, B[0], B[3])
+bar(ov, ppm, 2000, '2 km', 'Flat ground ≤8° (green; bright outline = patch with the base). Yellow: 100 m contours. Slope and heights: NASA LOLA; image: LROC NAC')
 ov.save(os.path.join(SA, 'primary-base-allsun-flat.jpg'), quality=88)
 print('ok', N, 'lo %.0f hi %.0f' % (lo, hi), 'black %.1f%%' % ((a == 0).mean() * 100))

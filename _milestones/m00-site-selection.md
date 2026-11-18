@@ -295,7 +295,7 @@ LROC's maximum-pixel mosaic keeps each spot at its brightest across thousands of
 ![All-sun view of the 20 by 20 km area around the primary base, LROC NAC maximum-pixel mosaic]({{ '/assets/sites/primary-base-allsun.jpg' | relative_url }})
 ![The same view with flat ground of 8 degrees or less in green and the 4.8 square km patch around the base outlined]({{ '/assets/sites/primary-base-allsun-flat.jpg' | relative_url }})
 
-*Left: all-sun view, 20 × 20 km. Right: ground of 8° or less in green (NASA LOLA slope, 10 m), with the 4.8 km² patch around the base outlined. Star: base. Orange: base towers. Cyan: mine towers. Images credit NASA/GSFC/Arizona State University.*
+*Left: all-sun view, 20 × 20 km. Right: ground of 8° or less in green (NASA LOLA slope, 10 m), with the 4.8 km² patch around the base outlined. Yellow lines: 100 m height contours (NASA LOLA). Star: base. Orange: base towers. Cyan: mine towers. Images credit NASA/GSFC/Arizona State University.*
 
 #### Sun and shadow at the base (ESTIMATE)
 
