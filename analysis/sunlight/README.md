@@ -1,7 +1,7 @@
 # Sunlight and VSAT locations (M00)
 
 `mk_sun.py ILLUM_TIF ROI_DIR assets/sites` builds `focus-sunlight-raw.jpg` and `focus-vsat-candidates.jpg`,
-and writes `vsat_spots.csv` (best sunlit 60 m pixel in each 1 km cell with ≥80 % sunlight and slope ≤15°).
+and writes `vsat_spots.csv` (best sunlit 60 m pixel in each 1 km cell with ≥70 % sunlight and slope ≤15°).
 
 Data:
 - Average solar illumination, 18.6-year mean, ground level, 85–90°S at 60 m/px: `AVGVISIB_85S_060M_201608.TIF`
@@ -11,5 +11,5 @@ Data:
   [product 78](https://pgda.gsfc.nasa.gov/products/78) (Barker et al.).
 - Slope: LOLA LDSM via `../slope/read.py`.
 
-Plan design: VSAT sites = sunlit ≥80 % at ground level and slope ≤15° (NASA's VSAT terrain-slope goal
+Plan design: VSAT sites = sunlit ≥80 % (orange) or 70–80 % (yellow) at ground level and slope ≤15° (NASA's VSAT terrain-slope goal
 with a 10 m mast). Ground-level sunlight understates what a 10 m mast sees.

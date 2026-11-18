@@ -22,7 +22,7 @@ base = np.stack([hv * 255] * 3, -1)
 m2p = lambda x, y: ((x - B[0]) / RES, (B[3] - y) / RES)
 UP = 2  # draw at 2x for crisp labels
 
-def decorate(im, title, legend_rows, legend_title, ramp=None, numbers=()):
+def decorate(im, title, legend_rows, legend_title, ramp=None, numbers=(), dots=()):
     im = im.resize((W * UP, H * UP), Image.NEAREST); dr = ImageDraw.Draw(im); k = W * UP / 1400
     F, Fs = font(24 * k), font(16 * k)
     q = lambda x, y: (m2p(x, y)[0] * UP, m2p(x, y)[1] * UP)
@@ -45,8 +45,11 @@ def decorate(im, title, legend_rows, legend_title, ramp=None, numbers=()):
         dr.ellipse((cx - r, cy - r, cx + r, cy + r), outline=(255, 0, 255), width=int(4 * k))
         ox, oy = offs.get(key, (0, -34))
         if not numbers: dr.text((cx + ox * k, cy + oy * k), names.get(key, key), font=Fs, fill=(255, 120, 255), anchor='mm', stroke_width=3, stroke_fill=(0, 0, 0))
+    for X, Y, c in sorted(dots, key=lambda d: d[2] == (255, 140, 0)):
+        x, y = q(X, Y); r = (9 if c == (255, 140, 0) else 6) * k
+        dr.ellipse((x - r, y - r, x + r, y + r), fill=c, outline=(0, 0, 0), width=max(1, int(1.5 * k)))
     for n, (X, Y) in enumerate(numbers, 1):
-        x, y = q(X, Y); dr.text((x + 10 * k, y - 10 * k), str(n), font=font(20 * k), fill='white', anchor='lb', stroke_width=4, stroke_fill=(200, 30, 0))
+        x, y = q(X, Y); dr.text((x + 10 * k, y - 10 * k), str(n), font=font(20 * k), fill='white', anchor='lb', stroke_width=4, stroke_fill=(150, 80, 0))
     hgt = int((len(legend_rows) * 30 + 50 + (40 if ramp else 0)) * k)
     if numbers: lx, ly = W * UP - int(720 * k), int(50 * k)
     else: lx, ly = int(20 * k), H * UP - hgt
@@ -74,23 +77,22 @@ decorate(raw, 'Focus area: average solar illumination at ground level, 18.6-year
          [(None, 'NASA best-lit regions of interest (PGDA product 78)')], 'Time in sunlight (% of 18.6 years, at the surface)', ramp).save(os.path.join(OUTDIR, 'focus-sunlight-raw.jpg'), quality=85, optimize=True)
 # 2) VSAT candidate ground: slope <= 15 deg and sunlit >= 40 / 50 / 60 %
 ok = sl <= 15
-tiers = [(80, (255, 60, 0))]
+tiers = [(80, (255, 140, 0)), (70, (255, 230, 0))]
 rgb = base.copy()
 for t, c in reversed(tiers): rgb = np.where(((il >= t) & ok)[..., None], base * 0.25 + np.array(c) * 0.75, rgb)
 # grow small patches so they stay visible after downsampling
 im = Image.fromarray(rgb.clip(0, 255).astype('uint8'))
 # markers: small high-sun patches are invisible at page scale, so mark each 1 km cell holding them
-dr0 = ImageDraw.Draw(im); BIN = int(1000 / RES); spots = []
+dr0 = ImageDraw.Draw(im); BIN = int(1000 / RES); spots = []; dots = []
 for j in range(0, H, BIN):
     for i in range(0, W, BIN):
         blk = np.where(ok[j:j + BIN, i:i + BIN], il[j:j + BIN, i:i + BIN], np.nan)
         if np.all(np.isnan(blk)): continue
         mx = np.nanmax(blk)
-        if mx >= 80:
+        if mx >= 70:
             jj, ii = np.unravel_index(np.nanargmax(blk), blk.shape); y, x = j + jj, i + ii
-            c = (255, 60, 0); r = 7
-            dr0.ellipse((x - r, y - r, x + r, y + r), fill=c, outline=(0, 0, 0))
-            X = B[0] + (x + 0.5) * RES; Y = B[3] - (y + 0.5) * RES; rho = math.hypot(X, Y)
+            c = (255, 140, 0) if mx >= 80 else (255, 230, 0)
+            X = B[0] + (x + 0.5) * RES; Y = B[3] - (y + 0.5) * RES; rho = math.hypot(X, Y); dots.append((X, Y, c))
             spots.append((mx, -(90 - math.degrees(2 * math.atan(rho / (2 * 1737400.)))), math.degrees(math.atan2(X, Y)), X, Y))
 spots.sort(reverse=True)
 sites = []
@@ -99,7 +101,7 @@ for sp in spots:
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'vsat_spots.csv'), 'w') as fh:
     fh.write('sunlit_pct,lat,lon_east,x_m,y_m\n')
     for sp in spots: fh.write('%.1f,%.4f,%.3f,%.0f,%.0f\n' % sp)
-rows = [((255, 60, 0), 'Sunlit ≥80% of the time, slope ≤15° (dot marks each 1 km cell)'), (None, 'NASA best-lit regions of interest: Sites 1, 4, 7, 11 (PGDA product 78)')]
-decorate(im, 'Focus area: VSAT sites, sunlit ≥80% at ground level and slope ≤15°. Sunlight: NASA GSFC PGDA; slope: NASA LOLA LDSM.',
-         rows, 'VSAT sites (ground-level sunlight; a 10 m mast sees more)', numbers=sites).save(os.path.join(OUTDIR, 'focus-vsat-candidates.jpg'), quality=85, optimize=True)
+rows = [((255, 140, 0), 'Sunlit ≥80% of the time, slope ≤15° (orange dots)'), ((255, 230, 0), 'Sunlit 70–80%, slope ≤15° (yellow dots)'), (None, 'NASA best-lit regions of interest: Sites 1, 4, 7, 11 (PGDA product 78)')]
+decorate(im, 'Focus area: VSAT sites, sunlit ≥70% (yellow) and ≥80% (orange) at ground level, slope ≤15°. Sunlight: NASA GSFC PGDA; slope: NASA LOLA LDSM.',
+         rows, 'VSAT sites (ground-level sunlight; a 10 m mast sees more)', numbers=sites, dots=dots).save(os.path.join(OUTDIR, 'focus-vsat-candidates.jpg'), quality=85, optimize=True)
 for t in (70, 80, 85): print('sunlit>=%d%% & slope<=15: %.1f km2' % (t, ((il >= t) & ok).sum() * RES * RES / 1e6))
