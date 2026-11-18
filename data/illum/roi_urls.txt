@@ -1,0 +1,5 @@
+https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site01/Site01_ROIs.tgz
+https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site04/Site04_ROIs.tgz
+https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site06/Site06_ROIs.tgz
+https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site07/Site07_ROIs.tgz
+https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site11/Site11_ROIs.tgz

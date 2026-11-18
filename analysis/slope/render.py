@@ -1,4 +1,4 @@
-import sys, math; sys.path.insert(0,'.')
+import sys, os, math; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # use this folder's read.py, not the working folder's
 from read import *
 from PIL import Image, ImageDraw, ImageFont
 FB='/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf'

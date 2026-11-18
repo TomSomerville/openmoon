@@ -1,0 +1,57 @@
+PDS_VERSION_ID                 = "PDS3"
+LABEL_REVISION_NOTE            = "2010-02-04, LEND Team, initial release;"
+
+/*** FILE FORMAT ***/
+FILE_RECORDS                   = 14400
+RECORD_TYPE                    = FIXED_LENGTH
+RECORD_BYTES                   = 310
+
+/*** GENERAL DATA DESCRIPTION PARAMETERS ***/
+PRODUCT_ID                     = "LEND_RDR_ALDS_20090915_DAT"
+PRODUCT_VERSION_ID             = "1.0"
+PRODUCT_CREATION_TIME          = 2017-02-20T15:55:28
+PRODUCT_TYPE                   = "LEND_RDR_ALD"
+SOFTWARE_NAME                  = "GEN_LEND_RDR"
+SOFTWARE_VERSION_ID            = "1.0.0"
+INSTRUMENT_HOST_NAME           = "LUNAR RECONNAISSANCE ORBITER"
+INSTRUMENT_NAME                = "LUNAR EXPLORATION NEUTRON DETECTOR"
+INSTRUMENT_ID                  = "LEND"
+DATA_SET_ID                    = "LRO-L-LEND-4/5-RDR-V1.0"
+
+MISSION_PHASE_NAME             = "NOMINAL MISSION"
+TARGET_NAME                    = "MOON"
+START_TIME                     = 2009-09-15T00:00:00
+STOP_TIME                      = 2011-12-11T00:00:00
+
+^TABLE                         = "LEND_RDR_ALDS_20090915.DAT"
+
+OBJECT                         = TABLE
+   COLUMNS                     = 23
+   INTERCHANGE_FORMAT          = BINARY
+   ROW_BYTES                   = 310
+   ROWS                        = 14400
+   DESCRIPTION                 = "
+
+    The ALD South Polar product data has been averaged spatially over
+    a 0.5 degree by 0.5 degree grid below -80 degrees.
+
+    The ALD South Polar product data is presented in a table
+    corresponding to the 0.5 degree by 0.5 degree grid. There are 20
+    latitude bands and 720 longitude bands below -80, thus 14400 grid
+    cells. Each cell corresponds to one row in the table. The first
+    720 rows in the table are the data for the 0.5 degree latitude
+    band centered at -89.75 degrees south latitude, the second 720
+    rows are the data for the band centered at -89.25 degrees south
+    latitude, and so on. Within each band, longitude increases
+    eastward from the cell centered at 0.25 degrees east longitude
+    to the cell centered at 359.75 degrees east longitude.
+
+    Averaged LEND Data products are composed of averaged normalized
+    Counting rates and the associated timing, spatial and engineering
+    information. The ALDs consists of the cumulative background
+    subtracted and normalized counts of neutrons at the nine LEND
+    detectors averaged over the above defined."
+
+   ^STRUCTURE                  = "LEND_RDR_ALD.FMT"
+END_OBJECT                     = TABLE
+END
