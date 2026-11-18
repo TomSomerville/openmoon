@@ -5,16 +5,16 @@ title: Surface power grid
 phase: 1
 window: "2028–2032"
 summary: Build a hybrid power grid of tall solar towers on the sunlit ridges, a fission reactor for darkness, energy storage and high-voltage cables, sized to run the oxygen plant and the first habitat.
-objective: "Deliver at least 100 kW of solar peak power and at least 40 kWe of continuous fission power, connected by a high-voltage DC grid, so the base never loses essential power, even during the longest polar darkness."
+objective: "Deliver at least 100 kW of solar peak power and at least 40 kWe of continuous fission power, connected by a 3 kV AC, 1 kHz grid (NASA's lunar grid baseline; design change DD-001), so the base never loses essential power, even during the longest polar darkness."
 trl_min: 5
 depends_on: [M00, M02, M03]
 spec:
   - {k: "Solar", v: "2 × 10 kW VSAT + 2 × 50 kW VSAT-XL towers"}
   - {k: "Fission", v: "1 × 40 kWe-class reactor (ref. design ~10 t)"}
   - {k: "Storage", v: "Regenerative fuel cells, ~3 MWh"}
-  - {k: "Grid", v: "±4 kVDC aluminium cables, 1–3 km"}
+  - {k: "Grid", v: "3 kV AC, 3-phase, 1 kHz; 1–3 km links (NASA baseline, DD-001)"}
   - {k: "Load at end", v: "Oxygen pilot plant ~26 kW + habitat 20–50 kW"}
-cost: {low: 8.6, high: 22.5, note: "about 85% of this is delivery cost; see the analysis below"}
+cost: {low: 9.0, high: 23.5, note: "about 85% of this is delivery cost; see the analysis below"}
 cost_items:
   - {item: "2 × 10 kW vertical solar arrays (hardware)", low: 0.05, high: 0.15, basis: "ESTIMATE; NASA's three VSAT prototypes cost $19.4M in total [src 4]"}
   - {item: "Delivery of 10 kW arrays (~2 t, small landers)", low: 1.2, high: 2.4, basis: "2 t × $0.6–1.2M/kg (mass ESTIMATE)"}
@@ -25,7 +25,7 @@ cost_items:
   - {item: "Regenerative fuel cell storage, ~3 MWh (hardware)", low: 0.05, high: 0.15, basis: "ESTIMATE"}
   - {item: "Delivery of storage (~3 t, medium lander)", low: 1.2, high: 3.0, basis: "3 MWh ÷ ~500 Wh/kg ≈ 6 t at cell level; ~3 t assumes partial reuse of ISRU tanks (ESTIMATE) × $0.4–1.0M/kg"}
   - {item: "Cables, converters, switchgear (hardware)", low: 0.05, high: 0.15, basis: "ESTIMATE"}
-  - {item: "Delivery of grid hardware (~1 t: ~5 km of cable, converters, switchgear)", low: 0.4, high: 1.0, basis: "NASA estimates ~240 kg of cable for 3 km at 2,800 V [src 15]; rest ESTIMATE; × $0.4–1.0M/kg"}
+  - {item: "Delivery of grid hardware (~2 t: ~5 km of 3 kVac cable on spools, transformers, UMIC converters, switchgear)", low: 0.8, high: 2.0, basis: "NASA 2025 reference: 325 kg per 1 km main cable and spool [src 21]; UMIC target <0.55 kg/m [src 22]; rest ESTIMATE; × $0.4–1.0M/kg"}
   - {item: "Integration, testing, operations", low: 0.1, high: 0.3, basis: "ESTIMATE"}
 exit_criteria:
   - "At least 100 kW solar peak power installed on at least two separate ridge points."
@@ -45,10 +45,10 @@ workstreams:
     items: ["Regenerative fuel cells (320–650 Wh/kg)", "Li-ion for fast peaks (~160 Wh/kg)", "Shares water and gas tanks with ISRU"]
   - name: Grid and cables
     desc: Move power between sources and users.
-    items: ["±4 kVDC aluminium cable", "DC-DC converters at each user", "Separate habitat and ISRU microgrids"]
+    items: ["3 kV AC, 3-phase, 1 kHz aluminium cable", "Transformers plus UMIC converters at each source and user", "Separate 120 V DC habitat and ISRU microgrids"]
   - name: Cable laying
-    desc: Robots lay and bury cable.
-    items: ["LunaGrid-Lite-style rover reels out cable", "Shallow trench or regolith cover", "Fault location by time-domain reflectometry"]
+    desc: Robots lay cable on the surface.
+    items: ["LunaGrid-Lite-style rover reels out cable", "Cable left on the surface to shed heat (NASA advises against burial); ramps at rover crossings", "Fault location by time-domain reflectometry"]
   - name: Control
     desc: Automatic load management.
     items: ["Priority load shedding", "Remote operation from Earth", "Fault isolation"]
@@ -59,7 +59,7 @@ technologies:
   - {name: "Astrobotic VSAT-XL", use: "50 kW towers", status: "NASA SBIR study award 2024; 34 m tall; Redwire ROSA arrays. Phase II follow-on Jun 2025–Jun 2027", trl: 5, new: true, src: 7}
   - {name: "Astrobotic LunaGrid-Lite", use: "Cable-laying rover and power transfer", status: "1 kW; ~500 m of cable in the 2025 design (1 km in earlier plans); passed CDR Aug 2025", trl: 6, src: 8}
   - {name: "Regenerative fuel cells", use: "Night and gap storage", status: "NASA Glenn breadboard ran 550+ hours of simulated lunar cycles (open-loop)", trl: 5, new: true, src: 9}
-  - {name: "High-voltage DC lunar cable", use: "Power transmission", status: "NASA Glenn analysis: ±4 kVDC Al cable best for 3 km at 95%", trl: 5, src: 2}
+  - {name: "Lunar AC power transmission (3 kVac, 1 kHz)", use: "Power transmission", status: "NASA lunar grid baseline since 2022; UMIC 1 kW module bench-tested (2023); AC cable tested in vacuum with regolith simulant (2025)", trl: 4, src: 23}
 sources:
   - {title: "Csank & Scott, NASA GRC: Power and Energy for the Lunar Surface", url: "https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf", date: "Apr 2022"}
   - {title: "NASA NTRS 20220002315: Lunar power transmission for fission surface power", url: "https://ntrs.nasa.gov/api/citations/20220002315/downloads/Lunar_power_transmission_concepts_FINAL.pdf", date: "2022"}
@@ -81,14 +81,18 @@ sources:
   - {title: "USAspending: NASA contract 80NSSC25C0032, Phase II SBIR VSAT-XL", url: "https://www.usaspending.gov/award/CONT_AWD_80NSSC25C0032_8000_-NONE-_-NONE-", date: "Jun 2025"}
   - {title: "NASA: 2023 NASA Tipping Point selections", url: "https://www.nasa.gov/general/2023-nasa-tipping-point-selections/", date: "Jul 2023"}
   - {title: "NASA GCD annual review: Vertical Solar Array Technology (VSAT) project", url: "https://ntrs.nasa.gov/citations/20230012849", date: "Sep 2023"}
+  - {title: "Mason et al., NASA/DOE: Key Design Trades for a Near-term Lunar Fission Surface Power System (NETS 2025) — 3 kVac, 1 kHz link", url: "https://ntrs.nasa.gov/citations/20250000841", date: "2025"}
+  - {title: "Thomas et al., NASA GRC: A Modular AC to DC Interface Converter (UMIC) to Enable Lunar Surface Power Transmission (AIAA ASCEND)", url: "https://ntrs.nasa.gov/citations/20230013309", date: "Sep 2023"}
+  - {title: "Thomas, Granger, Csank & Gardner, NASA GRC: Establishing a Lunar Surface Power Grid (trade study selecting 3 kV AC)", url: "https://ntrs.nasa.gov/citations/20220011587", date: "Aug 2022"}
+  - {title: "Klopp, Thomas & Csank, NASA GRC: An Experimental Study of Losses in High Voltage AC Lunar Power Cables (SciTech 2026)", url: "https://ntrs.nasa.gov/citations/20250011012", date: "Dec 2025"}
 risks:
   - {sev: Critical, title: "Darkness: even the best ridges have shadow periods; NASA cites up to ~100 h at the pole, and 354 h is the design night for the US reactor", fix: "Fission base load + solar on multiple ridge points + storage; never rely on one source"}
   - {sev: Critical, title: "The US lunar reactor's requirements keep changing (40 → 100 → 20 kWe) and no contract has been awarded", fix: "Design the grid for any 20–100 kWe unit; buy from whichever programme flies first; solar-only fallback with more storage"}
   - {sev: High, title: "Delivery cost dominates: ~85% of this milestone is shipping mass", fix: "Push heavy-cargo pricing down; make cables and later solar cells from regolith (Blue Alchemist, M12)"}
   - {sev: High, title: "Dust on arrays and radiators", fix: "Vertical arrays shed dust; keep 1 km+ from landing pads; landing pads in M05"}
   - {sev: High, title: "Reactor radiation near crew", fix: "1–3 km separation, terrain or berm shielding; US draft sets ≤5 rem/yr at 1 km"}
-  - {sev: High, title: "Grid voltage choice is open: NASA's own baseline has moved from DC to 3 kV AC at 1 kHz, because radiation-hard switches limit DC to about 1.2–1.5 kV", fix: "Trade study before M04 design freeze: ±4 kVDC (lighter cable, needs new switches) vs 3 kVac (matches NASA reactor interface); see the HVDC cable technology page"}
-  - {sev: Medium, title: "Cable damage from rovers, thermal cycling and micrometeoroids", fix: "Bury or cover cables; redundant routes; fault-locating electronics"}
+  - {sev: High, title: "The 3 kV AC grid hardware is early: NASA has bench-tested a single 1 kW UMIC module, and an AC grid with no spinning machines is harder to keep stable", fix: "Track NASA's UMIC development; test parallel UMICs and droop control in hardware before flight; keep links short (1–3 km), where NASA says 1 kHz suits"}
+  - {sev: Medium, title: "Cable damage from rovers, thermal cycling and micrometeoroids", fix: "Surface routes away from traffic with protected crossings (NASA advises against burial because regolith traps heat [src 21]); redundant routes; fault-locating electronics"}
 ---
 
 ## How much power does a base need?
@@ -129,9 +133,15 @@ This milestone targets about 140 kW of total capacity: 100 kW of solar peak plus
 
 ## Cables
 
-- **Voltage choice.** NASA Glenn found that about **±4 kVDC** aluminium cable gives the lightest 3 km link at 95% efficiency<sup class="r">[2](#s2)</sup>.
+{% include decision-note.html id="DD-001" extra="Open Moon first planned a ±4 kV DC grid, following a February 2022 NASA Glenn transmission review. In November 2026 it switched to NASA's 3 kV AC baseline." %}
+
+- **Voltage and frequency.** In its 2022 grid trade study NASA compared 1.2–6 kV DC and 3-phase AC at 60 Hz to 1 kHz. It found **1 kHz the lightest AC option** and chose **3 kV AC as the mass-optimal feasible design**<sup class="r">[23](#s23)</sup>.
+- **Why not DC?** NASA says DC would be lighter above 3–4 kV, but a DC grid is "practically limited to 1.2–1.5 kV, due to lack of high voltage rad-hard switches". AC voltage can be changed with transformers, and "these facts drove team to select AC"<sup class="r">[23](#s23)</sup>.
+- **NASA's reactor uses it.** NASA's 2025 fission reference design sends power 1 km over a **3 kVac, 1 kHz** link, "selected to leverage the Universal Modular Interface Converter (UMIC)". It found no mass benefit above 3 kVac at 1 km, and dropping to 1 kVac added 570 kg<sup class="r">[21](#s21)</sup>.
+- **Connecting equipment.** The UMIC links 120 V DC space equipment to the 3 kV AC grid. It is built from standard 1 kW modules, with targets of over 85% efficiency and under 0.55 kg/m<sup class="r">[22](#s22)</sup>.
+- **Tested with lunar dirt.** NASA tested AC cables in vacuum with regolith simulant, coiled, buried and apart, and found no major losses. The frequency did not change the results<sup class="r">[24](#s24)</sup>.
 - **Why not beam power wirelessly?** Power beaming was 13–27% efficient and would need 30–60 t of extra generating capacity to make up the losses<sup class="r">[2](#s2)</sup>.
-- **Cable mass.** NASA estimates the cable itself at only about 240 kg for 3 km at 2,800 V<sup class="r">[15](#s15)</sup>. Because the reactor is heavy (about 0.25 kg per watt), the line must be efficient: any power lost in the cable has to be made up with extra generating capacity<sup class="r">[2](#s2)</sup>.
+- **Cable mass.** NASA's 2025 reactor reference lists **325 kg for a 1 km main cable and spool** on the 3 kVac link<sup class="r">[21](#s21)</sup>, heavier than the ~240 kg per 3 km NASA once estimated for a 2,800 V DC cable<sup class="r">[15](#s15)</sup>. Because the reactor is heavy (about 0.25 kg per watt), the line must still be efficient: any power lost in the cable has to be made up with extra generating capacity<sup class="r">[2](#s2)</sup>.
 - **Laying the cable.** Astrobotic's LunaGrid-Lite is designed to transmit 1 kW; its 2025 design lays about 500 m of cable<sup class="r">[8](#s8)</sup>. NASA's 2023 award described 1 km<sup class="r">[19](#s19)</sup>.
 
 ## Where the money goes

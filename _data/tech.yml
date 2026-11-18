@@ -558,23 +558,23 @@
     credit: NASA Glenn Research Center
     license: NASA media (public domain in the US)
     source_page: https://images.nasa.gov/details/GRC-2009-C-04808
-- name: High-voltage DC lunar cable
+- name: Lunar AC power transmission (3 kVac, 1 kHz)
   category: Power
   milestones:
   - M04
   phases:
   - 1
-  trl: 5
-  status: 'NASA Glenn analysis: ±4 kVDC Al cable best for 3 km at 95%'
-  use: Power transmission
+  trl: 4
+  status: NASA's lunar grid baseline since 2022 (switched from DC; see DD-001). UMIC 1 kW module bench-tested 2023; AC cable tested in vacuum with regolith simulant 2025
+  use: Power transmission between sources and users
   develop: false
-  source: https://ntrs.nasa.gov/api/citations/20220002315/downloads/Lunar_power_transmission_concepts_FINAL.pdf
-  source_title: 'NASA NTRS 20220002315: Lunar power transmission for fission surface power'
-  slug: high-voltage-dc-lunar-cable
+  source: https://ntrs.nasa.gov/citations/20220011587
+  source_title: 'Thomas et al., NASA GRC: Establishing a Lunar Surface Power Grid (2022)'
+  slug: lunar-ac-power-transmission
   image:
-    file: /assets/tech/high-voltage-dc-lunar-cable.svg
+    file: /assets/tech/lunar-ac-power-transmission.svg
     kind: concept
-    caption: Concept illustration of a ±4 kVDC aluminium cable carrying power about 3 km from a solar array to a habitat via DC/DC converters
+    caption: 'Concept: a 3 kV AC, 1 kHz three-phase lunar power link with transformers and UMIC converters'
     credit: Open Moon concept illustration
     license: CC BY-SA 4.0
     source_page: https://ntrs.nasa.gov/api/citations/20220002315/downloads/Lunar_power_transmission_concepts_FINAL.pdf

@@ -47,7 +47,7 @@ risks:
   - {sev: Medium, title: "Small rovers like CADRE are built to work for one lunar day, about 14 Earth days", fix: "Add batteries and heaters for night survival, or park the rovers in a heated shelter at night."}
   - {sev: Medium, title: "Automatic hitching has never been done on the Moon", fix: "Test on Earth with real LTV prototypes; fall back to Earth-driven hitching or crew help."}
   - {sev: Medium, title: "Dust wears wheel bearings over long distances", fix: "Sealed, covered bearings; spare wheels in the 250 kg budget; sintered road sections (M05)."}
-  - {sev: Medium, title: "Inspection rover near ±4 kVDC cables could short or be damaged", fix: "Keep a set distance from cables; inspect by camera only; never touch the cable."}
+  - {sev: Medium, title: "Inspection rover near 3 kV AC grid cables could short or be damaged", fix: "Keep a set distance from cables; inspect by camera only; never touch the cable."}
 sources:
   - {title: "Wikipedia: Modular Equipment Transporter", url: "https://en.wikipedia.org/wiki/Modular_Equipment_Transporter", date: "accessed Nov 2026"}
   - {title: "NASA RELEASE26-046: NASA provides update on Moon Base rovers, landers, missions", url: "https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/", date: "May 2026"}

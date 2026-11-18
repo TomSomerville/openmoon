@@ -4,13 +4,14 @@ description: "Open Moon is an open-source, milestone-by-milestone engineering pl
 url: https://openmoon.beached.lol
 baseurl: ""
 repo: https://github.com/TomSomerville/openmoon
-plan_rev: "1.2"
+plan_rev: "1.3"
 timezone: UTC
 lang: en
 
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 markdown: kramdown
 kramdown:

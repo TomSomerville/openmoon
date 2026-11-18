@@ -1,0 +1,6 @@
+{% assign dd = site.data.decisions | where: "id", include.id | first %}
+<div class="ddnote">
+  <div class="ddh"><span class="tag warn">Design change · {{ dd.id }}</span> <strong>{{ dd.title }}</strong> <span class="ddd">({{ dd.date }})</span></div>
+  <p>{{ dd.why }} {% if include.extra %}{{ include.extra }}{% endif %}</p>
+  <p class="ddsrc">NASA sources: {% for t in dd.timeline %}{% if t.url contains 'nasa' %}<a href="{{ t.url }}">{{ t.date }}</a>{% unless forloop.last %} · {% endunless %}{% endif %}{% endfor %} · <a href="{{ '/decisions/' | relative_url }}#{{ dd.id | downcase }}">Full decision record →</a></p>
+</div>

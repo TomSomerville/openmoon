@@ -1,0 +1,28 @@
+---
+title: Design decisions
+eyebrow: Why the plan changed
+summary: Every significant change to the plan's design, with the reason, the date, and the sources behind it. When the plan changes, the old choice and the reasoning stay on record here.
+section: plan
+doc_id: OM-120
+permalink: /decisions/
+---
+{% for d in site.data.decisions %}
+<div class="dd" id="{{ d.id | downcase }}">
+  <div class="eyebrow">{{ d.id }} · {{ d.status }} · {{ d.date }}</div>
+  <h2 style="margin-top:4px">{{ d.title }}</h2>
+  <p><strong>Affects:</strong> {% for a in d.affects %}{% assign m = site.milestones | where: "id_code", a | first %}{% assign c = site.components | where: "id_code", a | first %}{% if m %}<a href="{{ m.url | relative_url }}">{{ a }}</a>{% elsif c %}<a href="{{ c.url | relative_url }}">{{ a }}</a>{% else %}{{ a }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+  <div class="tablewrap"><table class="data"><tbody>
+    <tr><td style="width:120px"><strong>Was</strong></td><td>{{ d.was }}</td></tr>
+    <tr><td><strong>Now</strong></td><td>{{ d.now }}</td></tr>
+    <tr><td><strong>Why</strong></td><td>{{ d.why }}</td></tr>
+  </tbody></table></div>
+  <h3>What NASA found, and when</h3>
+  <div class="tablewrap"><table class="data"><thead><tr><th>Date</th><th>What happened</th><th>Source</th></tr></thead><tbody>
+  {% for t in d.timeline %}<tr><td style="white-space:nowrap">{{ t.date }}</td><td>{{ t.what }}</td><td><a href="{{ t.url }}">{{ t.title }}</a></td></tr>{% endfor %}
+  </tbody></table></div>
+  <h3>In NASA's words</h3>
+  {% for q in d.quotes %}<blockquote>“{{ q.text }}”<br><span style="font-size:12.5px;color:var(--dim)">— <a href="{{ q.url }}">{{ q.src }}</a></span></blockquote>{% endfor %}
+  <h3>Trade-offs Open Moon accepts</h3>
+  <ul>{% for t in d.tradeoffs %}<li>{{ t }}</li>{% endfor %}</ul>
+</div>
+{% endfor %}

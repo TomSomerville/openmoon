@@ -43,7 +43,7 @@ subcomponents:
     trl: 5
   - name: Power interface
     desc: "Connects the module to the M04 habitat microgrid and keeps essential loads alive if the grid drops."
-    parts: ["DC-DC converter from the ±4 kVDC grid", "Internal power distribution units", "Essential-load battery", "Cable connector at the umbilical box"]
+    parts: ["UMIC converter from the 3 kV AC grid to the 120 V DC habitat bus", "Internal power distribution units", "Essential-load battery", "Cable connector at the umbilical box"]
     tech: "M04 grid design; ISS power distribution heritage"
     trl: 5
 risks:

@@ -113,7 +113,7 @@ Worked numbers:
 
 - **Specific mass (this plan's arithmetic).** 6,820 kg ÷ 40 kWe ≈ 170 kg/kWe. NASA's 2022 figure was 250–270 kg/kW<sup class="r">[1](#s1)</sup>.
 - **Dose at greater distance (ESTIMATE).** Dose falls with 1/r²<sup class="r">[3](#s3)</sup>. At 2 km, the 1 km limit of 5 rem/yr becomes about 1.25 rem/yr. This ignores scatter from the ground.
-- **Cable.** At 3 km, NASA's transmission study prefers about ±4 kVDC<sup class="r">[7](#s7)</sup>; see C04.4.
+- **Cable.** The unit connects to the base over a 3 kV AC, 1 kHz link, NASA's lunar grid baseline and the interface in NASA's 2025 reactor reference design (see C04.4 and design change DD-001).
 
 ## Testing and qualification
 
@@ -125,7 +125,7 @@ Worked numbers:
 
 ## Open questions
 
-- Which converter will the first flight unit actually use, and will its grid tie be 3 kV AC (as in the draft)<sup class="r">[5](#s5)</sup> or DC?
+- Which converter will the first flight unit use? Brayton alternators can feed the 3 kV AC step-up transformer directly, while Stirling needs an extra converter stage (see C04.4).
 - How much does dust really reduce radiator performance after years near active landing pads?
 - Can a regolith berm replace part of the 1.4–1.5 t shield, and at what rover effort?
 - What is the best spare strategy: a fifth converter string, or a second smaller reactor later?

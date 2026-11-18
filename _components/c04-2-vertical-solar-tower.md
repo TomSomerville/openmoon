@@ -114,4 +114,4 @@ At the south pole the Sun skims the horizon, so hills and crater rims cast very 
 - Which ridge points give the least overlap in shadow time for the actual landing site?
 - Should the XL be a fixed tower (Astrobotic 2025) or have a mobile version (Astrobotic 2024)<sup class="r">[5](#s5)</sup><sup class="r">[6](#s6)</sup>?
 - How fast do cells degrade from dust, radiation and thermal cycling over 10 years at the pole?
-- Should towers output DC straight into the ±4 kV grid, or high-voltage AC as Astrobotic proposed<sup class="r">[3](#s3)</sup>?
+- Each tower connects to the 3 kV AC, 1 kHz grid (design change DD-001) through a UMIC-class converter. Could Astrobotic's proposed high-voltage AC output<sup class="r">[3](#s3)</sup> feed the grid more directly?
