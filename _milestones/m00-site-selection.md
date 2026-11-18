@@ -17,10 +17,10 @@ technologies:
   - {name: "NASA GSFC average illumination maps", use: "Where solar towers can go (average sunlight over 18.6 years)", status: "Published product (Mazarico et al. 2011)", trl: 9, src: 19}
   - {name: "LRO Camera (LROC) NAC south-pole mosaics", use: "1 m/px images of the base site; Shackleton–de Gerlache Ridge maps", status: "Mosaics in NASA PDS (2024–2025); LROC still imaging", trl: 9, src: 20}
   - {name: "LRO LEND neutron detector", use: "Hydrogen in the top ~1 m", status: "South-polar averaged data 2009–2016 in NASA PDS; ~15 km cells", trl: 9, src: 13}
-  - {name: "ShadowCam on KPLO/Danuri", use: "Images inside permanently shadowed craters (de Gerlache bright spot)", status: "Operating; latest PDS release 22 May 2026. Expected to end in early 2028", trl: 9, src: 23}
+  - {name: "ShadowCam on KPLO/Danuri", use: "Images inside permanently shadowed craters (de Gerlache bright spot)", status: "Operating; latest PDS release 22 May 2026. Expected to end in early 2028", trl: 9, src: 22}
   - {name: "Chandrayaan-1 Moon Mineralogy Mapper (M3)", use: "Surface water-ice detections", status: "Mission ended 2009; ice spectra published 2018", trl: 9, src: 16}
   - {name: "NASA Artemis south-pole candidate regions", use: "Starting shortlist of pre-screened regions", status: "9 regions published Oct 2024", trl: 9, src: 8}
-  - {name: "NASA/JPL NAIF SPICE ephemeris (DE421)", use: "Sun positions for Open Moon's 18.6-year sunlight and darkness model", status: "Public generic kernels", trl: 9, src: 24}
+  - {name: "NASA/JPL NAIF SPICE ephemeris (DE421)", use: "Sun positions for Open Moon's 18.6-year sunlight and darkness model", status: "Public generic kernels", trl: 9, src: 23}
 sources:
   - {title: "NASA FY2026 Budget Technical Supplement (Lunar Reconnaissance Orbiter, PS-28/29)", url: "https://www.nasa.gov/wp-content/uploads/2025/05/fy-2026-budget-technical-supplement-002.pdf", date: "May 2025"}
   - {title: "Univ. of Hawaii SOEST: Scarce ice in Moon's darkest regions (ShadowCam)", url: "https://www.soest.hawaii.edu/soestwp/announce/news/scarce-ice-in-moons-darkest-regions/", date: "Mar 2026"}
@@ -42,7 +42,6 @@ sources:
   - {title: "NASA NTRS: Vertical Solar Array Technology annual review (key performance parameters)", url: "https://ntrs.nasa.gov/api/citations/20230012849/downloads/GCD%20Annual%20Review%20VSAT%20September%202023%20Final.pdf", date: "Sep 2023"}
   - {title: "NASA GSFC PGDA: Lunar Polar Illumination (average solar illumination maps; Mazarico et al. 2011, Icarus 211)", url: "https://pgda.gsfc.nasa.gov/products/69", date: "accessed Nov 2026"}
   - {title: "LROC (NASA/GSFC/Arizona State University): NAC south polar maximum-pixel and sub-solar-longitude mosaics, 1 m/px, tile P878S2925, with PDS labels (NASA PDS)", url: "https://pds.mcp.nasa.gov/data/store/img/lunar_reconnaissance_orbiter/pds4/lroc/lro-l-lroc-5-rdr/LROLRC_2001/EXTRAS/BROWSE/NAC_POLE/NAC_POLE_SOUTH_CM_MAX/NAC_POLE_SOUTH_CM_MAX_P878S2925.xml", date: "accessed Nov 2026"}
-  - {title: "JPL IPN Progress Report 42-176: Lunar pole illumination and communications maps (Bryant)", url: "https://ipnpr.jpl.nasa.gov/progress_report/42-176/176C.html", date: "Feb 2009"}
   - {title: "NASA PDS Geosciences Node: Lunar Reconnaissance Orbiter data and release schedule (Release 67, Sep 2026)", url: "https://pds-geosciences.wustl.edu/missions/lro/", date: "accessed Nov 2026"}
   - {title: "ShadowCam team (NASA/KARI/ASU/Intuitive Machines): ShadowCam PDS Release - June 2026", url: "https://shadowcam.im-ldi.com/news/1479", date: "May 2026"}
   - {title: "NASA/JPL NAIF: SPICE generic kernels (DE421 planetary ephemeris, lunar orientation)", url: "https://naif.jpl.nasa.gov/naif/data_generic.html", date: "accessed Nov 2026"}
@@ -52,7 +51,6 @@ risks:
   - {sev: High, title: "Ice at both sites is unconfirmed: Shackleton's evidence is mixed and de Gerlache has only two candidate detections", fix: "M01 prospectors measure ice at both crater floors before the base is committed; switch to the backup if the primary fails"}
   - {sev: High, title: "A young fault scarp is mapped in de Gerlache Rim 2, next to the primary site", fix: "Map scarps from LROC NAC images; keep pads, the reactor and habitats clear of young faults (M05)"}
   - {sev: High, title: "ShadowCam's mission is expected to end in early 2028, cutting off new images inside shadowed craters", fix: "Archive all ShadowCam images of the de Gerlache and Shackleton floors; plan our own prospecting in M01"}
-  - {sev: Medium, title: "Even at the best base site studied by JPL, Earth is in direct view only about half the time (source 21)", fix: "Treat relay satellites as mandatory (M03)"}
   - {sev: Medium, title: "No lander publishes a certified slope limit above 10°, and IM-1 tipped over on 12° ground", fix: "Land only on ground of 8° or less; confirm each pad with ~1 m LROC NAC hazard maps (M05)"}
 ---
 ## The chosen sites
@@ -301,7 +299,7 @@ LROC's maximum-pixel mosaic keeps each spot at its brightest across thousands of
 
 #### Sun and shadow at the base (ESTIMATE)
 
-One lunar day (about 29.5 Earth days, a frame every 12 hours) over the base and the 10 km around it, in the best and the worst season. This is Open Moon's shadow calculation over NASA LOLA terrain, with Sun positions from NASA/JPL's DE421 ephemeris<sup class="r">[24](#s24)</sup>. The base point itself is lit in 26 of 60 frames in the best season and 7 of 60 in the worst.
+One lunar day (about 29.5 Earth days, a frame every 12 hours) over the base and the 10 km around it, in the best and the worst season. This is Open Moon's shadow calculation over NASA LOLA terrain, with Sun positions from NASA/JPL's DE421 ephemeris<sup class="r">[23](#s23)</sup>. The base point itself is lit in 26 of 60 frames in the best season and 7 of 60 in the worst.
 
 ![Animation of sunlight and shadow over the primary base area, best season]({{ '/assets/sites/primary-base-sun-best.gif' | relative_url }})
 ![Animation of sunlight and shadow over the primary base area, worst season]({{ '/assets/sites/primary-base-sun-worst.gif' | relative_url }})
@@ -336,7 +334,7 @@ Flat ground (8° or less) around the base, measured by Open Moon from NASA's LOL
 | All flat ground within 5 km | 10.1 km² |
 | Within 5 km, in patches of at least 0.05 km² that can be reached over ground of 15° or less | 6.4 km² |
 
-**For scale** (this plan's arithmetic): the 4.8 km² patch is about the size of **Pitcairn Island** (4.5 km²)<sup class="r">[25](#s25)</sup>, about **2.4 times Monaco** (2.02 km²) and about **10 times Vatican City** (0.49 km²)<sup class="r">[26](#s26)</sup>. The 10.1 km² within 5 km is about 2 Pitcairns, 5 Monacos or 20 Vatican Cities.
+**For scale** (this plan's arithmetic): the 4.8 km² patch is about the size of **Pitcairn Island** (4.5 km²)<sup class="r">[24](#s24)</sup>, about **2.4 times Monaco** (2.02 km²) and about **10 times Vatican City** (0.49 km²)<sup class="r">[25](#s25)</sup>. The 10.1 km² within 5 km is about 2 Pitcairns, 5 Monacos or 20 Vatican Cities.
 
 The base can grow over its own 4.8 km² patch without crossing steeper ground. Beyond it, about 6–10 km² more lies within 5 km, in separate patches linked by drivable slopes. B3 stands off the patch, so none of it is lost to a pad keep-out (DD-021).
 

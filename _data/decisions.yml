@@ -684,3 +684,20 @@
   tradeoffs:
     - "Ground within 30 m of the new spot reaches 14.7°, inside NASA's 15° goal for a 10 m mast but above the 10° threshold; B3 needs the goal capability or local levelling (open)."
     - "About 350 fewer hours a year of extra charging than the old spot, and 2.0 km of cable instead of 0.8 km."
+
+- id: DD-022
+  date: "2026-11-18"
+  title: "Communications by a relay constellation; Earth visibility is not a site criterion"
+  status: "Adopted"
+  affects: [M00]
+  was: "Site selection listed direct Earth visibility as a risk (Earth in direct view only about half the time at the best base site in a JPL study) and planned an Earth-visibility analysis per site."
+  now: "The plan assumes a lunar relay constellation (a Starlink-type deployment) for communications, so direct Earth visibility is not used to choose or compare sites. The Earth-visibility risk is removed from M00."
+  why: "The user's decision: comms will come from a relay constellation, so the base does not need a direct line of sight to Earth."
+  timeline:
+    - date: "2023"
+      what: "NASA notes that communication relays relax the need for Earth visibility and open more site options."
+      title: "NASA: Lunar Site Selection white paper (2023 Moon to Mars Architecture Concept Review)"
+      url: "https://ntrs.nasa.gov/citations/20230016267"
+  tradeoffs:
+    - "The base depends on the relay constellation for all communications with Earth until a direct link is added (open)."
+  notes: "Other site-selection checks were set aside by the user on the same date: boulder-scale hazard maps (not feasible now), landing windows by lighting, hardware shading, fault-scarp distance (skipped); landing pads, plume keep-out and traverse routes (moved to site preparation); thermal environment (not site preparation); reactor site, ground properties and ice quantity (later); the backup site is not being developed further."
