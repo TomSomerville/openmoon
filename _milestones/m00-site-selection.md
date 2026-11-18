@@ -344,18 +344,17 @@ One lunar day (about 29.5 Earth days, a frame every 12 hours) over the base and 
 
 ## Room to grow at the primary site
 
-Flat ground (8° or less) around the base, measured by Open Moon from NASA's LOLA slope map at 10 m per pixel<sup class="r">[10](#s10)</sup>:
+Ground around the base, measured by Open Moon from NASA's LOLA slope map at 10 m per pixel<sup class="r">[10](#s10)</sup>. Ground of 8° or less is ready to build on. Ground of 8–15° is counted as room to grow, because by then excavation equipment can grade it flat (plan design).
 
-| Area | Flat ground |
-|---|---|
-| Connected patch the base sits in | **4.8 km²** |
-| All flat ground within 2 km | 3.8 km² |
-| All flat ground within 3 km | 5.3 km² |
-| All flat ground within 5 km | 11.0 km² |
-| Within 5 km, in patches of at least 0.05 km² that can be reached over ground of 15° or less | 7.1 km² |
+| Area | Flat (≤8°) | Buildable after grading (≤15°) |
+|---|---|---|
+| Connected area the base sits in | **4.8 km²** | **at least 64 km²** (it runs beyond the 12 × 12 km area measured) |
+| Within 2 km | 3.8 km² | 9.8 km² |
+| Within 3 km | 5.3 km² | 17.9 km² |
+| Within 5 km | 11.0 km² | 48.4 km² |
 
-**For scale** (this plan's arithmetic): the 4.8 km² patch is about the size of **Pitcairn Island** (4.5 km²)<sup class="r">[24](#s24)</sup>, about **2.4 times Monaco** (2.02 km²) and about **10 times Vatican City** (0.49 km²)<sup class="r">[25](#s25)</sup>. The 11.0 km² within 5 km is about 2.4 Pitcairns, 5.4 Monacos or 22 Vatican Cities.
+**For scale** (this plan's arithmetic): the 4.8 km² patch is about the size of **Pitcairn Island** (4.5 km²)<sup class="r">[24](#s24)</sup>, about **2.4 times Monaco** (2.02 km²) and about **10 times Vatican City** (0.49 km²)<sup class="r">[25](#s25)</sup>. The 48.4 km² of buildable ground within 5 km is about 11 Pitcairns or 24 Monacos.
 
-The base can grow over its own 4.8 km² patch without crossing steeper ground. Within 5 km there is 7–11 km² of flat ground in all, in separate patches linked by drivable slopes. B3 stands off the patch, so none of it is lost to a pad keep-out (DD-021).
+The base can start on its own 4.8 km² flat patch. Once slopes up to 15° can be graded, the ground around it joins into one connected area of at least 64 km², which continues beyond the area measured. B3 stands off the patch, so none of it is lost to a pad keep-out (DD-021).
 
-![Flat ground around the primary base: the connected 4.8 km² patch and other ground at 8° or less within 2, 3 and 5 km]({{ '/assets/sites/primary-expansion.jpg' | relative_url }})
+![Ground around the primary base: the connected 4.8 km² flat patch, other flat ground, and ground of 8–15° within 2, 3 and 5 km]({{ '/assets/sites/primary-expansion.jpg' | relative_url }})

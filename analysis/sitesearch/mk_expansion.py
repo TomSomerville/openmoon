@@ -14,10 +14,15 @@ km2 = lambda m: m.sum() * RES * RES / 1e6
 lab15, _ = ndimage.label(s <= 15); drive = lab15 == lab15[c]
 sizes = np.bincount(lab.ravel()); big = np.isin(lab, np.where(sizes * RES * RES / 1e6 >= 0.05)[0][1:])
 stats = {'patch': km2(patch)}
+mid = (s > 8) & (s <= 15); lab15c = ndimage.label(s <= 15)[0]; patch15 = lab15c == lab15c[c]
+stats['patch15'] = km2(patch15)
+for r in (2000, 3000, 5000):
+    m = d <= r; stats['le15_%d' % r] = km2((s <= 15) & m); stats['mid_%d' % r] = km2(mid & m)
 for r in (2000, 3000, 5000):
     m = d <= r; stats[r] = (km2(flat & m), km2(flat & big & drive & m))
 hv = np.clip((h - np.percentile(h, 1)) / (np.percentile(h, 99) - np.percentile(h, 1)), 0, 1)
 rgb = np.stack([hv * 255] * 3, -1) * 0.75
+rgb = np.where((mid & (d <= 5000))[..., None], rgb * 0.5 + np.array([235, 200, 40]) * 0.5, rgb)   # 8-15 deg: buildable after grading
 rgb = np.where((flat & (d <= 5000))[..., None], rgb * 0.45 + np.array([60, 200, 90]) * 0.55, rgb)
 rgb = np.where(patch[..., None], rgb * 0.3 + np.array([0, 230, 120]) * 0.7, rgb)
 im = Image.fromarray(rgb.clip(0, 255).astype('uint8')).resize((1600, 1600), Image.LANCZOS); k = 1600 / Wd
@@ -33,11 +38,11 @@ dr.polygon(pts, fill=(255, 60, 200), outline='black')
 bx, by = (B3[0] - bb[0]) / RES * k, (bb[3] - B3[1]) / RES * k
 dr.ellipse((bx - 11, by - 11, bx + 11, by + 11), fill=(255, 140, 0), outline='black', width=3)
 dr.text((bx + 16, by), 'B3', font=F(24), fill=(255, 190, 90), anchor='lm', stroke_width=4, stroke_fill='black')
-rows = [((0, 230, 120), 'Connected flat patch with the base: %.1f km²' % stats['patch']), ((90, 180, 110), 'Other ground ≤8° within 5 km'),
-        ((255, 60, 200), 'Primary base (DD-020)'), ((255, 140, 0), 'VSAT B3 (DD-021)')]
+rows = [((0, 230, 120), 'Connected flat patch with the base (≤8°): %.1f km²' % stats['patch']), ((90, 180, 110), 'Other ground ≤8° within 5 km'), ((235, 200, 40), 'Ground 8–15° within 5 km (buildable after grading)'),
+        ((255, 60, 200), 'Primary base (DD-023)'), ((255, 140, 0), 'VSAT B3 (DD-021)')]
 dr.rectangle((0, 0, 1600, 40), fill='black')
 dr.text((10, 10), 'Room to grow at the primary base. Slope: NASA GSFC LOLA LDSM, 10 m/px (Barker et al. 2023); Open Moon measurement.', font=F(20), fill='white')
-y = 56; dr.rectangle((10, 46, 640, 56 + len(rows) * 34 + 8), fill='black')
+y = 56; dr.rectangle((10, 46, 700, 56 + len(rows) * 34 + 8), fill='black')
 for col, t in rows: dr.rectangle((22, y + 6, 54, y + 26), fill=col); dr.text((66, y + 16), t, font=F(22), fill='white', anchor='lm'); y += 34
 L = 1000 / RES * k; dr.rectangle((1600 - L - 40, 1540, 1580, 1590), fill='black'); dr.line([(1600 - L - 30, 1575), (1570, 1575)], fill='white', width=4); dr.text((1600 - L / 2 - 30, 1560), '1 km', font=F(20), fill='white', anchor='mm')
 im.save(sys.argv[1], quality=88)
