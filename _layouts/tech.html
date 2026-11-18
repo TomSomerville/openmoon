@@ -61,7 +61,7 @@ section: tech
 
     <div class="sec-h">Where the plan uses it</div>
     <div class="tl">
-      {% for m in t.milestones %}{% assign mm = site.milestones | where: "id_code", m | first %}<a href="{{ mm.url | relative_url }}"><span class="ph">PH {{ mm.phase }}</span><span class="id">{{ mm.id_code }}</span><h3>{{ mm.title }}</h3><span class="w">{{ mm.window }}</span></a>{% endfor %}
+      {% for m in t.milestones %}{% assign mm = site.milestones | where: "id_code", m | first %}{% if mm %}<a href="{{ mm.url | relative_url }}"><span class="ph">PH {{ mm.phase }}</span><span class="id">{{ mm.id_code }}</span><h3>{{ mm.title }}</h3><span class="w">{{ mm.window }}</span></a>{% endif %}{% endfor %}
     </div>
 
     {% assign rel = site.data.tech | where: "category", t.category %}
@@ -80,7 +80,7 @@ section: tech
       <table class="spec">
         <tr><td>System</td><td>{{ t.category }}</td></tr>
         <tr><td>Phase</td><td>{{ t.phases | join: ", " }}</td></tr>
-        <tr><td>Milestones</td><td>{% for m in t.milestones %}{% assign mm = site.milestones | where: "id_code", m | first %}<a href="{{ mm.url | relative_url }}">{{ m }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</td></tr>
+        <tr><td>Milestones</td><td>{% for m in t.milestones %}{% assign mm = site.milestones | where: "id_code", m | first %}{% if mm %}<a href="{{ mm.url | relative_url }}">{{ m }}</a>{% else %}{{ m }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</td></tr>
         <tr><td>Readiness</td><td>TRL {{ t.trl }} / 9</td></tr>
         <tr><td>Plan status</td><td>{% if t.develop %}<span class="tag warn">needs development</span>{% else %}<span class="tag ok">ready to use</span>{% endif %}</td></tr>
       </table>

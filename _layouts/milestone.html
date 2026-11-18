@@ -83,7 +83,7 @@ section: plan
       <table class="spec">
         <tr><td>Window</td><td>{{ page.window }}</td></tr>
         <tr><td>Phase</td><td>{{ page.phase }}</td></tr>
-        {% if page.depends_on %}<tr><td>Depends on</td><td>{% for d in page.depends_on %}{% assign dm = site.milestones | where: "id_code", d | first %}<a href="{{ dm.url | relative_url }}">{{ d }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</td></tr>{% endif %}
+        {% if page.depends_on %}<tr><td>Depends on</td><td>{% for d in page.depends_on %}{% assign dm = site.milestones | where: "id_code", d | first %}{% if dm %}<a href="{{ dm.url | relative_url }}">{{ d }}</a>{% else %}{{ d }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</td></tr>{% endif %}
         {% for s in page.spec %}<tr><td>{{ s.k }}</td><td>{{ s.v }}</td></tr>{% endfor %}
         {% if page.cost %}<tr><td>Cost</td><td>${{ page.cost.low }}–{{ page.cost.high }}B <span class="estimate">EST.</span></td></tr>{% endif %}
       </table>

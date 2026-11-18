@@ -34,7 +34,7 @@ By June 2024 the TRL 5 version was about 95% designed and 90% built. It is being
 
 ## Why Open Moon uses it
 
-Open Moon uses IPEx-class excavators as the main diggers in [M05, site preparation](/plan/m05-site-prep/). They grade roads, build berms around landing pads and the reactor, and stockpile regolith for oxygen extraction and sintered pads. M05 plans a fleet of four excavators.
+Open Moon uses IPEx-class excavators as the main diggers in M05, site preparation. They grade roads, build berms around landing pads and the reactor, and stockpile regolith for oxygen extraction and sintered pads. M05 plans a fleet of four excavators.
 
 The digging rate matters beyond M05. NASA designed IPEx to feed a follow-on "ISRU Pilot Plant": making 1,000 kg of oxygen needs 10,000 kg of regolith ([ASCEND 2024](https://ntrs.nasa.gov/citations/20240008162)). Without a light, reliable excavator, pads, berms and oxygen production would have to wait for heavier machines that cost much more to land.
 

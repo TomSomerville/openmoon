@@ -23,7 +23,7 @@ permalink: /plan/breakdown/
 {% for i in s.items %}{% assign m = site.milestones | where: "id_code", i.ms | first %}{% assign c = nil %}{% if i.comp %}{% assign c = site.components | where: "id_code", i.comp | first %}{% endif %}
 <tr><td><span class="tag">{{ i.id }}</span></td>
 <td>{% if c %}<a href="{{ c.url | relative_url }}"><strong>{{ i.name }}</strong></a>{% else %}{{ i.name }}{% endif %}</td>
-<td><a href="{{ m.url | relative_url }}">{{ i.ms }}</a></td>
+<td>{% if m %}<a href="{{ m.url | relative_url }}">{{ i.ms }}</a>{% else %}{{ i.ms }}{% endif %}</td>
 <td>{% if i.how == 'buy' %}<span class="tag hi">buy</span>{% elsif i.how == 'partner' %}<span class="tag hi">partner</span>{% else %}<span class="tag">build</span>{% endif %}</td>
 <td>{% if c %}<span class="tag ok">{{ i.comp }} · TRL {{ c.trl }}</span>{% else %}<span class="tag warn">not yet designed</span>{% endif %}</td></tr>
 {% endfor %}

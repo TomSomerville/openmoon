@@ -5,7 +5,7 @@ section: plan
 {% assign m = site.milestones | where: "id_code", page.milestone | first %}
 <div class="body">
   <div class="draw">
-    <div class="crumbs"><a href="{{ '/plan/' | relative_url }}">Plan</a> / <a href="{{ m.url | relative_url }}">{{ m.id_code }} {{ m.title }}</a> / {{ page.id_code }}</div>
+    <div class="crumbs"><a href="{{ '/plan/' | relative_url }}">Plan</a> / {% if m %}<a href="{{ m.url | relative_url }}">{{ m.id_code }} {{ m.title }}</a>{% else %}{{ page.milestone }}{% endif %} / {{ page.id_code }}</div>
     <div class="eyebrow">{{ page.id_code }} · Component of {{ page.milestone }}</div>
     <h1>{{ page.title }}</h1>
     <div class="note">{{ page.summary }}</div>

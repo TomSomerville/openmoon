@@ -21,6 +21,10 @@ doc_id: OM-100
 .rm-panel[hidden]{display:none}
 .rm-list{margin:0 0 14px;font-size:15px;line-height:1.7}
 .rm-panel .rm-img{width:100%;max-width:100%;margin:0;border-radius:0}
+.rm-pair{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+.rm-pair img{width:100%;height:100%;max-width:none;object-fit:cover;margin:0;border-radius:0;display:block;aspect-ratio:4/3;cursor:zoom-in}
+.rm-ph{display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;background:#05080c;color:var(--dim);font:13px var(--fm);letter-spacing:.08em;text-transform:uppercase;border:1px dashed var(--line)}
+@media (max-width:700px){.rm-pair{grid-template-columns:1fr}}
 .rm-stage .rm-img{width:100%;max-width:100%;margin:0;border-radius:0}
 .rm-stage .rm-h{margin:2px 0 8px}
 .rm-h{font:700 19px/1.25 var(--fh);margin:0 0 8px;color:var(--ink)}
@@ -52,7 +56,8 @@ doc_id: OM-100
 {% assign lo = 0 %}{% assign hi = 0 %}{% assign done = 0 %}
 {% for m in ms %}{% assign endy = m.window | remove: "Before Year " | remove: "Years " | remove: "Year " | split: "–" | last | plus: 0 %}{% if endy <= last.end %}{% assign lo = lo | plus: m.cost.low %}{% assign hi = hi | plus: m.cost.high %}{% assign done = done | plus: 1 %}{% endif %}{% endfor %}
 <section class="rm-panel" role="tabpanel" id="phase-{{ p.n }}" aria-labelledby="tab-p{{ p.n }}"{% unless forloop.first %} hidden{% endunless %}>
-  {% capture yy %}{% if last.year < 10 %}0{% endif %}{{ last.year }}{% endcapture %}<img class="rm-img" src="{{ '/assets/roadmap/year-' | append: yy | append: '.svg' | relative_url }}" alt="Concept illustration of the base at the end of Phase {{ p.n }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+  {% if p.n == 0 %}<div class="rm-pair"><img src="{{ '/assets/sites/primary-base-site.jpg' | relative_url }}" alt="Primary base site close-up: slope classes, de Gerlache ice-candidate floor, hydrogen, base and ice-mine power grids"><div class="rm-ph">Image to come</div></div>
+  {% else %}{% capture yy %}{% if last.year < 10 %}0{% endif %}{{ last.year }}{% endcapture %}<img class="rm-img" src="{{ '/assets/roadmap/year-' | append: yy | append: '.svg' | relative_url }}" alt="Concept illustration of the base at the end of Phase {{ p.n }}" loading="lazy">{% endif %}
   <div class="rm-body">
     <div class="eyebrow">Phase {{ p.n }} · {{ p.years }}</div>
     <h2>{{ p.name }}</h2>
@@ -62,7 +67,7 @@ doc_id: OM-100
       <div><small>Crew (end)</small><b>{{ last.crew_text | default: last.crew }}</b></div>
       <div><small>Power (end)</small><b>{% if last.power_kw > 0 %}{% if last.power_kw >= 500 %}≥{% endif %}{{ last.power_kw }} kW{% else %}–{% endif %}</b></div>
       <div><small>Milestones done</small><b>{{ done }} / {{ ms | size }}</b></div>
-      <div><small>Spent (est.)</small><b>{% if done > 0 %}${{ lo | round: 0 }}–{{ hi | round: 0 }}B{% else %}&lt;$0.2B{% endif %}</b></div>
+      <div><small>Spent (est.)</small><b>{% if hi > 0 %}${{ lo | round: 0 }}–{{ hi | round: 0 }}B{% else %}–{% endif %}</b></div>
     </div>
   </div>
 </section>

@@ -65,7 +65,7 @@ permalink: /technology/
     <div class="row">
       {% include trl.html n=t.trl %}
       {% if t.develop %}<span class="tag warn">develop</span>{% endif %}
-      {% for m in t.milestones %}{% assign mm = site.milestones | where: "id_code", m | first %}<a class="tag hi" href="{{ mm.url | relative_url }}" title="{{ mm.title }}">{{ m }}</a>{% endfor %}
+      {% for m in t.milestones %}{% assign mm = site.milestones | where: "id_code", m | first %}{% if mm %}<a class="tag hi" href="{{ mm.url | relative_url }}" title="{{ mm.title }}">{{ m }}</a>{% else %}<span class="tag">{{ m }}</span>{% endif %}{% endfor %}
     </div>
   </div>
 </article>
