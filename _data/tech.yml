@@ -438,46 +438,46 @@
     credit: Open Moon concept illustration
     license: CC BY-SA 4.0
     source_page: https://www.nasa.gov/communicating-with-missions/scan/lcrns/lunanet-interoperability-specification/
-- name: Kilopower / KRUSTY fission test
-  category: Power
+- name: Kilopower / KRUSTY (1–10 kWe Stirling reactor)
+  category: Fission power
   milestones:
   - M04
   phases:
   - 1
   trl: 5
-  status: 28-hour nuclear system test 2018 at various power levels; Stirling converters worked
-  use: Heritage for the reactor
-  develop: false
-  source: https://ntrs.nasa.gov/citations/20205009351
-  source_title: 'Poston et al.: Results of the KRUSTY nuclear system test'
+  status: 'KRUSTY ground test 2018: 28 h at full power, 183 We from 2 Stirling engines, reactor rated TRL 5. No flight unit built; DARPA–LANL test agreement reported Oct 2026'
+  use: Small reactor (plan value 1 kWe) charging batteries via a BMS
+  develop: true
+  source: https://ntrs.nasa.gov/citations/20180005435
+  source_title: 'Gibson et al.: KRUSTY nuclear ground test results and lessons learned (NTRS 20180005435)'
   slug: kilopower-krusty-fission-test
   image:
-    file: /assets/tech/kilopower-krusty-fission-test.svg
-    kind: concept
-    caption: 'Concept: KRUSTY test layout, a uranium-235 core in a beryllium oxide reflector with sodium heat pipes feeding Stirling converters inside a vacuum chamber'
-    credit: Open Moon concept illustration
-    license: CC BY-SA 4.0
-    source_page: https://ntrs.nasa.gov/citations/20205009351
-- name: US Lunar Reactor-1 (SPARC)
-  category: Power
+    file: /assets/tech/kilopower-krusty-prototype.jpg
+    kind: photo
+    caption: Prototype hardware for NASA's 1 kWe Kilopower reactor, the design KRUSTY tested, photographed by NASA Glenn in 2017
+    credit: NASA Glenn Research Center
+    license: Public domain (NASA)
+    source_page: https://commons.wikimedia.org/wiki/File:Kilopower_experiment.jpg
+- name: US Lunar Reactor-1 (20 kWe Brayton reactor)
+  category: Fission power
   milestones:
   - M04
   phases:
   - 1
-  trl: 5
-  status: 'Draft solicitation Aug 2026: ≥20 kWe, ≥5 yr, HALEU, closed Brayton, <15 t. No award yet'
-  use: Reactor procurement path
-  develop: false
-  source: https://newspaceeconomy.ca/2026/09/01/what-does-nasas-sparc-lunar-reactor-procurement-reveal-about-lunar-reactor-1/
-  source_title: 'NewSpace Economy: What NASA''s SPARC procurement reveals about Lunar Reactor-1 (secondary)'
+  trl: 4
+  status: 'Draft SPARC solicitation Aug 2026 (amended 16 Nov): ≥20 kWe at 3 kV AC, ≥5 yr, HALEU, closed Brayton, <15 t, landing 2030. No award, no hardware; sister reactor SR-1 flies late 2028'
+  use: Main base reactor (plan value 20 kWe) charging batteries via a BMS
+  develop: true
+  source: https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download
+  source_title: 'NASA Glenn: SPARC Industry Day presentation (LR-1 requirements)'
   slug: us-lunar-reactor-1-sparc
   image:
     file: /assets/tech/us-lunar-reactor-1-sparc.svg
     kind: concept
-    caption: 'Generic lunar fission power plant: shielded HALEU reactor, closed Brayton converter and radiator panels (no design selected yet)'
+    caption: 'Generic lunar fission power plant: shielded HALEU reactor, closed Brayton converter and radiator panels (no LR-1 design selected and no hardware built yet)'
     credit: Open Moon concept illustration
     license: CC BY-SA 4.0
-    source_page: https://newspaceeconomy.ca/2026/09/01/what-does-nasas-sparc-lunar-reactor-procurement-reveal-about-lunar-reactor-1/
+    source_page: https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download
 - name: Vertical Solar Array Technology (VSAT)
   category: Power
   milestones:

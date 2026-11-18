@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" font-family="Share Tech Mono, monospace" role="img" aria-labelledby="t d">
+<title id="t">Open Moon fission power chain</title>
+<desc id="d">The reactor feeds a charger and battery management system, which charges the battery. The base draws only from the battery. When the battery is full, surplus reactor power goes to the reactor's parasitic load radiator.</desc>
+<defs>
+<pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(56,212,240,.07)"/></pattern>
+<marker id="ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#38d4f0"/></marker>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ffb020"/></marker>
+</defs>
+<rect width="960" height="400" fill="#0a1015"/><rect width="960" height="400" fill="url(#g)"/>
+<text x="24" y="36" fill="#d6e2ec" font-size="19" letter-spacing="1">OPEN MOON POWER CHAIN · REACTOR &gt; BMS &gt; BATTERY &gt; BASE</text>
+<text x="24" y="58" fill="#d6e2ec" font-size="12" opacity=".7">The reactor only charges batteries. The base never runs directly off the reactor.</text>
+
+<g font-size="13" fill="#d6e2ec" text-anchor="middle">
+<!-- reactor -->
+<rect x="24" y="110" width="180" height="130" rx="10" fill="rgba(255,176,32,.12)" stroke="#ffb020" stroke-width="2"/>
+<text x="114" y="140" fill="#ffb020" font-size="15">1 · REACTOR</text>
+<text x="114" y="166">KRUSTY-class</text>
+<text x="114" y="182" font-size="11" opacity=".8">~1 kWe Stirling, AC→DC</text>
+<text x="114" y="204">or LR-1</text>
+<text x="114" y="220" font-size="11" opacity=".8">≥20 kWe, 3 kV RMS AC</text>
+
+<!-- cable -->
+<path d="M204 175H262" stroke="#38d4f0" stroke-width="3" marker-end="url(#ac)"/>
+<text x="234" y="158" font-size="10" opacity=".8">~1 km</text>
+<text x="234" y="200" font-size="10" opacity=".8">cable</text>
+
+<!-- charger/BMS -->
+<rect x="264" y="110" width="200" height="130" rx="10" fill="rgba(56,212,240,.12)" stroke="#38d4f0" stroke-width="2"/>
+<text x="364" y="140" fill="#38d4f0" font-size="15">2 · CHARGER + BMS</text>
+<text x="364" y="166" font-size="11">rectify / step down to</text>
+<text x="364" y="181" font-size="11">battery voltage (charger)</text>
+<text x="364" y="203" font-size="11">cell voltage, current,</text>
+<text x="364" y="218" font-size="11">temperature, balancing (BMS)</text>
+
+<path d="M464 175H522" stroke="#38d4f0" stroke-width="3" marker-end="url(#ac)"/>
+
+<!-- battery -->
+<rect x="524" y="110" width="180" height="130" rx="10" fill="rgba(56,212,240,.12)" stroke="#38d4f0" stroke-width="2"/>
+<text x="614" y="140" fill="#38d4f0" font-size="15">3 · BATTERY</text>
+<g stroke="#38d4f0" stroke-width="2" fill="rgba(56,212,240,.15)"><rect x="560" y="160" width="26" height="54" rx="3"/><rect x="594" y="160" width="26" height="54" rx="3"/><rect x="628" y="160" width="26" height="54" rx="3"/></g>
+<text x="614" y="232" font-size="11" opacity=".8">covers peaks + outages</text>
+
+<path d="M704 175H762" stroke="#38d4f0" stroke-width="3" marker-end="url(#ac)"/>
+
+<!-- base -->
+<rect x="764" y="110" width="172" height="130" rx="10" fill="rgba(56,212,240,.2)" stroke="#38d4f0" stroke-width="2"/>
+<text x="850" y="140" fill="#38d4f0" font-size="15">4 · BASE</text>
+<text x="850" y="166" font-size="11">habitat, ISRU,</text>
+<text x="850" y="181" font-size="11">life support, rovers</text>
+<text x="850" y="208" font-size="11" opacity=".8">draws from the</text>
+<text x="850" y="223" font-size="11" opacity=".8">battery bus only</text>
+</g>
+
+<!-- surplus path -->
+<path d="M364 240V300H160V258" stroke="#ffb020" stroke-width="2" fill="none" stroke-dasharray="6 5" marker-end="url(#ah)"/>
+<text x="262" y="322" fill="#d6e2ec" font-size="11" text-anchor="middle">battery full → BMS stops charging →</text>
+<text x="262" y="338" fill="#d6e2ec" font-size="11" text-anchor="middle">reactor dumps surplus to its parasitic load radiator</text>
+
+<!-- sizing rule -->
+<rect x="524" y="268" width="412" height="104" rx="8" fill="none" stroke="#38d4f0" opacity=".6"/>
+<text x="536" y="290" fill="#38d4f0" font-size="12">SIZING RULE</text>
+<text x="536" y="310" fill="#d6e2ec" font-size="11">Reactor ≥ average base load + charging losses.</text>
+<text x="536" y="328" fill="#d6e2ec" font-size="11">Battery ≥ peak load and the longest reactor outage.</text>
+<text x="536" y="346" fill="#d6e2ec" font-size="11">Charger + BMS sized for full reactor output.</text>
+<text x="536" y="364" fill="#d6e2ec" font-size="11" opacity=".8">Example: 20 kWe × 24 h = 480 kWh/day into storage.</text>
+
+<text x="24" y="390" fill="#d6e2ec" font-size="10" opacity=".6" letter-spacing="1">DIAGRAM · OPEN MOON PLAN DESIGN CHOICE · CC BY-SA 4.0</text>
+</svg>
