@@ -42,7 +42,7 @@ links:
 | Status | Project ended; fed into Fission Surface Power | Test complete 2018 |
 
 <figure class="tfig"><img src="/assets/tech/kilopower-krusty-chamber-2018.jpg" alt="Engineers in protective suits lower the KRUSTY vacuum chamber wall over the reactor hardware" loading="lazy"></figure>
-<div class="tcap"><span class="k">Photo</span> NASA and NNSA engineers lower the wall of the vacuum chamber around KRUSTY before the nuclear test, Nevada, 2018. Credit: Los Alamos National Laboratory, published in <a href="https://www.nasa.gov/news-release/demonstration-proves-nuclear-fission-system-can-provide-space-exploration-power/">NASA release 18-031</a>. This is a Los Alamos image, not a NASA public-domain one; it is shown with credit.</div>
+<div class="tcap"><span class="k">Photo</span> NASA and NNSA engineers lower the wall of the vacuum chamber around KRUSTY before the nuclear test, Nevada, 2018. Credit: Los Alamos National Laboratory. <a href="https://www.nasa.gov/news-release/demonstration-proves-nuclear-fission-system-can-provide-space-exploration-power/">Image source: NASA release 18-031 ↗</a></div>
 
 ## How it works
 
@@ -89,6 +89,8 @@ KRUSTY was tested step by step, with electric heat first and nuclear heat last.
 **Reasonable planning value for Open Moon.** We plan on **1 kWe per KRUSTY-class unit**, because that is the design KRUSTY actually represents. The 10 kWe version was never built or tested, so we do not count on it. One NASA Mars study ran a 10 kWe unit at 6.5 kWe (65%) ([Gibson 2017](https://ntrs.nasa.gov/citations/20170002010)). The 1 kWe figure is an Open Moon planning choice.
 
 ## How Open Moon uses it: Reactor > BMS > Battery > Base
+
+{% include decision-note.html id="DD-002" extra="KRUSTY-class units are the plan's small-load reactor option." %}
 
 ![Diagram: the reactor feeds a charger and battery management system, which charges the battery; the base draws only from the battery; surplus power goes to the reactor's parasitic load radiator](/assets/tech/fission-to-battery-chain.svg)
 

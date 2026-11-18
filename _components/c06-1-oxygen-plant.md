@@ -24,7 +24,7 @@ subcomponents:
   - name: "Reactor and crucible"
     desc: "An insulated vessel in which regolith is heated to melting and then kept molten by the electrolysis current itself."
     parts: ["Start-up heaters", "Refractory lining or cold-wall (frozen regolith) shell", "Thermocouples in the melt", "Thermal shield and radiator", "Vacuum-tight lid"]
-    tech: "NASA KSC and Lunar Resources LR-1 reactor (25 kg melt)"
+    tech: "NASA KSC and Lunar Resources LR-1 electrolysis reactor (25 kg melt; not NASA's Lunar Reactor-1 fission unit)"
     trl: 4
   - name: "Electrodes"
     desc: "An inert anode where oxygen gas forms and a molten metal cathode pool where metals collect."

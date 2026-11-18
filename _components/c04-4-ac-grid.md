@@ -4,7 +4,7 @@ milestone: M04
 order: 4
 redirect_from: /plan/components/c04-4-hvdc-grid/
 title: 3 kV AC grid and cable-laying rover
-summary: "A 3 kV, 3-phase, 1 kHz AC grid, NASA's lunar baseline, that links the reactor, solar towers and storage to the habitat and oxygen plant. Transformers and modular converters connect 120 V DC equipment. A small rover lays and covers the cable."
+summary: "A 3 kV, 3-phase, 1 kHz AC grid, NASA's lunar baseline, that links the solar towers and storage to the habitat and oxygen plant, and carries reactor power to the fission battery charger. Transformers and modular converters connect 120 V DC equipment. A small rover lays and covers the cable."
 trl: 4
 spec:
   - {k: "Trunk", v: "3 kV AC, 3-phase, 1 kHz (NASA baseline; design change DD-001)"}
@@ -80,6 +80,8 @@ sources:
 
 The grid moves power from where it is made to where it is used. NASA's reactor reference design places the user interface 1 km from the reactor<sup class="r">[3](#s3)</sup>, and the oxygen plant needs power over 3–5 km<sup class="r">[6](#s6)</sup>. NASA's baseline is two independent microgrids, one for the habitat and one for ISRU, each with its own sources, joined by a primary line so they can share power<sup class="r">[6](#s6)</sup>.
 
+**The reactor link is different (design change DD-002).** The 3 kV AC line from the reactor does not feed the grid directly. It ends at the fission battery charger and battery management system (C04.3), and the base draws fission power from that battery bus. So the reactor link is a point-to-point line, not part of the shared trunk.
+
 ## Why 3 kV AC at 1 kHz: NASA's reasoning
 
 | When | What NASA found | Source |
@@ -101,14 +103,14 @@ The same study says DC would be "significantly lighter than AC for voltages abov
 - **Transformers do the voltage change.** Each source's inverters make low-voltage AC, and a transformer raises it to 3 kV. At each user a transformer lowers it again<sup class="r">[2](#s2)</sup>. Transformers need no high-voltage semiconductor switches, which is the problem that rules out high-voltage DC<sup class="r">[1](#s1)</sup>.
 - **UMIC.** Built from parallel, standard 1 kW single-phase inverter modules converting between 120 V DC and under 100 V AC, then one or more transformers to 3 kV. DC switch modules isolate DC faults, a high-voltage relay can disconnect the transformer, and an Ethernet controller coordinates the modules<sup class="r">[2](#s2)</sup>. NASA's targets are over 85% transmission system efficiency and under 0.55 kg per metre<sup class="r">[2](#s2)</sup>.
 - **Control.** Parallel UMICs share load using droop control, adjusting frequency and voltage slightly with load, so no central controller is needed to balance them<sup class="r">[2](#s2)</sup>. A regional controller sends power to the highest-priority loads first, such as the crewed habitat<sup class="r">[6](#s6)</sup>.
-- **Reactor interface.** NASA's 2025 design couples the Brayton option's 3-phase alternators straight to the 3 kVac step-up transformer, at about 90% PMAD efficiency. The Stirling option needs an extra converter stage and reaches about 83%<sup class="r">[3](#s3)</sup>.
+- **Reactor interface.** NASA's 2025 design couples the Brayton option's 3-phase alternators straight to the 3 kVac step-up transformer, at about 90% PMAD efficiency. The Stirling option needs an extra converter stage and reaches about 83%<sup class="r">[3](#s3)</sup>. In Open Moon the far end of that line is the fission battery charger (C04.3), not a grid user (DD-002).
 - **Cable laying.** Astrobotic's LunaGrid-Lite pairs a 4U CubeRover with a robotic cable deployer. It is planned to carry 1 kW over 500 m<sup class="r">[7](#s7)</sup>. Earlier plans used 1 km at 1 kV and 1 kHz AC<sup class="r">[8](#s8)</sup>, the same frequency as NASA's grid.
 - **Lay it on the surface.** NASA's 2025 design keeps the cable on the surface, where it has a 180° view to space for shedding heat. It says "burying the cable is not advised due to the poor thermal conductivity of the regolith"<sup class="r">[3](#s3)</sup>.
 - **Fault location.** A time-domain reflectometer sends a pulse down the line and times the echo from any impedance change<sup class="r">[9](#s9)</sup>.
 
 ## Sizing
 
-One 40 kW, 3-phase link (this plan's arithmetic, unity power factor):
+One 40 kW, 3-phase link, the largest planned (this plan's arithmetic, unity power factor). The 20 kWe reactor link carries half this current:
 
 | Quantity | Working | Result |
 |---|---|---|
@@ -135,6 +137,5 @@ Insulation, jacket and spool, not metal, make up most of the cable mass. NASA's 
 
 - How should surface cables be protected from rover traffic and micrometeoroids, given that NASA advises against burial<sup class="r">[3](#s3)</sup>?
 - Can solar towers feed the AC grid directly through their own UMICs, and how do many inverter-only sources share control?
-- Will a flight reactor use Brayton (direct 3-phase coupling) or Stirling (extra converter stage)?
 - If radiation-hard high-voltage switches mature, would a DC upgrade be worth revisiting? (See DD-001.)
 - Can aluminium cable later be made on the Moon (M12)?

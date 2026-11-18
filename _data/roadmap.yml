@@ -63,13 +63,13 @@
   cal: 2032
   label: ["Power Grid", "Complete"]
   headline: "A fission reactor comes online and the grid can ride out any darkness"
-  summary: "The base now has power day and night. A 40 kWe-class fission reactor sits about 1 km away behind terrain, linked by NASA's 3 kV AC grid. Fuel-cell storage covers the gaps, and pads, roads and berms are finished."
+  summary: "The base now has power day and night. A 20 kWe LR-1-class fission reactor sits about 1 km away behind terrain and charges the base battery over a 3 kV AC line. Fuel-cell storage covers the gaps, and pads, roads and berms are finished."
   crew: 0
-  power_kw: 160
+  power_kw: 140
   details:
-    - {title: "Fission power", text: "A 40 kWe-class reactor is landed on a heavy cargo lander, driven out and started remotely. It runs continuously regardless of sunlight.", refs: [M04, C04.1, kilopower-krusty-fission-test, us-lunar-reactor-1-sparc]}
+    - {title: "Fission power", text: "A 20 kWe LR-1-class reactor is landed on a heavy cargo lander, driven out and started remotely. It runs continuously regardless of sunlight and only charges the base battery: Reactor > BMS > Battery > Base (design change DD-002).", refs: [M04, C04.1, kilopower-krusty-fission-test, us-lunar-reactor-1-sparc]}
     - {title: "3 kV AC grid", text: "Three-phase 3 kV, 1 kHz links with transformers and UMIC converters, following NASA's grid baseline (design change DD-001).", refs: [M04, C04.4, lunar-ac-power-transmission]}
-    - {title: "Energy storage", text: "Regenerative fuel cells sharing tanks with the water plant, plus batteries for peaks.", refs: [M04, C04.3, regenerative-fuel-cells]}
+    - {title: "Energy storage", text: "A 160 kWh fission battery with its battery management system, regenerative fuel cells sharing tanks with the water plant, and batteries for peaks.", refs: [M04, C04.3, regenerative-fuel-cells]}
     - {title: "Site preparation complete", text: "Two hardened pads, about 5 km of graded roads, ejecta berms and a shielding berm at the reactor.", refs: [M05, C05.1, C05.2, rassor-2-0]}
 - year: 7
   cal: 2033
@@ -77,7 +77,7 @@
   headline: "Oxygen made from rock and water mined from ice"
   summary: "The two pilot plants that everything later depends on are running. One splits oxygen out of regolith; the other mines icy soil in a shadowed crater and purifies the water. The first surface habitat lands and runs uncrewed while engineers on Earth check it out."
   crew: 0
-  power_kw: 160
+  power_kw: 140
   details:
     - {title: "Oxygen pilot plant", text: "Molten regolith electrolysis, with carbothermal reduction as a second process, targeting 10 t of oxygen a year. Its real energy use per kilogram is the key measurement.", refs: [M06, C06.1, molten-regolith-electrolysis-nasa-lunar-resource, carbothermal-reduction-sierra-space-nasa]}
     - {title: "Ice mining", text: "A cold-rated excavator digs icy regolith; a sealed oven releases the water and a cold trap captures it.", refs: [M06, C06.2, ice-excavation-nasa-break-the-ice]}
@@ -90,7 +90,7 @@
   headline: "People walk on the base for the first time"
   summary: "After months of uncrewed checkout, the first crew lands for a two-week sortie. Early sorties carry two people on the surface, matching the habitat's reported capacity. Each crew commissions systems and leaves the base ready for the next."
   crew: 2
-  power_kw: 160
+  power_kw: 140
   details:
     - {title: "Crewed sorties", text: "Stays of 14–30 days, using life support topped up with oxygen and water from the pilot plants: the first time a crew depends on lunar resources.", refs: [M08, C08.2, iss-life-support-eclss]}
     - {title: "Moonwalks", text: "AxEMU-class suits for maintenance and installation, within walking or rover range of the habitat.", refs: [M08, C08.4, axiom-axemu-spacesuit]}
@@ -102,7 +102,7 @@
   headline: "The base is never empty again"
   summary: "The sortie phase is over. Three habitat modules are linked and buried under regolith for radiation protection, life support recycles most air and water, and four people now live on the Moon continuously in six-month rotations."
   crew: 4
-  power_kw: 160
+  power_kw: 140
   details:
     - {title: "Shielded habitats", text: "Three modules under at least 2 m of regolith (3 m target), because the unshielded dose would use up a career's allowance in about a year.", refs: [M09, C09.1, regolith-radiation-shielding]}
     - {title: "Storm shelter", text: "A heavily shielded refuge inside the habitat for solar particle events.", refs: [M09, C09.2]}
@@ -114,11 +114,11 @@
   headline: "Four years without a gap, and the crew doubles"
   summary: "The permanent-crew milestone is met: four years of continuous presence, all breathing oxygen made on the Moon, and resupply per person cut by at least 40%. With the health data in, the crew grows to eight and greenhouse modules are being buried."
   crew: 8
-  power_kw: 220
+  power_kw: 200
   details:
     - {title: "Permanent presence proven", text: "Doses within career limits, at least 90% water recovery, and all breathing oxygen produced locally.", refs: [M09]}
     - {title: "Greenhouses arrive", text: "Buried, LED-lit growing modules start with ISS-proven greens.", refs: [M10, C10.1, nasa-veggie, nasa-advanced-plant-habitat]}
-    - {title: "More power for lighting", text: "About 60 kW extra for crop lighting, more than one 40 kWe fission unit.", refs: [M10, C10.1]}
+    - {title: "More power for lighting", text: "About 60 kW extra for crop lighting: three more 20 kWe reactors, each charging its own battery.", refs: [M10, C10.1]}
     - {title: "Colony phase begins", text: "Work starts on the self-sustaining colony: growth, local economy and governance.", refs: [M13]}
 - year: 15
   cal: 2041
@@ -126,7 +126,7 @@
   headline: "Half of the crew's calories are grown on the Moon"
   summary: "Greenhouses have moved from salad greens to staple crops. Potatoes, wheat and soy grow hydroponically under LEDs, plant waste goes back into the loop, and a 12-month stored-food reserve guards against crop failure."
   crew: 8
-  power_kw: 220
+  power_kw: 200
   details:
     - {title: "Staple crops", text: "Potatoes, wheat and soy alongside greens and peppers, reaching at least 50% of calories.", refs: [M10, C10.1]}
     - {title: "Closing the nutrient loop", text: "Composting or bioreactors return plant waste and wastewater nutrients to the crops, following Lunar Palace and MELiSSA research.", refs: [M10, yuegong-1-lunar-palace-1-bioregenerative-system, esa-melissa]}
@@ -140,7 +140,7 @@
   power_kw: 500
   details:
     - {title: "Industrial oxygen and water", text: "At least 300 t of oxygen and 100 t of water a year, sized from measured pilot-plant data.", refs: [M11, C06.1, C06.2]}
-    - {title: "Grid past 500 kW", text: "Two more fission units and more solar towers.", refs: [M11, M04, C04.1]}
+    - {title: "Grid past 500 kW", text: "Two more 20 kWe reactors, each charging its own battery, and more solar towers.", refs: [M11, M04, C04.1]}
     - {title: "Propellant depot", text: "Cryogenic storage and transfer lines at the pads; the first lander refuelled with lunar oxygen.", refs: [M11, C11.1, cryogenic-propellant-transfer, in-orbit-lox-storage-demo-loxsat]}
 - year: 18
   cal: 2044

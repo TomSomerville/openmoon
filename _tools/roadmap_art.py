@@ -122,7 +122,7 @@ def elements():
     add(4, relay_sat(1180, 70) + relay_sat(1460, 110), ("RELAY SATELLITES", 1320, 90, 1320, 48))
     add(4, pad(1010, 560, 120), ("HARDENED PAD", 1010, 560, 1010, 450))
     add(4, comms_mast(1180, 70), None)
-    add(5, reactor(110) + f'<path d="M150 {g(150)} C300 {g(300)+14} 500 {g(500)+14} 700 {g(700)+6}" fill="none" stroke="{AM}" stroke-width="1.6" stroke-dasharray="6 4"/>', ("40 kWe FISSION REACTOR", 110, g(110)-100, 160, 160))
+    add(5, reactor(110) + f'<path d="M150 {g(150)} C300 {g(300)+14} 500 {g(500)+14} 700 {g(700)+6}" fill="none" stroke="{AM}" stroke-width="1.6" stroke-dasharray="6 4"/>', ("20 kWe FISSION REACTOR", 110, g(110)-100, 160, 160))
     add(5, pad(1250, 585, 100) + tanks(560, g(560)+10, 2), ("PAD 2 + STORAGE", 1250, 585, 1250, 470))
     add(6, plant(1120, g(1120)) + tanks(1150, g(1150), 3), ("OXYGEN + WATER PLANTS", 1135, g(1135)-40, 1135, 160))
     add(6, excavator(1505, 575), ("ICE MINING", 1505, 565, 1540, 300))

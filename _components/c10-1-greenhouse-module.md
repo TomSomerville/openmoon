@@ -48,7 +48,7 @@ subcomponents:
     tech: "Habitat module heritage (M08)"
     trl: 5
 risks:
-  - {sev: High, title: "Lighting needs ~60 kW on average, more than one 40 kWe fission unit", fix: "Phase crops by calories per kWh; greens first; grow power in step (M11); stagger photoperiods so peak power stays close to the average."}
+  - {sev: High, title: "Lighting needs ~60 kW on average, the output of three 20 kWe LR-1-class reactors (DD-002)", fix: "Phase crops by calories per kWh; greens first; grow power in step (M11); stagger photoperiods so peak power stays close to the average."}
   - {sev: High, title: "Disease or a system failure wipes out a module", fix: "Four isolated modules with separate air and water loops; seed bank; 12-month stored food reserve (M10)."}
   - {sev: High, title: "~60 kW of heat and ~1.2 t a day of transpired water must be removed", fix: "Size condensing heat exchangers and surface radiators for full load, because the regolith cover is a near-perfect insulator and passes well under 1% of it (C09.1); test in a ground chamber at full scale."}
   - {sev: Medium, title: "Delivered mass (~17–21 t) is above the M10 estimate", fix: "Consider inflatable shells; deliver in two phases; make racks locally once the fab shop works (C12.1)."}

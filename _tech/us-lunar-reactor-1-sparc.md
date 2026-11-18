@@ -102,6 +102,8 @@ Key draft requirements ([NASA SPARC Industry Day](https://sam.gov/api/prod/opps/
 
 ## How Open Moon uses it: Reactor > BMS > Battery > Base
 
+{% include decision-note.html id="DD-002" extra="An LR-1-class unit is the plan's base reactor." %}
+
 ![Diagram: the reactor feeds a charger and battery management system, which charges the battery; the base draws only from the battery; surplus power goes to the reactor's parasitic load radiator](/assets/tech/fission-to-battery-chain.svg)
 
 In Open Moon the reactor **only charges batteries**. The base never runs directly off the reactor.

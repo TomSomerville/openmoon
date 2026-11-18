@@ -86,7 +86,7 @@ No point on the Moon is sunlit all the time<sup class="r">[6](#s6)</sup>. The be
 | Two Shackleton-ridge points ~8 km apart, combined | ~94% | same |
 | Best points on the Shackleton–de Gerlache ridge | up to ~90% | LROC<sup class="r">[6](#s6)</sup> |
 
-**Design consequence:** spread solar arrays across two or three nearby high points so that at least one is almost always lit, and raise them on masts. The longest darkness at a single point can still be days long<sup class="r">[5](#s5)</sup>, so the base still needs storage and fission power (see M04).
+**Design consequence:** spread solar arrays across two or three nearby high points so that at least one is almost always lit, and raise them on masts. The longest darkness at a single point can still be days long<sup class="r">[5](#s5)</sup>, so the base still needs storage and fission power. In this plan a fission reactor charges the base battery, and the base draws that power from the battery (see M04 and design change DD-002).
 
 ## Step-by-step
 
