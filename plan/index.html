@@ -1,7 +1,7 @@
 ---
 title: Roadmap
 eyebrow: The plan, phase by phase
-summary: "Pick a phase to see what the base looks like at each step, and every piece of work behind it. Years count from the start of the plan: Year 0 is the first lander launches, after site selection is finished. Timings are planning targets."
+summary: "Pick a phase to see what the base looks like and what gets done. Years count from the start of the plan: Year 0 is the first lander launches, after site selection is finished. Timings are planning targets."
 section: plan
 doc_id: OM-100
 ---
@@ -19,7 +19,8 @@ doc_id: OM-100
 .rm-tab:hover{background:color-mix(in srgb,var(--hi) 5%,transparent)}
 .rm-panel{border:1px solid var(--line);border-radius:0 0 8px 8px;overflow:hidden;background:var(--panel)}
 .rm-panel[hidden]{display:none}
-.rm-stage{border-top:1px solid var(--line)}
+.rm-list{margin:0 0 14px;font-size:15px;line-height:1.7}
+.rm-panel .rm-img{width:100%;max-width:100%;margin:0;border-radius:0}
 .rm-stage .rm-img{width:100%;max-width:100%;margin:0;border-radius:0}
 .rm-stage .rm-h{margin:2px 0 8px}
 .rm-h{font:700 19px/1.25 var(--fh);margin:0 0 8px;color:var(--ink)}
@@ -51,38 +52,22 @@ doc_id: OM-100
 {% assign lo = 0 %}{% assign hi = 0 %}{% assign done = 0 %}
 {% for m in ms %}{% assign endy = m.window | remove: "Before Year " | remove: "Years " | remove: "Year " | split: "–" | last | plus: 0 %}{% if endy <= last.end %}{% assign lo = lo | plus: m.cost.low %}{% assign hi = hi | plus: m.cost.high %}{% assign done = done | plus: 1 %}{% endif %}{% endfor %}
 <section class="rm-panel" role="tabpanel" id="phase-{{ p.n }}" aria-labelledby="tab-p{{ p.n }}"{% unless forloop.first %} hidden{% endunless %}>
+  {% capture yy %}{% if last.year < 10 %}0{% endif %}{{ last.year }}{% endcapture %}<img class="rm-img" src="{{ '/assets/roadmap/year-' | append: yy | append: '.svg' | relative_url }}" alt="Concept illustration of the base at the end of Phase {{ p.n }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
   <div class="rm-body">
     <div class="eyebrow">Phase {{ p.n }} · {{ p.years }}</div>
     <h2>{{ p.name }}</h2>
-    <p class="rm-sum">{{ p.desc }}</p>
+    <p class="rm-sum">{{ p.desc | split: ". " | first | append: "." | replace: "..", "." }}</p>
+    <p class="rm-list">{% for s in ps %}<span id="year-{{ s.year }}"><b>Year {{ s.year }}</b> {{ s.label | join: " " | downcase | capitalize }}</span>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
     <div class="rm-stats">
-      <div><small>Crew on the Moon (end)</small><b>{{ last.crew_text | default: last.crew }}</b></div>
-      <div><small>Installed power (end)</small><b>{% if last.power_kw > 0 %}{% if last.power_kw >= 500 %}≥{% endif %}{{ last.power_kw }} kW{% else %}–{% endif %}</b></div>
-      <div><small>Milestones complete</small><b>{{ done }} / {{ ms | size }}</b></div>
-      <div><small>Spent to date (est.)</small><b>{% if done > 0 %}${{ lo | round: 0 }}–{{ hi | round: 0 }}B{% else %}&lt;$0.2B{% endif %}</b></div>
+      <div><small>Crew (end)</small><b>{{ last.crew_text | default: last.crew }}</b></div>
+      <div><small>Power (end)</small><b>{% if last.power_kw > 0 %}{% if last.power_kw >= 500 %}≥{% endif %}{{ last.power_kw }} kW{% else %}–{% endif %}</b></div>
+      <div><small>Milestones done</small><b>{{ done }} / {{ ms | size }}</b></div>
+      <div><small>Spent (est.)</small><b>{% if done > 0 %}${{ lo | round: 0 }}–{{ hi | round: 0 }}B{% else %}&lt;$0.2B{% endif %}</b></div>
     </div>
   </div>
-  {% for s in ps %}
-  <div class="rm-stage" id="year-{{ s.year }}">
-    <img class="rm-img" src="{% capture yy %}{% if s.year < 10 %}0{% endif %}{{ s.year }}{% endcapture %}{{ '/assets/roadmap/year-' | append: yy | append: '.svg' | relative_url }}" alt="Concept illustration of the base in year {{ s.year }}: {{ s.headline }}" loading="lazy">
-    <div class="rm-body">
-      <div class="eyebrow">{{ s.span | default: "Year" }}{% unless s.span %} {{ s.year }}{% endunless %}</div>
-      <h3 class="rm-h">{{ s.headline }}</h3>
-      <p class="rm-sum">{{ s.summary }}</p>
-      <div class="rm-det">
-      {% for d in s.details %}
-        <article><h3>{{ d.title }}</h3><p>{{ d.text }}</p>
-          <div class="refs">{% for r in d.refs %}{% assign m = site.milestones | where: "id_code", r | first %}{% assign c = site.components | where: "id_code", r | first %}{% assign t = site.data.tech | where: "slug", r | first %}{% if m %}<a class="tag hi" href="{{ m.url | relative_url }}" title="{{ m.title }}">{{ r }}</a>{% elsif c %}<a class="tag ok" href="{{ c.url | relative_url }}" title="{{ c.title }}">{{ r }}</a>{% elsif t %}<a class="tag" href="{{ '/technology/' | append: t.slug | append: '/' | relative_url }}">{{ t.name }}</a>{% endif %}{% endfor %}</div>
-        </article>
-      {% endfor %}
-      </div>
-    </div>
-  </div>
-  {% endfor %}
-  <div class="rm-body"><div class="rm-nav"><button data-go="-1"{% if forloop.first %} disabled{% endif %}>← Previous phase</button><button data-go="1"{% if forloop.last %} disabled{% endif %}>Next phase →</button></div></div>
 </section>
 {% endfor %}
-<p style="font-size:12.5px;color:var(--dim);margin:8px 0 26px">Illustrations are Open Moon concepts drawn from the plan, not engineering drawings. "Spent to date" sums the cost estimates of milestones whose window has ended by the end of that phase. Tags link to <span class="tag hi">milestones</span>, <span class="tag ok">components</span> and <span class="tag">technology</span> pages.</p>
+<p style="font-size:12.5px;color:var(--dim);margin:8px 0 26px">Illustrations are Open Moon concepts, not engineering drawings. Spent = milestones finished by the end of the phase (estimate).</p>
 
 <script>
 (function(){
@@ -100,7 +85,7 @@ doc_id: OM-100
     t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){show(i+1,true,true);e.preventDefault()}if(e.key==='ArrowLeft'){show(i-1,true,true);e.preventDefault()}});
   });
   document.querySelectorAll('.rm-nav button').forEach(function(b){b.addEventListener('click',function(){var cur=tabs.findIndex(function(t){return t.getAttribute('aria-selected')==='true'});show(cur+(+b.dataset.go),false,true);window.scrollTo({top:document.querySelector('.rm-tabs').getBoundingClientRect().top+scrollY-20,behavior:'smooth'})})});
-  var h=location.hash.replace('#',''),k=panels.findIndex(function(p){return p.id===h||p.querySelector('#'+CSS.escape(h))});if(k>-1){show(k,false,false);var el=document.getElementById(h);if(el&&el.classList.contains('rm-stage'))el.scrollIntoView();}
+  var h=location.hash.replace('#',''),k=panels.findIndex(function(p){return p.id===h||p.querySelector('#'+CSS.escape(h))});if(k>-1){show(k,false,false);}
 })();
 </script>
 
