@@ -76,26 +76,24 @@ for la, lo, dia, lab, off in [(-88.5, -87.1, 32.4, 'de Gerlache', (0.0, 0.62)), 
 x, y = P2(-88.5352, -97.4007); r = 8 * k; dr.ellipse((x - r, y - r, x + r, y + r), fill='white', outline=(20, 120, 255), width=3)
 txt(x + 14 * k, y, 'ShadowCam bright spot', 'white')
 OR, CY = (255, 140, 0), (80, 230, 255)
-# ---- primary: base grid (B1-B3) and isolated ice-mine grid (M1-M2, PMC, feeder)
-BV = [('B1', -88.6652, -68.42, 82.7), ('B2', -88.7108, -68.28, 53.8), ('B3', -88.3693, -62.11, 46.8)]
-MV = [('M1', -88.4657, -67.872, 75.1), ('M2', -88.3937, -68.686, 71.9)]
+# ---- primary (DD-024): base towers B1/B2 beside mine towers M1/M2, B3 near the base; B4 + M3 expansion (dashed)
+PAIRS = [('B1+M1', -88.4657, -67.872, 75.1), ('B2+M2', -88.3937, -68.686, 71.9)]
+B3 = (-88.3693, -62.11, 46.8); EXP = (-88.7108, -68.28, 53.8)
 bx, by = m2p(*base); mx, my = m2p(*mine)
 mp = P2(-88.3937, -68.686); mp = (mp[0] - 22 * k, mp[1] + 6 * k)
-for n, la, lo, p_ in BV:
-    x, y = P2(la, lo); dr.line([(bx, by), (x, y)], fill=OR, width=int(4 * k))
-for n, la, lo, p_ in MV:
-    x, y = P2(la, lo); dr.line([mp, (x, y)], fill=CY, width=int(4 * k))
-for q in range(0, 100, 5):
-    t0, t1 = q / 100, min(1, (q + 2.5) / 100)
-    dr.line([(mp[0] + (mx - mp[0]) * t0, mp[1] + (my - mp[1]) * t0), (mp[0] + (mx - mp[0]) * t1, mp[1] + (my - mp[1]) * t1)], fill=CY, width=int(4 * k))
-for n, la, lo, p_ in BV:
-    x, y = P2(la, lo); dot(x, y, OR)
-lab = {'B1': (16, -2, 'lm'), 'B2': (16, 14, 'lm'), 'B3': (14, -14, 'lb')}
-for n, la, lo, p_ in BV:
-    x, y = P2(la, lo); dx, dy, an = lab[n]; txt(x + dx * k, y + dy * k, '%s %.1f%%' % (n, p_), (255, 190, 90), an)
-for n, la, lo, p_ in MV:
-    x, y = P2(la, lo); dot(x, y, CY)
-    txt(x + (-6 if n == 'M1' else 14) * k, y + (-14 if n == 'M1' else 14) * k, '%s %.1f%%' % (n, p_), (150, 240, 255), 'rb' if n == 'M1' else 'lt')
+def dashed(p0, p1, col):
+    for q in range(0, 100, 5):
+        t0, t1 = q / 100, min(1, (q + 2.5) / 100)
+        dr.line([(p0[0] + (p1[0] - p0[0]) * t0, p0[1] + (p1[1] - p0[1]) * t0), (p0[0] + (p1[0] - p0[0]) * t1, p0[1] + (p1[1] - p0[1]) * t1)], fill=col, width=int(4 * k))
+for _, la, lo, p_ in PAIRS:
+    x, y = P2(la, lo); dr.line([(bx, by), (x, y)], fill=OR, width=int(4 * k)); dr.line([mp, (x, y)], fill=CY, width=int(4 * k))
+x, y = P2(B3[0], B3[1]); dr.line([(bx, by), (x, y)], fill=OR, width=int(4 * k))
+ex = P2(EXP[0], EXP[1]); dashed((bx, by), ex, OR); dashed(mp, ex, CY); dashed(mp, (mx, my), CY)
+for n, (lab_, la, lo, p_) in enumerate(PAIRS):
+    x, y = P2(la, lo); dot(x, y, OR, 11); r2 = 6 * k; dr.ellipse((x - r2, y - r2, x + r2, y + r2), fill=CY)
+    txt(x + (12 if n == 0 else -8) * k, y - 12 * k, '%s %.1f%%' % (lab_, p_), (255, 200, 120), 'lb' if n == 0 else 'rb')
+x, y = P2(B3[0], B3[1]); dot(x, y, OR); txt(x + 14 * k, y - 14 * k, 'B3 %.1f%%' % B3[2], (255, 190, 90), 'lb')
+x, y = ex; r_ = 11 * k; dr.ellipse((x - r_, y - r_, x + r_, y + r_), outline=OR, width=int(4 * k)); txt(x + 16 * k, y + 8 * k, 'B4+M3 expansion %.1f%%' % EXP[2], (255, 200, 120), 'lt')
 r = 10 * k; dr.rectangle((mp[0] - r, mp[1] - r, mp[0] + r, mp[1] + r), fill='white', outline=CY, width=3)
 txt(mp[0] - 16 * k, mp[1] + 4 * k, 'Mine PMC', 'white', 'rt')
 r = 11 * k; dr.rectangle((mx - r, my - r, mx + r, my + r), fill=(40, 130, 255), outline='white', width=3)
@@ -123,7 +121,7 @@ rows = [((0, 170, 0), 'Slope ≤8° (landable)'), ((255, 220, 0), 'Slope 8–15�
         ((40, 130, 255), 'Ice candidate: Shackleton and de Gerlache shadowed floors'), ((120, 200, 255), 'Outline: other shadowed areas (no ice data)'),
         ((150, 40, 200), 'High hydrogen (LEND, top 10%)'), ((175, 80, 230), 'Moderate hydrogen (top 25%), white edge'), ((200, 60, 255), 'Purple tint: LEND neutron dip (darker = more hydrogen)'),
         ((255, 60, 200), 'Primary base (DD-015)'), ((170, 90, 255), 'Backup base (DD-015)'),
-        (OR, 'Base power: VSATs (B, A) and cables; % = sunlit (NASA map)'), (CY, 'Primary ice-mine grid: M1–M2, mine PMC, feeder (DD-016)'),
+        (OR, 'Base power: VSATs (B, A) and cables; % = sunlit (NASA map)'), (CY, 'Primary mine grid: M1, M2 (beside B1, B2), PMC, feeder; dashed = expansion'),
         ((255, 255, 255), 'White square: PMC · blue square: ice mine')]
 L = 10000 / RES; sx = W - L - 30 * k; sy = H - 30 * k
 dr.rectangle((sx - 10 * k, sy - 34 * k, sx + L + 10 * k, H - 8 * k), fill=(0, 0, 0)); dr.line([(sx, sy), (sx + L, sy)], fill='white', width=int(4 * k)); dr.text((sx + L / 2, sy - 6 * k), '10 km', font=Fs, fill='white', anchor='md')

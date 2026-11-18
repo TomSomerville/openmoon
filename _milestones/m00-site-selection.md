@@ -162,9 +162,10 @@ NASA's VSAT towers give 10 kW each on 5–10 m masts and stand on slopes up to 1
 | Site | Lit | Longest dark |
 |---|---|---|
 | Backup: ridge, 3 towers | 93.0% | 4.8 days |
-| Primary: rim, 2 towers | 84.1% | 6.2 days |
+| Primary: rim, first 3 towers | 77.4% | 14.0 days |
+| Primary, with expansion tower B4 | 84.6% | 6.0 days |
 
-The ridge towers sit on ~2 km cables. The primary's towers need 8.3–9.4 km cables.
+The ridge towers sit on ~2 km cables. The primary's first towers sit on 2.1–5.4 km cables; B4 needs 9.4 km.
 
 </div>
 <div class="tp-media" markdown="1">
@@ -227,14 +228,17 @@ Top: ice candidates in the focus area. Bottom: surface ice found by NASA's M3, s
 
 ### Power layout at the primary
 
-The ice floor is 13.4 km from the base, beyond the 10 km cable limit, so the base and the mine have **separate grids** (DD-016; ESTIMATE):
+The ice floor is 13.4 km from the base, beyond the 10 km cable limit, so the base and the mine have **separate grids** (DD-016). Base towers B1 and B2 stand beside mine towers M1 and M2 on the rim, 4.5 and 5.4 km from the base. B4 and M3 are the first expansion towers (DD-024; ESTIMATE):
 
 | Grid | Lit | Longest dark |
 |---|---|---|
-| Base: B1, B2 (+B3) | 84.1% (84.2% with B3) | 6.2 days |
-| Mine: M1, M2 | 77.4% | 14.2 days |
+| Base, first: B1, B2, B3 | 77.4% | 14.0 days |
+| Base, with B4 | 84.6% | 6.0 days |
+| Mine, first: M1, M2 | 77.4% | 14.2 days |
+| Mine, with M3 | 84.5% | 6.0 days |
 
-- **B3**, 2.1 km from the base and clear of the flat patch, adds redundancy and faster charging (DD-017, DD-021).
+- **B3**, 2.1 km from the base and clear of the flat patch, adds redundancy and faster charging (DD-017, DD-021). It is almost never lit when B1 and B2 are dark (about 2 hours a year), so it does not shorten their dark spells.
+- **B4 and M3** stand together at the far rim, 9.4 km from the base and 9.6 km from the mine PMC. They are lit when the near rim is dark, which cuts the longest dark spell from about 14 days to 6.
 - **The mine stops in the dark.** Its battery only keeps systems alive.
 - **Towers within 3 km were rejected.** They reach only 56.9%.
 
@@ -262,7 +266,7 @@ window.addEventListener('hashchange',open);open();})();
 | Position | 88.4365°S, 62.46°W | 89.559°S, 163.66°W |
 | Slope at site; landable within 1 km | 2.2°; 58% | 6.1°; 69% |
 | Connected flat ground (≤8°); widest flat circle | 4.8 km²; 540 m | 9.7 km²; 450 m |
-| Solar towers (ESTIMATE) | 84.1% lit, longest dark 6.2 days | 93.0% lit, longest dark 4.8 days |
+| Solar towers (ESTIMATE) | 77.4% lit, longest dark 14.0 days (84.6% and 6.0 days with expansion tower B4) | 93.0% lit, longest dark 4.8 days |
 | Nearest ice-candidate floor | 13.4 km (de Gerlache) | 5.2 km (Shackleton) |
 | Nearest high hydrogen | 19.5 km | 28.9 km |
 | On NASA's 2024 list | Yes (de Gerlache Rim 2) | No (2022 list only) |
@@ -280,7 +284,7 @@ window.addEventListener('hashchange',open);open();})();
 
 **Cons**
 
-- Less sun: 84.1% with blackouts of up to 6.2 days, and the base towers need 8.3–9.4 km cables.
+- Less sun: the first towers are lit 77.4% of the time, with dark spells of up to 14 days, until expansion tower B4 (9.4 km cable) brings this to 84.6% and 6 days.
 - The ice floor is 13.4 km away, so the mine needs its own grid and stops for up to about 14 days at a time.
 - The cables to the mine cross a crater wall that is mostly steeper than 20°.
 - A young fault scarp is mapped in Rim 2<sup class="r">[7](#s7)</sup>.

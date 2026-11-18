@@ -81,31 +81,30 @@ x, y = m2p(*lonlat2m(-88.5352, -97.4007))
 if 0 <= x < W and 0 <= y < H:
     r = 9 * k; dr.ellipse((x - r, y - r, x + r, y + r), fill='white', outline=(20, 120, 255), width=3)
 # DD-016: mine grid (rim VSATs + mine PMC) and base grid (own VSATs)
-MV = [(-88.4657, -67.872, 75.1), (-88.3937, -68.686, 71.9)]
-BV = [(-88.6652, -68.42, 82.7), (-88.7108, -68.28, 53.8), (-88.3693, -62.11, 46.8)]
+# DD-024: base towers B1/B2 stand beside mine towers M1/M2; B3 near the base; B4 + M3 are the first expansion towers (old B2 spot)
+PAIRS = [('B1 + M1', -88.4657, -67.872, 75.1), ('B2 + M2', -88.3937, -68.686, 71.9)]
+B3 = (-88.3693, -62.11, 46.8); EXP = ('B4 + M3 (expansion)', -88.7108, -68.28, 53.8)
 bx, by = m2p(*base); mx, my = m2p(*mine)
-mp = m2p(*lonlat2m(-88.3937, -68.686)); mp = (mp[0] - 26 * k, mp[1] + 6 * k)   # mine PMC beside VSAT M2
-# base grid lines
-for la, lo, p_ in BV:
-    x, y = m2p(*lonlat2m(la, lo)); dr.line([(bx, by), (x, y)], fill=(255, 140, 0), width=int(4 * k))
-# mine grid lines
-for la, lo, p_ in MV:
-    x, y = m2p(*lonlat2m(la, lo)); dr.line([mp, (x, y)], fill=(80, 230, 255), width=int(4 * k))
-for q in range(0, 100, 4):
-    t0, t1 = q / 100, min(1, (q + 2) / 100)
-    dr.line([(mp[0] + (mx - mp[0]) * t0, mp[1] + (my - mp[1]) * t0), (mp[0] + (mx - mp[0]) * t1, mp[1] + (my - mp[1]) * t1)], fill=(80, 230, 255), width=int(4 * k))
-for n, (la, lo, p_) in enumerate(BV, 1):
-    x, y = m2p(*lonlat2m(la, lo)); r = 12 * k
-    dr.ellipse((x - r, y - r, x + r, y + r), fill=(255, 140, 0), outline='black', width=3)
-    dkm = math.hypot(*(np.array(lonlat2m(la, lo)) - np.array(base))) / 1000
-    if n < 3:
-        dr.text((x - 18 * k, y + (-14 if n == 1 else 16) * k), 'Base VSAT B%d: %.1f%% sunlit, %.1f km to base' % (n, p_, dkm), font=Fs, fill=(255, 190, 90), anchor='rm', stroke_width=3, stroke_fill=(0, 0, 0))
-    else:
-        dr.text((x + 16 * k, y - 12 * k), 'B3 backup/charging: %.1f%% sunlit, %.1f km' % (p_, dkm), font=Fs, fill=(255, 190, 90), anchor='lb', stroke_width=3, stroke_fill=(0, 0, 0))
-for n, (la, lo, p_) in enumerate(MV, 1):
-    x, y = m2p(*lonlat2m(la, lo)); r = 12 * k
-    dr.ellipse((x - r, y - r, x + r, y + r), fill=(80, 230, 255), outline='black', width=3)
-    dr.text((x + 18 * k, y + (-18 if n == 1 else 18) * k), 'Mine VSAT M%d: %.1f%% sunlit' % (n, p_), font=Fs, fill=(150, 240, 255), anchor='lm', stroke_width=3, stroke_fill=(0, 0, 0))
+mp = m2p(*lonlat2m(-88.3937, -68.686)); mp = (mp[0] - 26 * k, mp[1] + 6 * k)   # mine PMC beside M2
+def dashed(p0, p1, col, w):
+    for q in range(0, 100, 4):
+        t0, t1 = q / 100, min(1, (q + 2) / 100)
+        dr.line([(p0[0] + (p1[0] - p0[0]) * t0, p0[1] + (p1[1] - p0[1]) * t0), (p0[0] + (p1[0] - p0[0]) * t1, p0[1] + (p1[1] - p0[1]) * t1)], fill=col, width=w)
+OR, CY = (255, 140, 0), (80, 230, 255); W = int(4 * k)
+for _, la, lo, p_ in PAIRS + [(None,) + B3]:
+    x, y = m2p(*lonlat2m(la, lo)); dr.line([(bx, by), (x, y)], fill=OR, width=W)
+for _, la, lo, p_ in PAIRS:
+    x, y = m2p(*lonlat2m(la, lo)); dr.line([mp, (x, y)], fill=CY, width=W)
+ex = m2p(*lonlat2m(EXP[1], EXP[2])); dashed((bx, by), ex, OR, W); dashed(mp, ex, CY, W); dashed(mp, (mx, my), CY, W)
+dkm = lambda la, lo: math.hypot(*(np.array(lonlat2m(la, lo)) - np.array(base))) / 1000
+for n, (lab, la, lo, p_) in enumerate(PAIRS):
+    x, y = m2p(*lonlat2m(la, lo)); r = 13 * k
+    dr.ellipse((x - r, y - r, x + r, y + r), fill=OR, outline='black', width=3); r2 = 7 * k; dr.ellipse((x - r2, y - r2, x + r2, y + r2), fill=CY)
+    dr.text((x + 18 * k, y + (-18 if n == 0 else 18) * k), '%s: %.1f%% sunlit, %.1f km to base' % (lab, p_, dkm(la, lo)), font=Fs, fill=(255, 200, 120), anchor='lm', stroke_width=3, stroke_fill=(0, 0, 0))
+x, y = m2p(*lonlat2m(B3[0], B3[1])); r = 12 * k; dr.ellipse((x - r, y - r, x + r, y + r), fill=OR, outline='black', width=3)
+dr.text((x + 16 * k, y - 12 * k), 'B3 backup/charging: %.1f%% sunlit, %.1f km' % (B3[2], dkm(B3[0], B3[1])), font=Fs, fill=(255, 190, 90), anchor='lb', stroke_width=3, stroke_fill=(0, 0, 0))
+x, y = ex; r = 13 * k; dr.ellipse((x - r, y - r, x + r, y + r), outline=OR, width=int(4 * k)); r2 = 7 * k; dr.ellipse((x - r2, y - r2, x + r2, y + r2), outline=CY, width=int(3 * k))
+dr.text((x - 18 * k, y + 16 * k), '%s: %.1f%% sunlit, %.1f km to base' % (EXP[0], EXP[3], dkm(EXP[1], EXP[2])), font=Fs, fill=(255, 200, 120), anchor='rm', stroke_width=3, stroke_fill=(0, 0, 0))
 r = 11 * k; dr.rectangle((mp[0] - r, mp[1] - r, mp[0] + r, mp[1] + r), fill='white', outline=(80, 230, 255), width=3)
 dr.text((mp[0] - 16 * k, mp[1]), 'Mine PMC', font=Fs, fill='white', anchor='rm', stroke_width=3, stroke_fill=(0, 0, 0))
 r = 12 * k; dr.rectangle((mx - r, my - r, mx + r, my + r), fill=(40, 130, 255), outline='white', width=3)
@@ -118,7 +117,7 @@ dr.text((bx + 26 * k, by), 'PRIMARY BASE  88.4365°S, 62.46°W', font=F, fill=(2
 # legend
 rows = [((0, 170, 0), 'Slope ≤8° (landable)'), ((255, 220, 0), 'Slope 8–15°'), ((255, 140, 0), 'Slope 15–20°'), ((220, 0, 0), 'Slope ≥20°'),
         ((40, 130, 255), 'Ice candidate: de Gerlache shadowed floor'), ((120, 200, 255), 'Outline: other shadowed areas (no ice data)'),
-        ((255, 140, 0), 'Base grid: VSATs B1–B2 (long runs), B3 backup/charging (DD-017, DD-021)'), ((80, 230, 255), 'Ice-mine grid: VSATs M1–M2, mine PMC, feeder (DD-016)'),
+        ((255, 140, 0), 'Base grid: B1, B2 (beside M1, M2) and B3; dashed = expansion B4 (DD-024)'), ((80, 230, 255), 'Ice-mine grid: M1, M2, mine PMC, feeder; dashed = expansion M3 (DD-016, DD-024)'),
         ((150, 40, 200), 'High hydrogen (LEND, top 10%), off-map: arrow'), ((175, 80, 230), 'Moderate hydrogen (top 25%), white edge'), ((200, 60, 255), 'Purple tint and lines: LEND dip 0.6–0.9% (darker = more H)')]
 lx, ly = int(20 * k), int(48 * k)
 dr.rectangle((lx - 10 * k, ly - 10 * k, lx + 520 * k, ly + (len(rows) * 30 + 40) * k), fill=(0, 0, 0))

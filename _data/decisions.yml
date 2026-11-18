@@ -723,3 +723,21 @@
     - "The base is no longer at the centre of the widest flat circle (540 m); its own flat circle is about 300 m across."
     - "The ice mine is 0.7 km further away (13.4–13.5 km); it keeps its own grid (DD-016)."
     - "Even at the new point the ground is dark for up to about three weeks at a time, so the base still depends on its towers and storage."
+
+- id: DD-024
+  date: "2026-11-18"
+  title: "Base towers B1 and B2 stand beside mine towers M1 and M2; B4 and M3 at the far rim are the first expansion towers"
+  status: "Adopted"
+  affects: [M00, M04, C06.2]
+  was: "Base towers B1 at site 5 (88.6652°S, 68.42°W, 8.3 km) and B2 (88.7108°S, 68.28°W, 9.4 km), plus B3 (2.1 km): lit 84.2%, longest dark 6.2 days (ESTIMATE)."
+  now: "Initial deployment: B1 beside M1 (88.4657°S, 67.872°W, 4.5 km from the base), B2 beside M2 (88.3937°S, 68.686°W, 5.4 km), B3 unchanged (88.3693°S, 62.11°W, 2.1 km). Base grid lit 77.4% (6,790 h a year), longest dark 14.0 days, about two dark spells over 7 days a year; the plan accepts the 14-day spell for the first deployment. First expansion: B4 (base) and M3 (mine) together at the old B2 spot (88.7108°S, 68.28°W), 9.4 km from the base and 9.6 km from the mine PMC. With B4 the base grid is lit 84.6% (7,410 h a year), longest dark 6.0 days; with M3 the mine grid is lit 84.5%, longest dark 6.0 days (ESTIMATE). Site 5 (old B1) is no longer used."
+  why: "The user's decision: shorter first cable runs (4.5–5.4 km instead of 8.3–9.4 km). Towers on the near rim share shadows, so the 14-day dark spell is accepted until the far-rim expansion towers are added. B3 is lit only about 2 hours a year while B1 and B2 are dark, and no spot within 3 km of the base cuts the spell below 13.9 days; the best gap-filler is on the far rim, which is what B4 provides."
+  timeline:
+    - date: "2011"
+      what: "NASA GSFC average illumination map used to place the towers."
+      title: "NASA GSFC PGDA: Lunar Polar Illumination (Mazarico et al. 2011)"
+      url: "https://pgda.gsfc.nasa.gov/products/69"
+  tradeoffs:
+    - "Until B4 is built, storage (or the fission reactor) must carry the base through dark spells of up to 14 days, more than twice the 6 days of the previous layout."
+    - "B1/M1 and B2/M2 sit side by side, so one access route serves both grids, but a local fault or dust event can hit both grids at once."
+    - "M3's cable to the mine PMC is 9.6 km, close to the 10 km limit (DD-014)."

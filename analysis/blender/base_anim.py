@@ -37,8 +37,9 @@ lab, _ = ndimage.label(sl <= 8); patch = lab == lab[sl.shape[0] // 2, sl.shape[1
 pe = np.array(Image.fromarray((patch * 255).astype('uint8')).resize((OUTPX, OUTPX), Image.NEAREST)) > 0
 edge = pe & ~ndimage.binary_erosion(pe, iterations=2)
 m2p = lambda x, y: ((x - (C[0] - HALF)) * k, ((C[1] + HALF) - y) * k)
-PTS = [('B1', (-88.6652, -68.42), (255, 140, 0)), ('B2', (-88.7108, -68.28), (255, 140, 0)), ('B3', (-88.3693, -62.11), (255, 140, 0)),
-       ('M1', (-88.4657, -67.872), (0, 220, 255)), ('M2', (-88.3937, -68.686), (0, 220, 255))]
+# DD-024: base towers B1/B2 stand beside mine towers M1/M2; B4 + M3 are the first expansion towers (old B2 spot)
+PTS = [('B1+M1', (-88.4657, -67.872), (255, 140, 0)), ('B2+M2', (-88.3937, -68.686), (255, 140, 0)), ('B3', (-88.3693, -62.11), (255, 140, 0)),
+       ('B4+M3 (expansion)', (-88.7108, -68.28), (0, 220, 255))]
 cols = []
 for t in np.linspace(0, 1, 12):
     for g in np.linspace(0, 255, 18):
@@ -73,7 +74,7 @@ for kf in range(suns.shape[1]):
     dr.rectangle((0, 0, OUTPX, 24), fill='black')
     dr.text((8, 5), '%s season · day %4.1f of the lunar day · base %s' % ('Best' if SEASON == 'summer' else 'Worst', kf * 0.5, 'lit' if lit[H // 2, W // 2] > 0.5 else 'in shadow'), font=F(14), fill='white')
     dr.rectangle((0, OUTPX - 22, OUTPX, OUTPX), fill='black')
-    dr.text((8, OUTPX - 17), 'ESTIMATE · 20 × 20 km · green: flat patch · star: base · orange: base towers · cyan: mine towers · LOLA terrain, DE421 Sun', font=F(11), fill=(220, 220, 220))
+    dr.text((8, OUTPX - 17), 'ESTIMATE · 20 × 20 km · green: flat patch · star: base · orange: initial towers · cyan: expansion towers · LOLA terrain, DE421 Sun', font=F(11), fill=(220, 220, 220))
     frames.append(im.quantize(palette=PAL, dither=Image.Dither.NONE)); print(kf, flush=True)
 frames[0].save(OUT, save_all=True, append_images=frames[1:], duration=200, loop=0, optimize=True)
 print('base lit in %d of %d frames' % (sum(v > 0.5 for v in litbase), len(litbase)))

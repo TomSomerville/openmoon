@@ -19,8 +19,8 @@ if not os.environ.get('SITE_ONLY'):
 C = lonlat2m(-88.4365, -62.46); HALF = (B[2] - B[0]) / 2; F = lambda z: ImageFont.truetype(FB, int(z))
 def markers(img, px_per_m, x0, y1, star=True):
     dr = ImageDraw.Draw(img); k = img.width / 1600
-    P = [('B1', (-88.6652, -68.42), (255, 140, 0)), ('B2', (-88.7108, -68.28), (255, 140, 0)), ('B3', (-88.3693, -62.11), (255, 140, 0)),
-         ('M1', (-88.4657, -67.872), (0, 220, 255)), ('M2', (-88.3937, -68.686), (0, 220, 255))]
+    P = [('B1+M1', (-88.4657, -67.872), (255, 140, 0)), ('B2+M2', (-88.3937, -68.686), (255, 140, 0)), ('B3', (-88.3693, -62.11), (255, 140, 0)),
+         ('B4+M3 (expansion)', (-88.7108, -68.28), (0, 220, 255))]   # DD-024
     for n, (la, lo_), col in P:
         x, y = lonlat2m(la, lo_); X = (x - x0) * px_per_m; Y = (y1 - y) * px_per_m
         if 0 <= X < img.width and 0 <= Y < img.height:
