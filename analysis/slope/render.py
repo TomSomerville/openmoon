@@ -3,9 +3,9 @@ from read import *
 from PIL import Image, ImageDraw, ImageFont
 FB='/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf'
 def cmap(s):
-    # 0 green -> 30 yellow -> 60 orange -> 90 red (linear between stops)
-    stops=np.array([0,30,60,90.]); cols=np.array([[0,170,0],[255,230,0],[255,140,0],[220,0,0]],float)
-    s=np.clip(s,0,90); out=np.zeros(s.shape+(3,))
+    # 0 green -> 15 yellow -> 30 orange -> 60+ red (linear between stops)
+    stops=np.array([0,15,30,60.]); cols=np.array([[0,170,0],[255,230,0],[255,140,0],[220,0,0]],float)
+    s=np.clip(s,0,60); out=np.zeros(s.shape+(3,))
     for c in range(3): out[...,c]=np.interp(s,stops,cols[:,c])
     return out
 def lonlat2m(lat,lon):
@@ -44,11 +44,11 @@ def make(name,bounds,res,out,alpha=0.6,threshold_mode=False,annot=(),title=''):
         d.rectangle((lx,ly,lx+lw//2,ly+lh),fill=(0,200,0)); d.rectangle((lx+lw//2,ly,lx+lw,ly+lh),fill=(220,0,0))
         d.text((lx,ly-6*k),'Slope ≤15° (landing-suitable) | >15°',font=Fs,fill='white',anchor='ld')
     else:
-        g=cmap(np.linspace(0,90,lw)); 
+        g=cmap(np.linspace(0,60,lw)); 
         for i in range(lw): d.line([(lx+i,ly),(lx+i,ly+lh)],fill=tuple(int(c) for c in g[i]))
-        for v in (0,15,30,45,60,75,90):
-            xx=lx+lw*v/90; d.line([(xx,ly+lh),(xx,ly+lh+5*k)],fill='white',width=2); d.text((xx,ly+lh+6*k),f'{v}°',font=Fs,fill='white',anchor='mt')
-        xx=lx+lw*15/90; d.line([(xx,ly-3*k),(xx,ly+lh)],fill='white',width=max(2,int(3*k)))
+        for v in (0,15,30,45,60):
+            xx=lx+lw*v/60; d.line([(xx,ly+lh),(xx,ly+lh+5*k)],fill='white',width=2); d.text((xx,ly+lh+6*k),f'{v}°'+('+' if v==60 else ''),font=Fs,fill='white',anchor='mt')
+        xx=lx+lw*15/60; d.line([(xx,ly-3*k),(xx,ly+lh)],fill='white',width=max(2,int(3*k)))
         d.text((lx,ly-6*k),'Slope (°)  — white tick: 15° landing limit',font=Fs,fill='white',anchor='ld')
     # scale bar 10 km or 2 km
     sb=10000 if (bounds[2]-bounds[0])>40000 else 2000; L=sb/res
