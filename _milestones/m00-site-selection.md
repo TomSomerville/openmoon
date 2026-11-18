@@ -239,6 +239,14 @@ The ice floor is 13.4 km from the base, beyond the 10 km cable limit, so the bas
 
 - **B3**, 2.1 km from the base and clear of the flat patch, adds redundancy and faster charging (DD-017, DD-021). It is almost never lit when B1 and B2 are dark (about 2 hours a year), so it does not shorten their dark spells.
 - **B4 and M3** stand together at the far rim, 9.4 km from the base and 9.6 km from the mine PMC. They are lit when the near rim is dark, which cuts the longest dark spell from about 14 days to 6.
+
+The longest dark spell of the base towers depends on the lunar season (typical spell in the lunar day around each event, ESTIMATE):
+
+| Season | First towers: dark spell | With B4: dark spell |
+|---|---|---|
+| Summer solstice | 1.6 days | none |
+| Equinoxes | 4.4–4.5 days | 2.5–2.8 days |
+| Winter solstice | 12 days (up to 14) | 5.8 days (up to 6) |
 - **The mine stops in the dark.** Its battery only keeps systems alive.
 - **Towers within 3 km were rejected.** They reach only 56.9%.
 
@@ -302,7 +310,7 @@ LROC's maximum-pixel mosaic keeps each spot at its brightest across thousands of
 ![All-sun view of the 20 by 20 km area around the primary base, LROC NAC maximum-pixel mosaic]({{ '/assets/sites/primary-base-allsun.jpg' | relative_url }})
 ![The same view with flat ground of 8 degrees or less in green and the 4.8 square km patch around the base outlined]({{ '/assets/sites/primary-base-allsun-flat.jpg' | relative_url }})
 
-*Left: all-sun view, 20 × 20 km. Right: ground of 8° or less in green (NASA LOLA slope, 10 m), with the 4.8 km² patch around the base outlined. Yellow lines: 100 m height contours (NASA LOLA). Star: base. Orange: base towers. Cyan: mine towers. Images credit NASA/GSFC/Arizona State University.*
+*Left: all-sun view, 20 × 20 km. Right: ground of 8° or less in green (NASA LOLA slope, 10 m), with the 4.8 km² patch around the base outlined. Yellow lines: 100 m height contours (NASA LOLA). Star: base. Orange: initial towers (B1 + M1, B2 + M2, B3). Cyan: expansion towers B4 + M3. Images credit NASA/GSFC/Arizona State University.*
 
 #### Standing at the base (rendered view)
 
@@ -315,16 +323,20 @@ A 1.8 m human figure for scale, standing at the base point (DD-023), in a Blende
 
 ![Rendered high oblique view of the base area from 3 km south-west and 1.5 km up, with the base and tower B3 in frame]({{ '/assets/sites/primary-base-render-overview.jpg' | relative_url }})
 
-*The base area from 3 km south-west of the base and 1.5 km above it, looking north-north-east. The base is right of centre and B3 left of centre, about 2.1 km apart. Each tower is marked by a self-lit orange stand-in 10 m tall and 1 m wide (VSAT masts are 5–10 m<sup class="r">[18](#s18)</sup>). At this distance B3 shows only as a faint orange glint, and the 1.8 m figure is far too small to see. All three renders by Open Moon; terrain NASA GSFC LOLA, texture NASA/GSFC/Arizona State University. Figure: "Cesium Man", © 2017 Cesium, CC BY 4.0<sup class="r">[27](#s27)</sup>.*
+*The base area from 3 km south-west of the base and 1.5 km above it, looking north-north-east. The base is right of centre and B3 left of centre, about 2.1 km apart. Each tower is marked by a self-lit stand-in 10 m tall and 1 m wide (VSAT masts are 5–10 m<sup class="r">[18](#s18)</sup>), orange for base towers and cyan for mine towers. At this distance B3 shows only as a faint orange glint, and the 1.8 m figure is far too small to see.*
+
+![Rendered high oblique view from the north of the base and all solar towers, with labels: B4 and M3 on the far rim, B1 with M1 and B2 with M2 on the near rim, the base, and B3]({{ '/assets/sites/primary-base-render-towers.jpg' | relative_url }})
+
+*All the towers (DD-024), seen from about 10 km up to the north, looking south, so east is on the left. The masts are 9–17 km from the camera, too thin to show at this size, so their positions are ringed and labelled on the image: orange for base towers, cyan for mine towers. Each base tower stands beside a mine tower (the markers are 20 m apart), so each pair shares one ring. All four renders by Open Moon; terrain NASA GSFC LOLA, texture NASA/GSFC/Arizona State University. Figure: "Cesium Man", © 2017 Cesium, CC BY 4.0<sup class="r">[27](#s27)</sup>.*
 
 #### Sun and shadow at the base (ESTIMATE)
 
-One lunar day (about 29.5 Earth days, a frame every 12 hours) over the base and the 10 km around it, in the best and the worst season. This is Open Moon's shadow calculation over NASA LOLA terrain, with Sun positions from NASA/JPL's DE421 ephemeris<sup class="r">[23](#s23)</sup>. The base point itself is lit in 26 of 60 frames in the best season and 7 of 60 in the worst.
+One lunar day (about 29.5 Earth days, a frame every 12 hours) over the base and the 10 km around it, in the best and the worst season. This is Open Moon's shadow calculation over NASA LOLA terrain, with Sun positions from NASA/JPL's DE421 ephemeris<sup class="r">[23](#s23)</sup>. The base point itself is lit in 38 of 60 frames in the best season and 16 of 60 in the worst.
 
 ![Animation of sunlight and shadow over the primary base area, best season]({{ '/assets/sites/primary-base-sun-best.gif' | relative_url }})
 ![Animation of sunlight and shadow over the primary base area, worst season]({{ '/assets/sites/primary-base-sun-worst.gif' | relative_url }})
 
-*Left: best season. Right: worst season. Star: base. Orange: base towers. Cyan: mine towers. Green outline: the 4.8 km² flat patch.*
+*Left: best season. Right: worst season. Star: base. Orange: initial towers (B1 + M1, B2 + M2, B3). Cyan: expansion towers B4 + M3. Green outline: the 4.8 km² flat patch.*
 
 ### Backup: Connecting ridge by Shackleton
 
@@ -344,18 +356,17 @@ One lunar day (about 29.5 Earth days, a frame every 12 hours) over the base and 
 
 ## Room to grow at the primary site
 
-Flat ground (8° or less) around the base, measured by Open Moon from NASA's LOLA slope map at 10 m per pixel<sup class="r">[10](#s10)</sup>:
+Ground around the base, measured by Open Moon from NASA's LOLA slope map at 10 m per pixel<sup class="r">[10](#s10)</sup>. Ground of 8° or less is ready to build on. Ground of 8–15° is counted as room to grow, because by then excavation equipment can grade it flat (plan design).
 
-| Area | Flat ground |
-|---|---|
-| Connected patch the base sits in | **4.8 km²** |
-| All flat ground within 2 km | 3.8 km² |
-| All flat ground within 3 km | 5.3 km² |
-| All flat ground within 5 km | 11.0 km² |
-| Within 5 km, in patches of at least 0.05 km² that can be reached over ground of 15° or less | 7.1 km² |
+| Area | Flat (≤8°) | Buildable after grading (≤15°) |
+|---|---|---|
+| Connected area the base sits in | **4.8 km²** | **at least 64 km²** (it runs beyond the 12 × 12 km area measured) |
+| Within 2 km | 3.8 km² | 9.8 km² |
+| Within 3 km | 5.3 km² | 17.9 km² |
+| Within 5 km | 11.0 km² | 48.4 km² |
 
-**For scale** (this plan's arithmetic): the 4.8 km² patch is about the size of **Pitcairn Island** (4.5 km²)<sup class="r">[24](#s24)</sup>, about **2.4 times Monaco** (2.02 km²) and about **10 times Vatican City** (0.49 km²)<sup class="r">[25](#s25)</sup>. The 11.0 km² within 5 km is about 2.4 Pitcairns, 5.4 Monacos or 22 Vatican Cities.
+**For scale** (this plan's arithmetic): the 4.8 km² patch is about the size of **Pitcairn Island** (4.5 km²)<sup class="r">[24](#s24)</sup>, about **2.4 times Monaco** (2.02 km²) and about **10 times Vatican City** (0.49 km²)<sup class="r">[25](#s25)</sup>. The 48.4 km² of buildable ground within 5 km is about 11 Pitcairns or 24 Monacos.
 
-The base can grow over its own 4.8 km² patch without crossing steeper ground. Within 5 km there is 7–11 km² of flat ground in all, in separate patches linked by drivable slopes. B3 stands off the patch, so none of it is lost to a pad keep-out (DD-021).
+The base can start on its own 4.8 km² flat patch. Once slopes up to 15° can be graded, the ground around it joins into one connected area of at least 64 km², which continues beyond the area measured. B3 stands off the patch, so none of it is lost to a pad keep-out (DD-021).
 
-![Flat ground around the primary base: the connected 4.8 km² patch and other ground at 8° or less within 2, 3 and 5 km]({{ '/assets/sites/primary-expansion.jpg' | relative_url }})
+![Ground around the primary base: the connected 4.8 km² flat patch, other flat ground, and ground of 8–15° within 2, 3 and 5 km]({{ '/assets/sites/primary-expansion.jpg' | relative_url }})

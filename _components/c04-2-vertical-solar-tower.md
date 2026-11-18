@@ -76,6 +76,7 @@ sources:
   - {title: "Wikipedia: Electrical system of the International Space Station", url: "https://en.wikipedia.org/wiki/Electrical_system_of_the_International_Space_Station", date: "2026"}
   - {title: "Thomas et al., NASA GRC: A Modular AC to DC Interface Converter (UMIC) to Enable Lunar Surface Power Transmission", url: "https://ntrs.nasa.gov/citations/20230013309", date: "Sep 2023"}
   - {title: "Thomas, Granger, Csank & Gardner, NASA GRC: Establishing a Lunar Surface Power Grid", url: "https://ntrs.nasa.gov/api/citations/20220011587/downloads/APS4DS_Establishing_Lunar_Grid_V3.pdf", date: "Aug 2022"}
+  - {title: "NASA GSFC PGDA: Lunar Polar Illumination (average solar illumination maps; Mazarico et al. 2011)", url: "https://pgda.gsfc.nasa.gov/products/69", date: "accessed Nov 2026"}
 ---
 
 ## What it does
@@ -114,6 +115,33 @@ Astrobotic's VSAT team already proposed high-voltage AC transmission using NASA 
 - **Why several ridges.** Two points about 8 km apart on a Shackleton ridge are lit a combined ~94% of a lunar year<sup class="r">[11](#s11)</sup>. Shadows of up to about 100 hours remain<sup class="r">[12](#s12)</sup>, so fission and storage still carry the night.
 - **The 3 km conflict (DD-013), resolved by extended runs (DD-014).** Those two points cannot both be within 3 km of cable run of one PMC: even with the PMC exactly between them, each would be about 4 km away in a straight line (this plan's arithmetic). With extended runs of up to 10 km, both can be reached (plan design, DD-014). At least one point must be within 10 km of cable run, and each run must be 10 km or less. Each extended run loses about 10–15% (this plan's arithmetic and ESTIMATE) and needs a 1 kHz stability analysis. Site selection (M00) still picks the base point and the routes (open).
 
+## At the primary base (DD-024)
+
+Tower spots at the primary base on de Gerlache's north rim (88.4365°S, 62.46°W). Sunlight is from NASA GSFC's average illumination map<sup class="r">[18](#s18)</sup>; combined figures are Open Moon's 18.6-year shadow model (ESTIMATE).
+
+| Tower | Where | Sunlit alone | Cable to the base |
+|---|---|---|---|
+| B1 | beside mine tower M1, 88.4657°S, 67.87°W | 75.1% | 4.5 km |
+| B2 | beside mine tower M2, 88.3937°S, 68.69°W | 71.9% | 5.4 km |
+| B3 | near the base, 88.3693°S, 62.11°W | 46.8% | 2.1 km |
+| B4 (first expansion) | far rim, beside M3, 88.7108°S, 68.28°W | 53.8% | 9.4 km |
+
+| Base grid | Sunlit | Longest dark spell |
+|---|---|---|
+| First towers B1, B2, B3 | 77.4% | 14.0 days |
+| With B4 | 84.6% | 6.0 days |
+
+The dark spells depend on the lunar season (typical longest spell in the lunar day around each event):
+
+| Season | First towers: dark spell | With B4: dark spell |
+|---|---|---|
+| Summer solstice | 1.6 days | none |
+| Equinoxes | 4.4–4.5 days | 2.5–2.8 days |
+| Winter solstice | 12 days (up to 14) | 5.8 days (up to 6) |
+| Whole year | about 20 spells of a day or more | about 15 spells of a day or more |
+
+B1, B2 and B3 are on the same stretch of rim and go dark together; B3 is lit only about 2 hours a year while B1 and B2 are dark. B4 on the far rim is lit when they are dark, which is why it shortens the winter spells.
+
 ## Testing and qualification
 
 1. **Ground prototypes.** Honeybee Robotics and Astrobotic tested their prototypes in JSC's Chamber A in summer 2024; the chamber reaches 20 K<sup class="r">[2](#s2)</sup>. Astrobotic's tower was tested for stability, gimbal action and sun tracking on regolith simulant in NASA Glenn's SLOPE facility<sup class="r">[9](#s9)</sup>.
@@ -125,7 +153,7 @@ Astrobotic's VSAT team already proposed high-voltage AC transmission using NASA 
 ## Open questions
 
 - What is the real flight mass of a 10 kW tower?
-- Which ridge points give the least overlap in shadow time for the actual landing site, using points within 3 km of cable run of the PMC where possible and within 10 km at most (DD-013, DD-014)?
+- Where should towers after B4 go to shorten the winter dark spells further?
 - What DC voltage does a VSAT array deliver to its regulator and inverter? It is not published.
 - How many towers does the Phase 1 load budget call for, and on which ridge points?
 - How fast do cells degrade from dust, radiation and thermal cycling over 10 years at the pole?

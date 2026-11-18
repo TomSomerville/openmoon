@@ -14,6 +14,9 @@
 - `_data/decisions.yml` is an internal record only. There is no decisions page and no design-change boxes on pages (owner's request); do not add them back.
 - Build the site (`jekyll build`) and check the affected pages before committing.
 
+## Data
+- Save every file downloaded or computed to make content in `data/` (see `data/README.md`), so it never has to be downloaded again. Use `python3 -I analysis/data_tools.py pack WORKDIR` after new downloads, and `restore WORKDIR` at the start of a new session. Keep each file under 100 MB.
+
 ## Publishing
 - GitHub Pages publishes the site from `main`. The owner wants every change live as soon as it is made.
 - After every commit, push it to `main` (fast-forward) as well as to the working branch, so the site updates straight away. No pull request step.

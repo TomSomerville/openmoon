@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/mission/lro/v1/PDS4_LRO_1H00_1020.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/proc/v1/PDS4_PROC_1H00_1210.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1" 
+    xmlns:lro="http://pds.nasa.gov/pds4/mission/lro/v1" 
+    xmlns:proc="http://pds.nasa.gov/pds4/proc/v1" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1  https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.xsd                      
+    http://pds.nasa.gov/pds4/mission/lro/v1  https://pds.nasa.gov/pds4/mission/lro/v1/PDS4_LRO_1H00_1020.xsd                      
+    http://pds.nasa.gov/pds4/proc/v1  https://pds.nasa.gov/pds4/proc/v1/PDS4_PROC_1H00_1210.xsd">
+  <Identification_Area>
+    <logical_identifier>urn:nasa:pds:lro_lend:data_science_averaged:lend_rdr_alds_20111211</logical_identifier>
+    <version_id>1.0</version_id>
+    <title>LRO LEND averaged science product: lend_rdr_alds_20111211</title>
+    <information_model_version>1.17.0.0</information_model_version>
+    <product_class>Product_Observational</product_class>
+    <Modification_History>
+      <Modification_Detail>
+        <modification_date>2023-06-15</modification_date>
+        <version_id>1.0</version_id>
+        <description>Migrated to PDS4</description>
+      </Modification_Detail>
+    </Modification_History>
+  </Identification_Area>
+  <Observation_Area>
+    <Time_Coordinates>
+      <start_date_time>2011-12-11T00:00:00Z</start_date_time>
+      <stop_date_time>2016-09-14T00:00:00Z</stop_date_time>
+    </Time_Coordinates>
+    <Investigation_Area>
+      <name>Lunar Reconnaissance Orbiter</name>
+      <type>Mission</type>
+      <Internal_Reference>
+        <lid_reference>urn:nasa:pds:context:investigation:mission.lunar_reconnaissance_orbiter</lid_reference>
+        <reference_type>data_to_investigation</reference_type>
+      </Internal_Reference>
+    </Investigation_Area>
+    <Observing_System>
+      <name>LEND</name>
+      <Observing_System_Component>
+        <name>Lunar Reconnaissance Orbiter</name>
+        <type>Host</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.lro</lid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+      <Observing_System_Component>
+        <name>Lunar Exploration Neutron Detector for LRO</name>
+        <type>Instrument</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument:lro.lend</lid_reference>
+          <reference_type>is_instrument</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Target_Identification>
+      <name>Moon</name>
+      <type>Satellite</type>
+      <Internal_Reference>
+        <lid_reference>urn:nasa:pds:context:target:satellite.earth.moon</lid_reference>
+        <reference_type>data_to_target</reference_type>
+      </Internal_Reference>
+    </Target_Identification>
+    <Mission_Area>
+      <lro:LRO_Parameters>
+          <lro:product_type>LEND_RDR_ALD</lro:product_type>
+          <lro:product_version_id>1.0</lro:product_version_id>
+          <lro:mission_phase_name>SCIENCE MISSION</lro:mission_phase_name>
+      </lro:LRO_Parameters>
+    </Mission_Area>
+    <Discipline_Area>
+      <proc:Processing_Information>
+        <Local_Internal_Reference>
+          <local_identifier_reference>ald_data_table</local_identifier_reference>
+          <local_reference_type>processing_information_to_data_object</local_reference_type>
+        </Local_Internal_Reference>
+        <proc:Process>
+          <proc:Software>
+            <proc:Software_Program>
+              <proc:name>GEN_LEND_RDR</proc:name>
+              <proc:program_version>1.0.0</proc:program_version>
+            </proc:Software_Program>
+          </proc:Software>
+        </proc:Process>
+      </proc:Processing_Information>
+    </Discipline_Area>
+  </Observation_Area>
+  <File_Area_Observational>
+    <File>
+      <file_name>lend_rdr_alds_20111211.dat</file_name>
+      <local_identifier>ald_data_table</local_identifier>
+      <creation_date_time>2017-02-21T14:54:26</creation_date_time>
+    </File>
+    <Table_Binary>
+      <offset unit="byte">0</offset>
+      <records>14400</records>
+      <description>The ALD South Polar product data has been averaged spatially over a 0.5 degree by 0.5 degree grid below -80 degrees. The ALD South Polar product data is presented in a table 
+      corresponding to the 0.5 degree by 0.5 degree grid. There are 20 latitude bands and 720 longitude bands below -80, thus 14400 grid cells. Each cell corresponds to one row in the table. The 
+      first 720 rows in the table are the data for the 0.5 degree latitude band centered at -89.75 degrees south latitude, the second 720 rows are the data for the band centered at -89.25 degrees 
+      south latitude, and so on. Within each band, longitude increases eastward from the cell centered at 0.25 degrees east longitude to the cell centered at 359.75 degrees east longitude. Averaged 
+      LEND Data products are composed of averaged normalized Counting rates and the associated timing, spatial and engineering information. The ALDs consists of the cumulative background subtracted 
+      and normalized counts of neutrons at the nine LEND detectors averaged over the above defined.</description>
+      <Record_Binary>
+        <fields>20</fields>
+        <groups>3</groups>
+        <record_length unit="byte">310</record_length>
+        <Field_Binary>
+          <name>START_UTC_TIME</name>
+          <field_number>1</field_number>
+          <field_location unit="byte">1</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">23</field_length>
+          <description>UTC time at the start of the averaged frames,
+                stored as yyyy-mm-ddThh:mm:ss.sss.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>STOP_UTC_TIME</name>
+          <field_number>2</field_number>
+          <field_location unit="byte">24</field_location>
+          <data_type>ASCII_String</data_type>
+          <field_length unit="byte">23</field_length>
+          <description>UTC time at the end of the averaged frames,
+                stored as yyyy-mm-ddThh:mm:ss.sss.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>LUNARCENTRIC_LATITUDE</name>
+          <field_number>3</field_number>
+          <field_location unit="byte">47</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <unit>degree</unit>
+          <description>Latitude in LUNAR fixed coordinates at the
+                center of the given map element.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>LUNARCENTIC_EAST_LONGITUDE</name>
+          <field_number>4</field_number>
+          <field_location unit="byte">51</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <unit>degree</unit>
+          <description>Longitude in Lunar fixed coordinates at the
+                center of the given map element.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>SPARE</name>
+          <field_number>5</field_number>
+          <field_location unit="byte">55</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <description>Spare field.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>STN1_EXPOSURE</name>
+          <field_number>6</field_number>
+          <field_location unit="byte">59</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <unit>s</unit>
+          <description>Exposure time for given map element for given detector, sec.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>STN1_RATE</name>
+          <field_number>7</field_number>
+          <field_location unit="byte">63</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <description>The relative count rate which
+                is accumulated in given map element by STN1 detector.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>STN1_ERR</name>
+          <field_number>8</field_number>
+          <field_location unit="byte">67</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <description>The statistical error of relative count rate in STN1 detector.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>SETN_EXPOSURE</name>
+          <field_number>9</field_number>
+          <field_location unit="byte">71</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <unit>s</unit>
+          <description>Exposure time for given map element for given detector, sec.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>SETN_RATE</name>
+          <field_number>10</field_number>
+          <field_location unit="byte">75</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <description>The relative count rate which
+                is accumulated in given map element by SETN detector.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>SETN_ERR</name>
+          <field_number>11</field_number>
+          <field_location unit="byte">79</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <description>The statistical error of relative count rate in SETN detector.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>STN2_EXPOSURE</name>
+          <field_number>12</field_number>
+          <field_location unit="byte">83</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <unit>s</unit>
+          <description>Exposure time for given map element for given detector, sec.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>STN2_RATE</name>
+          <field_number>13</field_number>
+          <field_location unit="byte">87</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <description>The relative count rate which
+                is accumulated in given map element by STN2 detector.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>STN2_ERR</name>
+          <field_number>14</field_number>
+          <field_location unit="byte">91</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <description>The statistical error of relative count rate in STN2 detector.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>STN3_EXPOSURE</name>
+          <field_number>15</field_number>
+          <field_location unit="byte">95</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <unit>s</unit>
+          <description>Exposure time for given map element for given detector, sec.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>STN3_RATE</name>
+          <field_number>16</field_number>
+          <field_location unit="byte">99</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <description>The relative count rate which
+                is accumulated in given map element by STN3 detector.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>STN3_ERR</name>
+          <field_number>17</field_number>
+          <field_location unit="byte">103</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <description>The statistical error of relative count rate in STN3 detector.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>CSETN_EXPOSURE</name>
+          <field_number>18</field_number>
+          <field_location unit="byte">107</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <unit>s</unit>
+          <description>Exposure time for given map element for given detector, sec.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>CSETN_RATE</name>
+          <field_number>19</field_number>
+          <field_location unit="byte">111</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <description>The relative count rate which
+                is accumulated in given map element by CSETN1-4 detector.</description>
+        </Field_Binary>
+        <Field_Binary>
+          <name>CSETN_ERR</name>
+          <field_number>20</field_number>
+          <field_location unit="byte">115</field_location>
+          <data_type>IEEE754MSBSingle</data_type>
+          <field_length unit="byte">4</field_length>
+          <description>The statistical error of relative count rate in CSETN1-4 detector.</description>
+        </Field_Binary>
+        <Group_Field_Binary>
+          <group_number>1</group_number>
+          <repetitions>16</repetitions>
+          <fields>1</fields>
+          <groups>0</groups>
+          <description>Exposure time for given map element for given channel.</description>
+          <group_location unit="byte">119</group_location>
+          <group_length unit="byte">64</group_length>
+          <Field_Binary>
+            <name>SHEN_EXPOSURE</name>
+            <field_number>1</field_number>
+            <field_location unit="byte">1</field_location>
+            <data_type>IEEE754MSBSingle</data_type>
+            <field_length unit="byte">4</field_length>
+          </Field_Binary>
+        </Group_Field_Binary>
+        <Group_Field_Binary>
+          <group_number>2</group_number>
+          <repetitions>16</repetitions>
+          <fields>1</fields>
+          <groups>0</groups>
+          <description>The relative count rate which 
+                is observed in given map element by neutron channel of stilbene 
+                detector. First element is sum of count rate in channels 
+                0 through 5.
+                Second element is sum of count rate in channel 6
+                Third element is sum of count rate in channel 7
+                Fourth element is sum of count rate in channel 8
+                Fifth element is sum of count rate in channel 9
+                Sixth element is sum of count rate in channel 10
+                Seventh element is sum of count rate in channel 11
+                Eighth element is sum of count rate in channel 12
+                Ninth element is sum of count rate in channel 13
+                Tenth element is sum of count rate in channel 14
+                Eleventh element is sum of count rate in channel 15
+                Twelfth element is sum of count rate in channels 6 , 7 , 8
+                Thirteenth element is sum of count rate in channels 9, 10, 11, 12
+                Fourteenth element is sum of count rate in channels 13, 14
+                Fifteenth element is sum of count rate in channels 6 through 14
+                Sixteenth element is sum of count rate in channels 0 through 15.
+              </description>
+          <group_location unit="byte">183</group_location>
+          <group_length unit="byte">64</group_length>
+          <Field_Binary>
+            <name>SHEN_RATE</name>
+            <field_number>1</field_number>
+            <field_location unit="byte">1</field_location>
+            <data_type>IEEE754MSBSingle</data_type>
+            <field_length unit="byte">4</field_length>
+          </Field_Binary>
+        </Group_Field_Binary>
+        <Group_Field_Binary>
+          <group_number>3</group_number>
+          <repetitions>16</repetitions>
+          <fields>1</fields>
+          <groups>0</groups>
+          <description>The statistical error of relative count rate in 
+                neutron channel of stilbene detector. First element is the 
+                error in channels 0 through 5.
+                Second element is the error in channel 6
+                Third element is the error in channel 7
+                Fourth element is the error in channel 8
+                Fifth element is the error in channel 9
+                Sixth element is the error in channel 10
+                Seventh element is the error in channel 11
+                Eighth element is the error in channel 12
+                Ninth element is the error in channel 13
+                Tenth element is the error in channel 14
+                Eleventh element is the error in channel 15
+                Twelfth element is the error in channels 6 , 7 , 8
+                Thirteenth element is the error in channels 9, 10, 11, 12
+                Fourteenth element is the error in channels 13, 14
+                Fifteenth element is the error in channels 6 through 14
+                Sixteenth element is the error in channels 0 through 15.
+              </description>
+          <group_location unit="byte">247</group_location>
+          <group_length unit="byte">64</group_length>
+          <Field_Binary>
+            <name>SHEN_ERR</name>
+            <field_location unit="byte">1</field_location>
+            <data_type>IEEE754MSBSingle</data_type>
+            <field_length unit="byte">4</field_length>
+          </Field_Binary>
+        </Group_Field_Binary>
+      </Record_Binary>
+    </Table_Binary>
+  </File_Area_Observational>
+  <File_Area_Observational_Supplemental>
+    <File>
+      <file_name>lend_rdr_alds_20111211.lbl</file_name>
+    </File>
+    <Stream_Text>
+      <offset unit="byte">0</offset>
+      <parsing_standard_id>PDS3</parsing_standard_id>
+      <description>PDS3 label</description>
+      <record_delimiter>Carriage-Return Line-Feed</record_delimiter>
+    </Stream_Text>
+  </File_Area_Observational_Supplemental>
+</Product_Observational>
