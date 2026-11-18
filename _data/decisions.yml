@@ -780,3 +780,16 @@
     - "The rover's TRL drops from 6 to 4 until a full-size chamber is built and tested in thermal vacuum with icy simulant."
     - "More moving parts (arm, rasp, seal, dump door, valves) that dust or ice can jam."
     - "Water is lost between the ground and the sealed lid; losses must be calibrated on the ground or the readings will be low (open)."
+
+- id: DD-026
+  date: "2026-11-18"
+  title: "Milestones cut back to M00 Site selection; Phase 0 to hold three milestones"
+  status: "Adopted"
+  affects: [M01, M02, M03, M04, M05, M06, M07, M08, M09, M10, M11, M12, M13, home page, roadmap page, costs page]
+  was: "Fourteen milestones M00–M13 across Phases 0–4; M01–M05 had been archived for review one at a time; the roadmap page showed a milestones-done count."
+  now: "Only M00 Site selection remains. Milestones M01–M13 are deleted (they remain in the git history). Phase 0 is to hold three milestones: site selection, site prospecting and site preparation; the last two will be written fresh. Components and technology cards stay. The milestones-done count is removed, because this is a hypothetical proposal, not a mission plan."
+  why: "The user's decision, to rebuild the plan milestone by milestone starting with Phase 0."
+  timeline: []
+  tradeoffs:
+    - "Plan cost totals show as not yet estimated until new milestones carry cost items."
+    - "Components and roadmap entries still name the deleted milestones (M01–M13) as text until those milestones are rewritten."

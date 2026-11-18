@@ -53,12 +53,12 @@ Axis: Year 0 (first lander launches) to Year 23.
       <div class="pc-lab">
         <span class="n" style="color:{{ col }}">Phase {{ p.n }}</span>
         <span class="t">{{ p.name }}</span>
-        <span class="y">{{ ps }}–{{ pe }} · {{ pm | size }} milestone{% if pm.size != 1 %}s{% endif %}</span>
+        <span class="y">{{ p.years }} · {% if pm.size > 0 %}{{ pm | size }} milestone{% if pm.size != 1 %}s{% endif %}{% else %}milestones to come{% endif %}</span>
       </div>
       <div class="pc-rows pc-track">
         {% for y in (y0..y1) %}{% assign m4 = y | modulo: 4 %}{% if m4 == 0 %}<i class="gl" style="left:{{ y | minus: y0 | times: 100.0 | divided_by: span }}%"></i>{% endif %}{% endfor %}
         {% if forloop.first %}<i class="now" style="left:0%"><b>YEAR 0</b></i>{% endif %}
-        <i class="pc-band" style="left:{{ ps | minus: y0 | times: 100.0 | divided_by: span }}%;width:{{ pe | minus: ps | times: 100.0 | divided_by: span }}%;background:{{ col }}"></i>
+        {% if pm.size > 0 %}<i class="pc-band" style="left:{{ ps | minus: y0 | times: 100.0 | divided_by: span }}%;width:{{ pe | minus: ps | times: 100.0 | divided_by: span }}%;background:{{ col }}"></i>{% endif %}
         {% for m in pm %}{% assign a = m.window | remove: "Before Year " | remove: "Years " | remove: "Year " | split: "–" | first | plus: 0 %}{% assign b = m.window | remove: "Before Year " | remove: "Years " | remove: "Year " | split: "–" | last | plus: 0 %}{% assign w = b | minus: a %}{% if w < 1 %}{% assign w = 1 %}{% endif %}
         <a class="pc-bar" href="{{ m.url | relative_url }}" title="{{ m.id_code }} {{ m.title }} ({{ m.window }})" style="margin-left:{{ a | minus: y0 | times: 100.0 | divided_by: span }}%;width:{{ w | times: 100.0 | divided_by: span }}%;background:{{ col }}"><span class="id">{{ m.id_code }}</span><span class="full">{{ m.title }}</span></a>
         {% endfor %}

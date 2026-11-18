@@ -33,7 +33,7 @@ The best evidence so far is at the Mare Tranquillitatis pit. In 2024, Carrer and
 
 ## Why Open Moon uses it
 
-Lava tubes appear only in [M13, the self-sustaining colony](/plan/m13-colony/), as a "future growth" option beyond 2050 for large, shielded volumes. No earlier milestone depends on them.
+Lava tubes appear only in M13, the self-sustaining colony, as a "future growth" option beyond 2050 for large, shielded volumes. No earlier milestone depends on them.
 
 The appeal is protection for free. The rock roof shields against cosmic and solar radiation and small meteorite impacts, and temperatures inside stay stable ([ESA](https://blogs.esa.int/caves/2024/12/05/a-shelter-on-the-moon/)). Shaded parts of the Mare Tranquillitatis pit stay near 17 C (63 F), while the surface swings from about 127 C by day to about -173 C at night ([NASA](https://www.nasa.gov/solar-system/nasas-lro-finds-lunar-pits-harbor-comfortable-temperatures/)). A colony that could use such caves would need far less built shielding per person.
 

@@ -14,10 +14,10 @@ doc_id: OM-000
   <a class="btn" href="{{ '/plan/' | relative_url }}">Open the plan</a><a class="btn ghost" href="{{ '/principles/' | relative_url }}">Ground rules</a>
 </section>
 <div class="kpis">
-  <div class="kpi"><small>Milestones</small><b>{{ ms | size }}</b><span>from site selection to self-sufficiency</span></div>
+  <div class="kpi"><small>Milestones</small><b>{{ ms | size }}</b><span>more to be added</span></div>
   <div class="kpi"><small>Components</small><b>{{ site.components | size }}</b><span>with sub-component breakdowns</span></div>
-  <div class="kpi"><small>Plan cost</small><b>${{ lo | round: 0 }}–{{ hi | round: 0 }}B</b><span>sum of milestone estimates</span></div>
-  <div class="kpi"><small>Timeline</small><b>Years 0–{{ ms.last.window | remove: "Before Year " | remove: "Years " | remove: "Year " | split: "–" | last }}</b><span>planned windows</span></div>
+  <div class="kpi"><small>Plan cost</small><b>{% if hi > 0 %}${{ lo | round: 0 }}–{{ hi | round: 0 }}B{% else %}–{% endif %}</b><span>sum of milestone estimates</span></div>
+  <div class="kpi"><small>Timeline</small><b>{{ site.data.phases | size }} phases</b><span>{{ site.data.phases.first.years | split: "–" | first }}–{{ site.data.phases.last.years | split: "–" | last }}</span></div>
 </div>
 <div class="draw" style="border-right:0;padding-bottom:0">
 {% include phase-chart.html %}
@@ -25,6 +25,6 @@ doc_id: OM-000
 <div class="draw" style="border-right:0">
   <div class="sec-h">Milestones</div>
   <div class="tl">
-  {% for m in ms %}<a href="{{ m.url | relative_url }}"><span class="ph">PH {{ m.phase }}</span><span class="id">{{ m.id_code }}</span><h3>{{ m.title }}</h3><span class="w">{{ m.window }}{% if m.cost %} · ${{ m.cost.low }}–{{ m.cost.high }}B{% else %} · done{% endif %}</span></a>{% endfor %}
+  {% for m in ms %}<a href="{{ m.url | relative_url }}"><span class="ph">PH {{ m.phase }}</span><span class="id">{{ m.id_code }}</span><h3>{{ m.title }}</h3><span class="w">{{ m.window }}{% if m.cost %} · ${{ m.cost.low }}–{{ m.cost.high }}B{% endif %}</span></a>{% endfor %}
   </div>
 </div>
