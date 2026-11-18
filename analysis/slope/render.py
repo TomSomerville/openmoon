@@ -8,6 +8,14 @@ def cmap(s):
     s=np.clip(s,0,60); out=np.zeros(s.shape+(3,))
     for c in range(3): out[...,c]=np.interp(s,stops,cols[:,c])
     return out
+CLASSES=[(0,8,(0,170,0),'≤8°'),(8,15,(255,220,0),'8–15°'),(15,20,(255,140,0),'15–20°'),(20,91,(220,0,0),'≥20°')]
+def cmap_classes(s):
+    out=np.zeros(s.shape+(3,))
+    for lo,hi,c,_ in CLASSES:
+        m=(s>lo if lo>0 else s>=lo)&(s<=hi) if hi<91 else (s>lo)
+        if lo==0: m=s<=hi
+        out[m]=c
+    return out
 def lonlat2m(lat,lon):
     R=1737400.; colat=math.radians(90+lat); rho=2*R*math.tan(colat/2); L=math.radians(lon)
     return rho*math.sin(L), rho*math.cos(L)
@@ -16,7 +24,9 @@ def make(name,bounds,res,out,alpha=0.6,threshold_mode=False,annot=(),title=''):
     h=read('LDEM_83S_10MPP_ADJ_HILL',bounds,res)
     hv=np.nan_to_num(h,nan=0); hv=(hv-np.percentile(hv,1))/(np.percentile(hv,99)-np.percentile(hv,1)+1e-9); hv=np.clip(hv,0,1)
     base=np.stack([hv*255]*3,-1)
-    if threshold_mode:
+    if threshold_mode=='classes':
+        col=cmap_classes(s)
+    elif threshold_mode:
         col=np.where((s<=15)[...,None],np.array([0,200,0.]),np.array([220,0,0.]))
     else: col=cmap(s)
     valid=~np.isnan(s)
@@ -40,7 +50,12 @@ def make(name,bounds,res,out,alpha=0.6,threshold_mode=False,annot=(),title=''):
     # legend
     lw,lh=int(420*k),int(18*k); lx,ly=int(20*k),H-int(80*k)
     d.rectangle((lx-10*k,ly-34*k,lx+lw+10*k,H-8*k),fill=(0,0,0))
-    if threshold_mode:
+    if threshold_mode=='classes':
+        n=len(CLASSES)
+        for i,(lo,hi,c,lab) in enumerate(CLASSES):
+            x0=lx+lw*i/n; d.rectangle((x0,ly,lx+lw*(i+1)/n,ly+lh),fill=c); d.text((x0+lw/n/2,ly+lh+6*k),lab,font=Fs,fill='white',anchor='mt')
+        d.text((lx,ly-6*k),'Slope class (Open Moon landing rules)',font=Fs,fill='white',anchor='ld')
+    elif threshold_mode:
         d.rectangle((lx,ly,lx+lw//2,ly+lh),fill=(0,200,0)); d.rectangle((lx+lw//2,ly,lx+lw,ly+lh),fill=(220,0,0))
         d.text((lx,ly-6*k),'Slope ≤15° (landing-suitable) | >15°',font=Fs,fill='white',anchor='ld')
     else:
@@ -58,4 +73,4 @@ def make(name,bounds,res,out,alpha=0.6,threshold_mode=False,annot=(),title=''):
     if title:
         d.rectangle((0,0,W,int(30*k)),fill=(0,0,0)); d.text((10*k,6*k),title,font=Fs,fill='white')
     im.save(out,quality=90)
-    v=s[valid]; return dict(px=valid.size,valid=int(valid.sum()),le15=float((v<=15).mean()*100),p50=float(np.median(v)),p95=float(np.percentile(v,95)),max=float(v.max()))
+    v=s[valid]; return dict(le8=float((v<=8).mean()*100),b8_15=float(((v>8)&(v<=15)).mean()*100),b15_20=float(((v>15)&(v<=20)).mean()*100),gt20=float((v>20).mean()*100),px=valid.size,valid=int(valid.sum()),le15=float((v<=15).mean()*100),p50=float(np.median(v)),p95=float(np.percentile(v,95)),max=float(v.max()))

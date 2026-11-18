@@ -117,24 +117,29 @@ Connecting Ridge and Connecting Ridge Extension were on NASA's original 2022 lis
 
 ## Terrain slope in the focus area
 
-Open Moon treats **slopes of 15° or less as suitable for landing**. Slope comes from NASA Goddard's LOLA slope map (LDSM) at 10 m per pixel<sup class="r">[18](#s18)</sup>. Colours run from green at 0° through yellow at 10° and orange at 25° to red at 60° and steeper; the 15° landing limit falls between yellow and orange and is marked on the legend, laid over NASA's LOLA hillshade. The boxes are placed using the alignment of the NASA map above, so their edges are approximate.
+Slope comes from NASA Goddard's LOLA slope map (LDSM) at 10 m per pixel<sup class="r">[18](#s18)</sup>, laid over NASA's LOLA hillshade. Open Moon colours it in four classes, set from what landers can actually handle (see [Lander candidates]({{ '/landers/' | relative_url }})):
 
-| Area | Share at ≤15° | Median slope | 95th percentile | Steepest | Map resolution |
-|---|---|---|---|---|---|
-| Focus area (red box, ~180 × 130 km) | 78% | 9.2° | 22.5° | 42.4° | 40 m/px |
-| de Gerlache Rim 2 (NASA box as drawn, ~20 × 20 km) | 64% | 12.9° | 22.6° | 41.8° | 10 m/px |
+| Colour | Slope | Why this break |
+|---|---|---|
+| Green | ≤8° | NASA's tilt limit for crewed landers after touchdown is 8° |
+| Yellow | 8–15° | Published robotic lander limits stop at 10° (Nova-C design, Griffin "easily tolerate"); landing here needs care |
+| Orange | 15–20° | Above every published lander limit |
+| Red | ≥20° | Crater walls and steep scarps |
 
-*Computed by Open Moon from the LDSM data<sup class="r">[18](#s18)</sup>. The drawn Rim 2 box includes part of de Gerlache crater's inner wall, which is much of its steep ground.*
+The boxes are placed using the alignment of the NASA map above, so their edges are approximate.
 
-![Terrain slope across the Open Moon focus area, green flat to red steep]({{ '/assets/sites/focus-slope.jpg' | relative_url }})
+| Area | ≤8° | 8–15° | 15–20° | ≥20° | Median | Steepest | Resolution |
+|---|---|---|---|---|---|---|---|
+| Focus area (red box, ~180 × 130 km) | 43% | 35% | 14% | 8% | 9.2° | 42.4° | 40 m/px |
+| de Gerlache Rim 2 (NASA box as drawn, ~20 × 20 km) | 22% | 42% | 25% | 12% | 12.9° | 41.8° | 10 m/px |
 
-![Focus area split into slopes of 15° or less (green) and steeper (red)]({{ '/assets/sites/focus-slope-le15.jpg' | relative_url }})
+*Computed by Open Moon from the LDSM data<sup class="r">[18](#s18)</sup>. The drawn Rim 2 box includes part of de Gerlache crater's inner wall, which is much of its steep ground. At full 10 m resolution the steepest point on Shackleton's wall is 52.5°; the 40 m map averages such spots down.*
+
+![Slope classes across the Open Moon focus area: green ≤8°, yellow 8–15°, orange 15–20°, red ≥20°]({{ '/assets/sites/focus-slope-classes.jpg' | relative_url }})
 
 ### de Gerlache Rim 2 close-up (10 m/px)
 
-![Terrain slope across NASA's de Gerlache Rim 2 candidate region]({{ '/assets/sites/de-gerlache-rim2-slope.jpg' | relative_url }})
-
-![de Gerlache Rim 2 split into slopes of 15° or less (green) and steeper (red)]({{ '/assets/sites/de-gerlache-rim2-slope-le15.jpg' | relative_url }})
+![Slope classes across NASA's de Gerlache Rim 2 candidate region]({{ '/assets/sites/de-gerlache-rim2-slope-classes.jpg' | relative_url }})
 
 **Limits of this analysis.** At 10 m per pixel, boulders and small craters that can tip a lander are not resolved; NASA's own criteria also weigh lighting and Earth visibility. Final pads need LROC NAC hazard maps at about 1 m per pixel (exit criteria above).
 
