@@ -21,8 +21,10 @@ S, Z = supp_grid(B, 500.)
 up = lambda a: np.array(Image.fromarray(a.astype('float32'), mode='F').resize((W, H), Image.BILINEAR))
 Su, Zu = up(S), up(Z)
 hi = (Su >= THR) & (Zu >= ZMIN); mod = (Su >= 0.98) & (Zu >= ZMIN) & ~hi
-rgb = np.where(hi[..., None], rgb * 0.5 + np.array([150, 40, 200]) * 0.5, rgb)
-rgb = np.where(mod[..., None], rgb * 0.75 + np.array([170, 110, 220]) * 0.25, rgb)
+tint = np.clip((Su - 0.75) / 0.35, 0, 1)[..., None] * 0.30 * (Zu >= 2)[..., None]
+rgb = rgb * (1 - tint) + np.array([170, 60, 230]) * tint
+rgb = np.where(hi[..., None], rgb * 0.35 + np.array([150, 40, 200]) * 0.65, rgb)
+rgb = np.where(mod[..., None], rgb * 0.45 + np.array([170, 70, 230]) * 0.55, rgb)
 m2p = lambda x, y: ((x - B[0]) / RES, (B[3] - y) / RES)
 # ice: de Gerlache floor (candidate) filled, other PSRs outlined
 P = pickle.load(open(PSR, 'rb'))
@@ -36,10 +38,40 @@ for gid, area, name, b, rings in P:
 cand = np.array(cand) > 0; oth = np.array(oth) > 0
 rgb = np.where(cand[..., None], rgb * 0.3 + np.array([20, 120, 255]) * 0.7, rgb)
 im = Image.fromarray(rgb.clip(0, 255).astype('uint8'))
+# hydrogen contours (LEND neutron dip) across the frame
+def edges(mask):
+    e_ = mask & ~(np.roll(mask, 1, 0) & np.roll(mask, -1, 0) & np.roll(mask, 1, 1) & np.roll(mask, -1, 1))
+    for _ in range(2): e_ = e_ | np.roll(e_, 1, 0) | np.roll(e_, 1, 1) | np.roll(e_, -1, 0) | np.roll(e_, -1, 1)
+    return e_
+a = np.array(im)
+for lv in (0.6, 0.7, 0.8, 0.9):
+    a[edges(Su >= lv)] = (200, 60, 255)
+a[edges(mod | hi)] = (255, 255, 255)
+im = Image.fromarray(a)
+CONT = [(lv, edges(Su >= lv)) for lv in (0.6, 0.7, 0.8, 0.9)]
 e = oth & ~(np.roll(oth, 1, 0) & np.roll(oth, -1, 0) & np.roll(oth, 1, 1) & np.roll(oth, -1, 1))
 e = e | np.roll(e, 1, 0) | np.roll(e, 1, 1)
 a = np.array(im); a[e] = (120, 200, 255); im = Image.fromarray(a); dr = ImageDraw.Draw(im)
 k = W / 1400; F = font(24 * k); Fs = font(17 * k)
+for lv, em in CONT:  # label each contour once, at its point nearest the frame centre
+    ys_, xs_ = np.nonzero(em)
+    if len(xs_) == 0: continue
+    i_ = np.argmin((xs_ - W * 0.6) ** 2 + (ys_ - H * 0.35) ** 2)
+    dr.text((xs_[i_], ys_[i_]), '%.1f%%' % lv, font=font(18 * k), fill=(230, 160, 255), anchor='mm', stroke_width=3, stroke_fill=(0, 0, 0))
+# arrow to the nearest high-hydrogen zone
+FS = np.load('focus_S.npy'); FZ = np.load('focus_Z.npy'); from render import px2m as _p
+fx0_, fy1_ = _p(292, 518); jj_, ii_ = np.nonzero((FS >= THR) & (FZ >= ZMIN))
+HXs = fx0_ + (ii_ + 0.5) * 1000; HYs = fy1_ - (jj_ + 0.5) * 1000
+dd = np.hypot(HXs - base[0], HYs - base[1]); n_ = dd.argmin(); tx, ty = HXs[n_], HYs[n_]
+ux, uy = (tx - base[0]) / dd[n_], (ty - base[1]) / dd[n_]
+# point where the ray from the base leaves the frame
+tmax = min([t for t in ((B[2] - base[0]) / ux if ux > 0 else (B[0] - base[0]) / ux if ux < 0 else 1e9,
+                        (B[3] - base[1]) / uy if uy > 0 else (B[1] - base[1]) / uy if uy < 0 else 1e9) if t > 0])
+ex, ey = m2p(base[0] + ux * (tmax - 1500), base[1] + uy * (tmax - 1500)); sx_, sy_ = m2p(base[0] + ux * (tmax - 6000), base[1] + uy * (tmax - 6000))
+dr.line([(sx_, sy_), (ex, ey)], fill=(220, 90, 255), width=int(6 * k))
+ang = math.atan2(ey - sy_, ex - sx_); hl = 22 * k
+dr.polygon([(ex + 6 * k * math.cos(ang), ey + 6 * k * math.sin(ang)), (ex - hl * math.cos(ang - 0.45), ey - hl * math.sin(ang - 0.45)), (ex - hl * math.cos(ang + 0.45), ey - hl * math.sin(ang + 0.45))], fill=(220, 90, 255))
+dr.text((sx_ - 10 * k, sy_ + 18 * k), 'High hydrogen zone, %.0f km' % (dd[n_] / 1000), font=Fs, fill=(235, 170, 255), anchor='rm', stroke_width=3, stroke_fill=(0, 0, 0))
 # features
 x, y = m2p(*lonlat2m(-88.5, -87.1)); rr = 16200 / RES
 dr.arc((x - rr, y - rr, x + rr, y + rr), 0, 360, fill=(0, 230, 255), width=int(3 * k))
@@ -71,7 +103,7 @@ dr.text((bx + 26 * k, by), 'PRIMARY BASE  88.445°S, 63.44°W', font=F, fill=(25
 # legend
 rows = [((0, 170, 0), 'Slope ≤8° (landable)'), ((255, 220, 0), 'Slope 8–15°'), ((255, 140, 0), 'Slope 15–20°'), ((220, 0, 0), 'Slope ≥20°'),
         ((40, 130, 255), 'Ice candidate: de Gerlache shadowed floor'), ((120, 200, 255), 'Outline: other shadowed areas (no ice data)'),
-        ((150, 40, 200), 'High hydrogen (LEND, top 10%)'), ((185, 140, 225), 'Moderate hydrogen (top 25%)')]
+        ((150, 40, 200), 'High hydrogen (LEND, top 10%), off-map: arrow'), ((175, 80, 230), 'Moderate hydrogen (top 25%), white edge'), ((200, 60, 255), 'Purple tint and lines: LEND dip 0.6–0.9% (darker = more H)')]
 lx, ly = int(20 * k), int(48 * k)
 dr.rectangle((lx - 10 * k, ly - 10 * k, lx + 520 * k, ly + (len(rows) * 30 + 40) * k), fill=(0, 0, 0))
 dr.text((lx, ly + 12 * k), 'Primary base site (DD-015)', font=Fs, fill='white', anchor='lm'); yy = ly + 34 * k

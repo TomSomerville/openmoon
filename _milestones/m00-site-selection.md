@@ -412,7 +412,7 @@ The primary base and only what serves it: slope classes everywhere, the de Gerla
 
 - **The two nearest VSAT sites** are 3.7 km (75.1 % sunlit) and 4.7 km (71.9 %) from the base, on the crater rim, and are also the ice-mining VSATs below.
 - **The cables to the mine cross the crater wall,** which is mostly steeper than 20° (red). Laying them needs a route down the wall that the cable rover can drive (open).
-- **Hydrogen:** no high-hydrogen ground in this frame; only a little moderate hydrogen at the top-right corner. The nearest high-hydrogen zone is about 20 km away.
+- **Hydrogen:** purple lines and tint show the LEND neutron dip (0.6–0.9 %; more dip means more hydrogen). It rises from about 0.8 % at the base to 0.9 % along the crater rim and the cable route to the mine. Moderate hydrogen (white edge) reaches the top-right corner, and the arrow points to the nearest high-hydrogen zone, about 20 km from the base. LEND cells are about 15 km, so these are regional trends, not crater-level detail.
 
 ### Ice mining for the primary site (ESTIMATE)
 
