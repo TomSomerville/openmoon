@@ -19,6 +19,7 @@ links:
   - {title: "NASA Space Technology: Kilopower project page", url: "https://www.nasa.gov/directorates/spacetech/kilopower", kind: official, date: "Dec 2017"}
   - {title: "Gibson et al.: Development of NASA's Small Fission Power System for Science and Human Exploration (NTRS 20150011642)", url: "https://ntrs.nasa.gov/citations/20150011642", kind: paper, date: "Jun 2015"}
   - {title: "NASA TechPort: Kilopower Small Fission Technology project record", url: "https://techport.nasa.gov/projects/14405", kind: data, date: "2018"}
+  - {title: "NASA: Technology Readiness Level definitions", url: "https://www.nasa.gov/wp-content/uploads/2017/12/458490main_trl_definitions.pdf", kind: official, date: "2017"}
   - {title: "Wikipedia: Kilopower", url: "https://en.wikipedia.org/wiki/Kilopower", kind: wiki, date: "2026"}
   - {title: "Csank and Scott, NASA GRC: Power and Energy for the Lunar Surface", url: "https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf", kind: official, date: "Apr 2022"}
   - {title: "Wikipedia: Nuclear power in space (Fission Surface Power section)", url: "https://en.wikipedia.org/wiki/Nuclear_power_in_space", kind: wiki, date: "2026"}
@@ -71,6 +72,40 @@ KRUSTY was tested step by step, with electric heat first and nuclear heat last.
 | 20–21 Mar 2018 | 28-hour nuclear system test | Startup, full power, load changes, loss of an engine and loss of all cooling. Safety limit was fuel below 900 °C ([Poston 2020](https://ntrs.nasa.gov/citations/20205009351)) |
 
 **Results.** All three test objectives were met. The reactor reached 4 kWt or more at 800 °C, followed every load change, and produced code-benchmark data. NASA rated the reactor's nuclear and mechanical systems at **TRL 5** ([Gibson et al. 2018](https://ntrs.nasa.gov/citations/20180005435)). Fuel peaked at about 880 °C ([Poston et al. 2020](https://ntrs.nasa.gov/citations/20205009351)). The whole test cost less than $20 million ([Poston et al. 2020](https://ntrs.nasa.gov/citations/20205009351)).
+
+## Why it is rated TRL 5, and what TRL 6–9 would need
+
+KRUSTY worked very well as a reactor, yet NASA rated its nuclear and mechanical systems at **TRL 5** ([Gibson 2018](https://ntrs.nasa.gov/citations/20180005435)). The reason is that the Technology Readiness Level (TRL) scale measures how close the *whole system* is to flying, not how well one test went. KRUSTY proved the reactor, but it was never a complete, flight-like power system.
+
+| TRL | NASA hardware definition (simplified) | KRUSTY |
+|---|---|---|
+| **5** | A "medium fidelity" breadboard run in a simulated operational environment "with realistic support elements" | **Met.** Real nuclear heat, in a vacuum chamber |
+| **6** | A "high fidelity" prototype that "adequately addresses all critical scaling issues", run in a relevant environment "under critical environmental conditions" | **Not met.** Key flight parts were missing or replaced by test stand-ins |
+| **7** | A high-fidelity engineering unit run in "the actual operational environment and platform" (in space or on the Moon) | **Not met.** Never left the ground |
+| **8** | "The final product in its final configuration", qualified by test for its environment | **Not met** |
+| **9** | The final product "successfully operated in an actual mission" | **Not met** |
+
+Definitions: [NASA TRL definitions](https://www.nasa.gov/wp-content/uploads/2017/12/458490main_trl_definitions.pdf).
+
+### What it is missing for TRL 6
+
+- **Real engines.** Two undersized 80 W engines and six heat-only simulators stood in for eight flight-design 125 W engines ([Gibson 2018](https://ntrs.nasa.gov/citations/20180005435)). This is the biggest gap: the full 1 kWe system never ran on nuclear heat.
+- **Real control rod.** The flight boron carbide rod was never tested; the test moved the reflectors on a lab machine instead ([Poston 2020](https://ntrs.nasa.gov/citations/20205009351)).
+- **Real heat rejection.** Gas cooling in the chamber stood in for the flight radiator.
+- **Flight controllers and power electronics.** Lab units were used, not flight designs.
+- **Launch and landing loads.** No vibration or shock testing was done; the reports say launch and landing loads were only roughly considered ([Poston 2020](https://ntrs.nasa.gov/citations/20205009351)).
+- **Low-gravity heat pipes.** In Earth gravity the heat pipes partly worked as thermosiphons. They still need qualifying for low gravity ([Poston 2020](https://ntrs.nasa.gov/citations/20205009351)).
+- **Duration.** 28 hours against a 10-year design life. Long-term creep and diffusion between metals are untested ([Poston 2020](https://ntrs.nasa.gov/citations/20205009351)).
+
+**Path to TRL 6:** build a flight-like 1 kWe unit (eight real engines, flight rod, radiator, flight controllers), shake-test it, then run it on nuclear heat in thermal vacuum for a long period.
+
+### TRL 7, 8 and 9
+
+- **TRL 7:** run that unit in space or on the Moon. No KRUSTY-class flight is planned. The US is taking a different design to this step: SR-1 Freedom will fly a 20 kWe Brayton reactor in late 2028 ([NASA](https://www.nasa.gov/mission/space-reactor-1-freedom/)).
+- **TRL 8:** a final flight unit fully qualified by test. For a reactor this also means nuclear launch authorization under NSPM-20 ([NSPM-20](https://www.govinfo.gov/content/pkg/DCPD-201900558/html/DCPD-201900558.htm)).
+- **TRL 9:** that unit operating successfully on a real mission.
+
+**Why it can feel higher than 5.** The reactor physics really is well proven: the core held 800 °C through large load swings and survived losing all cooling ([Gibson 2018](https://ntrs.nasa.gov/citations/20180005435)). But TRL rates the whole system in its flight configuration, and only part of it was tested, on a lab stand.
 
 ## Power output and power type
 
