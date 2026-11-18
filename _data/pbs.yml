@@ -1,5 +1,6 @@
 # Product breakdown structure. One entry per system; each item is a component.
 # comp: component page id if one exists. how: build | buy | partner. ms: milestone that delivers it.
+# DD-005: everything the crew needs on arrival is delivered by M08 (Phase 1); M09 (Phase 2) starts at the first crew landing.
 - id: TL
   name: Transport and logistics
   items:
@@ -67,30 +68,30 @@
 - id: HB
   name: Habitation
   items:
-    - {id: HB.1, name: Habitat module, ms: M08, comp: C08.1, how: partner}
+    - {id: HB.1, name: "Standard 3-person habitat module (×3, design to be defined later)", ms: M08, comp: C08.1, how: partner}
     - {id: HB.2, name: Dust lock and suitports, ms: M08, comp: C08.3, how: build}
-    - {id: HB.3, name: Inter-module nodes and connectors, ms: M09, how: build}
+    - {id: HB.3, name: "Module-to-module connections (hatches or tunnels, not yet designed)", ms: M08, how: build}
     - {id: HB.4, name: Habitat thermal control, ms: M08, how: build}
     - {id: HB.5, name: Interior outfitting (quarters, galley, stowage), ms: M08, how: build}
-    - {id: HB.6, name: Regolith radiation shielding, ms: M09, comp: C09.1, how: build}
-    - {id: HB.7, name: Storm shelter, ms: M09, comp: C09.2, how: build}
+    - {id: HB.6, name: Regolith radiation shielding, ms: M08, comp: C09.1, how: build}
+    - {id: HB.7, name: Storm shelter, ms: M08, comp: C09.2, how: build}
 - id: LS
   name: Life support
   items:
     - {id: LS.1, name: Life support system (ECLSS), ms: M08, comp: C08.2, how: build}
-    - {id: LS.2, name: Atmosphere make-up (nitrogen, oxygen buffer), ms: M09, how: build}
+    - {id: LS.2, name: Atmosphere make-up (nitrogen, oxygen buffer), ms: M08, how: build}
     - {id: LS.3, name: Fire detection and suppression, ms: M08, how: build}
-    - {id: LS.4, name: Solid waste and hygiene processing, ms: M09, how: build}
+    - {id: LS.4, name: Solid waste and hygiene processing, ms: M08, how: build}
     - {id: LS.5, name: Potable water storage and quality monitoring, ms: M08, how: build}
 - id: CH
   name: Crew systems and health
   items:
     - {id: CH.1, name: EVA system (suits and tools), ms: M08, comp: C08.4, how: partner}
-    - {id: CH.2, name: Medical bay, ms: M09, comp: C09.3, how: build}
-    - {id: CH.3, name: Exercise and countermeasures, ms: M09, how: build}
-    - {id: CH.4, name: Radiation dosimetry and space weather warning, ms: M09, how: build}
-    - {id: CH.5, name: Stored food system, ms: M08, how: buy}
-    - {id: CH.6, name: Crew selection, training and psychological support, ms: M08, how: build}
+    - {id: CH.2, name: Medical bay, ms: M08, comp: C09.3, how: build}
+    - {id: CH.3, name: Exercise and countermeasures, ms: M08, how: build}
+    - {id: CH.4, name: Radiation dosimetry and space weather warning, ms: M08, how: build}
+    - {id: CH.5, name: Stored food system, ms: M09, how: buy}
+    - {id: CH.6, name: "Crew selection, training, rotation planning and psychological support", ms: M09, how: build}
 - id: FP
   name: Food production
   items:

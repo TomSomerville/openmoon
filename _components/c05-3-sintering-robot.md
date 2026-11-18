@@ -102,4 +102,4 @@ At 50% uptime, pad 1 takes about 2 months and pad 2 about 5 months. That is a la
 - What is the real energy per kilogram in vacuum, with site regolith?
 - Laser or microwave: which tolerates dust, volatiles and varying minerals better?
 - How long do optics or applicators last before replacement?
-- Can the same robot build vertical structures for M09 later?
+- Can the same robot build vertical structures for the habitat zone (M08) later?

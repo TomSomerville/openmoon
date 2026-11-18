@@ -2,7 +2,7 @@
 id_code: M04
 order: 4
 title: Surface power grid
-phase: 1
+phase: 0
 window: "2028–2032"
 summary: Build a hybrid power system of tall solar towers on the sunlit ridges, a fission reactor for darkness, energy storage and high-voltage cables, all routed through one BMS that sends power to the grid or to storage, sized to run the oxygen plant and the first habitat.
 objective: "Deliver solar peak power from NASA-class 10 kW VSAT towers, sized by the Phase 1 load budget (provisionally 100 kW; design change DD-004), and at least 20 kWe of continuous fission power from an LR-1-class reactor (design change DD-002), with every source feeding a BMS that routes power to the grid, to storage, or both (design change DD-003), connected by a 3 kV AC, 1 kHz grid (NASA's lunar grid baseline; design change DD-001), so the base never loses essential power, even during the longest polar darkness."
@@ -115,6 +115,8 @@ NASA studies give concrete numbers:
 | Growth path | 1–5 → 10–20 → 80–100 kW | Csank & Scott<sup class="r">[1](#s1)</sup> |
 
 This milestone targets about 120 kW of total capacity (provisional until the Phase 1 load budget): 100 kW of solar peak from 10 kW VSATs plus 20 kWe of fission from one LR-1-class reactor (design change DD-002). That's enough for the oxygen pilot plant (M06) and the first habitat (M08), with room to grow.
+
+**Input to the Phase 1 load budget (crew change, DD-006).** The power design and sizing are not changed here. The base is now designed for 6 people, with up to 9 for about two weeks at each handover, in three standard 3-person habitat modules (DD-007). The figures above bracket that habitat load: NASA gives 28.05 kW for a six-person base camp<sup class="r">[10](#s10)</sup> and 20–50 kW for a four-crew habitat<sup class="r">[1](#s1)</sup>. Scaling the four-crew range linearly would give about 30–75 kW for 6 people and 45–113 kW for 9 (this plan's arithmetic, a crude upper bracket). The load budget must also cover the habitat's life support running for 9 at handovers, and the radiators and pumps that the buried modules need. Under the new phase structure (DD-005), everything built in Phase 1 must be powered before the first crew lands.
 
 ## Why not just solar, or just batteries?
 

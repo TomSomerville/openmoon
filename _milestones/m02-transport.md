@@ -2,7 +2,7 @@
 id_code: M02
 order: 2
 title: Transport to the surface
-phase: 1
+phase: 0
 window: "2027–2031"
 summary: Secure reliable rides for cargo of every size and for crews. Open Moon buys transport; it does not build rockets.
 objective: "Establish contracts and interfaces for three cargo classes (under 1 t, about 3 t, about 15 t) and for crew seats, so every later milestone can count on a delivery schedule. Build the equipment to offload cargo on the surface."
@@ -13,6 +13,7 @@ spec:
   - {k: "Medium cargo", v: "About 3 t: Blue Moon Mark 1"}
   - {k: "Heavy cargo", v: "About 15 t: Starship and Blue Moon Mk2 cargo variants"}
   - {k: Crew, v: "Seats via NASA Artemis / Moon Base partnership or commercial HLS"}
+  - {k: "Crew cadence", v: "From Phase 2: crews of 3, 4 landings and 4 departures a year (DD-006)"}
 cost: {low: 0.95, high: 2.2, note: "interfaces, offloading and integration only; each delivery is costed in the milestone that uses it"}
 cost_items:
   - {item: "Common payload interface and integration team (5 years)", low: 0.15, high: 0.4, basis: "ESTIMATE"}
@@ -23,7 +24,7 @@ exit_criteria:
   - "Firm delivery contracts or reservations for at least two independent providers in each cargo class."
   - "A published Open Moon payload interface standard (mechanical, electrical, data) that fits all selected landers."
   - "An offloading crane delivered and tested on the surface, able to lift cargo from a lander deck to the ground."
-  - "Crew transport agreement in place for Phase 2 sorties."
+  - "Crew transport agreement in place for Phase 2: 4 crew landings and 4 departures a year, crews of 3, each crew's vehicle able to wait about 6.5 months on the surface."
 workstreams:
   - name: Small cargo (under 1 t)
     desc: Buy rides on commercial landers for instruments and small robots.
@@ -36,7 +37,7 @@ workstreams:
     items: ["Starship cargo variant", "Blue Moon Mk2 cargo variant", "NASA states ~15 t per cargo landing"]
   - name: Crew access
     desc: Seats for Open Moon crews.
-    items: ["Partnership with NASA Moon Base / Artemis", "Commercial HLS seats once offered", "Crew training and medical certification"]
+    items: ["Partnership with NASA Moon Base / Artemis", "Commercial HLS seats once offered", "4 crew landings and 4 departures a year from Phase 2 (DD-006)", "Return vehicle that can wait ~6.5 months on the surface", "Crew training and medical certification"]
   - name: Offloading and handling
     desc: Getting cargo off tall landers safely.
     items: ["Cable-driven crane (LSMS heritage)", "Ramps and winches", "Payload carts towed by LTVs"]
@@ -66,11 +67,12 @@ sources:
   - {title: "NASA: NASA Unveils Initiatives to Achieve America's National Space Policy", url: "https://www.nasa.gov/news-release/nasa-unveils-initiatives-to-achieve-americas-national-space-policy/", date: "Mar 2026"}
   - {title: "NASA: Artemis II mission milestones, an image and video recap", url: "https://www.nasa.gov/centers-and-facilities/johnson/artemis-ii-mission-milestones-an-image-and-video-recap/", date: "Apr 2026"}
 risks:
-  - {sev: Critical, title: "Heavy cargo landers are not yet proven: Starship has not demonstrated orbital refuelling, and Blue Moon Mk2's demo is expected in 2029", fix: "Keep everything in Phases 0–1 within small and medium lander sizes; design heavy items to split across two providers; set schedule margin of 2+ years"}
+  - {sev: Critical, title: "Heavy cargo landers are not yet proven: Starship has not demonstrated orbital refuelling, and Blue Moon Mk2's demo is expected in 2029", fix: "Keep everything in Phase 0 within small and medium lander sizes, and plan heavy landers only from Phase 1 (habitats); design heavy items to split across two providers; set schedule margin of 2+ years"}
   - {sev: High, title: "Landing reliability: of four CLPS missions in 2024–25, two landers tipped over and one never attempted a landing", fix: "Fly critical items twice; prefer providers with upright landings; insure or hold spares"}
   - {sev: High, title: "Cost and schedule growth: CLPS orders grew nearly 26% in total value and slipped 14 months on average", fix: "Budget 30% growth on every delivery; plan for slips in the schedule"}
   - {sev: Medium, title: "Tall landers (Starship) put cargo many metres above the ground", fix: "Crane or elevator on the lander; LSMS-style cable crane on the surface"}
-  - {sev: Medium, title: "Crew seats depend on government programmes", fix: "Partner with NASA Moon Base; keep commercial-seat option open"}
+  - {sev: High, title: "Crew seats depend on government programmes, and this plan needs a crewed landing every 3 months, twice NASA's planned rate of one every six months after Artemis V", fix: "Partner with NASA Moon Base; contract two crew transport providers; keep commercial-seat option open; let a tour stretch by one cycle if a landing slips"}
+  - {sev: High, title: "Each crew's vehicle must wait about 6.5 months on the surface as its way home, with up to three parked at once at handovers; no crewed lander has published a stay that long", fix: "Make surface wait time a contract requirement; power, shade and inspect parked vehicles; keep a rescue option"}
 ---
 
 ## Where transport stands (November 2026)
@@ -97,3 +99,13 @@ This is the single most important number in the plan. Every kilogram made on the
 4. **Negotiate heavy-cargo slots** for habitats and the reactor. Starship reached orbit on flights 14 and 15 in 2026<sup class="r">[4](#s4)</sup>, but ship-to-ship propellant transfer has never been done<sup class="r">[5](#s5)</sup> and was still listed as an upcoming test in October 2026<sup class="r">[6](#s6)</sup>. Every heavy item has a fallback design that splits into medium-lander pieces.
 5. **Build and land the offloading crane.** It's based on NASA's LSMS cable-driven crane, which has been tested on the ground<sup class="r">[7](#s7)</sup>.
 6. **Sign a crew transport agreement** for Phase 2.
+
+## Crew cadence for Phase 2
+
+{% include decision-note.html id="DD-006" extra="Crew transport was booked for four short sorties and then two rotations a year. It is now 4 crew landings and 4 departures a year." %}
+
+- **Crews of 3.** A new crew lands every 3 months and stays about 6.5 months (DD-006).
+- **This plan's arithmetic.** 12 months ÷ 3 months = **4 arrivals a year**, and in steady state **4 departures a year**.
+- **Against NASA's plan.** NASA plans a crewed landing every six months after Artemis V<sup class="r">[12](#s12)</sup>. This plan needs twice that rate, so it needs more than one provider.
+- **Waiting vehicles.** Each crew's vehicle is its way home, so it waits on the surface for the whole tour. At a handover up to three may be on site at once (plan design; open question).
+- **Spare seat.** Artemis II flew four astronauts<sup class="r">[13](#s13)</sup>. If crew vehicles keep four seats, a crew of 3 leaves one free for cargo, a visitor or a medical return (plan design).

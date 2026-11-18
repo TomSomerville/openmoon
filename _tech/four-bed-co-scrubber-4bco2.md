@@ -34,7 +34,7 @@ In February 2025 the ISS held 12 crew during a handover and kept average CO₂ b
 
 ## Why Open Moon uses it
 
-Every crewed habitat must remove CO₂ all the time. In Open Moon, 4BCO2 is the CO₂ removal step of life support closure in milestone [M09, permanent crew](/milestones/m09-permanent-crew/). It works next to water recovery, oxygen generation and a Sabatier reactor.
+Every crewed habitat must remove CO₂ all the time. In Open Moon, 4BCO2 is the CO₂ removal step of life support in the three habitat modules: three units, one per module, sized for 6 people continuously and 9 at handovers ([C08.2](/plan/components/c08-2-life-support/)), installed in M08 and run in [M09, the crewed base](/plan/m09-permanent-crew/). It works next to water recovery, oxygen generation and a Sabatier reactor.
 
 It was chosen because it is the most proven regenerative scrubber that can also feed CO₂ onward. Four-bed systems produce [high-purity, dry CO₂](https://ntrs.nasa.gov/api/citations/20205003542/downloads/ICES-2020-178.docx) that a Sabatier reactor can use without extra cleanup, which the ISS has done with CDRA ([Wikipedia](https://en.wikipedia.org/wiki/ISS_ECLSS)). In NASA's 2026 equivalent-mass study for a lunar surface habitat, 4BCO2 scored [406 kg, lower than CDRA (483 kg), the Thermal Amine Scrubber (798 kg) and the ionic-liquid system without Sabatier (419 kg)](https://ntrs.nasa.gov/api/citations/20260002853/downloads/ICES-2026-160-updated.pdf). Only the Orion swing bed scored lower, and it vents much more cabin gas and cannot feed a closed loop.
 

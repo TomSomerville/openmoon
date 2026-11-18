@@ -11,7 +11,7 @@ spec:
   - {k: "Suit pressure", v: "4.3 psid nominal; 0.4–8.2 psid range"}
   - {k: "Cold shadow exposure", v: "At least 2 h in permanently shadowed regions"}
   - {k: "Walk-back range", v: "~2 km walking; ~10 km by LTV (~5 h walk back)"}
-  - {k: "Suits on site", v: "4 + 2 spares (design choice)"}
+  - {k: "Suits on site", v: "6 + 2 spares, one per resident (design choice, DD-006)"}
   - {k: "Consumables per 6 h EVA", v: "~0.5 kg O₂, ~2 kg cooling water lost (ESTIMATE from BVAD)"}
   - {k: "Radiation per 6 h EVA", v: "~0.34 mSv (ESTIMATE from Chang'e-4 surface dose)"}
 subcomponents:
@@ -41,7 +41,7 @@ subcomponents:
     tech: "NASA xEVA operations concept; this plan's dose budget"
     trl: 5
 risks:
-  - {sev: Critical, title: "Suit schedule may slip; NASA's Inspector General said demonstrations could slip to 2031 if testing follows historical averages", fix: "Keep sortie dates flexible; plan sortie 1 with few EVAs; track suit qualification milestones each quarter"}
+  - {sev: Critical, title: "Suit schedule may slip; NASA's Inspector General said demonstrations could slip to 2031 if testing follows historical averages", fix: "Tie the first crew date to suit qualification; plan the first crew's tour with few EVAs at first; track suit qualification milestones each quarter"}
   - {sev: Critical, title: "Suit or PLSS failure far from the habitat", fix: "Two-person EVAs only; walk-back limits set by remaining consumables; buddy oxygen and cooling hose; LTV carries a spare PLSS battery"}
   - {sev: High, title: "Single suit provider; Collins left the programme in 2024", fix: "Hold spare suits and parts on site; standard suit-to-habitat interfaces so another supplier could plug in later"}
   - {sev: High, title: "Solar particle event during an EVA; the suit gives little shielding", fix: "Space-weather watch from Earth; stay within time-to-shelter limits; abort and return on any warning"}
@@ -63,7 +63,7 @@ sources:
 
 ## What it does
 
-The EVA system lets crews work outside: fix power and ISRU hardware, install M09 equipment and collect samples. It covers the suits, the habitat equipment that services them, the tools, and the safety rules.
+The EVA system lets crews work outside: fix power and ISRU hardware, maintain the base and collect samples. Suits are delivered and checked out remotely before the first crew lands (M08). It covers the suits, the habitat equipment that services them, the tools, and the safety rules.
 
 ## How it works
 
@@ -83,7 +83,7 @@ NASA planning gives these ranges<sup class="r">[4](#s4)</sup>:
 | Unpressurised rover (LTV) | ~10 km | ~5 h walk back if the rover fails |
 | One pressurised rover | ~12 km | Walk back of under 8 h on a fully recharged suit |
 
-**This plan's rule (design choice):** at every point of an EVA, the time to walk home at 2 km/h, plus a 1-hour reserve, must be less than the suit time left. M08 sorties stay within LTV range.
+**This plan's rule (design choice):** at every point of an EVA, the time to walk home at 2 km/h, plus a 1-hour reserve, must be less than the suit time left. EVAs stay within LTV range until the pressurised rover is on site.
 
 ## Sizing (ESTIMATE)
 
@@ -93,9 +93,9 @@ Per crew member, from BVAD EVA rates<sup class="r">[5](#s5)</sup>:
 - Cooling water lost at the poles: 0.3375 kg/h × 6 h = **2.0 kg**
 - With suitports, NASA estimates O₂ losses of 0.1 kg/h plus 0.54 kg per EVA = **1.14 kg** per 6 h EVA
 
-Per 30-day sortie, if crews make 3 two-person EVAs a week (design choice): about 13 EVAs, 26 crew-EVAs. That needs ~52 kg of cooling water and ~30 kg of suitport O₂ losses.
+Per 3-month cycle (13 weeks), if the base makes 3 two-person EVAs a week (design choice): about 39 EVAs, 78 crew-EVAs. That needs ~156 kg of cooling water and ~89 kg of suitport O₂ losses (this plan's arithmetic).
 
-**Radiation budget.** Chang'e-4 measured about 1,369 µSv per day on the surface<sup class="r">[7](#s7)</sup>, or ~57 µSv/h. A 6-hour EVA gives ~0.34 mSv. About 6–7 EVAs each adds ~2.2 mSv per person. Even 30 days fully unshielded would be ~41 mSv, against NASA's 600 mSv career limit<sup class="r">[8](#s8)</sup>. The bigger danger is a solar particle event during an EVA, which is why the space-weather abort rule matters.
+**Radiation budget.** Chang'e-4 measured about 1,369 µSv per day on the surface<sup class="r">[7](#s7)</sup>, or ~57 µSv/h. A 6-hour EVA gives ~0.34 mSv. With 6 people sharing 6 crew-EVAs a week, each person makes about one EVA a week, or about 28 in a 6.5-month tour: ~9.5 mSv per person per tour (this plan's arithmetic), on top of ~165 mSv inside a 2 m cover (C09.1), against NASA's 600 mSv career limit<sup class="r">[8](#s8)</sup>. The bigger danger is a solar particle event during an EVA, which is why the space-weather abort rule matters.
 
 ## Testing and qualification
 
@@ -103,7 +103,7 @@ Per 30-day sortie, if crews make 3 two-person EVAs a week (design choice): about
 2. **Suitport fit tests** with the flight suit and the habitat's suitports.
 3. **Dust endurance.** Apollo 12 suits wore more in 8 hours on the Moon than training suits in 100 hours<sup class="r">[9](#s9)</sup>. Run bearing and visor tests with simulant for the full number of EVAs planned.
 4. **Prebreathe validation** at 8.2 psia, 34% O₂. NASA's chamber trials saw several cases of decompression sickness<sup class="r">[10](#s10)</sup>.
-5. **On the Moon.** Sortie 1 starts with short EVAs near the habitat, then extends range once the walk-back rule has been checked against real consumable use.
+5. **On the Moon.** The first crew starts with short EVAs near the habitat, then extends range once the walk-back rule has been checked against real consumable use.
 
 ## Open questions
 

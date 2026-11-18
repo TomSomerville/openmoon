@@ -2,7 +2,7 @@
 id_code: M11
 order: 11
 title: Propellant and industrial-scale ISRU
-phase: 4
+phase: 3
 window: "2036–2042"
 summary: Scale the pilot plants up to hundreds of tonnes of oxygen and water a year, so landers can refuel on the Moon and the base pays its way.
 objective: "Produce at least 300 t of oxygen and 100 t of water per year, store them, and refuel landers on the surface. Power the plants with a grid of at least 500 kW."

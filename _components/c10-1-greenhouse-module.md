@@ -6,15 +6,15 @@ title: Buried greenhouse module
 summary: "Pressurised modules under regolith, filled with stacked hydroponic racks under LED lights. Together they grow about half the crew's calories, take up CO₂ and give back oxygen and clean water. Lighting power is the main cost."
 trl: 5
 spec:
-  - {k: "Target", v: "≥50% of calories for 8 crew (M10)"}
-  - {k: "Growing area", v: "~260 m² canopy (ESTIMATE, half of BVAD's 65.3 m² per person × 8)"}
-  - {k: "Modules", v: "4 modules × ~66 m² canopy, 3 rack tiers each (plan design choice)"}
+  - {k: "Target", v: "≥50% of calories for the 6-person design crew (M10, DD-006); handover peaks of 9 eat stored food"}
+  - {k: "Growing area", v: "~196 m² canopy (ESTIMATE, half of BVAD's 65.3 m² per person × 6)"}
+  - {k: "Modules", v: "3 modules × ~66 m² canopy, 3 rack tiers each (plan design choice; was 4 for 8 crew)"}
   - {k: "Lighting", v: "LEDs, ~2.5 µmol/J fixture efficacy (ESTIMATE from best tested fixtures)"}
   - {k: "Light per day", v: "17 (lettuce) to 115 (wheat) mol/m²/day; ~33 averaged over the crop mix"}
-  - {k: "Average power", v: "~51 kW lighting, ~61 kW total (ESTIMATE)"}
-  - {k: "Gas exchange", v: "~7.4 kg CO₂ taken up and ~5.4 kg O₂ released per day (ESTIMATE)"}
-  - {k: "Water transpired", v: "~1.2 t per day, condensed and reused (ESTIMATE)"}
-  - {k: "Delivered mass", v: "~17–21 t for 4 modules (ESTIMATE; above the M10 ~10 t figure)"}
+  - {k: "Average power", v: "~38 kW lighting, ~46 kW total (ESTIMATE)"}
+  - {k: "Gas exchange", v: "~5.6 kg CO₂ taken up and ~4.1 kg O₂ released per day (ESTIMATE, scaled 6/8 from the 8-crew BVAD working)"}
+  - {k: "Water transpired", v: "~0.9 t per day, condensed and reused (ESTIMATE)"}
+  - {k: "Delivered mass", v: "~13–16 t for 3 modules (ESTIMATE)"}
   - {k: "Shielding", v: "≥2 m regolith cover, as C09.1"}
 subcomponents:
   - name: Growth racks
@@ -48,10 +48,10 @@ subcomponents:
     tech: "Habitat module heritage (M08)"
     trl: 5
 risks:
-  - {sev: High, title: "Lighting needs ~60 kW on average, the output of three 20 kWe LR-1-class reactors (DD-002)", fix: "Phase crops by calories per kWh; greens first; grow power in step (M11); stagger photoperiods so peak power stays close to the average."}
-  - {sev: High, title: "Disease or a system failure wipes out a module", fix: "Four isolated modules with separate air and water loops; seed bank; 12-month stored food reserve (M10)."}
-  - {sev: High, title: "~60 kW of heat and ~1.2 t a day of transpired water must be removed", fix: "Size condensing heat exchangers and surface radiators for full load, because the regolith cover is a near-perfect insulator and passes well under 1% of it (C09.1); test in a ground chamber at full scale."}
-  - {sev: Medium, title: "Delivered mass (~17–21 t) is above the M10 estimate", fix: "Consider inflatable shells; deliver in two phases; make racks locally once the fab shop works (C12.1)."}
+  - {sev: High, title: "Lighting and plant systems need ~46 kW on average, more than two 20 kWe LR-1-class reactors give, so M10 keeps three (DD-002)", fix: "Phase crops by calories per kWh; greens first; grow power in step (M11); stagger photoperiods so peak power stays close to the average."}
+  - {sev: High, title: "Disease or a system failure wipes out a module", fix: "Three isolated modules with separate air and water loops; seed bank; 12-month stored food reserve (M10)."}
+  - {sev: High, title: "~46 kW of heat and ~0.9 t a day of transpired water must be removed", fix: "Size condensing heat exchangers and surface radiators for full load, because the regolith cover is a near-perfect insulator and passes well under 1% of it (C09.1); test in a ground chamber at full scale."}
+  - {sev: Medium, title: "Delivered mass (~13–16 t) is an estimate with no hardware behind it", fix: "Consider inflatable shells; deliver in two phases; make racks locally once the fab shop works (C12.1)."}
   - {sev: Medium, title: "Raw lunar soil stunts plants", fix: "Use hydroponics; research treated regolith separately."}
   - {sev: Medium, title: "Effects of 1/6 g on crops over many generations are unknown", fix: "Start with ISS-proven crops; track yields per crop; keep shipped food until yields are proven."}
   - {sev: Medium, title: "Microbes on fresh produce make crew ill", fix: "Microbial testing before eating; sanitising wash; clean-handling rules."}
@@ -82,28 +82,30 @@ The greenhouse grows fresh food and staple crops for the crew. Plants also take 
 
 ## Sizing (ESTIMATE)
 
-BVAD gives a growing area of **65.29 m² per crew member** for a diet that uses all of its listed crops. Most of that area is soybean (46.4 m²)<sup class="r">[1](#s1)</sup>. This plan assumes that diet covers a full calorie need. So half of it, for 8 crew, is 0.5 × 8 × 65.29 ≈ **261 m²**.
+BVAD gives a growing area of **65.29 m² per crew member** for a diet that uses all of its listed crops. Most of that area is soybean (46.4 m²)<sup class="r">[1](#s1)</sup>. This plan assumes that diet covers a full calorie need. So half of it, for the 6-person design crew (DD-006), is 0.5 × 6 × 65.29 ≈ **196 m²**. The base holds 9 people for about 2 weeks every 3 months, which raises the yearly average headcount to 6.5; those extra meals come from stored food.
 
 | Step | Working |
 |---|---|
 | Light per day, area-weighted | Σ(area × light) ÷ Σ(area), using BVAD values for each crop<sup class="r">[1](#s1)</sup> = 2,184 ÷ 65.3 ≈ **33.5 mol/m²/day** |
 | Light delivered per joule | 2.78 µmol/J × 0.9 (water protection)<sup class="r">[2](#s2)</sup> ≈ 2.5; × 0.8 delivery<sup class="r">[1](#s1)</sup> = **2.0 µmol/J** |
 | Energy per m² | 33.5 mol ÷ 2.0 µmol/J = 16.7 MJ ≈ **4.65 kWh/m²/day** |
-| Lighting, 261 m² | 261 × 4.65 ≈ 1,214 kWh/day ≈ **51 kW average** |
-| Pumps, fans, dehumidifying | +20% (assumption) ≈ **61 kW average**, nearly all of it rejected as heat |
-| Gas exchange | Using BVAD per-crop rates<sup class="r">[1](#s1)</sup>: ~7.4 kg CO₂ taken up and ~5.4 kg O₂ released per day |
-| Water transpired | ~1.2 t/day, condensed and returned |
-| Inedible biomass | 4 × 6.66 kg per crew-member-day<sup class="r">[1](#s1)</sup> ≈ **27 kg/day** (fresh) |
-| Mass | ~33 kg/m² of growing hardware × 264 m² ≈ 9 t, plus 4 shells at 2–3 t each ≈ **17–21 t**. The hardware figure starts from BVAD's chamber values (shoot zone, mechanisation, structure)<sup class="r">[1](#s1)</sup>, with LEDs (~15 kg/m²) and trays (~5 kg/m²) assumed. |
+| Lighting, 196 m² | 196 × 4.65 ≈ 911 kWh/day ≈ **38 kW average** |
+| Pumps, fans, dehumidifying | +20% (assumption) ≈ **46 kW average**, nearly all of it rejected as heat |
+| Gas exchange | Using BVAD per-crop rates<sup class="r">[1](#s1)</sup>, scaled from the 8-crew working: ~5.6 kg CO₂ taken up and ~4.1 kg O₂ released per day |
+| Water transpired | ~0.9 t/day, condensed and returned |
+| Inedible biomass | 3 × 6.66 kg per crew-member-day<sup class="r">[1](#s1)</sup> ≈ **20 kg/day** (fresh) |
+| Mass | ~33 kg/m² of growing hardware × 198 m² ≈ 6.5 t, plus 3 shells at 2–3 t each ≈ **13–16 t**. The hardware figure starts from BVAD's chamber values (shoot zone, mechanisation, structure)<sup class="r">[1](#s1)</sup>, with LEDs (~15 kg/m²) and trays (~5 kg/m²) assumed. |
 
-For comparison, eight crew produce about 8 × 1.085 ≈ 8.7 kg of CO₂ a day<sup class="r">[1](#s1)</sup>. So the plants would take up most of it.
+For comparison, six people produce about 6 × 1.085 ≈ 6.5 kg of CO₂ a day<sup class="r">[1](#s1)</sup>. So the plants would take up most of it.
+
+**Power is not resized.** ~46 kW is more than two 20 kWe reactors give, so M10 keeps the three LR-1-class units it already costs (DD-002), with ~14 kW of margin (this plan's arithmetic).
 
 ## Testing and qualification
 
 1. Build one full-size module on Earth and grow each crop through a full cycle.
 2. Measure yield, power, heat and water balance against the table above.
 3. Run a 12-month closed test with crew-produced CO₂, as Lunar Palace 1 did<sup class="r">[5](#s5)</sup>.
-4. On the Moon, start with a Veggie-class unit in M09. Then commission one module growing greens only, and add staples module by module.
+4. On the Moon, start with a Veggie-class unit in the crewed base (M09). Then commission one module growing greens only, and add staples module by module.
 
 ## Open questions
 

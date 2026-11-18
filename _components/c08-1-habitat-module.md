@@ -2,19 +2,19 @@
 id_code: "C08.1"
 milestone: M08
 order: 1
-title: Rigid surface habitat module
-summary: "A ~15 t rigid pressurised module on wheels, in the Thales Alenia MPH class, that gives crews a shirt-sleeve home for 14–30 day sorties and can later be buried under regolith."
+title: Standard 3-person habitat module
+summary: "One standard pressurised module design that houses 3 people. The base lands three of them side by side and connects them, for 9 beds. The detailed design is to be defined later; the Thales Alenia MPH is the reference hardware, and its ~15 t is used only as a provisional placeholder."
 trl: 5
 spec:
-  - {k: "Class", v: "Thales Alenia Space MPH (preliminary design, ASI contract Jul 2025)"}
-  - {k: "Size", v: "~3 m wide × ~6 m long"}
-  - {k: "Mass", v: "~15 t at landing"}
-  - {k: "Pressurised envelope", v: "~42 m³ outer (ESTIMATE, π × 1.5² × 6)"}
-  - {k: "Crew", v: "2 in the MPH baseline; 4 in this plan (design choice, needs extra sleep stations)"}
-  - {k: "Life", v: "≥10 years on the surface"}
-  - {k: "Power draw", v: "20–50 kW for 4 crew (NASA GRC)"}
+  - {k: "Design", v: "One standard module that houses 3 people (DD-007); detailed design to be defined later (open)"}
+  - {k: "Quantity", v: "3, landed side by side and connected, all in M08 before the first crew (DD-005)"}
+  - {k: "Beds", v: "3 per module; 9 in all: 6 resident + 3 flexible for handovers (DD-006)"}
+  - {k: "Connections", v: "Hatches or tunnels between modules: needed, not yet designed"}
+  - {k: "Reference hardware", v: "Thales Alenia Space MPH (~3 m × 6 m, ASI contract Jul 2025), heritage only"}
+  - {k: "Mass", v: "~15 t per module, PROVISIONAL placeholder from the MPH class"}
+  - {k: "Life", v: "≥10 years on the surface (MPH reference)"}
+  - {k: "Power draw", v: "20–50 kW for a 4-crew habitat (NASA GRC); base load for 6–9 people to be set in the load budget"}
   - {k: "Delivery", v: "Heavy cargo lander, NET FY2033"}
-  - {k: "Quantity", v: "1 in M08; 2 more of the same class in M09"}
 subcomponents:
   - name: Pressure shell and primary structure
     desc: "The sealed aluminium-alloy cylinder that holds the cabin atmosphere and carries launch and landing loads."
@@ -22,18 +22,18 @@ subcomponents:
     tech: "Thales Alenia ISS modules (Harmony, Tranquility, Columbus structure), Cygnus pressure vessels"
     trl: 6
   - name: Mobility and levelling
-    desc: "Wheels let the module be moved from the landing pad and placed precisely in the habitat zone."
+    desc: "Reference feature from the MPH: wheels let a module be moved from the landing pad and placed precisely beside its neighbours. Whether the standard module keeps them is open."
     parts: ["Wheel and suspension units", "Tow interface for LTVs", "Levelling jacks", "Brakes and wheel locks"]
     tech: "MPH baseline includes wheels; LTV towing is this plan's design choice"
     trl: 4
   - name: Hatches, ports and windows
-    desc: "Openings for crew, cargo, a dust lock and later module-to-module links."
-    parts: ["Main hatch to dust lock / suitport bulkhead (C08.3)", "Second hatch for emergency exit", "Berthing port for M09 modules", "Two small windows with dust covers (design choice)", "Utility pass-throughs for power, data, fluids"]
+    desc: "Openings for crew, cargo, a dust lock and the links to neighbouring modules (connection design to be defined later)."
+    parts: ["Main hatch to dust lock / suitport bulkhead (C08.3)", "Second hatch for emergency exit", "Connecting hatch or tunnel to the neighbouring modules (not yet designed)", "Two small windows with dust covers (design choice)", "Utility pass-throughs for power, data, fluids"]
     tech: "ISS hatch and berthing heritage"
     trl: 6
   - name: Interior outfitting
     desc: "Fold-down and rack-mounted fittings that turn the cabin into living and working space."
-    parts: ["2 crew quarters plus 2 fold-down sleep stations", "Galley with food warmer and water dispenser", "Hygiene station and toilet", "Workstations and medical kit", "Exercise device and stowage racks"]
+    parts: ["3 beds (design to be defined later)", "Galley with food warmer and water dispenser", "Hygiene station and toilet", "Workstations and medical kit", "Exercise device and stowage racks"]
     tech: "ISS crew quarters, galley and waste-and-hygiene compartment heritage"
     trl: 6
   - name: Thermal control
@@ -47,13 +47,14 @@ subcomponents:
     tech: "M04 grid design; ISS power distribution heritage"
     trl: 5
 risks:
-  - {sev: Critical, title: "The MPH baseline is sized for 2 crew, but this plan flies 4", fix: "Add 2 fold-down sleep stations and size life support (C08.2) for 4; use the lander cabin as overflow quarters; negotiate a 4-crew outfitting option with ASI and Thales"}
-  - {sev: High, title: "MPH is only in preliminary design; launch planned 2033 may slip", fix: "Keep sortie dates tied to the habitat delivery; track an inflatable or second rigid supplier as a backup"}
+  - {sev: Critical, title: "No standard 3-person module exists; its design is to be defined later (DD-007)", fix: "Use the MPH class only as reference and its ~15 t only as a placeholder; freeze the design before Phase 1 deliveries; track an inflatable as a backup"}
+  - {sev: High, title: "Module-to-module connections are new interfaces and leak paths", fix: "Design hatches or tunnels with the module; each module can be sealed off on its own; leak-check every connection in the uncrewed run"}
+  - {sev: High, title: "At handover peaks all 9 beds are full, so a module out of service leaves no spare bed", fix: "Shorten or delay the handover if a module is closed; storm shelter can serve as an emergency sleep area (C09.2)"}
   - {sev: High, title: "Dust on radiators and windows degrades heat rejection (Apollo saw instruments run ~68 °F hot)", fix: "Vertical radiators, covers when crews are outside, and electrodynamic dust shields on critical surfaces (C08.3)"}
-  - {sev: High, title: "Unshielded module gives little protection from radiation during sorties", fix: "Short stays; water and stowage wall storm shelter around the sleep area; burial in M09"}
-  - {sev: Medium, title: "Wheels and suspension may fail while towing 15 t over rough ground", fix: "Prepared road from pad to habitat zone (M05); slow tow with two LTVs; jacks can level the module where it stops"}
-  - {sev: Medium, title: "Pressure shell leak from micrometeoroid hit or seal wear", fix: "Shielded shell, leak checks during the 3-month uncrewed run, patch kit, and nitrogen make-up reserves"}
-  - {sev: Medium, title: "Grid outage cuts heating and life support", fix: "Essential-load battery and load shedding; crew moves to the lander if outage exceeds battery time"}
+  - {sev: High, title: "An unshielded module gives little protection from radiation", fix: "No crew until the modules are buried under ≥2 m of regolith (C09.1, DD-005)"}
+  - {sev: Medium, title: "Wheels and suspension may fail while towing 15 t over rough ground", fix: "Prepared road from pad to habitat zone (M05); slow tow with two LTVs; jacks can level the module where it stops; side-by-side placement needs precise positioning"}
+  - {sev: Medium, title: "Pressure shell leak from micrometeoroid hit or seal wear", fix: "Shielded shell, leak checks during the 3-month uncrewed run, patch kit, and nitrogen make-up reserves; neighbouring modules can be sealed off"}
+  - {sev: Medium, title: "Grid outage cuts heating and life support", fix: "Essential-load battery and load shedding; crew moves to an unaffected module or the lander if the outage exceeds battery time"}
 sources:
   - {title: "Thales Alenia Space: contract with ASI to develop lunar Multi-Purpose Habitation module", url: "https://www.thalesgroup.com/en/worldwide/space/press_release/thales-alenia-space-signs-contract-italian-space-agency-asi-develop", date: "Jul 2025"}
   - {title: "European Spaceflight: ASI awards new lunar habitat contract to Thales Alenia Space", url: "https://europeanspaceflight.com/asi-awards-new-lunar-habitat-contract-to-thales-alenia-space/", date: "Jul 2025"}
@@ -65,44 +66,52 @@ sources:
   - {title: "TechCrunch: Sierra Space's inflatable habitat blows up as planned", url: "https://techcrunch.com/2024/01/22/successful-failure-sierra-spaces-inflatable-habitat-blows-up-as-planned", date: "Jan 2024"}
 ---
 
+{% include decision-note.html id="DD-007" extra="This page used to describe one ~15 t MPH-class module for 4 crew on 14–30-day sorties. It now describes one standard 3-person module design, landed three times and connected. Specific figures from the MPH are reference values and placeholders only." %}
+
 ## What it does
 
-The habitat module is the crew's home on the surface. It holds a breathable atmosphere, carries the life support system (C08.2), connects to the dust lock (C08.3) and gives four people somewhere to sleep, eat, wash and work for 14–30 days.
+The habitat module is the crew's home on the surface. Each module houses **3 people**. The base lands **three** of them next to each other and connects them, for **9 beds**: 6 for the resident crew and 3 flexible beds for handovers (this plan's arithmetic, DD-006, DD-007). The modules hold a breathable atmosphere, carry the life support system (C08.2), connect to the dust lock (C08.3) and give people somewhere to sleep, eat, wash and work for a 6.5-month tour.
 
-Open Moon uses a module in the class of Thales Alenia Space's Multi-Purpose Habitation (MPH). Thales is designing it for the Italian Space Agency. It is about 3 m × 6 m, about 15 t, with a minimum 10-year life and a planned 2033 launch<sup class="r">[1](#s1)</sup>. Press reports say it has wheels for precise positioning and is planned for two astronauts on one 7–30 day mission per year<sup class="r">[2](#s2)</sup>. Thales has built many pressurised modules, including Harmony, Tranquility and the Columbus structure on the ISS, and the Cygnus pressure vessels<sup class="r">[3](#s3)</sup>.
+**The detailed design is to be defined later (open).** This page does not set the module's size, layout or mass. It lists what the module must do and the reference hardware it can learn from.
 
-## How it works
+## Reference hardware: Thales Alenia MPH
 
-- **Pressure shell.** A rigid cylinder with ISS-style frames, shielding and insulation. It lands ready to use; nothing has to be inflated or assembled.
-- **Mobility.** The module lands at pad 2 (M05). LTVs tow it on its own wheels to the habitat zone, where jacks level it. Towing by LTV is this plan's design choice.
-- **Hatches and ports.** One hatch leads to the dust lock. A second hatch is the emergency exit. A berthing port is kept free for the M09 modules. Two small windows with covers are a design choice for crew morale and for watching EVAs.
-- **Interior.** The MPH baseline is two crew<sup class="r">[2](#s2)</sup>. For four crew, this plan adds two fold-down sleep stations next to two fixed quarters, plus a galley, hygiene station, workstations and an exercise device.
-- **Thermal control.** At the pole the sun stays low. Radiators are mounted vertically and kept clean. Apollo showed why: dust on radiator surfaces made one instrument run about 68 °F hotter than expected<sup class="r">[6](#s6)</sup>.
-- **Power.** NASA's Glenn team estimates a habitat for four crew on 30+ day stays draws **20–50 kW**<sup class="r">[4](#s4)</sup>. The module plugs into the M04 habitat microgrid and has a battery for essential loads.
+Thales Alenia Space is designing the Multi-Purpose Habitation (MPH) module for the Italian Space Agency. It is about 3 m × 6 m, about 15 t, with a minimum 10-year life and a planned 2033 launch<sup class="r">[1](#s1)</sup>. Press reports say it has wheels for precise positioning and is planned for two astronauts on one 7–30 day mission per year<sup class="r">[2](#s2)</sup>. Thales has built many pressurised modules, including Harmony, Tranquility and the Columbus structure on the ISS, and the Cygnus pressure vessels<sup class="r">[3](#s3)</sup>.
 
-## Sizing
+Open Moon uses the MPH as **heritage only**. Its ~15 t is used as a **provisional placeholder** for each standard module in the delivery costs (M08).
+
+## What the module must do
+
+- **House 3 people** for 6.5-month tours. Across three modules that gives 6 resident beds, plus 3 flexible beds that are full only at handover peaks (DD-006).
+- **Connect to its neighbours.** Hatches or tunnels between the three modules are a needed element. They are not yet designed.
+- **Be buried.** The modules sit under a support arch and regolith (C09.1). The regolith must never press on the module skin.
+- **Shed heat through pumped loops** to surface radiators, because the regolith cover is a near-perfect insulator (C09.1). At the pole the sun stays low, so radiators are mounted vertically and kept clean. Apollo showed why: dust on radiator surfaces made one instrument run about 68 °F hotter than expected<sup class="r">[6](#s6)</sup>.
+- **Take power from the grid.** NASA's Glenn team estimates a habitat for four crew on 30+ day stays draws **20–50 kW**<sup class="r">[4](#s4)</sup>. Each module plugs into the M04 habitat microgrid and has a battery for essential loads.
+
+## Input to the load budget
+
+Power sizing is not changed here. As an input to the Phase 1 load budget (DD-004): if habitat load grew in proportion to crew size from NASA's 20–50 kW for four<sup class="r">[4](#s4)</sup>, 6 people would need about 30–75 kW and 9 people about 45–113 kW (this plan's arithmetic, a crude linear scaling). The real figure must come from the module design.
+
+## Placeholder figures (PROVISIONAL)
 
 | Item | Value | Basis |
 |---|---|---|
-| Outer envelope | ~42 m³ | π × 1.5² × 6 (ESTIMATE; real habitable volume is smaller) |
-| Volume per crew (4) | ~10 m³ outer | 42 ÷ 4 (ESTIMATE) |
-| Landed mass | ~15 t | Thales<sup class="r">[1](#s1)</sup> |
-| Mass split | shell 5 t, mobility 1.5 t, life support 2 t, thermal 1 t, power and avionics 1.5 t, outfitting 2 t, margin 2 t | ESTIMATE, sums to 15 t |
-| Power | 20–50 kW | NASA GRC<sup class="r">[4](#s4)</sup> |
-
-Ten cubic metres per person is tight. That is why stays are capped at 30 days in M08 and more modules come in M09.
+| Mass per module | ~15 t | MPH reference<sup class="r">[1](#s1)</sup>; placeholder until the design exists |
+| Mass for 3 modules | ~45 t | 3 × 15 t (this plan's arithmetic) |
+| Beds | 3 per module, 9 in all | DD-006, DD-007 |
+| Power | 20–50 kW for a 4-crew habitat | NASA GRC<sup class="r">[4](#s4)</sup> |
 
 ## Testing and qualification
 
 1. **Pressure tests on Earth.** Proof and leak tests of the shell, plus a burst test of a test article. As a benchmark, Sierra Space's LIFE inflatable held 77 psi before bursting, 27% above NASA's recommended level<sup class="r">[8](#s8)</sup>.
-2. **Thermal vacuum test** of the complete module with radiators coated in lunar simulant.
-3. **Tow test** on a regolith simulant course with LTV-class vehicles.
-4. **Crew-in-the-loop fit checks** in a mock-up with four people for 14 days.
-5. **On the Moon.** NASA expects habitats to arrive on cargo landers no earlier than FY2033<sup class="r">[5](#s5)</sup>. After landing and towing, the module runs uncrewed for at least 3 months with leak checks and life support running before the first crew.
+2. **Connection test.** Join three modules on the ground and leak-test every hatch or tunnel.
+3. **Thermal vacuum test** of a complete module with radiators coated in lunar simulant.
+4. **Crew-in-the-loop fit checks** in a mock-up of three connected modules, with 6 people for weeks and 9 people for 2 weeks.
+5. **On the Moon.** NASA expects habitats to arrive on cargo landers no earlier than FY2033<sup class="r">[5](#s5)</sup>. After landing, placing, connecting and burying, the modules run uncrewed for at least 3 months before the first crew (M08).
 
 ## Open questions
 
-- Will ASI and Thales offer a four-crew outfitting option, or must the plan design its own?
+- What is the module's size, mass and layout? (To be defined later.)
+- How are the three modules joined: direct hatches, short tunnels or a shared node?
 - How much radiation protection do the shell and stowage give? The surface dose measured by Chang'e-4 was about 1,369 µSv per day<sup class="r">[7](#s7)</sup>. NASA's OLTARIS tool could be run on the real geometry.
-- Can the wheels and frames take the load of a regolith cover in M09, or does burial need a separate shell?
-- What window size gives morale value without too much heat loss and dust risk?
+- Can the module and its connections take the shape change of a regolith arch over three modules side by side?

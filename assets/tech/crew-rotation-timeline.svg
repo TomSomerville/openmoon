@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" font-family="Share Tech Mono, monospace" role="img" aria-labelledby="t d">
+<title id="t">Open Moon crew rotation: crews of 3, a new crew every 3 months, 2-week handovers</title>
+<desc id="d">Timeline of the first 18 months of the crewed base. Crews 1 to 6, each of 3 people, land 3 months apart and each stays about 6.5 months, so each crew leaves 2 weeks after the crew two places behind it lands. The headcount strip shows 3 people for the first 3 months, then 6, rising to 9 for 2 weeks at months 6, 9, 12 and 15. That is 4 crew arrivals and 4 departures a year.</desc>
+<defs><pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(56,212,240,.07)"/></pattern><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ffb020"/></marker></defs>
+<rect width="960" height="520" fill="#0a1015"/><rect width="960" height="520" fill="url(#g)"/>
+<text x="24" y="36" fill="#d6e2ec" font-size="19" letter-spacing="1">OPEN MOON CREW ROTATION · FIRST 18 MONTHS</text>
+<text x="24" y="58" fill="#d6e2ec" font-size="12" opacity=".7">Crews of 3 land every 3 months and stay ~6.5 months. Each handover overlap lasts 2 weeks (design change DD-006).</text>
+<rect x="396.7" y="84" width="22.2" height="372" fill="rgba(255,176,32,.13)"/>
+<rect x="530.0" y="84" width="22.2" height="372" fill="rgba(255,176,32,.13)"/>
+<rect x="663.3" y="84" width="22.2" height="372" fill="rgba(255,176,32,.13)"/>
+<rect x="796.7" y="84" width="22.2" height="372" fill="rgba(255,176,32,.13)"/>
+<text x="407.8" y="80" fill="#ffb020" font-size="11" text-anchor="middle">2-WEEK HANDOVER</text>
+<text x="24" y="110" fill="#38d4f0" font-size="13">CREW 1</text>
+<text x="90" y="110" fill="#d6e2ec" font-size="11" opacity=".7">3 ppl</text>
+<rect x="130.0" y="92" width="288.9" height="26" rx="5" fill="rgba(56,212,240,.16)" stroke="#38d4f0" stroke-width="2"/>
+<text x="140.0" y="109" fill="#d6e2ec" font-size="11">lands M0 · leaves M6.5</text>
+<text x="24" y="150" fill="#ffb020" font-size="13">CREW 2</text>
+<text x="90" y="150" fill="#d6e2ec" font-size="11" opacity=".7">3 ppl</text>
+<rect x="263.3" y="132" width="288.9" height="26" rx="5" fill="rgba(255,176,32,.14)" stroke="#ffb020" stroke-width="2"/>
+<text x="273.3" y="149" fill="#d6e2ec" font-size="11">lands M3 · leaves M9.5</text>
+<text x="24" y="190" fill="#38d4f0" font-size="13">CREW 3</text>
+<text x="90" y="190" fill="#d6e2ec" font-size="11" opacity=".7">3 ppl</text>
+<rect x="396.7" y="172" width="288.9" height="26" rx="5" fill="rgba(56,212,240,.16)" stroke="#38d4f0" stroke-width="2"/>
+<text x="406.7" y="189" fill="#d6e2ec" font-size="11">lands M6 · leaves M12.5</text>
+<text x="24" y="230" fill="#ffb020" font-size="13">CREW 4</text>
+<text x="90" y="230" fill="#d6e2ec" font-size="11" opacity=".7">3 ppl</text>
+<rect x="530.0" y="212" width="288.9" height="26" rx="5" fill="rgba(255,176,32,.14)" stroke="#ffb020" stroke-width="2"/>
+<text x="540.0" y="229" fill="#d6e2ec" font-size="11">lands M9 · leaves M15.5</text>
+<text x="24" y="270" fill="#38d4f0" font-size="13">CREW 5</text>
+<text x="90" y="270" fill="#d6e2ec" font-size="11" opacity=".7">3 ppl</text>
+<rect x="663.3" y="252" width="266.7" height="26" rx="5" fill="rgba(56,212,240,.16)" stroke="#38d4f0" stroke-width="2"/>
+<text x="673.3" y="269" fill="#d6e2ec" font-size="11">lands M12 · leaves M18.5 →</text>
+<text x="24" y="310" fill="#ffb020" font-size="13">CREW 6</text>
+<text x="90" y="310" fill="#d6e2ec" font-size="11" opacity=".7">3 ppl</text>
+<rect x="796.7" y="292" width="133.3" height="26" rx="5" fill="rgba(255,176,32,.14)" stroke="#ffb020" stroke-width="2"/>
+<text x="806.7" y="309" fill="#d6e2ec" font-size="11">lands M15 →</text>
+<line x1="130" y1="346" x2="930" y2="346" stroke="#d6e2ec" stroke-opacity=".5"/>
+<line x1="130.0" y1="346" x2="130.0" y2="352" stroke="#d6e2ec" stroke-opacity=".5"/>
+<text x="130.0" y="366" fill="#d6e2ec" font-size="11" text-anchor="start" opacity=".8">M0</text>
+<line x1="263.3" y1="346" x2="263.3" y2="352" stroke="#d6e2ec" stroke-opacity=".5"/>
+<text x="263.3" y="366" fill="#d6e2ec" font-size="11" text-anchor="middle" opacity=".8">M3</text>
+<line x1="396.7" y1="346" x2="396.7" y2="352" stroke="#d6e2ec" stroke-opacity=".5"/>
+<text x="396.7" y="366" fill="#d6e2ec" font-size="11" text-anchor="middle" opacity=".8">M6</text>
+<line x1="530.0" y1="346" x2="530.0" y2="352" stroke="#d6e2ec" stroke-opacity=".5"/>
+<text x="530.0" y="366" fill="#d6e2ec" font-size="11" text-anchor="middle" opacity=".8">M9</text>
+<line x1="663.3" y1="346" x2="663.3" y2="352" stroke="#d6e2ec" stroke-opacity=".5"/>
+<text x="663.3" y="366" fill="#d6e2ec" font-size="11" text-anchor="middle" opacity=".8">M12</text>
+<line x1="796.7" y1="346" x2="796.7" y2="352" stroke="#d6e2ec" stroke-opacity=".5"/>
+<text x="796.7" y="366" fill="#d6e2ec" font-size="11" text-anchor="middle" opacity=".8">M15</text>
+<line x1="930.0" y1="346" x2="930.0" y2="352" stroke="#d6e2ec" stroke-opacity=".5"/>
+<text x="930.0" y="366" fill="#d6e2ec" font-size="11" text-anchor="end" opacity=".8">M18</text>
+<text x="24" y="366" fill="#d6e2ec" font-size="11" opacity=".7">MONTH</text>
+<path d="M130.0 452 L130.0 431.0 L263.3 431.0 L263.3 410.0 L396.7 410.0 L396.7 389.0 L418.9 389.0 L418.9 410.0 L530.0 410.0 L530.0 389.0 L552.2 389.0 L552.2 410.0 L663.3 410.0 L663.3 389.0 L685.6 389.0 L685.6 410.0 L796.7 410.0 L796.7 389.0 L818.9 389.0 L818.9 410.0 L930.0 410.0 L930.0 452Z" fill="rgba(56,212,240,.14)" stroke="#38d4f0" stroke-width="2"/>
+<text x="24" y="412" fill="#38d4f0" font-size="13">ON BASE</text>
+<text x="24" y="430" fill="#d6e2ec" font-size="11" opacity=".7">people</text>
+<text x="196.7" y="425.0" fill="#d6e2ec" font-size="14" text-anchor="middle">3</text>
+<text x="330.0" y="404.0" fill="#d6e2ec" font-size="14" text-anchor="middle">6</text>
+<text x="474.4" y="404.0" fill="#d6e2ec" font-size="14" text-anchor="middle">6</text>
+<text x="607.8" y="404.0" fill="#d6e2ec" font-size="14" text-anchor="middle">6</text>
+<text x="741.1" y="404.0" fill="#d6e2ec" font-size="14" text-anchor="middle">6</text>
+<text x="874.4" y="404.0" fill="#d6e2ec" font-size="14" text-anchor="middle">6</text>
+<text x="407.8" y="383.0" fill="#ffb020" font-size="14" text-anchor="middle">9</text>
+<text x="541.1" y="383.0" fill="#ffb020" font-size="14" text-anchor="middle">9</text>
+<text x="674.4" y="383.0" fill="#ffb020" font-size="14" text-anchor="middle">9</text>
+<text x="807.8" y="383.0" fill="#ffb020" font-size="14" text-anchor="middle">9</text>
+<text x="936" y="488" fill="#d6e2ec" font-size="11" text-anchor="end" opacity=".8">4 arrivals + 4 departures a year · steady-state average 6.5 people (this plan's arithmetic)</text>
+<text x="24" y="510" fill="#d6e2ec" font-size="10" opacity=".6" letter-spacing="1">DIAGRAM · OPEN MOON PLAN DESIGN (DD-006) · CC BY-SA 4.0</text>
+</svg>

@@ -32,7 +32,7 @@ CADRE will fly on Intuitive Machines' IM-3 Nova-C lander under NASA's [CLPS](htt
 
 ## Why Open Moon uses it
 
-Open Moon lists CADRE in milestone M07 (surface mobility) as heritage for multi-robot autonomy. M07 expects rovers and utility robots to keep working between crew visits. CADRE is the first flight test of robots that [share maps, split up work and decide what to do as a team](https://robotics.jpl.nasa.gov/what-we-do/flight-projects/cooperative-autonomous-distributed-robotic-exploration-cadre/). NASA says success [could lead to teams of robots supporting astronauts and taking distributed measurements](https://www.nasa.gov/technology/nasas-mini-rover-team-is-packed-for-lunar-journey).
+Open Moon lists CADRE in milestone M07 (surface mobility) as heritage for multi-robot autonomy. M07 expects rovers and utility robots to build the base before any crew arrives (Phase 1). CADRE is the first flight test of robots that [share maps, split up work and decide what to do as a team](https://robotics.jpl.nasa.gov/what-we-do/flight-projects/cooperative-autonomous-distributed-robotic-exploration-cadre/). NASA says success [could lead to teams of robots supporting astronauts and taking distributed measurements](https://www.nasa.gov/technology/nasas-mini-rover-team-is-packed-for-lunar-journey).
 
 Open Moon does not plan to buy CADRE rovers. It uses the software ideas and flight data. Without CADRE, fleets of utility robots would rely on [Earth teleoperation through a 4-8 second delay](https://ntrs.nasa.gov/citations/20240001217), with one operator per vehicle. NASA's own project page notes that [waiting for ground control "eats up precious time"](https://www.nasa.gov/cooperative-autonomous-distributed-robotic-exploration-cadre).
 

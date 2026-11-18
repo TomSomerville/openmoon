@@ -1,7 +1,7 @@
 ---
 id_code: "C09.1"
-milestone: M09
-order: 1
+milestone: M08
+order: 5
 title: Regolith radiation shielding
 summary: "A delivered arch over the habitat modules, covered with at least 2 m of loose regolith. It cuts the crew's radiation dose, steadies the temperature and stops micrometeoroids, while leaving a gallery so the habitat can still be inspected."
 trl: 4
@@ -9,11 +9,12 @@ spec:
   - {k: "Cover depth", v: "≥2 m everywhere, 3 m on the roof (plan design choice)"}
   - {k: "Areal density", v: "~300 g/cm² at 2 m, ~450 g/cm² at 3 m (ESTIMATE, 1.5 g/cm³ placed regolith)"}
   - {k: "Modelled dose inside", v: "~150 mSv per 180 days at 2 m, ~100 mSv at 3 m (one OLTARIS study, no EVA)"}
-  - {k: "Regolith moved", v: "~4,300 t (2 m) to ~6,800 t (3 m) for 3 modules (ESTIMATE)"}
+  - {k: "When", v: "Finished and dose-checked before the first crew lands (M08, DD-005)"}
+  - {k: "Regolith moved", v: "~4,300 t (2 m) to ~6,800 t (3 m) for 3 modules (ESTIMATE; PROVISIONAL, from MPH-sized modules in a line)"}
   - {k: "Placement time", v: "~225–355 days with 4 excavators at 200 kg/h each (ESTIMATE)"}
   - {k: "Static load on arch", v: "~4.9 kPa (2 m) to ~7.3 kPa (3 m) (ESTIMATE)"}
-  - {k: "Arch structure mass", v: "~10 t (ESTIMATE, ~330 m² at ~30 kg/m²)"}
-  - {k: "Clear envelope", v: "5 m wide × 4.5 m high × 26 m long over 3 modules (plan design choice)"}
+  - {k: "Arch structure mass", v: "~10 t (ESTIMATE, ~330 m² at ~30 kg/m²; PROVISIONAL)"}
+  - {k: "Clear envelope", v: "5 m wide × 4.5 m high × 26 m long over 3 modules in a line (PROVISIONAL; DD-007 puts the 3 modules side by side, so the arch shape will change once the module design exists)"}
   - {k: "Design life", v: "≥10 years (matches the habitat module life)"}
   - {k: "Delivery", v: "Arch and dosimetry on one heavy cargo lander; regolith is local"}
 subcomponents:
@@ -48,12 +49,12 @@ subcomponents:
     tech: "HERA and Crew Active Dosimeter (Artemis I); NASA thick-shield experiment concept"
     trl: 7
 risks:
-  - {sev: Critical, title: "At 2 m, one model gives ~150 mSv per six-month stay, so four rotations reach the 600 mSv career limit even with no EVA", fix: "Build 3 m on the roof where people sleep; run OLTARIS on the real geometry; give each person a dose budget and cap their number of rotations."}
+  - {sev: Critical, title: "At 2 m, one model gives ~165 mSv per 6.5-month tour (this plan's arithmetic from ~150 mSv per 180 days), so about 3.6 tours reach the 600 mSv career limit even with no EVA", fix: "Build 3 m on the roof where people sleep (~110 mSv per tour, ~5.5 tours); run OLTARIS on the real geometry; give each person a dose budget and cap their number of tours."}
   - {sev: High, title: "No measured dose-depth data exists beyond ~100 g/cm², and studies disagree (2 m minimum vs 3–7 m)", fix: "Fly the regolith dose-depth test stack before crew arrive; measure inside the finished shield; add depth if numbers are worse than models."}
-  - {sev: High, title: "Burial is slow: ~1 year with 4 excavators at 200 kg/h, ~3–5 years at the IPEx design rate", fix: "Start piling as soon as the arch is up, before crew; add excavators; use the storm shelter (C09.2) until the cover is complete."}
+  - {sev: High, title: "Burial is slow: ~1 year with 4 excavators at 200 kg/h, ~3–5 years at the IPEx design rate, and it must now finish before the first crew lands (DD-005)", fix: "Start piling as soon as the arch is up; add excavators; set the first crew date by measured burial progress."}
   - {sev: High, title: "Arch failure would drop tonnes of regolith onto a pressurised module", fix: "Design the arch to carry the full load on its own with margin; monitor load cells; add regolith in even layers on both sides."}
   - {sev: Medium, title: "A buried hull cannot be seen or repaired", fix: "Keep the inspection gallery and access panels; never pile regolith directly on the module."}
-  - {sev: High, title: "Buried modules overheat: regolith conducts only ~0.003–0.013 W/m·K, so the cover passes ~0.05–0.2 kW against a 20–50 kW habitat load, and a pumped-loop failure has no passive backup", fix: "Surface radiators on two independent pumped loops; size them for full load before burial; load-shed plan if a loop fails; keep heaters for low-power periods."}
+  - {sev: High, title: "Buried modules overheat: regolith conducts only ~0.003–0.013 W/m·K, so the cover passes ~0.05–0.2 kW against a 20–50 kW habitat load, and a pumped-loop failure has no passive backup", fix: "Surface radiators on two independent pumped loops; size them for the 9-person peak load before burial; load-shed plan if a loop fails; keep heaters for low-power periods."}
   - {sev: Medium, title: "No lunar bag-filling system exists yet", fix: "Use bulk regolith for most of the cover; limit bags to end walls; develop and test a filler on Earth first."}
   - {sev: Medium, title: "Dust gets into the gallery and entrance", fix: "Dust door at the tunnel mouth; membrane over the arch; sintered ground at the entrance."}
 sources:
@@ -75,7 +76,7 @@ sources:
 
 ## What it does
 
-Unshielded, the lunar surface gives about **1,369 µSv per day**<sup class="r">[1](#s1)</sup>. That is about 246 mSv in a six-month stay, against NASA's **600 mSv** career limit<sup class="r">[3](#s3)</sup>. This component puts a thick layer of regolith between the crew and the sky. The same layer also steadies the temperature and stops micrometeoroids.
+Unshielded, the lunar surface gives about **1,369 µSv per day**<sup class="r">[1](#s1)</sup>. That is about 246 mSv in six months, or about 271 mSv in a 6.5-month tour (this plan's arithmetic), against NASA's **600 mSv** career limit<sup class="r">[3](#s3)</sup>. This component puts a thick layer of regolith between the crew and the sky. The same layer also steadies the temperature and stops micrometeoroids.
 
 ## How much regolith? There is no single NASA number
 
@@ -86,7 +87,16 @@ NASA has not set a design depth for regolith shielding. The published work point
 - **NASA Lunar Safe Haven study.** It used a **3 m threshold and a 7 m goal**<sup class="r">[6](#s6)</sup>.
 - **Data gap.** NASA lists dose behind more than 100 g/cm² as unmeasured. It proposes a lunar test that puts a detector under thicker and thicker layers of regolith<sup class="r">[5](#s5)</sup>.
 
-Open Moon keeps M09's working value of **≥2 m everywhere**. It builds **3 m over the sleeping quarters**, because sleep is where crew spend the most hours. It then checks the result with OLTARIS and with measurements.
+Open Moon keeps its working value of **≥2 m everywhere**. It builds **3 m over the sleeping quarters**, because sleep is where crew spend the most hours. It then checks the result with OLTARIS and with measurements.
+
+## When it is built
+
+{% include decision-note.html id="DD-005" extra="Burial used to happen in M09, while crews were already visiting on sorties. Now the first crew lands and stays, so the full cover must be finished and dose-checked before crew 1 lands. This page keeps its C09.1 ID so links don't break, but it is now delivered by M08." %}
+
+- **Before the first crew (plan design, DD-005).** The ≥2 m cover everywhere and the 3 m cover over the sleeping quarters are finished in Phase 1, by robots, before crew 1 lands.
+- **Why.** There are no sorties any more. An unshielded 6.5-month tour would cost about 271 mSv, 45% of the 600 mSv career limit (this plan's arithmetic). Piling regolith next to an occupied module would also put people and excavators in the same work zone.
+- **Cost of the choice.** The burial time in the sizing table below sits directly on the path to the first crew landing.
+- **Layout.** DD-007 places three standard modules side by side and connects them. The arch was sized for three MPH-sized modules in a line, so its figures are provisional until the module design exists.
 
 ## How it works
 
@@ -111,7 +121,7 @@ Open Moon keeps M09's working value of **≥2 m everywhere**. It builds **3 m ov
 
 The arch's clear space is 5 m × 4.5 m × 26 m. The slopes are 45°, which is more conservative than 55°. Placed regolith is taken as 1.5 g/cm³. For comparison, natural regolith is 1.30 g/cm³ at the surface and 1.52 g/cm³ at 10 cm depth<sup class="r">[7](#s7)</sup>.
 
-| Cover | Volume | Mass | Days at 4 × 200 kg/h | Days at 4 × 42 kg/h (IPEx target<sup class="r">[11](#s11)</sup>) |
+| Cover (PROVISIONAL) | Volume | Mass | Days at 4 × 200 kg/h | Days at 4 × 42 kg/h (IPEx target<sup class="r">[11](#s11)</sup>) |
 |---|---|---|---|---|
 | 2 m | ~2,900 m³ | ~4,300 t | ~225 | ~1,070 |
 | 3 m | ~4,550 m³ | ~6,800 t | ~355 | ~1,690 |
@@ -127,12 +137,13 @@ The arch's clear space is 5 m × 4.5 m × 26 m. The slopes are 45°, which is mo
 3. Model the full geometry in OLTARIS<sup class="r">[4](#s4)</sup>.
 4. On the Moon, fly the dose-depth stack first<sup class="r">[5](#s5)</sup>.
 5. Build the arch, bury it, and survey the depth.
-6. Compare the HERA readings inside with the readings outside before crew move in.
+6. Compare the HERA readings inside with the readings outside before the first crew lands (M08 exit criterion).
 
 ## Open questions
 
 - How deep is deep enough? Can a measured dose-depth curve be produced before 2034?
 - Does the 1 m secondary-radiation peak appear for real south-pole regolith?
 - What angle of repose does excavated polar regolith hold in practice?
-- How many six-month rotations can one person fly within 600 mSv once EVA dose is added?
+- How many 6.5-month tours can one person fly within 600 mSv once EVA dose is added?
+- How does the arch change for three modules side by side (DD-007)?
 - How warm does the regolith next to the arch get over 10 years of small heat leaks, and does that matter for the arch or the hull?

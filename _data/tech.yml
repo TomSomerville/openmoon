@@ -163,7 +163,7 @@
   milestones:
   - M02
   phases:
-  - 1
+  - 0
   trl: 9
   status: Fully successful landing Mar 2025; 14 days of operations
   use: Small cargo
@@ -183,7 +183,7 @@
   milestones:
   - M02
   phases:
-  - 1
+  - 0
   trl: 7
   status: Landed twice (2024, 2025); both times ended on its side
   use: Small cargo
@@ -203,7 +203,7 @@
   milestones:
   - M02
   phases:
-  - 1
+  - 0
   trl: 6
   status: First flight planned January 2027
   use: Small cargo
@@ -223,7 +223,7 @@
   milestones:
   - M02
   phases:
-  - 1
+  - 0
   trl: 6
   status: Pathfinder to Shackleton connecting ridge NET Q1 2027
   use: Medium cargo (up to 3 t)
@@ -243,7 +243,7 @@
   milestones:
   - M02
   phases:
-  - 1
+  - 0
   trl: 6
   status: Starship reached orbit on flights 14 and 15 (2026); ship caught by the tower after flight 15
   use: Heavy cargo and crew
@@ -263,7 +263,7 @@
   milestones:
   - M02
   phases:
-  - 1
+  - 0
   trl: 5
   status: ~$3.1B NASA contract; uncrewed demo expected Feb 2029
   use: Crew; cargo variant
@@ -283,7 +283,7 @@
   milestones:
   - M02
   phases:
-  - 1
+  - 0
   trl: 4
   status: Ground prototypes tested; NASA proposed path to TRL 6
   use: Offloading crane
@@ -303,7 +303,7 @@
   milestones:
   - M03
   phases:
-  - 1
+  - 0
   trl: 7
   status: Contract with a maximum potential value of $4.82B (Sep 2024)
   use: Earth link and PNT
@@ -323,7 +323,7 @@
   milestones:
   - M03
   phases:
-  - 1
+  - 0
   trl: 6
   status: 5 satellites; initial operations by end 2028, full operations by 2030
   use: Earth link and navigation
@@ -343,7 +343,7 @@
   milestones:
   - M03
   phases:
-  - 1
+  - 0
   trl: 7
   status: In final testing; launch NET 2027 on Blue Ghost M2
   use: Relay
@@ -363,7 +363,7 @@
   milestones:
   - M03
   phases:
-  - 1
+  - 0
   trl: 7
   status: Ran for its full ~25-minute power window on IM-2 (2025)
   use: Surface network
@@ -383,7 +383,7 @@
   milestones:
   - M03
   phases:
-  - 1
+  - 0
   trl: 7
   status: Got a position fix on the lunar surface, Mar 2025
   use: Navigation
@@ -403,7 +403,7 @@
   milestones:
   - M03
   phases:
-  - 1
+  - 0
   trl: 7
   status: LCRD experimenting since 2022; O2O flew on Artemis II (2026) at up to 260 Mbps
   use: High-rate Earth link
@@ -423,7 +423,7 @@
   milestones:
   - M03
   phases:
-  - 1
+  - 0
   trl: 9
   status: Version 5 published Feb 2025; developed by NASA, ESA, JAXA
   use: Standard so all networks work together
@@ -443,7 +443,7 @@
   milestones:
   - M04
   phases:
-  - 1
+  - 0
   trl: 5
   status: 'KRUSTY ground test 2018: 28 h at full power, 183 We from 2 Stirling engines, reactor rated TRL 5. No flight unit built; DARPA–LANL test agreement reported Oct 2026'
   use: Small reactor (plan value 1 kWe) feeding the BMS
@@ -463,7 +463,7 @@
   milestones:
   - M04
   phases:
-  - 1
+  - 0
   trl: 4
   status: 'Draft SPARC solicitation Aug 2026 (amended 16 Nov): ≥20 kWe at 3 kV AC, ≥5 yr, HALEU, closed Brayton, <15 t, landing 2030. No award, no hardware; sister reactor SR-1 flies late 2028'
   use: Main base reactor (plan value 20 kWe) feeding the BMS
@@ -483,7 +483,7 @@
   milestones:
   - M04
   phases:
-  - 1
+  - 0
   trl: 6
   status: Three NASA prototype contracts (2022); deploy to ~10 m
   use: 10 kW-class solar towers feeding the BMS
@@ -503,7 +503,7 @@
   milestones:
   - M04
   phases:
-  - 1
+  - 0
   trl: 5
   status: NASA SBIR study award 2024; 34 m tall; Redwire ROSA arrays. Phase II follow-on Jun 2025–Jun 2027
   use: "Alternative only: dropped from M04 in favour of 10 kW VSATs (DD-004)"
@@ -523,7 +523,7 @@
   milestones:
   - M04
   phases:
-  - 1
+  - 0
   trl: 6
   status: 1 kW; ~500 m of cable in the 2025 design (1 km in earlier plans); passed CDR Aug 2025
   use: Cable-laying rover and power transfer
@@ -543,7 +543,7 @@
   milestones:
   - M04
   phases:
-  - 1
+  - 0
   trl: 5
   status: NASA Glenn breadboard ran 550+ hours of simulated lunar cycles (open-loop)
   use: Long-gap storage behind the BMS; charged by surplus, discharges only into the battery
@@ -563,7 +563,7 @@
   milestones:
   - M04
   phases:
-  - 1
+  - 0
   trl: 4
   status: NASA's lunar grid baseline since 2022 (switched from DC; see DD-001). UMIC 1 kW module bench-tested 2023; AC cable tested in vacuum with regolith simulant 2025
   use: Source lines into the BMS hub and feeders out to the microgrids
@@ -583,7 +583,7 @@
   milestones:
   - M05
   phases:
-  - 1
+  - 0
   trl: 5
   status: TRL 5 design (2024); target 42 kg/h, 10 t over an 11-day mission; no flight date
   use: Excavation and grading
@@ -603,7 +603,7 @@
   milestones:
   - M05
   phases:
-  - 1
+  - 0
   trl: 4
   status: Under 100 kg; nominal mission concept of 35 loads of 20 kg per 24 h, about 700 kg/day
   use: Light excavation
@@ -624,8 +624,8 @@
   - M05
   - M12
   phases:
-  - 1
-  - 4
+  - 0
+  - 3
   trl: 4
   status: $57.2M NASA SBIR Phase III contract (2022) for landing pads, blast shields and roads
   use: Pads, roads and structures from regolith
@@ -645,7 +645,7 @@
   milestones:
   - M05
   phases:
-  - 1
+  - 0
   trl: 4
   status: Hot-fire tested on the ground by NASA KSC
   use: Landing pads
@@ -707,7 +707,7 @@
   - M12
   phases:
   - 1
-  - 4
+  - 3
   trl: 5
   status: Passed CDR Sep 2025; autonomous demo in simulated lunar environment planned 2026
   use: Oxygen plus silicon, iron, aluminium
@@ -729,7 +729,7 @@
   - M12
   phases:
   - 1
-  - 4
+  - 3
   trl: 4
   status: ESA prototype plant opened 2020; extracts oxygen and leaves a mix of metals
   use: Oxygen with metal by-product
@@ -748,10 +748,11 @@
   category: Habitation and life support
   milestones:
   - M06
+  - M08
   - M09
   phases:
   - 1
-  - 3
+  - 2
   trl: 9
   status: Flight-proven since 2007; nominal 5.4 kg O₂/day
   use: Water electrolysis
@@ -791,7 +792,7 @@
   milestones:
   - M07
   phases:
-  - 2
+  - 1
   trl: 6
   status: NASA task order $219M (May 2026); flight units to be qualified over the next 18 months; delivery 2028
   use: Crew and cargo rover
@@ -811,7 +812,7 @@
   milestones:
   - M07
   phases:
-  - 2
+  - 1
   trl: 6
   status: NASA task order $220M (May 2026); delivery 2028
   use: Crew and cargo rover
@@ -831,7 +832,7 @@
   milestones:
   - M07
   phases:
-  - 2
+  - 1
   trl: 5
   status: '2024 agreement: 2 crew up to 30 days, ~10-year life; NASA lists 28 days; cargo delivery NET FY2032'
   use: Long crewed trips
@@ -851,7 +852,7 @@
   milestones:
   - M07
   phases:
-  - 2
+  - 1
   trl: 6
   status: 'NASA LTV studies: operators completed traverses at 4, 6 and 8 s delay (2023)'
   use: Earth-driven rovers
@@ -871,7 +872,7 @@
   milestones:
   - M07
   phases:
-  - 2
+  - 1
   trl: 6
   status: Flies on Intuitive Machines IM-3; NASA launch schedule lists IM-3 for early 2027
   use: Multi-robot autonomy heritage
@@ -891,10 +892,10 @@
   milestones:
   - M08
   phases:
-  - 2
+  - 1
   trl: 5
   status: Preliminary design contract with ASI (Jul 2025); ~15 t, ~3 m × 6 m, 10-yr life; launch planned 2033
-  use: Surface habitat
+  use: Reference hardware for the standard 3-person habitat module (DD-007)
   develop: false
   source: https://europeanspaceflight.com/asi-awards-new-lunar-habitat-contract-to-thales-alenia-space/
   source_title: 'European Spaceflight: ASI awards new lunar habitat contract to Thales Alenia Space (MPH: 3 m × 6 m, ~15 t, 2 crew, 7–30 days a year)'
@@ -911,7 +912,7 @@
   milestones:
   - M08
   phases:
-  - 2
+  - 1
   trl: 5
   status: Full-scale burst test reached 77 psi before bursting (reported Jan 2024), 27% above NASA's recommended 60.8 psi
   use: Alternative expandable habitat
@@ -931,7 +932,7 @@
   milestones:
   - M08
   phases:
-  - 2
+  - 1
   trl: 9
   status: Flight-proven; 98% water recovery demonstrated 2023
   use: Air and water recycling
@@ -951,7 +952,7 @@
   milestones:
   - M08
   phases:
-  - 2
+  - 1
   trl: 6
   status: Critical design review closed 13 Nov 2026; qualification next
   use: Moonwalks
@@ -969,9 +970,11 @@
 - name: ISS water recovery with Brine Processor
   category: Habitation and life support
   milestones:
+  - M08
   - M09
   phases:
-  - 3
+  - 1
+  - 2
   trl: 9
   status: 98% recovery demonstrated (2023)
   use: Water recycling
@@ -989,9 +992,11 @@
 - name: Four-bed CO₂ scrubber (4BCO2)
   category: Habitation and life support
   milestones:
+  - M08
   - M09
   phases:
-  - 3
+  - 1
+  - 2
   trl: 9
   status: Flew as an ISS demonstration; became a permanent ISS system in July 2025; NASA's 2026 trade study rates it TRL 9
   use: CO₂ removal
@@ -1009,9 +1014,11 @@
 - name: Sabatier reactor
   category: Habitation and life support
   milestones:
+  - M08
   - M09
   phases:
-  - 3
+  - 1
+  - 2
   trl: 8
   status: Flown on ISS; limits O₂ recovery to ~50% because methane is vented
   use: Water from CO₂
@@ -1029,9 +1036,11 @@
 - name: Regolith radiation shielding
   category: Habitation and life support
   milestones:
+  - M08
   - M09
   phases:
-  - 3
+  - 1
+  - 2
   trl: 4
   status: No single NASA design value; models suggest ≥2 m
   use: Protect crew in habitats
@@ -1051,7 +1060,7 @@
   milestones:
   - M10
   phases:
-  - 4
+  - 3
   trl: 9
   status: ISS plant facilities (Veggie and APH) have grown lettuces, Chinese cabbage, mustard greens, kale
   use: Leafy greens
@@ -1071,7 +1080,7 @@
   milestones:
   - M10
   phases:
-  - 4
+  - 3
   trl: 9
   status: Chile peppers bore fruit on ISS; harvests planned late Oct and early Nov 2021
   use: Controlled growth of fruiting crops
@@ -1091,7 +1100,7 @@
   milestones:
   - M10
   phases:
-  - 4
+  - 3
   trl: 6
   status: 370 days, 8 crew in two groups of four (2017–18); 98.2% material closure on the ground
   use: Closed-loop life support with crops
@@ -1111,7 +1120,7 @@
   milestones:
   - M10
   phases:
-  - 4
+  - 3
   trl: 4
   status: Pilot plant at Universitat Autònoma de Barcelona since 2009
   use: Closed-loop ecosystem research
@@ -1131,7 +1140,7 @@
   milestones:
   - M10
   phases:
-  - 4
+  - 3
   trl: 5
   status: Won NASA Deep Space Food Challenge grand prize 2024
   use: Compact food production
@@ -1151,7 +1160,7 @@
   milestones:
   - M11
   phases:
-  - 4
+  - 3
   trl: 5
   status: Starship propellant transfer demo shown ~Q1 2027 on NASA HLS schedule
   use: Refuelling landers
@@ -1171,7 +1180,7 @@
   milestones:
   - M11
   phases:
-  - 4
+  - 3
   trl: 6
   status: Eta Space payload on Rocket Lab spacecraft; NASA (May 2026) gave launch no earlier than 17 July
   use: Cryogenic storage heritage
@@ -1191,7 +1200,7 @@
   milestones:
   - M12
   phases:
-  - 4
+  - 3
   trl: 7
   status: First metal part printed in space, Aug 2024
   use: Printing metal parts
@@ -1211,7 +1220,7 @@
   milestones:
   - M12
   phases:
-  - 4
+  - 3
   trl: 9
   status: Commercial polymer printer on ISS (ABS, ULTEM, HDPE); parts printed since at least Feb 2017
   use: Polymer parts
@@ -1231,7 +1240,7 @@
   milestones:
   - M12
   phases:
-  - 4
+  - 3
   trl: 5
   status: Printed with regolith simulant on ISS (launched Aug 2021)
   use: Printing with regolith simulant
@@ -1251,7 +1260,7 @@
   milestones:
   - M13
   phases:
-  - 5
+  - 4
   trl: 2
   status: Radar evidence of a cave under the Mare Tranquillitatis pit (2024); Marius Hills pit ~40 m deep
   use: Future shielded volume

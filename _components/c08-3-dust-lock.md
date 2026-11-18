@@ -50,7 +50,7 @@ risks:
   - {sev: High, title: "Suitport doffing was harder than expected in tests on Earth", fix: "Human-in-the-loop tests in 1/6 g simulation; handholds and assist devices; keep the dust lock as a backup way in"}
   - {sev: High, title: "Suitport needs a matching suit interface; the AxEMU and the habitat may not fit", fix: "Fix the interface standard with the suit provider early (C08.4); test with flight suits before launch"}
   - {sev: High, title: "Brushes worked in ground tests but poorly on the Moon", fix: "Treat brushes as first stage only; rely on suitports to keep suits outside; qualify cleaning with real-like simulant in vacuum"}
-  - {sev: Medium, title: "EDS has only a short Moon demonstration on small samples", fix: "Fly EDS on non-critical surfaces first; measure performance over the 3-month uncrewed run"}
+  - {sev: Medium, title: "EDS has only a short Moon demonstration on small samples", fix: "Fly EDS on non-critical surfaces first; measure performance over the 3-month uncrewed run before the first crew"}
   - {sev: Medium, title: "Each full airlock cycle loses gas that must be shipped or made", fix: "Use suitports for routine EVAs; use the dust lock for emergencies and cargo; recover more gas with longer pump-down"}
   - {sev: Medium, title: "Dust harms eyes and lungs; Apollo crews needed saline eye rinses", fix: "Particle monitor alarm, eye rinse and masks at the dust lock, and limits on cabin dust from NASA-STD-3001"}
 sources:
@@ -82,17 +82,17 @@ Gas lost per full dust lock cycle at 8.2 psia, 34% O₂ (ESTIMATE):
 
 - Gas in 3.7 m³: n = PV/RT = (56,540 Pa × 3.7) ÷ (8.314 × 295) ≈ 85 mol
 - Mass at 29.4 g/mol ≈ **2.5 kg**; at 10% loss ≈ **0.25 kg per cycle**
-- BVAD nominal is 5 cycles per week<sup class="r">[3](#s3)</sup>. A 30-day sortie is about 21 cycles, or **~5.4 kg** of gas.
+- BVAD nominal is 5 cycles per week<sup class="r">[3](#s3)</sup>. A 3-month cycle is about 65 cycles, or **~16 kg** of gas (this plan's arithmetic, 13 weeks × 5 × 0.25 kg). With 6 people on base, EVAs may be more frequent than BVAD's nominal rate.
 
 With suitports, NASA estimates oxygen loss of 0.1 kg per crew-hour plus 0.54 kg per crew per EVA, mostly the nitrogen purge before EVA<sup class="r">[3](#s3)</sup>. The main gain from suitports is dust and time, not gas.
 
 ## Testing and qualification
 
 1. **Suitport tests** in a vacuum chamber with the flight suit (C08.4), including emergency doffing.
-2. **Dust tests** with high-fidelity simulant in vacuum: brush, EDS and seal cycling for at least the number of EVAs in four sorties.
+2. **Dust tests** with high-fidelity simulant in vacuum: brush, EDS and seal cycling for at least the number of EVAs in one year of crewed operations.
 3. **EDS life test** on habitat-sized panels and window films.
 4. **On the Moon, uncrewed.** Run the dust lock pumps, EDS and seals through many cycles during the 3-month habitat checkout. A NASA thermal study found dust from landing degraded the EDS payload's optical surfaces<sup class="r">[6](#s6)</sup>, so expect to clean after every landing nearby.
-5. **Each sortie.** Log particle counts in the cabin and compare with the 0.3 mg/m³ limit.
+5. **Every crew.** Log particle counts in the cabin and compare with the 0.3 mg/m³ limit.
 
 ## Open questions
 

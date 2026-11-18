@@ -1,52 +1,55 @@
 ---
 id_code: M08
 order: 8
-title: First habitat and crewed sorties
-phase: 2
+title: Base habitats, shielding and life support
+phase: 1
 window: "2031–2035"
-summary: Land the first surface habitat and fly crews for stays of two to four weeks, leaving more infrastructure behind on every visit.
-objective: "Land a habitat for two to four crew, fly four crewed sorties of 14–30 days, and use them to commission the power, ISRU and mobility systems with people on site."
-trl_min: 5
-depends_on: [M02, M03, M04, M05, M07]
+summary: Before anyone lands, robots install three standard 3-person habitat modules side by side, connect them, bury them under regolith, and run life support, the storm shelter and the medical bay uncrewed until the base is ready for its first crew.
+objective: "Land three standard 3-person habitat modules (detailed design to be defined later), connect them, cover them with at least 2 m of regolith (3 m over the sleeping quarters), and run life support sized for 6 people continuously and 9 at handover peaks, uncrewed, for at least 3 months, so the base is complete when the first crew lands (Phase 2, M09)."
+trl_min: 4
+depends_on: [M02, M03, M04, M05, M06, M07]
 spec:
-  - {k: Habitat, v: "1 rigid module, ~15 t class (e.g. Thales Alenia MPH: ~3 m × 6 m, 10-year life)"}
-  - {k: Crew, v: "2 per sortie at first (MPH is reported as a 2-crew module), 4 once a second module or the pressurised rover is docked"}
-  - {k: Stays, v: "14–30 days"}
-  - {k: Sorties, v: "4"}
-  - {k: Suits, v: "Axiom AxEMU class"}
-cost: {low: 10.6, high: 30.2, note: "crew transport dominates"}
+  - {k: Habitat, v: "3 × standard 3-person module, landed side by side and connected (DD-007); design to be defined later (open)"}
+  - {k: "Beds", v: "9: 6 resident + 3 flexible for handovers (3 × 3, DD-006, DD-007)"}
+  - {k: "Module mass", v: "~15 t each, PROVISIONAL placeholder from the Thales Alenia MPH class"}
+  - {k: "Connections", v: "Hatches or tunnels between modules: needed, not yet designed"}
+  - {k: "Life support", v: "Sized for 6 continuous, 9 peak (C08.2)"}
+  - {k: "Shielding", v: "≥2 m regolith everywhere, 3 m over sleeping quarters, finished before first crew (C09.1)"}
+  - {k: "Storm shelter", v: "Holds 9 for 3 days (C09.2)"}
+  - {k: Crew, v: "None. This milestone is uncrewed (DD-005)"}
+cost: {low: 13.2, high: 39.6, note: "habitat module delivery dominates"}
 cost_items:
-  - {item: "Habitat module (build, test)", low: 1.0, high: 3.0, basis: "ESTIMATE"}
-  - {item: "Habitat delivery (~15 t, heavy cargo lander)", low: 3.0, high: 9.0, basis: "15 t [src 11] × $0.2–0.6M/kg (ESTIMATE)"}
-  - {item: "4 crewed sorties (crew launch + landing)", low: 6.0, high: 16.4, basis: "High: $4.1B per SLS/Orion launch (OIG) [src 6]; low assumes commercial crew transport at ~$1.5B per mission (ESTIMATE)"}
+  - {item: "3 standard habitat modules (build)", low: 3.0, high: 9.0, basis: "PROVISIONAL placeholder: 3 × $1.0–3.0B per module (ESTIMATE, unchanged per-module figure; was 1 module in M08 + 2 in M09)"}
+  - {item: "Delivery of 3 modules (~45 t, heavy cargo)", low: 9.0, high: 27.0, basis: "3 × ~15 t PROVISIONAL placeholder [src 11] × $0.2–0.6M/kg (ESTIMATE; was 15 t in M08 + 30 t in M09)"}
+  - {item: "Extra excavators for burial", low: 0.2, high: 0.5, basis: "ESTIMATE; reuses M05 fleet (moved from M09, DD-005)"}
+  - {item: "Life support closure upgrades", low: 0.3, high: 1.0, basis: "ESTIMATE (moved from M09, DD-005)"}
+  - {item: "Extra life support capacity for 6 continuous / 9 peak (third CO₂ scrubber, second oxygen generator, spares)", low: 0.1, high: 0.3, basis: "ESTIMATE; driven by DD-006 crew size (C08.2 sizing)"}
   - {item: "Spacesuits, EVA tools, airlock/dust lock", low: 0.3, high: 0.8, basis: "ESTIMATE"}
-  - {item: "Mission operations and crew training", low: 0.3, high: 1.0, basis: "ESTIMATE"}
+  - {item: "Mission operations for the uncrewed build and checkout", low: 0.3, high: 1.0, basis: "ESTIMATE"}
 exit_criteria:
-  - "Habitat landed, deployed and powered from the M04 grid, with life support running uncrewed for at least 3 months before the first crew."
-  - "Four sorties of 14–30 days flown with no serious injury."
-  - "Each crew completes a planned list of maintenance, installation and science tasks."
-  - "Dust kept out of the habitat to a measured standard."
+  - "Three habitat modules landed, connected to each other with sealed hatches or tunnels, and powered from the M04 grid."
+  - "Regolith cover of at least 2 m everywhere and 3 m over the sleeping quarters complete, and its dose checked with area monitors, before the first crew lands."
+  - "Life support running uncrewed for at least 3 months with simulated loads for 6 people, and for 9 people for at least 2 weeks of that."
+  - "Storm shelter filled and checked for 9 people; medical bay and exercise equipment installed and tested remotely."
+  - "Dust lock, suits and EVA tools checked out remotely and ready for the first crew."
 workstreams:
-  - name: Habitat
-    desc: A rigid, wheeled module that can be moved and later buried.
-    items: ["~15 t class pressurised module", "Delivered on a heavy cargo lander", "Moved by LTVs to the habitat zone"]
-  - name: Life support (open loop + recycling)
-    desc: ISS-derived systems.
-    items: ["Water recovery", "Oxygen generation", "CO₂ removal", "Top-up from M06 water and oxygen"]
-  - name: Dust control
-    desc: Keep dust out of the cabin.
-    items: ["Dust lock / suitport", "Brushes and electrostatic cleaning", "Sintered ground around the hatch"]
-  - name: EVA
-    desc: Working outside.
-    items: ["AxEMU-class suits", "Tools for maintenance", "LTV range limits for walk-back safety"]
-  - name: Crew transport
-    desc: Seats to and from the surface.
-    items: ["NASA Artemis / Moon Base partnership", "Commercial landers when certified"]
-  - name: Medical
-    desc: Treat what can be treated, evacuate what can't.
-    items: ["Medical kit and ultrasound", "Telemedicine with 5–12 s delay", "Evacuation plan"]
+  - name: Habitat modules
+    desc: One standard module design, built three times (DD-007).
+    items: ["Standard 3-person module, design to be defined later", "Delivered on heavy cargo landers (~15 t each, provisional)", "Landed and placed side by side in the habitat zone", "Connecting hatches or tunnels between modules (needed, not yet designed)"]
+  - name: Shielding
+    desc: Bury the modules before people arrive (C09.1).
+    items: ["Support arch over the three modules", "≥2 m regolith, 3 m over sleeping quarters", "Radiators and pumped loops installed before burial", "Dose checks with area monitors"]
+  - name: Life support
+    desc: ISS-derived systems sized for 6 continuous and 9 peak (C08.2).
+    items: ["Water recovery with brine processing", "Oxygen generation", "CO₂ removal (three 4BCO2-class units)", "Top-up from M06 water and oxygen"]
+  - name: Crew safety systems
+    desc: Ready before the first landing.
+    items: ["Storm shelter for 9 (C09.2)", "Medical bay and exercise area (C09.3)", "Dust lock / suitports (C08.3)", "Suits and EVA tools (C08.4)"]
+  - name: Remote commissioning
+    desc: Everything a crew would have checked by hand is checked from Earth.
+    items: ["Simulated crew loads (CO₂, humidity, water)", "Leak checks on every module and connection", "Utility robots inspect and fix", "Earth-based operations team"]
 technologies:
-  - {name: "Thales Alenia Space Multi-Purpose Habitation (MPH)", use: "Surface habitat", status: "Preliminary design contract with ASI (Jul 2025); ~15 t, ~3 m × 6 m, 10-yr life; launch planned 2033", trl: 5, src: 11}
+  - {name: "Thales Alenia Space Multi-Purpose Habitation (MPH)", use: "Reference hardware for the standard module (heritage only, DD-007)", status: "Preliminary design contract with ASI (Jul 2025); ~15 t, ~3 m × 6 m, 10-yr life; launch planned 2033", trl: 5, src: 11}
   - {name: "Sierra Space LIFE inflatable", use: "Alternative expandable habitat", status: "Full-scale burst test reached 77 psi before bursting (reported Jan 2024), 27% above NASA's recommended 60.8 psi", trl: 5, src: 2}
   - {name: "ISS life support (ECLSS)", use: "Air and water recycling", status: "Flight-proven; 98% water recovery demonstrated 2023", trl: 9, src: 3}
   - {name: "Axiom AxEMU spacesuit", use: "Moonwalks", status: "Critical design review closed 13 Nov 2026; qualification next", trl: 6, src: 4}
@@ -64,38 +67,58 @@ sources:
   - {title: "NASA Moon Base – Phases", url: "https://www.nasa.gov/moonbase-phases/", date: "2026"}
   - {title: "European Spaceflight: ASI awards new lunar habitat contract to Thales Alenia Space (MPH: 3 m × 6 m, ~15 t, 2 crew, 7–30 days a year)", url: "https://europeanspaceflight.com/asi-awards-new-lunar-habitat-contract-to-thales-alenia-space/", date: "Jul 2025"}
   - {title: "NASA OIG: Spacesuit development delays could impact Artemis timeline and ISS operations (demonstrations could slip to 2031)", url: "https://oig.nasa.gov/news/spacesuit-development-delays-could-impact-artemis-timeline-and-iss-operations/", date: "Apr 2026"}
+  - {title: "Zhang et al., Science Advances: radiation dose on the lunar surface (Chang'e-4, 1,369 µSv/day)", url: "https://doi.org/10.1126/sciadv.aaz1334", date: "Sep 2020"}
+  - {title: "NASA OCHMO-TB-020: Radiation protection technical brief (600 mSv career limit)", url: "https://www.nasa.gov/wp-content/uploads/2023/03/radiation-protection-technical-brief-ochmo.pdf", date: "Dec 2022"}
+  - {title: "Savage, IAC-24 abstract: regolith shielding depth (OLTARIS; ~150 mSv per 180 days at 2 m)", url: "https://iafastro.directory/iac/paper/id/82864/abstract-pdf/IAC-24,D3,IP,1,x82864.brief.pdf", date: "2024"}
 risks:
-  - {sev: Critical, title: "Crew landing systems are not yet certified; first crewed landing is planned for 2028", fix: "Fly sorties only after the lander has a demonstrated crewed landing; partner with NASA Moon Base schedule"}
+  - {sev: Critical, title: "No crew checks the base before people depend on it; the first crew lands on systems never used by people", fix: "Run life support for at least 3 months with simulated loads for 6 and 9 people; inspect with utility robots; keep the crew lander ready to leave"}
+  - {sev: Critical, title: "Burial must finish before the first landing, and it is slow: ~225–355 days at 4 × 200 kg/h, ~3–5 years at the IPEx design rate (C09.1)", fix: "Start piling as soon as the arch is up; add excavators; set the first crew date by measured burial progress, not by the calendar"}
+  - {sev: High, title: "The standard 3-person module does not exist yet; its design is to be defined later (DD-007)", fix: "Use MPH-class figures (~15 t) only as placeholders; track the MPH and an inflatable as reference designs; freeze the module design before Phase 1 deliveries"}
+  - {sev: High, title: "Connections between modules are new leak paths and are not yet designed", fix: "Each module can be sealed off on its own; leak-check every connection during the uncrewed run; carry spare seals"}
   - {sev: High, title: "Dust in the cabin (on Apollo, dust degraded suit seals and every sample-container seal failed)", fix: "Dust lock or suitports; strict cleaning; sintered surfaces at the hatch"}
-  - {sev: High, title: "Spacesuit schedule risk (OIG warned demonstrations could slip to 2031)", fix: "Keep sortie dates flexible; early sorties with minimal EVA"}
-  - {sev: High, title: "Medical emergency far from a hospital, with 5–12 s operational delays", fix: "Trained crew medic, telemedicine, and an evacuation plan with a lander on standby"}
-  - {sev: High, title: "The MPH is reported as sized for 2 crew on one 7–30-day mission a year, while crewed landers carry 4", fix: "Fly 2-crew surface teams first; add fold-down sleep stations; reach 4 crew by docking the pressurised rover or a second module (M09)"}
-  - {sev: Medium, title: "Habitat sits on the surface unshielded during sorties", fix: "Short stays; storm shelter area with water walls; burial in M09"}
+  - {sev: High, title: "Spacesuit schedule risk (OIG warned demonstrations could slip to 2031)", fix: "Suits are needed only when the first crew lands (M09); check them out remotely in the dust lock first"}
+  - {sev: Medium, title: "Buried modules cannot shed heat through regolith (C09.1)", fix: "Install surface radiators and two pumped loops before burial, sized for 9 people"}
 ---
+
+{% include decision-note.html id="DD-005" extra="M08 used to be 'First habitat and crewed sorties'. There are no sorties now: robots build and bury the whole habitat before the first crew lands, and the first landing starts Phase 2 (M09)." %}
+
+{% include decision-note.html id="DD-007" extra="The base lands three of one standard 3-person module side by side and connects them, giving 9 beds. The module's detailed design is to be defined later; MPH figures are placeholders." %}
 
 ## The habitat
 
-- **Thales Alenia Space MPH.** Thales is designing it for the Italian Space Agency: about 3 m × 6 m, about 15 t, on wheels, with a minimum 10-year life. Launch is planned for 2033<sup class="r">[1](#s1)</sup><sup class="r">[11](#s11)</sup>.
+- **One standard module, three times.** The habitat is one module design that houses **3 people**. Three are landed next to each other and connected, for **9 beds**: 6 for residents and 3 flexible beds for handovers (this plan's arithmetic, DD-006, DD-007). The detailed design is **to be defined later (open)**.
+- **Connections.** Hatches or tunnels must join the modules. They are a needed element, not yet designed.
+- **Reference hardware.** Thales Alenia Space is designing the MPH for the Italian Space Agency: about 3 m × 6 m, about 15 t, on wheels, with a minimum 10-year life. Launch is planned for 2033<sup class="r">[1](#s1)</sup><sup class="r">[11](#s11)</sup>. Open Moon uses it only as heritage, and uses its ~15 t only as a provisional mass for each module.
 - **Inflatable alternative.** Sierra Space's LIFE module held 77 psi before bursting in a full-scale test, 27% above NASA's recommended level<sup class="r">[2](#s2)</sup>.
+- **Delivery date.** NASA expects habitats to arrive on cargo landers no earlier than FY2033<sup class="r">[5](#s5)</sup>.
 
-Open Moon designs its habitat zone for a **rigid ~15 t module first**, with room for inflatable modules later. Press reports describe the MPH as sized for **two** astronauts on one 7–30-day mission a year<sup class="r">[11](#s11)</sup>, so early sorties put two people on the surface. Four-person stays wait for a second module or the docked pressurised rover (M07). NASA expects habitats to arrive on cargo landers no earlier than FY2033<sup class="r">[5](#s5)</sup>.
+## Why the cover must be finished before the first crew
+
+There are no short visits any more. The first crew lands and stays for a tour of about 6.5 months (DD-006).
+
+- **Unshielded.** Chang'e-4 measured about **1,369 µSv per day** on the surface<sup class="r">[13](#s13)</sup>. Over a 198-day tour that is about **271 mSv** (this plan's arithmetic), 45% of NASA's **600 mSv** career limit<sup class="r">[14](#s14)</sup>.
+- **Under 2 m.** One OLTARIS study gives about 150 mSv per 180 days at 2 m<sup class="r">[15](#s15)</sup>, so about **165 mSv** per tour (this plan's arithmetic).
+- **Decision (plan design, DD-005).** The ≥2 m cover, and the 3 m cover over the sleeping quarters, must be complete and dose-checked before crew 1 lands. Piling regolith next to a crewed module would also put people and excavators in the same work zone.
 
 ## Life support
 
 - **Base system.** The habitat uses ISS-derived life support. The ISS demonstrated **98% water recovery** in 2023<sup class="r">[3](#s3)</sup>, although NASA's reference page still describes routine recovery as about 90%<sup class="r">[9](#s9)</sup>.
-- **Local top-up.** During sorties the system is topped up with water and oxygen from the M06 pilot plants. This is the first time the crew depends on lunar resources.
+- **Sizing.** It is sized for 6 people all the time and 9 for two weeks at each handover (C08.2).
+- **Local top-up.** The system is topped up with water and oxygen from the M06 pilot plants from the start.
 
-## Why crew transport dominates the cost
+## What changed in the cost
 
-- **Upper bound.** NASA's Inspector General put each SLS/Orion launch at about **$4.1B**<sup class="r">[6](#s6)</sup>. That figure doesn't include the lander.
-- **Lower bound.** This plan assumes commercial crew transport eventually costs about $1.5B per mission, but that is an **estimate, not a published price**.
-- **Why it matters.** The uncertainty in crew transport is the biggest single uncertainty in the whole budget.
+- **Moved in from M09 (DD-005).** Two more modules and their delivery, burial excavators and life support upgrades now happen before the first crew.
+- **Added (DD-006).** About $0.1–0.3B of extra life support capacity for 6 continuous and 9 peak (ESTIMATE).
+- **Removed.** The four crewed sorties ($6.0–16.4B) are gone. Crew transport is now costed in M09.
+- **Total.** $10.6–30.2B before, **$13.2–39.6B** now.
 
 ## Step-by-step
 
-1. **Land the habitat** on a heavy lander at pad 2 (M05).
-2. **Move it into place.** LTVs tow it to the habitat zone, where it's connected to the habitat microgrid (M04).
-3. **Run uncrewed for 3 months.** Life support, leak checks and dust lock tests run from Earth.
-4. **Sortie 1 (14 days).** Commission the habitat; inspect power and ISRU; first moonwalks.
-5. **Sorties 2–4 (up to 30 days).** Maintenance, installation of M09 equipment, and medical research on partial gravity.
-6. **Leave equipment behind.** Each crew leaves the habitat ready for the next one.
+1. **Land three habitat modules** on heavy landers at the pads (M05), one at a time.
+2. **Place them side by side.** LTVs and robots move them into the habitat zone, where they are connected to each other and to the habitat microgrid (M04).
+3. **Install radiators and pumped loops,** then build the support arch.
+4. **Bury the modules** with the M05 excavators: ≥2 m everywhere, 3 m over the sleeping quarters (C09.1).
+5. **Fit out the crew systems:** storm shelter for 9 (C09.2), medical bay (C09.3), dust lock and suits (C08.3, C08.4).
+6. **Run uncrewed for at least 3 months.** Life support runs with simulated loads for 6 people, and for 9 for at least 2 weeks. Leak checks and dose checks run from Earth.
+7. **Declare the base ready.** The first crew landing starts Phase 2 (M09).

@@ -34,9 +34,9 @@ On 26 May 2026 NASA awarded Astrolab $219 million under a firm-fixed-price, mile
 
 ## Why Open Moon uses it
 
-CLV-1 is one of the two crew and cargo rovers in milestone M07 (Mobility). Suited crews can only walk a short way from a lander or habitat. A rover takes them, their tools and their samples much farther ([NASA](https://www.nasa.gov/news-release/nasa-selects-companies-to-advance-moon-mobility-for-artemis-missions/)). Between crew visits it can be driven from Earth or drive itself, so it keeps scouting terrain and moving materials when no one is there ([NASA](https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/)).
+CLV-1 is one of the two crew and cargo rovers in milestone M07 (Mobility). Suited crews can only walk a short way from a lander or habitat. A rover takes them, their tools and their samples much farther ([NASA](https://www.nasa.gov/news-release/nasa-selects-companies-to-advance-moon-mobility-for-artemis-missions/)). Before the first crew lands, and whenever crews are busy, it can be driven from Earth or drive itself, so it keeps scouting terrain and moving materials when no one is there ([NASA](https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/)).
 
-Open Moon plans to lease rover services rather than own the hardware. That is how NASA buys them too ([NASA](https://www.nasa.gov/news-release/nasa-selects-companies-to-advance-moon-mobility-for-artemis-missions/)). Flying two different rovers, CLV-1 and [Pegasus](https://www.lunaroutpost.com/pegasus), means one failure does not ground all surface travel. Without an LTV, early sorties would be limited to walking range. Site surveys for later habitat and ISRU milestones would also be slower.
+Open Moon plans to lease rover services rather than own the hardware. That is how NASA buys them too ([NASA](https://www.nasa.gov/news-release/nasa-selects-companies-to-advance-moon-mobility-for-artemis-missions/)). Flying two different rovers, CLV-1 and [Pegasus](https://www.lunaroutpost.com/pegasus), means one failure does not ground all surface travel. Without an LTV, the first crews would be limited to walking range. Site surveys for later habitat and ISRU milestones would also be slower.
 
 ## How it works
 

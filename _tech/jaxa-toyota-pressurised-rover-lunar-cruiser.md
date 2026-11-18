@@ -33,7 +33,7 @@ The vehicle is still in development. Toyota's 2023 roadmap showed conceptual des
 
 Open Moon's M07 (Mobility) milestone calls for one pressurised rover for multi-week trips, alongside two unpressurised rovers and utility robots. Open rovers keep crews in suits, so every trip must end back at the habitat the same day. A pressurised rover lets crews [travel much farther across the south pole region and live in the vehicle for extended periods](https://www.nasa.gov/moonbase/pressurized-rover/). That opens up science and resource prospecting at sites far from the base.
 
-It also matters for M08 (First habitat). The first habitat module is sized for a small crew, so Open Moon plans to reach four-person stays by docking the pressurised rover or adding a second module. Between crew visits the rover can be [driven remotely to the next landing site](https://www.nasa.gov/moonbase/pressurized-rover/).
+It also matters for the crewed base (M09). Long trips away from the three connected habitat modules need it, and before the first crew lands (Phase 1) the rover can be [driven remotely to the next landing site](https://www.nasa.gov/moonbase/pressurized-rover/).
 
 Without it, Phase 2 crews stay within LTV range of the habitat. Open Moon plans for that case, because the rover's date is uncertain.
 

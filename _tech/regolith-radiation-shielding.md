@@ -37,9 +37,9 @@ No regolith shield has been built on the Moon. Work so far is modelling and lab 
 
 The lunar surface is harsh. China's Chang'e-4 lander measured an average dose equivalent of [1,369 µSv per day](https://doi.org/10.1126/sciadv.aaz1334). NASA's career limit is [600 mSv](https://www.nasa.gov/wp-content/uploads/2023/03/radiation-protection-technical-brief-ochmo.pdf) for every astronaut. Without shielding, a year on the surface would use most of a career.
 
-Milestone M09 (permanent crew presence) depends on this. Four crew live on the surface in six-month rotations. Shipping that much shielding mass from Earth would be very costly. A [2024 IAC study](https://iafastro.directory/iac/paper/id/82864/abstract-pdf/IAC-24,D3,IP,1,x82864.brief.pdf) found regolith-only shielding cost competitive, because launch mass drives settlement cost.
+The crewed base (M09) depends on this, and the cover is built before the first crew lands (M08, design change DD-005). Six people live on the surface, with crews of three on tours of about 6.5 months (DD-006). Shipping that much shielding mass from Earth would be very costly. A [2024 IAC study](https://iafastro.directory/iac/paper/id/82864/abstract-pdf/IAC-24,D3,IP,1,x82864.brief.pdf) found regolith-only shielding cost competitive, because launch mass drives settlement cost.
 
-The same study, using NASA's OLTARIS tool, found about 150 mSv per 180-day mission behind 2 m of regolith and about 100 mSv behind 3 m. Open Moon therefore sets 2 m as a minimum and 3 m as a target. Without it, crews would need short stays or shielding shipped from Earth.
+The same study, using NASA's OLTARIS tool, found about 150 mSv per 180-day mission behind 2 m of regolith and about 100 mSv behind 3 m. Over a 6.5-month (198-day) tour that is about 165 mSv at 2 m and 110 mSv at 3 m (this plan's arithmetic), against NASA's [600 mSv career limit](https://www.nasa.gov/wp-content/uploads/2023/03/radiation-protection-technical-brief-ochmo.pdf). Open Moon therefore sets 2 m as a minimum and 3 m as a target. Without it, crews would need short stays or shielding shipped from Earth.
 
 ## How it works
 
