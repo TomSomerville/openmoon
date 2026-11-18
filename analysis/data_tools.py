@@ -17,7 +17,7 @@ from read import pack as pack_window, unpack as unpack_window
 from PIL import Image
 Image.MAX_IMAGE_PIXELS = None
 DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data')
-LIMIT = 95e6
+LIMIT = 48e6   # GitHub recommends files under 50 MB
 COPY = [('sun10/sun_me.npy', 'sunlight'), ('sun10/cands.npy', 'sunlight'), ('sun10/de421.bsp', 'spice'),
         ('sun10/moon_pa_de421_1900-2050.bpc', 'spice'), ('sun10/moon_080317.tf', 'spice'),
         ('sun10/dem20_bounds.npy', 'lola'), ('sun10/dem60_bounds.npy', 'lola'),
