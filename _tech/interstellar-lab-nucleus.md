@@ -32,7 +32,7 @@ After the challenge, Interstellar Lab partnered with Vast. A NUCLEUS spinoff, Ed
 
 ## Why Open Moon uses it
 
-Open Moon's [M10 Growing food](/plan/m10-food/) milestone needs fresh food grown at the base. NUCLEUS is a candidate for the compact, early part of that job: a set of ready-made modules that give the crew greens, mushrooms and insect protein while the larger buried greenhouses for staple crops are built up.
+Open Moon's M10 Growing food milestone needs fresh food grown at the base. NUCLEUS is a candidate for the compact, early part of that job: a set of ready-made modules that give the crew greens, mushrooms and insect protein while the larger buried greenhouses for staple crops are built up.
 
 The challenge it won was set up for exactly this kind of mission: feeding **a crew of four on a three-year round trip with no resupply** ([NASA](https://www.nasa.gov/centers-and-facilities/marshall/nasa-begins-final-phase-of-3-million-deep-space-food-challenge/)). Without a system like it, the first crews would depend fully on stored food from Earth, which loses nutrients over time and gives little variety.
 

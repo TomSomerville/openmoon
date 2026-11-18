@@ -741,3 +741,55 @@
     - "Until B4 is built, storage (or the fission reactor) must carry the base through dark spells of up to 14 days, more than twice the 6 days of the previous layout."
     - "B1/M1 and B2/M2 sit side by side, so one access route serves both grids, but a local fault or dust event can hit both grids at once."
     - "M3's cable to the mine PMC is 9.6 km, close to the 10 km limit (DD-014)."
+
+- id: DD-025
+  date: "2026-11-18"
+  title: "Prospector rover scoops and drills icy soil into a sealed bake chamber that measures the water released"
+  status: "Adopted"
+  affects: [M01, C01.1, roadmap, trident-drill-honeybee-robotics, msolo-mass-spectrometer, resource-prospector-nasa]
+  was: "The prospector rover carried a neutron spectrometer, a 1 m TRIDENT-class drill that left cuttings in a pile on the ground, and an MSolo-class mass spectrometer that read gas drifting off the pile. Mass ~260 kg with margin; rated TRL 6."
+  now: "The rover keeps the 1 m drill and adds a scoop arm and a sealed bake chamber. The drill breaks ice-cemented ground into cuttings and brushes each 10 cm bite into the chamber (Resource Prospector layout). The arm's bladed scoop, with a Phoenix-style rasp, picks up loose soil and small debris through a ~10 mm screen. The ~250 cm³ chamber (~0.4 kg of soil) weighs, seals and heats each batch to 150, 350 and 450 °C; the gas is measured in a known volume, identified by the mass spectrometer and frozen in a cold trap; the soil is dumped and the chamber reused. About 150 Wh per batch (ESTIMATE). Mass ~320 kg with margin (ESTIMATE); rated TRL 4, set by the chamber."
+  why: "The user's decision: the rover should measure the water that heated soil actually gives up, the same process the M06 ice plant will use, not only detect it. The design follows the two closest rovers: NASA's Resource Prospector (drill brushed into a sealed, reusable oven) and NASA's Curiosity (scoop and drill feeding ovens on one flown rover)."
+  timeline:
+    - date: "Jun 2008"
+      what: "Phoenix's robotic arm uses a bladed scoop and a powered rasp to sample icy Martian soil for its TEGA ovens; icy samples congeal in the scoop twice."
+      title: "Bonitz et al.: NASA Mars 2007 Phoenix Lander Robotic Arm and Icy Soil Acquisition Device (JGR 113)"
+      url: "https://www-robotics.jpl.nasa.gov/media/documents/2007JE003030.pdf"
+    - date: "Sep 2013"
+      what: "Curiosity's SAM ovens release about 2 wt% water from scooped Martian soil."
+      title: "Leshin et al., Science"
+      url: "https://mars.nasa.gov/files/msl/Science-2013-Leshin-.pdf"
+    - date: "Apr 2016"
+      what: "Resource Prospector's drill brushes samples directly into the OVEN, which weighs, seals and heats 12 cc to 150, 350 and 450 °C and reuses its crucible."
+      title: "NASA NTRS: Colaprete et al., Resource Prospector instrumentation"
+      url: "https://ntrs.nasa.gov/api/citations/20160005014/downloads/20160005014.pdf"
+    - date: "Apr 2018"
+      what: "NASA vacuum tests: samples lose about 30% of their water from 4.5 wt% soil and about 80% from 0.8 wt% soil before sealing."
+      title: "NASA NTRS: Kleinhenz et al., Volatiles loss from water bearing regolith simulant"
+      url: "https://ntrs.nasa.gov/api/citations/20180004331/downloads/20180004331.pdf"
+    - date: "May 2018"
+      what: "NASA cancels Resource Prospector."
+      title: "Spaceflight Now: NASA cancels lunar rover"
+      url: "https://spaceflightnow.com/2018/05/01/nasa-cancels-lunar-rover-shifts-focus-to-commercial-moon-landers/"
+    - date: "2021"
+      what: "The OVEN survives two rounds of random vibration and works in thermal vacuum from −50 to 75 °C."
+      title: "NASA NTRS: Paz, Environmental testing of the OVEN system"
+      url: "https://ntrs.nasa.gov/citations/20210013522"
+  tradeoffs:
+    - "About 60 kg more rover mass with margin (~320 kg instead of ~260 kg, ESTIMATE); still fits Griffin, still too heavy for Blue Ghost."
+    - "The rover's TRL drops from 6 to 4 until a full-size chamber is built and tested in thermal vacuum with icy simulant."
+    - "More moving parts (arm, rasp, seal, dump door, valves) that dust or ice can jam."
+    - "Water is lost between the ground and the sealed lid; losses must be calibrated on the ground or the readings will be low (open)."
+
+- id: DD-026
+  date: "2026-11-18"
+  title: "Milestones cut back to M00 Site selection; Phase 0 to hold three milestones"
+  status: "Adopted"
+  affects: [M01, M02, M03, M04, M05, M06, M07, M08, M09, M10, M11, M12, M13, home page, roadmap page, costs page]
+  was: "Fourteen milestones M00–M13 across Phases 0–4; M01–M05 had been archived for review one at a time; the roadmap page showed a milestones-done count."
+  now: "Only M00 Site selection remains. Milestones M01–M13 are deleted (they remain in the git history). Phase 0 is to hold three milestones: site selection, site prospecting and site preparation; the last two will be written fresh. Components and technology cards stay. The milestones-done count is removed, because this is a hypothetical proposal, not a mission plan."
+  why: "The user's decision, to rebuild the plan milestone by milestone starting with Phase 0."
+  timeline: []
+  tradeoffs:
+    - "Plan cost totals show as not yet estimated until new milestones carry cost items."
+    - "Components and roadmap entries still name the deleted milestones (M01–M13) as text until those milestones are rewritten."
