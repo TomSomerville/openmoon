@@ -74,7 +74,7 @@ decorate(raw, 'Focus area: average solar illumination at ground level, 18.6-year
          [(None, 'NASA best-lit regions of interest (PGDA product 78)')], 'Time in sunlight (% of 18.6 years, at the surface)', ramp).save(os.path.join(OUTDIR, 'focus-sunlight-raw.jpg'), quality=85, optimize=True)
 # 2) VSAT candidate ground: slope <= 15 deg and sunlit >= 40 / 50 / 60 %
 ok = sl <= 15
-tiers = [(70, (255, 60, 0))]
+tiers = [(80, (255, 60, 0))]
 rgb = base.copy()
 for t, c in reversed(tiers): rgb = np.where(((il >= t) & ok)[..., None], base * 0.25 + np.array(c) * 0.75, rgb)
 # grow small patches so they stay visible after downsampling
@@ -86,7 +86,7 @@ for j in range(0, H, BIN):
         blk = np.where(ok[j:j + BIN, i:i + BIN], il[j:j + BIN, i:i + BIN], np.nan)
         if np.all(np.isnan(blk)): continue
         mx = np.nanmax(blk)
-        if mx >= 70:
+        if mx >= 80:
             jj, ii = np.unravel_index(np.nanargmax(blk), blk.shape); y, x = j + jj, i + ii
             c = (255, 60, 0); r = 7
             dr0.ellipse((x - r, y - r, x + r, y + r), fill=c, outline=(0, 0, 0))
@@ -99,7 +99,7 @@ for sp in spots:
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'vsat_spots.csv'), 'w') as fh:
     fh.write('sunlit_pct,lat,lon_east,x_m,y_m\n')
     for sp in spots: fh.write('%.1f,%.4f,%.3f,%.0f,%.0f\n' % sp)
-rows = [((255, 60, 0), 'Sunlit ≥70% of the time, slope ≤15° (dot marks each 1 km cell)'), (None, 'NASA best-lit regions of interest: Sites 1, 4, 7, 11 (PGDA product 78)')]
-decorate(im, 'Focus area: VSAT sites, sunlit ≥70% at ground level and slope ≤15°. Sunlight: NASA GSFC PGDA; slope: NASA LOLA LDSM.',
+rows = [((255, 60, 0), 'Sunlit ≥80% of the time, slope ≤15° (dot marks each 1 km cell)'), (None, 'NASA best-lit regions of interest: Sites 1, 4, 7, 11 (PGDA product 78)')]
+decorate(im, 'Focus area: VSAT sites, sunlit ≥80% at ground level and slope ≤15°. Sunlight: NASA GSFC PGDA; slope: NASA LOLA LDSM.',
          rows, 'VSAT sites (ground-level sunlight; a 10 m mast sees more)', numbers=sites).save(os.path.join(OUTDIR, 'focus-vsat-candidates.jpg'), quality=85, optimize=True)
-for t in (40, 50, 60, 70): print('sunlit>=%d%% & slope<=15: %.1f km2' % (t, ((il >= t) & ok).sum() * RES * RES / 1e6))
+for t in (70, 80, 85): print('sunlit>=%d%% & slope<=15: %.1f km2' % (t, ((il >= t) & ok).sum() * RES * RES / 1e6))

@@ -230,34 +230,24 @@ NASA Goddard's average solar illumination over a full 18.6-year lunar cycle, at 
 
 ### Where VSATs could go
 
-VSAT sites (plan design) are spots sunlit **at least 70 % of the time at ground level**, on slopes of 15° or less (the VSAT goal with a 10 m mast). Spots below 70 % are left out. Each red dot marks a 1 km cell holding such a spot, and the numbers match the table below; the spots themselves cover only about 0.6 km² of the focus area. Magenta circles are NASA's regions of interest (Sites 1, 4, 7 and 11). These are ground-level figures; a 10 m mast sees more sun.
+VSAT sites (plan design) are spots sunlit **at least 80 % of the time at ground level**, on slopes of 15° or less (the VSAT goal with a 10 m mast). Spots below 80 % are left out. Each red dot marks a 1 km cell holding such a spot, and the numbers match the table below; the spots themselves cover only about 0.1 km² of the focus area. Magenta circles are NASA's regions of interest (Sites 1, 4, 7 and 11). These are ground-level figures; a 10 m mast sees more sun. No spot in the focus area reaches 90 % at ground level; the highest is 88.4 %.
 
-![VSAT sites in the Open Moon focus area: ground sunlit at least 70 % of the time with slope of 15° or less, with NASA's regions of interest circled]({{ '/assets/sites/focus-vsat-candidates.jpg' | relative_url }})
+![VSAT sites in the Open Moon focus area: ground sunlit at least 80 % of the time with slope of 15° or less, with NASA's regions of interest circled]({{ '/assets/sites/focus-vsat-candidates.jpg' | relative_url }})
 
-The 16 sites (best single 60 m pixel in each, ground level, slope ≤15°), from NASA's illumination map<sup class="r">[30](#s30)</sup>:
+The 6 sites (best single 60 m pixel in each, ground level, slope ≤15°), from NASA's illumination map<sup class="r">[30](#s30)</sup>:
 
-| # | Site | Best spot | Sunlit (ground) | 1 km cells ≥70 % |
+| # | Site | Best spot | Sunlit (ground) | 1 km cells ≥80 % |
 |---|---|---|---|---|
-| 1 | Connecting ridge, NASA Site 1 (beside LROC's ridge summit, 89.4385°S, 137.18°W) | 89.4745°S, 137.53°W | 88.4 % | 5 |
-| 2 | Shackleton west rim, NASA Site 4, where the ridge meets Shackleton | 89.6857°S, 163.04°W | 87.1 % | 6 |
+| 1 | Connecting ridge, NASA Site 1 (beside LROC's ridge summit, 89.4385°S, 137.18°W) | 89.4745°S, 137.53°W | 88.4 % | 2 |
+| 2 | Shackleton west rim, NASA Site 4, where the ridge meets Shackleton | 89.6857°S, 163.04°W | 87.1 % | 1 |
 | 3 | Peak near Shackleton, NASA Site 7 | 88.8082°S, 123.78°E | 86.0 % | 1 |
-| 4 | Shackleton west rim, NASA Site 4 | 89.7837°S, 156.07°W | 85.5 % | 4 |
-| 5 | de Gerlache rim, NASA Site 11 | 88.6652°S, 68.42°W | 82.7 % | 5 |
+| 4 | Shackleton west rim, NASA Site 4 | 89.7837°S, 156.07°W | 85.5 % | 2 |
+| 5 | de Gerlache rim, NASA Site 11 | 88.6652°S, 68.42°W | 82.7 % | 1 |
 | 6 | Lower edge of the map, about 61 km from the pole | 87.9870°S, 166.40°W | 80.4 % | 1 |
-| 7 | Ridge, south of Spudis | 89.3158°S, 114.23°W | 79.4 % | 3 |
-| 8 | Lower-left corner of the map | 85.8282°S, 116.34°W | 78.5 % | 2 |
-| 9 | Near the pole, about 6 km from it | 89.8104°S, 54.16°E | 78.1 % | 4 |
-| 10 | East rim of de Gerlache (where the ridge meets de Gerlache) | 89.0039°S, 96.38°W | 78.0 % | 3 |
-| 11 | Lower right of the map, about 67 km from the pole | 87.7940°S, 144.43°E | 77.1 % | 1 |
-| 12 | de Gerlache rim, NASA Site 11 | 88.4657°S, 67.87°W | 75.1 % | 2 |
-| 13 | Lower-left corner of the map | 85.6815°S, 116.61°W | 73.9 % | 2 |
-| 14 | Shackleton rim, by the pole | 89.8861°S, 148.19°W | 72.9 % | 2 |
-| 15 | Near the Peak near Shackleton | 88.8604°S, 132.20°E | 72.5 % | 1 |
-| 16 | Below-right of Shackleton, about 21 km from the pole | 89.2990°S, 127.34°E | 72.2 % | 2 |
 
-*Open Moon's reading of NASA's map (sites are cells within 3 km of each other); the cell list is in `analysis/sunlight/vsat_spots.csv`. NASA ranks Site 1 (Connecting ridge) as having the most area with average sunlight above 70 % at 1 m height, with its regions 4–6 the most favourable<sup class="r">[31](#s31)</sup>.*
+*Open Moon's reading of NASA's map (sites are cells within 3 km of each other); the cell list is in `analysis/sunlight/vsat_spots.csv`. NASA ranks Site 1 (Connecting ridge) as having the most area with average sunlight above 70 % at 1 m height, with its regions 4–6 the most favourable<sup class="r">[31](#s31)</sup>. At 10 m, the Connecting ridge is lit 95.65 % of the time<sup class="r">[32](#s32)</sup>, the only published value above 90 % here.*
 
-- **Best VSAT ground:** the Connecting ridge (site 1) and Shackleton's west rim (sites 2, 4 and 14). Together with the east rim of de Gerlache (site 10) they line the Shackleton–de Gerlache Ridge, so a chain of VSATs along the ridge could feed a base there.
+- **Best VSAT ground:** the Connecting ridge (site 1) and Shackleton's west rim (sites 2 and 4), all on the Shackleton–de Gerlache Ridge, so a chain of VSATs along the ridge could feed a base there.
 - **Spread out for shadows:** no spot is lit all the time. Two ridge points about 8 km apart are lit a combined ~94 % of the year (see the sunlight table above), so the plan spreads VSATs over several of these sites.
 - **Landing vs. set-down:** VSAT sites can be up to 15°, but the lander carrying each VSAT still lands on 8° or less (DD-011) and the VSAT moves to its site.
 
