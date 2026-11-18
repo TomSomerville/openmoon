@@ -83,8 +83,6 @@ risks:
 - **CLPS 2**, a 10-year contract worth up to $10B in total, was awarded to eight companies in November 2026<sup class="r">[11](#s11)</sup>.
 - **Bottom line:** there is a growing commercial market to buy rides from.
 
-{% include decision-note.html id="DD-011" extra="See Lander candidates for each lander's published slope limit and payload." %}
-
 - **Landing rule:** every Open Moon delivery lands on ground of 8° or less. Slope limits and payloads for ten landers are compared on the [Lander candidates]({{ '/landers/' | relative_url }}) page.
 - **Same ground as NASA:** Blue Moon Mark 1's Pathfinder targets the Shackleton connecting ridge, inside Open Moon's focus area (DD-010).
 
@@ -106,8 +104,6 @@ This is the single most important number in the plan. Every kilogram made on the
 6. **Sign a crew transport agreement** for Phase 2.
 
 ## Crew cadence for Phase 2
-
-{% include decision-note.html id="DD-006" extra="Crew transport was booked for four short sorties and then two rotations a year. It is now 4 crew landings and 4 departures a year." %}
 
 - **Crews of 3.** A new crew lands every 3 months and stays about 6.5 months (DD-006).
 - **This plan's arithmetic.** 12 months ÷ 3 months = **4 arrivals a year**, and in steady state **4 departures a year**.

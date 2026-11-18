@@ -78,10 +78,6 @@ sources:
 
 ## What it does
 
-{% include decision-note.html id="DD-002" extra="This component was first sized as one 40 kWe-class reactor feeding the grid directly. On 18 November 2026 it changed to an LR-1-class 20 kWe reactor (or KRUSTY-class 1 kWe units for small loads). Its first rule, that the reactor only charges a battery, was later widened by DD-003." %}
-
-{% include decision-note.html id="DD-003" extra="The reactor feeds the power management controller (PMC; called the BMS until DD-008), which decides whether its power goes to the grid, to storage, or both." %}
-
 The fission unit is the base's night-time anchor. Polar sites can be dark for up to about 100 hours at a time<sup class="r">[1](#s1)</sup>, and the US reactor draft asks for operation through at least 354 hours of darkness<sup class="r">[5](#s5)</sup>. An LR-1-class reactor makes at least 20 kWe after any single failure<sup class="r">[8](#s8)</sup>, which is 480 kWh a day (this plan's arithmetic).
 
 **It feeds the PMC.** The 3 kV AC line from the reactor ends at the base power management controller (PMC, C04.3). The PMC sends the power to the grid to meet demand, into storage, or some of each (design changes DD-003 and DD-008). When demand is met and storage is full, the PMC tells the reactor to send its excess power to its parasitic load radiator (PLR). LR-1 is required to accept any load from 0 to 100% of its output and to start up into that radiator<sup class="r">[8](#s8)</sup>, so this needs nothing special from the reactor.
@@ -90,9 +86,7 @@ The fission unit is the base's night-time anchor. Polar sites can be dark for up
 - **LR-1-class, 20 kWe.** The base reactor. NASA is buying it through SPARC; no design or award yet<sup class="r">[8](#s8)</sup>. See the [Lunar Reactor-1 card](/technology/us-lunar-reactor-1-sparc/).
 - **KRUSTY-class, 1 kWe.** A Kilopower-type Stirling unit for small remote loads, such as a comms or science node. KRUSTY proved the reactor in 2018, but no flight unit is being built<sup class="r">[4](#s4)</sup>. See the [Kilopower / KRUSTY card](/technology/kilopower-krusty-fission-test/).
 
-**Interface and distance (design change DD-013).** The plan's interface requirement is **3 kV, 3-phase, 1 kHz at the reactor's output**, with a standard run of no more than **3 km** of cable to the PMC, or up to **10 km** on an extended run at about 10–15% loss ([DD-014](/decisions/#dd-014)). LR-1 must deliver 3 kV RMS AC, but its requirements do not set the frequency<sup class="r">[8](#s8)</sup>. NASA's 2025 reference Brayton alternators gave 240 Vrms at 2 kHz, 3-phase, stepped up by a transformer<sup class="r">[3](#s3)</sup>. Whether 1 kHz is specified to the vendor or made by a frequency converter at the reactor end is **open**. A KRUSTY-class unit converts its controllers' DC bus to 3 kV AC with its own inverter and transformer (see the [Kilopower / KRUSTY card](/technology/kilopower-krusty-fission-test/)).
-
-{% include decision-note.html id="DD-013" extra="The reactor link was described as 1–3 km with no set maximum or frequency." %}
+**Interface and distance (design change DD-013).** The plan's interface requirement is **3 kV, 3-phase, 1 kHz at the reactor's output**, with a standard run of no more than **3 km** of cable to the PMC, or up to **10 km** on an extended run at about 10–15% loss (DD-014). LR-1 must deliver 3 kV RMS AC, but its requirements do not set the frequency<sup class="r">[8](#s8)</sup>. NASA's 2025 reference Brayton alternators gave 240 Vrms at 2 kHz, 3-phase, stepped up by a transformer<sup class="r">[3](#s3)</sup>. Whether 1 kHz is specified to the vendor or made by a frequency converter at the reactor end is **open**. A KRUSTY-class unit converts its controllers' DC bus to 3 kV AC with its own inverter and transformer (see the [Kilopower / KRUSTY card](/technology/kilopower-krusty-fission-test/)).
 
 ## How it works
 

@@ -85,10 +85,6 @@ sources:
 
 ## What it does
 
-{% include decision-note.html id="DD-003" extra="This component now includes the hub every source feeds and every load and store draws from." %}
-
-{% include decision-note.html id="DD-008" extra="This component was called 'BMS and energy storage'. The hub is now the power management controller (PMC); BMS now means only each battery string's cell management." %}
-
 ![Diagram: fission reactors and solar towers feed the power management controller (PMC); the PMC sends power to the grid, to the batteries through their BCDUs, or to excess-power handling; the grid is fed by generation or by the battery, and the fuel cells recharge the battery; with storage full, solar is curtailed by each tower's shunt regulator and reactor surplus goes to its parasitic load radiator](/assets/tech/base-power-pmc-flow.svg)
 
 **The names (DD-008).** The base's whole electrical power system (EPS) covers generation, storage, distribution and protection. Its routing and distribution part is PMAD (power management and distribution), the term Space Station Freedom used<sup class="r">[10](#s10)</sup>. The power management controller (PMC) is the part that decides. Ground grids call this a microgrid controller or energy management system (EMS); IEEE 2030.7 specifies such controllers<sup class="r">[12](#s12)</sup>.
@@ -111,8 +107,6 @@ NASA Glenn has built a modular, bidirectional converter between 120 V DC equipme
 **Storage** has two layers behind the PMC:
 - **Li-ion battery bank** for fast response: load steps, fuel cell warm-up, and 8 hours of reactor output for a reactor restart.
 - **Regenerative fuel cells** for long shadows and the years before the reactor arrives. They are charged by PMC surplus and, when they discharge, they recharge the battery rather than feeding the grid. Polar shadows last up to about 100 hours<sup class="r">[1](#s1)</sup>. A regenerative fuel cell (RFC) stores more energy per kilogram than batteries: 320–650 Wh/kg against about 160 Wh/kg for packaged Li-ion<sup class="r">[1](#s1)</sup>.
-
-{% include decision-note.html id="DD-016" extra="Remote sites may run their own isolated grid; the ice mine at the primary site does (M00, C06.2)." %}
 
 ## How it works
 

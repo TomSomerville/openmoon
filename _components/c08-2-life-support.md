@@ -74,8 +74,6 @@ sources:
   - {title: "NASA NTRS 20220015741: Medical lessons learned from the Exploration Atmospheres study (8.2 psia, 34% O₂)", url: "https://ntrs.nasa.gov/citations/20220015741", date: "2022"}
 ---
 
-{% include decision-note.html id="DD-006" extra="Life support was sized for 4 crew on 30-day sorties. It is now sized for 6 people all the time and 9 for about two weeks at each handover, on 6.5-month tours." %}
-
 ## What it does
 
 Life support keeps the crew alive inside the three connected habitat modules (C08.1). It controls pressure and gas mix, makes oxygen, removes CO₂ and trace gases, recycles water, and detects and fights fire. Every major unit has flown on the ISS. The work in M08 is to package them for 1/6 g, dust, **6 people continuously and 9 at handover peaks** (DD-006), and to run them uncrewed before the first crew lands.

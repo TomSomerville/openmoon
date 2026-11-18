@@ -77,8 +77,6 @@ risks:
 - **Rock is mostly oxygen.** Lunar rock and soil is about **41–45% oxygen by mass**<sup class="r">[3](#s3)</sup>.
 - **Polar ice gives water directly.** LCROSS found ejecta water "on the order of five percent"<sup class="r">[10](#s10)</sup>.
 
-{% include decision-note.html id="DD-016" extra="Remote sites may run their own isolated grid; the ice mine at the primary site does (M00, C06.2)." %}
-
 ## How ready are the processes?
 
 | Process | Best demonstration so far | Readiness |
@@ -103,15 +101,9 @@ None of the regolith processes has run on the Moon yet. That's why this is a **p
 
 ## Power: one service connection per plant
 
-{% include decision-note.html id="DD-009" extra="The ISRU plants used to share one ISRU microgrid. Each plant now has its own service connection and panel." %}
-
 Each plant connects to the M04 grid like a house: a service drop, a UMIC-class converter to 120 V DC, a meter, a main breaker and its own 120 V DC panel (plan design, see C04.4). That applies to the oxygen plant, the water-extraction plant, the water electrolysis (H₂/O₂) plant and the storage site. A fault in one plant trips only its own breaker, and the power system can shed one plant without touching the others.
 
 **Within 3 km of the PMC as standard, 10 km at most (design changes DD-013 and DD-014).** The standard power run in the base is 3 km of cable or less (plan design, DD-013). NASA expects ISRU to need power over 3–5 km<sup class="r">[12](#s12)</sup>. So the oxygen plant, the water-extraction and electrolysis plants and the storage site sit within 3 km of cable run of the PMC where they can, and otherwise run on grid power over an extended run of up to 10 km, at about 10–15% loss, with voltage regulation at the plant end and a 1 kHz stability analysis for the run (plan design, DD-014). Ice mining inside a shadowed crater more than 10 km of cable away is powered by the mobile power cart (PBS PW.5) or a local source, and the water is carried back to the plants by tanker (open; see C06.2).
-
-{% include decision-note.html id="DD-013" extra="The plants could sit wherever the ice and the regolith stockpile were. Now they must sit within 3 km of cable run of the PMC." %}
-
-{% include decision-note.html id="DD-014" extra="Plants at NASA's 3–5 km distance can now run on grid power over extended runs of up to 10 km." %}
 
 ## Step-by-step
 

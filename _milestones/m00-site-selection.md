@@ -284,7 +284,6 @@ window.addEventListener('hashchange',open);open();})();
 - The cables to the mine cross a crater wall that is mostly steeper than 20°.
 - A young fault scarp is mapped in Rim 2<sup class="r">[7](#s7)</sup>.
 
-
 <!--SUNLIT-->
 
 ### Backup: Connecting ridge by Shackleton

@@ -70,8 +70,6 @@ sources:
   - {title: "Wikipedia: Distribution board", url: "https://en.wikipedia.org/wiki/Distribution_board", date: "2026"}
 ---
 
-{% include decision-note.html id="DD-007" extra="This page used to describe one ~15 t MPH-class module for 4 crew on 14–30-day sorties. It now describes one standard 3-person module design, landed three times and connected. Specific figures from the MPH are reference values and placeholders only." %}
-
 ## What it does
 
 The habitat module is the crew's home on the surface. Each module houses **3 people**. The base lands **three** of them next to each other and connects them, for **9 beds**: 6 for the resident crew and 3 flexible beds for handovers (this plan's arithmetic, DD-006, DD-007). The modules hold a breathable atmosphere, carry the life support system (C08.2), connect to the dust lock (C08.3) and give people somewhere to sleep, eat, wash and work for a 6.5-month tour.
@@ -93,8 +91,6 @@ Open Moon uses the MPH as **heritage only**. Its ~15 t is used as a **provisiona
 - **Take power from the grid.** NASA's Glenn team estimates a habitat for four crew on 30+ day stays draws **20–50 kW**<sup class="r">[4](#s4)</sup>. Each module has its own service connection to the M04 grid and a battery for essential loads (see below).
 
 ## Power: a service connection and panels for each module
-
-{% include decision-note.html id="DD-009" extra="The modules used to plug into a shared habitat microgrid. Each module now has its own service connection and its own panels, like a house." %}
 
 ![Diagram: the 3 kV AC grid feeds three habitat modules and a water electrolysis plant, each through its own service connection: service drop, UMIC-class step-down and rectifier to 120 V DC, meter, main breaker, then a 120 V DC panel with branch circuits such as life support, lighting, galley, avionics and heaters; habitats have an optional unit inverter feeding a local AC subpanel; any one connection can be opened without affecting the others](/assets/tech/base-power-service-connection.svg)
 

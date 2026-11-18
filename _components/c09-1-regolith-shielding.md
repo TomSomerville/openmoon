@@ -91,8 +91,6 @@ Open Moon keeps its working value of **≥2 m everywhere**. It builds **3 m over
 
 ## When it is built
 
-{% include decision-note.html id="DD-005" extra="Burial used to happen in M09, while crews were already visiting on sorties. Now the first crew lands and stays, so the full cover must be finished and dose-checked before crew 1 lands. This page keeps its C09.1 ID so links don't break, but it is now delivered by M08." %}
-
 - **Before the first crew (plan design, DD-005).** The ≥2 m cover everywhere and the 3 m cover over the sleeping quarters are finished in Phase 1, by robots, before crew 1 lands.
 - **Why.** There are no sorties any more. An unshielded 6.5-month tour would cost about 271 mSv, 45% of the 600 mSv career limit (this plan's arithmetic). Piling regolith next to an occupied module would also put people and excavators in the same work zone.
 - **Cost of the choice.** The burial time in the sizing table below sits directly on the path to the first crew landing.

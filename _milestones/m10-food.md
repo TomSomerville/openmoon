@@ -73,8 +73,6 @@ risks:
 
 NASA's reference figures are **12.8 MJ** of food energy and **0.8 kg** of food solids per person per day<sup class="r">[7](#s7)</sup>.
 
-{% include decision-note.html id="DD-006" extra="M10 was sized for 8 crew. It is now sized for the 6-person design crew: about 196 m² of canopy in 3 greenhouse modules instead of about 261 m² in 4. Handover peaks of 9 people, about 2 weeks every 3 months, raise the yearly average to 6.5 people; those meals come from stored food." %}
-
 - **6 people:** 6 × 0.8 = 4.8 kg of food solids a day; half of it grown is 2.4 kg (this plan's arithmetic).
 - **9 people at a handover:** 7.2 kg a day for about 2 weeks, from stored food and food carried on the crew lander.
 

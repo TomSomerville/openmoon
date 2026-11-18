@@ -85,10 +85,6 @@ risks:
   - {sev: Medium, title: "Psychological strain from isolation", fix: "Crew selection and training from analogs (CHAPEA, HERA); private quarters; regular contact with Earth; crews overlap so no one arrives to an empty base"}
 ---
 
-{% include decision-note.html id="DD-006" extra="Before, M09 kept 4 people in six-month rotations, growing to 8. Now crews of 3 land every 3 months and stay about 6.5 months: 6 people in steady state and 9 for about two weeks at each handover." %}
-
-{% include decision-note.html id="DD-005" extra="This milestone used to follow a phase of short crewed sorties. Now the first crew lands at a finished, buried base and stays, and that landing starts Phase 2." %}
-
 ## How the rotation works
 
 The plan copies the International Space Station's staggered rotation. When the ISS first went to six people in 2009, three new crew members joined the three already aboard for six months, and "a rotation of three of the six crewmembers" was due a few months later<sup class="r">[14](#s14)</sup>. NASA crews still hold a short handover with the crew they replace<sup class="r">[15](#s15)</sup>, and NASA says that sometimes more people are aboard the station during a crew handover<sup class="r">[16](#s16)</sup>.

@@ -38,10 +38,6 @@ Researched November 2026, one lander at a time. The full notes and every source 
 
 ## Slope classes used on Open Moon maps
 
-{% include decision-note.html id="DD-011" %}
-
-{% include decision-note.html id="DD-012" %}
-
 | Colour | Slope | Meaning |
 |---|---|---|
 | Green | ≤8° | Within NASA's crewed-lander tilt limit |

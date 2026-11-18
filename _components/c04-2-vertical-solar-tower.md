@@ -80,8 +80,6 @@ sources:
 
 ## What it does
 
-{% include decision-note.html id="DD-004" extra="The plan first used two 10 kW VSATs and two 50 kW VSAT-XL towers. It now uses 10 kW VSATs only, with the number set by the Phase 1 load budget." %}
-
 At the south pole the Sun skims the horizon, so hills and crater rims cast very long shadows. A tall tower lifts its arrays out of those shadows and catches more hours of sun<sup class="r">[1](#s1)</sup>. On the Shackleton connecting ridge, the best point is lit 92% of the time at 2 m height and 96% at 10 m<sup class="r">[10](#s10)</sup>. Each tower turns that sunlight into 10 kW and sends it to the power management controller (PMC), which routes it to the grid or to storage (design changes DD-003 and DD-008).
 
 **Curtailment and disconnect (plan design, DD-008).** When demand is met and storage is full, the PMC tells each tower to reduce or cut its output. The tower's array regulator does this by shunting array strings, and a disconnect contactor can isolate the whole tower. This is ISS heritage: the station's sequential shunt unit shunts and unshunts array strings to hold the ~160 V DC primary bus<sup class="r">[14](#s14)</sup><sup class="r">[15](#s15)</sup>. The towers can also be lowered and moved<sup class="r">[1](#s1)</sup>.
@@ -92,10 +90,6 @@ At the south pole the Sun skims the horizon, so hills and crater rims cast very 
 3. **1 kHz step-up transformer.** Raises it to 3 kV, 3-phase, 1 kHz, the grid standard (DD-001). The transformer has no switches, so only low-voltage switches are needed. NASA limits a DC grid to 1.2–1.5 kV for lack of radiation-hard high-voltage switches<sup class="r">[17](#s17)</sup>.
 
 Astrobotic's VSAT team already proposed high-voltage AC transmission using NASA Glenn's UMIC<sup class="r">[3](#s3)</sup>. Every tower sits within **3 km of cable run** of the PMC as standard (DD-013), or up to **10 km** on an extended run at about 10–15% loss (DD-014).
-
-{% include decision-note.html id="DD-013" extra="Each tower had a 'line interface converter' with no set distance. Now the tower converts to 3 kV AC itself and stands within 3 km of cable run of the PMC." %}
-
-{% include decision-note.html id="DD-014" extra="A tower may now stand up to 10 km of cable from the PMC on an extended run, so the ~94% ridge-point pair about 8 km apart is back in reach." %}
 
 ## How it works
 

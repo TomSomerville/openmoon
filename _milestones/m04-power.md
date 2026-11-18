@@ -150,13 +150,7 @@ This milestone targets about 120 kW of total capacity (provisional until the Pha
 - **NASA reference design.** 40 kWe, about 10 t, four pairs of Stirling engines, sodium heat pipes, 10-year life<sup class="r">[1](#s1)</sup>.
 - **Moving target.** The US programme has changed requirements several times: 40 kWe in 2022<sup class="r">[1](#s1)</sup>, then at least 100 kWe with closed Brayton conversion in 2025<sup class="r">[12](#s12)</sup>. In 2026 it settled on "Lunar Reactor-1": at least 20 kWe, at least 5 years, HALEU fuel, under 15 t<sup class="r">[6](#s6)</sup><sup class="r">[14](#s14)</sup>. No contract has been awarded yet. Open Moon now plans on that 20 kWe minimum (see design changes DD-002, DD-003 and DD-008 below).
 
-{% include decision-note.html id="DD-002" extra="Open Moon first planned one 40 kWe-class reactor feeding the grid directly. On 18 November 2026 it changed to KRUSTY-class (1 kWe) or LR-1-class (20 kWe) reactors. Its first rule, that reactors only charge a battery, was later widened by DD-003." %}
-
-{% include decision-note.html id="DD-003" extra="DD-002 had the reactor charge only a battery. DD-003 widens that: every source now feeds one hub, which routes power to the grid, to storage, or both. DD-008 renamed that hub the power management controller (PMC)." %}
-
 ## How power flows: inputs, PMC, storage, outputs
-
-{% include decision-note.html id="DD-008" extra="Until 18 November 2026 the plan called this hub the BMS. The routing rules did not change; only the names did." %}
 
 ![Diagram: fission reactors and solar towers feed the power management controller (PMC); the PMC sends power to the grid, to the batteries through their BCDUs, or to excess-power handling; the grid is fed by generation or by the battery, and the fuel cells recharge the battery; with storage full, solar is curtailed by each tower's shunt regulator and reactor surplus goes to its parasitic load radiator](/assets/tech/base-power-pmc-flow.svg)
 
@@ -177,8 +171,6 @@ This milestone targets about 120 kW of total capacity (provisional until the Pha
 - **KRUSTY-class units.** A 1 kWe Kilopower-type unit gives 24 kWh a day. That suits a remote comms or science node, not the habitat. No flight unit is being built.
 
 ## Service connections: every unit is a house on the grid
-
-{% include decision-note.html id="DD-009" extra="The plan first followed NASA's 2022 layout of separate habitat and ISRU microgrids. It now has one grid and a service connection for each unit." %}
 
 ![Diagram: the 3 kV AC grid feeds three habitat modules and a water electrolysis plant, each through its own service connection: service drop, UMIC-class step-down and rectifier to 120 V DC, meter, main breaker, then a 120 V DC panel with branch circuits such as life support, lighting, galley, avionics and heaters; habitats have an optional unit inverter feeding a local AC subpanel; any one connection can be opened without affecting the others](/assets/tech/base-power-service-connection.svg)
 
@@ -213,12 +205,9 @@ This is the plan's design, simplified to one line per 3-phase circuit. Each sour
 - **Only 10 kW VSATs (DD-004).** The number of towers will come from the Phase 1 load budget. Until then the plan costs 10 towers (100 kW) as a provisional figure.
 - **Not used: VSAT-XL.** Astrobotic's 50 kW, 34 m design<sup class="r">[7](#s7)</sup> is still a ground deployment prototype, under an SBIR Phase II contract to June 2027<sup class="r">[17](#s17)</sup><sup class="r">[18](#s18)</sup>. It is kept as an alternative only.
 
-{% include decision-note.html id="DD-004" extra="M04 first planned two 10 kW VSATs and two 50 kW VSAT-XL towers." %}
 - **Why height matters.** Taller masts see over the horizon and catch more hours of sun<sup class="r">[11](#s11)</sup>.
 
 ## Cables
-
-{% include decision-note.html id="DD-001" extra="Open Moon first planned a ±4 kV DC grid, following a February 2022 NASA Glenn transmission review. In November 2026 it switched to NASA's 3 kV AC baseline." %}
 
 - **Voltage and frequency.** In its 2022 grid trade study NASA compared 1.2–6 kV DC and 3-phase AC at 60 Hz to 1 kHz. It found **1 kHz the lightest AC option** and chose **3 kV AC as the mass-optimal feasible design**<sup class="r">[23](#s23)</sup>.
 - **Why not DC?** NASA says DC would be lighter above 3–4 kV, but a DC grid is "practically limited to 1.2–1.5 kV, due to lack of high voltage rad-hard switches". AC voltage can be changed with transformers, and "these facts drove team to select AC"<sup class="r">[23](#s23)</sup>.
@@ -231,19 +220,11 @@ This is the plan's design, simplified to one line per 3-phase circuit. Each sour
 
 ## Isolated grids for remote sites (DD-016)
 
-{% include decision-note.html id="DD-016" %}
-
 The base runs one grid (DD-009). A remote site too far from the base for a power run can have its own isolated grid: its own generation, PMC and storage, with no tie to the base (plan design). The first case is the ice mine at the primary site, 12.7 km from the base: two 10 kW VSATs on the de Gerlache rim feed a mine PMC there, with a feeder down to the mine (M00). The base keeps its own VSATs. Each isolated grid needs its own storage and spares. The ice-mine grid stores only enough to keep its systems minimally alive while it is dark; mining stops until the VSATs are lit again (plan design). Its keep-alive load is not yet sized (open).
 
 **Base VSATs at the primary site (DD-016, DD-017).** B1 (site 5, 8.2 km) and B2 (9.4 km) on extended runs (DD-020) give the base its hours of sunlight; B3, 2.0 km from the base on a standard run and clear of the flat patch (DD-021), adds redundancy and faster battery charging while the Sun is up (plan design; see M00).
 
-{% include decision-note.html id="DD-017" %}
-
 ## Power runs: 3 km standard, up to 10 km extended, converted to 3 kV AC at the source
-
-{% include decision-note.html id="DD-014" extra="DD-013 capped every run at 3 km. 3 km is now the standard, and extended runs of up to 10 km are allowed." %}
-
-{% include decision-note.html id="DD-013" extra="Before this, links were '1–3 km' with no set maximum, and how each source reached 3 kV AC was only sketched." %}
 
 ![Diagram: three conversion chains, each built at the source. VSAT: native DC, array regulator and shunt, UMIC-class low-voltage inverter, 1 kHz step-up transformer, 3 kV AC. Kilopower: eight Stirling alternators at about 12 V AC and 100 Hz, one controller each rectifying to DC, a shared DC bus, a UMIC-class inverter, a 1 kHz transformer, 3 kV AC. LR-1: 3 kV AC at the reactor output, with the frequency matched to 1 kHz by the vendor or a converter. Every source then runs 3 km of cable or less to the PMC as standard, or up to 10 km as an extended run](/assets/tech/source-to-3kv-conversion.svg)
 

@@ -11,7 +11,7 @@
 ## Design decisions
 - When a plan design decision is made, record it in `_data/decisions.yml` as the next `DD-00N`, with was / now / why, a dated source timeline and trade-offs.
 - Then go through the ENTIRE plan and update everything it affects: milestones (`_milestones/`), components (`_components/`), technology cards (`_tech/`, `_data/tech.yml`), roadmap (`_data/roadmap.yml`, then run `python3 _tools/roadmap_art.py`), costs (milestone `cost` totals must equal the sum of `cost_items`), PBS (`_data/pbs.yml`) and any summaries that quote the old figures.
-- Add `{% include decision-note.html id="DD-00N" extra="..." %}` where the change is most visible.
+- `_data/decisions.yml` is an internal record only. There is no decisions page and no design-change boxes on pages (owner's request); do not add them back.
 - Build the site (`jekyll build`) and check the affected pages before committing.
 
 ## Publishing

@@ -87,8 +87,6 @@ So ice exists, but its amount and depth at any one spot are unknown. That is why
 
 ## Where to prospect
 
-{% include decision-note.html id="DD-010" extra="M01's prospectors go to the focus area." %}
-
 The [M00 maps]({{ '/plan/m00-site-selection/' | relative_url }}) give three kinds of target in the Shackleton–de Gerlache focus area (plan design):
 
 - **Ice candidates:** the permanently shadowed floors of Shackleton and de Gerlache, reached from landable ground on their rims. de Gerlache also holds ShadowCam's unexplained bright spot at 88.5352°S, 97.4007°W.

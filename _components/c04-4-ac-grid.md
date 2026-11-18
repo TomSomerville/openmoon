@@ -88,27 +88,15 @@ sources:
   - {title: "NASA Glenn: SPARC Industry Day presentation (Lunar Reactor-1 requirements)", url: "https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download", date: "Sep 2026"}
 ---
 
-{% include decision-note.html id="DD-001" extra="This component was first designed as a ±4 kV DC grid, following NASA Glenn's February 2022 transmission review. It was redesigned on 18 November 2026 to NASA's 3 kV AC, 1 kHz baseline." %}
-
 ## What it does
 
 The grid moves power from where it is made to where it is used. NASA's reactor reference design places the user interface 1 km from the reactor<sup class="r">[3](#s3)</sup>, and NASA says the oxygen plant needs power over 3–5 km<sup class="r">[6](#s6)</sup>. Open Moon's standard power run is 3 km (DD-013), and ISRU plants at NASA's 3–5 km are fed by extended runs of up to 10 km (DD-014). NASA's baseline is two independent microgrids, one for the habitat and one for ISRU, each with its own sources, joined by a primary line so they can share power<sup class="r">[6](#s6)</sup>.
 
 **Every source goes through the PMC (design changes DD-003 and DD-008).** Source lines from the reactor and the solar towers run to the power management controller (PMC, C04.3), not straight to users. The PMC then sends power out over the grid to meet demand, or into storage. So the grid has two parts: source lines into the PMC, and the distribution grid from the PMC to every unit.
 
-{% include decision-note.html id="DD-003" extra="Sources no longer feed users directly over the trunk; every line from a source ends at the PMC (called the BMS until DD-008)." %}
-
 **A national grid, and every unit a house (design change DD-009).** Open Moon does not build NASA's two separate microgrids. The distribution grid is one 3 kV AC network, like a national grid. Each habitat module and each facility has its own service connection to it, like a house<sup class="r">[12](#s12)</sup>.
 
-{% include decision-note.html id="DD-009" extra="This component first fed separate habitat and ISRU 120 V DC microgrids, following NASA's 2022 layout." %}
-
 **3 km standard, 10 km extended, converted at the source (design changes DD-013 and DD-014).** Every generation source sits within 3 km of cable run of the PMC as standard (DD-013), or up to 10 km on an extended run at about 10–15% loss (DD-014), and converts to 3 kV, 3-phase, 1 kHz AC right where it stands. See [Source-end conversion](#source-end-conversion-dd-010) below.
-
-{% include decision-note.html id="DD-014" extra="DD-013 capped every run at 3 km. 3 km is now the standard, and runs of up to 10 km are allowed as extended runs. See the 10 km row under Sizing below." %}
-
-{% include decision-note.html id="DD-013" extra="This component used '1–3 km' links with no set maximum, and said only that each source had a step-up transformer." %}
-
-{% include decision-note.html id="DD-016" extra="Remote sites may run their own isolated grid; the ice mine at the primary site does (M00, C06.2)." %}
 
 ## Service connections
 

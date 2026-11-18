@@ -34,8 +34,6 @@ As of November 2026, no test results from the Phase II prototype have been publi
 
 ## Why Open Moon does not use it (design change DD-004)
 
-{% include decision-note.html id="DD-004" extra="VSAT-XL was planned as two 50 kW towers in M04. It is now kept only as an alternative." %}
-
 Open Moon first planned two 50 kW VSAT-XL towers in M04, alongside two 10 kW VSATs. On 18 November 2026 the plan switched to NASA's 10 kW-class VSAT only, because VSAT is the tower closest to flight: three NASA-funded prototypes, two of them tested in a thermal-vacuum chamber in 2024 ([NASA](https://www.nasa.gov/centers-and-facilities/johnson/from-houston-to-the-moon-johnsons-thermal-vacuum-chamber-tests-lunar-solar-technology/)). VSAT-XL is a small-business study that is building a deployment prototype by June 2027, and no flight is planned ([USAspending](https://www.usaspending.gov/award/CONT_AWD_80NSSC25C0032_8000_-NONE-_-NONE-)). The plan will revisit VSAT-XL if it reaches flight-like testing.
 
 Height is the point. At the poles the Sun stays close to the horizon, and terrain can block light from low arrays. Masts lift the arrays into steadier light, [NASA explains](https://www.nasa.gov/news-release/three-companies-to-help-nasa-advance-solar-array-technology-for-moon/). VSAT-XL is part of Astrobotic's [LunaGrid](https://www.astrobotic.com/lunar-delivery/lunar-surface-power/) power service. That service also uses cable-laying rovers and wireless chargers to carry power to users. Astrobotic and Honda are also studying how to pair [VSAT and VSAT-XL with Honda's regenerative fuel cell](https://www.astrobotic.com/honda-and-astrobotic-establish-joint-development-agreement-to-explore-scalable-lunar-power-solutions/) to get through dark periods.

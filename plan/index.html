@@ -1,7 +1,7 @@
 ---
 title: Roadmap
-eyebrow: The plan, year by year
-summary: "Pick a year to see what the base looks like, what changed since the previous step, and every piece of work behind it. Years count from the start of the plan: Year 0 is the first lander launches, after site selection is finished. Timings are planning targets."
+eyebrow: The plan, phase by phase
+summary: "Pick a phase to see what the base looks like at each step, and every piece of work behind it. Years count from the start of the plan: Year 0 is the first lander launches, after site selection is finished. Timings are planning targets."
 section: plan
 doc_id: OM-100
 ---
@@ -9,7 +9,7 @@ doc_id: OM-100
 {% assign stages = site.data.roadmap %}
 <style>
 .rm-tabs{display:flex;overflow-x:auto;border:1px solid var(--line);border-bottom:0;border-radius:8px 8px 0 0;background:var(--panel);scrollbar-width:thin}
-.rm-tab{flex:1 0 96px;background:none;border:0;border-right:1px solid var(--line);border-bottom:3px solid transparent;padding:9px 6px 7px;color:var(--dim);cursor:pointer;text-align:center;font:inherit}
+.rm-tab{flex:1 0 130px;background:none;border:0;border-right:1px solid var(--line);border-bottom:3px solid transparent;padding:9px 6px 7px;color:var(--dim);cursor:pointer;text-align:center;font:inherit}
 .rm-tab:last-child{border-right:0}
 .rm-tab b{display:block;font:700 15px var(--fh);letter-spacing:.04em;color:var(--ink);text-transform:uppercase}
 .rm-tab span{display:block;font:10.5px/1.3 var(--fm);letter-spacing:.04em}
@@ -19,6 +19,10 @@ doc_id: OM-100
 .rm-tab:hover{background:color-mix(in srgb,var(--hi) 5%,transparent)}
 .rm-panel{border:1px solid var(--line);border-radius:0 0 8px 8px;overflow:hidden;background:var(--panel)}
 .rm-panel[hidden]{display:none}
+.rm-stage{border-top:1px solid var(--line)}
+.rm-stage .rm-img{width:100%;max-width:100%;margin:0;border-radius:0}
+.rm-stage .rm-h{margin:2px 0 8px}
+.rm-h{font:700 19px/1.25 var(--fh);margin:0 0 8px;color:var(--ink)}
 .rm-img{display:block;width:100%;height:auto;background:#05080c;border-bottom:1px solid var(--line)}
 .rm-body{padding:18px 20px 22px}
 .rm-body h2{font:700 22px/1.2 var(--fh);text-transform:none;letter-spacing:.01em;margin:0 0 8px;color:var(--ink)}
@@ -39,37 +43,46 @@ doc_id: OM-100
 @media (max-width:700px){.rm-stats{grid-template-columns:1fr 1fr}.rm-body{padding:14px}}
 </style>
 
-<div class="rm-tabs" role="tablist" aria-label="Roadmap years">
-{% for s in stages %}<button class="rm-tab" role="tab" id="tab-y{{ s.year }}" aria-controls="year-{{ s.year }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"><b>Year {{ s.year }}</b><span>{{ s.label[0] }}<br>{{ s.label[1] }}</span><small>{{ s.span | default: "" }}</small></button>{% endfor %}
+<div class="rm-tabs" role="tablist" aria-label="Roadmap phases">
+{% for p in site.data.phases %}<button class="rm-tab" role="tab" id="tab-p{{ p.n }}" aria-controls="phase-{{ p.n }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"><b>Phase {{ p.n }}</b><span>{{ p.name }}</span><small>{{ p.years }}</small></button>{% endfor %}
 </div>
-{% for s in stages %}
+{% for p in site.data.phases %}
+{% assign ps = stages | where: "phase", p.n %}{% assign last = ps | last %}
 {% assign lo = 0 %}{% assign hi = 0 %}{% assign done = 0 %}
-{% for m in ms %}{% assign endy = m.window | remove: "Before Year " | remove: "Years " | remove: "Year " | split: "–" | last | plus: 0 %}{% if endy <= s.end %}{% assign lo = lo | plus: m.cost.low %}{% assign hi = hi | plus: m.cost.high %}{% assign done = done | plus: 1 %}{% endif %}{% endfor %}
-<section class="rm-panel" role="tabpanel" id="year-{{ s.year }}" aria-labelledby="tab-y{{ s.year }}"{% unless forloop.first %} hidden{% endunless %}>
-  <img class="rm-img" src="{% capture yy %}{% if s.year < 10 %}0{% endif %}{{ s.year }}{% endcapture %}{{ '/assets/roadmap/year-' | append: yy | append: '.svg' | relative_url }}" alt="Concept illustration of the base in year {{ s.year }}: {{ s.headline }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+{% for m in ms %}{% assign endy = m.window | remove: "Before Year " | remove: "Years " | remove: "Year " | split: "–" | last | plus: 0 %}{% if endy <= last.end %}{% assign lo = lo | plus: m.cost.low %}{% assign hi = hi | plus: m.cost.high %}{% assign done = done | plus: 1 %}{% endif %}{% endfor %}
+<section class="rm-panel" role="tabpanel" id="phase-{{ p.n }}" aria-labelledby="tab-p{{ p.n }}"{% unless forloop.first %} hidden{% endunless %}>
   <div class="rm-body">
-    <div class="eyebrow">{{ s.span | default: "Year" }}{% unless s.span %} {{ s.year }}{% endunless %}</div>
-    <h2>{{ s.headline }}</h2>
-    <p class="rm-sum">{{ s.summary }}</p>
+    <div class="eyebrow">Phase {{ p.n }} · {{ p.years }}</div>
+    <h2>{{ p.name }}</h2>
+    <p class="rm-sum">{{ p.desc }}</p>
     <div class="rm-stats">
-      <div><small>Crew on the Moon</small><b>{{ s.crew_text | default: s.crew }}</b></div>
-      <div><small>Installed power</small><b>{% if s.power_kw > 0 %}{% if s.power_kw >= 500 %}≥{% endif %}{{ s.power_kw }} kW{% else %}–{% endif %}</b></div>
+      <div><small>Crew on the Moon (end)</small><b>{{ last.crew_text | default: last.crew }}</b></div>
+      <div><small>Installed power (end)</small><b>{% if last.power_kw > 0 %}{% if last.power_kw >= 500 %}≥{% endif %}{{ last.power_kw }} kW{% else %}–{% endif %}</b></div>
       <div><small>Milestones complete</small><b>{{ done }} / {{ ms | size }}</b></div>
       <div><small>Spent to date (est.)</small><b>{% if done > 0 %}${{ lo | round: 0 }}–{{ hi | round: 0 }}B{% else %}&lt;$0.2B{% endif %}</b></div>
     </div>
-    <div class="sec-h">What happened since the last step</div>
-    <div class="rm-det">
-    {% for d in s.details %}
-      <article><h3>{{ d.title }}</h3><p>{{ d.text }}</p>
-        <div class="refs">{% for r in d.refs %}{% assign m = site.milestones | where: "id_code", r | first %}{% assign c = site.components | where: "id_code", r | first %}{% assign t = site.data.tech | where: "slug", r | first %}{% if m %}<a class="tag hi" href="{{ m.url | relative_url }}" title="{{ m.title }}">{{ r }}</a>{% elsif c %}<a class="tag ok" href="{{ c.url | relative_url }}" title="{{ c.title }}">{{ r }}</a>{% elsif t %}<a class="tag" href="{{ '/technology/' | append: t.slug | append: '/' | relative_url }}">{{ t.name }}</a>{% endif %}{% endfor %}</div>
-      </article>
-    {% endfor %}
-    </div>
-    <div class="rm-nav"><button data-go="-1"{% if forloop.first %} disabled{% endif %}>← Previous year</button><button data-go="1"{% if forloop.last %} disabled{% endif %}>Next year →</button></div>
   </div>
+  {% for s in ps %}
+  <div class="rm-stage" id="year-{{ s.year }}">
+    <img class="rm-img" src="{% capture yy %}{% if s.year < 10 %}0{% endif %}{{ s.year }}{% endcapture %}{{ '/assets/roadmap/year-' | append: yy | append: '.svg' | relative_url }}" alt="Concept illustration of the base in year {{ s.year }}: {{ s.headline }}" loading="lazy">
+    <div class="rm-body">
+      <div class="eyebrow">{{ s.span | default: "Year" }}{% unless s.span %} {{ s.year }}{% endunless %}</div>
+      <h3 class="rm-h">{{ s.headline }}</h3>
+      <p class="rm-sum">{{ s.summary }}</p>
+      <div class="rm-det">
+      {% for d in s.details %}
+        <article><h3>{{ d.title }}</h3><p>{{ d.text }}</p>
+          <div class="refs">{% for r in d.refs %}{% assign m = site.milestones | where: "id_code", r | first %}{% assign c = site.components | where: "id_code", r | first %}{% assign t = site.data.tech | where: "slug", r | first %}{% if m %}<a class="tag hi" href="{{ m.url | relative_url }}" title="{{ m.title }}">{{ r }}</a>{% elsif c %}<a class="tag ok" href="{{ c.url | relative_url }}" title="{{ c.title }}">{{ r }}</a>{% elsif t %}<a class="tag" href="{{ '/technology/' | append: t.slug | append: '/' | relative_url }}">{{ t.name }}</a>{% endif %}{% endfor %}</div>
+        </article>
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  <div class="rm-body"><div class="rm-nav"><button data-go="-1"{% if forloop.first %} disabled{% endif %}>← Previous phase</button><button data-go="1"{% if forloop.last %} disabled{% endif %}>Next phase →</button></div></div>
 </section>
 {% endfor %}
-<p style="font-size:12.5px;color:var(--dim);margin:8px 0 26px">Illustrations are Open Moon concepts drawn from the plan, not engineering drawings. "Spent to date" sums the cost estimates of milestones whose window has ended by that year. Tags link to <span class="tag hi">milestones</span>, <span class="tag ok">components</span> and <span class="tag">technology</span> pages.</p>
+<p style="font-size:12.5px;color:var(--dim);margin:8px 0 26px">Illustrations are Open Moon concepts drawn from the plan, not engineering drawings. "Spent to date" sums the cost estimates of milestones whose window has ended by the end of that phase. Tags link to <span class="tag hi">milestones</span>, <span class="tag ok">components</span> and <span class="tag">technology</span> pages.</p>
 
 <script>
 (function(){
@@ -87,23 +100,16 @@ doc_id: OM-100
     t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){show(i+1,true,true);e.preventDefault()}if(e.key==='ArrowLeft'){show(i-1,true,true);e.preventDefault()}});
   });
   document.querySelectorAll('.rm-nav button').forEach(function(b){b.addEventListener('click',function(){var cur=tabs.findIndex(function(t){return t.getAttribute('aria-selected')==='true'});show(cur+(+b.dataset.go),false,true);window.scrollTo({top:document.querySelector('.rm-tabs').getBoundingClientRect().top+scrollY-20,behavior:'smooth'})})});
-  var h=location.hash.replace('#',''),k=panels.findIndex(function(p){return p.id===h});if(k>-1) show(k,false,false);
+  var h=location.hash.replace('#',''),k=panels.findIndex(function(p){return p.id===h||p.querySelector('#'+CSS.escape(h))});if(k>-1){show(k,false,false);var el=document.getElementById(h);if(el&&el.classList.contains('rm-stage'))el.scrollIntoView();}
 })();
 </script>
 
 <h2 id="milestones">Milestone register</h2>
 
-<p><a class="btn ghost" href="{{ '/plan/breakdown/' | relative_url }}">Product breakdown and coverage →</a> <a class="btn ghost" href="{{ '/decisions/' | relative_url }}">Design decisions →</a></p>
+<p><a class="btn ghost" href="{{ '/plan/breakdown/' | relative_url }}">Product breakdown and coverage →</a></p>
 <div class="tablewrap"><table class="data">
 <thead><tr><th>ID</th><th>Milestone</th><th>Phase</th><th>Window</th><th>Cost (est.)</th><th>Lowest TRL</th><th>Depends on</th></tr></thead>
 <tbody>
 {% for m in ms %}<tr><td><span class="tag hi">{{ m.id_code }}</span></td><td><a href="{{ m.url | relative_url }}"><strong>{{ m.title }}</strong></a><br><span style="color:var(--dim)">{{ m.summary }}</span></td><td>{{ m.phase }}</td><td style="white-space:nowrap">{{ m.window }}</td><td style="white-space:nowrap">{% if m.cost %}${{ m.cost.low }}–{{ m.cost.high }}B{% else %}done{% endif %}</td><td style="white-space:nowrap">{% include trl.html n=m.trl_min %}</td><td>{{ m.depends_on | join: ", " }}</td></tr>
 {% endfor %}
 </tbody></table></div>
-
-<h2>Phases</h2>
-{% include decision-note.html id="DD-005" extra="The plan had six phases, with a crewed-sortie phase before permanent presence. It now has five: the whole base is built uncrewed in Phase 1, and the first crew landing starts Phase 2." %}
-{% for p in site.data.phases %}
-<h3>Phase {{ p.n }} · {{ p.name }}</h3>
-<p>{{ p.desc }}</p>
-{% endfor %}

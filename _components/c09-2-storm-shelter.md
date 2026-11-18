@@ -66,8 +66,6 @@ Solar particle events (SPEs) are bursts of low- to medium-energy protons. They a
 
 Because the habitat is under ≥2 m of regolith before anyone lands (C09.1, DD-005), the shelter is a backup. It matters most at the less-shielded entrance end, when crew are recalled from EVA, and at handovers, when 9 people are on base.
 
-{% include decision-note.html id="DD-006" extra="The shelter was sized for 8 crew. It now holds 9, the number on base for about two weeks at each handover. It keeps its C09.2 ID but is delivered by M08, before the first crew." %}
-
 ## How it works
 
 **How thick.** NASA's guidance is to add **10 cm of water** to the crew quarters for a once-a-century event, and about **20 cm** for a once-a-millennium event. This can be done partly by moving water containers and stowage, and SPE timelines leave time to do it. About **95%** of SPEs need only "as low as reasonably achievable" (ALARA) steps, not a shelter<sup class="r">[1](#s1)</sup>.

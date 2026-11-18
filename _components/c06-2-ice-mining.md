@@ -86,15 +86,7 @@ This plan follows the architecture of a NASA case study. Excavators work in the 
 
 **Power at the mine (design changes DD-013 and DD-014).** The base's standard power run is 3 km of cable (DD-013). Extended runs of up to 10 km are allowed at about 10–15% loss (DD-014). In the NASA study the mine is about 5 km from the ridge<sup class="r">[1](#s1)</sup>, and NASA expects ISRU to need power over 3–5 km<sup class="r">[6](#s6)</sup>. So the ~15 kW at such a mine can come from the grid over an extended run, with voltage regulation at the mine end and a 1 kHz stability analysis for the run (plan design). At ~10–15% loss, that is about 1.5–2.3 kW more at the source (this plan's arithmetic). A mine more than 10 km of cable from the PMC runs on the mobile power cart (PBS PW.5) or a local source, and tankers carry the water to the plant (plan design; open).
 
-{% include decision-note.html id="DD-013" extra="The mine was assumed to draw grid power wherever it was." %}
-
-{% include decision-note.html id="DD-014" extra="A mine at NASA's ~5 km distance can now draw grid power over an extended run." %}
-
 **Primary base site (DD-015).** At the primary site on de Gerlache's north rim, the mine is planned at the edge of de Gerlache's shadowed floor around 88.37°S, 78.3°W, 12.7–13 km from the base. It is powered by its own isolated grid (DD-016): two rim VSATs 2.3 km apart feeding a mine PMC on the rim, and an ~8.3 km feeder down to the mine (M00, "Power layout" tab). It is not connected to the base grid (plan design; ESTIMATE for sunlight). When both mine VSATs are dark (up to about 14 days at a time, ESTIMATE), the mine shuts down; its battery only keeps heaters, controls and comms alive, not the ~15 kW mining load (plan design).
-
-{% include decision-note.html id="DD-016" %}
-
-{% include decision-note.html id="DD-015" %}
 
 ## Sizing
 

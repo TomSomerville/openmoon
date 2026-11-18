@@ -80,10 +80,6 @@ risks:
   - {sev: Medium, title: "Buried modules cannot shed heat through regolith (C09.1)", fix: "Install surface radiators and two pumped loops before burial, sized for 9 people"}
 ---
 
-{% include decision-note.html id="DD-005" extra="M08 used to be 'First habitat and crewed sorties'. There are no sorties now: robots build and bury the whole habitat before the first crew lands, and the first landing starts Phase 2 (M09)." %}
-
-{% include decision-note.html id="DD-007" extra="The base lands three of one standard 3-person module side by side and connects them, giving 9 beds. The module's detailed design is to be defined later; MPH figures are placeholders." %}
-
 ## The habitat
 
 - **One standard module, three times.** The habitat is one module design that houses **3 people**. Three are landed next to each other and connected, for **9 beds**: 6 for residents and 3 flexible beds for handovers (this plan's arithmetic, DD-006, DD-007). The detailed design is **to be defined later (open)**.
