@@ -39,7 +39,15 @@ def make(name,bounds,res,out,alpha=0.6,threshold_mode=False,annot=(),title=''):
         if a[0]=='circle':
             _,lat,lon,diam,lab,side=a; x,y=m2p(*lonlat2m(lat,lon)); r=diam*500/res
             d.ellipse((x-r,y-r,x+r,y+r),outline=(0,230,255),width=max(2,int(3*k)))
-            d.text((x+(r+8*k if side=='r' else -r-8*k),y),lab,font=F,fill=(0,230,255),anchor='lm' if side=='r' else 'rm',stroke_width=3,stroke_fill=(0,0,0))
+            if side=='t': d.text((x,y-r-6*k),lab,font=F,fill=(0,230,255),anchor='md',stroke_width=3,stroke_fill=(0,0,0))
+            else: d.text((x+(r+8*k if side=='r' else -r-8*k),y),lab,font=F,fill=(0,230,255),anchor='lm' if side=='r' else 'rm',stroke_width=3,stroke_fill=(0,0,0))
+        if a[0]=='text':
+            _,lat,lon,lab,col,dy=a; x,y=m2p(*lonlat2m(lat,lon))
+            d.text((x,y+dy*k),lab,font=F,fill=col,anchor='mm',stroke_width=3,stroke_fill=(0,0,0))
+        if a[0]=='tri':
+            _,lat,lon,lab=a; x,y=m2p(*lonlat2m(lat,lon)); r=9*k
+            d.polygon([(x,y-r),(x-r*0.9,y+r*0.7),(x+r*0.9,y+r*0.7)],fill=(255,255,255),outline=(0,0,0))
+            d.text((x-12*k,y),lab,font=Fs,fill=(255,255,255),anchor='rm',stroke_width=3,stroke_fill=(0,0,0))
         if a[0]=='box':
             _,bx,lab=a; p0=m2p(bx[0],bx[3]); p1=m2p(bx[2],bx[1])
             d.rectangle((*p0,*p1),outline=(255,255,0),width=max(2,int(3*k)))
