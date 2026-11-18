@@ -3,7 +3,7 @@ id_code: M09
 order: 9
 title: Permanent crew presence
 phase: 3
-window: "2034–2038"
+window: "2034–2040"
 summary: Move from visits to a crew that never leaves, with habitats buried under regolith for radiation protection, life support that recycles most air and water, and steady six-month rotations.
 objective: "Keep at least four people on the surface continuously for four years with six-month rotations, radiation doses within career limits, life support recycling at least 90% of water and making oxygen locally, and resupply mass per person cut by at least 40% compared with open-loop operations."
 trl_min: 5

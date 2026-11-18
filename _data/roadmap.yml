@@ -1,0 +1,168 @@
+# Roadmap stages. year = years after programme start (Year 0 = 2026). Planning targets, not commitments.
+- year: 0
+  cal: 2026
+  label: ["Programme", "Founded"]
+  headline: "Open Moon is founded and the site search begins"
+  summary: "The programme starts with no hardware at all. A small engineering team pulls every public orbital data set of the lunar south pole into one open map, models sunlight and temperature hour by hour, and sets up the legal and partner framework the base will run under."
+  crew: 0
+  power_kw: 0
+  details:
+    - {title: "Open site database", text: "LRO terrain, imagery and temperature data, ShadowCam images inside shadowed craters and Chandrayaan-2 radar are merged into one public map of the south pole.", refs: [M00, lunar-reconnaissance-orbiter-lro, shadowcam-on-kplo-danuri, chandrayaan-2-orbiter-dfsar-radar]}
+    - {title: "Shortlist from NASA's nine regions", text: "NASA's nine Artemis south-pole candidate regions are the starting shortlist, already screened for landing safety, light and Earth visibility.", refs: [M00]}
+    - {title: "Illumination and hazard models", text: "Sunlight is modelled at several mast heights, and young fault scarps and landslide-prone slopes are mapped so nothing is built on them.", refs: [M00]}
+    - {title: "Programme and legal set-up", text: "Open licensing (CC BY-SA 4.0), Artemis Accords coordination and a buy-before-build procurement strategy.", refs: [M00]}
+- year: 1
+  cal: 2027
+  label: ["Site", "Selected"]
+  headline: "A primary and backup site are chosen, and the rides are booked"
+  summary: "With the site picked, the programme turns to getting there. Transport is booked across small, medium and heavy landers, relay service is arranged, and two prospector rovers are built to check the site on the ground."
+  crew: 0
+  power_kw: 0
+  details:
+    - {title: "Site certified", text: "A primary and backup site are chosen, each pairing a sunlit ridge for power with a nearby shadowed crater that may hold ice. The plan is published and notified to other operators.", refs: [M00]}
+    - {title: "Transport contracts", text: "Rides reserved on small commercial landers, Blue Moon Mark 1 for about 3 t, and heavy cargo landers for about 15 t, with two providers per critical payload. The Open Moon payload interface standard is published.", refs: [M02, C02.1, firefly-blue-ghost-lander, blue-origin-blue-moon-mark-1]}
+    - {title: "Relay service agreements", text: "Service is contracted from two lunar relay networks that follow the shared LunaNet standard.", refs: [M03, nasa-commercial-lunar-relay-intuitive-machines, esa-moonlight]}
+    - {title: "Prospector rovers built", text: "Two small rovers carry a 1 m drill, a mass spectrometer and a neutron spectrometer, all with flight heritage.", refs: [M01, C01.1, trident-drill-honeybee-robotics, msolo-mass-spectrometer]}
+- year: 2
+  cal: 2028
+  label: ["Prospectors", "Land"]
+  headline: "The first robots reach the site and start drilling for ice"
+  summary: "Two prospector rovers land on different landers, so one failure can't end the search. They drill into shadowed craters to measure how much ice is really there. Lunar terrain vehicles arrive at the south pole on NASA's schedule."
+  crew: 0
+  power_kw: 0
+  details:
+    - {title: "Two prospector landings", text: "Each rover parks in sunlight to recharge and makes short trips into the cold, dark crater, kept alive by radioisotope heaters.", refs: [M01, C01.1, radioisotope-heater-units]}
+    - {title: "Drilling a grid of holes", text: "Several holes per crater, down to 1 m, because orbital data shows ice is patchy.", refs: [M01, trident-drill-honeybee-robotics]}
+    - {title: "Lunar terrain vehicles", text: "NASA's two LTVs (Astrolab CLV-1 and Lunar Outpost Pegasus) are scheduled for delivery to the south pole region in 2028; Open Moon leases their services.", refs: [M07, astrolab-clv-1-ltv, lunar-outpost-pegasus-ltv]}
+    - {title: "Environment logging begins", text: "Radiation, dust and seismic sensors start recording what crews will later live with.", refs: [M01]}
+- year: 3
+  cal: 2029
+  label: ["Ice", "Confirmed"]
+  headline: "The ice is confirmed, the first power tower stands, and excavation starts"
+  summary: "Drilling results give the go decision for the site. The outpost's first permanent hardware arrives: a 10 kW solar tower, a cable-laying rover and a communications kit. Excavators begin grading the first landing pad."
+  crew: 0
+  power_kw: 10
+  details:
+    - {title: "Go / no-go on the site", text: "Ice is measured by drilling in at least two craters and the data is published. If the ice wasn't there, this is where the plan would switch to the backup site.", refs: [M01]}
+    - {title: "First solar tower", text: "A 10 kW vertical solar array on a 10 m mast is raised on a sunlit ridge point.", refs: [M04, C04.2, vertical-solar-array-technology-vsat]}
+    - {title: "First cable and comms", text: "A cable-laying rover starts the grid, and an LTE base station brings a surface network.", refs: [M04, C04.4, M03, C03.1, astrobotic-lunagrid-lite, nokia-lunar-4g-lte-network]}
+    - {title: "Excavators at work", text: "Excavator robots grade and compact the first pad site and the roads to the power towers.", refs: [M05, C05.1, nasa-isru-pilot-excavator-ipex]}
+- year: 5
+  cal: 2031
+  label: ["Outpost", "Connected"]
+  headline: "Always-on links, a hardened landing pad and 120 kW of solar power"
+  summary: "Since the first tower, the outpost has grown into a connected site. Two relay networks keep it in touch with Earth at least 95% of the time, landers touch down on a sintered pad instead of bare dust, and four solar towers now stand on separate ridge points."
+  crew: 0
+  power_kw: 120
+  details:
+    - {title: "Communications complete", text: "Relay service from two networks, a backup relay, rim masts covering the crater worksites and an optical link for bulk data.", refs: [M03, C03.1, C03.2, optical-laser-communications, lunanet-interoperability-specification-v5]}
+    - {title: "Transport complete", text: "Contracts with two providers in every cargo class, and an offloading crane working on the surface.", refs: [M02, C02.2, lunar-surface-manipulation-system-lsms]}
+    - {title: "Solar towers", text: "Two 10 kW towers and two 50 kW VSAT-XL towers, spread so at least one is almost always lit.", refs: [M04, C04.2, astrobotic-vsat-xl]}
+    - {title: "First hardened pad", text: "A sintered landing pad with an ejecta berm, tested with small landers, so landings stop sandblasting the site.", refs: [M05, C05.2, C05.3, icon-project-olympus, sintered-basalt-pavers-regolith-polymer-pads]}
+- year: 6
+  cal: 2032
+  label: ["Power Grid", "Complete"]
+  headline: "A fission reactor comes online and the grid can ride out any darkness"
+  summary: "The base now has power day and night. A 40 kWe-class fission reactor sits about 1 km away behind terrain, linked by NASA's 3 kV AC grid. Fuel-cell storage covers the gaps, and pads, roads and berms are finished."
+  crew: 0
+  power_kw: 160
+  details:
+    - {title: "Fission power", text: "A 40 kWe-class reactor is landed on a heavy cargo lander, driven out and started remotely. It runs continuously regardless of sunlight.", refs: [M04, C04.1, kilopower-krusty-fission-test, us-lunar-reactor-1-sparc]}
+    - {title: "3 kV AC grid", text: "Three-phase 3 kV, 1 kHz links with transformers and UMIC converters, following NASA's grid baseline (design change DD-001).", refs: [M04, C04.4, lunar-ac-power-transmission]}
+    - {title: "Energy storage", text: "Regenerative fuel cells sharing tanks with the water plant, plus batteries for peaks.", refs: [M04, C04.3, regenerative-fuel-cells]}
+    - {title: "Site preparation complete", text: "Two hardened pads, about 5 km of graded roads, ejecta berms and a shielding berm at the reactor.", refs: [M05, C05.1, C05.2, rassor-2-0]}
+- year: 7
+  cal: 2033
+  label: ["First", "Oxygen"]
+  headline: "Oxygen made from rock and water mined from ice"
+  summary: "The two pilot plants that everything later depends on are running. One splits oxygen out of regolith; the other mines icy soil in a shadowed crater and purifies the water. The first surface habitat lands and runs uncrewed while engineers on Earth check it out."
+  crew: 0
+  power_kw: 160
+  details:
+    - {title: "Oxygen pilot plant", text: "Molten regolith electrolysis, with carbothermal reduction as a second process, targeting 10 t of oxygen a year. Its real energy use per kilogram is the key measurement.", refs: [M06, C06.1, molten-regolith-electrolysis-nasa-lunar-resource, carbothermal-reduction-sierra-space-nasa]}
+    - {title: "Ice mining", text: "A cold-rated excavator digs icy regolith; a sealed oven releases the water and a cold trap captures it.", refs: [M06, C06.2, ice-excavation-nasa-break-the-ice]}
+    - {title: "Product storage", text: "Liquid oxygen and water tanks with cryocoolers, shaded or buried to limit boil-off.", refs: [M06, C06.3]}
+    - {title: "Habitat lands", text: "A rigid ~15 t habitat module (Thales Alenia MPH class) arrives on a heavy lander and is towed into place.", refs: [M08, C08.1, thales-alenia-space-multi-purpose-habitation-mph]}
+    - {title: "Mobility complete", text: "Leased LTVs, utility carts and inspection robots, driven from Earth between crew visits.", refs: [M07, C07.1, delay-tolerant-teleoperation, nasa-cadre-autonomous-rovers]}
+- year: 8
+  cal: 2034
+  label: ["First Crew", "Lands"]
+  headline: "People walk on the base for the first time"
+  summary: "After months of uncrewed checkout, the first crew lands for a two-week sortie. Early sorties carry two people on the surface, matching the habitat's reported capacity. Each crew commissions systems and leaves the base ready for the next."
+  crew: 2
+  power_kw: 160
+  details:
+    - {title: "Crewed sorties", text: "Stays of 14–30 days, using life support topped up with oxygen and water from the pilot plants: the first time a crew depends on lunar resources.", refs: [M08, C08.2, iss-life-support-eclss]}
+    - {title: "Moonwalks", text: "AxEMU-class suits for maintenance and installation, within walking or rover range of the habitat.", refs: [M08, C08.4, axiom-axemu-spacesuit]}
+    - {title: "Keeping dust out", text: "A dust lock or suitport and cleaning at the hatch, learning from Apollo, where every sample seal failed.", refs: [M08, C08.3]}
+    - {title: "Burial work begins", text: "Excavators start piling regolith for the permanent, shielded habitats.", refs: [M09, C09.1]}
+- year: 10
+  cal: 2036
+  label: ["Permanent", "Crew"]
+  headline: "The base is never empty again"
+  summary: "The sortie phase is over. Three habitat modules are linked and buried under regolith for radiation protection, life support recycles most air and water, and four people now live on the Moon continuously in six-month rotations."
+  crew: 4
+  power_kw: 160
+  details:
+    - {title: "Shielded habitats", text: "Three modules under at least 2 m of regolith (3 m target), because the unshielded dose would use up a career's allowance in about a year.", refs: [M09, C09.1, regolith-radiation-shielding]}
+    - {title: "Storm shelter", text: "A heavily shielded refuge inside the habitat for solar particle events.", refs: [M09, C09.2]}
+    - {title: "Closed-loop life support", text: "ISS-class water recovery, oxygen generation and CO₂ removal, fed by lunar oxygen and water.", refs: [M09, C08.2, iss-water-recovery-with-brine-processor, four-bed-co-scrubber-4bco2, sabatier-reactor]}
+    - {title: "Medical bay", text: "Diagnostics, pharmacy and telemedicine designed around 5–12 s communication delays.", refs: [M09, C09.3]}
+- year: 14
+  cal: 2040
+  label: ["Four Years", "Continuous"]
+  headline: "Four years without a gap, and the crew doubles"
+  summary: "The permanent-crew milestone is met: four years of continuous presence, all breathing oxygen made on the Moon, and resupply per person cut by at least 40%. With the health data in, the crew grows to eight and greenhouse modules are being buried."
+  crew: 8
+  power_kw: 220
+  details:
+    - {title: "Permanent presence proven", text: "Doses within career limits, at least 90% water recovery, and all breathing oxygen produced locally.", refs: [M09]}
+    - {title: "Greenhouses arrive", text: "Buried, LED-lit growing modules start with ISS-proven greens.", refs: [M10, C10.1, nasa-veggie, nasa-advanced-plant-habitat]}
+    - {title: "More power for lighting", text: "About 60 kW extra for crop lighting, more than one 40 kWe fission unit.", refs: [M10, C10.1]}
+    - {title: "Colony phase begins", text: "Work starts on the self-sustaining colony: growth, local economy and governance.", refs: [M13]}
+- year: 15
+  cal: 2041
+  label: ["Lunar", "Harvest"]
+  headline: "Half of the crew's calories are grown on the Moon"
+  summary: "Greenhouses have moved from salad greens to staple crops. Potatoes, wheat and soy grow hydroponically under LEDs, plant waste goes back into the loop, and a 12-month stored-food reserve guards against crop failure."
+  crew: 8
+  power_kw: 220
+  details:
+    - {title: "Staple crops", text: "Potatoes, wheat and soy alongside greens and peppers, reaching at least 50% of calories.", refs: [M10, C10.1]}
+    - {title: "Closing the nutrient loop", text: "Composting or bioreactors return plant waste and wastewater nutrients to the crops, following Lunar Palace and MELiSSA research.", refs: [M10, yuegong-1-lunar-palace-1-bioregenerative-system, esa-melissa]}
+    - {title: "Food security", text: "Several isolated growing modules and a seed bank, so one failure can't cause a shortage.", refs: [M10, interstellar-lab-nucleus]}
+- year: 16
+  cal: 2042
+  label: ["Propellant", "Depot"]
+  headline: "Landers refuel on the Moon"
+  summary: "The pilot plants have scaled to industry. Ten oxygen modules and expanded ice mining produce hundreds of tonnes a year, two more reactors push the grid past 500 kW, and a cryogenic depot at the pads refuels its first lander."
+  crew: 8
+  power_kw: 500
+  details:
+    - {title: "Industrial oxygen and water", text: "At least 300 t of oxygen and 100 t of water a year, sized from measured pilot-plant data.", refs: [M11, C06.1, C06.2]}
+    - {title: "Grid past 500 kW", text: "Two more fission units and more solar towers.", refs: [M11, M04, C04.1]}
+    - {title: "Propellant depot", text: "Cryogenic storage and transfer lines at the pads; the first lander refuelled with lunar oxygen.", refs: [M11, C11.1, cryogenic-propellant-transfer, in-orbit-lox-storage-demo-loxsat]}
+- year: 18
+  cal: 2044
+  label: ["Lunar", "Factory"]
+  headline: "Building with the Moon itself"
+  summary: "Most new construction and half of all spare parts by mass are now made on site. Metals come from oxygen-plant by-products, regolith is printed and sintered into structures, and the first solar array made from lunar silicon feeds the grid."
+  crew: 8
+  power_kw: 500
+  details:
+    - {title: "Fabrication shop", text: "Metal and polymer 3D printers with recycling, machining and tensile testing, building on ISS printers.", refs: [M12, C12.1, esa-metal-3d-printer-on-iss, redwire-made-in-space-amf-on-iss]}
+    - {title: "Regolith construction", text: "Printed and sintered regolith for berms, pads and shelters.", refs: [M12, icon-project-olympus, redwire-regolith-print]}
+    - {title: "Metals and solar cells", text: "Iron, silicon and aluminium recovered from oxygen-plant by-products; the first lunar-made solar array.", refs: [M12, blue-origin-blue-alchemist, molten-salt-electrolysis-metalysis-esa]}
+- year: 24
+  cal: 2050
+  label: ["Self-Sustaining", "Colony"]
+  headline: "A colony that makes most of what it needs"
+  summary: "The base has become a colony of 50–100 people. At least 90% of consumables and 80% of construction mass are made on the Moon. Earth still supplies electronics, medicines, specialist parts and people, and the colony earns revenue from propellant and services."
+  crew: 75
+  crew_text: "50–100"
+  power_kw: 500
+  details:
+    - {title: "Self-sufficiency by mass", text: "At least 90% of consumables and 80% of construction mass produced locally, measured and published every year.", refs: [M13]}
+    - {title: "Local economy", text: "Propellant sales to landers, hosting payloads and science, and data and communications services.", refs: [M13, M11]}
+    - {title: "Governance", text: "Operations under the Outer Space Treaty and Artemis Accords, with shared rules for every operator at the site.", refs: [M13]}
+    - {title: "Beyond 2050", text: "Lava tubes could offer large, naturally shielded spaces, though building in them is beyond this plan's technology rule.", refs: [M13, lava-tubes]}

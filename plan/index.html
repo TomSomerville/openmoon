@@ -1,11 +1,98 @@
 ---
-title: The plan
-eyebrow: Master schedule
-summary: Every milestone in order. Each has exit criteria, workstreams, technology, costs, failure modes and sources. See also the full product breakdown and design coverage.
+title: Roadmap
+eyebrow: The plan, year by year
+summary: "Pick a year to see what the base looks like, what changed since the previous step, and every piece of work behind it. Year 0 is 2026. Dates are planning targets."
 section: plan
 doc_id: OM-100
 ---
 {% assign ms = site.milestones | sort: "order" %}
+{% assign stages = site.data.roadmap %}
+<style>
+.rm-tabs{display:flex;overflow-x:auto;border:1px solid var(--line);border-bottom:0;border-radius:8px 8px 0 0;background:var(--panel);scrollbar-width:thin}
+.rm-tab{flex:1 0 96px;background:none;border:0;border-right:1px solid var(--line);border-bottom:3px solid transparent;padding:9px 6px 7px;color:var(--dim);cursor:pointer;text-align:center;font:inherit}
+.rm-tab:last-child{border-right:0}
+.rm-tab b{display:block;font:700 15px var(--fh);letter-spacing:.04em;color:var(--ink);text-transform:uppercase}
+.rm-tab span{display:block;font:10.5px/1.3 var(--fm);letter-spacing:.04em}
+.rm-tab small{display:block;font:10px var(--fm);color:var(--dim);opacity:.8}
+.rm-tab[aria-selected="true"]{border-bottom-color:var(--hi);background:rgba(56,212,240,.07)}
+.rm-tab[aria-selected="true"] b,.rm-tab[aria-selected="true"] span{color:var(--hi)}
+.rm-tab:hover{background:rgba(56,212,240,.05)}
+.rm-panel{border:1px solid var(--line);border-radius:0 0 8px 8px;overflow:hidden;background:var(--panel)}
+.rm-panel[hidden]{display:none}
+.rm-img{display:block;width:100%;height:auto;background:#05080c;border-bottom:1px solid var(--line)}
+.rm-body{padding:18px 20px 22px}
+.rm-body h2{font:700 22px/1.2 var(--fh);text-transform:none;letter-spacing:.01em;margin:0 0 8px;color:var(--ink)}
+.rm-sum{font-size:15.5px;line-height:1.65;max-width:90ch;margin:0 0 14px}
+.rm-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 18px}
+.rm-stats div{border:1px solid var(--line);border-radius:6px;padding:8px 10px;background:var(--bg)}
+.rm-stats small{display:block;font:10.5px var(--fm);color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+.rm-stats b{font:700 20px var(--fh);color:var(--hi)}
+.rm-det{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+.rm-det article{border:1px solid var(--line);border-radius:6px;padding:12px 14px;background:var(--bg)}
+.rm-det h3{margin:0 0 4px;font:600 15.5px var(--fh);letter-spacing:.02em;color:var(--ink)}
+.rm-det p{margin:0 0 8px;font-size:14px;color:var(--ink)}
+.rm-det .refs{display:flex;flex-wrap:wrap;gap:5px}
+.rm-det .refs a{text-decoration:none}
+.rm-nav{display:flex;justify-content:space-between;margin-top:16px;gap:10px}
+.rm-nav button{font:12px var(--fm);color:var(--hi);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer}
+.rm-nav button:disabled{opacity:.35;cursor:default}
+@media (max-width:700px){.rm-stats{grid-template-columns:1fr 1fr}.rm-body{padding:14px}}
+</style>
+
+<div class="rm-tabs" role="tablist" aria-label="Roadmap years">
+{% for s in stages %}<button class="rm-tab" role="tab" id="tab-y{{ s.year }}" aria-controls="year-{{ s.year }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"><b>Year {{ s.year }}</b><span>{{ s.label[0] }}<br>{{ s.label[1] }}</span><small>{{ s.cal }}</small></button>{% endfor %}
+</div>
+{% for s in stages %}
+{% assign lo = 0 %}{% assign hi = 0 %}{% assign done = 0 %}
+{% for m in ms %}{% assign endy = m.window | split: "–" | last | plus: 0 %}{% if endy <= s.cal %}{% assign lo = lo | plus: m.cost.low %}{% assign hi = hi | plus: m.cost.high %}{% assign done = done | plus: 1 %}{% endif %}{% endfor %}
+<section class="rm-panel" role="tabpanel" id="year-{{ s.year }}" aria-labelledby="tab-y{{ s.year }}"{% unless forloop.first %} hidden{% endunless %}>
+  <img class="rm-img" src="{% capture yy %}{% if s.year < 10 %}0{% endif %}{{ s.year }}{% endcapture %}{{ '/assets/roadmap/year-' | append: yy | append: '.svg' | relative_url }}" alt="Concept illustration of the base in year {{ s.year }} ({{ s.cal }}): {{ s.headline }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+  <div class="rm-body">
+    <div class="eyebrow">Year {{ s.year }} · {{ s.cal }}</div>
+    <h2>{{ s.headline }}</h2>
+    <p class="rm-sum">{{ s.summary }}</p>
+    <div class="rm-stats">
+      <div><small>Crew on the Moon</small><b>{{ s.crew_text | default: s.crew }}</b></div>
+      <div><small>Installed power</small><b>{% if s.power_kw > 0 %}{% if s.power_kw >= 500 %}≥{% endif %}{{ s.power_kw }} kW{% else %}–{% endif %}</b></div>
+      <div><small>Milestones complete</small><b>{{ done }} / {{ ms | size }}</b></div>
+      <div><small>Spent to date (est.)</small><b>{% if done > 0 %}${{ lo | round: 0 }}–{{ hi | round: 0 }}B{% else %}&lt;$0.2B{% endif %}</b></div>
+    </div>
+    <div class="sec-h">What happened since the last step</div>
+    <div class="rm-det">
+    {% for d in s.details %}
+      <article><h3>{{ d.title }}</h3><p>{{ d.text }}</p>
+        <div class="refs">{% for r in d.refs %}{% assign m = site.milestones | where: "id_code", r | first %}{% assign c = site.components | where: "id_code", r | first %}{% assign t = site.data.tech | where: "slug", r | first %}{% if m %}<a class="tag hi" href="{{ m.url | relative_url }}" title="{{ m.title }}">{{ r }}</a>{% elsif c %}<a class="tag ok" href="{{ c.url | relative_url }}" title="{{ c.title }}">{{ r }}</a>{% elsif t %}<a class="tag" href="{{ '/technology/' | append: t.slug | append: '/' | relative_url }}">{{ t.name }}</a>{% endif %}{% endfor %}</div>
+      </article>
+    {% endfor %}
+    </div>
+    <div class="rm-nav"><button data-go="-1"{% if forloop.first %} disabled{% endif %}>← Previous year</button><button data-go="1"{% if forloop.last %} disabled{% endif %}>Next year →</button></div>
+  </div>
+</section>
+{% endfor %}
+<p style="font-size:12.5px;color:var(--dim);margin:8px 0 26px">Illustrations are Open Moon concepts drawn from the plan, not engineering drawings. "Spent to date" sums the cost estimates of milestones whose window has ended by that year. Tags link to <span class="tag hi">milestones</span>, <span class="tag ok">components</span> and <span class="tag">technology</span> pages.</p>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.rm-tab')), panels=[].slice.call(document.querySelectorAll('.rm-panel'));
+  function show(i,focus,push){
+    if(i<0||i>=tabs.length) return;
+    tabs.forEach(function(t,j){t.setAttribute('aria-selected',j===i);t.tabIndex=j===i?0:-1;});
+    panels.forEach(function(p,j){p.hidden=j!==i;});
+    tabs[i].scrollIntoView({block:'nearest',inline:'center'});
+    if(focus) tabs[i].focus();
+    if(push) history.replaceState(null,'','#'+panels[i].id);
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){show(i,false,true)});
+    t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){show(i+1,true,true);e.preventDefault()}if(e.key==='ArrowLeft'){show(i-1,true,true);e.preventDefault()}});
+  });
+  document.querySelectorAll('.rm-nav button').forEach(function(b){b.addEventListener('click',function(){var cur=tabs.findIndex(function(t){return t.getAttribute('aria-selected')==='true'});show(cur+(+b.dataset.go),false,true);window.scrollTo({top:document.querySelector('.rm-tabs').getBoundingClientRect().top+scrollY-20,behavior:'smooth'})})});
+  var h=location.hash.replace('#',''),k=panels.findIndex(function(p){return p.id===h});if(k>-1) show(k,false,false);
+})();
+</script>
+
+<h2 id="milestones">Milestone register</h2>
+
 <p><a class="btn ghost" href="{{ '/plan/breakdown/' | relative_url }}">Product breakdown and coverage →</a> <a class="btn ghost" href="{{ '/decisions/' | relative_url }}">Design decisions →</a></p>
 <div class="tablewrap"><table class="data">
 <thead><tr><th>ID</th><th>Milestone</th><th>Phase</th><th>Window</th><th>Cost (est.)</th><th>Lowest TRL</th><th>Depends on</th></tr></thead>
