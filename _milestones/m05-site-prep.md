@@ -2,7 +2,7 @@
 id_code: M05
 order: 5
 title: Site preparation, landing pads and roads
-phase: 1
+phase: 0
 window: "2028–2032"
 summary: Robots build hardened landing pads, roads and protective berms so landers stop sandblasting the base and rovers can drive safely between sites.
 objective: "Build at least two hardened landing pads that stop rocket exhaust from blasting regolith across the base, graded roads linking pads, power towers, the reactor, the ISRU plant and the habitat zone, and berms that shield key equipment from ejecta and radiation."
@@ -38,7 +38,7 @@ workstreams:
     items: ["Graded and compacted regolith", "Sintered surface on busy sections", "Marker beacons for navigation"]
   - name: Berms
     desc: Walls of piled regolith.
-    items: ["Ejecta berms around pads", "Reactor shield berm", "Later: habitat burial (M09)"]
+    items: ["Ejecta berms around pads", "Reactor shield berm", "Later: habitat burial (M08, Phase 1)"]
   - name: Dust control
     desc: Keep dust off everything that matters.
     items: ["Pads 1+ km from solar towers", "Sintered work areas", "Dust-tolerant seals and connectors"]
@@ -83,7 +83,7 @@ When a lander touches down on bare regolith, its exhaust throws dust and rocks o
 3. **Grade and compact** the first pad area and the roads to the power towers.
 4. **Sinter pad 1 in stages**, then test it with a small lander. Measure ejecta with cameras and witness plates.
 5. **Scale up:** a larger pad 2 for medium and heavy landers, plus berms.
-6. **Build roads and stockpiles.** Pile excavated regolith for the M06 ISRU feedstock and for the M09 habitat burial.
+6. **Build roads and stockpiles.** Pile excavated regolith for the M06 ISRU feedstock and for the habitat burial in Phase 1 (M08, C09.1).
 
 ## Dust is a design requirement, not an afterthought
 

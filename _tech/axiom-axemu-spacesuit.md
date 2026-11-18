@@ -33,7 +33,7 @@ The suit closed NASA's Critical Design Review on 13 November 2026 and now moves 
 
 ## Why Open Moon uses it
 
-Every job outside the habitat needs a suit: setting up equipment, fixing power lines, driving rovers and collecting samples. Open Moon plans AxEMU-class suits for the crewed sorties of the first habitat (M08). Axiom is the only active provider under NASA's xEVAS spacesuit contract. Collins Aerospace, the second xEVAS supplier, left the programme in 2024, so NASA now relies on Axiom for both its lunar and ISS suits ([NASA OIG](https://oig.nasa.gov/news/spacesuit-development-delays-could-impact-artemis-timeline-and-iss-operations/)).
+Every job outside the habitat needs a suit: setting up equipment, fixing power lines, driving rovers and collecting samples. Open Moon plans AxEMU-class suits for the crewed base: six suits plus two spares, delivered and checked out before the first crew lands (M08) and used from Phase 2 (M09, design changes DD-005 and DD-006). Axiom is the only active provider under NASA's xEVAS spacesuit contract. Collins Aerospace, the second xEVAS supplier, left the programme in 2024, so NASA now relies on Axiom for both its lunar and ISS suits ([NASA OIG](https://oig.nasa.gov/news/spacesuit-development-delays-could-impact-artemis-timeline-and-iss-operations/)).
 
 Without it, crews could not leave the cabin. The old ISS suit and the Apollo suits are not usable on the Moon. Apollo suits were custom-fitted, not built to last, and cannot be reused or refurbished ([NASA OIG](https://oig.nasa.gov/wp-content/uploads/2026/04/final-report-ig-26-006-nasas-acquisition-of-next-generation-spacesuit-services.pdf)). A suit that can be maintained and reused is also key to a base that people visit again and again.
 

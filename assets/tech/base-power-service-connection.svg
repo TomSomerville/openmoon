@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 750" width="960" height="750" font-family="Share Tech Mono, monospace" role="img" aria-labelledby="t d">
+<title id="t">Open Moon service connections: every unit is a house on the grid</title>
+<desc id="d">The 3 kV AC, 1 kHz base grid, fed by the power management controller (PMC), works like a national grid. Three habitat modules and a water electrolysis plant each take power through their own service connection: a service drop from the grid, a UMIC-class converter that steps down and rectifies 3 kV AC to 120 V DC, a meter that reports to the PMC, and a main breaker. The main breaker feeds the unit's 120 V DC panel, which feeds branch circuits, each with its own breaker: in a habitat module, life support, lighting, galley, avionics and heaters. A habitat module that needs AC has its own optional inverter, fed from its DC panel, feeding a local AC subpanel whose voltage the module chooses. The water electrolysis plant needs no AC and has no inverter. Opening any one main breaker leaves the other units powered. Plan design, design change DD-009.</desc>
+<defs>
+<pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(56,212,240,.07)"/></pattern>
+<marker id="ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#38d4f0"/></marker>
+</defs>
+<rect width="960" height="750" fill="#0a1015"/><rect width="960" height="750" fill="url(#g)"/>
+<text x="24" y="36" fill="#d6e2ec" font-size="19" letter-spacing="1">SERVICE CONNECTIONS · EVERY UNIT IS A HOUSE ON THE GRID</text>
+<text x="24" y="58" fill="#d6e2ec" font-size="12" opacity=".7">Plan design (DD-009). The grid delivers 120 V DC to each unit. AC only from a unit's own inverter.</text>
+
+<rect x="20" y="78" width="70" height="40" rx="6" fill="rgba(56,212,240,.18)" stroke="#38d4f0" stroke-width="2"/>
+<text x="55" y="103" fill="#38d4f0" font-size="13" text-anchor="middle">PMC</text>
+<path d="M90 98H940" stroke="#38d4f0" stroke-width="6"/>
+<text x="520" y="86" fill="#38d4f0" font-size="12" text-anchor="middle" letter-spacing="1">BASE GRID · 3 kV AC, 3-PHASE, 1 kHz (DD-001) · THE "NATIONAL GRID"</text>
+
+<rect x="24" y="150" width="210" height="510" rx="10" fill="none" stroke="#d6e2ec" stroke-opacity=".35" stroke-dasharray="5 4"/>
+<text x="129.0" y="171" fill="#38d4f0" font-size="12" text-anchor="middle" letter-spacing="1">HABITAT MODULE 1</text>
+<path d="M129.0 101V156" stroke="#38d4f0" stroke-width="2.5"/><path d="M129.0 178V194" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<text x="137.0" y="128" fill="#d6e2ec" font-size="10" opacity=".8">service drop</text>
+<text x="137.0" y="141" fill="#38d4f0" font-size="10" opacity=".9">3 kV AC</text>
+<rect x="36" y="196" width="186" height="42" rx="6" fill="#0a1015" stroke="#38d4f0" stroke-width="2"/>
+<text x="129.0" y="213" fill="#d6e2ec" font-size="11" text-anchor="middle">STEP-DOWN + RECTIFY</text>
+<text x="129.0" y="229" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">UMIC-class, to 120 V DC</text>
+<path d="M129.0 238V250" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<rect x="36" y="252" width="186" height="28" rx="6" fill="#0a1015" stroke="#38d4f0"/>
+<circle cx="54" cy="266" r="8" fill="none" stroke="#38d4f0"/><text x="54" y="270" fill="#38d4f0" font-size="9" text-anchor="middle">M</text>
+<text x="70" y="270" fill="#d6e2ec" font-size="10">METER · reports to PMC</text>
+<path d="M129.0 280V292" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<rect x="36" y="294" width="186" height="28" rx="6" fill="#0a1015" stroke="#ffb020" stroke-width="2"/>
+<rect x="48" y="302" width="12" height="12" fill="#0a1015" stroke="#ffb020" stroke-width="2"/>
+<text x="70" y="312" fill="#ffb020" font-size="10">MAIN BREAKER</text>
+<path d="M129.0 322V336" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<rect x="36" y="338" width="186" height="172" rx="8" fill="rgba(56,212,240,.10)" stroke="#38d4f0" stroke-width="2"/>
+<text x="129.0" y="357" fill="#38d4f0" font-size="12" text-anchor="middle">120 V DC PANEL</text>
+<path d="M58 368V492" stroke="#38d4f0" stroke-width="4"/>
+<path d="M58 380H74" stroke="#38d4f0" stroke-width="1.5"/><rect x="74" y="375" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="92" y="384" fill="#d6e2ec" font-size="10">Life support</text>
+<path d="M58 402H74" stroke="#38d4f0" stroke-width="1.5"/><rect x="74" y="397" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="92" y="406" fill="#d6e2ec" font-size="10">Lighting</text>
+<path d="M58 424H74" stroke="#38d4f0" stroke-width="1.5"/><rect x="74" y="419" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="92" y="428" fill="#d6e2ec" font-size="10">Galley</text>
+<path d="M58 446H74" stroke="#38d4f0" stroke-width="1.5"/><rect x="74" y="441" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="92" y="450" fill="#d6e2ec" font-size="10">Avionics</text>
+<path d="M58 468H74" stroke="#38d4f0" stroke-width="1.5"/><rect x="74" y="463" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="92" y="472" fill="#d6e2ec" font-size="10">Heaters</text>
+<path d="M58 494H74" stroke="#38d4f0" stroke-width="1.5"/><rect x="74" y="489" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="92" y="498" fill="#d6e2ec" font-size="10" opacity=".85">to inverter (option)</text>
+<path d="M129.0 510V538" stroke="#38d4f0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ac)"/>
+<rect x="36" y="540" width="186" height="40" rx="6" fill="none" stroke="#38d4f0" stroke-dasharray="5 4"/>
+<text x="129.0" y="556" fill="#d6e2ec" font-size="11" text-anchor="middle">UNIT INVERTER (OPTIONAL)</text>
+<text x="129.0" y="571" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">DC → AC, sized by the module</text>
+<path d="M129.0 580V594" stroke="#38d4f0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ac)"/>
+<rect x="36" y="596" width="186" height="52" rx="6" fill="none" stroke="#38d4f0" stroke-dasharray="5 4"/>
+<text x="129.0" y="613" fill="#d6e2ec" font-size="11" text-anchor="middle">LOCAL AC SUBPANEL</text>
+<text x="129.0" y="628" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">this module only; voltage</text>
+<text x="129.0" y="641" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">set with the module (open)</text>
+<rect x="258" y="150" width="210" height="510" rx="10" fill="none" stroke="#d6e2ec" stroke-opacity=".35" stroke-dasharray="5 4"/>
+<text x="363.0" y="171" fill="#38d4f0" font-size="12" text-anchor="middle" letter-spacing="1">HABITAT MODULE 2</text>
+<path d="M363.0 101V156" stroke="#38d4f0" stroke-width="2.5"/><path d="M363.0 178V194" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<text x="371.0" y="128" fill="#d6e2ec" font-size="10" opacity=".8">service drop</text>
+<text x="371.0" y="141" fill="#38d4f0" font-size="10" opacity=".9">3 kV AC</text>
+<rect x="270" y="196" width="186" height="42" rx="6" fill="#0a1015" stroke="#38d4f0" stroke-width="2"/>
+<text x="363.0" y="213" fill="#d6e2ec" font-size="11" text-anchor="middle">STEP-DOWN + RECTIFY</text>
+<text x="363.0" y="229" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">UMIC-class, to 120 V DC</text>
+<path d="M363.0 238V250" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<rect x="270" y="252" width="186" height="28" rx="6" fill="#0a1015" stroke="#38d4f0"/>
+<circle cx="288" cy="266" r="8" fill="none" stroke="#38d4f0"/><text x="288" y="270" fill="#38d4f0" font-size="9" text-anchor="middle">M</text>
+<text x="304" y="270" fill="#d6e2ec" font-size="10">METER · reports to PMC</text>
+<path d="M363.0 280V292" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<rect x="270" y="294" width="186" height="28" rx="6" fill="#0a1015" stroke="#ffb020" stroke-width="2"/>
+<rect x="282" y="302" width="12" height="12" fill="#0a1015" stroke="#ffb020" stroke-width="2"/>
+<text x="304" y="312" fill="#ffb020" font-size="10">MAIN BREAKER</text>
+<path d="M363.0 322V336" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<rect x="270" y="338" width="186" height="172" rx="8" fill="rgba(56,212,240,.10)" stroke="#38d4f0" stroke-width="2"/>
+<text x="363.0" y="357" fill="#38d4f0" font-size="12" text-anchor="middle">120 V DC PANEL</text>
+<path d="M292 368V492" stroke="#38d4f0" stroke-width="4"/>
+<path d="M292 380H308" stroke="#38d4f0" stroke-width="1.5"/><rect x="308" y="375" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="326" y="384" fill="#d6e2ec" font-size="10">Life support</text>
+<path d="M292 402H308" stroke="#38d4f0" stroke-width="1.5"/><rect x="308" y="397" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="326" y="406" fill="#d6e2ec" font-size="10">Lighting</text>
+<path d="M292 424H308" stroke="#38d4f0" stroke-width="1.5"/><rect x="308" y="419" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="326" y="428" fill="#d6e2ec" font-size="10">Galley</text>
+<path d="M292 446H308" stroke="#38d4f0" stroke-width="1.5"/><rect x="308" y="441" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="326" y="450" fill="#d6e2ec" font-size="10">Avionics</text>
+<path d="M292 468H308" stroke="#38d4f0" stroke-width="1.5"/><rect x="308" y="463" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="326" y="472" fill="#d6e2ec" font-size="10">Heaters</text>
+<path d="M292 494H308" stroke="#38d4f0" stroke-width="1.5"/><rect x="308" y="489" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="326" y="498" fill="#d6e2ec" font-size="10" opacity=".85">to inverter (option)</text>
+<path d="M363.0 510V538" stroke="#38d4f0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ac)"/>
+<rect x="270" y="540" width="186" height="40" rx="6" fill="none" stroke="#38d4f0" stroke-dasharray="5 4"/>
+<text x="363.0" y="556" fill="#d6e2ec" font-size="11" text-anchor="middle">UNIT INVERTER (OPTIONAL)</text>
+<text x="363.0" y="571" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">DC → AC, sized by the module</text>
+<path d="M363.0 580V594" stroke="#38d4f0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ac)"/>
+<rect x="270" y="596" width="186" height="52" rx="6" fill="none" stroke="#38d4f0" stroke-dasharray="5 4"/>
+<text x="363.0" y="613" fill="#d6e2ec" font-size="11" text-anchor="middle">LOCAL AC SUBPANEL</text>
+<text x="363.0" y="628" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">this module only; voltage</text>
+<text x="363.0" y="641" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">set with the module (open)</text>
+<rect x="492" y="150" width="210" height="510" rx="10" fill="none" stroke="#d6e2ec" stroke-opacity=".35" stroke-dasharray="5 4"/>
+<text x="597.0" y="171" fill="#38d4f0" font-size="12" text-anchor="middle" letter-spacing="1">HABITAT MODULE 3</text>
+<path d="M597.0 101V156" stroke="#38d4f0" stroke-width="2.5"/><path d="M597.0 178V194" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<text x="605.0" y="128" fill="#d6e2ec" font-size="10" opacity=".8">service drop</text>
+<text x="605.0" y="141" fill="#38d4f0" font-size="10" opacity=".9">3 kV AC</text>
+<rect x="504" y="196" width="186" height="42" rx="6" fill="#0a1015" stroke="#38d4f0" stroke-width="2"/>
+<text x="597.0" y="213" fill="#d6e2ec" font-size="11" text-anchor="middle">STEP-DOWN + RECTIFY</text>
+<text x="597.0" y="229" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">UMIC-class, to 120 V DC</text>
+<path d="M597.0 238V250" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<rect x="504" y="252" width="186" height="28" rx="6" fill="#0a1015" stroke="#38d4f0"/>
+<circle cx="522" cy="266" r="8" fill="none" stroke="#38d4f0"/><text x="522" y="270" fill="#38d4f0" font-size="9" text-anchor="middle">M</text>
+<text x="538" y="270" fill="#d6e2ec" font-size="10">METER · reports to PMC</text>
+<path d="M597.0 280V292" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<rect x="504" y="294" width="186" height="28" rx="6" fill="#0a1015" stroke="#ffb020" stroke-width="2"/>
+<rect x="516" y="302" width="12" height="12" fill="#0a1015" stroke="#ffb020" stroke-width="2"/>
+<text x="538" y="312" fill="#ffb020" font-size="10">MAIN BREAKER</text>
+<path d="M597.0 322V336" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<rect x="504" y="338" width="186" height="172" rx="8" fill="rgba(56,212,240,.10)" stroke="#38d4f0" stroke-width="2"/>
+<text x="597.0" y="357" fill="#38d4f0" font-size="12" text-anchor="middle">120 V DC PANEL</text>
+<path d="M526 368V492" stroke="#38d4f0" stroke-width="4"/>
+<path d="M526 380H542" stroke="#38d4f0" stroke-width="1.5"/><rect x="542" y="375" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="560" y="384" fill="#d6e2ec" font-size="10">Life support</text>
+<path d="M526 402H542" stroke="#38d4f0" stroke-width="1.5"/><rect x="542" y="397" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="560" y="406" fill="#d6e2ec" font-size="10">Lighting</text>
+<path d="M526 424H542" stroke="#38d4f0" stroke-width="1.5"/><rect x="542" y="419" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="560" y="428" fill="#d6e2ec" font-size="10">Galley</text>
+<path d="M526 446H542" stroke="#38d4f0" stroke-width="1.5"/><rect x="542" y="441" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="560" y="450" fill="#d6e2ec" font-size="10">Avionics</text>
+<path d="M526 468H542" stroke="#38d4f0" stroke-width="1.5"/><rect x="542" y="463" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="560" y="472" fill="#d6e2ec" font-size="10">Heaters</text>
+<path d="M526 494H542" stroke="#38d4f0" stroke-width="1.5"/><rect x="542" y="489" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="560" y="498" fill="#d6e2ec" font-size="10" opacity=".85">to inverter (option)</text>
+<path d="M597.0 510V538" stroke="#38d4f0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ac)"/>
+<rect x="504" y="540" width="186" height="40" rx="6" fill="none" stroke="#38d4f0" stroke-dasharray="5 4"/>
+<text x="597.0" y="556" fill="#d6e2ec" font-size="11" text-anchor="middle">UNIT INVERTER (OPTIONAL)</text>
+<text x="597.0" y="571" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">DC → AC, sized by the module</text>
+<path d="M597.0 580V594" stroke="#38d4f0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ac)"/>
+<rect x="504" y="596" width="186" height="52" rx="6" fill="none" stroke="#38d4f0" stroke-dasharray="5 4"/>
+<text x="597.0" y="613" fill="#d6e2ec" font-size="11" text-anchor="middle">LOCAL AC SUBPANEL</text>
+<text x="597.0" y="628" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">this module only; voltage</text>
+<text x="597.0" y="641" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">set with the module (open)</text>
+<rect x="726" y="150" width="210" height="470" rx="10" fill="none" stroke="#d6e2ec" stroke-opacity=".35" stroke-dasharray="5 4"/>
+<text x="831.0" y="171" fill="#ffb020" font-size="11" text-anchor="middle" letter-spacing="0">WATER ELECTROLYSIS PLANT</text>
+<path d="M831.0 101V156" stroke="#38d4f0" stroke-width="2.5"/><path d="M831.0 178V194" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<text x="839.0" y="128" fill="#d6e2ec" font-size="10" opacity=".8">service drop</text>
+<text x="839.0" y="141" fill="#38d4f0" font-size="10" opacity=".9">3 kV AC</text>
+<rect x="738" y="196" width="186" height="42" rx="6" fill="#0a1015" stroke="#38d4f0" stroke-width="2"/>
+<text x="831.0" y="213" fill="#d6e2ec" font-size="11" text-anchor="middle">STEP-DOWN + RECTIFY</text>
+<text x="831.0" y="229" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">UMIC-class, to 120 V DC</text>
+<path d="M831.0 238V250" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<rect x="738" y="252" width="186" height="28" rx="6" fill="#0a1015" stroke="#38d4f0"/>
+<circle cx="756" cy="266" r="8" fill="none" stroke="#38d4f0"/><text x="756" y="270" fill="#38d4f0" font-size="9" text-anchor="middle">M</text>
+<text x="772" y="270" fill="#d6e2ec" font-size="10">METER · reports to PMC</text>
+<path d="M831.0 280V292" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<rect x="738" y="294" width="186" height="28" rx="6" fill="#0a1015" stroke="#ffb020" stroke-width="2"/>
+<rect x="750" y="302" width="12" height="12" fill="#0a1015" stroke="#ffb020" stroke-width="2"/>
+<text x="772" y="312" fill="#ffb020" font-size="10">MAIN BREAKER</text>
+<path d="M831.0 322V336" stroke="#38d4f0" stroke-width="2.5" marker-end="url(#ac)"/>
+<rect x="738" y="338" width="186" height="172" rx="8" fill="rgba(56,212,240,.10)" stroke="#38d4f0" stroke-width="2"/>
+<text x="831.0" y="357" fill="#38d4f0" font-size="12" text-anchor="middle">120 V DC PANEL</text>
+<path d="M760 368V478" stroke="#38d4f0" stroke-width="4"/>
+<path d="M760 380H776" stroke="#38d4f0" stroke-width="1.5"/><rect x="776" y="375" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="794" y="384" fill="#d6e2ec" font-size="10">Electrolyser stacks</text>
+<path d="M760 402H776" stroke="#38d4f0" stroke-width="1.5"/><rect x="776" y="397" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="794" y="406" fill="#d6e2ec" font-size="10">Pumps and valves</text>
+<path d="M760 424H776" stroke="#38d4f0" stroke-width="1.5"/><rect x="776" y="419" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="794" y="428" fill="#d6e2ec" font-size="10">Gas dryers</text>
+<path d="M760 446H776" stroke="#38d4f0" stroke-width="1.5"/><rect x="776" y="441" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="794" y="450" fill="#d6e2ec" font-size="10">Controls, avionics</text>
+<path d="M760 468H776" stroke="#38d4f0" stroke-width="1.5"/><rect x="776" y="463" width="10" height="10" fill="#0a1015" stroke="#ffb020" stroke-width="1.5"/><text x="794" y="472" fill="#d6e2ec" font-size="10">Heaters</text>
+<text x="831.0" y="534" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">No AC needed: no inverter</text>
+<text x="831.0" y="560" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">Same connection for every</text>
+<text x="831.0" y="574" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">facility: O₂ and water plants,</text>
+<text x="831.0" y="588" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">comms, rover chargers,</text>
+<text x="831.0" y="602" fill="#d6e2ec" font-size="10" text-anchor="middle" opacity=".75">greenhouses, depot</text>
+<g font-size="11">
+<rect x="726" y="634" width="12" height="12" fill="#0a1015" stroke="#ffb020" stroke-width="2"/>
+<text x="746" y="644" fill="#ffb020">Open any one main</text>
+<text x="726" y="662" fill="#ffb020">breaker: every other unit</text>
+<text x="726" y="678" fill="#ffb020">stays powered.</text>
+</g>
+<text x="24" y="700" fill="#d6e2ec" font-size="11" opacity=".8">Heritage: NASA's UMIC links 120 V DC equipment to a 3 kV AC grid (2023); Space Station Freedom distributed 120 V DC to users (1991).</text>
+<text x="24" y="716" fill="#d6e2ec" font-size="11" opacity=".8">Branch circuits are examples. Ratings wait for the Phase 1 load budget.</text>
+<text x="24" y="740" fill="#d6e2ec" font-size="10" opacity=".6" letter-spacing="1">DIAGRAM · OPEN MOON PLAN DESIGN (DD-009) · SCHEMATIC · CC BY-SA 4.0</text>
+</svg>

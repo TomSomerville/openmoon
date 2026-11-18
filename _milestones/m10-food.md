@@ -2,33 +2,33 @@
 id_code: M10
 order: 10
 title: Growing food
-phase: 4
+phase: 3
 window: "2035–2041"
 summary: Grow a growing share of the crew's food in buried, LED-lit greenhouses, starting with fresh vegetables and working toward most calories.
-objective: "Produce at least 50% of crew calories on the Moon for a crew of eight, in shielded greenhouse modules using hydroponics and LED lighting, with plant waste recycled into the life support loop."
+objective: "Produce at least 50% of the calories of the 6-person design crew on the Moon, in shielded greenhouse modules using hydroponics and LED lighting, with plant waste recycled into the life support loop."
 trl_min: 5
 depends_on: [M04, M06, M09]
 spec:
   - {k: Approach, v: "Hydroponic / aeroponic crops under LEDs in buried modules"}
   - {k: Crops, v: "Leafy greens first; then potatoes, wheat, soy, peppers"}
-  - {k: Target, v: "≥50% of calories for 8 crew"}
+  - {k: Target, v: "≥50% of calories for the 6-person design crew (DD-006); 9-person handover peaks eat stored food"}
   - {k: Food need, v: "12.8 MJ and 0.8 kg food solids per person per day"}
-  - {k: "Canopy and power", v: "~261 m² growing area, ~61 kW (C10.1 ESTIMATE from BVAD and LED data)"}
-cost: {low: 6.35, high: 21.35, note: "greenhouse modules, lighting power, and research"}
+  - {k: "Canopy and power", v: "~196 m² growing area, ~46 kW (C10.1 ESTIMATE from BVAD and LED data)"}
+cost: {low: 9.7, high: 43.6, note: "greenhouse modules, lighting power, and research"}
 cost_items:
-  - {item: "Greenhouse modules (build)", low: 0.5, high: 1.5, basis: "ESTIMATE"}
-  - {item: "Delivery of greenhouse modules (~17–21 t, heavy cargo)", low: 3.4, high: 12.6, basis: "17–21 t (C10.1 ESTIMATE) × $0.2–0.6M/kg"}
-  - {item: "Extra ~60 kW for lighting: one more fission unit (build + ~10 t delivery)", low: 2.25, high: 6.75, basis: "C10.1 sizing (~61 kW); build $0.25–0.75B ESTIMATE + 10 t × $0.2–0.6M/kg"}
+  - {item: "Greenhouse modules (build), 3 modules", low: 0.4, high: 1.1, basis: "ESTIMATE; was $0.5–1.5B for 4 modules for 8 crew, scaled × 3/4 for 6 crew (DD-006)"}
+  - {item: "Delivery of greenhouse modules (~13–16 t, heavy cargo)", low: 2.6, high: 9.6, basis: "13–16 t (C10.1 ESTIMATE for 6 crew; was 17–21 t for 8) × $0.2–0.6M/kg"}
+  - {item: "Extra ~60 kW for lighting: three more 20 kWe LR-1-class reactors feeding the PMC, each with 160 kWh of ride-through battery (DD-002, DD-003, DD-008)", low: 6.51, high: 32.43, basis: "C10.1 sizing (~46 kW for 6 crew, still more than two units give, so three are kept; power not resized); build 3 × $0.25–0.75B ESTIMATE + delivery 3 × 7.5–15 t × $0.2–0.6M/kg + batteries 3 × (~1 t × $0.4–1.0M/kg + $0.02–0.06B hardware)"}
   - {item: "Crop research and ground analog", low: 0.2, high: 0.5, basis: "ESTIMATE"}
 exit_criteria:
   - "Fresh vegetables available to every crew member every week."
-  - "At least 50% of crew calories produced locally, averaged over a year."
+  - "At least 50% of the 6-person design crew's calories produced locally, averaged over a year (meals for the extra people at handovers come from stored food)."
   - "Inedible plant mass composted or processed and returned to the loop."
   - "No crop failure causes a food shortage (12 months of stored food on site)."
 workstreams:
   - name: Greenhouse modules
     desc: Buried, shielded growing space.
-    items: ["Pressurised modules under regolith", "LED lighting tuned per crop", "Separate atmosphere loop"]
+    items: ["Pressurised modules under regolith", "LED lighting tuned per crop", "Separate atmosphere loop", "Each module on its own service connection and 120 V DC panel (DD-009)"]
   - name: Crops
     desc: Start easy, then scale to staples.
     items: ["Lettuce, kale, mustard greens (proven on ISS)", "Peppers (grown on ISS 2021)", "Potatoes, wheat, soy for calories"]
@@ -73,9 +73,14 @@ risks:
 
 NASA's reference figures are **12.8 MJ** of food energy and **0.8 kg** of food solids per person per day<sup class="r">[7](#s7)</sup>.
 
+{% include decision-note.html id="DD-006" extra="M10 was sized for 8 crew. It is now sized for the 6-person design crew: about 196 m² of canopy in 3 greenhouse modules instead of about 261 m² in 4. Handover peaks of 9 people, about 2 weeks every 3 months, raise the yearly average to 6.5 people; those meals come from stored food." %}
+
+- **6 people:** 6 × 0.8 = 4.8 kg of food solids a day; half of it grown is 2.4 kg (this plan's arithmetic).
+- **9 people at a handover:** 7.2 kg a day for about 2 weeks, from stored food and food carried on the crew lander.
+
 ## Step-by-step
 
-1. **Fresh greens in Phase 3.** Fit a Veggie-class unit inside the M09 habitat for morale and nutrition.
+1. **Fresh greens from Phase 2.** Fit a Veggie-class unit inside the habitat for morale and nutrition once the first crew is aboard (M09).
 2. **Deliver and bury the greenhouse modules.**
 3. **Scale to staples:** potatoes, wheat and soy, under LEDs.
 4. **Close the nutrient loop** with plant waste and wastewater.

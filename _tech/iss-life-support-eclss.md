@@ -34,7 +34,7 @@ The headline number is water. NASA's reference page still says the system recove
 
 ## Why Open Moon uses it
 
-Open Moon's first habitat (M08) uses ISS-derived life support for water recovery, oxygen generation and CO2 removal, topped up with water and oxygen from the M06 pilot plants. The M08 exit criteria require life support to run uncrewed for three months before the first crew arrives. M09 (permanent crew) then needs at least 90% water recovery averaged over a year and adds brine processing, electrolysis, a four-bed CO2 scrubber and a Sabatier reactor.
+Open Moon's habitat modules (M08) use ISS-derived life support, sized for 6 people continuously and 9 at handovers (design change DD-006), for water recovery, oxygen generation and CO2 removal, topped up with water and oxygen from the M06 pilot plants. The M08 exit criteria require life support to run uncrewed for three months before the first crew arrives. M09 (the crewed base) then needs at least 90% water recovery averaged over a year and adds brine processing, electrolysis, a four-bed CO2 scrubber and a Sabatier reactor.
 
 The reason is mass. NASA's lunar logistics study found that with fully open-loop life support, water and gases are about half of all logistics needs. Closing the oxygen and water loops could largely remove needs worth almost 40% of the total. Packaging and carriers add another 75-150% on top ([NASA NTRS](https://ntrs.nasa.gov/citations/20230016304)). Without recycling, every crew-year on the Moon would need far more cargo landings. Open Moon picks the ISS system because it has run with crews on board since 2007-2008, while the alternatives below are less proven.
 

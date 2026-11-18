@@ -33,11 +33,11 @@ The first mission, Pathfinder (NASA task order CT-3), will land on the Shackleto
 
 ## Why Open Moon uses it
 
-Mark 1 is Open Moon's **medium cargo** lander in milestone M02 (Transport), Phase 1. Small landers carry under a tonne. Heavy landers like Starship and Mk2 are still unproven. Mark 1 fills the gap at about 3 t, enough for rovers, pilot ISRU plants and the first power units.
+Mark 1 is Open Moon's **medium cargo** lander in milestone M02 (Transport), Phase 0 (design change DD-005). Small landers carry under a tonne. Heavy landers like Starship and Mk2 are still unproven. Mark 1 fills the gap at about 3 t, enough for rovers, pilot ISRU plants and the first power units.
 
 Other milestones lean on it too. NASA's choice to deliver VIPER, which feeds M01 (Prospecting), waits on MK1's first flight ([NASA](https://www.nasa.gov/news-release/nasa-selects-blue-origin-to-deliver-viper-rover-to-moons-south-pole/)). NASA has also paid Blue Origin $188 million, with a $280.4 million option, to deliver the Lunar Terrain Vehicles for M07 (Mobility) to the south pole ([NASA](https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/)).
 
-Without Mark 1, Phase 1 cargo would have to be cut into sub-tonne pieces for small landers, or wait for heavy landers. Mk2's uncrewed demo is not expected until February 2029 ([NASA OIG](https://oig.nasa.gov/wp-content/uploads/2026/03/final-report-ig-26-004-nasas-management-of-the-human-landing-system-contracts.pdf)).
+Without Mark 1, Phase 0 and Phase 1 cargo would have to be cut into sub-tonne pieces for small landers, or wait for heavy landers. Mk2's uncrewed demo is not expected until February 2029 ([NASA OIG](https://oig.nasa.gov/wp-content/uploads/2026/03/final-report-ig-26-004-nasas-management-of-the-human-landing-system-contracts.pdf)).
 
 ## How it works
 

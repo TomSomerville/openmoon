@@ -109,7 +109,7 @@ def label(x, y, text, tx, ty):
 # ---------- scene elements: (first stage index, painter, label or None, label anchor) ----------
 def elements():
     E = []
-    add = lambda st, svg, lab=None: E.append((st, svg, lab))
+    add = lambda st, svg, lab=None, until=99: E.append((st, svg, lab, until))
     g = ground_y
     # stage indices refer to positions in roadmap.yml (0..13)
     add(2, small_lander(1210, g(1210)) + small_lander(1330, g(1330)), ("PROSPECTOR LANDERS", 1270, g(1270)-40, 1270, 200))
@@ -122,15 +122,19 @@ def elements():
     add(4, relay_sat(1180, 70) + relay_sat(1460, 110), ("RELAY SATELLITES", 1320, 90, 1320, 48))
     add(4, pad(1010, 560, 120), ("HARDENED PAD", 1010, 560, 1010, 450))
     add(4, comms_mast(1180, 70), None)
-    add(5, reactor(110) + f'<path d="M150 {g(150)} C300 {g(300)+14} 500 {g(500)+14} 700 {g(700)+6}" fill="none" stroke="{AM}" stroke-width="1.6" stroke-dasharray="6 4"/>', ("40 kWe FISSION REACTOR", 110, g(110)-100, 160, 160))
+    add(5, reactor(110) + f'<path d="M150 {g(150)} C300 {g(300)+14} 500 {g(500)+14} 700 {g(700)+6}" fill="none" stroke="{AM}" stroke-width="1.6" stroke-dasharray="6 4"/>', ("20 kWe FISSION REACTOR", 110, g(110)-100, 160, 160))
     add(5, pad(1250, 585, 100) + tanks(560, g(560)+10, 2), ("PAD 2 + STORAGE", 1250, 585, 1250, 470))
     add(6, plant(1120, g(1120)) + tanks(1150, g(1150), 3), ("OXYGEN + WATER PLANTS", 1135, g(1135)-40, 1135, 160))
     add(6, excavator(1505, 575), ("ICE MINING", 1505, 565, 1540, 300))
-    add(6, habitat(650, g(650)), ("FIRST HABITAT", 650, g(650)-34, 650, 220))
-    add(7, crew_lander(1010, 550), ("CREW LANDER", 1010, 400, 900, 120))
-    add(7, person(620, g(620)) + person(690, g(690)), ("FIRST CREW", 655, g(655)-20, 620, 300))
-    add(8, habitat(470, g(470)+4, True) + habitat(560, g(560)+6, True), ("BURIED HABITATS", 515, g(515)-50, 560, 230))
-    add(8, person(520, g(520)+8) + person(590, g(590)+8), None)
+    # DD-005/DD-007: three standard 3-person modules land, are connected and buried before any crew
+    add(6, habitat(560, g(560)), ("FIRST HABITAT MODULE", 560, g(560)-34, 600, 220), 6)
+    add(7, habitat(470, g(470)+4, True) + habitat(560, g(560)+6, True) + habitat(650, g(650)+6, True)
+        + f'<path d="M500 {g(500)-10:.1f} H620" stroke="{AM}" stroke-width="2" stroke-dasharray="4 3"/>',
+        ("3 MODULES, CONNECTED + BURIED", 560, g(560)-50, 560, 230))
+    # DD-006: first crew of 3 lands and stays; 6 on base once crew 2 arrives
+    add(8, crew_lander(1010, 550), ("CREW LANDER", 1010, 400, 900, 120))
+    add(8, person(700, g(700)) + person(725, g(725)) + person(750, g(750)), ("FIRST CREW (3, THEN 6)", 725, g(725)-20, 760, 300))
+    add(9, person(380, g(380)+4) + person(394, g(394)+4) + person(408, g(408)+4), None)
     add(9, greenhouse(240, g(240)+4) + greenhouse(320, g(320)+6), ("GREENHOUSES", 280, g(280)-30, 250, 190))
     add(10, greenhouse(160, g(160)+8) + greenhouse(400, g(400)+10), ("STAPLE CROPS", 280, g(280)-10, 330, 170))
     add(11, tanks(1300, g(1300), 5) + reactor(1530) , ("PROPELLANT DEPOT + MORE POWER", 1350, g(1350)-34, 1330, 250))
@@ -157,8 +161,8 @@ def scene(stage_idx, title):
             f'<path d="{plain}" fill="#0e1922" stroke="{CY}" stroke-width="1.5"/>{texture}{crater}'
             f'<text x="1490" y="590" fill="{DIM}" font-family="Share Tech Mono, monospace" font-size="13" text-anchor="middle">PERMANENTLY SHADOWED CRATER</text>')
     body, labels = "", ""
-    for st, svg, lab in elements():
-        if st <= stage_idx:
+    for st, svg, lab, until in elements():
+        if st <= stage_idx <= until:
             body += svg
             if st == stage_idx and lab:
                 labels += label(lab[1], lab[2], lab[0], lab[3], lab[4])

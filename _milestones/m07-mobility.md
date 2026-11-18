@@ -2,10 +2,10 @@
 id_code: M07
 order: 7
 title: Surface mobility
-phase: 2
+phase: 1
 window: "2028–2033"
 summary: Get unpressurised rovers, a pressurised rover and utility robots working on the surface, so crews and cargo can move between every site.
-objective: "Have at least two unpressurised crew rovers that can also drive themselves, one pressurised rover for multi-week trips, and a fleet of utility robots for hauling and inspection, all driven remotely from Earth between crew visits."
+objective: "Have at least two unpressurised crew rovers that can also drive themselves, one pressurised rover for multi-week trips, and a fleet of utility robots for hauling and inspection, all driven remotely from Earth while the base is built and before the first crew lands (Phase 1, DD-005)."
 trl_min: 6
 depends_on: [M02, M03, M05]
 spec:
@@ -21,7 +21,7 @@ cost_items:
   - {item: "Teleoperation centre and driver training", low: 0.05, high: 0.2, basis: "ESTIMATE"}
 exit_criteria:
   - "Two LTVs operating at the base, each having driven at least 100 km, including driverless traverses commanded from Earth."
-  - "Pressurised rover completes a crewed 14-day trip with resupply."
+  - "Pressurised rover delivered, driven remotely and checked out; its first crewed trip comes in Phase 2 (M09)."
   - "Utility robots haul cargo from pads to sites without crew help."
 workstreams:
   - name: Unpressurised rovers (LTV)
@@ -34,7 +34,7 @@ workstreams:
     desc: Do the hauling so crews don't have to.
     items: ["Payload carts towed by LTVs", "Small inspection rovers", "Cable inspection along M04 routes"]
   - name: Teleoperation
-    desc: Drive rovers from Earth between crew visits.
+    desc: Drive rovers from Earth while the base is built, and whenever the crew is busy.
     items: ["Delay-tolerant driving at 6–8 s", "Autonomous hazard avoidance", "Driver training on simulators"]
 technologies:
   - {name: "Astrolab CLV-1 (LTV)", use: "Crew and cargo rover", status: "NASA task order $219M (May 2026); flight units to be qualified over the next 18 months; delivery 2028", trl: 6, src: 1}
@@ -53,8 +53,8 @@ sources:
   - {title: "Toyota: Lunar Cruiser", url: "https://global.toyota/en/mobility/technology/lunarcruiser/index.html", date: "2026"}
   - {title: "NASA launch schedule (Moon Base: Intuitive Machines IM-3, early 2027)", url: "https://www.nasa.gov/event-type/launch-schedule/", date: "Nov 2026"}
 risks:
-  - {sev: High, title: "Rovers are scheduled to arrive on a lander (Blue Moon Mk1) that hasn't flown yet", fix: "Keep a second delivery option; don't schedule crew sorties until at least one LTV is on the surface"}
-  - {sev: High, title: "The pressurised rover's date is unclear (Artemis VII tie, NET FY2032 delivery)", fix: "Plan Phase 2 sorties to work without it, within walking/LTV range of the habitat"}
+  - {sev: High, title: "Rovers are scheduled to arrive on a lander (Blue Moon Mk1) that hasn't flown yet", fix: "Keep a second delivery option; don't land the first crew until at least one LTV is on the surface"}
+  - {sev: High, title: "The pressurised rover's date is unclear (Artemis VII tie, NET FY2032 delivery)", fix: "Plan Phase 2 EVAs to work without it, within walking/LTV range of the habitat"}
   - {sev: Medium, title: "Dust wear on wheels, seals and joints over long distances", fix: "Sintered roads (M05); scheduled maintenance; dust-tolerant designs"}
   - {sev: Medium, title: "Driving in long shadows and low sun angles at the pole", fix: "Lidar and headlights; mapped roads with beacons"}
 ---
@@ -75,7 +75,7 @@ Open Moon doesn't develop its own crew rovers. It leases LTV services and joins 
 - utility carts and small robots for hauling, inspection and cable patrol
 - the teleoperation centre on Earth
 
-Between crew visits, rovers are driven from Earth to keep them productive.
+In Phase 1 there is no crew, so rovers are driven from Earth to haul for the base build (DD-005). Once crews live on base, they still drive from Earth whenever the crew is busy.
 
 ## Step-by-step
 

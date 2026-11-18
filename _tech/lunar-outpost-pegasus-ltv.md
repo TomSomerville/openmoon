@@ -35,7 +35,7 @@ By October 2026, Lunar Outpost had built [two Pegasus mockups and delivered a th
 
 ## Why Open Moon uses it
 
-Pegasus is one of the two LTV-class rovers in milestone M07 (Mobility). Open Moon does not build crew rovers. It plans to lease LTV services. Crews use the rovers to reach work and science sites. Between crew visits, people on Earth drive them to map terrain and haul loads for the road and landing pad work in M05 and M06.
+Pegasus is one of the two LTV-class rovers in milestone M07 (Mobility). Open Moon does not build crew rovers. It plans to lease LTV services. Crews use the rovers to reach work and science sites. Before the first crew lands (Phase 1), people on Earth drive them to map terrain and haul loads for the road and landing pad work in M05 and M06.
 
 M07 is complete when both LTVs have each driven at least 100 km, including driverless trips commanded from Earth. With only one LTV, the base has no backup if that rover breaks down. With no LTV, crews could only work within walking range of the lander and habitat. NASA's [LTV page](https://www.nasa.gov/moonbase/lunar-terrain-vehicle/) gives the same reason: crews can go farther and do more science than on foot.
 

@@ -3,19 +3,19 @@ id_code: "C04.2"
 milestone: M04
 order: 2
 title: Vertical solar array towers
-summary: "Tall masts that lift sun-tracking solar blankets above the shadows of polar terrain. Two 10 kW towers and two 50 kW towers give the base its daytime power."
+summary: "Tall masts that lift sun-tracking solar blankets above the shadows of polar terrain. NASA's 10 kW-class VSAT is the only tower type (DD-004); the number is set by the Phase 1 load budget."
 trl: 5
 spec:
-  - {k: "Power", v: "10 kW (VSAT) and 50 kW (VSAT-XL) per tower"}
-  - {k: "Height", v: "≥10 m to bottom of arrays, ~16 m total (10 kW); 34 m (XL)"}
-  - {k: "Array area", v: "36 m² (10 kW); ~180 m² (XL, ESTIMATE)"}
+  - {k: "Power", v: "10 kW per tower (NASA VSAT class)"}
+  - {k: "Height", v: "≥10 m to bottom of arrays, ~16 m total"}
+  - {k: "Array area", v: "36 m²"}
   - {k: "Cells", v: "Triple-junction, ~30% efficient"}
-  - {k: "Mass", v: "~1 t per 10 kW tower; ~3 t per XL tower (ESTIMATE)"}
+  - {k: "Mass", v: "~1 t per tower (ESTIMATE)"}
   - {k: "Slope", v: "Up to 15° at set-down, self-levelling"}
   - {k: "Life", v: "10 years at the south pole"}
   - {k: "Night survival", v: "≥96 h in darkness"}
-  - {k: "Quantity", v: "2 × 10 kW + 2 × 50 kW on 2–3 ridge points"}
-  - {k: "Delivery", v: "Small landers (10 kW); medium lander such as Griffin (XL)"}
+  - {k: "Quantity", v: "N × 10 kW on 2–3 ridge points; N set by the Phase 1 load budget (provisional 10 for costing) (DD-004)"}
+  - {k: "Delivery", v: "Small landers for the first towers; medium landers can carry several"}
 subcomponents:
   - name: Mast and deployer
     desc: "Lifts the arrays at least 10 m above the ground, and can lower them again for a move."
@@ -34,13 +34,13 @@ subcomponents:
     trl: 5
   - name: Base and lander interface
     desc: "Holds the tower on rough ground and gets it off the lander."
-    parts: ["Tripod or sled base with levelling legs", "Launch locks", "Offload interface (self-propelled or towed cart)", "Ballast or ground anchors", "Grid cable connector"]
+    parts: ["Tripod or sled base with levelling legs", "Launch locks", "Offload interface (self-propelled or towed cart)", "Ballast or ground anchors", "Cable connector for the source line to the PMC"]
     tech: "VSAT prototype bases; Astrobotic VOLT rover base"
     trl: 5
   - name: Power electronics and night survival
-    desc: "Conditions array power for the grid and keeps the tower alive in the dark."
-    parts: ["Maximum-power-point converters", "Grid interface converter (UMIC class)", "Survival battery", "Heaters and thermostats", "Avionics and radio"]
-    tech: "NASA GRC UMIC; VSAT prototype avionics"
+    desc: "Conditions array power for the line to the power management controller (PMC), reduces or cuts output on PMC command when storage is full, and keeps the tower alive in the dark (DD-008)."
+    parts: ["Maximum-power-point converters", "Array regulator and shunt (sequential shunt unit heritage) to curtail output", "Disconnect contactor to isolate the tower", "Line interface converter (UMIC class) to the PMC source line", "Curtailment control on PMC command", "Survival battery", "Heaters and thermostats", "Avionics and radio"]
+    tech: "NASA GRC UMIC; ISS sequential shunt unit; VSAT prototype avionics"
     trl: 4
   - name: Dust protection
     desc: "Limits dust build-up on the cells, mechanisms and radiators."
@@ -50,9 +50,9 @@ subcomponents:
 risks:
   - {sev: High, title: "Even at 10 m, the best single point is in shadow 4–8% of the time.", fix: "Spread towers over two or three ridge points that are shadowed at different times; back them up with fission (C04.1) and storage (C04.3)."}
   - {sev: High, title: "Tall masts can buckle or tip on slopes or soft regolith.", fix: "Use active plumbness control and wide levelling legs; test full-height towers on regolith simulant slopes before flight."}
-  - {sev: High, title: "All prototype designs were above their mass goals at preliminary design.", fix: "Budget ~1 t per 10 kW tower now (ESTIMATE); fly the 10 kW towers first and learn before buying the XL."}
+  - {sev: High, title: "All prototype designs were above their mass goals at preliminary design.", fix: "Budget ~1 t per 10 kW tower now (ESTIMATE); fly the first towers and measure before buying the rest."}
   - {sev: High, title: "Dust thrown up by landers can sandblast and coat the arrays.", fix: "Keep towers 1 km+ from landing pads (M05); vertical blankets shed falling dust; electrodynamic dust shields."}
-  - {sev: Medium, title: "VSAT-XL is still a ground prototype of the deployment system only.", fix: "Treat the 50 kW towers as step 3 of the build; keep an option to fly four more 10 kW towers instead."}
+  - {sev: Medium, title: "Using only 10 kW towers means many towers, landings and ridge sites for a large solar fleet (DD-004).", fix: "Size the fleet from the Phase 1 load budget; carry several towers per medium lander; revisit VSAT-XL if it reaches flight-like testing."}
   - {sev: Medium, title: "Mechanisms may jam in deep cold when retracting for a move.", fix: "Thermal-vacuum cycle every mechanism at worst cold; carry spare motors; design so a stuck tower still makes power where it stands."}
   - {sev: Medium, title: "No flight demonstration of a vertical lunar array is funded yet.", fix: "Push for the flight demo NASA's project has proposed for 2028–2029, or fly the first Open Moon 10 kW tower as that demo."}
 sources:
@@ -69,11 +69,17 @@ sources:
   - {title: "Wikipedia: Peak of eternal light", url: "https://en.wikipedia.org/wiki/Peak_of_eternal_light", date: "2026"}
   - {title: "Csank & Scott, NASA GRC: Power and Energy for the Lunar Surface", url: "https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf", date: "Apr 2022"}
   - {title: "Wikipedia: Solar constant", url: "https://en.wikipedia.org/wiki/Solar_constant", date: "2026"}
+  - {title: "Button, NASA TM-104510: Development and testing of a source subsystem for the PMAD DC test bed (sequential shunt unit)", url: "https://ntrs.nasa.gov/api/citations/19910016888/downloads/19910016888.pdf", date: "Aug 1991"}
+  - {title: "Wikipedia: Electrical system of the International Space Station", url: "https://en.wikipedia.org/wiki/Electrical_system_of_the_International_Space_Station", date: "2026"}
 ---
 
 ## What it does
 
-At the south pole the Sun skims the horizon, so hills and crater rims cast very long shadows. A tall tower lifts its arrays out of those shadows and catches more hours of sun<sup class="r">[1](#s1)</sup>. On the Shackleton connecting ridge, the best point is lit 92% of the time at 2 m height and 96% at 10 m<sup class="r">[10](#s10)</sup>. Each tower turns that sunlight into 10 or 50 kW for the grid. The towers can also be lowered and moved<sup class="r">[1](#s1)</sup>.
+{% include decision-note.html id="DD-004" extra="The plan first used two 10 kW VSATs and two 50 kW VSAT-XL towers. It now uses 10 kW VSATs only, with the number set by the Phase 1 load budget." %}
+
+At the south pole the Sun skims the horizon, so hills and crater rims cast very long shadows. A tall tower lifts its arrays out of those shadows and catches more hours of sun<sup class="r">[1](#s1)</sup>. On the Shackleton connecting ridge, the best point is lit 92% of the time at 2 m height and 96% at 10 m<sup class="r">[10](#s10)</sup>. Each tower turns that sunlight into 10 kW and sends it to the power management controller (PMC), which routes it to the grid or to storage (design changes DD-003 and DD-008).
+
+**Curtailment and disconnect (plan design, DD-008).** When demand is met and storage is full, the PMC tells each tower to reduce or cut its output. The tower's array regulator does this by shunting array strings, and a disconnect contactor can isolate the whole tower. This is ISS heritage: the station's sequential shunt unit shunts and unshunts array strings to hold the ~160 V DC primary bus<sup class="r">[14](#s14)</sup><sup class="r">[15](#s15)</sup>. The towers can also be lowered and moved<sup class="r">[1](#s1)</sup>.
 
 ## How it works
 
@@ -83,20 +89,17 @@ At the south pole the Sun skims the horizon, so hills and crater rims cast very 
   - Astrobotic: a ROSA-based mast on a self-propelled cart.
 - **Blankets.** Redwire's ROSA roll-out arrays have flown on the ISS since 2017. Each iROSA wing gives more than 28 kW from 30.7%-efficient cells<sup class="r">[8](#s8)</sup>. Astrobotic's towers use ROSA<sup class="r">[3](#s3)</sup><sup class="r">[5](#s5)</sup>.
 - **Tracking.** A gimbal makes the mast plumb on slopes of up to 15° and turns the arrays toward the Sun. A slip ring lets it rotate continuously<sup class="r">[4](#s4)</sup>.
-- **VSAT-XL.** Astrobotic's 50 kW tower is 34 m tall and 12.5 m wide<sup class="r">[5](#s5)</sup>. It tracks the Sun, levels itself, and is designed to sit on top of the Griffin lander<sup class="r">[6](#s6)</sup>. A NASA SBIR Phase II contract runs from June 2025 to June 2027<sup class="r">[7](#s7)</sup>.
+- **Not used: VSAT-XL.** Astrobotic's 50 kW, 34 m tower<sup class="r">[5](#s5)</sup> is still a ground deployment prototype under a NASA SBIR contract to June 2027<sup class="r">[7](#s7)</sup>. The plan keeps it as an alternative only (DD-004).
 - **Dust and night.** Some designs add NASA's electrodynamic dust shield<sup class="r">[3](#s3)</sup>. The towers must survive 96 hours of darkness and last up to ten years<sup class="r">[2](#s2)</sup>.
 
 ## Sizing
 
 - **10 kW tower (ESTIMATE).** Sunlight carries 1,361 W/m²<sup class="r">[13](#s13)</sup>. 36 m² × 1,361 W/m² × 0.307 ≈ 15 kW at the cells. A combined factor of about 0.67, for cell packing, heat, pointing and wiring losses, gives 10 kW.
-- **50 kW tower (ESTIMATE).** 50 kW ÷ (1,361 × 0.307 × 0.67) ≈ 180 m² of array.
-- **Fleet (plan design).**
+- **Fleet (plan design, DD-004).** The number of towers will be set by the Phase 1 load budget, which is not done yet. Until then the plan costs a provisional fleet:
 
 | Item | Number | Peak power | Mass (ESTIMATE) |
 |---|---|---|---|
-| 10 kW tower | 2 | 20 kW | ~2 t |
-| 50 kW XL tower | 2 | 100 kW | ~6 t |
-| **Total** | **4** | **120 kW** | **~8 t** |
+| 10 kW tower | 10 (provisional) | 100 kW | ~10 t |
 
 - **Why several ridges.** Two points about 8 km apart on a Shackleton ridge are lit a combined ~94% of a lunar year<sup class="r">[11](#s11)</sup>. Shadows of up to about 100 hours remain<sup class="r">[12](#s12)</sup>, so fission and storage still carry the night.
 
@@ -110,8 +113,8 @@ At the south pole the Sun skims the horizon, so hills and crater rims cast very 
 
 ## Open questions
 
-- What is the real flight mass of a 10 kW tower and of the XL?
+- What is the real flight mass of a 10 kW tower?
 - Which ridge points give the least overlap in shadow time for the actual landing site?
-- Should the XL be a fixed tower (Astrobotic 2025) or have a mobile version (Astrobotic 2024)<sup class="r">[5](#s5)</sup><sup class="r">[6](#s6)</sup>?
+- How many towers does the Phase 1 load budget call for, and on which ridge points?
 - How fast do cells degrade from dust, radiation and thermal cycling over 10 years at the pole?
-- Each tower connects to the 3 kV AC, 1 kHz grid (design change DD-001) through a UMIC-class converter. Could Astrobotic's proposed high-voltage AC output<sup class="r">[3](#s3)</sup> feed the grid more directly?
+- Each tower sends its power over a 3 kV AC, 1 kHz line (design change DD-001) to the PMC, which routes it to the grid or to storage (design changes DD-003 and DD-008). Could Astrobotic's proposed high-voltage AC output<sup class="r">[3](#s3)</sup> feed that line more directly?

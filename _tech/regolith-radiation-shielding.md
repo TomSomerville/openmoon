@@ -20,6 +20,8 @@ links:
   - {title: "Johnson et al., NASA NTRS: Radiation shielding of lunar regolith/polyethylene composites and regolith/water mixtures", url: "https://ntrs.nasa.gov/citations/20110012713", kind: paper, date: "2011"}
   - {title: "DLR: MARE, the Matroshka AstroRad Radiation Experiment on Artemis I", url: "https://www.dlr.de/en/me/research-and-transfer/projects-and-studies/mare", kind: official, date: "accessed Nov 2026"}
   - {title: "ESA: Building a lunar base with 3D printing", url: "https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Building_a_lunar_base_with_3D_printing", kind: official, date: "Jan 2013"}
+  - {title: "Langseth et al.: Revised lunar heat-flow values (regolith thermal conductivity, Apollo 15 and 17)", url: "https://www.osti.gov/biblio/5787569", kind: paper, date: "1976"}
+  - {title: "Hayne et al., JGR Planets: Global regolith thermophysical properties of the Moon from Diviner", url: "https://arxiv.org/pdf/1711.00977", kind: paper, date: "2017"}
   - {title: "Lunar regolith, Wikipedia", url: "https://en.wikipedia.org/wiki/Lunar_regolith", kind: wiki, date: "accessed Nov 2026"}
 ---
 
@@ -35,9 +37,9 @@ No regolith shield has been built on the Moon. Work so far is modelling and lab 
 
 The lunar surface is harsh. China's Chang'e-4 lander measured an average dose equivalent of [1,369 µSv per day](https://doi.org/10.1126/sciadv.aaz1334). NASA's career limit is [600 mSv](https://www.nasa.gov/wp-content/uploads/2023/03/radiation-protection-technical-brief-ochmo.pdf) for every astronaut. Without shielding, a year on the surface would use most of a career.
 
-Milestone M09 (permanent crew presence) depends on this. Four crew live on the surface in six-month rotations. Shipping that much shielding mass from Earth would be very costly. A [2024 IAC study](https://iafastro.directory/iac/paper/id/82864/abstract-pdf/IAC-24,D3,IP,1,x82864.brief.pdf) found regolith-only shielding cost competitive, because launch mass drives settlement cost.
+The crewed base (M09) depends on this, and the cover is built before the first crew lands (M08, design change DD-005). Six people live on the surface, with crews of three on tours of about 6.5 months (DD-006). Shipping that much shielding mass from Earth would be very costly. A [2024 IAC study](https://iafastro.directory/iac/paper/id/82864/abstract-pdf/IAC-24,D3,IP,1,x82864.brief.pdf) found regolith-only shielding cost competitive, because launch mass drives settlement cost.
 
-The same study, using NASA's OLTARIS tool, found about 150 mSv per 180-day mission behind 2 m of regolith and about 100 mSv behind 3 m. Open Moon therefore sets 2 m as a minimum and 3 m as a target. Without it, crews would need short stays or shielding shipped from Earth.
+The same study, using NASA's OLTARIS tool, found about 150 mSv per 180-day mission behind 2 m of regolith and about 100 mSv behind 3 m. Over a 6.5-month (198-day) tour that is about 165 mSv at 2 m and 110 mSv at 3 m (this plan's arithmetic), against NASA's [600 mSv career limit](https://www.nasa.gov/wp-content/uploads/2023/03/radiation-protection-technical-brief-ochmo.pdf). Open Moon therefore sets 2 m as a minimum and 3 m as a target. Without it, crews would need short stays or shielding shipped from Earth.
 
 ## How it works
 
@@ -63,4 +65,5 @@ Designers check a layout with [OLTARIS](https://oltaris.nasa.gov), NASA's web to
 - **No design requirement yet.** NASA has [not released radiation design requirements](https://ntrs.nasa.gov/api/citations/20210009760/downloads/Clowdsley_Lunar_Radiation_Talk_v2.pdf) for lunar surface habitats.
 - **Construction is unproven.** Bagging, piling or printing metres of regolith around a module has only been done as concepts and Earth demos, such as [ESA's printed block](https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Building_a_lunar_base_with_3D_printing). ESA also flagged dust control as needing more study.
 - **Solar storms still need a plan.** NASA suggests a [storm shelter or wearable protection](https://ntrs.nasa.gov/api/citations/20210009760/downloads/Clowdsley_Lunar_Radiation_Talk_v2.pdf) for large solar particle events, and dose outside the berm during surface work is not covered by the burial.
+- **It traps heat.** Regolith conducts heat very poorly: about [0.009–0.013 W/m·K](https://www.osti.gov/biblio/5787569) in bulk from Apollo, and as low as [0.00074 W/m·K](https://arxiv.org/pdf/1711.00977) in the loose surface layer from Diviner. A buried habitat sits in steady surroundings, but its own heat cannot escape through the cover, so it needs pumped loops to radiators on the surface. NASA advises against burying power cables [for the same reason](https://ntrs.nasa.gov/citations/20250000841).
 - **Excavation mass and time.** The tonnes moved and machine hours needed for a full burial are not published for a specific design.

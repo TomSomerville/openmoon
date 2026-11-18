@@ -14,6 +14,7 @@ spec:
   - {k: "Transfer", v: "Up to 50 t per lander visit at ~200 L/min, ~4 h (design case)"}
   - {k: "Hydrogen", v: "Optional later phase; 20 K cooling needed"}
   - {k: "Delivery", v: "Part of ~10 t depot and transfer equipment (M11 ESTIMATE)"}
+  - {k: "Power interface", v: "Own service connection to the M04 grid (UMIC-class step-down to 120 V DC, meter, main breaker) and its own 120 V DC panel; can be isolated without affecting other units (plan design, DD-009)"}
 subcomponents:
   - name: "Storage farm"
     desc: "Four shaded, insulated, actively cooled LOX tanks, set back from the pads behind a regolith berm."

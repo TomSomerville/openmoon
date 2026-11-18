@@ -15,6 +15,7 @@ spec:
   - {k: "Mass", v: "~3 t delivered (M06 ESTIMATE)"}
   - {k: "Life", v: "6 months continuous operation, with electrode and crucible change-out"}
   - {k: "Delivery class", v: "Medium lander"}
+  - {k: "Power interface", v: "Own service connection to the M04 grid (UMIC-class step-down to 120 V DC, meter, main breaker) and its own 120 V DC panel; can be isolated without affecting other units (plan design, DD-009)"}
 subcomponents:
   - name: "Feedstock handling and beneficiation"
     desc: "Takes regolith from the M05 stockpile, sieves it, and feeds a measured batch into each reactor."
@@ -24,7 +25,7 @@ subcomponents:
   - name: "Reactor and crucible"
     desc: "An insulated vessel in which regolith is heated to melting and then kept molten by the electrolysis current itself."
     parts: ["Start-up heaters", "Refractory lining or cold-wall (frozen regolith) shell", "Thermocouples in the melt", "Thermal shield and radiator", "Vacuum-tight lid"]
-    tech: "NASA KSC and Lunar Resources LR-1 reactor (25 kg melt)"
+    tech: "NASA KSC and Lunar Resources LR-1 electrolysis reactor (25 kg melt; not NASA's Lunar Reactor-1 fission unit)"
     trl: 4
   - name: "Electrodes"
     desc: "An inert anode where oxygen gas forms and a molten metal cathode pool where metals collect."
@@ -47,8 +48,8 @@ subcomponents:
     tech: "Sierra Space spent-regolith removal; MRE tapping not yet shown"
     trl: 3
   - name: "Power, thermal and control"
-    desc: "Takes power from the M04 grid, rejects waste heat, and runs the batch cycle without crew."
-    parts: ["Grid interface and DC converters", "Radiators", "Process controller and data logger", "Fault protection (power loss, over-temperature)", "Cameras"]
+    desc: "Takes power from the M04 grid through the plant's own service connection (DD-009), rejects waste heat, and runs the batch cycle without crew."
+    parts: ["Service connection: UMIC-class step-down to 120 V DC, meter, main breaker", "120 V DC panel", "DC converters from the panel to the ~45 V cell supplies", "Radiators", "Process controller and data logger", "Fault protection (power loss, over-temperature)", "Cameras"]
     tech: "LR-1 data acquisition and control system"
     trl: 5
 risks:

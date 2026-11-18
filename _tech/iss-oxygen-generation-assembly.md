@@ -37,7 +37,7 @@ As of 30 April 2025 the OGA had been running for 18 years and had made 14,598 kg
 Water electrolysis is the simplest proven way to turn water into oxygen, and the OGA is the most flown example. Open Moon uses it in two places.
 
 - **M06 (ISRU pilot):** water processing at the pilot plant splits cleaned water on demand, using electrolysis with ISS OGA heritage. It is the TRL 9 reference against which the newer regolith-oxygen processes are compared.
-- **M09 (permanent crew):** the base's life support copies the ISS loop: water recovery, CO₂ removal, Sabatier, and oxygen generation by electrolysis.
+- **M08 and M09 (crewed base):** the base's life support copies the ISS loop, sized for 6 people (5.37 kg O₂ a day) and 9 at handovers (8.06 kg, BVAD; see C08.2): water recovery, CO₂ removal, Sabatier, and oxygen generation by electrolysis.
 
 Without an electrolyser the base would have to ship all its oxygen, or rely on unproven regolith plants for every breath. The OGA design also gives a hydrogen stream that a base can store or feed to a Sabatier reactor instead of venting.
 

@@ -1,0 +1,147 @@
+# Things to watch: space fission power and propulsion projects worldwide.
+# Checked 18 Nov 2026. Only what the cited source states; "n/s" = not stated.
+# Shown at the bottom of every technology card with `watch: fission`.
+checked: "18 Nov 2026"
+items:
+  - name: "Lunar Reactor-1 (LR-1)"
+    org: "NASA Glenn / DOE (US)"
+    type: "Surface power"
+    power: "≥20 kWe, ≥5 yr at full power"
+    status: "SPARC draft RFP posted 30 Aug 2026; final RFP planned around mid-Nov 2026. No award yet. NASA says it will land on the Moon in 2030."
+    flag: ""
+    sources:
+      - {t: "NASA Space Nuclear", u: "https://www.nasa.gov/space-nuclear/"}
+      - {t: "GovConWire", u: "https://www.govconwire.com/articles/nasa-sparc-draft-rfp-space-nuclear-systems"}
+  - name: "Space Reactor-1 Freedom (SR-1)"
+    org: "NASA / DOE, reactor built by INL (US)"
+    type: "Nuclear electric propulsion"
+    power: "20 kWe reactor (HALEU, closed Brayton)"
+    status: "Launch targeted late 2028, Mars 2029 with the SkyFall helicopters. NASA calls it the pathfinder for LR-1."
+    flag: "Budget uncertainty reported (AIAA, Oct 2026)."
+    sources:
+      - {t: "NASA mission page", u: "https://www.nasa.gov/mission/space-reactor-1-freedom/"}
+      - {t: "NASA Glenn: power module progress", u: "https://www.nasa.gov/centers-and-facilities/glenn/sr-1-freedom-advances-with-progress-on-nuclear-power-module/"}
+  - name: "US policy: EO 14369 and NSTM-3"
+    org: "White House / OSTP (US)"
+    type: "Policy"
+    power: "Mid-power ≥20 kWe; ≥100 kWe high-power in the 2030s"
+    status: "EO (18 Dec 2025) sets a lunar surface reactor ready for launch by 2030. NSTM-3 (14 Apr 2026) sets a ≥20 kWe surface variant by 2030, a defence in-space reactor by 2031 and ≥100 kWe in the 2030s."
+    flag: ""
+    sources:
+      - {t: "Executive Order", u: "https://www.whitehouse.gov/presidential-actions/2025/12/ensuring-american-space-superiority/"}
+      - {t: "NSTM-3 (PDF)", u: "https://www.whitehouse.gov/wp-content/uploads/2026/04/NSTM-3-2026_04_14-corrected.pdf"}
+  - name: "NASA–DOE agreements"
+    org: "NASA / DOE (US)"
+    type: "Policy"
+    power: "–"
+    status: "MOU of Jan 2026: lunar surface reactor by 2030. Second MOU on space nuclear power and propulsion signed 8 Oct 2026."
+    flag: ""
+    sources:
+      - {t: "NASA release 26-004", u: "https://www.nasa.gov/news-release/nasa-department-of-energy-to-develop-lunar-surface-reactor-by-2030/"}
+      - {t: "NASA release, Oct 2026", u: "https://www.nasa.gov/news-release/nasa-energy-department-advance-new-era-of-nuclear-powered-exploration/"}
+  - name: "Antares R1-S"
+    org: "Antares / US Space Force acquisition (US)"
+    type: "In-space power"
+    power: "Block 1 ≥35 kWe (N₂ closed Brayton, sodium heat pipes)"
+    status: "$161M award about Sep 2026, no flight date. Ground reactor Mark-0 reached criticality Jun 2026; Mark-1 ground test runs >6 months in 2027."
+    flag: ""
+    sources:
+      - {t: "ANS Nuclear Newswire", u: "https://www.ans.org/news/2026-09-15/article-8390/"}
+  - name: "Kilopower with active control (SpaceNukes)"
+    org: "DARPA / Los Alamos (US)"
+    type: "Nuclear ground test"
+    power: "n/s"
+    status: "DARPA agreement reported Oct 2026 to design, build and nuclear-test a reactor. No date or value given."
+    flag: ""
+    sources:
+      - {t: "ANS Nuclear Newswire", u: "https://www.ans.org/news/2026-10-26/article-8520/"}
+  - name: "Westinghouse lunar microreactor"
+    org: "Westinghouse / INL (US)"
+    type: "Surface power"
+    power: "Up to 40 kW (heat-pipe, eVinci-derived)"
+    status: "Follow-on design and test contract Jan 2025. No 2026 update found."
+    flag: ""
+    sources:
+      - {t: "ANS Nuclear Newswire", u: "https://www.ans.org/news/2025-01-15/article-6686/westinghouses-lunar-microreactor-concept-gets-a-contract-for-continued-rd/"}
+  - name: "Lockheed Martin fission surface power"
+    org: "Lockheed Martin (US)"
+    type: "Surface power"
+    power: "n/s"
+    status: "Company feature Feb 2026 pitches a lunar reactor and a lower-power demonstrator. No award found."
+    flag: ""
+    sources:
+      - {t: "Lockheed Martin", u: "https://www.lockheedmartin.com/space-nuclear"}
+  - name: "IX (Intuitive Machines + X-energy)"
+    org: "IX joint venture (US)"
+    type: "Surface power"
+    power: "40 kWe class (2022 design)"
+    status: "2022 Phase 1 design award. No 2026 status found."
+    flag: ""
+    sources:
+      - {t: "X-energy", u: "https://x-energy.com/why/nuclear-and-space/lunar-surface-power"}
+  - name: "JETSON"
+    org: "Air Force Research Laboratory (US)"
+    type: "Nuclear electric power / propulsion"
+    power: "n/s"
+    status: "Awards Sep 2023 to Lockheed Martin, Westinghouse and Intuitive Machines. No 2025–26 status found."
+    flag: ""
+    sources:
+      - {t: "Breaking Defense", u: "https://breakingdefense.com/2023/10/afrl-picks-3-contractors-for-jetson-effort-to-develop-fission-powered-spacecraft/"}
+  - name: "DRACO"
+    org: "DARPA / NASA (US)"
+    type: "Nuclear thermal propulsion"
+    power: "–"
+    status: "Cancelled in 2025."
+    flag: "Cancelled"
+    sources:
+      - {t: "Breaking Defense", u: "https://breakingdefense.com/2025/06/darpas-draco-nuclear-propulsion-project-roars-no-more/"}
+      - {t: "Wikipedia", u: "https://en.wikipedia.org/wiki/Demonstration_Rocket_for_Agile_Cislunar_Operations"}
+  - name: "ILRS lunar power plant"
+    org: "Roscosmos / Rosatom / CNSA (Russia–China)"
+    type: "Surface power"
+    power: "Up to 10 kW (reported)"
+    status: "Roscosmos contract Dec 2025 for a plant by 2036. Rosatom to choose the design in 2027 (Nov 2026 statement)."
+    flag: "Few technical details public."
+    sources:
+      - {t: "World Nuclear News", u: "https://www.world-nuclear-news.org/articles/russia-targeting-lunar-power-station-by-2036"}
+  - name: "Zeus / TEM nuclear tug"
+    org: "Roscosmos (Russia)"
+    type: "Nuclear electric propulsion"
+    power: "Megawatt class"
+    status: "Roscosmos (Apr 2026): Nuklon preliminary design complete."
+    flag: "Sources conflict: Aviation Week reports cancellation."
+    sources:
+      - {t: "TASS", u: "https://tass.com/economy/2110277"}
+      - {t: "Aviation Week", u: "https://aviationweek.com/space/russia-cancel-space-tug-refocus-space-nuclear-power-efforts"}
+  - name: "CAS megawatt space reactor"
+    org: "Chinese Academy of Sciences (China)"
+    type: "Research"
+    power: "1.5 MW (lithium-cooled)"
+    status: "2024: non-nuclear ground tests done, fission tests still to come. No later update found."
+    flag: ""
+    sources:
+      - {t: "South China Morning Post", u: "https://www.scmp.com/news/china/science/article/3255889/"}
+  - name: "Rolls-Royce micro-reactor"
+    org: "Rolls-Royce / UK Space Agency (UK)"
+    type: "Surface power"
+    power: "n/s officially"
+    status: "UK Space Agency funding 2023–2024."
+    flag: "Press reports (Feb 2026) say it is on indefinite hold; not officially confirmed."
+    sources:
+      - {t: "UK Government", u: "https://www.gov.uk/government/news/uk-space-agency-backs-rolls-royce-nuclear-power-for-moon-exploration"}
+  - name: "Canadian lunar microreactor RFI"
+    org: "Canadian Space Agency (Canada)"
+    type: "Study"
+    power: "20–80 kWe planning range, ≥10 yr"
+    status: "Request for information posted 27 Oct 2026, due 23 Nov 2026. No programme commitment."
+    flag: ""
+    sources:
+      - {t: "ANS Nuclear Newswire", u: "https://www.ans.org/news/article-8567/canada-assesses-its-space-reactor-capabilities/"}
+  - name: "RocketRoll"
+    org: "ESA (Europe)"
+    type: "Nuclear electric propulsion study"
+    power: "~100 kW threshold"
+    status: "Study concluded; roadmap proposes a demonstrator by 2035. No ESA lunar fission study found."
+    flag: ""
+    sources:
+      - {t: "ESA", u: "https://www.esa.int/Enabling_Support/Space_Transportation/Future_space_transportation/Rocketroll_nuclear-electric_spacecraft_study"}

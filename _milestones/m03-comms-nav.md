@@ -2,7 +2,7 @@
 id_code: M03
 order: 3
 title: Communications, navigation and time
-phase: 1
+phase: 0
 window: "2027–2031"
 summary: Give the base an always-on link to Earth, a local network on the surface, and positioning and timing, mostly by buying services from relay networks already being built.
 objective: "Provide at least 95% of the time link availability between the base and Earth, a high-bandwidth local surface network covering every work site including crater floors, and positioning and timing good enough for autonomous driving and landing."

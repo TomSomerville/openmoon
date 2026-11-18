@@ -81,6 +81,7 @@ body{font-size:15px}
 .prose img{display:block;max-width:100%;height:auto;border-radius:6px;margin:8px 0 6px}
 .prose a{color:var(--hi)}
 .prose code{font:13px var(--fm);background:var(--panel);padding:1px 5px;border-radius:4px}
+.prose img{max-width:100%;height:auto}
 .prose blockquote{margin:16px 0;padding:10px 14px;border-left:3px solid var(--warn);background:var(--panel);border-radius:0 6px 6px 0;color:var(--ink)}
 .prose table,.data{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0 18px;max-width:none}
 .prose th,.data th{font:11px var(--fm);color:var(--dim);text-transform:uppercase;letter-spacing:.08em;text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);background:var(--panel)}

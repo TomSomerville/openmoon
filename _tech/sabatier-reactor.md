@@ -33,7 +33,7 @@ ESA later sent a second Sabatier system, Airbus's Advanced Closed Loop System, t
 
 ## Why Open Moon uses it
 
-In the permanent-crew milestone (M09), the Sabatier reactor closes part of the oxygen loop. A CO2 scrubber removes CO2 from cabin air. The Sabatier turns it into water. The oxygen generator then splits that water into oxygen to breathe and hydrogen, which goes back to the Sabatier ([ICES-2019-103](https://ntrs.nasa.gov/citations/20190030371)). Without it, all the oxygen for breathing would have to come from shipped or mined water and from regolith processing.
+In the base life support, installed before the first crew (M08) and run by the crewed base (M09), the Sabatier reactor closes part of the oxygen loop. A CO2 scrubber removes CO2 from cabin air. The Sabatier turns it into water. The oxygen generator then splits that water into oxygen to breathe and hydrogen, which goes back to the Sabatier ([ICES-2019-103](https://ntrs.nasa.gov/citations/20190030371)). Without it, all the oxygen for breathing would have to come from shipped or mined water and from regolith processing.
 
 Its known weakness is acceptable on the Moon. The reaction locks half the hydrogen into methane, which is vented. That caps oxygen recovery from CO2 at about 50% ([ICES-2019-103](https://ntrs.nasa.gov/citations/20190030371)), or about 54% as operated on ISS ([ICES-2020-108](https://ntrs.nasa.gov/citations/20205004679)). Open Moon covers the gap with oxygen made from regolith (M06). The methane need not be wasted: NASA has long noted it could be used for propulsion or broken down to recover hydrogen ([NASA NTRS](https://ntrs.nasa.gov/citations/20050110128)).
 

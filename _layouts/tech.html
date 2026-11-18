@@ -71,6 +71,8 @@ section: tech
       {% for r in rel %}{% if r.slug != t.slug %}<a href="{{ '/technology/' | append: r.slug | append: '/' | relative_url }}">{% if r.image %}<img src="{{ r.image.file | relative_url }}" alt="" loading="lazy">{% endif %}<span>{{ r.name }}</span></a>{% endif %}{% endfor %}
     </div>
     {% endif %}
+
+    {% if page.watch == "fission" %}{% include fission-watch.html %}{% endif %}
   </div>
   <div class="side">
     <section>

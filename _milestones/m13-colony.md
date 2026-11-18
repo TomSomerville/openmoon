@@ -2,7 +2,7 @@
 id_code: M13
 order: 13
 title: Self-sustaining colony
-phase: 5
+phase: 4
 window: "2040–2050"
 summary: Grow the base into a colony of 50–100 people that makes most of what it uses, with Earth supplying only electronics, medicines, specialist parts and people.
 objective: "Reach a population of 50–100 with at least 90% of consumables mass and at least 80% of construction mass produced on the Moon, and a local economy that sells propellant, services and data to cover a meaningful share of operating costs."
@@ -24,7 +24,7 @@ exit_criteria:
   - "A governance and safety framework agreed with all operators at the site."
 workstreams:
   - name: Population growth
-    desc: Add people as housing, food and health data allow.
+    desc: Grow from the 6-person crewed base (M09, DD-006) as housing, food and health data allow.
     items: ["Habitat expansion with local construction", "Longer rotations only when health data supports them", "Medical facility"]
   - name: Local economy
     desc: Earn revenue.

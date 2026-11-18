@@ -1,18 +1,15 @@
 - n: 0
-  name: Foundations
-  desc: Choose the site with data already in hand from lunar orbiters, ground-truth it with robotic prospectors, and lock the transport contracts. Nothing lands that the base depends on until the site is confirmed.
+  name: Site selection and preparation
+  desc: "Choose the site with data already in hand from lunar orbiters, ground-truth it with robotic prospectors, and lock the transport contracts. Then robots prepare the site: communications, the power grid, hardened landing pads, roads and berms. Nothing that the base itself depends on lands until the site is confirmed (design change DD-005)."
 - n: 1
-  name: Robotic outpost
-  desc: Before any crew arrives, robots and cargo landers put down power, communications, landing pads and the first oxygen and water pilot plants. The outpost has to survive several lunar nights unattended.
+  name: Base construction
+  desc: "Uncrewed, autonomous building of the whole base before anyone lands. Robots and cargo landers put down the oxygen and water plants, the rovers, and three standard 3-person habitat modules side by side, connected to each other. Robots bury the modules under regolith, and life support, the storm shelter and the medical bay run uncrewed until they pass checkout (DD-005, DD-007)."
 - n: 2
-  name: Crewed sorties
-  desc: Crews visit for weeks at a time, living in the first surface habitat and using unpressurised and pressurised rovers. Each visit leaves more infrastructure behind.
+  name: Crewed base
+  desc: "Starts the day the first crew lands. There are no short visits; the first crew stays. Crews of three arrive every three months and each stays about six and a half months, so the base holds 3 people at first, then 6, with 9 for about two weeks at each handover (DD-006). Life support recycles most water and air, and resupply drops to a steady cadence."
 - n: 3
-  name: Permanent base
-  desc: Continuous crew presence. Habitats are buried under regolith for radiation protection, life support recycles most water and air, and resupply drops to a steady cadence.
-- n: 4
   name: Industrial base
-  desc: The base starts making what it consumes, including oxygen and propellant, building materials, spare parts and food, so each crew member needs less from Earth every year.
-- n: 5
+  desc: "The base starts making what it consumes, including oxygen and propellant, building materials, spare parts and food, so each crew member needs less from Earth every year."
+- n: 4
   name: Self-sustaining colony
-  desc: The base grows into a colony that produces most of its own mass needs, measured as the share of consumables and construction mass made on the Moon, with Earth supplying only high-tech parts and people.
+  desc: "The base grows into a colony that produces most of its own mass needs, measured as the share of consumables and construction mass made on the Moon, with Earth supplying only high-tech parts and people."

@@ -33,7 +33,7 @@ The facility was then upgraded for "Lunar Palace 365". It ran 370 days, from 10 
 
 Food is the hardest supply to close. NASA's reference diet is 12.8 MJ and 0.8 kg of food solids per person per day ([NASA BVAD](https://ntrs.nasa.gov/citations/20210024855)). Machines on the ISS already recover 98% of water ([NASA](https://www.nasa.gov/missions/station/iss-research/nasa-achieves-water-recovery-milestone-on-international-space-station/)), but they grow no food.
 
-Lunar Palace 1 is the best evidence that a small crew can live for a year inside a loop that also makes food. It is Open Moon's reference design for closed-loop life support with crops in milestone M10 (Food, phase 4). Without it, the base would depend on food shipped from Earth for as long as people live there. It would also lack a tested example of how crops, waste treatment and crew can be run together.
+Lunar Palace 1 is the best evidence that a small crew can live for a year inside a loop that also makes food. It is Open Moon's reference design for closed-loop life support with crops in milestone M10 (Food, Phase 3). Without it, the base would depend on food shipped from Earth for as long as people live there. It would also lack a tested example of how crops, waste treatment and crew can be run together.
 
 ## How it works
 

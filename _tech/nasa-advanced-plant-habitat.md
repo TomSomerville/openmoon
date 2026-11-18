@@ -29,7 +29,7 @@ The hardware was [carried to the ISS on SpaceX CRS-11 and Orbital ATK OA-7, asse
 
 ## Why Open Moon uses it
 
-Open Moon's milestone M10 (Growing food, Phase 4) needs fruiting crops, not only leafy greens. APH is the flight-proven example of growing a fruiting crop through a full cycle in a closed, sensor-rich chamber. The pepper run [lasted 120 days with harvests on days 100 and 120](https://www.nasa.gov/sites/default/files/atoms/files/plant_habitat-04.pdf). Peppers were picked because they are [a good source of Vitamin C](https://www.nasa.gov/centers-and-facilities/kennedy/houston-we-have-a-pepper/), a nutrient that breaks down in long-stored packaged food.
+Open Moon's milestone M10 (Growing food, Phase 3) needs fruiting crops, not only leafy greens. APH is the flight-proven example of growing a fruiting crop through a full cycle in a closed, sensor-rich chamber. The pepper run [lasted 120 days with harvests on days 100 and 120](https://www.nasa.gov/sites/default/files/atoms/files/plant_habitat-04.pdf). Peppers were picked because they are [a good source of Vitamin C](https://www.nasa.gov/centers-and-facilities/kennedy/houston-we-have-a-pepper/), a nutrient that breaks down in long-stored packaged food.
 
 APH is a research chamber, not a farm. Open Moon uses it as the source of proven methods: light recipes, closed-chamber environment control, ground-controlled operation and pollination without insects. These would carry over into larger lunar greenhouse racks. Without that heritage, the plan would rely only on ground analogues for fruiting crops.
 

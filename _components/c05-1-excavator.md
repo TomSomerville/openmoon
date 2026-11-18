@@ -12,7 +12,7 @@ spec:
   - {k: "Load per dig cycle", v: "~150 kg (ESTIMATE; IPEx carries up to 30 kg)"}
   - {k: "Excavation rate", v: "200 kg/h per unit target (ESTIMATE; IPEx target is 42 kg/h)"}
   - {k: "Driving", v: "~30 cm/s, 7.5 cm rocks, 15° slopes (IPEx requirements)"}
-  - {k: "Power", v: "Battery, recharged at a dock on the M04 grid"}
+  - {k: "Power", v: "Battery, recharged at a dock on the M04 grid; each charging dock has its own service connection and 120 V DC panel (plan design, DD-009)"}
   - {k: "Control", v: "Supervised autonomy; teleoperated from Earth when needed"}
   - {k: "Life", v: "5 years with yearly service (design goal; IPEx is sized for 11 days)"}
   - {k: "Delivery", v: "~2 t total with docks and spares, medium lander"}
@@ -74,7 +74,7 @@ The excavator digs, carries and dumps regolith. It grades the pad sites and road
 
 **Chassis.** IPEx has four wheels and skid-steers, with no suspension and no steering motors. It is designed to drive at 30 cm/s over 7.5 cm rocks and 15° slopes, and to cover up to 70 km in 11 days<sup class="r">[1](#s1)</sup>.
 
-**Power.** IPEx runs on a battery and docks with a charger at its lander. Its actuators were tested at 47.6 to 58.8 V<sup class="r">[1](#s1)</sup>. Open Moon puts the docks on the M04 grid.
+**Power.** IPEx runs on a battery and docks with a charger at its lander. Its actuators were tested at 47.6 to 58.8 V<sup class="r">[1](#s1)</sup>. Open Moon puts the docks on the M04 grid. Each dock is a rover charger with its own service connection and 120 V DC panel, like every other unit on the grid (plan design, design change DD-009).
 
 **Autonomy.** IPEx needs at least four cameras: a stereo pair for odometry and hazards, a side camera that tracks the lander, and one between the drums. An "auto-dig" routine sets dig depth so the front and rear drums stay balanced<sup class="r">[1](#s1)</sup>. NASA tests showed operators can drive a rover with 4 to 8 s delays<sup class="r">[6](#s6)</sup>. So Earth operators set goals and the robot does the fine control.
 

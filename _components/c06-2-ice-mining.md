@@ -12,6 +12,7 @@ spec:
   - {k: "Mine area", v: "~26 m × 26 m per year at 30 cm depth (ESTIMATE)"}
   - {k: "Working temperature", v: "PSR surfaces 50–120 K (NASA study assumption)"}
   - {k: "Power at mine", v: "~15 kW (ESTIMATE, scaled from NASA study)"}
+  - {k: "Power interface", v: "Water-extraction plant has its own service connection to the M04 grid (UMIC-class step-down to 120 V DC, meter, main breaker) and its own 120 V DC panel; rover chargers likewise (plan design, DD-009)"}
   - {k: "Mass", v: "~3 t including excavator (M06 ESTIMATE)"}
   - {k: "Haul distance", v: "~5 km each way, slopes ~16° (NASA study site)"}
   - {k: "Delivery class", v: "Medium lander"}

@@ -3,16 +3,17 @@ id_code: "C04.1"
 milestone: M04
 order: 1
 title: Fission surface power unit
-summary: "A small nuclear reactor that makes about 40 kW of electricity day and night for ten years. It carries the base through polar darkness that solar towers and storage cannot cover."
+summary: "An LR-1-class nuclear reactor that makes at least 20 kW of electricity day and night for at least five years. It feeds the base power management controller (PMC), which routes its power to the grid or to storage, carrying the base through polar darkness. KRUSTY-class 1 kWe units can serve small remote loads."
 trl: 4
 spec:
-  - {k: "Output", v: "40 kWe net at the user (plan baseline); grid accepts any 20–100 kWe unit"}
-  - {k: "Reactor heat", v: "~175 kWt (Stirling) to ~230 kWt (Brayton), NASA reference designs"}
-  - {k: "Mass", v: "~6.8 t (Stirling) to ~7.5 t (Brayton) incl. 20% growth; older deployable concept ~10 t"}
-  - {k: "Conversion", v: "4 × ~12 kWe Stirling or closed Brayton strings; ≥75% power after first failure"}
-  - {k: "Radiators", v: "~140 m² (Stirling) to ~180 m² (Brayton)"}
+  - {k: "Output", v: "≥20 kWe at 3 kV RMS AC after any single failure (LR-1-class, plan baseline); KRUSTY-class 1 kWe for small loads (DD-002)"}
+  - {k: "Output path", v: "3 kV AC line to the base PMC, which routes power to the grid, to storage, or both (C04.3, DD-003, DD-008); excess to the parasitic load radiator"}
+  - {k: "Reactor heat", v: "Not yet designed for LR-1; NASA 40 kWe references ~175 kWt (Stirling) to ~230 kWt (Brayton)"}
+  - {k: "Mass", v: "<15 t incl. lander adapters (LR-1 cap); NASA 40 kWe references 6.8–7.5 t incl. 20% growth"}
+  - {k: "Conversion", v: "Closed Brayton (LR-1 requirement); KRUSTY-class units use Stirling"}
+  - {k: "Radiators", v: "NASA 40 kWe references ~140 m² (Stirling) to ~180 m² (Brayton)"}
   - {k: "Crew distance", v: "≥1 km behind a 36° shadow shield; ≤5 rem/yr at 1 km"}
-  - {k: "Design life", v: "10 years (NASA reference); ≥5 years (LR-1 draft)"}
+  - {k: "Design life", v: "≥5 years at full power (LR-1); 10 years (NASA 40 kWe reference)"}
   - {k: "Start-up", v: "Remote, about 8 h to full power"}
   - {k: "Delivery", v: "1 heavy cargo lander; reactor pallet stays on the lander"}
 subcomponents:
@@ -23,8 +24,8 @@ subcomponents:
     trl: 4
   - name: Power conversion
     desc: "Turns reactor heat into electricity. Free-piston Stirling engines or closed Brayton turbines, in four independent strings."
-    parts: ["4 × ~12.6 kW Stirling converters (or 4 × ~11.7 kWe Brayton units)", "Linear alternators (Stirling) or 2 kHz three-phase alternators (Brayton)", "Hot-end heat exchangers", "Cold-end coolant interface", "Gas bearings"]
-    tech: "KRUSTY Stirling converters; NASA Glenn Brayton test units"
+    parts: ["Closed Brayton turboalternator strings (LR-1 requirement; NASA 40 kWe reference used 4 × ~11.7 kWe)", "Three-phase alternators on the turbine shaft", "Recuperator and gas cooler", "Hot-end heat exchanger", "Gas bearings"]
+    tech: "NASA Glenn Brayton test units; SR-1 Freedom flight (2028); KRUSTY Stirling converters for KRUSTY-class units"
     trl: 4
   - name: Heat transport
     desc: "Moves heat from the core to the converters without pumps, using sealed sodium heat pipes."
@@ -42,21 +43,22 @@ subcomponents:
     tech: "NASA/DOE reference shield"
     trl: 4
   - name: Control, instrumentation and power management
-    desc: "Runs the reactor and converters by itself, matches load, and steps voltage up for the long cable."
-    parts: ["Neutron and temperature sensors", "Reactor control computer and Ka-band radio", "Stirling or Brayton controllers", "Start-up Li-ion battery (~4 kWh)", "Step-up converters or transformers", "User interface pallet with 120 VDC outputs"]
+    desc: "Runs the reactor and converters by itself, matches load, and steps voltage up for the long cable to the base PMC."
+    parts: ["Neutron and temperature sensors", "Reactor control computer and Ka-band radio", "Brayton (or Stirling) controllers", "Start-up Li-ion battery (~4 kWh)", "Step-up transformers to 3 kV RMS AC", "Command and data link to the PMC (C04.3)"]
     tech: "NASA GRC Stirling controllers; ISS-class PMAD"
     trl: 4
   - name: Deployment and lander interface
-    desc: "Gets the unit off the cargo lander and the user interface out to the grid tie point."
+    desc: "Gets the unit off the cargo lander and the user interface out to the start of the source line to the PMC."
     parts: ["Reactor pallet adapter on lander", "User interface pallet on a sled", "1 km high-voltage cable spool", "Utility rover for towing", "Levelling legs"]
     tech: "NASA DAC3 concept of operations"
     trl: 4
 risks:
-  - {sev: Critical, title: "The US requirement keeps changing (40 kWe Stirling in 2022, ≥100 kWe Brayton in 2025, ≥20 kWe Brayton in the 2026 draft) and no reactor contract exists.", fix: "Specify only the grid interface (power range, voltage, fault behaviour) and buy whichever unit flies first; keep the solar-plus-storage fallback in C04.2 and C04.3."}
+  - {sev: Critical, title: "The US requirement keeps changing (40 kWe Stirling in 2022, ≥100 kWe Brayton in 2025, ≥20 kWe Brayton in the 2026 draft) and no reactor contract exists.", fix: "Plan on the LR-1 minimum of 20 kWe (DD-002); specify only the interface to the PMC (3 kV AC, 0–100% load, fault data) and buy whichever unit flies first; keep the solar-plus-storage fallback in C04.2 and C04.3."}
+  - {sev: High, title: "A KRUSTY-class flight unit does not exist; only a DARPA–Los Alamos ground-test agreement (Oct 2026) is active.", fix: "Use KRUSTY-class units only for small, non-critical loads; do not depend on them for the habitat."}
   - {sev: Critical, title: "Radiation dose to crew if the unit lands or is placed wrongly.", fix: "Land the reactor ≥1 km from the crew zone, inside the shield's 36° shadow; add terrain or berms; monitor dose all the time at the user point."}
   - {sev: High, title: "A converter string fails; the 2022 concept carried no spares, so each lost pair cost about a quarter of output.", fix: "Use four 25% strings with separate radiator loops and controllers, and size the base's essential load below 75% of output."}
   - {sev: High, title: "Lunar dust on hundreds of square metres of radiator could cut heat rejection; the effect is not yet measured.", fix: "Fund NASA's radiator dust tests to completion; place the unit far from landing pads; add 20% radiator area margin."}
-  - {sev: High, title: "Mass growth: the 2022 design hit ~10 t against a 6 t goal.", fix: "Keep the reactor on its lander (the lightest NASA option) and move only the ~1 t user interface pallet."}
+  - {sev: High, title: "Mass growth: the 2022 design hit ~10 t against a 6 t goal, and LR-1 allows up to 15 t.", fix: "Keep the reactor on its lander (the lightest NASA option) and move only the ~1 t user interface pallet; budget 7.5–15 t delivery."}
   - {sev: High, title: "Radiation-hard power switches are rated far below the transmission voltage.", fix: "Use transformers (AC) or stacked low-voltage modules (DC) for step-up; see C04.4."}
   - {sev: Medium, title: "Organic parts in Stirling alternators and superalloys in vacuum may degrade over 10 years.", fix: "Complete the irradiation and metal-vaporisation tests now running at NASA and DOE before flight design freeze."}
   - {sev: Medium, title: "Nuclear launch approval and fuel supply can slip the schedule.", fix: "Start approval paperwork at contract award; size the first two years of the base to run on solar plus storage."}
@@ -68,17 +70,28 @@ sources:
   - {title: "NewSpace Economy: What NASA's SPARC procurement reveals about Lunar Reactor-1 (secondary)", url: "https://newspaceeconomy.ca/2026/09/01/what-does-nasas-sparc-lunar-reactor-procurement-reveal-about-lunar-reactor-1/", date: "Sep 2026"}
   - {title: "NASA: NASA seeks industry feedback on fission surface power", url: "https://www.nasa.gov/centers-and-facilities/glenn/nasa-seeks-industry-feedback-on-fission-surface-power/", date: "Aug 2025"}
   - {title: "Barth & Pike, NASA GRC: Lunar power transmission for fission surface power", url: "https://ntrs.nasa.gov/api/citations/20220002315/downloads/Lunar_power_transmission_concepts_FINAL.pdf", date: "2022"}
+  - {title: "NASA Glenn: SPARC Industry Day presentation (Lunar Reactor-1 requirements)", url: "https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download", date: "Sep 2026"}
 ---
 
 ## What it does
 
-The fission unit is the base's night-time anchor. Polar sites can be dark for up to about 100 hours at a time<sup class="r">[1](#s1)</sup>, and the US reactor draft asks for operation through at least 354 hours of darkness<sup class="r">[5](#s5)</sup>. A reactor of about 40 kWe covers the oxygen pilot plant or the habitat through any shadow, and lets the solar towers handle the daytime peaks.
+{% include decision-note.html id="DD-002" extra="This component was first sized as one 40 kWe-class reactor feeding the grid directly. On 18 November 2026 it changed to an LR-1-class 20 kWe reactor (or KRUSTY-class 1 kWe units for small loads). Its first rule, that the reactor only charges a battery, was later widened by DD-003." %}
+
+{% include decision-note.html id="DD-003" extra="The reactor feeds the power management controller (PMC; called the BMS until DD-008), which decides whether its power goes to the grid, to storage, or both." %}
+
+The fission unit is the base's night-time anchor. Polar sites can be dark for up to about 100 hours at a time<sup class="r">[1](#s1)</sup>, and the US reactor draft asks for operation through at least 354 hours of darkness<sup class="r">[5](#s5)</sup>. An LR-1-class reactor makes at least 20 kWe after any single failure<sup class="r">[8](#s8)</sup>, which is 480 kWh a day (this plan's arithmetic).
+
+**It feeds the PMC.** The 3 kV AC line from the reactor ends at the base power management controller (PMC, C04.3). The PMC sends the power to the grid to meet demand, into storage, or some of each (design changes DD-003 and DD-008). When demand is met and storage is full, the PMC tells the reactor to send its excess power to its parasitic load radiator (PLR). LR-1 is required to accept any load from 0 to 100% of its output and to start up into that radiator<sup class="r">[8](#s8)</sup>, so this needs nothing special from the reactor.
+
+**Two reactor types (DD-002).**
+- **LR-1-class, 20 kWe.** The base reactor. NASA is buying it through SPARC; no design or award yet<sup class="r">[8](#s8)</sup>. See the [Lunar Reactor-1 card](/technology/us-lunar-reactor-1-sparc/).
+- **KRUSTY-class, 1 kWe.** A Kilopower-type Stirling unit for small remote loads, such as a comms or science node. KRUSTY proved the reactor in 2018, but no flight unit is being built<sup class="r">[4](#s4)</sup>. See the [Kilopower / KRUSTY card](/technology/kilopower-krusty-fission-test/).
 
 ## How it works
 
 - **Core.** NASA's 40 kWe concept uses about 20% enriched uranium nitride pellets, sodium–molybdenum heat pipes and a yttrium hydride moderator, at about 250 kWth<sup class="r">[2](#s2)</sup>. KRUSTY proved the basic idea in 2018. It ran a heat-pipe reactor with Stirling converters for 28 hours, at up to 5 kWt and 880 °C fuel temperature, and it followed the converters' load demand on its own<sup class="r">[4](#s4)</sup>.
 - **Heat pipes.** KRUSTY was the first reactor cooled mainly by heat pipes. Its sodium pipes began carrying real power once the core reached about 500 °C<sup class="r">[4](#s4)</sup>.
-- **Stirling or Brayton.** NASA's 2025 reference design compared the two<sup class="r">[3](#s3)</sup>:
+- **Stirling or Brayton.** NASA's 2025 reference design (40 kWe) compared the two<sup class="r">[3](#s3)</sup>:
 
 | | Free-piston Stirling | Closed Brayton |
 |---|---|---|
@@ -89,7 +102,7 @@ The fission unit is the base's night-time anchor. Polar sites can be dark for up
 | Power electronics efficiency | 83% | 90% |
 | Total with 20% growth | 6.8 t | 7.5 t |
 
-Stirling is about 10% lighter. Brayton gives simpler power electronics<sup class="r">[3](#s3)</sup>. NASA's 2025 request and the 2026 Lunar Reactor-1 draft both name closed Brayton<sup class="r">[6](#s6)</sup><sup class="r">[5](#s5)</sup>. NASA rated 10 kWe-class Stirling at TRL 5 and Brayton at TRL 4<sup class="r">[3](#s3)</sup>. Open Moon accepts either.
+Stirling is about 10% lighter. Brayton gives simpler power electronics<sup class="r">[3](#s3)</sup>. NASA's 2025 request and the 2026 Lunar Reactor-1 draft both name closed Brayton<sup class="r">[6](#s6)</sup><sup class="r">[5](#s5)</sup>. NASA rated 10 kWe-class Stirling at TRL 5 and Brayton at TRL 4<sup class="r">[3](#s3)</sup>. The base reactor is therefore Brayton; only KRUSTY-class units use Stirling.
 - **Radiators.** These are polymer composite panels with titanium–water heat pipes, 2.5 × 2 m each, arranged in two wings<sup class="r">[3](#s3)</sup>. An earlier ISS-style design needed 133.4 m² at the pole and 62% more at the equator<sup class="r">[2](#s2)</sup>.
 - **Shield.** A directional shield with a 36° included angle keeps the dose below 5 rem/yr at 1 km<sup class="r">[3](#s3)</sup>. In the 2022 concept, the lithium hydride and tungsten shield weighed 1,250 kg<sup class="r">[2](#s2)</sup>.
 - **Control and power.** Stirling engines need a constant electrical load. The controllers therefore dump unused power into a resistor bank or radiator<sup class="r">[2](#s2)</sup>. A 4 kWh Li-ion battery handles start-up<sup class="r">[2](#s2)</sup>.
@@ -97,7 +110,7 @@ Stirling is about 10% lighter. Brayton gives simpler power electronics<sup class
 
 ## Sizing
 
-NASA 2025 reference masses in kg<sup class="r">[3](#s3)</sup>:
+LR-1 has no published design yet; its cap is 15,000 kg including lander adapters<sup class="r">[8](#s8)</sup>. The best published breakdown is NASA's 2025 40 kWe reference, in kg<sup class="r">[3](#s3)</sup>:
 
 | Item | Brayton | Stirling |
 |---|---|---|
@@ -111,9 +124,9 @@ NASA 2025 reference masses in kg<sup class="r">[3](#s3)</sup>:
 
 Worked numbers:
 
-- **Specific mass (this plan's arithmetic).** 6,820 kg ÷ 40 kWe ≈ 170 kg/kWe. NASA's 2022 figure was 250–270 kg/kW<sup class="r">[1](#s1)</sup>.
+- **Specific mass (this plan's arithmetic).** 6,820 kg ÷ 40 kWe ≈ 170 kg/kWe. NASA's 2022 figure was 250–270 kg/kW<sup class="r">[1](#s1)</sup>. At LR-1's cap, 15,000 kg ÷ 20 kWe = 750 kg/kWe; the plan budgets 7.5–15 t per unit.
 - **Dose at greater distance (ESTIMATE).** Dose falls with 1/r²<sup class="r">[3](#s3)</sup>. At 2 km, the 1 km limit of 5 rem/yr becomes about 1.25 rem/yr. This ignores scatter from the ground.
-- **Cable.** The unit connects to the base over a 3 kV AC, 1 kHz link, NASA's lunar grid baseline and the interface in NASA's 2025 reactor reference design (see C04.4 and design change DD-001).
+- **Cable.** The unit connects over a 3 kV AC link, NASA's lunar grid baseline and LR-1's required output<sup class="r">[8](#s8)</sup>, to the PMC at the base (see C04.3, C04.4 and design changes DD-001, DD-002, DD-003 and DD-008).
 
 ## Testing and qualification
 
@@ -121,11 +134,12 @@ Worked numbers:
 2. **Engineering test unit.** Build a full non-nuclear system with electric heaters in place of the core, as the Lunar Reactor-1 draft requires<sup class="r">[5](#s5)</sup>. Test it in thermal vacuum with radiators and the full cable.
 3. **Nuclear ground test.** Repeat the KRUSTY method at flight scale: zero-power criticals, then a powered run with load-following and loss-of-cooling transients<sup class="r">[4](#s4)</sup>.
 4. **Dust and deployment.** Load radiators with regolith simulant. Practise towing the user interface pallet on slopes up to 10°<sup class="r">[5](#s5)</sup>.
-5. **On the Moon.** Commission it step by step: radiation mapping, power setpoint changes, string shutdown and restart, and day–night transients<sup class="r">[3](#s3)</sup>. M04 exit requires 40 kWe for six months.
+5. **On the Moon.** Commission it step by step: start-up into the parasitic load radiator, radiation mapping, power setpoint changes, string shutdown and restart, and day–night transients<sup class="r">[3](#s3)</sup><sup class="r">[8](#s8)</sup>. Then test the PMC hand-offs: switch between serving the grid and charging storage, fill storage, and check the reactor moves the surplus to its radiator smoothly. M04 exit requires 20 kWe to the PMC for six months.
 
 ## Open questions
 
-- Which converter will the first flight unit use? Brayton alternators can feed the 3 kV AC step-up transformer directly, while Stirling needs an extra converter stage (see C04.4).
+- Will anyone build a flight KRUSTY-class unit, or will small loads need radioisotope or solar power instead?
+- Should a second LR-1-class unit come early, so the base is not dependent on one reactor?
 - How much does dust really reduce radiator performance after years near active landing pads?
 - Can a regolith berm replace part of the 1.4–1.5 t shield, and at what rover effort?
 - What is the best spare strategy: a fifth converter string, or a second smaller reactor later?

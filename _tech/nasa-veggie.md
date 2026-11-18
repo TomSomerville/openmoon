@@ -32,7 +32,7 @@ Astronauts have grown eight kinds of leafy greens in Veggie to eat, and 15 plant
 
 ## Why Open Moon uses it
 
-Veggie supplies fresh leafy greens in milestone M10 (Food). It is step one of that milestone: a Veggie-class unit inside the M09 habitat gives fresh greens before the larger greenhouses are built. Fresh crops add nutrients and variety to a packaged diet whose vitamins degrade over long missions, and caring for plants may help crew morale ([NASA fact sheet](https://www.nasa.gov/wp-content/uploads/2023/03/veggie-fact-sheet-508.pdf)). Early analog crews were uniformly positive about having the plants ([Stutte et al.](https://ntrs.nasa.gov/citations/20110014431)).
+Veggie supplies fresh leafy greens in milestone M10 (Food). It is step one of that milestone: a Veggie-class unit inside the habitat, once the first crew is aboard (M09), gives fresh greens before the larger greenhouses are built. Fresh crops add nutrients and variety to a packaged diet whose vitamins degrade over long missions, and caring for plants may help crew morale ([NASA fact sheet](https://www.nasa.gov/wp-content/uploads/2023/03/veggie-fact-sheet-508.pdf)). Early analog crews were uniformly positive about having the plants ([Stutte et al.](https://ntrs.nasa.gov/citations/20110014431)).
 
 It is the only crop unit in the plan with years of flight use, low power and simple operation. Without it, the first crews would rely only on stored food until the greenhouses work. Lessons from Veggie on watering, food safety and crew time also shape the later, larger systems.
 

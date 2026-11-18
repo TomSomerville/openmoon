@@ -3,18 +3,20 @@ id_code: "C08.2"
 milestone: M08
 order: 2
 title: Life support system
-summary: "ISS-derived equipment that keeps the habitat air breathable and recycles water for four crew, topped up with oxygen and water from the M06 pilot plants."
+summary: "ISS-derived equipment that keeps the habitat air breathable and recycles water for 6 people continuously and 9 at handover peaks, topped up with oxygen and water from the M06 pilot plants."
 trl: 7
 spec:
-  - {k: "Crew supported", v: "4 (design point), 30-day stays"}
+  - {k: "Crew supported", v: "6 continuous, 9 for ~2 weeks at each handover (DD-006); 6.5-month tours"}
+  - {k: "Layout", v: "Three strings, one per habitat module, each sized for 3 people (plan design; placement set with the module design, DD-007)"}
   - {k: "Cabin atmosphere", v: "8.2 psia, 34% O₂ (NASA exploration atmosphere; design choice)"}
-  - {k: "O₂ demand", v: "3.58 kg/day for 4 crew (BVAD)"}
-  - {k: "O₂ generation", v: "~5.4 kg/day nominal (ISS OGA class, 12 lbm/day)"}
-  - {k: "CO₂ removal", v: "4.6 kg/day at 2 torr (4BCO2 class); 2 units"}
+  - {k: "O₂ demand", v: "5.37 kg/day for 6, 8.06 kg/day for 9 (BVAD)"}
+  - {k: "O₂ generation", v: "~5.4 kg/day nominal each (ISS OGA class, 12 lbm/day); 3 units"}
+  - {k: "CO₂ removal", v: "4.6 kg/day at 2 torr each (4BCO2 class); 3 units"}
   - {k: "Water recovery", v: "≥90%; 98% shown on ISS with brine processor"}
   - {k: "O₂ recovery from CO₂", v: "~50% (Sabatier, methane vented)"}
-  - {k: "Mass", v: "~2 t installed (ESTIMATE)"}
+  - {k: "Mass", v: "~2 t per string installed (ESTIMATE, the earlier 4-crew figure, now a placeholder)"}
   - {k: "Power", v: "Part of the 20–50 kW habitat load (breakdown TBD)"}
+  - {k: "Power interface", v: "Inside each module: branch circuits on that module's 120 V DC panel. Any life-support processing outside the habitats has its own service connection and panel (plan design, DD-009)"}
 subcomponents:
   - name: Atmosphere control and monitoring
     desc: "Holds cabin pressure and oxygen fraction, adds nitrogen to make up leaks, and measures the main gases."
@@ -53,12 +55,12 @@ subcomponents:
     trl: 8
 risks:
   - {sev: Critical, title: "Fire risk is higher in a 34% oxygen atmosphere", fix: "Strict materials control, ISS-class smoke detection in every ventilation intake, water-mist or CO₂ extinguishers, masks for every crew member, and the option to run at a lower O₂ fraction"}
-  - {sev: High, title: "CO₂ removal runs close to capacity (4.34 kg/day made vs 4.6 kg/day removed at 2 torr)", fix: "Fly two 4BCO2-class units and run both when crew are aboard; LiOH canisters as an emergency backup"}
+  - {sev: High, title: "At a 9-person handover, CO₂ removal runs at ~71% of three units' capacity at 2 torr (9.77 kg/day made vs 13.8 kg/day), and losing one unit leaves 9.2 kg/day, below the load", fix: "Fly three 4BCO2-class units; if one fails during a handover, accept up to 3 torr (6.8 kg/day per unit) or shorten the handover; LiOH canisters as an emergency backup"}
   - {sev: High, title: "ISS CO₂ removal has cost more crew hours than any other ISS system, mostly from zeolite dust", fix: "Use the 4BCO2 design, which targets 3 years with no unplanned maintenance; carry spare beds and valves"}
   - {sev: High, title: "Urine processor recovery fell from 85% design to 70% in service on ISS", fix: "Add the Brine Processor Assembly; size water reserves on 90% recovery, not 98%"}
   - {sev: High, title: "Lunar dust in the cabin clogs fans, filters and valves", fix: "Dust lock and suitports (C08.3); extra pre-filters on all air inlets; scheduled filter changes"}
   - {sev: Medium, title: "Sabatier vents methane, so only ~50% of O₂ is recovered from CO₂", fix: "Accept on the Moon; make up oxygen with M06 regolith oxygen; consider methane pyrolysis later"}
-  - {sev: Medium, title: "Uncrewed 3-month run can hide failures that only appear under crew load", fix: "Simulate crew load with CO₂, humidity and water injection during the uncrewed run"}
+  - {sev: Medium, title: "Uncrewed 3-month run can hide failures that only appear under crew load", fix: "Simulate loads for 6 people, and for 9 for at least 2 weeks, with CO₂, humidity and water injection during the uncrewed run"}
 sources:
   - {title: "NASA BVAD Rev2 (NASA/TP-2015-218570): Life Support Baseline Values and Assumptions", url: "https://ntrs.nasa.gov/citations/20210024855", date: "Feb 2022"}
   - {title: "NASA: Environmental Control and Life Support Systems reference", url: "https://www.nasa.gov/reference/environmental-control-and-life-support-systems-eclss", date: "Apr 2025"}
@@ -72,9 +74,11 @@ sources:
   - {title: "NASA NTRS 20220015741: Medical lessons learned from the Exploration Atmospheres study (8.2 psia, 34% O₂)", url: "https://ntrs.nasa.gov/citations/20220015741", date: "2022"}
 ---
 
+{% include decision-note.html id="DD-006" extra="Life support was sized for 4 crew on 30-day sorties. It is now sized for 6 people all the time and 9 for about two weeks at each handover, on 6.5-month tours." %}
+
 ## What it does
 
-Life support keeps four people alive inside the habitat (C08.1). It controls pressure and gas mix, makes oxygen, removes CO₂ and trace gases, recycles water, and detects and fights fire. Every major unit has flown on the ISS. The work in M08 is to package them for 1/6 g, dust and a 30-day crew.
+Life support keeps the crew alive inside the three connected habitat modules (C08.1). It controls pressure and gas mix, makes oxygen, removes CO₂ and trace gases, recycles water, and detects and fights fire. Every major unit has flown on the ISS. The work in M08 is to package them for 1/6 g, dust, **6 people continuously and 9 at handover peaks** (DD-006), and to run them uncrewed before the first crew lands.
 
 ## How it works
 
@@ -86,40 +90,40 @@ Life support keeps four people alive inside the habitat (C08.1). It controls pre
 - **Sabatier.** It turns CO₂ and hydrogen into water and methane. Venting the methane loses hydrogen, so only about **50%** of the oxygen in CO₂ comes back<sup class="r">[7](#s7)</sup>.
 - **Fire.** ISS uses photoelectric smoke detectors in the ventilation intakes and portable extinguishers holding 6 lb of CO₂ at 850 psi that empty in 45 s<sup class="r">[9](#s9)</sup>.
 
-## Sizing: daily mass balance, 4 crew
+## Sizing: daily mass balance, 6 and 9 people
 
-Per-person values from NASA BVAD Rev2, Table 3-31 and Table 4-20 (early planetary base)<sup class="r">[1](#s1)</sup>, multiplied by 4.
+Per-person values from NASA BVAD Rev2, Table 3-31 and Table 4-20 (early planetary base)<sup class="r">[1](#s1)</sup>, multiplied by 6 and by 9 (this plan's arithmetic).
 
-| Stream | Per person (kg/day) | 4 crew (kg/day) |
-|---|---|---|
-| O₂ consumed | 0.895 | 3.58 |
-| CO₂ produced | 1.085 | 4.34 |
-| Drinking water | 3.217 | 12.87 |
-| Water in food | 0.760 | 3.04 |
-| Food solids | 0.800 | 3.20 |
-| Hygiene water (flush, wash, shower) | 1.98 | 7.92 |
-| Urine water out | 1.420 | 5.68 |
-| Breath and sweat water out | 2.946 | 11.78 |
-| Metabolic water made | 0.490 | 1.96 |
+| Stream | Per person (kg/day) | 6 people (kg/day) | 9 people (kg/day) |
+|---|---|---|---|
+| O₂ consumed | 0.895 | 5.37 | 8.06 |
+| CO₂ produced | 1.085 | 6.51 | 9.77 |
+| Drinking water | 3.217 | 19.30 | 28.95 |
+| Water in food | 0.760 | 4.56 | 6.84 |
+| Food solids | 0.800 | 4.80 | 7.20 |
+| Hygiene water (flush, wash, shower) | 1.98 | 11.88 | 17.82 |
+| Urine water out | 1.420 | 8.52 | 12.78 |
+| Breath and sweat water out | 2.946 | 17.68 | 26.51 |
+| Metabolic water made | 0.490 | 2.94 | 4.41 |
 
-What the equipment must do (ESTIMATE, from the table):
+What the equipment must do (ESTIMATE, from the table; three strings, one per module):
 
-- **OGA** load 3.58 ÷ 5.44 = 66%. Water feed 3.58 × 9/8 = **4.03 kg/day**.
-- **4BCO2** load 4.34 ÷ 4.6 = 94% at 2 torr. Too tight for one unit, so two are flown.
-- **Sabatier** gets 3.58 ÷ 8 = 0.45 kg/day of hydrogen. That reduces about 2.4 kg of CO₂ and returns about **2.0 kg/day** of water, roughly half the OGA feed.
-- **Water make-up** (conservative, ignoring water from food and metabolism): (1 − 0.90) × (12.87 + 7.92) + (4.03 − 2.0) ≈ **4.1 kg/day**, or ~123 kg for a 30-day sortie. Open loop would need ~25 kg/day, or ~750 kg.
+- **OGA.** 6 people need 5.37 kg/day: 33% of three units' 16.3 kg/day nominal, or one unit at 99%. 9 people need 8.06 kg/day: 49% of three units. One unit can run up to 20.4 lbm/day (~9.3 kg)<sup class="r">[5](#s5)</sup>. Water feed is 5.37 × 9/8 = **6.04 kg/day** for 6.
+- **4BCO2.** 6 people make 6.51 kg/day: 47% of three units at 2 torr (13.8 kg/day), and 71% if one unit is down. 9 people make 9.77 kg/day: 71% of three units.
+- **Sabatier** gets 5.37 ÷ 8 = 0.67 kg/day of hydrogen for 6 people and returns about **3.0 kg/day** of water, roughly half the OGA feed.
+- **Water make-up** for 6 (conservative, ignoring water from food and metabolism): (1 − 0.90) × (19.30 + 11.88) + (6.04 − 3.0) ≈ **6.2 kg/day**, or ~1.2 t per 198-day tour. For 9 people it is about **9.2 kg/day**. Open loop would need ~37 kg/day for 6.
 
 ## Testing and qualification
 
-1. **Integrated ground test** of the full system in a closed chamber at 8.2 psia, 34% O₂, with four people for 30 days.
+1. **Integrated ground test** of the full system in a closed chamber at 8.2 psia, 34% O₂, with six people for several weeks and nine for two weeks.
 2. **Dust test.** Inject lunar simulant into the air loop and measure filter and fan life.
 3. **1/6 g check.** Fly the water separators and Sabatier on parabolic flights to prove gas-liquid separation works in partial gravity.
-4. **On the Moon, uncrewed.** Run for 3 months with simulated crew loads (CO₂, humidity, water) before the first crew.
-5. **Sortie 1.** Measure the real balance against this table; adjust M06 top-up rates.
+4. **On the Moon, uncrewed.** Run for 3 months with simulated loads for 6 people, and 9 for at least 2 weeks (CO₂, humidity, water), before the first crew.
+5. **First crew.** Measure the real balance against this table; adjust M06 top-up rates before the first handover.
 
 ## Open questions
 
-- Is 8.2 psia / 34% O₂ safe enough for fire, or should early sorties run at a higher pressure?
+- Is 8.2 psia / 34% O₂ safe enough for fire, or should the first crews run at a higher pressure?
 - How do the urine and water processors behave in 1/6 g? ISS data is all from microgravity.
 - How much nitrogen leaks per day from the habitat and dust lock? This sets the nitrogen still shipped from Earth.
 - Can M06 water meet drinking standards without extra treatment?

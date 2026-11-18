@@ -2,7 +2,7 @@
 id_code: M12
 order: 12
 title: Manufacturing and construction from regolith
-phase: 4
+phase: 3
 window: "2037–2044"
 summary: Make metals, glass, solar cells, building blocks and spare parts on the Moon, so new structures and repairs need little from Earth.
 objective: "Produce at least 80% of new construction mass and at least 50% of spare-part mass (by mass, not by value) from lunar materials."

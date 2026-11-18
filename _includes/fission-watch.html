@@ -1,0 +1,12 @@
+{% assign fw = site.data.fission_watch %}
+<div class="sec-h" id="things-to-watch">Things to watch · fission power worldwide · {{ fw.items | size }} items</div>
+<p style="font-size:13px;color:var(--dim);margin:0 0 10px">Every space fission power and propulsion project, programme and policy we could find, checked {{ fw.checked }}. Each entry says only what its source says.</p>
+<div class="tablewrap"><table class="data">
+  <thead><tr><th>Project</th><th>Type and power</th><th>Status and next step</th><th>Sources</th></tr></thead>
+  <tbody>{% for w in fw.items %}<tr>
+    <td><strong>{{ w.name }}</strong><br><span style="color:var(--dim);font-size:12.5px">{{ w.org }}</span></td>
+    <td>{{ w.type }}<br><span style="color:var(--dim);font-size:12.5px">{{ w.power }}</span></td>
+    <td>{{ w.status }}{% if w.flag != "" %} <span class="tag warn">{{ w.flag }}</span>{% endif %}</td>
+    <td>{% for s in w.sources %}<a href="{{ s.u }}">{{ s.t }}</a>{% unless forloop.last %}<br>{% endunless %}{% endfor %}</td>
+  </tr>{% endfor %}</tbody>
+</table></div>
