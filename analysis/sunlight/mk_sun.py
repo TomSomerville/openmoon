@@ -9,6 +9,9 @@ from PIL import Image, ImageDraw, ImageFont
 import rasterio
 from rasterio.windows import from_bounds
 ILL, ROIDIR, OUTDIR = sys.argv[1], sys.argv[2], sys.argv[3]
+import csv as _csv
+_est = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sun_at_height_estimate.csv')
+RED = [(float(r['x_m']), float(r['y_m'])) for r in _csv.DictReader(open(_est)) if float(r['est_10m_pct']) > 90] if os.path.exists(_est) else []
 font = lambda sz: ImageFont.truetype(FB, int(sz))
 fx0, fy1 = px2m(292, 518); fx1, fy0 = px2m(953, 989); B = (fx0, fy0, fx1, fy1); RES = 60
 with rasterio.open(ILL) as r:
@@ -22,7 +25,7 @@ base = np.stack([hv * 255] * 3, -1)
 m2p = lambda x, y: ((x - B[0]) / RES, (B[3] - y) / RES)
 UP = 2  # draw at 2x for crisp labels
 
-def decorate(im, title, legend_rows, legend_title, ramp=None, numbers=(), dots=()):
+def decorate(im, title, legend_rows, legend_title, ramp=None, numbers=(), dots=(), red=()):
     im = im.resize((W * UP, H * UP), Image.NEAREST); dr = ImageDraw.Draw(im); k = W * UP / 1400
     F, Fs = font(24 * k), font(16 * k)
     q = lambda x, y: (m2p(x, y)[0] * UP, m2p(x, y)[1] * UP)
@@ -48,6 +51,9 @@ def decorate(im, title, legend_rows, legend_title, ramp=None, numbers=(), dots=(
     for X, Y, c in sorted(dots, key=lambda d: d[2] == (255, 140, 0)):
         x, y = q(X, Y); r = (9 if c == (255, 140, 0) else 6) * k
         dr.ellipse((x - r, y - r, x + r, y + r), fill=c, outline=(0, 0, 0), width=max(1, int(1.5 * k)))
+    for X, Y in red:
+        x, y = q(X, Y); r = 12 * k
+        dr.ellipse((x - r, y - r, x + r, y + r), fill=(230, 0, 0), outline='white', width=max(2, int(2.5 * k)))
     for n, (X, Y) in enumerate(numbers, 1):
         x, y = q(X, Y); dr.text((x + 10 * k, y - 10 * k), str(n), font=font(20 * k), fill='white', anchor='lb', stroke_width=4, stroke_fill=(150, 80, 0))
     hgt = int((len(legend_rows) * 30 + 50 + (40 if ramp else 0)) * k)
@@ -62,6 +68,7 @@ def decorate(im, title, legend_rows, legend_title, ramp=None, numbers=(), dots=(
         yy += 50 * k
     for c, t in legend_rows:
         if c is None: dr.ellipse((lx + 10 * k, yy, lx + 28 * k, yy + 18 * k), outline=(255, 0, 255), width=int(3 * k))
+        elif c == 'red': dr.ellipse((lx + 8 * k, yy - 2 * k, lx + 30 * k, yy + 20 * k), fill=(230, 0, 0), outline='white', width=int(2 * k))
         else: dr.rectangle((lx, yy, lx + 40 * k, yy + 18 * k), fill=c)
         dr.text((lx + 50 * k, yy + 9 * k), t, font=Fs, fill='white', anchor='lm'); yy += 30 * k
     L = 10000 / RES * UP; sx = W * UP - L - 30 * k; sy = H * UP - 30 * k
@@ -101,7 +108,7 @@ for sp in spots:
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'vsat_spots.csv'), 'w') as fh:
     fh.write('sunlit_pct,lat,lon_east,x_m,y_m\n')
     for sp in spots: fh.write('%.1f,%.4f,%.3f,%.0f,%.0f\n' % sp)
-rows = [((255, 140, 0), 'Sunlit ≥80% of the time, slope ≤15° (orange dots)'), ((255, 230, 0), 'Sunlit 70–80%, slope ≤15° (yellow dots)'), (None, 'NASA best-lit regions of interest: Sites 1, 4, 7, 11 (PGDA product 78)')]
+rows = [('red', 'ESTIMATE: sunlit >90% at 10 m height (Open Moon calculation)'), ((255, 140, 0), 'Sunlit ≥80% of the time, slope ≤15° (orange dots)'), ((255, 230, 0), 'Sunlit 70–80%, slope ≤15° (yellow dots)'), (None, 'NASA best-lit regions of interest: Sites 1, 4, 7, 11 (PGDA product 78)')]
 decorate(im, 'Focus area: VSAT sites, sunlit ≥70% (yellow) and ≥80% (orange) at ground level, slope ≤15°. Sunlight: NASA GSFC PGDA; slope: NASA LOLA LDSM.',
-         rows, 'VSAT sites (ground-level sunlight; a 10 m mast sees more)', numbers=sites, dots=dots).save(os.path.join(OUTDIR, 'focus-vsat-candidates.jpg'), quality=85, optimize=True)
+         rows, 'VSAT sites (ground-level sunlight; a 10 m mast sees more)', numbers=sites, dots=dots, red=RED).save(os.path.join(OUTDIR, 'focus-vsat-candidates.jpg'), quality=85, optimize=True)
 for t in (70, 80, 85): print('sunlit>=%d%% & slope<=15: %.1f km2' % (t, ((il >= t) & ok).sum() * RES * RES / 1e6))
