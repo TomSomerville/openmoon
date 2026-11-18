@@ -166,3 +166,14 @@ footer.foot a{color:var(--dim)}
 .lbox p{color:#cfe3ea;font-size:13px;margin:10px 0 0;max-width:900px;text-align:center}
 .lbx{position:absolute;top:10px;right:14px;background:none;border:0;color:#fff;font-size:34px;line-height:1;cursor:pointer}
 .ddlist{font-size:14px;padding-left:18px}.ddlist li{margin:3px 0}
+
+/* tab panel: text left, stacked images right */
+.tabpanels>.tabpanel{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:18px;align-items:start}
+.tp-text>:first-child{margin-top:8px}
+.tp-media p{display:block!important}
+.tp-media img{width:100%!important;max-width:none;margin:8px 0 0}
+.tp-media .tp-cap{font-size:12.5px;line-height:1.45;color:var(--dim);margin:6px 0 0}
+.tp-text table{font-size:14px}
+@media(max-width:760px){.tabpanels>.tabpanel{grid-template-columns:1fr}.tp-media{display:grid;grid-template-columns:1fr 1fr;gap:8px}.tp-media p{margin:0}.tp-media .tp-cap{grid-column:1/-1}}
+.tp-media img{height:190px;object-fit:contain;background:#0b1418}
+@media(max-width:760px){.tp-media img{height:150px}}
