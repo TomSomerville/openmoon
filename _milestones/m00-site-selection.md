@@ -268,38 +268,53 @@ The 16 sites (best single 60 m pixel in each, ground level, slope ≤15°), from
 - **Spread out for shadows:** no spot is lit all the time. Two ridge points about 8 km apart are lit a combined ~94 % of the year (see the sunlight table above), so the plan spreads VSATs over several of these sites.
 - **Landing vs. set-down:** VSAT sites can be up to 15°, but the lander carrying each VSAT still lands on 8° or less (DD-011) and the VSAT moves to its site.
 
-### Multiple VSAT placements (ESTIMATE)
+### Light over time (ESTIMATE)
 
-No single spot is lit all the time, so the base needs several VSATs placed where their dark periods do not line up. NASA publishes only average sunlight, not when each spot is lit, so Open Moon calculated light and shadow over time itself (**ESTIMATE**, this plan's own calculation). For about 1,860 spots in the focus area it traced the horizon over NASA's LOLA terrain<sup class="r">[18](#s18)</sup> and tested it against the Sun's position every 2 hours for 18.6 years, using NASA/JPL's DE421 ephemeris. Its ground-level averages match NASA's illumination map<sup class="r">[30](#s30)</sup> within 1.6 points on average at 60 random test points (RMS 2.2 points). A spot counts as lit when at least half the Sun's disc is above its horizon. All figures are at ground level; a 10 m mast sees more sun.
+Sunlight and shadow across the focus area over one lunar day (about 29.5 Earth days, one frame every 12 hours), in the best and the worst season for the south pole. Open Moon's own shadow calculation over NASA's LOLA terrain<sup class="r">[18](#s18)</sup> with Sun positions from NASA/JPL's DE421 ephemeris (**ESTIMATE**). Dots are the VSAT sites above.
 
-The power rule DD-013 puts every VSAT within 3 km of cable run of the power management centre (PMC). The best sets were found both within that rule (set A, green) and with no distance limit (set B, blue):
+**Best season: 23 October – 21 November 2027**, with the Sun at its most southerly.
 
-![Best multi-VSAT sets in the focus area: set A within 3 km of one PMC on the Connecting ridge, set B spread across the Shackleton and de Gerlache rims]({{ '/assets/sites/focus-vsat-sets.jpg' | relative_url }})
+![Animation of sunlight and shadow over the Open Moon focus area during one lunar day in October–November 2027]({{ '/assets/sites/focus-sunlight-summer-2027.gif' | relative_url }})
 
-**Set A: within 3 km of one PMC (DD-013).** The best PMC location is on the Connecting ridge at 89.438°S, 137.65°W, beside LROC's ridge summit.
+**Worst season: 12 April – 12 May 2027**, with the Sun at its most northerly. The de Gerlache rim and the ridge are lit, while Shackleton's rim stays dark for days.
 
-| VSATs | Time at least one is lit | Longest time all are dark | Spots added (sunlit alone, ESTIMATE) | Distance to PMC |
+![Animation of sunlight and shadow over the Open Moon focus area during one lunar day in April–May 2027]({{ '/assets/sites/focus-sunlight-winter-2027.gif' | relative_url }})
+
+### Multiple VSAT placements on the de Gerlache rim (ESTIMATE)
+
+No single spot is lit all the time, so the base needs several VSATs placed where their dark periods do not line up. NASA publishes only average sunlight, not when each spot is lit, so Open Moon calculated light and shadow over time itself (**ESTIMATE**, this plan's own calculation). For 1,172 spots on and around the de Gerlache rim it traced the horizon over NASA's LOLA terrain<sup class="r">[18](#s18)</sup> and tested it against the Sun's position every 2 hours for 18.6 years, using NASA/JPL's DE421 ephemeris. The method matches NASA's illumination map<sup class="r">[30](#s30)</sup> within 1.6 points on average at 60 random test points (RMS 2.2 points), but for the best-lit rim spots it reads several points lower than NASA's map (for example 70.8 % against 82.7 % at site 5). So **use these figures to compare layouts; the true values are likely somewhat higher.** A spot counts as lit when at least half the Sun's disc is above its horizon. All figures are at ground level; a 10 m mast sees more sun.
+
+The standard power run is 3 km of cable (DD-013); extended runs of up to 10 km are allowed at about 10–15% transmission loss (DD-014), so VSATs on extended runs can be up to 20 km apart. Straight-line distances are used here; real cable routes will be somewhat longer.
+
+![VSAT layouts on the de Gerlache rim: option 1 with the base at site 5, option 2 with the PMC between site 5 and the crater's east rim]({{ '/assets/sites/de-gerlache-vsat-sets.jpg' | relative_url }})
+
+**Option 1: base and PMC at site 5, VSATs within 10 km of it (orange, C1–C4).** Spots more than 3 km from the PMC need extended runs (DD-014).
+
+| VSATs | Time at least one is lit | Longest time all are dark | Spot added (sunlit alone, ESTIMATE) | Distance from site 5 |
 |---|---|---|---|---|
-| 1 | 82.7 % | 98 h (4.1 days) | best single spot: Shackleton west rim, 89.6857°S, 163.04°W (82.7 %) | — |
-| 2 | 92.7 % | 116 h (4.8 days) | A1 Connecting ridge, 89.4745°S, 137.53°W (81.9 %) + A2 89.3807°S, 140.91°W (59.6 %) | 1.1 km, 2.0 km |
-| 3 | 93.0 % | 116 h (4.8 days) | + A3 89.4176°S, 134.94°W (48.3 %) | 1.0 km |
-| 4 | 93.2 % | 98 h (4.1 days) | + A4 89.4376°S, 138.50°W (52.2 %) | 0.25 km |
+| 1 | 72.4 % | 336 h (14 days) | best single spot: 88.4651°S, 67.85°W (72.4 %) | 6.1 km |
+| 2 | 84.2 % | 142 h (5.9 days) | C1 88.3745°S, 69.29°W (56.3 %) + C2 88.6812°S, 68.11°W (62.5 %) | 8.8 km, 0.5 km |
+| 3 | 84.7 % | 142 h (5.9 days) | + C3 88.3931°S, 68.66°W (66.9 %) | 8.3 km |
+| 4 | 85.0 % | 142 h (5.9 days) | + C4 88.9562°S, 74.55°W (40.2 %) | 9.6 km |
 
-Set A spots are 1.2–3.0 km apart.
+C1 and C2 are 9.4 km apart; the four spots are 0.8–18.0 km apart. Keeping every VSAT on a standard 3 km run instead gives 84.0 % with two VSATs and 84.5 % with four, with a longest blackout of 148 h.
 
-**Set B: no distance limit.**
+**Option 2: PMC between site 5 and the crater's east rim (blue, D1–D4).** The PMC sits inside the crater rim at about 88.88°S, 80.3°W, so a VSAT near site 5 and one on the east rim are each within 10 km of it. All four spots need extended runs (DD-014).
 
-| VSATs | Time at least one is lit | Longest time all are dark | Spots added (sunlit alone, ESTIMATE) | Distance apart |
+| VSATs | Time at least one is lit | Longest time all are dark | Spot added (sunlit alone, ESTIMATE) | Distance to PMC / to site 5 |
 |---|---|---|---|---|
-| 1 | 82.7 % | 98 h (4.1 days) | B1 Shackleton west rim, 89.6857°S, 163.04°W (82.7 %) | — |
-| 2 | 96.5 % | 66 h (2.8 days) | + B2 de Gerlache rim (NASA Site 11), 88.6652°S, 68.42°W (77.1 %) | B1–B2 42.3 km |
-| 3 | 98.9 % | 34 h (1.4 days) | + B3 by the Peak near Shackleton, 88.7440°S, 123.78°E (51.0 %) | B1–B3 36.5 km, B2–B3 78.1 km |
-| 4 | 99.3 % | 26 h (1.1 days) | + B4 ridge south of Spudis, 89.2699°S, 113.12°W (57.0 %) | B4 to B1/B2/B3: 17.6 / 29.2 / 53.5 km |
+| 2 | 87.5 % | 102 h (4.3 days) | D1 near site 5, 88.7035°S, 67.52°W (40.6 %) + D2 east rim, 89.0032°S, 96.55°W (61.0 %) | 9.8 km / 1.3 km; 9.8 km / 19.9 km |
+| 3 | 88.8 % | 102 h (4.3 days) | + D3 east rim, 89.0147°S, 92.47°W (66.4 %) | 7.8 km / 18.0 km |
+| 4 | 89.2 % | 100 h (4.2 days) | + D4 by site 5, 88.6812°S, 68.11°W (62.5 %) | 9.8 km / 0.5 km |
 
-- **Close spots share shadows.** Within 3 km, the 3rd and 4th VSAT add only 0.3 and 0.2 points, because nearby spots see almost the same horizon. Their main value is more power, not more hours of sun.
-- **Spread-out spots fill each other's gaps.** Spots on opposite sides of the craters (set B) reach 99.3 % with four VSATs and cut the longest blackout to about a day, but they are 18–78 km apart, which DD-013 does not allow.
-- **No set reaches 100 %.** Even set B has short periods when every spot is dark, so storage (and fission power, M04) is still needed.
-- **The trade-off for the plan:** staying within DD-013 means planning for blackouts of up to about 5 days; relaxing it for longer power runs would cut them to about a day. Any such change would be a new design decision.
+D1 and D2 are 19.5 km apart; the four spots are 0.8–19.7 km apart.
+
+- **Pairing across the crater works best.** A VSAT near site 5 and one on the east rim, where the ridge meets de Gerlache (site 10 on the map above), are lit at different times. Option 2 reaches 89.2 % with four VSATs and cuts the longest blackout to about 4 days.
+- **VSATs close together share shadows.** In option 1 the 3rd and 4th VSAT add only 0.5 and 0.3 points, because nearby spots see almost the same horizon. They add power, not hours of sun.
+- **The base can still sit at site 5 in option 2** if the PMC is placed separately: site 5 is about 10 km from that PMC, so it connects through the distribution grid. Where the PMC goes is a design choice for M04.
+- **No layout reaches 100 %.** Even option 2 leaves about 11 % of the time with every VSAT dark, in stretches of up to about 4 days, so storage and fission power (M04) are still needed.
+
+The analysis scripts and full results are in `analysis/sunlight/multi/`.
 
 ## Hydrogen
 
