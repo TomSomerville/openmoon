@@ -286,24 +286,6 @@ window.addEventListener('hashchange',open);open();})();
 
 {% include decision-note.html id="DD-020" %}
 
-#### Room to grow
-
-Flat ground (8° or less) around the base, measured by Open Moon from NASA's LOLA slope map at 10 m per pixel<sup class="r">[10](#s10)</sup>:
-
-| Area | Flat ground |
-|---|---|
-| Connected patch the base sits in | **4.8 km²** |
-| All flat ground within 2 km | 3.8 km² |
-| All flat ground within 3 km | 5.4 km² |
-| All flat ground within 5 km | 10.1 km² |
-| Within 5 km, in patches of at least 0.05 km² that can be reached over ground of 15° or less | 6.4 km² |
-
-**For scale** (this plan's arithmetic): the 4.8 km² patch is about the size of **Pitcairn Island** (4.5 km²)<sup class="r">[25](#s25)</sup>, about **2.4 times Monaco** (2.02 km²) and about **10 times Vatican City** (0.49 km²)<sup class="r">[26](#s26)</sup>. The 10.1 km² within 5 km is about 2 Pitcairns, 5 Monacos or 20 Vatican Cities.
-
-The base can grow over its own 4.8 km² patch without crossing steeper ground. Beyond it, about 6–10 km² more lies within 5 km, in separate patches linked by drivable slopes. B3 stands off the patch, so none of it is lost to a pad keep-out (DD-021).
-
-![Flat ground around the primary base: the connected 4.8 km² patch and other ground at 8° or less within 2, 3 and 5 km]({{ '/assets/sites/primary-expansion.jpg' | relative_url }})
-
 <!--SUNLIT-->
 
 ### Backup: Connecting ridge by Shackleton
@@ -321,3 +303,21 @@ The base can grow over its own 4.8 km² patch without crossing steeper ground. B
 - Shackleton's ice evidence is mixed.
 - China's Chang'e-7 targets the Shackleton area.
 - No detailed layout yet.
+
+## Room to grow at the primary site
+
+Flat ground (8° or less) around the base, measured by Open Moon from NASA's LOLA slope map at 10 m per pixel<sup class="r">[10](#s10)</sup>:
+
+| Area | Flat ground |
+|---|---|
+| Connected patch the base sits in | **4.8 km²** |
+| All flat ground within 2 km | 3.8 km² |
+| All flat ground within 3 km | 5.4 km² |
+| All flat ground within 5 km | 10.1 km² |
+| Within 5 km, in patches of at least 0.05 km² that can be reached over ground of 15° or less | 6.4 km² |
+
+**For scale** (this plan's arithmetic): the 4.8 km² patch is about the size of **Pitcairn Island** (4.5 km²)<sup class="r">[25](#s25)</sup>, about **2.4 times Monaco** (2.02 km²) and about **10 times Vatican City** (0.49 km²)<sup class="r">[26](#s26)</sup>. The 10.1 km² within 5 km is about 2 Pitcairns, 5 Monacos or 20 Vatican Cities.
+
+The base can grow over its own 4.8 km² patch without crossing steeper ground. Beyond it, about 6–10 km² more lies within 5 km, in separate patches linked by drivable slopes. B3 stands off the patch, so none of it is lost to a pad keep-out (DD-021).
+
+![Flat ground around the primary base: the connected 4.8 km² patch and other ground at 8° or less within 2, 3 and 5 km]({{ '/assets/sites/primary-expansion.jpg' | relative_url }})
