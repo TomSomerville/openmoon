@@ -1,7 +1,7 @@
-/* Open Moon: Glass Cockpit theme. Layout from _templates_src/base.css. */
-:root{--bg:#0b1117;--sheet:#101820;--ink:#d6e2ec;--dim:#7890a3;--line:#22313f;--hi:#38d4f0;--hi2:#7cf29a;--warn:#ffb020;--bad:#ff4d4d;
+/* Open Moon: Glass Cockpit layout, Cockpit Soft colour scheme. */
+:root{--bg:#223039;--sheet:#2a3a46;--ink:#e8ebee;--dim:#a9b4bc;--line:#3d5566;--hi:#38d4f0;--hi2:#7cf29a;--warn:#fbbf24;--bad:#f87171;
 --sk:#38d4f0;--skfill:rgba(56,212,240,.06);--hatch:#1e4e5c;--fin:#38d4f0;--fh:Rajdhani,sans-serif;--fb:"IBM Plex Sans",sans-serif;--fm:"Share Tech Mono",monospace;--r:8px;--h1-w:700;--h1-tt:uppercase;--h1-ls:.04em;
---figbg:#0a1015;--figb:1px;--figp:10px;--cob:0px solid;--cogap:8px;--cobg:#0d151c;--cor:6px;--panel:#0d151c}
+--figbg:#263540;--figb:1px;--figp:10px;--cob:0px solid;--cogap:8px;--cobg:#263540;--cor:6px;--panel:#263540;--btn-ink:#131b20;--sheet-shadow:0 1px 2px rgba(0,0,0,.25),0 12px 32px rgba(0,0,0,.25)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.6 var(--fb)}
 a{color:var(--hi)}
@@ -66,7 +66,7 @@ svg.schem{width:100%;height:auto;display:block}
 body{font-size:15px}
 .sheet{box-shadow:var(--sheet-shadow,0 0 0 1px #000,0 0 40px rgba(56,212,240,.08) inset)}
 .callouts{border-top:0}
-.fig{background-image:linear-gradient(rgba(56,212,240,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(56,212,240,.05) 1px,transparent 1px);background-size:24px 24px}
+.fig{background-image:none}
 .logo{text-decoration:none}
 .skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--hi);color:#000;padding:6px 10px;z-index:9}
 .strip{display:flex;flex-wrap:wrap;gap:4px 22px;padding:8px 20px;font:12px var(--fm);letter-spacing:.08em;color:var(--dim);border-bottom:1px solid var(--line)}
