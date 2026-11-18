@@ -29,6 +29,7 @@ python3 -I analysis/data_tools.py pack WORKDIR
 | `lend/` | LRO LEND neutron data (raw ALDS products) and the focus-area hydrogen grids | NASA [PDS Geosciences Node](https://pds-geosciences.wustl.edu/missions/lro/lend.htm) |
 | `lroc/` | LROC NAC maximum-pixel mosaic, 20 × 20 km around the base, 2 m/px (lossless PNG + polar stereographic bounds) | NASA/GSFC/Arizona State University, [NASA PDS](https://pds.mcp.nasa.gov/data/index.html#/data/store/img/lunar_reconnaissance_orbiter/pds4/lroc/lro-l-lroc-5-rdr/LROLRC_2001/EXTRAS/BROWSE/NAC_POLE/) |
 | `sunlight/` | Open Moon 18.6-year sunlight series for 2,243 spots (packed bits: lit = at least half the Sun's disc above the horizon), the spots' positions, and Sun directions every 2 hours (ESTIMATE) | Open Moon model over LOLA terrain; Sun from the NAIF kernels below |
+| `blender/` | "Cesium Man" 3D figure used for scale in the M00 renders (CesiumMan.glb, with its licence file), and the Blender and image scripts that built the scene and renders (`build.py`, `move_base.py`, `towers_dd024.py`, `tower_cam.py`, `label.ps1`). The scene file itself (84 MB) is not stored here. | Figure © 2017 Cesium, CC BY 4.0, [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CesiumMan); terrain from `blender/primary-base` |
 | `spice/` | de421.bsp, moon_pa_de421_1900-2050.bpc, moon_080317.tf | NASA/JPL [NAIF generic kernels](https://naif.jpl.nasa.gov/naif/data_generic.html) |
 
 All files are under 100 MB (GitHub's limit); larger arrays are split by rows.
