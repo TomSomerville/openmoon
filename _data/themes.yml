@@ -1,0 +1,550 @@
+- slug: daylight-cockpit
+  name: Daylight Cockpit
+  family: Cool
+  mode: light
+  swatches:
+  - '#f0f3f5'
+  - '#e8ecef'
+  - '#c7d3db'
+  - '#1b2227'
+  - '#0b7a8f'
+  - '#1e8a4c'
+- slug: arctic
+  name: Arctic
+  family: Cool
+  mode: light
+  swatches:
+  - '#f5f8fa'
+  - '#edf2f5'
+  - '#c8dbe5'
+  - '#17242b'
+  - '#0369a1'
+  - '#0f766e'
+- slug: clean-lab
+  name: Clean Lab
+  family: Cool
+  mode: light
+  swatches:
+  - '#fcfcfd'
+  - '#f5f6f7'
+  - '#d7dbe0'
+  - '#1e2124'
+  - '#0e7490'
+  - '#15803d'
+- slug: glacier
+  name: Glacier
+  family: Cool
+  mode: light
+  swatches:
+  - '#ecf2f4'
+  - '#e4edef'
+  - '#c0d8dd'
+  - '#192729'
+  - '#0e7490'
+  - '#7c3aed'
+- slug: mist
+  name: Mist
+  family: Cool
+  mode: light
+  swatches:
+  - '#e8eaed'
+  - '#e0e4e8'
+  - '#c0c8d2'
+  - '#1d2026'
+  - '#1d4ed8'
+  - '#0f766e'
+- slug: overcast
+  name: Overcast
+  family: Cool
+  mode: light
+  swatches:
+  - '#e3e5e8'
+  - '#dddee2'
+  - '#bfc2ca'
+  - '#1e2024'
+  - '#2563eb'
+  - '#059669'
+- slug: steel-blue
+  name: Steel Blue
+  family: Cool
+  mode: light
+  swatches:
+  - '#dae0e7'
+  - '#d2d9e2'
+  - '#aebed0'
+  - '#1a2128'
+  - '#1e40af'
+  - '#0e7490'
+- slug: polar
+  name: Polar
+  family: Cool
+  mode: light
+  swatches:
+  - '#edeef3'
+  - '#e5e6ee'
+  - '#c3c7da'
+  - '#1b1d28'
+  - '#4338ca'
+  - '#0891b2'
+- slug: harbor
+  name: Harbor
+  family: Cool
+  mode: light
+  swatches:
+  - '#dee8ed'
+  - '#d6e3e8'
+  - '#b1ccd8'
+  - '#18252a'
+  - '#075985'
+  - '#b45309'
+- slug: ice-station
+  name: Ice Station
+  family: Cool
+  mode: light
+  swatches:
+  - '#eef5f6'
+  - '#e6f1f2'
+  - '#c1dfe2'
+  - '#17292b'
+  - '#0f766e'
+  - '#2563eb'
+- slug: sky
+  name: Sky
+  family: Cool
+  mode: light
+  swatches:
+  - '#eff6fb'
+  - '#e4f0f8'
+  - '#c2d7e5'
+  - '#17232b'
+  - '#0369a1'
+  - '#db2777'
+- slug: moonlight
+  name: Moonlight
+  family: Cool
+  mode: light
+  swatches:
+  - '#f4f4f6'
+  - '#eceef0'
+  - '#cdd2da'
+  - '#1d2025'
+  - '#2563eb'
+  - '#9333ea'
+- slug: blueprint-light
+  name: Blueprint Light
+  family: Cool
+  mode: light
+  swatches:
+  - '#f1f4f9'
+  - '#e8edf5'
+  - '#c2d1e5'
+  - '#171f2b'
+  - '#1d4ed8'
+  - '#c2410c'
+- slug: agency-blue
+  name: Agency Blue
+  family: Cool
+  mode: light
+  swatches:
+  - '#f5f7fa'
+  - '#edf0f5'
+  - '#c8d1e5'
+  - '#171e2b'
+  - '#0b3d91'
+  - '#c62d1f'
+- slug: regolith
+  name: Regolith
+  family: Warm
+  mode: light
+  swatches:
+  - '#edebe9'
+  - '#e7e5e2'
+  - '#d0ccc3'
+  - '#24221e'
+  - '#9a3412'
+  - '#0f766e'
+- slug: lunar-dust
+  name: Lunar Dust
+  family: Warm
+  mode: light
+  swatches:
+  - '#e5e3e1'
+  - '#dfddda'
+  - '#c8c3bc'
+  - '#24221e'
+  - '#7c2d12'
+  - '#1d4ed8'
+- slug: mission-paper
+  name: Mission Paper
+  family: Warm
+  mode: light
+  swatches:
+  - '#f8f6f2'
+  - '#f3f1e9'
+  - '#e3dbc4'
+  - '#2b2617'
+  - '#b91c1c'
+  - '#1e3a8a'
+- slug: sandstone
+  name: Sandstone
+  family: Warm
+  mode: light
+  swatches:
+  - '#eee8e2'
+  - '#e9e2da'
+  - '#d8c7b6'
+  - '#292119'
+  - '#b45309'
+  - '#0f766e'
+- slug: basalt-light
+  name: Basalt Light
+  family: Warm
+  mode: light
+  swatches:
+  - '#dddbd9'
+  - '#d7d5d2'
+  - '#bfb9b5'
+  - '#23211f'
+  - '#c2410c'
+  - '#0369a1'
+- slug: parchment
+  name: Parchment
+  family: Warm
+  mode: light
+  swatches:
+  - '#f4f0e6'
+  - '#f0ebdd'
+  - '#e0d4b8'
+  - '#2b2517'
+  - '#92400e'
+  - '#166534'
+- slug: linen
+  name: Linen
+  family: Warm
+  mode: light
+  swatches:
+  - '#f5f2f0'
+  - '#f0ece8'
+  - '#dcd1c6'
+  - '#28211b'
+  - '#be123c'
+  - '#0f766e'
+- slug: ivory-ops
+  name: Ivory Ops
+  family: Warm
+  mode: light
+  swatches:
+  - '#f9f9f5'
+  - '#f4f3ed'
+  - '#e2deca'
+  - '#292719'
+  - '#a16207'
+  - '#0369a1'
+- slug: clay
+  name: Clay
+  family: Warm
+  mode: light
+  swatches:
+  - '#ebe3e0'
+  - '#e6dcd8'
+  - '#d4beb5'
+  - '#281e1a'
+  - '#c2410c'
+  - '#15803d'
+- slug: desert-dawn
+  name: Desert Dawn
+  family: Warm
+  mode: light
+  swatches:
+  - '#f5efea'
+  - '#f1e9e2'
+  - '#e2cdbb'
+  - '#2b2017'
+  - '#c2410c'
+  - '#7c3aed'
+- slug: solar
+  name: Solar
+  family: Warm
+  mode: light
+  swatches:
+  - '#fbf8ef'
+  - '#f8f3e4'
+  - '#e5dcc2'
+  - '#2b2617'
+  - '#b45309'
+  - '#1d4ed8'
+- slug: copper-lab
+  name: Copper Lab
+  family: Warm
+  mode: light
+  swatches:
+  - '#f8f7f6'
+  - '#f3f1ef'
+  - '#ded5cf'
+  - '#26201c'
+  - '#b45309'
+  - '#0e7490'
+- slug: greenhouse
+  name: Greenhouse
+  family: Green
+  mode: light
+  swatches:
+  - '#edf2ef'
+  - '#e5ede8'
+  - '#c4d9cb'
+  - '#1b271f'
+  - '#15803d'
+  - '#0e7490'
+- slug: sage
+  name: Sage
+  family: Green
+  mode: light
+  swatches:
+  - '#e3e8e3'
+  - '#dce2dc'
+  - '#bdcbbd'
+  - '#1e241e'
+  - '#3f6212'
+  - '#1d4ed8'
+- slug: mint-ops
+  name: Mint Ops
+  family: Green
+  mode: light
+  swatches:
+  - '#eff5f3'
+  - '#e7f1ed'
+  - '#c3dfd6'
+  - '#192924'
+  - '#047857'
+  - '#7c3aed'
+- slug: moss
+  name: Moss
+  family: Green
+  mode: light
+  swatches:
+  - '#e0e4dd'
+  - '#daded6'
+  - '#bfc8b6'
+  - '#21251d'
+  - '#4d7c0f'
+  - '#b45309'
+- slug: seafoam
+  name: Seafoam
+  family: Green
+  mode: light
+  swatches:
+  - '#e6f0ee'
+  - '#deebe9'
+  - '#b9dad4'
+  - '#192927'
+  - '#0f766e'
+  - '#be185d'
+- slug: lavender
+  name: Lavender
+  family: Purple
+  mode: light
+  swatches:
+  - '#f1eff5'
+  - '#eae7f1'
+  - '#cdc3df'
+  - '#1e1929'
+  - '#6d28d9'
+  - '#0e7490'
+- slug: twilight-light
+  name: Twilight Light
+  family: Purple
+  mode: light
+  swatches:
+  - '#e3e2e9'
+  - '#dcdae4'
+  - '#bdbacf'
+  - '#1e1c26'
+  - '#5b21b6'
+  - '#b45309'
+- slug: orchid
+  name: Orchid
+  family: Purple
+  mode: light
+  swatches:
+  - '#f4f0f5'
+  - '#eee8f0'
+  - '#d8c6dc'
+  - '#261b28'
+  - '#a21caf'
+  - '#0f766e'
+- slug: rose-quartz
+  name: Rose Quartz
+  family: Purple
+  mode: light
+  swatches:
+  - '#f8f2f3'
+  - '#f3e9ec'
+  - '#e3c4cc'
+  - '#2b171c'
+  - '#be123c'
+  - '#1d4ed8'
+- slug: mauve
+  name: Mauve
+  family: Purple
+  mode: light
+  swatches:
+  - '#e8e3e6'
+  - '#e2dce0'
+  - '#cbbdc7'
+  - '#241e22'
+  - '#9d174d'
+  - '#0f766e'
+- slug: swiss-white
+  name: Swiss White
+  family: Contrast
+  mode: light
+  swatches:
+  - '#fcfcfc'
+  - '#f6f6f6'
+  - '#dbdbdb'
+  - '#212121'
+  - '#dc2626'
+  - '#111827'
+- slug: signal-orange
+  name: Signal Orange
+  family: Contrast
+  mode: light
+  swatches:
+  - '#f7f7f8'
+  - '#f0f1f2'
+  - '#d2d6da'
+  - '#1e2124'
+  - '#c2410c'
+  - '#0369a1'
+- slug: hazard
+  name: Hazard
+  family: Contrast
+  mode: light
+  swatches:
+  - '#f6f4ea'
+  - '#f2efe1'
+  - '#e2dbbb'
+  - '#2b2817'
+  - '#a16207'
+  - '#111827'
+- slug: concrete
+  name: Concrete
+  family: Contrast
+  mode: light
+  swatches:
+  - '#e0e0e0'
+  - '#dadada'
+  - '#bfbfbf'
+  - '#212121'
+  - '#a16207'
+  - '#1f2937'
+- slug: cockpit-soft
+  name: Cockpit Soft
+  family: Mid-tone
+  mode: mid
+  swatches:
+  - '#223039'
+  - '#263540'
+  - '#3d5566'
+  - '#e8ebee'
+  - '#38d4f0'
+  - '#7cf29a'
+- slug: graphite-soft
+  name: Graphite Soft
+  family: Mid-tone
+  mode: mid
+  swatches:
+  - '#32373e'
+  - '#373c43'
+  - '#535a65'
+  - '#e9eaed'
+  - '#38d4f0'
+  - '#7cf29a'
+- slug: dusk-slate
+  name: Dusk Slate
+  family: Mid-tone
+  mode: mid
+  swatches:
+  - '#353e50'
+  - '#394356'
+  - '#525f7a'
+  - '#e8eaee'
+  - '#7dd3fc'
+  - '#fbbf24'
+- slug: lunar-grey
+  name: Lunar Grey
+  family: Mid-tone
+  mode: mid
+  swatches:
+  - '#474747'
+  - '#4c4c4c'
+  - '#6b6b6b'
+  - '#ebebeb'
+  - '#67e8f9'
+  - '#fcd34d'
+- slug: deep-sea-soft
+  name: Deep Sea Soft
+  family: Mid-tone
+  mode: mid
+  swatches:
+  - '#273e49'
+  - '#2b4350'
+  - '#406577'
+  - '#e8ecee'
+  - '#5eead4'
+  - '#fda4af'
+- slug: plum-dusk
+  name: Plum Dusk
+  family: Mid-tone
+  mode: mid
+  swatches:
+  - '#3d3248'
+  - '#42364e'
+  - '#614f72'
+  - '#ebe8ee'
+  - '#c4b5fd'
+  - '#fcd34d'
+- slug: olive-night
+  name: Olive Night
+  family: Mid-tone
+  mode: mid
+  swatches:
+  - '#3a3f31'
+  - '#404536'
+  - '#5f6751'
+  - '#ebede8'
+  - '#bef264'
+  - '#67e8f9'
+- slug: charcoal-copper
+  name: Charcoal Copper
+  family: Mid-tone
+  mode: mid
+  swatches:
+  - '#423c38'
+  - '#48413d'
+  - '#695e59'
+  - '#eceae9'
+  - '#fdba74'
+  - '#67e8f9'
+- slug: storm
+  name: Storm
+  family: Mid-tone
+  mode: mid
+  swatches:
+  - '#46525d'
+  - '#4b5763'
+  - '#657586'
+  - '#e8ebed'
+  - '#93c5fd'
+  - '#fde68a'
+- slug: earthrise-dusk
+  name: Earthrise Dusk
+  family: Mid-tone
+  mode: mid
+  swatches:
+  - '#2b3450'
+  - '#2e3856'
+  - '#44527e'
+  - '#e8e9ee'
+  - '#93c5fd'
+  - '#86efac'

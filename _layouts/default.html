@@ -9,6 +9,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<script>
+/* Colour-scheme preview: ?theme=<slug> applies a scheme for this browser tab only; ?theme=default clears it. */
+(function(){try{
+  var q=new URLSearchParams(location.search).get('theme'), framed=window.self!==window.top, t=null;
+  if(q!==null){ t=(q===''||q==='default')?null:q; if(!framed){ if(t) sessionStorage.setItem('om-theme',t); else sessionStorage.removeItem('om-theme'); } }
+  else if(!framed){ t=sessionStorage.getItem('om-theme'); }
+  if(t&&/^[a-z0-9-]+$/.test(t)){
+    document.write('<link rel="stylesheet" href="{{ '/assets/themes/' | relative_url }}'+t+'.css">');
+    window.__omTheme=t;
+  }
+}catch(e){}})();
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -37,5 +49,10 @@
   </div>
 </div>
 <footer class="foot"><span>Open Moon is an open-source plan. Figures marked ESTIMATE are this plan's own calculations; everything else links to its source.</span><a href="{{ site.repo }}">github.com/TomSomerville/openmoon</a></footer>
+<script>
+(function(){var t=window.__omTheme;if(!t||window.self!==window.top)return;
+var d=document.createElement('div');d.style.cssText='position:fixed;right:12px;bottom:12px;z-index:50;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 12px;font:12px var(--fm);box-shadow:0 4px 16px rgba(0,0,0,.2)';
+d.innerHTML='Previewing scheme: <b>'+t+'</b> · <a href="{{ '/themes/' | relative_url }}">all schemes</a> · <a href="?theme=default">reset</a>';document.body.appendChild(d);})();
+</script>
 </body>
 </html>
