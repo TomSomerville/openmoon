@@ -3,7 +3,7 @@ id_code: M07
 order: 7
 title: Surface mobility
 phase: 1
-window: "2028–2033"
+window: "Years 1–6"
 summary: Get unpressurised rovers, a pressurised rover and utility robots working on the surface, so crews and cargo can move between every site.
 objective: "Have at least two unpressurised crew rovers that can also drive themselves, one pressurised rover for multi-week trips, and a fleet of utility robots for hauling and inspection, all driven remotely from Earth while the base is built and before the first crew lands (Phase 1, DD-005)."
 trl_min: 6
@@ -81,6 +81,6 @@ In Phase 1 there is no crew, so rovers are driven from Earth to haul for the bas
 
 1. **Agree LTV service terms** for Open Moon use at the base site.
 2. **Build a teleoperation centre** and train drivers on delay simulators.
-3. **When the LTVs land in 2028:** commission them, map the roads, and start hauling for M05 and M06.
+3. **When the LTVs land:** commission them, map the roads, and start hauling for M05 and M06.
 4. **Deliver the utility carts and robots** on small landers.
 5. **Pressurised rover:** join as a partner; prepare its charging station and a dock at the habitat.

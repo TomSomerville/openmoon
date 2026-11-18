@@ -3,7 +3,7 @@ id_code: M02
 order: 2
 title: Transport to the surface
 phase: 0
-window: "2027–2031"
+window: "Years 0–4"
 summary: Secure reliable rides for cargo of every size and for crews. Open Moon buys transport; it does not build rockets.
 objective: "Establish contracts and interfaces for three cargo classes (under 1 t, about 3 t, about 15 t) and for crew seats, so every later milestone can count on a delivery schedule. Build the equipment to offload cargo on the surface."
 trl_min: 6
@@ -12,7 +12,7 @@ spec:
   - {k: "Small cargo", v: "Under 1 t: commercial landers (Blue Ghost, Griffin, Nova-C)"}
   - {k: "Medium cargo", v: "About 3 t: Blue Moon Mark 1"}
   - {k: "Heavy cargo", v: "About 15 t: Starship and Blue Moon Mk2 cargo variants"}
-  - {k: Crew, v: "NASA Artemis crew flights or commercial HLS seats"}
+  - {k: Crew, v: "Government crew flights (such as NASA Artemis) or commercial HLS seats"}
   - {k: "Crew cadence", v: "From Phase 2: crews of 3, 4 landings and 4 departures a year (DD-006)"}
 cost: {low: 0.95, high: 2.2, note: "interfaces, offloading and integration only; each delivery is costed in the milestone that uses it"}
 cost_items:

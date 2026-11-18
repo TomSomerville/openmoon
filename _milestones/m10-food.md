@@ -3,7 +3,7 @@ id_code: M10
 order: 10
 title: Growing food
 phase: 3
-window: "2035–2041"
+window: "Years 8–14"
 summary: Grow a growing share of the crew's food in buried, LED-lit greenhouses, starting with fresh vegetables and working toward most calories.
 objective: "Produce at least 50% of the calories of the 6-person design crew on the Moon, in shielded greenhouse modules using hydroponics and LED lighting, with plant waste recycled into the life support loop."
 trl_min: 5

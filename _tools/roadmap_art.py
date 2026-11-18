@@ -175,7 +175,7 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     stages = yaml.safe_load(open(ROOT / "_data" / "roadmap.yml"))
     for i, s in enumerate(stages):
-        t = f"YEAR {s['year']} ({s.get('cal_label', s['cal'])}) · {' '.join(s['label']).upper()}"
+        t = f"{s.get('span', 'Year ' + str(s['year'])).upper()} · {' '.join(s['label']).upper()}"
         (OUT / f"year-{s['year']:02d}.svg").write_text(scene(i, t))
     print(len(stages), "images written")
 

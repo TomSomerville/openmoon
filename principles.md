@@ -39,7 +39,7 @@ Each milestone and component lists what can go wrong (failure modes), how bad it
 
 ## 5. Self-sustaining means by mass
 
-No colony built with today's technology will make its own microchips or medicines by 2050. Open Moon measures self-sufficiency as the **share of mass**, consumables and construction, made on the Moon.
+No colony built with today's technology will make its own microchips or medicines within this plan (Year 23). Open Moon measures self-sufficiency as the **share of mass**, consumables and construction, made on the Moon.
 
 ## 6. Buy before build
 

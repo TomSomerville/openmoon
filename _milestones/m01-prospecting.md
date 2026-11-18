@@ -3,7 +3,7 @@ id_code: M01
 order: 1
 title: Robotic prospecting and ground truth
 phase: 0
-window: "2027–2029"
+window: "Years 0–2"
 summary: Land robots at the chosen site to confirm, on the ground, how much ice is there, how deep, and what the soil is really like.
 objective: "Confirm the site's ice resource and terrain before committing billions to infrastructure. Measure ice concentration and depth in at least two permanently shadowed regions (PSRs) within cable distance of the base, test the regolith's mechanical properties, and record the local radiation and dust environment."
 trl_min: 6

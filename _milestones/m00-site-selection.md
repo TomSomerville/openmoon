@@ -4,7 +4,7 @@ order: 0
 title: Site selection
 phase: 0
 content_first: true
-window: "2026"
+window: "Before Year 0"
 summary: Pick the base site, and a backup, using data already returned by lunar orbiters, before anything is built for it.
 objective: "Choose a primary and a backup site near the lunar south pole that give the most sunlight, an access route to permanently shadowed ice, safe terrain for landing and building, and workable communications with Earth."
 trl_min: 9
@@ -123,7 +123,7 @@ Each tab covers one criterion used to choose the sites. The details and the pros
 
 ### Why the south pole
 
-NASA's own architecture work explains the choice: near the south pole some ridges are sunlit most of the time, while nearby craters stay permanently in shadow and cold enough to trap water ice<sup class="r">[7](#s7)</sup>. That pairing, near-constant solar power next to frozen water, is what makes a self-sustaining base possible without inventing new technology. NASA's 2026 Moon Base programme also targets the south pole<sup class="r">[12](#s12)</sup>. This plan proposes how the United States should build that base, not a second base beside it (DD-018).
+NASA's own architecture work explains the choice: near the south pole some ridges are sunlit most of the time, while nearby craters stay permanently in shadow and cold enough to trap water ice<sup class="r">[7](#s7)</sup>. That pairing, near-constant solar power next to frozen water, is what makes a self-sustaining base possible without inventing new technology. NASA's 2026 Moon Base programme also targets the south pole<sup class="r">[12](#s12)</sup>. Open Moon is a separate, self-contained proposal, not a second base meant to sit beside NASA's (DD-018).
 ### How sunny is "near-eternal light"?
 
 No point on the Moon is sunlit all the time<sup class="r">[6](#s6)</sup>. The best points are close:
@@ -562,9 +562,9 @@ The best public images are NASA's LROC Narrow Angle Camera (NAC) south polar mos
 - **Contested ground.** China's Chang'e-7 targets the Shackleton area (see the risks above).
 - **Less detailed so far.** The backup has no close-up map, power layout or mine design yet (open).
 
-## Status: site selection complete (November 2026)
+## Status: site selection complete
 
-Site selection is finished. It was done from orbital data alone, before Year 0. Year 0 is the first landers, which go to the chosen site to scout it (M01) and start site preparation (M05).
+Site selection is finished. It is done from orbital data alone, before Year 0. Year 0 is the first landers, which go to the chosen site to scout it (M01) and start site preparation (M05).
 
 
 - **Focus area chosen:** about 180 × 130 km around the south pole, centred on the Shackleton–de Gerlache Ridge, between Shackleton, Spudis and de Gerlache craters. It includes NASA's de Gerlache Rim 2 candidate region.
@@ -575,7 +575,7 @@ Site selection is finished. It was done from orbital data alone, before Year 0. 
 - **Base sites chosen (DD-015):** primary on de Gerlache's north rim at 88.445°S, 63.44°W; backup on the Connecting ridge by Shackleton at 89.559°S, 163.66°W.
 - **Carried into Year 0** (plan design): ground proof of ice and hydrogen at both sites (M01); boulder counts and NAC hazard maps for each pad (M05); Earth-visibility hours per site (M03).
 
-*Open Moon is a proposal for how the United States should build a self-sustaining Moon colony. It is a hypothetical plan written to make the case for it, not a programme or organisation, and the base is not meant to land beside NASA's own base or work with it (DD-018).*
+*Open Moon is a plan for how we, as people, could build a self-sustaining Moon colony. It is hypothetical: a proposal, not a programme or organisation, and the base is not meant to land beside any agency's base or work with it (DD-018).*
 
 
 {% include decision-note.html id="DD-019" extra="Site selection finished before Year 0; Year 0 is the first landers." %}
@@ -590,6 +590,6 @@ Site selection is finished. It was done from orbital data alone, before Year 0. 
 4. **Map hazards.** Slope is mapped for the focus area in four classes from NASA's LOLA data, with 8° as the landing limit (done). Also include young fault scarps: NASA-funded work links the shrinking Moon to faults and moonquakes near the south pole, including a scarp in de Gerlache Rim 2, and some shadowed slopes are prone to landslides<sup class="r">[8](#s8)</sup>.
 5. **Rank ice targets.** ShadowCam found little widespread surface ice, but some 20–50 m patches consistent with more than 10% ice<sup class="r">[2](#s2)</sup>. Ice is patchy, so M01 must confirm it on the ground. For the focus area, hydrogen from LEND and ice candidates from M3, LOLA and ShadowCam are now mapped (see above).
 6. **Check communications.** Earth visibility varies from site to site: some Earth-facing areas see Earth almost all the time, others never do<sup class="r">[7](#s7)</sup>. At the best proposed base site in a JPL study, direct-to-Earth links were available only about 51% of the time<sup class="r">[13](#s13)</sup>, so relay coverage is a hard requirement.
-7. **Decide and publish.** Under the Outer Space Treaty no one can claim territory<sup class="r">[11](#s11)</sup>. The Artemis Accords (78 signatories after Vietnam joined on 28 October 2026<sup class="r">[9](#s9)</sup>) ask operators to give notice and coordinate to avoid harmful interference<sup class="r">[9](#s9)</sup>. NASA, as the agency this plan is written for, would give that notice for the chosen site.
+7. **Decide and publish.** Under the Outer Space Treaty no one can claim territory<sup class="r">[11](#s11)</sup>. The Artemis Accords (78 signatories after Vietnam joined on 28 October 2026<sup class="r">[9](#s9)</sup>) ask operators to give notice and coordinate to avoid harmful interference<sup class="r">[9](#s9)</sup>. Whoever carries out this plan would give that notice for the chosen site.
 
 > Open question for contributors: within the focus area, which two sites give the best combination of landable ground (≤8°), illumination, access to the Shackleton and de Gerlache shadowed floors and the LEND hydrogen zone, and distance from other nations' planned activity?

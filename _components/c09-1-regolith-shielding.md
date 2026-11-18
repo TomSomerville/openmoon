@@ -141,7 +141,7 @@ The arch's clear space is 5 m × 4.5 m × 26 m. The slopes are 45°, which is mo
 
 ## Open questions
 
-- How deep is deep enough? Can a measured dose-depth curve be produced before 2034?
+- How deep is deep enough? Can a measured dose-depth curve be produced before the habitat modules are buried (Year 7 on the roadmap)?
 - Does the 1 m secondary-radiation peak appear for real south-pole regolith?
 - What angle of repose does excavated polar regolith hold in practice?
 - How many 6.5-month tours can one person fly within 600 mSv once EVA dose is added?

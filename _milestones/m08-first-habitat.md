@@ -3,7 +3,7 @@ id_code: M08
 order: 8
 title: Base habitats, shielding and life support
 phase: 1
-window: "2031–2035"
+window: "Years 4–8"
 summary: Before anyone lands, robots install three standard 3-person habitat modules side by side, connect them, bury them under regolith, and run life support, the storm shelter and the medical bay uncrewed until the base is ready for its first crew.
 objective: "Land three standard 3-person habitat modules (detailed design to be defined later), connect them, cover them with at least 2 m of regolith (3 m over the sleeping quarters), and run life support sized for 6 people continuously and 9 at handover peaks, uncrewed, for at least 3 months, so the base is complete when the first crew lands (Phase 2, M09)."
 trl_min: 4

@@ -3,7 +3,7 @@ id_code: M04
 order: 4
 title: Surface power grid
 phase: 0
-window: "2028–2032"
+window: "Years 1–5"
 summary: Build a hybrid power system of tall solar towers on the sunlit ridges, a fission reactor for darkness, energy storage and high-voltage cables, all routed through one power management controller (PMC) that sends power to the grid or to storage. Every habitat module and facility takes its power from the grid through its own service connection. Sized to run the oxygen plant and the first habitat.
 objective: "Deliver solar peak power from NASA-class 10 kW VSAT towers, sized by the Phase 1 load budget (provisionally 100 kW; design change DD-004), and at least 20 kWe of continuous fission power from an LR-1-class reactor (design change DD-002), with every source feeding a power management controller (PMC) that routes power to the grid, to storage, or both (design changes DD-003 and DD-008), connected by a 3 kV AC, 1 kHz grid (NASA's lunar grid baseline; design change DD-001) that feeds every unit through its own service connection (design change DD-009), with every generation source within 3 km of cable run of the PMC as standard, or up to 10 km on an extended run (design change DD-014), and converting to 3 kV AC on the spot (design change DD-013), so the base never loses essential power, even during the longest polar darkness."
 trl_min: 5

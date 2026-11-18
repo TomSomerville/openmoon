@@ -3,7 +3,7 @@ id_code: M13
 order: 13
 title: Self-sustaining colony
 phase: 4
-window: "2040–2050"
+window: "Years 13–23"
 summary: Grow the base into a colony of 50–100 people that makes most of what it uses, with Earth supplying only electronics, medicines, specialist parts and people.
 objective: "Reach a population of 50–100 with at least 90% of consumables mass and at least 80% of construction mass produced on the Moon, and a local economy that sells propellant, services and data to cover a meaningful share of operating costs."
 trl_min: 4
@@ -54,7 +54,7 @@ risks:
 
 ## What "self-sustaining" means here
 
-**Honest definition:** no realistic technology will make a lunar colony fully independent of Earth by 2050. Chips, medicines and precision instruments will still come from Earth. Open Moon defines self-sustaining **by mass**:
+**Honest definition:** no realistic technology will make a lunar colony fully independent of Earth within this plan (Year 23). Chips, medicines and precision instruments will still come from Earth. Open Moon defines self-sustaining **by mass**:
 
 - at least 90% of consumables made on the Moon
 - at least 80% of construction mass made on the Moon

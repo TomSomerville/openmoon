@@ -3,7 +3,7 @@ id_code: M05
 order: 5
 title: Site preparation, landing pads and roads
 phase: 0
-window: "2028–2032"
+window: "Years 1–5"
 summary: Robots build hardened landing pads, roads and protective berms so landers stop sandblasting the base and rovers can drive safely between sites.
 objective: "Build at least two hardened landing pads that stop rocket exhaust from blasting regolith across the base, graded roads linking pads, power towers, the reactor, the ISRU plant and the habitat zone, and berms that shield key equipment from ejecta and radiation."
 trl_min: 5

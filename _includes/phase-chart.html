@@ -1,8 +1,8 @@
 {% comment %}
 Phase timeline (Gantt). Built from milestone windows, so it updates when they change.
-Axis: Y0 = 2026 to 2050.
+Axis: Year 0 (first lander launches) to Year 23.
 {% endcomment %}
-{% assign y0 = 2026 %}{% assign y1 = 2050 %}{% assign span = y1 | minus: y0 %}
+{% assign y0 = 0 %}{% assign y1 = 23 %}{% assign span = y1 | minus: y0 %}
 {% assign colors = "#38d4f0,#4fc3f7,#7cf29a,#c6e86a,#fbbf24,#fb923c" | split: "," %}
 {% assign ms = site.milestones | sort: "order" %}
 <style>
@@ -39,16 +39,16 @@ Axis: Y0 = 2026 to 2050.
 }
 </style>
 <section class="pc" aria-label="Plan phases timeline">
-  <div class="pc-head"><h2>The plan in five phases</h2><span>{{ y0 }}–{{ y1 }} · bars are milestone windows · click a bar for details</span></div>
+  <div class="pc-head"><h2>The plan in five phases</h2><span>Years {{ y0 }}–{{ y1 }} · bars are milestone windows · click a bar for details</span></div>
   <div class="pc-grid">
     <div class="pc-axis-lab"></div>
     <div class="pc-axis">
-      {% for y in (y0..y1) %}{% assign m4 = y | modulo: 4 %}{% if m4 == 2 or y == y0 or y == y1 %}{% assign pos = y | minus: y0 | times: 100.0 | divided_by: span %}<span class="{% if y == y0 %}first{% elsif y == y1 %}last{% endif %}" style="left:{{ pos }}%">{{ y }}</span>{% endif %}{% endfor %}
+      {% for y in (y0..y1) %}{% assign m4 = y | modulo: 4 %}{% if m4 == 0 or y == y0 or y == y1 %}{% assign pos = y | minus: y0 | times: 100.0 | divided_by: span %}<span class="{% if y == y0 %}first{% elsif y == y1 %}last{% endif %}" style="left:{{ pos }}%">{{ y }}</span>{% endif %}{% endfor %}
     </div>
     {% for p in site.data.phases %}
       {% assign pm = ms | where: "phase", p.n %}
       {% assign ps = 9999 %}{% assign pe = 0 %}
-      {% for m in pm %}{% assign a = m.window | split: "–" | first | plus: 0 %}{% assign b = m.window | split: "–" | last | plus: 0 %}{% if a < ps %}{% assign ps = a %}{% endif %}{% if b > pe %}{% assign pe = b %}{% endif %}{% endfor %}
+      {% for m in pm %}{% assign a = m.window | remove: "Before Year " | remove: "Years " | remove: "Year " | split: "–" | first | plus: 0 %}{% assign b = m.window | remove: "Before Year " | remove: "Years " | remove: "Year " | split: "–" | last | plus: 0 %}{% if a < ps %}{% assign ps = a %}{% endif %}{% if b > pe %}{% assign pe = b %}{% endif %}{% endfor %}
       {% assign col = colors[p.n] %}
       <div class="pc-lab">
         <span class="n" style="color:{{ col }}">Phase {{ p.n }}</span>
@@ -56,10 +56,10 @@ Axis: Y0 = 2026 to 2050.
         <span class="y">{{ ps }}–{{ pe }} · {{ pm | size }} milestone{% if pm.size != 1 %}s{% endif %}</span>
       </div>
       <div class="pc-rows pc-track">
-        {% for y in (y0..y1) %}{% assign m4 = y | modulo: 4 %}{% if m4 == 2 %}<i class="gl" style="left:{{ y | minus: y0 | times: 100.0 | divided_by: span }}%"></i>{% endif %}{% endfor %}
-        {% if forloop.first %}<i class="now" style="left:0%"><b>NOW</b></i>{% endif %}
+        {% for y in (y0..y1) %}{% assign m4 = y | modulo: 4 %}{% if m4 == 0 %}<i class="gl" style="left:{{ y | minus: y0 | times: 100.0 | divided_by: span }}%"></i>{% endif %}{% endfor %}
+        {% if forloop.first %}<i class="now" style="left:0%"><b>YEAR 0</b></i>{% endif %}
         <i class="pc-band" style="left:{{ ps | minus: y0 | times: 100.0 | divided_by: span }}%;width:{{ pe | minus: ps | times: 100.0 | divided_by: span }}%;background:{{ col }}"></i>
-        {% for m in pm %}{% assign a = m.window | split: "–" | first | plus: 0 %}{% assign b = m.window | split: "–" | last | plus: 0 %}{% assign w = b | minus: a %}{% if w < 1 %}{% assign w = 1 %}{% endif %}
+        {% for m in pm %}{% assign a = m.window | remove: "Before Year " | remove: "Years " | remove: "Year " | split: "–" | first | plus: 0 %}{% assign b = m.window | remove: "Before Year " | remove: "Years " | remove: "Year " | split: "–" | last | plus: 0 %}{% assign w = b | minus: a %}{% if w < 1 %}{% assign w = 1 %}{% endif %}
         <a class="pc-bar" href="{{ m.url | relative_url }}" title="{{ m.id_code }} {{ m.title }} ({{ m.window }})" style="margin-left:{{ a | minus: y0 | times: 100.0 | divided_by: span }}%;width:{{ w | times: 100.0 | divided_by: span }}%;background:{{ col }}"><span class="id">{{ m.id_code }}</span><span class="full">{{ m.title }}</span></a>
         {% endfor %}
       </div>

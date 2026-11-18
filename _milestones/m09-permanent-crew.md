@@ -3,7 +3,7 @@ id_code: M09
 order: 9
 title: "Crewed base: first landing and continuous rotation"
 phase: 2
-window: "2035–2040"
+window: "Years 8–13"
 summary: The first crew lands at a finished base and stays. Crews of three arrive every three months and each stays about six and a half months, so the base holds six people, and nine for two weeks at each handover.
 objective: "Keep the base crewed without a gap for four years from the first landing, with crews of 3 arriving every 3 months, tours of about 6.5 months and 2-week handovers (6 people in steady state, 9 at handover peaks), radiation doses within career limits, life support recycling at least 90% of water and making oxygen locally, and resupply mass per person cut by at least 40% compared with open-loop operations."
 trl_min: 5

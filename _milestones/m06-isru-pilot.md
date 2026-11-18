@@ -3,7 +3,7 @@ id_code: M06
 order: 6
 title: Oxygen and water pilot plants
 phase: 1
-window: "2029–2033"
+window: "Years 2–6"
 summary: Make the first oxygen from rock and the first water from polar ice at pilot scale, proving the processes that every later milestone depends on.
 objective: "Operate an oxygen-from-regolith pilot plant and a water-from-ice pilot plant on the surface, each making at least 10 t per year, and store the products, before the first crew depends on them."
 trl_min: 4
