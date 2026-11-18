@@ -10,6 +10,7 @@ section: plan
     <div class="eyebrow">{{ page.id_code }} · Phase {{ page.phase }} · {{ page.window }}</div>
     <h1>{{ page.title }}</h1>
     <div class="note">{{ page.summary }}</div>
+    {% if page.content_first %}<div class="prose">{{ content }}</div>{% endif %}
 
     <div class="sec-h">Objective</div>
     <div class="prose"><p>{{ page.objective }}</p></div>
@@ -53,8 +54,8 @@ section: plan
     </div>
     {% endif %}
 
-    <div class="sec-h">Plan of action</div>
-    <div class="prose">{{ content }}</div>
+    {% unless page.content_first %}<div class="sec-h">Plan of action</div>
+    <div class="prose">{{ content }}</div>{% endunless %}
 
     {% if page.cost_items %}
     <div class="sec-h">Cost build-up</div>

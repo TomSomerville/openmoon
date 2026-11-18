@@ -1,7 +1,7 @@
 ---
 title: Roadmap
 eyebrow: The plan, year by year
-summary: "Pick a year to see what the base looks like, what changed since the previous step, and every piece of work behind it. Year 0 is 2026. Dates are planning targets."
+summary: "Pick a year to see what the base looks like, what changed since the previous step, and every piece of work behind it. Site selection was finished in 2026; Year 0 (2027–2029) is the first landers. Dates are planning targets."
 section: plan
 doc_id: OM-100
 ---
@@ -40,15 +40,15 @@ doc_id: OM-100
 </style>
 
 <div class="rm-tabs" role="tablist" aria-label="Roadmap years">
-{% for s in stages %}<button class="rm-tab" role="tab" id="tab-y{{ s.year }}" aria-controls="year-{{ s.year }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"><b>Year {{ s.year }}</b><span>{{ s.label[0] }}<br>{{ s.label[1] }}</span><small>{{ s.cal }}</small></button>{% endfor %}
+{% for s in stages %}<button class="rm-tab" role="tab" id="tab-y{{ s.year }}" aria-controls="year-{{ s.year }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"><b>Year {{ s.year }}</b><span>{{ s.label[0] }}<br>{{ s.label[1] }}</span><small>{{ s.cal_label | default: s.cal }}</small></button>{% endfor %}
 </div>
 {% for s in stages %}
 {% assign lo = 0 %}{% assign hi = 0 %}{% assign done = 0 %}
 {% for m in ms %}{% assign endy = m.window | split: "–" | last | plus: 0 %}{% if endy <= s.cal %}{% assign lo = lo | plus: m.cost.low %}{% assign hi = hi | plus: m.cost.high %}{% assign done = done | plus: 1 %}{% endif %}{% endfor %}
 <section class="rm-panel" role="tabpanel" id="year-{{ s.year }}" aria-labelledby="tab-y{{ s.year }}"{% unless forloop.first %} hidden{% endunless %}>
-  <img class="rm-img" src="{% capture yy %}{% if s.year < 10 %}0{% endif %}{{ s.year }}{% endcapture %}{{ '/assets/roadmap/year-' | append: yy | append: '.svg' | relative_url }}" alt="Concept illustration of the base in year {{ s.year }} ({{ s.cal }}): {{ s.headline }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+  <img class="rm-img" src="{% capture yy %}{% if s.year < 10 %}0{% endif %}{{ s.year }}{% endcapture %}{{ '/assets/roadmap/year-' | append: yy | append: '.svg' | relative_url }}" alt="Concept illustration of the base in year {{ s.year }} ({{ s.cal_label | default: s.cal }}): {{ s.headline }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
   <div class="rm-body">
-    <div class="eyebrow">Year {{ s.year }} · {{ s.cal }}</div>
+    <div class="eyebrow">Year {{ s.year }} · {{ s.cal_label | default: s.cal }}</div>
     <h2>{{ s.headline }}</h2>
     <p class="rm-sum">{{ s.summary }}</p>
     <div class="rm-stats">

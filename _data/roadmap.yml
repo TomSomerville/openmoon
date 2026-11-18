@@ -1,49 +1,21 @@
-# Roadmap stages. year = years after the plan starts (Year 0 = 2026). Planning targets, not commitments.
+# Roadmap stages. year = years after the plan starts. Year 0 (2027–2029) is the first landers; site selection (M00) was finished before it, in 2026. cal = last calendar year of the stage (used for cost totals); cal_label, if set, is shown instead. Planning targets, not commitments.
 - year: 0
-  cal: 2026
-  label: ["Site", "Search"]
-  headline: "The site search begins"
-  summary: "The plan starts with no hardware at all. A small engineering team pulls every public orbital data set of the lunar south pole into one open map, models sunlight and temperature hour by hour, and chooses the base site."
+  cal: 2029
+  cal_label: "2027–2029"
+  label: ["Landers", "Launch"]
+  headline: "Landers launch to scout and prepare the chosen site"
+  summary: "The site is already chosen from orbital data (M00). Year 0 is the first flights: rides are booked, two prospector rovers land to drill for ice, and the first permanent hardware arrives to start site preparation: a 10 kW solar tower, a cable-laying rover, a communications kit and excavators grading the first landing pad."
   crew: 0
-  power_kw: 0
+  power_kw: 10
   details:
-    - {title: "Open site database", text: "LRO terrain, imagery and temperature data, ShadowCam images inside shadowed craters and Chandrayaan-2 radar are merged into one public map of the south pole.", refs: [M00, lunar-reconnaissance-orbiter-lro, shadowcam-on-kplo-danuri, chandrayaan-2-orbiter-dfsar-radar]}
-    - {title: "Shortlist from NASA's nine regions", text: "NASA's nine Artemis south-pole candidate regions are the starting shortlist, already screened for landing safety, light and Earth visibility.", refs: [M00]}
-    - {title: "Focus area: Shackleton–de Gerlache", text: "The search narrows to about 180 × 130 km around the Shackleton–de Gerlache Ridge. Slope, hydrogen (LEND) and ice-candidate maps are published; 43% of the area is 8° or less, Open Moon's landing limit.", refs: [M00]}
-    - {title: "Base sites chosen", text: "Primary base on the north rim of de Gerlache (88.445°S, 63.44°W), backup on the Connecting ridge by Shackleton (design change DD-015). Ice mining at the primary draws power from rim VSATs within 10 km of the crater floor.", refs: [M00, C06.2]}
-    - {title: "Illumination and hazard models", text: "Sunlight is modelled at several mast heights, and young fault scarps and landslide-prone slopes are mapped so nothing is built on them.", refs: [M00]}
-- year: 1
-  cal: 2027
-  label: ["Site", "Selected"]
-  headline: "A primary and backup site are chosen, and the rides are booked"
-  summary: "With the site picked, the plan turns to getting there. Transport is booked across small, medium and heavy landers, relay service is arranged, and two prospector rovers are built to check the site on the ground."
-  crew: 0
-  power_kw: 0
-  details:
-    - {title: "Site certified", text: "A primary and backup site are chosen, each pairing a sunlit ridge for power with a nearby shadowed crater that may hold ice. The site plan is published.", refs: [M00]}
+    - {title: "Site selection complete", text: "Done before Year 0, from orbital data alone: primary base on the north rim of de Gerlache (88.445°S, 63.44°W), backup on the Connecting ridge by Shackleton (89.559°S, 163.66°W) (design change DD-015).", refs: [M00]}
     - {title: "Transport contracts", text: "Rides reserved on small commercial landers, Blue Moon Mark 1 for about 3 t, and heavy cargo landers for about 15 t, with two providers per critical payload. The Open Moon payload interface standard is published.", refs: [M02, C02.1, firefly-blue-ghost-lander, blue-origin-blue-moon-mark-1]}
     - {title: "Relay service agreements", text: "Service is contracted from two lunar relay networks that follow the shared LunaNet standard.", refs: [M03, nasa-commercial-lunar-relay-intuitive-machines, esa-moonlight]}
-    - {title: "Prospector rovers built", text: "Two small rovers carry a 1 m drill, a mass spectrometer and a neutron spectrometer, all with flight heritage.", refs: [M01, C01.1, trident-drill-honeybee-robotics, msolo-mass-spectrometer]}
-- year: 2
-  cal: 2028
-  label: ["Prospectors", "Land"]
-  headline: "The first robots reach the site and start drilling for ice"
-  summary: "Two prospector rovers land on different landers, so one failure can't end the search. They drill into shadowed craters to measure how much ice is really there. Lunar terrain vehicles arrive at the south pole on NASA's schedule."
-  crew: 0
-  power_kw: 0
-  details:
+    - {title: "Prospector rovers built and launched", text: "Two small rovers carry a 1 m drill, a mass spectrometer and a neutron spectrometer, all with flight heritage.", refs: [M01, C01.1, trident-drill-honeybee-robotics, msolo-mass-spectrometer]}
     - {title: "Two prospector landings", text: "Each rover parks in sunlight to recharge and makes short trips into the cold, dark crater, kept alive by radioisotope heaters.", refs: [M01, C01.1, radioisotope-heater-units]}
     - {title: "Drilling a grid of holes", text: "Several holes per crater, down to 1 m, because orbital data shows ice is patchy.", refs: [M01, trident-drill-honeybee-robotics]}
     - {title: "Lunar terrain vehicles", text: "NASA's two LTVs (Astrolab CLV-1 and Lunar Outpost Pegasus) are scheduled for delivery to the south pole region in 2028; Open Moon leases their services.", refs: [M07, astrolab-clv-1-ltv, lunar-outpost-pegasus-ltv]}
     - {title: "Environment logging begins", text: "Radiation, dust and seismic sensors start recording what crews will later live with.", refs: [M01]}
-- year: 3
-  cal: 2029
-  label: ["Ice", "Confirmed"]
-  headline: "The ice is confirmed, the first power tower stands, and excavation starts"
-  summary: "Drilling results give the go decision for the site. The outpost's first permanent hardware arrives: a 10 kW solar tower, a cable-laying rover and a communications kit. Excavators begin grading the first landing pad."
-  crew: 0
-  power_kw: 10
-  details:
     - {title: "Go / no-go on the site", text: "Ice is measured by drilling in at least two craters and the data is published. If the ice wasn't there, this is where the plan would switch to the backup site.", refs: [M01]}
     - {title: "First solar tower", text: "A 10 kW vertical solar array on a 10 m mast is raised on a sunlit ridge point.", refs: [M04, C04.2, vertical-solar-array-technology-vsat]}
     - {title: "First cable and comms", text: "A cable-laying rover starts the grid, and an LTE base station brings a surface network.", refs: [M04, C04.4, M03, C03.1, astrobotic-lunagrid-lite, nokia-lunar-4g-lte-network]}

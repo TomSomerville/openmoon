@@ -1,6 +1,6 @@
 title: Open Moon
-tagline: "An open-source engineering plan for a self-sustaining Moon colony, built on technology that exists or is in active testing today."
-description: "Open Moon is an open-source, milestone-by-milestone engineering plan for a self-sustaining lunar colony using technology that exists today or is in active testing, with costs, components, sub-components, failure modes and sources."
+tagline: "A proposal for how the United States should build a self-sustaining Moon colony, using technology that exists or is in active testing today."
+description: "Open Moon is an open-source, milestone-by-milestone proposal for how the United States should build a self-sustaining lunar colony using technology that exists today or is in active testing, with costs, components, sub-components, failure modes and sources."
 url: https://openmoon.beached.lol
 baseurl: ""
 repo: https://github.com/TomSomerville/openmoon
