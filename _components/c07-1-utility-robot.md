@@ -12,7 +12,7 @@ spec:
   - {k: "Cart payload", v: "500 kg rated (design choice; must match LTV tow limit, not yet published)"}
   - {k: "Payload deck", v: "Open Moon payload interface (C02.1)"}
   - {k: "Inspection rover", v: "~25 kg, carry-on-bag scale, solar and battery (ESTIMATE)"}
-  - {k: "Patrol", v: "M04 cable routes, 1–3 km each"}
+  - {k: "Patrol", v: "M04 cable routes, each 3 km or less (DD-013)"}
   - {k: "Control", v: "Autonomous with Earth supervision at 6–8 s delay"}
   - {k: "Life", v: "5 years (design goal)"}
 subcomponents:

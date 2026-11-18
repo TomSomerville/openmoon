@@ -100,6 +100,10 @@ Key draft requirements ([NASA SPARC Industry Day](https://sam.gov/api/prod/opps/
 
 **Reasonable planning value for Open Moon:** **20 kWe**, continuously. That is NASA's guaranteed minimum after a single failure, and the figure NASA uses for both LR-1 and SR-1. It works out to **480 kWh a day** (Open Moon arithmetic). The SPARC draft does not set the AC frequency. NASA's earlier lunar grid trade study chose 3 kV AC ([Thomas et al. 2022](https://ntrs.nasa.gov/citations/20220011587)).
 
+**Frequency interface (plan design, [DD-013](/decisions/#dd-013)).** The base grid runs at 3 kV, 3-phase, 1 kHz. NASA's 2025 reference design used Brayton alternators giving 240 Vrms at **2 kHz**, 3-phase, straight into a step-up transformer ([INL/NASA 2025](https://inl.gov/content/uploads/2024/11/FSP-Technical-Maturation-Webinar-Final-250924-1.pdf)). So Open Moon makes its interface requirement **3 kV, 3-phase, 1 kHz at the reactor's output**. Either the vendor is asked to deliver that, or a frequency converter is added at the reactor end. Which one is **open**. The reactor must also sit within **3 km of cable run** of the PMC.
+
+{% include decision-note.html id="DD-013" extra="LR-1's frequency was left unstated, and the cable was described only as about 1 km." %}
+
 ## How Open Moon uses it: the reactor feeds the PMC
 
 {% include decision-note.html id="DD-003" extra="An LR-1-class unit is the plan's base reactor (DD-002). Like every source, it feeds the power management controller (PMC; called the BMS until DD-008)." %}
@@ -108,7 +112,7 @@ Key draft requirements ([NASA SPARC Industry Day](https://sam.gov/api/prod/opps/
 
 In Open Moon every source, including the reactor, sends its power to the **power management controller (PMC)**. The PMC decides whether that power goes to the grid to meet demand, to the batteries to charge, or to excess-power handling, or some of each. When generation falls short, the battery feeds the grid ([design changes DD-003 and DD-008](/decisions/#dd-008)). The grid then feeds every habitat module and facility through its own service connection ([DD-009](/decisions/#dd-009)).
 
-1. **Reactor.** LR-1 runs at up to 20 kWe and sends 3 kV AC down the cable to the PMC.
+1. **Reactor.** LR-1 runs at up to 20 kWe and sends 3 kV, 1 kHz AC down no more than 3 km of cable to the PMC (DD-013).
 2. **PMC.** Converts the incoming power and routes it: first to the grid for demand, then to charge the battery, then to the fuel-cell electrolyser. NASA Glenn has already built a modular, bidirectional converter between 120 V DC equipment and the 3 kV AC grid ([Thomas et al. 2023](https://ntrs.nasa.gov/citations/20230013309)).
 3. **Storage.** A Li-ion bank with 160 kWh per reactor (8 hours at full output, to ride through a restart), plus regenerative fuel cells for long shadows.
 4. **Outputs.** The grid, which feeds each habitat module, ISRU plant and other facility through its own service connection.
@@ -125,5 +129,6 @@ In Open Moon every source, including the reactor, sends its power to the **power
 - **Heavy.** Up to 15 t, so it needs a human-class cargo lander. NASA set the mass and volume [to match such landers](https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download). No lander has been named.
 - **Brayton not yet run on a reactor.** The only recent nuclear test (KRUSTY, 28 hours) used Stirling engines ([Poston et al. 2020](https://ntrs.nasa.gov/citations/20205009351)). Brayton first flies on SR-1, which may slip.
 - **Fuel supply.** HALEU depends on DOE building a [domestic supply chain](https://www.energy.gov/infrastructure/availability-high-assay-low-enriched-uranium-haleu).
-- **Siting.** The radiation limit applies only at 1 km. Habitats need distance, berms or terrain shielding. The user also supplies the long-distance cable ([NASA](https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download)).
+- **Siting.** The radiation limit applies only at 1 km. Habitats need distance, berms or terrain shielding. The user also supplies the long-distance cable ([NASA](https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download)). In Open Moon that cable is 3 km at most (DD-013).
+- **Frequency not set.** SPARC asks for 3 kV RMS AC but sets no frequency ([NASA](https://sam.gov/api/prod/opps/v3/opportunities/resources/files/6b927f8dc6c843749a45b2c0589bf0e7/download)); NASA's 2025 Brayton reference ran at 2 kHz ([INL/NASA 2025](https://inl.gov/content/uploads/2024/11/FSP-Technical-Maturation-Webinar-Final-250924-1.pdf)). A 1 kHz output is an open item (DD-013).
 - **Everything goes through the PMC.** Every watt passes through the PMC, so it has two independent main switching units (A and B) with a cross-tie, and the battery is split into several strings (see C04.3).

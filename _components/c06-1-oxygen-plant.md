@@ -15,7 +15,7 @@ spec:
   - {k: "Mass", v: "~3 t delivered (M06 ESTIMATE)"}
   - {k: "Life", v: "6 months continuous operation, with electrode and crucible change-out"}
   - {k: "Delivery class", v: "Medium lander"}
-  - {k: "Power interface", v: "Own service connection to the M04 grid (UMIC-class step-down to 120 V DC, meter, main breaker) and its own 120 V DC panel; can be isolated without affecting other units (plan design, DD-009)"}
+  - {k: "Power interface", v: "Own service connection to the M04 grid (UMIC-class step-down to 120 V DC, meter, main breaker) and its own 120 V DC panel; can be isolated without affecting other units (plan design, DD-009); within 3 km of cable run of the PMC (DD-013)"}
 subcomponents:
   - name: "Feedstock handling and beneficiation"
     desc: "Takes regolith from the M05 stockpile, sieves it, and feeds a measured batch into each reactor."
@@ -70,6 +70,7 @@ sources:
   - {title: "Kleinhenz and Paz, NASA: Case study for lunar ISRU systems utilizing polar water (ASCEND 2020)", url: "https://ntrs.nasa.gov/api/citations/20205008303/downloads/AIAA_ASCEND2020_Kleinhenz_presentation_final.pdf", date: "Nov 2020"}
   - {title: "Nugent et al., NASA: Space exploration applications for development of high capacity cryocoolers", url: "https://ntrs.nasa.gov/citations/20205010721", date: "Dec 2020"}
   - {title: "Wikipedia: Oxygen (heat of vaporization, heat capacity)", url: "https://en.wikipedia.org/wiki/Oxygen", date: ""}
+  - {title: "Csank & Scott, NASA GRC: Power and Energy for the Lunar Surface (ISRU power over 3–5 km)", url: "https://ntrs.nasa.gov/api/citations/20220005893/downloads/Power%20and%20Energy%20for%20the%20Lunar%20Surface.pdf", date: "Apr 2022"}
 ---
 
 ## What it does
@@ -116,6 +117,7 @@ Design choice: four electrolysis cells of about 1,000 A each, plus one spare. Th
 
 ## Open questions
 
+- The plant must sit within 3 km of cable run of the PMC (DD-013), but NASA expects ISRU to need power over 3–5 km<sup class="r">[9](#s9)</sup>. Is regolith of the right quality within that reach, or must feedstock be hauled in?
 - What anode material survives months in molten regolith, and how fast does it wear?
 - Does energy per kg fall toward the study figure as the reactor gets bigger?
 - Is beneficiation worth its mass, or should raw sieved regolith go straight in?

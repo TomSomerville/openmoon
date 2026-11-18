@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="Share Tech Mono, monospace" role="img" aria-labelledby="t d">
+<title id="t">Source-end conversion to 3 kV AC (DD-013)</title>
+<desc id="d">Three rows show how each power source makes 3 kV AC, 3-phase, 1 kHz right where it stands, then sends it over no more than 3 km of cable to the power management controller (PMC). Row 1, VSAT solar tower: the array makes DC at a voltage that is not published (the ISS arrays hold about 160 V DC); an array regulator and shunt holds the bus and curtails or disconnects on PMC command; a UMIC-class inverter of parallel 1 kW modules turns DC into under 100 V AC; a 1 kHz step-up transformer raises it to 3 kV AC. Row 2, KRUSTY-class Kilopower unit: eight Stirling engines in opposed pairs each make single-phase AC at about 12 V RMS, 100 Hz and 7 to 10 A (values for the Advanced Stirling Convertor family); one controller per engine rectifies to DC and holds a set voltage; the controller outputs share one DC bus, whose voltage is not published; a UMIC-class inverter and a 1 kHz transformer make 3 kV AC. The 12 V never leaves the machine. Row 3, LR-1-class reactor: closed Brayton alternators (NASA's 2025 reference gave 240 Vrms at 2 kHz) and the vendor's power electronics deliver 3 kV RMS AC; the plan requires 3 kV, 3-phase, 1 kHz at the reactor output, either specified to the vendor or made by a frequency converter at the reactor end, which is open. Only low-voltage switches are used; the transformer does the step-up and has no switches.</desc>
+<defs>
+<pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(56,212,240,.07)"/></pattern>
+<marker id="ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#38d4f0"/></marker>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ffb020"/></marker>
+</defs>
+<rect width="960" height="640" fill="#0a1015"/><rect width="960" height="640" fill="url(#g)"/>
+<text x="24" y="36" fill="#d6e2ec" font-size="19" letter-spacing="1">SOURCE-END CONVERSION TO 3 kV AC · ≤3 km TO THE PMC</text>
+<text x="24" y="56" fill="#d6e2ec" font-size="12" opacity=".7">Plan design (DD-013). Low-voltage switches only; the 1 kHz transformer does the step-up and has no switches.</text>
+
+<!-- PMC -->
+<rect x="872" y="86" width="72" height="420" rx="10" fill="rgba(56,212,240,.16)" stroke="#38d4f0" stroke-width="2.5"/>
+<text x="908" y="290" fill="#38d4f0" font-size="16" text-anchor="middle">PMC</text>
+<text x="908" y="310" fill="#d6e2ec" font-size="9" text-anchor="middle" opacity=".8">at the</text>
+<text x="908" y="322" fill="#d6e2ec" font-size="9" text-anchor="middle" opacity=".8">base</text>
+
+<!-- column header -->
+<g font-size="10" fill="#d6e2ec" opacity=".6" text-anchor="middle">
+<text x="456" y="80">AT THE SOURCE (metres of wiring)</text>
+<text x="825" y="80">CABLE</text>
+</g>
+
+<!-- ROW 1: VSAT -->
+<rect x="142" y="92" width="644" height="100" rx="8" fill="none" stroke="#d6e2ec" stroke-opacity=".25" stroke-dasharray="4 4"/>
+<text x="16" y="124" fill="#ffb020" font-size="14">VSAT TOWER</text>
+<text x="16" y="142" fill="#d6e2ec" font-size="10" opacity=".8">10 kW solar</text>
+<text x="16" y="156" fill="#d6e2ec" font-size="10" opacity=".8">native: DC</text>
+<g font-size="10" fill="#d6e2ec">
+<rect x="150" y="104" width="112" height="76" rx="6" fill="rgba(56,212,240,.10)" stroke="#38d4f0"/>
+<text x="158" y="122" fill="#38d4f0" font-size="11">SOLAR ARRAY</text>
+<text x="158" y="138">DC, voltage</text>
+<text x="158" y="151">not published</text>
+<text x="158" y="166" opacity=".7">ISS: ~160 V DC</text>
+<rect x="280" y="104" width="242" height="76" rx="6" fill="rgba(56,212,240,.10)" stroke="#38d4f0"/>
+<text x="290" y="122" fill="#38d4f0" font-size="11">ARRAY REGULATOR + SHUNT</text>
+<text x="290" y="138">holds the DC bus for the inverter</text>
+<text x="290" y="151">curtails on PMC command;</text>
+<text x="290" y="166">disconnect contactor (DD-008)</text>
+<rect x="540" y="104" width="112" height="76" rx="6" fill="rgba(56,212,240,.10)" stroke="#38d4f0"/>
+<text x="548" y="122" fill="#38d4f0" font-size="11">UMIC-CLASS</text>
+<text x="548" y="137" fill="#38d4f0" font-size="11">INVERTER</text>
+<text x="548" y="152">1 kW modules</text>
+<text x="548" y="166">DC → &lt;100 V AC</text>
+<rect x="670" y="104" width="108" height="76" rx="6" fill="rgba(255,176,32,.14)" stroke="#ffb020" stroke-width="2"/>
+<text x="678" y="122" fill="#ffb020" font-size="11">1 kHz STEP-UP</text>
+<text x="678" y="137" fill="#ffb020" font-size="11">TRANSFORMER</text>
+<text x="678" y="152">no switches</text>
+<text x="678" y="166">→ 3 kV AC</text>
+</g>
+<g stroke="#38d4f0" stroke-width="2" marker-end="url(#ac)"><path d="M262 142H278"/><path d="M522 142H538"/><path d="M652 142H668"/></g>
+
+<!-- ROW 2: KILOPOWER -->
+<rect x="142" y="222" width="644" height="100" rx="8" fill="none" stroke="#d6e2ec" stroke-opacity=".25" stroke-dasharray="4 4"/>
+<text x="16" y="254" fill="#ffb020" font-size="14">KILOPOWER</text>
+<text x="16" y="272" fill="#d6e2ec" font-size="10" opacity=".8">KRUSTY-class</text>
+<text x="16" y="286" fill="#d6e2ec" font-size="10" opacity=".8">~1 kWe</text>
+<text x="16" y="300" fill="#d6e2ec" font-size="10" opacity=".8">native: DC bus</text>
+<g font-size="10" fill="#d6e2ec">
+<rect x="150" y="234" width="112" height="76" rx="6" fill="rgba(56,212,240,.10)" stroke="#38d4f0"/>
+<text x="158" y="252" fill="#38d4f0" font-size="11">8 STIRLINGS</text>
+<text x="158" y="267">1-phase AC each</text>
+<text x="158" y="281">~12 V RMS</text>
+<text x="158" y="296">~100 Hz, 7–10 A</text>
+<rect x="280" y="234" width="112" height="76" rx="6" fill="rgba(56,212,240,.10)" stroke="#38d4f0"/>
+<text x="288" y="252" fill="#38d4f0" font-size="11">8 CONTROLLERS</text>
+<text x="288" y="267">one per engine</text>
+<text x="288" y="281">rectify to DC,</text>
+<text x="288" y="296">hold set voltage</text>
+<rect x="410" y="234" width="112" height="76" rx="6" fill="rgba(56,212,240,.10)" stroke="#38d4f0"/>
+<text x="418" y="252" fill="#38d4f0" font-size="11">ONE DC BUS</text>
+<text x="418" y="267">outputs in</text>
+<text x="418" y="281">parallel; voltage</text>
+<text x="418" y="296">not published</text>
+<rect x="540" y="234" width="112" height="76" rx="6" fill="rgba(56,212,240,.10)" stroke="#38d4f0"/>
+<text x="548" y="252" fill="#38d4f0" font-size="11">UMIC-CLASS</text>
+<text x="548" y="267" fill="#38d4f0" font-size="11">INVERTER</text>
+<text x="548" y="282">1 kW modules</text>
+<text x="548" y="296">DC → &lt;100 V AC</text>
+<rect x="670" y="234" width="108" height="76" rx="6" fill="rgba(255,176,32,.14)" stroke="#ffb020" stroke-width="2"/>
+<text x="678" y="252" fill="#ffb020" font-size="11">1 kHz STEP-UP</text>
+<text x="678" y="267" fill="#ffb020" font-size="11">TRANSFORMER</text>
+<text x="678" y="282">no switches</text>
+<text x="678" y="296">→ 3 kV AC</text>
+</g>
+<g stroke="#38d4f0" stroke-width="2" marker-end="url(#ac)"><path d="M262 272H278"/><path d="M392 272H408"/><path d="M522 272H538"/><path d="M652 272H668"/></g>
+<text x="150" y="334" fill="#ffb020" font-size="10">Engines in opposed pairs. The 12 V never leaves the machine.</text>
+
+<!-- ROW 3: LR-1 -->
+<rect x="142" y="352" width="644" height="100" rx="8" fill="none" stroke="#d6e2ec" stroke-opacity=".25" stroke-dasharray="4 4"/>
+<text x="16" y="384" fill="#ffb020" font-size="14">LR-1 REACTOR</text>
+<text x="16" y="402" fill="#d6e2ec" font-size="10" opacity=".8">20 kWe Brayton</text>
+<text x="16" y="416" fill="#d6e2ec" font-size="10" opacity=".8">native: 3 kV AC</text>
+<text x="16" y="430" fill="#d6e2ec" font-size="10" opacity=".8">(SPARC)</text>
+<g font-size="10" fill="#d6e2ec">
+<rect x="150" y="364" width="112" height="76" rx="6" fill="rgba(56,212,240,.10)" stroke="#38d4f0"/>
+<text x="158" y="382" fill="#38d4f0" font-size="11">ALTERNATORS</text>
+<text x="158" y="397">3-phase AC</text>
+<text x="158" y="411">NASA 2025 ref.:</text>
+<text x="158" y="426" opacity=".7">240 Vrms, 2 kHz</text>
+<rect x="280" y="364" width="372" height="76" rx="6" fill="rgba(255,176,32,.06)" stroke="#ffb020" stroke-dasharray="5 4"/>
+<text x="290" y="382" fill="#ffb020" font-size="11">VENDOR PMAD + FREQUENCY MATCH · OPEN</text>
+<text x="290" y="398">SPARC sets 3 kV RMS AC but no frequency.</text>
+<text x="290" y="413">Option A: specify 1 kHz to the vendor.</text>
+<text x="290" y="428">Option B: frequency converter at the reactor end.</text>
+<rect x="670" y="364" width="108" height="76" rx="6" fill="rgba(255,176,32,.14)" stroke="#ffb020" stroke-width="2"/>
+<text x="678" y="382" fill="#ffb020" font-size="11">OUTPUT</text>
+<text x="678" y="397">3 kV, 3-phase</text>
+<text x="678" y="411">1 kHz</text>
+<text x="678" y="426" opacity=".7">plan interface</text>
+</g>
+<g stroke="#38d4f0" stroke-width="2" marker-end="url(#ac)"><path d="M262 402H278"/><path d="M652 402H668"/></g>
+
+<!-- cables to PMC -->
+<g stroke="#ffb020" stroke-width="3" fill="none" marker-end="url(#ah)"><path d="M778 142H868"/><path d="M778 272H868"/><path d="M778 402H868"/></g>
+<g font-size="10" fill="#ffb020" text-anchor="middle">
+<text x="825" y="134">3 kV AC</text><text x="825" y="158">≤3 km</text>
+<text x="825" y="264">3 kV AC</text><text x="825" y="288">≤3 km</text>
+<text x="825" y="394">3 kV AC</text><text x="825" y="418">≤3 km</text>
+</g>
+
+<!-- notes -->
+<g font-size="10" fill="#d6e2ec">
+<text x="16" y="490" fill="#d6e2ec" font-size="12">WHY (sources on the pages that use this diagram)</text>
+<text x="16" y="510">· NASA: a DC grid is limited to 1.2–1.5 kV for lack of rad-hard high-voltage switches.</text>
+<text x="16" y="526">· NASA: at 100 kW on 8 AWG, 1 kHz: 3 kV to ~600 m, 6 kV to 2.5 km, 18 kV for 20 km.</text>
+<text x="16" y="542">· 1 kW at 12 V ≈ 83 A: only ~1.4 m one-way on 10 mm² Al for 5% loss (this plan's arithmetic).</text>
+<text x="16" y="558">· 20 kW over 3 km at 3 kV: 3.85 A; ~5.9 mm² Al for ≤3% loss (this plan's arithmetic).</text>
+</g>
+<g font-size="10" fill="#d6e2ec">
+<path d="M640 590H672" stroke="#38d4f0" stroke-width="2"/><text x="680" y="594">low voltage, inside the unit</text>
+<path d="M640 606H672" stroke="#ffb020" stroke-width="3"/><text x="680" y="610">3 kV AC, 3-phase, 1 kHz cable</text>
+</g>
+<text x="24" y="630" fill="#d6e2ec" font-size="10" opacity=".6" letter-spacing="1">DIAGRAM · OPEN MOON PLAN DESIGN · CC BY-SA 4.0</text>
+</svg>

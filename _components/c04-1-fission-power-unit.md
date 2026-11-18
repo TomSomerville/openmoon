@@ -7,12 +7,14 @@ summary: "An LR-1-class nuclear reactor that makes at least 20 kW of electricity
 trl: 4
 spec:
   - {k: "Output", v: "≥20 kWe at 3 kV RMS AC after any single failure (LR-1-class, plan baseline); KRUSTY-class 1 kWe for small loads (DD-002)"}
+  - {k: "Output interface", v: "3 kV, 3-phase, 1 kHz at the reactor output (plan requirement, DD-013); SPARC sets 3 kV RMS but no frequency: vendor spec or frequency converter at the reactor end (open)"}
+  - {k: "Run to PMC", v: "≤3 km of cable (DD-013)"}
   - {k: "Output path", v: "3 kV AC line to the base PMC, which routes power to the grid, to storage, or both (C04.3, DD-003, DD-008); excess to the parasitic load radiator"}
   - {k: "Reactor heat", v: "Not yet designed for LR-1; NASA 40 kWe references ~175 kWt (Stirling) to ~230 kWt (Brayton)"}
   - {k: "Mass", v: "<15 t incl. lander adapters (LR-1 cap); NASA 40 kWe references 6.8–7.5 t incl. 20% growth"}
   - {k: "Conversion", v: "Closed Brayton (LR-1 requirement); KRUSTY-class units use Stirling"}
   - {k: "Radiators", v: "NASA 40 kWe references ~140 m² (Stirling) to ~180 m² (Brayton)"}
-  - {k: "Crew distance", v: "≥1 km behind a 36° shadow shield; ≤5 rem/yr at 1 km"}
+  - {k: "Crew distance", v: "≥1 km behind a 36° shadow shield; ≤5 rem/yr at 1 km; no more than 3 km of cable run to the PMC (DD-013)"}
   - {k: "Design life", v: "≥5 years at full power (LR-1); 10 years (NASA 40 kWe reference)"}
   - {k: "Start-up", v: "Remote, about 8 h to full power"}
   - {k: "Delivery", v: "1 heavy cargo lander; reactor pallet stays on the lander"}
@@ -44,12 +46,12 @@ subcomponents:
     trl: 4
   - name: Control, instrumentation and power management
     desc: "Runs the reactor and converters by itself, matches load, and steps voltage up for the long cable to the base PMC."
-    parts: ["Neutron and temperature sensors", "Reactor control computer and Ka-band radio", "Brayton (or Stirling) controllers", "Start-up Li-ion battery (~4 kWh)", "Step-up transformers to 3 kV RMS AC", "Command and data link to the PMC (C04.3)"]
+    parts: ["Neutron and temperature sensors", "Reactor control computer and Ka-band radio", "Brayton (or Stirling) controllers", "Start-up Li-ion battery (~4 kWh)", "Step-up transformers to 3 kV RMS AC, 3-phase, 1 kHz at the output (DD-013)", "Frequency converter at the reactor end if the vendor's alternator frequency is not 1 kHz (open, DD-013)", "KRUSTY-class units: controller DC bus, UMIC-class inverter and 1 kHz step-up transformer at the unit (DD-013)", "Command and data link to the PMC (C04.3)"]
     tech: "NASA GRC Stirling controllers; ISS-class PMAD"
     trl: 4
   - name: Deployment and lander interface
     desc: "Gets the unit off the cargo lander and the user interface out to the start of the source line to the PMC."
-    parts: ["Reactor pallet adapter on lander", "User interface pallet on a sled", "1 km high-voltage cable spool", "Utility rover for towing", "Levelling legs"]
+    parts: ["Reactor pallet adapter on lander", "User interface pallet on a sled", "1 km high-voltage cable spools, up to 3 for a 3 km run (DD-013)", "Utility rover for towing", "Levelling legs"]
     tech: "NASA DAC3 concept of operations"
     trl: 4
 risks:
@@ -59,7 +61,8 @@ risks:
   - {sev: High, title: "A converter string fails; the 2022 concept carried no spares, so each lost pair cost about a quarter of output.", fix: "Use four 25% strings with separate radiator loops and controllers, and size the base's essential load below 75% of output."}
   - {sev: High, title: "Lunar dust on hundreds of square metres of radiator could cut heat rejection; the effect is not yet measured.", fix: "Fund NASA's radiator dust tests to completion; place the unit far from landing pads; add 20% radiator area margin."}
   - {sev: High, title: "Mass growth: the 2022 design hit ~10 t against a 6 t goal, and LR-1 allows up to 15 t.", fix: "Keep the reactor on its lander (the lightest NASA option) and move only the ~1 t user interface pallet; budget 7.5–15 t delivery."}
-  - {sev: High, title: "Radiation-hard power switches are rated far below the transmission voltage.", fix: "Use transformers (AC) or stacked low-voltage modules (DC) for step-up; see C04.4."}
+  - {sev: High, title: "Radiation-hard power switches are rated far below the transmission voltage.", fix: "Step up with a transformer after a low-voltage inverter at the source, so only low-voltage switches are used (DD-013); see C04.4."}
+  - {sev: Medium, title: "The LR-1 requirements set 3 kV RMS AC but no frequency, and NASA's 2025 Brayton reference ran its alternators at 2 kHz; the base grid runs at 1 kHz.", fix: "Specify 3 kV, 3-phase, 1 kHz at the reactor output in any purchase, or add a frequency converter at the reactor end (open, DD-013)."}
   - {sev: Medium, title: "Organic parts in Stirling alternators and superalloys in vacuum may degrade over 10 years.", fix: "Complete the irradiation and metal-vaporisation tests now running at NASA and DOE before flight design freeze."}
   - {sev: Medium, title: "Nuclear launch approval and fuel supply can slip the schedule.", fix: "Start approval paperwork at contract award; size the first two years of the base to run on solar plus storage."}
 sources:
@@ -86,6 +89,10 @@ The fission unit is the base's night-time anchor. Polar sites can be dark for up
 **Two reactor types (DD-002).**
 - **LR-1-class, 20 kWe.** The base reactor. NASA is buying it through SPARC; no design or award yet<sup class="r">[8](#s8)</sup>. See the [Lunar Reactor-1 card](/technology/us-lunar-reactor-1-sparc/).
 - **KRUSTY-class, 1 kWe.** A Kilopower-type Stirling unit for small remote loads, such as a comms or science node. KRUSTY proved the reactor in 2018, but no flight unit is being built<sup class="r">[4](#s4)</sup>. See the [Kilopower / KRUSTY card](/technology/kilopower-krusty-fission-test/).
+
+**Interface and distance (design change DD-013).** The plan's interface requirement is **3 kV, 3-phase, 1 kHz at the reactor's output**, with no more than **3 km** of cable run to the PMC. LR-1 must deliver 3 kV RMS AC, but its requirements do not set the frequency<sup class="r">[8](#s8)</sup>. NASA's 2025 reference Brayton alternators gave 240 Vrms at 2 kHz, 3-phase, stepped up by a transformer<sup class="r">[3](#s3)</sup>. Whether 1 kHz is specified to the vendor or made by a frequency converter at the reactor end is **open**. A KRUSTY-class unit converts its controllers' DC bus to 3 kV AC with its own inverter and transformer (see the [Kilopower / KRUSTY card](/technology/kilopower-krusty-fission-test/)).
+
+{% include decision-note.html id="DD-013" extra="The reactor link was described as 1–3 km with no set maximum or frequency." %}
 
 ## How it works
 
@@ -126,7 +133,7 @@ Worked numbers:
 
 - **Specific mass (this plan's arithmetic).** 6,820 kg ÷ 40 kWe ≈ 170 kg/kWe. NASA's 2022 figure was 250–270 kg/kW<sup class="r">[1](#s1)</sup>. At LR-1's cap, 15,000 kg ÷ 20 kWe = 750 kg/kWe; the plan budgets 7.5–15 t per unit.
 - **Dose at greater distance (ESTIMATE).** Dose falls with 1/r²<sup class="r">[3](#s3)</sup>. At 2 km, the 1 km limit of 5 rem/yr becomes about 1.25 rem/yr. This ignores scatter from the ground.
-- **Cable.** The unit connects over a 3 kV AC link, NASA's lunar grid baseline and LR-1's required output<sup class="r">[8](#s8)</sup>, to the PMC at the base (see C04.3, C04.4 and design changes DD-001, DD-002, DD-003 and DD-008).
+- **Cable.** The unit connects over a 3 kV, 1 kHz AC link of no more than 3 km (DD-013), NASA's lunar grid baseline and LR-1's required voltage<sup class="r">[8](#s8)</sup>, to the PMC at the base. At NASA's 325 kg per km<sup class="r">[3](#s3)</sup>, a full 3 km run is about 1 t of cable and spool (this plan's arithmetic) (see C04.3, C04.4 and design changes DD-001, DD-002, DD-003 and DD-008).
 
 ## Testing and qualification
 
@@ -139,6 +146,7 @@ Worked numbers:
 ## Open questions
 
 - Will anyone build a flight KRUSTY-class unit, or will small loads need radioisotope or solar power instead?
+- Will the LR-1 vendor deliver 1 kHz, or does the plan add a frequency converter at the reactor end (DD-013)?
 - Should a second LR-1-class unit come early, so the base is not dependent on one reactor?
 - How much does dust really reduce radiator performance after years near active landing pads?
 - Can a regolith berm replace part of the 1.4–1.5 t shield, and at what rover effort?
