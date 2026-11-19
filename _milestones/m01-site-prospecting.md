@@ -50,6 +50,8 @@ sources:
   - {title: "CAS: Chang'e-5 lander detects water on the Moon's surface in situ", url: "https://english.cas.cn/head/202201/t20220108_295734.shtml", date: "Jan 2022"}
   - {title: "NASA JSC Lunar Sample Compendium: Apollo 17 deep drill core 70001–70009", url: "https://curator.jsc.nasa.gov/lunar/lsc/a17drill.pdf", date: ""}
   - {title: "Biemann et al.: The search for organic substances and inorganic volatile compounds in the surface of Mars (Viking GCMS, NTRS)", url: "https://ntrs.nasa.gov/citations/19780027538", date: "Sep 1977"}
+  - {title: "USGS Astrogeology: Lunar M3 Water Map PDS4 Archive (Li et al. 2023, Nature Astronomy; doi:10.17189/gmce-w279)", url: "https://astrogeology.usgs.gov/search/map/lunar_m3_water_map_pds4_archive", date: "Dec 2022"}
+  - {title: "NASA GSFC PGDA: A New View of the Lunar South Pole from LOLA (slope and hillshade, Barker et al. 2023)", url: "https://pgda.gsfc.nasa.gov/products/90", date: "2023"}
 risks:
   - {sev: Critical, title: "The lander tips over and the rover never drives off (as on IM-1 and IM-2)", fix: "Fly the two rovers on two different lander providers"}
   - {sev: High, title: "Water escapes before a sample is sealed: about 30% from 4.5 wt% soil and about 80% from 0.8 wt% soil in NASA vacuum tests", fix: "Brush drill bites straight into the chamber and seal at once; calibrate the losses on icy simulant before flight"}
@@ -248,6 +250,23 @@ Phoenix's TEGA oven: the flown ancestor of a sample oven. NASA/JPL-Caltech/Unive
 </div>
 </div>
 </div>
+
+## Surface water around the base
+
+![Moon Mineralogy Mapper surface water within 10 km of the base, over slope, with the base and solar towers]({{ '/assets/milestones/m3-water-base-10km.jpg' | relative_url }})
+
+*Surface water (OH plus H₂O, top ~1 mm) from the Moon Mineralogy Mapper water maps of Li et al. 2023<sup class="r">[31](#s31)</sup>, over NASA's LOLA slope map<sup class="r">[32](#s32)</sup>. Open Moon processing: the six maps are averaged per pixel and smoothed to ~300 m for display.*
+
+Within 10 km of the base (this plan's processing of the archive data):
+
+| Measure | Value |
+|---|---|
+| Median | **~260 ppm** (0.026 wt%) |
+| Mean | ~580 ppm |
+| Middle 80% of the area | ~105–1,415 ppm |
+| Area with a value | 89% |
+
+**Read these with care.** The archive warns users to "use this dataset with caution for other purposes", and the mapping uncertainty is 20%<sup class="r">[31](#s31)</sup>. Almost half the pixels near the base hold exactly 20 ppm, a value the archive does not explain. They are left out above; if they are real low readings, the median falls to ~34 ppm. These maps also cannot tell OH from H₂O<sup class="r">[31](#s31)</sup>. So the surface number is a range, roughly 30–300 ppm, and it is the M01 rovers that will measure it.
 
 ## Where to prospect
 

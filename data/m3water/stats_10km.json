@@ -1,0 +1,77 @@
+{
+ "note": "M3 water (ppm) within 10 km of 88.4365S 62.46W; Open Moon processing",
+ "cells": 785456,
+ "coverage": 0.893,
+ "all": {
+  "n": 701673,
+  "mean": 581,
+  "median": 262,
+  "p10": 105,
+  "p90": 1415
+ },
+ "per_map": {
+  "BeforeDuskMagnetosheath": {
+   "n": 158189,
+   "mean": 663,
+   "median": 259,
+   "p10": 84,
+   "p90": 1568
+  },
+  "DawnMagnetosheath": {
+   "n": 515079,
+   "mean": 332,
+   "median": 158,
+   "p10": 41,
+   "p90": 534
+  },
+  "DuskMagnetosheath": {
+   "n": 252184,
+   "mean": 829,
+   "median": 339,
+   "p10": 75,
+   "p90": 2083
+  },
+  "ExitDawnMagnetosheath": {
+   "n": 532683,
+   "mean": 386,
+   "median": 152,
+   "p10": 40,
+   "p90": 664
+  },
+  "FirstHalfCentralMagnetotail": {
+   "n": 222811,
+   "mean": 730,
+   "median": 239,
+   "p10": 64,
+   "p90": 1975
+  },
+  "SecondHalfCentralMagnetotail": {
+   "n": 521678,
+   "mean": 539,
+   "median": 189,
+   "p10": 58,
+   "p90": 1190
+  }
+ },
+ "slope_0_8": {
+  "n": 109910,
+  "mean": 709,
+  "median": 341,
+  "p10": 112,
+  "p90": 1765
+ },
+ "slope_8_15": {
+  "n": 321652,
+  "mean": 530,
+  "median": 257,
+  "p10": 107,
+  "p90": 1259
+ },
+ "slope_15_90": {
+  "n": 270111,
+  "mean": 588,
+  "median": 247,
+  "p10": 99,
+  "p90": 1438
+ }
+}
