@@ -2,3 +2,4 @@ _site/
 .jekyll-cache/
 .claude/
 __pycache__/
+analysis/**/cache_*.npy
