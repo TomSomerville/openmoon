@@ -7,7 +7,7 @@ summary: "Cold-rated excavators dig icy regolith inside a permanently shadowed c
 trl: 4
 spec:
   - {k: "Output target", v: "10 t of purified water per year"}
-  - {k: "Assumed ice content", v: "5% by mass, 75% extracted (NASA study assumptions)"}
+  - {k: "Assumed ice content", v: "5% by mass, 75% extracted (NASA study assumptions); equals the plan's icy-patch value, against a crater average of 0.5 wt% (DD-028), so the mine must sit on a patch found in M01"}
   - {k: "Regolith to process", v: "~267 t per year (ESTIMATE)"}
   - {k: "Mine area", v: "~26 m × 26 m per year at 30 cm depth (ESTIMATE)"}
   - {k: "Working temperature", v: "PSR surfaces 50–120 K (NASA study assumption)"}

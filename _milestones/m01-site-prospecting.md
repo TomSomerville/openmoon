@@ -52,6 +52,13 @@ sources:
   - {title: "Biemann et al.: The search for organic substances and inorganic volatile compounds in the surface of Mars (Viking GCMS, NTRS)", url: "https://ntrs.nasa.gov/citations/19780027538", date: "Sep 1977"}
   - {title: "USGS Astrogeology: Lunar M3 Water Map PDS4 Archive (Li et al. 2023, Nature Astronomy; doi:10.17189/gmce-w279)", url: "https://astrogeology.usgs.gov/search/map/lunar_m3_water_map_pds4_archive", date: "Dec 2022"}
   - {title: "NASA GSFC PGDA: A New View of the Lunar South Pole from LOLA (slope and hillshade, Barker et al. 2023)", url: "https://pgda.gsfc.nasa.gov/products/90", date: "2023"}
+  - {title: "NASA: NASA's SOFIA discovers water on sunlit surface of Moon", url: "https://www.nasa.gov/news-release/nasas-sofia-discovers-water-on-sunlit-surface-of-moon/", date: "Oct 2020"}
+  - {title: "Li & Milliken: Water on the surface of the Moon as seen by the Moon Mineralogy Mapper (Science Advances 3)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5597310", date: "Sep 2017"}
+  - {title: "NASA Science: Hydrogen at the lunar poles, how much water is there? (summary of Sanin et al. 2017, LEND)", url: "https://science.nasa.gov/wp-content/uploads/2023/05/NuggetHydrogenAtTheLunarPoles20170210.pdf", date: "Feb 2017"}
+  - {title: "Thomson et al.: An upper limit for ice in Shackleton crater as revealed by LRO Mini-RF radar (GRL)", url: "https://doi.org/10.1029/2012GL052119", date: "Jul 2012"}
+  - {title: "Li et al.: Searching for surficial water ice in lunar permanently shaded regions with ShadowCam (Science Advances)", url: "https://europepmc.org/article/PMC/PMC12998505", date: "Mar 2026"}
+  - {title: "Li et al.: Direct evidence of surface exposed water ice in the lunar polar regions (PNAS 115)", url: "https://europepmc.org/article/PMC/PMC6130389", date: "Aug 2018"}
+  - {title: "ISRO: Recent studies suggest more ice on the Moon", url: "https://www.isro.gov.in/Recent_studies_suggest_more_ice_Moon.html", date: "Apr 2024"}
 risks:
   - {sev: Critical, title: "The lander tips over and the rover never drives off (as on IM-1 and IM-2)", fix: "Fly the two rovers on two different lander providers"}
   - {sev: High, title: "Water escapes before a sample is sealed: about 30% from 4.5 wt% soil and about 80% from 0.8 wt% soil in NASA vacuum tests", fix: "Brush drill bites straight into the chamber and seal at once; calibrate the losses on icy simulant before flight"}
@@ -251,22 +258,62 @@ Phoenix's TEGA oven: the flown ancestor of a sample oven. NASA/JPL-Caltech/Unive
 </div>
 </div>
 
-## Surface water around the base
+## How much water we expect
+
+Before the rovers fly, the plan needs two expected values: one for ordinary sunlit soil, and one for the floor of a shadowed crater. They set how sensitive the bake chamber must be and how much water the ice mine can hope for. Both are **planning values chosen by this plan** from published measurements (DD-028). None has been measured at our site.
+
+| Where | Expected water | Per 0.4 kg bake batch |
+|---|---|---|
+| **Sunlit surface soil** near the base | **100 ppm (0.01 wt%)** | ~0.04 g |
+| **Shadowed crater floor**, averaged over the top metre | **0.5 wt% (5,000 ppm)** | ~2 g |
+| Icy patches inside the crater | up to **~5 wt%** | ~20 g |
+
+*1 wt% = 10,000 ppm = 10 g of water per kg of soil. Batch figures are this plan's arithmetic, before any water lost while sampling.*
+
+### Sunlit surface soil: 100 ppm
+
+Water in sunlit soil is not ice. NASA says it is probably held in glass beads or between soil grains, protected from the Sun<sup class="r">[33](#s33)</sup>. The measurements:
+
+| Measurement | Value | What it covers |
+|---|---|---|
+| SOFIA telescope, Clavius crater | 100–412 ppm<sup class="r">[33](#s33)</sup> | Sunlit southern ground, from Earth's sky |
+| Chang'e-5 lander, on the surface | Under 120 ppm<sup class="r">[28](#s28)</sup> | Mid-latitude; the only measurement made on the ground |
+| Moon Mineralogy Mapper, global map | Rises toward the poles, highest around 500–750 ppm<sup class="r">[34](#s34)</sup> | Top ~1 mm; OH and H₂O together |
+| Same instrument, 10 km around our base (map below) | Median ~260 ppm, or ~34 ppm if the unexplained 20 ppm pixels are real | Open Moon processing<sup class="r">[31](#s31)</sup> |
 
 ![Moon Mineralogy Mapper surface water within 10 km of the base, over slope, with the base and solar towers]({{ '/assets/milestones/m3-water-base-10km.jpg' | relative_url }})
 
-*Surface water (OH plus H₂O, top ~1 mm) from the Moon Mineralogy Mapper water maps of Li et al. 2023<sup class="r">[31](#s31)</sup>, over NASA's LOLA slope map<sup class="r">[32](#s32)</sup>. Open Moon processing: the six maps are averaged per pixel and smoothed to ~300 m for display.*
+*Surface water (OH plus H₂O, top ~1 mm) from the Moon Mineralogy Mapper water maps of Li et al. 2023<sup class="r">[31](#s31)</sup>, over NASA's LOLA slope map<sup class="r">[32](#s32)</sup>. Open Moon processing: the six maps are averaged per pixel and smoothed to ~300 m for display. The highest values sit mostly on crater walls and slopes.*
 
-Within 10 km of the base (this plan's processing of the archive data):
+Within 10 km of the base, the map gives a median of about 260 ppm, a mean of about 580 ppm, and a middle 80% of about 105–1,415 ppm, over the 89% of the area that has a value (this plan's processing). But almost half the pixels near the base hold exactly 20 ppm, a value the archive does not explain; we left them out. The archive asks users to "use this dataset with caution for other purposes" and gives a 20% mapping uncertainty<sup class="r">[31](#s31)</sup>.
 
-| Measure | Value |
-|---|---|
-| Median | **~260 ppm** (0.026 wt%) |
-| Mean | ~580 ppm |
-| Middle 80% of the area | ~105–1,415 ppm |
-| Area with a value | 89% |
+**Why 100 ppm and not more:**
 
-**Read these with care.** The archive warns users to "use this dataset with caution for other purposes", and the mapping uncertainty is 20%<sup class="r">[31](#s31)</sup>. Almost half the pixels near the base hold exactly 20 ppm, a value the archive does not explain. They are left out above; if they are real low readings, the median falls to ~34 ppm. These maps also cannot tell OH from H₂O<sup class="r">[31](#s31)</sup>. So the surface number is a range, roughly 30–300 ppm, and it is the M01 rovers that will measure it.
+- It sits inside every range above: the bottom of SOFIA's range, at Chang'e-5's ground measurement, and between the two readings of our own map (34 and 260 ppm).
+- The higher numbers come from an orbital instrument that sees only the top millimetre and cannot separate water from hydroxyl<sup class="r">[31](#s31)</sup>.
+- No source says how much of this bound water heating to 450 °C would release.
+- For prospecting it is safer to plan low. A chamber built to read 100 ppm will read more; one built for 500 ppm might miss 100.
+
+At 100 ppm a bake batch holds only about 0.04 g of water. **So sunlit soil is treated as dry**; it is measured as a background, not as a resource.
+
+### Shadowed crater floor: 0.5 wt%, with patches to 5 wt%
+
+Here the water is ice, trapped in craters that never see sunlight. The measurements disagree, because each instrument senses a different depth and area:
+
+| Measurement | Value | What it covers |
+|---|---|---|
+| LEND neutron detector (LRO) | Peak 0.54 wt% at Cabeus; under ~0.30 wt% across broader areas<sup class="r">[35](#s35)</sup> | Averaged over the top ~1 m and over kilometres |
+| LCROSS impact, Cabeus | 5.6 ± 2.9 wt%<sup class="r">[5](#s5)</sup> | One spot, the material thrown up from a few metres down |
+| Mini-RF radar, Shackleton | Upper limit ~5–10 wt% in the top metre of the walls<sup class="r">[36](#s36)</sup> | An upper limit, not a detection |
+| Moon Mineralogy Mapper | Ice in only ~3.5% of cold traps; some pixels ~30 wt%<sup class="r">[38](#s38)</sup> | Top few millimetres |
+| ShadowCam | No widespread ice above 20–30 wt%; a few 20–50 m spots that may hold over 10 wt%<sup class="r">[37](#s37)</sup> | Surface only |
+| ISRO-led study | Ice in the top couple of metres about 5–8× the surface amount<sup class="r">[39](#s39)</sup> | Both poles |
+
+**Why 0.5 wt% for the average:** LEND is the only measurement that averages over the volume a rover would sample, the top metre across a crater floor. Its highest value at the south pole is 0.54 wt%<sup class="r">[35](#s35)</sup>, so 0.5 wt% assumes our crater is about as icy as the best one LEND found. If our crater is more like the broad average, it holds under 0.3 wt%.
+
+**Why up to 5 wt% for patches:** LCROSS measured 5.6 wt% at one spot<sup class="r">[5](#s5)</sup>, and Mini-RF allows up to 5–10 wt% at Shackleton<sup class="r">[36](#s36)</sup>. The surface instruments agree that ice is patchy<sup class="r">[37](#s37)</sup><sup class="r">[38](#s38)</sup>, so a kilometre-scale average of 0.5 wt% can hide smaller patches ten times richer. Finding those patches is the rovers' main job.
+
+**What this means.** At 0.5 wt% a bake batch holds about 2 g of water. In NASA vacuum tests, samples from 0.8 wt% soil lost about 80% of their water before sealing<sup class="r">[16](#s16)</sup>, which could leave well under 1 g. So the chamber must seal fast and its losses must be calibrated. The ice mine (C06.2) is sized on 5% ice, which matches the patch value, not the average, so it must be sited on a patch the rovers have found.
 
 ## Where to prospect
 
